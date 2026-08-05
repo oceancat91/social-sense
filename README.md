@@ -1,7 +1,7 @@
-# Social Sense - 社交舆情感知平台
+# Social Sense - 基于多源社交媒体协同的舆情溯源与辅助预测系统
 
 <p align="center">
-  <strong>基于大数据与人工智能的社交媒体舆情分析系统</strong>
+  <strong>跨平台舆情采集、NLP 情感分析、传播溯源与多维可视化</strong>
 </p>
 
 <p align="center">
@@ -18,16 +18,28 @@
 
 ## 项目简介
 
-Social Sense 是一个面向社交媒体的舆情感知与分析平台，旨在帮助用户实时监控、分析和可视化社交网络上的舆论动态。本项目为大学生双创（创新创业）项目。
+Social Sense 是一个面向多平台社交媒体的舆情分析系统。针对抖音、微博、小红书、B 站、知乎、快手六大平台在用户结构、社区文化与推荐机制上的差异，系统对同一热点事件在不同平台的舆论走向、情绪倾向与传播路径进行跨平台协同分析，突破单平台舆情分析的"信息茧房"局限。本项目为大学生双创（创新创业）项目。
 
 ## 功能特性
 
-- **数据采集**：支持多平台社交媒体数据抓取与整合
-- **情感分析**：基于 NLP 技术的文本情感倾向分析
-- **热点追踪**：实时发现和追踪社交网络热点话题
-- **可视化看板**：直观的数据可视化仪表盘
-- **预警通知**：舆情异常波动预警与推送
-- **报告生成**：自动生成舆情分析报告
+### 第一阶段（当前）
+
+- **多平台数据采集**：覆盖抖音/微博/小红书/B站/知乎/快手，统一"采集 → 清洗 → 分析 → 入库"处理管道（当前由模拟数据源驱动，真实采集器接口已预留）
+- **数据清洗**：HTML/URL/@提及去噪、文本标准化、内容哈希去重
+- **NLP 情感分析**：HuggingFace 预训练模型（DistilBERT 多语情感模型），置信度阈值判定中性，模型不可用时自动降级为词典分析（含否定词、程度副词处理）
+- **跨平台多维分析**：
+  - 各平台情感分布对比（情绪极化分析）
+  - 声量生命周期趋势（曝光 → 发酵 → 峰值 → 平息）
+  - 跨平台传播溯源（首发平台、传播延迟、峰值时间）
+  - 高频关键词词云、热门内容排行、热点话题
+- **可视化看板**：React + ECharts 的多维交互式仪表盘
+
+### 后续规划
+
+- 真实平台数据源接入（合规 API / 采集框架）
+- 舆情趋势辅助预测（时序模型）
+- 舆情预警与通知推送
+- 自动生成舆情分析报告
 
 ## 技术架构
 
@@ -59,8 +71,7 @@ Social Sense 是一个面向社交媒体的舆情感知与分析平台，旨在�
 
 - Python >= 3.9
 - Node.js >= 16
-- MySQL >= 8.0
-- Redis >= 6.0
+- MySQL >= 8.0（可选，本地开发可用 SQLite 免安装）
 
 ### 安装步骤
 
@@ -74,8 +85,9 @@ cd social-sense
 2. **安装后端依赖**
 
 ```bash
-cd backend
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
+# 可选：安装 PyTorch 以启用预训练情感模型（不装则自动降级为词典分析）
+# pip install torch --index-url https://download.pytorch.org/whl/cpu
 ```
 
 3. **安装前端依赖**
@@ -89,19 +101,38 @@ npm install
 
 ```bash
 cp .env.example .env
-# 编辑 .env 文件，填入必要的配置信息
+# 本地快速开发：设置 DB_DRIVER=sqlite 即可免装 MySQL
+# 生产环境：设置 DB_DRIVER=mysql 并填写数据库连接信息
 ```
 
-5. **启动开发服务器**
+5. **初始化数据库并灌入演示数据**
+
+```bash
+python scripts/init_db.py      # 创建数据表与管理员账户（admin@social-sense.com / admin123）
+python scripts/seed_demo.py    # 生成多平台演示舆情数据（约 400+ 条，含情感分析）
+```
+
+6. **启动开发服务器**
 
 ```bash
 # 启动后端
-cd backend
-python run.py
+python backend/run.py
 
 # 启动前端（新终端）
 cd frontend
 npm run dev
+```
+
+访问 http://localhost:3000 ，使用管理员账户登录即可查看跨平台舆情看板与分析页面。
+
+### 常用命令
+
+```bash
+# 命令行采集数据（全平台）
+python scripts/crawl.py --keyword "人工智能" --platform all --days 14
+
+# 运行后端测试
+python -m pytest tests/test_backend -v
 ```
 
 ## 项目结构

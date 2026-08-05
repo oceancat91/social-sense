@@ -9,8 +9,9 @@ class MonitorTask(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     keywords = db.Column(db.Text, nullable=False)
-    platform = db.Column(db.String(50), default='weibo')
-    status = db.Column(db.String(20), default='active')
+    platform = db.Column(db.String(50), default='all')   # all 表示全平台采集
+    status = db.Column(db.String(20), default='active')  # active / collecting / paused
+    data_count = db.Column(db.Integer, default=0)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
@@ -23,6 +24,7 @@ class MonitorTask(db.Model):
             'keywords': self.keywords,
             'platform': self.platform,
             'status': self.status,
+            'data_count': self.data_count or 0,
             'created_at': self.created_at.isoformat(),
             'updated_at': self.updated_at.isoformat()
         }

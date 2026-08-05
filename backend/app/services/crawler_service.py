@@ -1,36 +1,49 @@
-"""数据采集服务"""
-import requests
-from datetime import datetime
+"""数据采集服务：统一采集接口，当前由模拟数据源驱动"""
+import logging
+
+from app.services.mock_data_service import MockDataGenerator, PLATFORM_PROFILES
+
+logger = logging.getLogger(__name__)
+
+SUPPORTED_PLATFORMS = list(PLATFORM_PROFILES.keys())
 
 
 class CrawlerService:
-    """社交媒体数据采集服务（框架代码，需根据实际 API 完善）"""
+    """
+    社交媒体数据采集服务。
+
+    当前阶段所有平台均由模拟数据源驱动（data_source='mock'），
+    真实采集器预留接口，接入合规数据源后可按平台逐步替换。
+    """
 
     @staticmethod
-    def crawl_weibo(keyword: str, page: int = 1) -> list:
-        """
-        微博数据采集（占位实现）。
-        实际使用时需要配置微博开放平台 API 或使用合规的数据接口。
-        """
-        # TODO: 接入微博 API 或第三方数据源
+    def crawl_weibo(keyword: str, **kwargs) -> list:
+        """微博真实采集器（预留）。接入需使用微博开放平台或合规数据服务。"""
+        # TODO: 接入真实微博数据源
         return []
 
     @staticmethod
-    def crawl_zhihu(keyword: str, page: int = 1) -> list:
-        """
-        知乎数据采集（占位实现）。
-        """
-        # TODO: 接入知乎 API 或第三方数据源
+    def crawl_zhihu(keyword: str, **kwargs) -> list:
+        """知乎真实采集器（预留）。"""
+        # TODO: 接入真实知乎数据源
         return []
 
     @classmethod
-    def crawl(cls, platform: str, keyword: str, page: int = 1) -> list:
-        """根据平台类型调用对应采集方法"""
-        crawlers = {
-            'weibo': cls.crawl_weibo,
-            'zhihu': cls.crawl_zhihu,
-        }
-        crawler = crawlers.get(platform)
-        if not crawler:
-            raise ValueError(f'不支持的平台: {platform}')
-        return crawler(keyword, page)
+    def crawl(cls, keyword: str, platform: str = 'all',
+              days: int = 14, limit: int = 600) -> list:
+        """
+        按平台采集关键词相关舆情数据。
+        :param keyword: 监控关键词（事件主题）
+        :param platform: 平台标识，'all' 表示全平台
+        :param days: 回溯天数（模拟事件的时间跨度）
+        :param limit: 数据量上限
+        """
+        platforms = SUPPORTED_PLATFORMS if platform == 'all' else [platform]
+        invalid = [p for p in platforms if p not in SUPPORTED_PLATFORMS]
+        if invalid:
+            raise ValueError(f'不支持的平台: {invalid}')
+
+        generator = MockDataGenerator(keyword=keyword, days=days)
+        records = generator.generate(total=limit, platforms=platforms)
+        logger.info('采集完成: keyword=%s platform=%s raw=%d', keyword, platform, len(records))
+        return records

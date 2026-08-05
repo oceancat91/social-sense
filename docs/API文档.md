@@ -4,7 +4,7 @@
 
 - **Base URL**: `http://localhost:5000/api/v1`
 - **数据格式**: JSON
-- **认证方式**: JWT Token
+- **认证方式**: JWT Token（`Authorization: Bearer <token>`）
 
 ## 通用响应格式
 
@@ -21,7 +21,6 @@
 ### 1.1 用户注册
 
 - **URL**: `POST /auth/register`
-- **请求参数**:
 
 | 参数 | 类型 | 必填 | 说明 |
 |------|------|------|------|
@@ -29,23 +28,9 @@
 | email | string | 是 | 邮箱 |
 | password | string | 是 | 密码 |
 
-- **响应示例**:
-
-```json
-{
-  "code": 200,
-  "message": "注册成功",
-  "data": {
-    "user_id": 1,
-    "username": "testuser"
-  }
-}
-```
-
 ### 1.2 用户登录
 
 - **URL**: `POST /auth/login`
-- **请求参数**:
 
 | 参数 | 类型 | 必填 | 说明 |
 |------|------|------|------|
@@ -60,58 +45,98 @@
   "message": "登录成功",
   "data": {
     "token": "eyJhbGciOiJIUzI1NiIs...",
-    "user": {
-      "id": 1,
-      "username": "testuser"
-    }
+    "user": { "id": 1, "username": "admin" }
   }
 }
 ```
 
 ## 2. 监控任务模块
 
-### 2.1 创建监控任务
+### 2.1 获取支持的平台列表
+
+- **URL**: `GET /tasks/platforms`
+- **响应**: 6 大平台（weibo/douyin/xiaohongshu/bilibili/zhihu/kuaishou）的标识、名称与主题色。
+
+### 2.2 创建监控任务
 
 - **URL**: `POST /tasks`
-- **请求头**: `Authorization: Bearer <token>`
 - **请求参数**:
 
 | 参数 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | keywords | array | 是 | 监控关键词列表 |
-| platform | string | 是 | 目标平台 |
+| platform | string | 否 | 目标平台，默认 `all`（全平台） |
+| days | int | 否 | 模拟事件回溯天数，默认 14 |
+| auto_collect | bool | 否 | 是否自动启动采集，默认 true |
 
-### 2.2 获取任务列表
+- **说明**: 创建后自动在后台执行"采集 → 清洗 → 情感分析 → 关键词提取 → 入库"管道，任务状态变为 `collecting`，完成后变为 `active`。
 
-- **URL**: `GET /tasks`
-- **请求头**: `Authorization: Bearer <token>`
-- **查询参数**:
+### 2.3 获取任务列表
 
-| 参数 | 类型 | 必填 | 说明 |
-|------|------|------|------|
-| page | int | 否 | 页码，默认 1 |
-| page_size | int | 否 | 每页数量，默认 10 |
+- **URL**: `GET /tasks?page=1&page_size=10`
+
+### 2.4 触发任务采集
+
+- **URL**: `POST /tasks/<task_id>/collect`
+- **说明**: 手动触发采集（后台执行）。任务正在采集中时返回 409。
+
+### 2.5 删除任务
+
+- **URL**: `DELETE /tasks/<task_id>`
+- **说明**: 同时删除任务关联的全部舆情数据。
 
 ## 3. 舆情分析模块
 
-### 3.1 获取舆情概览
+所有分析接口支持以下通用查询参数：
+
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| task_id | int | 限定单个任务 |
+| platform | string | 限定平台，默认全部 |
+| days | int | 限定近 N 天数据 |
+
+### 3.1 舆情总览
 
 - **URL**: `GET /analysis/overview`
-- **请求头**: `Authorization: Bearer <token>`
+- **响应**: 数据总量、正/中/负情感数量、负面占比、平均情感分、各平台数据量分布。
 
-### 3.2 获取情感分析结果
+### 3.2 跨平台对比
 
-- **URL**: `GET /analysis/sentiment`
-- **请求头**: `Authorization: Bearer <token>`
-- **查询参数**:
+- **URL**: `GET /analysis/platform-comparison`
+- **响应**: 各平台声量、情感分布、平均情感分、负面率、互动总量（用于情绪极化分析）。
 
-| 参数 | 类型 | 必填 | 说明 |
-|------|------|------|------|
-| task_id | int | 是 | 任务 ID |
-| start_date | string | 否 | 开始日期 |
-| end_date | string | 否 | 结束日期 |
+### 3.3 声量与情感趋势
 
-### 3.3 获取热点话题
+- **URL**: `GET /analysis/trend?days=14`
+- **响应**: 日期序列、各平台日声量序列、每日情感分布。
+
+### 3.4 高频关键词
+
+- **URL**: `GET /analysis/keywords?top_k=50`
+- **响应**: 关键词及出现频次（词云数据源）。
+
+### 3.5 跨平台传播溯源
+
+- **URL**: `GET /analysis/propagation?days=14`
+- **响应**: 各平台首发时间、相对源头平台的传播延迟（小时）、峰值日期、日声量序列。
+
+### 3.6 热门内容排行
+
+- **URL**: `GET /analysis/hot-content?limit=10`
+- **响应**: 按互动热度（点赞 + 评论×2 + 转发×3）排序的内容明细。
+
+### 3.7 情感分析明细
+
+- **URL**: `GET /analysis/sentiment?task_id=<id>`
+- **响应**: 指定任务最近 100 条数据的情感分析结果。
+
+### 3.8 热点话题
 
 - **URL**: `GET /analysis/trending`
-- **请求头**: `Authorization: Bearer <token>`
+- **响应**: 基于高频关键词与互动热度聚合的话题榜。
+
+## 4. 数据采集说明
+
+当前阶段采集由多平台模拟数据源驱动（`scripts/seed_demo.py` / `scripts/crawl.py`），模拟热点事件在 6 大平台的完整生命周期与跨平台传播时序。真实平台采集器已在 `crawler_service.py` 预留接口，接入合规数据源后可按平台逐步替换。
+
+情感分析默认使用 HuggingFace 预训练模型（`SENTIMENT_MODEL_NAME`），模型不可用或置信度不足时自动降级：预训练模型 → 词典分析（含否定词、程度副词处理）。
