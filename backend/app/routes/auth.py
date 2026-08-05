@@ -37,8 +37,10 @@ def login():
     password = data.get('password')
 
     user = User.query.filter_by(email=email).first()
-    if not user or not user.check_password(password):
-        return jsonify(code=401, message='邮箱或密码错误'), 401
+    if not user:
+        return jsonify(code=401, message='该邮箱未注册', error_type='not_found'), 401
+    if not user.check_password(password):
+        return jsonify(code=401, message='密码错误，请重试', error_type='wrong_password'), 401
 
     token = create_access_token(identity=str(user.id))
     return jsonify(code=200, message='登录成功', data={

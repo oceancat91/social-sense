@@ -10,6 +10,7 @@ pandas>=2.1
 jieba>=0.42
 transformers>=4.36
 gunicorn>=21.2
-# 预训练情感模型推理后端（可选，不安装则自动降级为词典分析）
-# CPU 版本安装：pip install torch --index-url https://download.pytorch.org/whl/cpu
+# PostgreSQL 驱动（Render 免费数据库依赖，本地开发可注释）
+psycopg2-binary>=2.9
+# 预训练情感模型推理后端（安装后自动启用，不装自动降级为词典分析）
 # torch>=2.0

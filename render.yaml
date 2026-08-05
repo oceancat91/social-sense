@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: social-sense-api
+    env: python
+    region: singapore                     # 亚洲区域，国内访问延迟低
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn run:app -w 2 --timeout 120 -b 0.0.0.0:$PORT
+    healthCheckPath: /health
+    envVars:
+      - key: DB_DRIVER
+        value: sqlite
+      - key: SQLITE_PATH
+        value: /var/data/social_sense.db
+      - key: APP_SECRET_KEY
+        generateValue: true              # Render 自动生成强随机密钥
+      - key: TRANSFORMERS_CACHE
+        value: /var/data/model_cache     # 模型缓存持久化
+      - key: HF_HUB_DISABLE_XET
+        value: "1"
+      - key: SENTIMENT_MODEL_NAME
+        value: lxyuan/distilbert-base-multilingual-cased-sentiments-student
+      - key: ADMIN_EMAIL
+        value: admin@social-sense.com
+      - key: ADMIN_PASSWORD
+        value: admin123                  # 部署后建议在 Render 面板中修改
+    disk:
+      name: data
+      mountPath: /var/data               # SQLite 数据库与模型缓存存放于此
+      sizeGB: 2

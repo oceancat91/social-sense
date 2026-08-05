@@ -1,8 +1,9 @@
 import axios from 'axios'
 
+// VITE_API_BASE_URL 由构建时注入，开发环境留空走 Vite proxy
 const api = axios.create({
-  baseURL: '/api/v1',
-  timeout: 10000,
+  baseURL: import.meta.env.VITE_API_BASE_URL || '/api/v1',
+  timeout: 15000,
   headers: { 'Content-Type': 'application/json' },
 })
 
