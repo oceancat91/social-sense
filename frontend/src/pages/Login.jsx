@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Form, Input, Button, Card, Tabs, Modal, message } from 'antd'
+import { RadarChartOutlined, UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons'
 import api from '../services/api'
 
 function Login() {
@@ -45,11 +46,14 @@ function Login() {
   }
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: '#f0f2f5' }}>
-      <Card style={{ width: 420 }}>
-        <div style={{ textAlign: 'center', marginBottom: 8 }}>
-          <h2 style={{ margin: 0 }}>Social Sense</h2>
-          <p style={{ color: '#999', margin: '4px 0 0' }}>社交舆情感知平台</p>
+    <div className="login-wrapper">
+      <Card className="login-card">
+        <div className="login-brand">
+          <div className="login-logo">
+            <RadarChartOutlined />
+          </div>
+          <h2>Social Sense</h2>
+          <p>基于多源社交媒体的舆情溯源与辅助预测系统</p>
         </div>
 
         <Form form={form} layout="vertical" onFinish={onFinish} autoComplete="off">
@@ -67,14 +71,14 @@ function Login() {
                 children: (
                   <>
                     <Form.Item label="邮箱" name="email" rules={[{ required: true, message: '请输入邮箱' }]}>
-                      <Input placeholder="请输入邮箱" />
+                      <Input prefix={<MailOutlined style={{ color: '#bfc6d4' }} />} placeholder="请输入邮箱" size="large" />
                     </Form.Item>
                     <Form.Item label="密码" name="password" rules={[{ required: true, message: '请输入密码' }]}>
-                      <Input.Password placeholder="请输入密码" />
+                      <Input.Password prefix={<LockOutlined style={{ color: '#bfc6d4' }} />} placeholder="请输入密码" size="large" />
                     </Form.Item>
                     <Form.Item style={{ marginBottom: 0 }}>
-                      <Button type="primary" htmlType="submit" loading={loading} block>
-                        登录
+                      <Button type="primary" htmlType="submit" loading={loading} block size="large">
+                        登 录
                       </Button>
                     </Form.Item>
                   </>
@@ -86,17 +90,17 @@ function Login() {
                 children: (
                   <>
                     <Form.Item label="用户名" name="username" rules={[{ required: true, message: '请输入用户名' }]}>
-                      <Input placeholder="请输入用户名" />
+                      <Input prefix={<UserOutlined style={{ color: '#bfc6d4' }} />} placeholder="请输入用户名" size="large" />
                     </Form.Item>
                     <Form.Item label="邮箱" name="email" rules={[{ required: true, message: '请输入邮箱' }]}>
-                      <Input placeholder="请输入邮箱" />
+                      <Input prefix={<MailOutlined style={{ color: '#bfc6d4' }} />} placeholder="请输入邮箱" size="large" />
                     </Form.Item>
                     <Form.Item label="密码" name="password" rules={[{ required: true, message: '请输入密码' }, { min: 6, message: '密码至少 6 位' }]}>
-                      <Input.Password placeholder="请输入密码（至少 6 位）" />
+                      <Input.Password prefix={<LockOutlined style={{ color: '#bfc6d4' }} />} placeholder="请输入密码（至少 6 位）" size="large" />
                     </Form.Item>
                     <Form.Item style={{ marginBottom: 0 }}>
-                      <Button type="primary" htmlType="submit" loading={loading} block>
-                        注册
+                      <Button type="primary" htmlType="submit" loading={loading} block size="large">
+                        注 册
                       </Button>
                     </Form.Item>
                   </>

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { Table, Button, Modal, Form, Input, Select, message, Tag, Popconfirm, Space } from 'antd'
+import { Table, Button, Modal, Form, Input, Select, message, Tag, Popconfirm, Space, Card } from 'antd'
+import { UnorderedListOutlined, PlusOutlined, ReloadOutlined } from '@ant-design/icons'
 import api from '../services/api'
 import { PLATFORM_OPTIONS, platformColor } from '../utils/platforms'
 import { formatDate } from '../utils'
@@ -92,6 +93,7 @@ function Tasks() {
         <Space>
           <Button
             size="small"
+            icon={<ReloadOutlined />}
             disabled={record.status === 'collecting'}
             onClick={() => handleCollect(record.id)}
           >
@@ -107,11 +109,17 @@ function Tasks() {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
-        <h2>监控任务</h2>
-        <Button type="primary" onClick={() => setModalVisible(true)}>新建任务</Button>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16, flexWrap: 'wrap', gap: 12 }}>
+        <h2 className="page-title">
+          <UnorderedListOutlined style={{ color: 'var(--primary)' }} /> 监控任务
+        </h2>
+        <Button type="primary" icon={<PlusOutlined />} onClick={() => setModalVisible(true)}>
+          新建任务
+        </Button>
       </div>
-      <Table dataSource={tasks} columns={columns} rowKey="id" loading={loading} />
+      <Card>
+        <Table dataSource={tasks} columns={columns} rowKey="id" loading={loading} />
+      </Card>
       <Modal title="新建监控任务" open={modalVisible} onOk={handleCreate} onCancel={() => setModalVisible(false)}>
         <Form form={form} layout="vertical">
           <Form.Item
