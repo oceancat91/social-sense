@@ -26,7 +26,7 @@ Social Sense 是一个面向多平台社交媒体的舆情分析系统。针对�
 
 - **多平台数据采集**：覆盖抖音/微博/小红书/B站/知乎/快手，统一"采集 → 清洗 → 分析 → 入库"处理管道（当前由模拟数据源驱动，真实采集器接口已预留）
 - **数据清洗**：HTML/URL/@提及去噪、文本标准化、内容哈希去重
-- **NLP 情感分析**：HuggingFace 预训练模型（DistilBERT 多语情感模型），置信度阈值判定中性，模型不可用时自动降级为词典分析（含否定词、程度副词处理）
+- **NLP 情感分析**：大模型优先（接入 DeepSeek 等 OpenAI 兼容 API，识别反讽与隐含情绪），其次 HuggingFace 预训练模型（DistilBERT，置信度阈值判定中性），最终兜底词典分析（含否定词、程度副词处理），逐级自动降级
 - **跨平台多维分析**：
   - 各平台情感分布对比（情绪极化分析）
   - 声量生命周期趋势（曝光 → 发酵 → 峰值 → 平息）
@@ -86,6 +86,7 @@ cd social-sense
 
 ```bash
 pip install -r backend/requirements.txt
+# 可选：在 .env 中配置 LLM_API_KEY 启用大模型情感分析（效果最好）
 # 可选：安装 PyTorch 以启用预训练情感模型（不装则自动降级为词典分析）
 # pip install torch --index-url https://download.pytorch.org/whl/cpu
 ```

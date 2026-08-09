@@ -1,9 +1,13 @@
-"""情感分析服务：预训练模型优先，词典分析兜底"""
+"""情感分析服务：大模型优先，预训练模型次之，词典分析兜底"""
+import json
 import logging
 import os
+import re
+from concurrent.futures import ThreadPoolExecutor
 
 import jieba
 import jieba.analyse
+import requests
 
 logger = logging.getLogger(__name__)
 
@@ -146,38 +150,166 @@ class _TransformerAnalyzer:
         return output
 
 
-class SentimentService:
-    """情感分析核心服务：优先使用预训练模型，不可用时降级为词典分析"""
+class _LLMAnalyzer:
+    """基于大语言模型的舆情情感分析器（OpenAI 兼容 Chat Completions API，效果最佳）
 
+    兼容 DeepSeek / 通义千问 / OpenAI 等接口；配置 LLM_API_KEY 后自动启用。
+    支持反讽、反语、网络用语与隐含情绪识别，单条失败时降级为词典分析。
+    """
+
+    SYSTEM_PROMPT = (
+        '你是一名专业的舆情情感分析专家，擅长识别中文网络文本中的情感，'
+        '包括反讽、反语、网络用语和隐含情绪。'
+        '请判断文本的情感极性，只输出一个 JSON 对象，不要输出任何其他内容，格式如下：\n'
+        '{"sentiment": "positive" 或 "negative" 或 "neutral", '
+        '"confidence": 0到1之间的数字, "reason": "一句话说明判断依据"}'
+    )
+    DEFAULT_BASE_URL = 'https://api.deepseek.com'
+    DEFAULT_MODEL = 'deepseek-chat'
+
+    def __init__(self, api_key: str, base_url: str = None, model: str = None,
+                 timeout: int = 30, max_workers: int = 8):
+        self.api_key = api_key
+        self.base_url = (base_url or self.DEFAULT_BASE_URL).rstrip('/')
+        self.model = model or self.DEFAULT_MODEL
+        self.timeout = timeout
+        self.max_workers = max_workers
+
+    @classmethod
+    def from_env(cls) -> '_LLMAnalyzer':
+        return cls(
+            api_key=os.getenv('LLM_API_KEY', ''),
+            base_url=os.getenv('LLM_BASE_URL'),
+            model=os.getenv('LLM_MODEL'),
+            timeout=int(os.getenv('LLM_TIMEOUT', '30')),
+            max_workers=int(os.getenv('LLM_MAX_WORKERS', '8')),
+        )
+
+    @property
+    def available(self) -> bool:
+        return bool(self.api_key)
+
+    def analyze_batch(self, texts: list) -> list:
+        """并发逐条调用大模型，返回 [{'sentiment':..., 'score':...}]"""
+        if not texts:
+            return []
+        with ThreadPoolExecutor(max_workers=self.max_workers) as pool:
+            return list(pool.map(self._analyze_one, texts))
+
+    def _analyze_one(self, text: str) -> dict:
+        try:
+            content = self._call_api(text)
+            return self._parse_result(content)
+        except Exception as exc:
+            logger.warning('大模型分析失败（%s），该条降级为词典分析: %s', self.model, exc)
+            return _DictionaryAnalyzer.analyze(text)
+
+    def _call_api(self, text: str) -> str:
+        """调用 Chat Completions 接口，返回模型输出文本"""
+        payload = {
+            'model': self.model,
+            'messages': [
+                {'role': 'system', 'content': self.SYSTEM_PROMPT},
+                {'role': 'user', 'content': text},
+            ],
+            'temperature': 0,
+            'max_tokens': 120,
+            'response_format': {'type': 'json_object'},
+        }
+        resp = requests.post(
+            f'{self.base_url}/chat/completions',
+            headers={
+                'Authorization': f'Bearer {self.api_key}',
+                'Content-Type': 'application/json',
+            },
+            json=payload,
+            timeout=self.timeout,
+        )
+        resp.raise_for_status()
+        return resp.json()['choices'][0]['message']['content']
+
+    @staticmethod
+    def _parse_result(content: str) -> dict:
+        """解析模型输出的 JSON，兼容 markdown 代码块围栏与中文极性标签"""
+        text = content.strip()
+        match = re.search(r'\{.*\}', text, re.DOTALL)
+        if not match:
+            raise ValueError(f'无法从输出中解析 JSON: {content[:100]!r}')
+        data = json.loads(match.group(0))
+
+        sentiment = str(data.get('sentiment', '')).strip().lower()
+        if sentiment in ('pos', 'positive', '正面', '积极'):
+            sentiment = 'positive'
+        elif sentiment in ('neg', 'negative', '负面', '消极'):
+            sentiment = 'negative'
+        elif sentiment in ('neutral', '中性', '中立'):
+            sentiment = 'neutral'
+        else:
+            raise ValueError(f'未知情感极性: {sentiment!r}')
+
+        confidence = float(data.get('confidence', data.get('score', 0.9)))
+        confidence = min(max(confidence, 0.0), 1.0)
+        if sentiment == 'neutral':
+            return {'sentiment': 'neutral', 'score': 0.0}
+        return {
+            'sentiment': sentiment,
+            'score': round(confidence if sentiment == 'positive' else -confidence, 4),
+        }
+
+
+class SentimentService:
+    """情感分析核心服务：大模型 → 预训练模型 → 词典，逐级降级"""
+
+    _llm = None
+    _use_llm = None
     _transformer = None
     _use_transformer = None
 
     @classmethod
+    def _load_transformer(cls):
+        """尝试加载预训练模型（仅在大模型不可用时执行）"""
+        if cls._use_transformer is not None:
+            return
+        model_name = os.getenv(
+            'SENTIMENT_MODEL_NAME',
+            'lxyuan/distilbert-base-multilingual-cased-sentiments-student'
+        )
+        try:
+            analyzer = _TransformerAnalyzer(model_name)
+            if not analyzer.available:
+                raise RuntimeError('transformers 不可用')
+            analyzer.load()
+            cls._transformer = analyzer
+            cls._use_transformer = True
+            logger.info('情感分析：已启用预训练模型 %s', model_name)
+        except Exception as exc:
+            cls._use_transformer = False
+            logger.warning('预训练模型加载失败，降级为词典分析: %s', exc)
+
+    @classmethod
     def _analyzer(cls):
-        """确定使用的分析器：transformer 模型可用则用，否则词典兜底"""
-        if cls._use_transformer is None:
-            model_name = os.getenv(
-                'SENTIMENT_MODEL_NAME',
-                'lxyuan/distilbert-base-multilingual-cased-sentiments-student'
-            )
-            try:
-                analyzer = _TransformerAnalyzer(model_name)
-                if analyzer.available:
-                    analyzer.load()
-                    cls._transformer = analyzer
-                    cls._use_transformer = True
-                    logger.info('情感分析：已启用预训练模型 %s', model_name)
-                else:
-                    raise RuntimeError('transformers 不可用')
-            except Exception as exc:
-                cls._use_transformer = False
-                logger.warning('预训练模型加载失败，降级为词典分析: %s', exc)
+        """确定使用的分析器：大模型（配置了 Key）→ 预训练模型 → 词典兜底"""
+        if cls._use_llm is None:
+            analyzer = _LLMAnalyzer.from_env()
+            if analyzer.available:
+                cls._llm = analyzer
+                cls._use_llm = True
+                logger.info('情感分析：已启用大模型 %s', analyzer.model)
+            else:
+                cls._use_llm = False
+                cls._load_transformer()
+        if cls._use_llm:
+            return cls._llm
         return cls._transformer if cls._use_transformer else None
 
     @classmethod
     def backend_name(cls) -> str:
         cls._analyzer()
-        return 'transformer' if cls._use_transformer else 'dictionary'
+        if cls._use_llm:
+            return 'llm'
+        if cls._use_transformer:
+            return 'transformer'
+        return 'dictionary'
 
     @classmethod
     def analyze(cls, text: str) -> dict:
@@ -189,12 +321,12 @@ class SentimentService:
         """批量情感分析"""
         if not texts:
             return []
-        transformer = cls._analyzer()
-        if transformer is not None:
+        analyzer = cls._analyzer()
+        if analyzer is not None:
             try:
-                return transformer.analyze_batch(texts)
+                return analyzer.analyze_batch(texts)
             except Exception as exc:
-                logger.warning('模型推理失败，本批次降级为词典分析: %s', exc)
+                logger.warning('分析器推理失败，本批次降级为词典分析: %s', exc)
         return [_DictionaryAnalyzer.analyze(t) for t in texts]
 
     @classmethod
