@@ -39,6 +39,12 @@ class Config:
             )
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    # MySQL 连接保活：Gunicorn --preload 下 fork 继承的连接会失效（SSL EOF），
+    # 加 pool_pre_ping 让连接使用前自动校验并重连；pool_recycle 避免超过 MySQL wait_timeout
+    SQLALCHEMY_ENGINE_OPTIONS = {
+        'pool_pre_ping': True,
+        'pool_recycle': 3600,
+    }
     JWT_SECRET_KEY = os.getenv('APP_SECRET_KEY', os.urandom(32).hex())
     JWT_ACCESS_TOKEN_EXPIRES = 3600 * 24  # 24小时
 
