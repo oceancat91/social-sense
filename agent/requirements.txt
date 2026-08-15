@@ -1,0 +1,14 @@
+# 单平台 Agent（B 站）+ 多平台多 Agent 架构 运行时依赖
+# 安装：python -m pip install -r requirements.txt
+
+# 网络请求（爬虫 + DeepSeek LLM 调用）
+requests>=2.31
+
+# 中文分词（Skill3 文本塔 / Skill4 BM25 检索）
+jieba>=0.42
+
+# 时区数据库（Windows 无系统 tz 库，ZoneInfo("Asia/Shanghai") 必需）
+tzdata>=2024.1
+
+# 单平台 Agent 全链路编排（Skill1→6 状态图）；未安装时自动回退线性执行
+langgraph>=0.2.0

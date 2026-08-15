@@ -1,0 +1,42 @@
+{
+  "event_id": "bilibili_期末周破防_20260801_20260815",
+  "title": "期末周破防（考试周破防评论样本）",
+  "keyword": "期末周破防",
+  "platform": "bilibili",
+  "platform_name_zh": "哔哩哔哩",
+  "time_range": {
+    "since": "2026-08-01",
+    "until": "2026-08-15",
+    "end_exclusive": "2026-08-16",
+    "timezone": "Asia/Shanghai"
+  },
+  "granularity": "day",
+  "description": "B站热门考试周破防视频评论，时间窗对齐最新评论时段，经清洗与立场画像后入库。",
+  "source": {
+    "type": "bilibili_video_comments",
+    "method": "keyword_search + comment_crawl + clean_c1c8 + stance_profiler",
+    "tools": [
+      "PlatformCrawler",
+      "StanceProfiler"
+    ],
+    "notes": "公开视频评论；经清洗与立场画像后入库。仅供研究使用。"
+  },
+  "files": {
+    "D_platform": "D_platform.json",
+    "stance_profile": "stance_profile.json"
+  },
+  "stats": {
+    "n_text": 57,
+    "n_buckets": 15,
+    "empty_ratio": 0.13333333333333333,
+    "stance_global": "neutral",
+    "bias_score": 0.015742560313751375,
+    "is_empty": false
+  },
+  "schema_version": "dataset_schema_v1",
+  "created_at": "2026-08-15T14:59:16+08:00",
+  "pipeline_versions": {
+    "platform_crawler": "platform_crawler_v1",
+    "stance_profiler": "stance_profiler_v1"
+  }
+}

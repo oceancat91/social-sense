@@ -41,6 +41,27 @@ Social Sense 是一个面向多平台社交媒体的舆情分析系统。针对�
 - 舆情预警与通知推送
 - 自动生成舆情分析报告
 
+## 多 Agent 架构（核心创新）
+
+本项目以「多平台多 Agent」为架构主线，三大创新落点：
+
+- **工程创新**：主控 Agent + 每平台一个 Agent 的层次化多 Agent 架构，靠统一消息契约（`PlatformReport`）解耦；单平台 Agent 用 LangGraph 编排 6 个原子 Skill。
+- **学术创新**：Agent 内单个 Skill 的精准度——严格校准门禁（G1–G7）、多模态时序文本异常检测、BM25 知识增强等。
+- **社会价值**：打破平台私域信息茧房——用可量化的「茧房指数」暴露同一话题在不同平台舆论场的立场/情绪/声量分裂。
+
+```text
+主控 Agent (multiagent/master.py)
+   ▲  跨平台归纳 + CX1–CX5 门禁
+   │  融合器 fuse.py（分歧度量 + 茧房指数）
+   │  对齐器 align.py（时间轴对齐 + z-score 归一）
+   ▲  PlatformReport × N（统一契约）
+ B站Agent · 微博Agent · 抖音Agent · 小红书Agent ...
+  （每个：Skill1采集清洗 → Skill2立场画像 → Skill3多模态分析
+   → Skill4知识增强 → Skill5结论生成 → Skill6残差校准）
+```
+
+详见 [`agent/README.md`](agent/README.md) 与 [`multiagent/README.md`](multiagent/README.md)。
+
 ## 技术架构
 
 ```
@@ -151,6 +172,15 @@ social-sense/
 │   ├── 设计文档.md            # 系统设计文档
 │   ├── API文档.md             # 接口文档
 │   └── 部署文档.md            # 部署指南
+├── agent/                    # 单平台 Agent（B 站，Skill1–6 全链路 + LangGraph 编排）
+│   ├── PlatformCrawler/      # Skill1 采集+清洗
+│   ├── StanceProfiler/       # Skill2 立场画像
+│   ├── MultimodalAnalyzer/   # Skill3 多模态时序文本分析
+│   ├── KnowledgeAugmentor/   # Skill4 知识增强/RAG
+│   ├── Conclusion/           # Skill5+6 结论生成与严格校准
+│   ├── Agent/                # 全链路编排（agent.py + orchestrator.py）
+│   └── dataset/              # 标准化数据集仓库
+├── multiagent/               # 多平台多 Agent 架构（契约+对齐+融合+主控 Agent）
 ├── backend/                  # 后端代码
 │   ├── app/                  # 应用主目录
 │   │   ├── __init__.py       # 应用初始化

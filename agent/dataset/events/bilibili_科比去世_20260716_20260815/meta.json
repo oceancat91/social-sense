@@ -1,0 +1,42 @@
+{
+  "event_id": "bilibili_科比去世_20260716_20260815",
+  "title": "科比去世",
+  "keyword": "科比去世",
+  "platform": "bilibili",
+  "platform_name_zh": "哔哩哔哩",
+  "time_range": {
+    "since": "2026-07-16",
+    "until": "2026-08-15",
+    "end_exclusive": "2026-08-16",
+    "timezone": "Asia/Shanghai"
+  },
+  "granularity": "day",
+  "description": "Agent 自动链路：话题「科比去世」。LLM 规划：科比去世是历史事件，但至今仍有纪念和讨论。为抓取最新评论，评论时间窗设为最近30天（2026-07-16至2026-08-15），确保最新评论落入窗口。视频搜索窗放宽至事件发生至今，以便找到经典纪念视频。采用recent_discussion模式，按总排行和评论数筛选高讨论度视频，评论按最新抓取以匹配时间窗。",
+  "source": {
+    "type": "bilibili_video_comments",
+    "method": "keyword_search + comment_crawl + clean_c1c8 + stance_profiler",
+    "tools": [
+      "PlatformCrawler",
+      "StanceProfiler"
+    ],
+    "notes": "mode=recent_discussion, comment=[2026-07-16,2026-08-15], search=[2020-01-26,2026-08-15], max_videos=5, pages=3"
+  },
+  "files": {
+    "D_platform": "D_platform.json",
+    "stance_profile": "stance_profile.json"
+  },
+  "stats": {
+    "n_text": 64,
+    "n_buckets": 31,
+    "empty_ratio": 0.22580645161290322,
+    "stance_global": "neutral",
+    "bias_score": 0.046495612410121824,
+    "is_empty": false
+  },
+  "schema_version": "dataset_schema_v1",
+  "created_at": "2026-08-15T15:19:22+08:00",
+  "pipeline_versions": {
+    "platform_crawler": "platform_crawler_v1",
+    "stance_profiler": "stance_profiler_v1"
+  }
+}

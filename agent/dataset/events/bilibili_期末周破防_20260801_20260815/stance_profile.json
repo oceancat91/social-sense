@@ -1,0 +1,54 @@
+{
+  "stance_global": "neutral",
+  "bias_score": 0.015742560313751375,
+  "confidence": 0.4176842105263158,
+  "sentiment_global_mean": -0.09783664482068323,
+  "sentiment_dist": {
+    "pos": 0.0,
+    "neu": 0.8596491228070176,
+    "neg": 0.14035087719298245
+  },
+  "stance_ratios": {
+    "support": 0.017543859649122806,
+    "oppose": 0.0,
+    "neutral": 0.9824561403508771,
+    "mixed": 0.0,
+    "unclear": 0.0
+  },
+  "keyword_clusters": [
+    {
+      "label": "情绪表达",
+      "weight": 9.0,
+      "sample_content_ids": [
+        "312730463664",
+        "312827199024",
+        "309662943585"
+      ]
+    },
+    {
+      "label": "学业考试",
+      "weight": 5.0,
+      "sample_content_ids": [
+        "309662943585",
+        "313159166896",
+        "310221647457"
+      ]
+    },
+    {
+      "label": "怀旧考古",
+      "weight": 1.0,
+      "sample_content_ids": [
+        "312613543808"
+      ]
+    }
+  ],
+  "n_labeled": 57,
+  "model_version": "stance_profiler_v1",
+  "labeler": "lexicon:v1",
+  "platform": "bilibili",
+  "keyword": "期末周破防",
+  "time_range": {
+    "start": "2026-08-01T00:00:00+08:00",
+    "end": "2026-08-16T00:00:00+08:00"
+  }
+}

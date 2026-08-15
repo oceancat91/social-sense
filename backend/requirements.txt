@@ -10,6 +10,9 @@ pandas>=2.1
 jieba>=0.42
 transformers>=4.36
 gunicorn>=21.2
+# 多 Agent 引擎依赖（agent/ + multiagent/）
+tzdata>=2024.1
+langgraph>=0.2.0
 # PostgreSQL 驱动（Render 免费数据库依赖，本地开发可注释）
 psycopg2-binary>=2.9
 # 预训练情感模型推理后端（安装后自动启用，不装自动降级为词典分析）

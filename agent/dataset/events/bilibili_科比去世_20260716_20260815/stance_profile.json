@@ -1,0 +1,45 @@
+{
+  "stance_global": "neutral",
+  "bias_score": 0.046495612410121824,
+  "confidence": 0.41350000000000003,
+  "sentiment_global_mean": -0.06937341836207878,
+  "sentiment_dist": {
+    "pos": 0.015625,
+    "neu": 0.890625,
+    "neg": 0.09375
+  },
+  "stance_ratios": {
+    "support": 0.015625,
+    "oppose": 0.015625,
+    "neutral": 0.953125,
+    "mixed": 0.0,
+    "unclear": 0.015625
+  },
+  "keyword_clusters": [
+    {
+      "label": "情绪表达",
+      "weight": 7.0,
+      "sample_content_ids": [
+        "306852103201",
+        "309552786016",
+        "307748852385"
+      ]
+    },
+    {
+      "label": "体育赛事",
+      "weight": 1.0,
+      "sample_content_ids": [
+        "308512726001"
+      ]
+    }
+  ],
+  "n_labeled": 64,
+  "model_version": "stance_profiler_v1",
+  "labeler": "lexicon:v1",
+  "platform": "bilibili",
+  "keyword": "科比去世",
+  "time_range": {
+    "start": "2026-07-16T00:00:00+08:00",
+    "end": "2026-08-16T00:00:00+08:00"
+  }
+}

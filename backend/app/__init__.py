@@ -26,10 +26,12 @@ def create_app():
     from app.routes.auth import auth_bp
     from app.routes.task import task_bp
     from app.routes.analysis import analysis_bp
+    from app.routes.agent import agent_bp
 
     app.register_blueprint(auth_bp, url_prefix='/api/v1/auth')
     app.register_blueprint(task_bp, url_prefix='/api/v1/tasks')
     app.register_blueprint(analysis_bp, url_prefix='/api/v1/analysis')
+    app.register_blueprint(agent_bp, url_prefix='/api/v1/agent')
 
     # Render 健康检查端点
     @app.route('/health')

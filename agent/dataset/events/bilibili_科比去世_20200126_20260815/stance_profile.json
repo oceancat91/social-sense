@@ -1,0 +1,24 @@
+{
+  "stance_global": "neutral",
+  "bias_score": 0.0,
+  "confidence": 0.15,
+  "sentiment_global_mean": null,
+  "sentiment_dist": {
+    "pos": 0.0,
+    "neu": 1.0,
+    "neg": 0.0
+  },
+  "stance_ratios": {
+    "support": 0.0,
+    "oppose": 0.0,
+    "neutral": 1.0,
+    "mixed": 0.0,
+    "unclear": 0.0
+  },
+  "keyword_clusters": [],
+  "n_labeled": 0,
+  "model_version": "stance_profiler_v1",
+  "labeler": "lexicon:v1",
+  "platform": "bilibili",
+  "keyword": "科比去世"
+}

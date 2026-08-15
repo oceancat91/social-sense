@@ -1,0 +1,42 @@
+{
+  "event_id": "bilibili_科比去世_20200126_20260815",
+  "title": "科比去世",
+  "keyword": "科比去世",
+  "platform": "bilibili",
+  "platform_name_zh": "哔哩哔哩",
+  "time_range": {
+    "since": "2020-01-26",
+    "until": "2026-08-15",
+    "end_exclusive": "2026-08-16",
+    "timezone": "Asia/Shanghai"
+  },
+  "granularity": "day",
+  "description": "Agent 自动链路：话题「科比去世」。LLM 规划：爆发日为2020-01-26，长轴从爆发日到今天用于topic_heat时序；评论仅爬2页，时间窗为近14天（2026-08-01至2026-08-15），符合近期抽样要求。",
+  "source": {
+    "type": "bilibili_video_comments",
+    "method": "keyword_search + comment_crawl + clean_c1c8 + stance_profiler",
+    "tools": [
+      "PlatformCrawler",
+      "StanceProfiler"
+    ],
+    "notes": "mode=event_window, heat_axis=[2020-01-26,2026-08-15], comment=[2026-08-02,2026-08-15]×2p, search=[2020-01-26,2026-08-15], max_videos=5"
+  },
+  "files": {
+    "D_platform": "D_platform.json",
+    "stance_profile": "stance_profile.json"
+  },
+  "stats": {
+    "n_text": 0,
+    "n_buckets": 2394,
+    "empty_ratio": 1.0,
+    "stance_global": "neutral",
+    "bias_score": 0.0,
+    "is_empty": true
+  },
+  "schema_version": "dataset_schema_v1",
+  "created_at": "2026-08-15T15:56:30+08:00",
+  "pipeline_versions": {
+    "platform_crawler": "platform_crawler_v1",
+    "stance_profiler": "stance_profiler_v1"
+  }
+}
