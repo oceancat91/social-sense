@@ -2,7 +2,7 @@
 
 > **目标**：单 Agent 可调度的原子化 Skill；先形成可对齐的「时序 + 文本」数据源，再经多模态时序文本分析与严格校准，输出**单平台**标准化舆情包，供上层多平台对齐融合（本 Agent 不产出全局终裁结论）。
 >
-> **当前落地平台**：B 站（实现依赖 `bilibili-comment-crawler/`）；接口与指标 schema 按多平台可扩展约定设计，后续可挂载微博 / 抖音 / 小红书等适配器。
+> **已落地平台**：B站 / 微博 / 抖音 / 小红书 / 知乎 / 快手（共 6 平台）。B站有完整爬虫脚本（`crawler/`）；其余 5 平台通过 `PlatformCrawler/adapters/` 统一适配器采集，复用同一套清洗 + Skill2–6。接口与指标 schema 按多平台可扩展约定设计。
 >
 > **数据集规范（主契约）**：详见 [`DATASET_SPEC.md`](./DATASET_SPEC.md)（`D_platform` / `D_text` / `D_ts` / `D_meta` 字段、口径、空窗与对齐规则）。
 
@@ -278,6 +278,7 @@ summary_analysis   # 自然语言概括分析（要点/阵营/争议焦点）
 |----------|----------|
 | Skill1 全流水线 | `PlatformCrawler/pipeline.py`（检索→评论→清洗→`D_platform`） |
 | Skill1 检索/评论采集 | `PlatformCrawler/crawler/`（`B站关键词搜索.py`、`B站评论爬虫.py` 等） |
+| Skill1 多平台适配器 | `PlatformCrawler/adapters/`（`base.py` / `registry.py` + 6 平台 adapter） |
 | Skill1 鉴权 | `PlatformCrawler/crawler/auto_get_cookie.py`、`setup_cookie.py`、`bili_common.py` |
 | Skill1 清洗 C1–C8 + 建库 | `PlatformCrawler/dataloader/`（`cleaner.py` / `builder.py` / `validate.py`） |
 | Skill1 使用说明 | `PlatformCrawler/README.md` |
@@ -305,9 +306,30 @@ python -m PlatformCrawler.dataloader.cli --csv a.csv b.csv --keyword 话题词 -
 
 ## 四、扩展约定（多平台）
 
-- 新平台 = 新的 **Skill1 适配器**（采集+同一套清洗契约）+ 复用 Skill2–6。  
-- 跨平台对齐只认 `D_platform` schema；平台特有字段放入 `ext`，不得破坏 `D_ts` 核心指标。  
+- 新平台 = 新的 **Skill1 适配器**（采集+同一套清洗契约）+ 复用 Skill2–6。
+- **适配器层已实现**：`PlatformCrawler/adapters/`，统一 `PlatformAdapter` 抽象基类 + 注册表。
+  - `bilibili_adapter.py`：复用 `crawler/` 现有脚本。
+  - `weibo_adapter.py`：m.weibo.cn 搜索 + 评论（`weibo_cookie.txt`）。
+  - `zhihu_adapter.py`：api 搜索 + 回答评论（`zhihu_cookie.txt`，x-zse-96 签名）。
+  - `douyin_adapter.py`：web 搜索 + 评论（`douyin_cookie.txt`，a_bogus 签名）。
+  - `xiaohongshu_adapter.py`：web 搜索 + 笔记评论（`xiaohongshu_cookie.txt`，x-s 签名）。
+  - `kuaishou_adapter.py`：graphql 搜索 + 评论（`kuaishou_cookie.txt`）。
+  - 每个 adapter 产出「跨平台原始字段」，复用 `clean_records` + `build_d_platform`。
+- **立场词表按平台细分**：`StanceProfiler/labelers/platform_lexicons.py` 为 6 平台各配圈层用语（微博吃瓜 / 抖音家人 / 小红书种草 / 知乎论证 / 快手老铁 / B站弹幕），`LexiconLabeler` 按 `D_meta.platform` 自动合并词表。
+- 跨平台对齐只认 `D_platform` schema；平台特有字段放入 `ext`，不得破坏 `D_ts` 核心指标。
 - 热度/互动跨平台不可比时，对齐层使用**平台内 z-score / 分位数**，禁止直接比较原始 `like`。
+
+**多平台采集命令**
+
+```bash
+# 单平台流水线（--platform 非 bilibili 走通用适配器）
+python -m PlatformCrawler.pipeline 话题词 --platform weibo --since 2026-07-01 --until 2026-08-14
+
+# 全链路编排（Skill1→6，--platform 分发）
+python -m Agent.orchestrator --topic 话题词 --platform xiaohongshu
+```
+
+> 各平台真实采集需先配置对应 `*_cookie.txt`（详见各 adapter 文件头注释）；抖音/小红书/快手签名算法由平台前端 JS 生成，存在失效风险，失效时仅需替换 adapter 内签名函数，采集流程与字段映射不受影响。
 
 ---
 

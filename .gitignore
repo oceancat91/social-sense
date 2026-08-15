@@ -54,6 +54,7 @@ agent/Conclusion/outputs/
 # 爬虫本地配置与原始数据（含登录凭证，严禁提交）
 agent/PlatformCrawler/crawler/*.txt
 agent/PlatformCrawler/crawler/*.csv
+agent/PlatformCrawler/adapters/*_cookie.txt
 
 # 测试覆盖率
 htmlcov/

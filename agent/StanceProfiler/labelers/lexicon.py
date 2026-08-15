@@ -2,6 +2,8 @@
 增强词表标注器（正式替换 PlatformCrawler.stance_lite）。
 
 立场与情绪分开打分：立场看站队词，情绪看褒贬词；二者可不一致。
+支持按平台合并「通用词表 + 平台专属词表」（见 platform_lexicons.py），
+以适配各平台圈层用语，提升标注精准度。
 """
 
 from __future__ import annotations
@@ -10,6 +12,7 @@ import re
 from typing import Any
 
 from .base import BaseLabeler
+from .platform_lexicons import get_platform_lexicon, get_platform_markers, merge_lexicon
 
 # 立场（站队）
 SUPPORT_CUES = [
@@ -48,16 +51,31 @@ def _hits(text: str, words: list[str]) -> int:
     return sum(1 for w in words if w and w in text)
 
 
+# 通用基础词表（跨平台）；平台专属增量见 platform_lexicons.py
+_BASE_CUES = {
+    "support_cues": SUPPORT_CUES,
+    "oppose_cues": OPPOSE_CUES,
+    "pos_sent": POS_SENT,
+    "neg_sent": NEG_SENT,
+}
+
+
 class LexiconLabeler(BaseLabeler):
     name = "lexicon"
-    version = "v1"
+    version = "v2"
+
+    def __init__(self, platform: str | None = None) -> None:
+        # 合并通用词表 + 平台专属词表（缓存合并结果）
+        self.platform = (platform or "").lower() or None
+        self._cues = merge_lexicon(_BASE_CUES, get_platform_lexicon(self.platform))
+        self._markers = get_platform_markers(self.platform)
 
     def label(self, text: str, *, context: dict[str, Any] | None = None) -> dict[str, Any]:
         t = text or ""
-        support = _hits(t, SUPPORT_CUES)
-        oppose = _hits(t, OPPOSE_CUES)
-        pos_s = _hits(t, POS_SENT) + _hits(t, EMOJI_POS)
-        neg_s = _hits(t, NEG_SENT) + _hits(t, EMOJI_NEG)
+        support = _hits(t, self._cues["support_cues"])
+        oppose = _hits(t, self._cues["oppose_cues"])
+        pos_s = _hits(t, self._cues["pos_sent"]) + _hits(t, EMOJI_POS)
+        neg_s = _hits(t, self._cues["neg_sent"]) + _hits(t, EMOJI_NEG)
 
         # —— 立场 —— #
         if support > 0 and oppose > 0:
@@ -98,6 +116,12 @@ class LexiconLabeler(BaseLabeler):
                 continue
             if any(k in t for k in keys):
                 tags.append(name)
+
+        # 平台圈层标记词：命中则追加「圈层」标签，用于识别语境（不参与立场/情绪打分）
+        for marker in self._markers:
+            if marker and marker in t:
+                tags.append(f"圈层:{marker}")
+                break
 
         return {
             "stance_label": stance,

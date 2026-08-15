@@ -399,6 +399,74 @@ def run_full_pipeline(args: argparse.Namespace) -> dict[str, Any]:
     )
 
 
+def run_platform_pipeline(
+    keyword: str,
+    platform: str,
+    *,
+    since: str,
+    until: str,
+    granularity: str = "day",
+    search_pages: int = 1,
+    max_entities: int = 3,
+    comment_pages: int = 2,
+    mode: str = "latest",
+    out_json: Path | None = None,
+) -> dict[str, Any]:
+    """
+    通用多平台流水线：按 platform 选择 adapter，采集 → 清洗 → 组装 D_platform。
+
+    与 B站 run_full_pipeline 的区别：不依赖 B站专用爬虫脚本，而是通过
+    PlatformAdapter 统一接口（search + fetch_posts），产出跨平台原始字段后
+    复用 clean_records + build_d_platform，从而让 Skill2–6 对任意平台生效。
+    """
+    from zoneinfo import ZoneInfo
+
+    from PlatformCrawler.adapters import get_adapter
+    from PlatformCrawler.dataloader.builder import build_d_platform, save_d_platform
+    from PlatformCrawler.dataloader.cleaner import clean_records
+
+    TZ = ZoneInfo("Asia/Shanghai")
+    adapter = get_adapter(platform)
+
+    print(f"==> [{adapter.display_name}] search: {keyword}")
+    entities = adapter.search(
+        keyword, since=since, until=until, pages=search_pages, max_items=max_entities
+    )
+    print(f"==> [{adapter.display_name}] entities: {len(entities)}")
+
+    records = adapter.fetch_posts(
+        entities, since=since, until=until, pages=comment_pages, mode=mode
+    )
+    print(f"==> [{adapter.display_name}] raw records: {len(records)}")
+
+    start = datetime.strptime(since, "%Y-%m-%d").replace(tzinfo=TZ)
+    end_exclusive = (datetime.strptime(until, "%Y-%m-%d") + timedelta(days=1)).replace(tzinfo=TZ)
+
+    bundle = clean_records(records, time_range=(start, end_exclusive), platform=platform)
+
+    d_platform = build_d_platform(
+        bundle,
+        keyword=keyword,
+        time_range=(since, (start + (end_exclusive - start)).strftime("%Y-%m-%d")),
+        granularity=granularity,
+        platform=platform,
+    )
+
+    if out_json is None:
+        safe = re.sub(r'[\\/:*?"<>|\s]+', "_", keyword)[:40]
+        out_json = OUTPUT_DIR / f"D_platform_{platform}_{safe}_{since}_{until}_{granularity}.json"
+    d_platform["D_meta"]["text_uri"] = str(Path(out_json).resolve())
+    save_d_platform(d_platform, out_json)
+
+    meta = d_platform["D_meta"]
+    print(f"[{adapter.display_name}] D_platform saved: {out_json}")
+    print(
+        f"  n_text={meta['n_text']} n_buckets={meta['n_buckets']} "
+        f"empty_ratio={meta['empty_ratio']} stance_global={meta['stance_global']}"
+    )
+    return d_platform
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         description="PlatformCrawler 全流水线：检索→评论→清洗→D_platform",
@@ -416,6 +484,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p.add_argument("keyword", nargs="?", default=None, help="话题关键词（--from-csv 时可与 --keyword 二选一）")
     p.add_argument("--keyword", dest="keyword_opt", default=None, help="话题关键词（显式）")
+    p.add_argument(
+        "--platform",
+        default="bilibili",
+        choices=["bilibili", "weibo", "douyin", "xiaohongshu", "zhihu", "kuaishou"],
+        help="平台标识；非 bilibili 时走通用 adapter 流水线",
+    )
     p.add_argument(
         "--since",
         required=True,
@@ -484,6 +558,22 @@ def main(argv: list[str] | None = None) -> None:
     if not kw:
         raise SystemExit("请提供关键词，或使用: --from-csv ... --keyword xxx")
     args.keyword = kw
+
+    if args.platform != "bilibili":
+        run_platform_pipeline(
+            kw,
+            args.platform,
+            since=args.since,
+            until=args.until,
+            granularity=args.granularity,
+            search_pages=args.search_pages,
+            max_entities=args.max_videos,
+            comment_pages=min(2, int(args.comment_pages)),
+            mode=args.comment_mode,
+            out_json=Path(args.out) if args.out else None,
+        )
+        return
+
     run_full_pipeline(args)
 
 

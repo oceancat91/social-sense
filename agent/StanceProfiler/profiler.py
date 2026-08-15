@@ -122,7 +122,9 @@ def profile_d_platform(
     if "D_meta" not in d_platform or "D_text" not in d_platform or "D_ts" not in d_platform:
         raise ValueError("输入不是合法 D_platform，请先运行 PlatformCrawler")
 
-    labeler = labeler or LexiconLabeler()
+    if labeler is None:
+        platform = str((d_platform.get("D_meta") or {}).get("platform") or "")
+        labeler = LexiconLabeler(platform=platform or None)
     stance_conf_by_id: dict[str, float] = {}
 
     for t in d_platform["D_text"]:

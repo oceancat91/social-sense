@@ -95,8 +95,31 @@ def _should_augment(
 # ---------------- Skill 步骤（LangGraph 节点与线性执行共用） ---------------- #
 
 def step_crawl(state: State) -> State:
-    """Skill1：采集 + 清洗 → D_platform.json。"""
+    """Skill1：采集 + 清洗 → D_platform.json。
+
+    按 args.platform 分发：B站走专用爬虫；其余平台走通用 PlatformAdapter 流水线。
+    """
     args = state["args"]
+    platform = getattr(args, "platform", "bilibili") or "bilibili"
+
+    if platform != "bilibili":
+        from PlatformCrawler.pipeline import run_platform_pipeline
+
+        d_platform = run_platform_pipeline(
+            args.topic,
+            platform,
+            since=args.since,
+            until=args.until,
+            granularity=args.granularity,
+            search_pages=getattr(args, "search_pages", 1),
+            max_entities=getattr(args, "max_videos", 3),
+            comment_pages=getattr(args, "comment_pages", 2),
+            mode=getattr(args, "comment_mode", "latest"),
+        )
+        state["d_platform"] = d_platform
+        state["d_path"] = str((d_platform.get("D_meta") or {}).get("text_uri") or "")
+        return state
+
     d_path = run_skill1_crawler(args)
     state["d_path"] = str(d_path)
     state["d_platform"] = _load_json(d_path)
@@ -341,6 +364,12 @@ def run_agent_full(args: argparse.Namespace, *, use_langgraph: bool = True) -> d
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="单平台 Agent 全链路编排（Skill1→6）")
     p.add_argument("--topic", default=None, help="话题关键词（唯一必填的人工输入）")
+    p.add_argument(
+        "--platform",
+        default="bilibili",
+        choices=["bilibili", "weibo", "douyin", "xiaohongshu", "zhihu", "kuaishou"],
+        help="目标平台；非 bilibili 时走通用 PlatformAdapter 流水线",
+    )
     p.add_argument("--since", default=None, help="调试：强制覆盖评论窗开始日")
     p.add_argument("--until", default=None, help="调试：强制覆盖评论窗结束日")
     p.add_argument("--granularity", choices=["hour", "day"], default="day")
