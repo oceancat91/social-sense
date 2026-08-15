@@ -18,6 +18,10 @@ class BilibiliAdapter(PlatformAdapter):
     platform = "bilibili"
     display_name = "B站"
 
+    def _default_cookie_path(self) -> Path | None:
+        """B站 cookie 约定在 crawler/ 目录（bili_common.py 硬编码读取 bili_cookie.txt）。"""
+        return Path(__file__).resolve().parent.parent / "crawler" / "bili_cookie.txt"
+
     def search(self, keyword: str, *, since: str | None = None,
                until: str | None = None, pages: int = 1,
                order: str = "click", max_items: int = 20) -> list[dict[str, Any]]:

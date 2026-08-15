@@ -1,7 +1,8 @@
-"""数据采集服务：统一采集接口，当前由模拟数据源驱动"""
+"""数据采集服务：优先真实采集（agent PlatformAdapter），失败/无 cookie 回退 mock"""
 import logging
 
 from app.services.mock_data_service import MockDataGenerator, PLATFORM_PROFILES
+from app.services.real_crawler_bridge import RealCrawlUnavailable, collect
 
 logger = logging.getLogger(__name__)
 
@@ -12,21 +13,27 @@ class CrawlerService:
     """
     社交媒体数据采集服务。
 
-    当前阶段所有平台均由模拟数据源驱动（data_source='mock'），
-    真实采集器预留接口，接入合规数据源后可按平台逐步替换。
+    采集策略（按平台）：
+      1) 优先走 agent/PlatformCrawler 的真实采集适配器（需配置各平台 cookie）；
+      2) 缺 cookie 或采集失败时，回退到 mock 数据源（data_source='mock'），
+         保证监控任务与多 Agent 引擎在无凭证环境下仍可端到端演示。
     """
 
     @staticmethod
-    def crawl_weibo(keyword: str, **kwargs) -> list:
-        """微博真实采集器（预留）。接入需使用微博开放平台或合规数据服务。"""
-        # TODO: 接入真实微博数据源
-        return []
-
-    @staticmethod
-    def crawl_zhihu(keyword: str, **kwargs) -> list:
-        """知乎真实采集器（预留）。"""
-        # TODO: 接入真实知乎数据源
-        return []
+    def _try_real_crawl(keyword: str, platform: str, days: int, limit: int) -> list:
+        """尝试真实采集；不可用则返回 None（由调用方回退 mock）。"""
+        try:
+            records = collect(keyword, platform, days=days, limit=limit)
+            if records:
+                return records
+            logger.info('平台 %s 真实采集返回空，回退 mock', platform)
+            return []
+        except RealCrawlUnavailable as e:
+            logger.info('平台 %s 真实采集不可用，回退 mock: %s', platform, e)
+            return []
+        except Exception as e:  # noqa: BLE001
+            logger.warning('平台 %s 真实采集异常，回退 mock: %s', platform, e)
+            return []
 
     @classmethod
     def crawl(cls, keyword: str, platform: str = 'all',
@@ -35,7 +42,7 @@ class CrawlerService:
         按平台采集关键词相关舆情数据。
         :param keyword: 监控关键词（事件主题）
         :param platform: 平台标识，'all' 表示全平台
-        :param days: 回溯天数（模拟事件的时间跨度）
+        :param days: 回溯天数
         :param limit: 数据量上限
         """
         platforms = SUPPORTED_PLATFORMS if platform == 'all' else [platform]
@@ -43,7 +50,23 @@ class CrawlerService:
         if invalid:
             raise ValueError(f'不支持的平台: {invalid}')
 
-        generator = MockDataGenerator(keyword=keyword, days=days)
-        records = generator.generate(total=limit, platforms=platforms)
-        logger.info('采集完成: keyword=%s platform=%s raw=%d', keyword, platform, len(records))
+        records: list = []
+        real_count = 0
+        mock_platforms: list = []
+        for p in platforms:
+            real = cls._try_real_crawl(keyword, p, days=days, limit=limit)
+            if real:
+                records.extend(real)
+                real_count += len(real)
+            else:
+                mock_platforms.append(p)
+
+        if mock_platforms:
+            generator = MockDataGenerator(keyword=keyword, days=days)
+            records.extend(generator.generate(total=limit, platforms=mock_platforms))
+
+        logger.info(
+            '采集完成: keyword=%s platforms=%s raw=%d real=%d mock=%d',
+            keyword, platforms, len(records), real_count, len(records) - real_count,
+        )
         return records

@@ -95,7 +95,13 @@ class PlatformAdapter(ABC):
         return headers
 
     def _default_cookie_path(self) -> Path | None:
-        """平台约定 cookie 默认路径：<本适配器目录>/<platform>_cookie.txt。"""
+        """平台约定 cookie 默认路径：<本适配器目录>/<platform>_cookie.txt。
+
+        云部署时 agent/ 可能只读，可用 AGENT_ADAPTER_COOKIE_DIR 环境变量
+        指向可写目录（如 /app/agent_outputs/cookies），优先于源码目录。
+        """
+        if ADAPTER_COOKIE_DIR:
+            return Path(ADAPTER_COOKIE_DIR) / f"{self.platform}_cookie.txt"
         base = Path(__file__).resolve().parent
         return base / f"{self.platform}_cookie.txt"
 
