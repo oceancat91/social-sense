@@ -43,6 +43,18 @@ logs/
 *.sqlite3
 *.db
 
+# 多 Agent 引擎运行时产物（知识库 / 隐状态 / 报告输出）
+backend/agent_outputs/
+agent/KnowledgeAugmentor/store/
+agent/MultimodalAnalyzer/outputs/
+agent/agent/outputs/
+agent/PlatformCrawler/outputs/
+agent/Conclusion/outputs/
+
+# 爬虫本地配置与原始数据（含登录凭证，严禁提交）
+agent/PlatformCrawler/crawler/*.txt
+agent/PlatformCrawler/crawler/*.csv
+
 # 测试覆盖率
 htmlcov/
 .coverage

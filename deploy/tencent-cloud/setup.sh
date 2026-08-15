@@ -46,6 +46,8 @@ DB_PASSWORD=${DB_PASS}
 APP_SECRET_KEY=${SECRET_KEY}
 ADMIN_EMAIL=admin@social-sense.com
 ADMIN_PASSWORD=admin123
+DEEPSEEK_API_KEY=
+DEEPSEEK_MODEL=deepseek-chat
 ENVEOF
     echo -e "${GREEN}閰嶇疆鏂囦欢 .env 宸茬敓鎴?{NC}"
 else

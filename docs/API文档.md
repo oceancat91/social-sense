@@ -135,7 +135,42 @@
 - **URL**: `GET /analysis/trending`
 - **响应**: 基于高频关键词与互动热度聚合的话题榜。
 
-## 4. 数据采集说明
+## 4. 多 Agent 分析模块
+
+> 跨平台多 Agent 架构：主控 Agent + 每平台一个 Agent，靠统一消息契约对齐、融合，输出跨平台终裁 CT 与「信息茧房指数」。引擎代码在 `agent/`（B 站单平台 Skill1–6）与 `multiagent/`（跨平台主控），由 `backend/app/services/agent_engine.py` 封装。
+
+### 4.1 引擎状态
+
+- **URL**: `GET /agent/status`
+- **响应**: 引擎是否可用（`available`）与支持的平台列表。
+
+### 4.2 创建跨平台分析任务
+
+- **URL**: `POST /agent/analyze`
+- **请求参数**:
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| keyword | string | 是 | 分析话题关键词 |
+| platforms | array | 否 | 参与分析的平台列表；缺省时使用该用户已有数据覆盖的所有平台 |
+| task_id | int | 否 | 限定数据来源为某个监控任务；缺省时使用该用户全部任务数据 |
+
+- **说明**: 创建后后台执行「SentimentData → D_platform → Skill2–6 → 跨平台融合」，任务状态 `pending → running → success/partial/failed`。
+
+### 4.3 获取分析报告列表
+
+- **URL**: `GET /agent/reports?page=1&page_size=10`
+
+### 4.4 获取分析报告详情
+
+- **URL**: `GET /agent/reports/<report_id>`
+- **响应 `data.result`** 包含:
+  - `platform_reports[]`: 各平台的单平台报告（`D_ts`、立场分布、异常点、OT₁ 结论）
+  - `cross_platform`: 跨平台终裁 CT（`CT_status`、`summary`、`claims[]`、`risk_flags[]`、`echo_chamber` 茧房指数、`calibration` CX 门禁）
+
+> **数据源说明**：云端多 Agent 引擎不依赖真实 B 站爬虫/cookie，而是复用后端 `SentimentData`（已做情感分析）转成标准 `D_platform` 契约；未来接入真实采集器只需替换数据源转换层。未配置 `DEEPSEEK_API_KEY` 时，Skill5/6 结论与主控归纳自动降级为确定性规则，仍可跑通 Skill2–4 与跨平台融合。
+
+## 5. 数据采集说明
 
 当前阶段采集由多平台模拟数据源驱动（`scripts/seed_demo.py` / `scripts/crawl.py`），模拟热点事件在 6 大平台的完整生命周期与跨平台传播时序。真实平台采集器已在 `crawler_service.py` 预留接口，接入合规数据源后可按平台逐步替换。
 

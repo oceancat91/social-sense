@@ -42,6 +42,16 @@ services:
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin123}
       - HF_ENDPOINT=https://hf-mirror.com
       - SENTIMENT_MODEL_NAME=lxyuan/distilbert-base-multilingual-cased-sentiments-student
+      # 多 Agent 引擎：代码目录挂载 + DeepSeek 密钥
+      - AGENT_ROOT=/app/agent
+      - MULTIAGENT_ROOT=/app/multiagent
+      - AGENT_OUTPUT_DIR=/app/agent_outputs
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-}
+      - DEEPSEEK_MODEL=${DEEPSEEK_MODEL:-deepseek-chat}
+    volumes:
+      - ./agent:/app/agent:ro
+      - ./multiagent:/app/multiagent:ro
+      - agent_outputs:/app/agent_outputs
     depends_on:
       mysql:
         condition: service_healthy
@@ -60,3 +70,4 @@ services:
 
 volumes:
   mysql_data:
+  agent_outputs:
