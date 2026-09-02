@@ -9,7 +9,7 @@ from typing import Any
 from .gates import run_gates
 from .rewrite import rewrite_ot0
 
-CALIBRATOR_VERSION = "residual_calibrator_v1"
+CALIBRATOR_VERSION = "residual_calibrator_v2_risk_gate"
 
 
 def calibrate(

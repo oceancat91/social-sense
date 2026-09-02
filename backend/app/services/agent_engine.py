@@ -209,11 +209,18 @@ def _should_augment(d_platform: dict[str, Any], skill3: dict[str, Any]) -> bool:
     meta = d_platform.get("D_meta") or {}
     if int(meta.get("n_text") or 0) > 200:
         return True
-    return any(a.get("type") == "cross_modal_inconsistency" for a in skill3.get("anomalies") or [])
+    return any(
+        a.get("type") in ("cross_modal_inconsistency", "cross_scale_inconsistency")
+        or a.get("severity") in ("important", "critical")
+        for a in skill3.get("anomalies") or []
+    )
 
 
 def _deterministic_conclusion(
-    d_platform: dict[str, Any], stance_profile: dict[str, Any], reason: str
+    d_platform: dict[str, Any],
+    stance_profile: dict[str, Any],
+    reason: str,
+    skill3: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """无 LLM 时的确定性降级结论（仅基于硬数据，不做叙事）。"""
     ts = d_platform.get("D_ts") or []
@@ -238,6 +245,15 @@ def _deterministic_conclusion(
         claim_sentiment = "flat"
 
     claim_stance = stance_profile.get("stance_global") or "unclear"
+    anomalies = (skill3 or {}).get("anomalies") or []
+    risk_level = str(
+        ((skill3 or {}).get("risk_summary") or {}).get("max_severity") or "none"
+    )
+    anomaly_evidence = [str(a.get("ts")) for a in anomalies if a.get("ts")][:8]
+    local_evidence = [
+        f"{a.get('ts')} · {a.get('type')} · {a.get('reason') or a.get('score')}"
+        for a in anomalies[:5]
+    ]
 
     ot1 = {
         "OT1_status": "degraded",
@@ -248,7 +264,14 @@ def _deterministic_conclusion(
         "summary_analysis": f"[降级结论] 未配置 LLM，仅输出硬数据摘要：主导立场 {claim_stance}，"
         f"情绪均值 {sent_mean if sent_mean is not None else 'N/A'}，声量趋势 {claim_trend}。",
         "risk_flags": [],
-        "evidence_ids": [],
+        "risk_level": risk_level,
+        "anomaly_reasoning": {
+            "global_observation": f"评论声量趋势为 {claim_trend}，主导立场为 {claim_stance}",
+            "local_evidence": local_evidence,
+            "cross_check": "未调用 LLM，仅保留 Skill3 硬证据，未执行历史案例语义类比",
+            "reassessment": "结果为确定性降级输出；需结合空窗率与采集完整性人工复核",
+        },
+        "evidence_ids": anomaly_evidence,
         "calibration_rounds": 0,
     }
     return {
@@ -286,10 +309,23 @@ def run_platform_analysis(
     keyword = (d_platform.get("D_meta") or {}).get("keyword") or ""
     store = KnowledgeStore(index_path=str(output_dir() / "knowledge_store" / "index.jsonl"))
     store.write_d_platform(d_platform)
+    case_examples = store.retrieve_analysis_examples(d_platform)
     if _should_augment(d_platform, skill3):
         rag = store.retrieve(keyword, top_k=8, keyword=keyword)
+        rag.update(case_examples)
+        rag["augment_used"] = bool(
+            rag.get("rag_chunks") or rag.get("example_retrieval_used")
+        )
+    elif case_examples.get("example_retrieval_used"):
+        rag = {
+            **case_examples,
+            "augment_used": True,
+            "rag_chunks": [],
+            "history_cases": [],
+        }
     else:
         rag = None
+    store.write_analysis_case(d_platform, skill3)
 
     # Skill5+6 结论生成 + 校准（LLM 缺失则降级）
     conclusion: dict[str, Any]
@@ -300,9 +336,13 @@ def run_platform_analysis(
             )
         except Exception as e:  # noqa: BLE001
             logger.warning("结论生成降级（LLM 不可用）：%s", e)
-            conclusion = _deterministic_conclusion(d_platform, stance_profile, str(e))
+            conclusion = _deterministic_conclusion(
+                d_platform, stance_profile, str(e), skill3
+            )
     else:
-        conclusion = _deterministic_conclusion(d_platform, stance_profile, "skip_conclusion")
+        conclusion = _deterministic_conclusion(
+            d_platform, stance_profile, "skip_conclusion", skill3
+        )
 
     return _assemble_report(d_platform, stance_profile, skill3, rag, conclusion)
 
@@ -338,6 +378,8 @@ def _assemble_report(
         "top_tags": [c.get("label") for c in stance_profile.get("keyword_clusters") or []],
         "skill3": {
             "anomalies": skill3.get("anomalies") or [],
+            "risk_summary": skill3.get("risk_summary") or {},
+            "multiscale_windows": (skill3.get("multiscale") or {}).get("windows") or [],
             "need_recrawl": bool(skill3.get("need_recrawl")),
         },
         "augment_used": bool((rag or {}).get("augment_used")),
@@ -349,6 +391,8 @@ def _assemble_report(
             "uncertainty": ot1.get("uncertainty"),
             "summary_analysis": ot1.get("summary_analysis") or "",
             "risk_flags": ot1.get("risk_flags") or [],
+            "risk_level": ot1.get("risk_level") or "unknown",
+            "anomaly_reasoning": ot1.get("anomaly_reasoning") or {},
             "evidence_ids": ot1.get("evidence_ids") or [],
         },
         "generated_at": datetime.now().isoformat(timespec="seconds"),

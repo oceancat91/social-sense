@@ -10,7 +10,7 @@ from ..llm import chat, extract_json
 from ..schema import normalize_ot0
 from .prompts import SYSTEM_PROMPT, build_evidence_package, build_user_prompt
 
-GENERATOR_VERSION = "conclusion_gen_v1"
+GENERATOR_VERSION = "conclusion_gen_v2_case_icl"
 
 
 def generate_ot0(

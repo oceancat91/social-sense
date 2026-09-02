@@ -11,6 +11,8 @@ from typing import Any
 
 from ..schema import is_concrete
 
+RISK_RANK = {"unknown": -1, "none": 0, "warning": 1, "important": 2, "critical": 3}
+
 
 def _trend(values: list[float | None], eps_ratio: float = 0.05) -> str:
     vals = [v for v in values if v is not None]
@@ -128,6 +130,42 @@ def _check_g6(ot: dict[str, Any], d_platform: dict[str, Any], empty_threshold: f
     return None
 
 
+def _check_g7(
+    ot: dict[str, Any],
+    d_platform: dict[str, Any],
+    skill3: dict[str, Any] | None,
+    empty_threshold: float,
+) -> str | None:
+    """风险等级不得夸大 Skill3 硬证据，并要求给出可核验分析摘要。"""
+    claimed = str(ot.get("risk_level") or "unknown")
+    meta = d_platform.get("D_meta") or {}
+    empty = bool(meta.get("is_empty")) or float(meta.get("empty_ratio") or 0) >= empty_threshold
+    if empty and claimed not in ("none", "unknown"):
+        return f"高空窗/空数据下 risk_level 只能为 none/unknown，当前为 {claimed}"
+    if not skill3:
+        return None
+
+    anomalies = skill3.get("anomalies") or []
+    observed = str((skill3.get("risk_summary") or {}).get("max_severity") or "none")
+    if not anomalies and claimed not in ("none", "unknown"):
+        return f"Skill3 未检测到异常，但 risk_level={claimed}"
+    if (
+        claimed in RISK_RANK
+        and observed in RISK_RANK
+        and RISK_RANK[claimed] > RISK_RANK[observed]
+    ):
+        return f"risk_level={claimed} 高于 Skill3 可支持的最高等级 {observed}"
+
+    reasoning = ot.get("anomaly_reasoning") or {}
+    if claimed not in ("none", "unknown") and not (
+        reasoning.get("global_observation")
+        and reasoning.get("local_evidence")
+        and reasoning.get("reassessment")
+    ):
+        return "存在风险等级判断，但 anomaly_reasoning 缺少全局观察、局部证据或复核"
+    return None
+
+
 def run_gates(
     ot0: dict[str, Any],
     d_platform: dict[str, Any],
@@ -145,6 +183,7 @@ def run_gates(
         ("G4", _check_g4(ot0, d_platform)),
         ("G5", _check_g5(ot0, d_platform)),
         ("G6", _check_g6(ot0, d_platform, empty_threshold)),
+        ("G7", _check_g7(ot0, d_platform, skill3, empty_threshold)),
     ]
     deviations = [{"gate": g, "msg": m} for g, m in checks if m]
     return {

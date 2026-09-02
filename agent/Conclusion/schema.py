@@ -9,6 +9,7 @@ from typing import Any
 TRENDS = {"up", "down", "flat", "unknown"}
 STANCES = {"support", "oppose", "neutral", "mixed", "unclear"}
 UNCERTAINTIES = {"high", "mid", "low"}
+RISK_LEVELS = {"none", "warning", "important", "critical", "unknown"}
 
 OT0_FIELDS = [
     "claim_trend",
@@ -16,6 +17,8 @@ OT0_FIELDS = [
     "claim_sentiment",
     "claim_stance",
     "risk_flags",
+    "risk_level",
+    "anomaly_reasoning",
     "evidence_ids",
     "uncertainty",
     "summary_analysis",
@@ -39,6 +42,16 @@ def _str_list(v: Any) -> list[str]:
     return [str(v)]
 
 
+def _anomaly_reasoning(v: Any) -> dict[str, Any]:
+    raw = v if isinstance(v, dict) else {}
+    return {
+        "global_observation": str(raw.get("global_observation") or "").strip(),
+        "local_evidence": _str_list(raw.get("local_evidence")),
+        "cross_check": str(raw.get("cross_check") or "").strip(),
+        "reassessment": str(raw.get("reassessment") or "").strip(),
+    }
+
+
 def normalize_ot0(raw: dict[str, Any] | None) -> dict[str, Any]:
     raw = raw or {}
     claim_trend = _enum(raw.get("claim_trend"), TRENDS, "unknown")
@@ -48,6 +61,8 @@ def normalize_ot0(raw: dict[str, Any] | None) -> dict[str, Any]:
         "claim_sentiment": _enum(raw.get("claim_sentiment"), TRENDS, "unknown"),
         "claim_stance": _enum(raw.get("claim_stance"), STANCES, "unclear"),
         "risk_flags": _str_list(raw.get("risk_flags")),
+        "risk_level": _enum(raw.get("risk_level"), RISK_LEVELS, "unknown"),
+        "anomaly_reasoning": _anomaly_reasoning(raw.get("anomaly_reasoning")),
         "evidence_ids": _str_list(raw.get("evidence_ids")),
         "uncertainty": _enum(raw.get("uncertainty"), UNCERTAINTIES, "mid"),
         "summary_analysis": str(raw.get("summary_analysis") or "").strip(),
@@ -61,4 +76,4 @@ def is_concrete(ot: dict[str, Any]) -> bool:
     return any(
         ot.get(k) not in ("unknown", None, "")
         for k in ("claim_trend", "claim_sentiment", "claim_stance")
-    )
+    ) or ot.get("risk_level") not in ("unknown", "none", None, "")

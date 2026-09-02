@@ -115,3 +115,86 @@ def residual_scale(residual: dict[str, list[float | None]]) -> dict[str, float]:
         else:
             scale[m] = 1.4826 * m_
     return scale
+
+
+def normalize_window(window: int, n_buckets: int) -> int:
+    """把窗口归一为不小于 3 的奇数；短序列允许窗口覆盖全轴。"""
+    w = max(3, int(window))
+    if w % 2 == 0:
+        w += 1
+    if n_buckets >= 3 and w > n_buckets:
+        w = n_buckets if n_buckets % 2 else n_buckets - 1
+    return max(3, w)
+
+
+def build_multiscale_windows(
+    n_buckets: int,
+    base_window: int,
+    configured: tuple[int, ...] | None = None,
+) -> list[int]:
+    """构造短/中/长尺度窗口；显式配置时仅做合法化和去重。"""
+    if configured:
+        candidates = list(configured)
+    else:
+        base = normalize_window(base_window, n_buckets)
+        candidates = [3, base, base * 2 + 1]
+    return sorted({normalize_window(w, n_buckets) for w in candidates})
+
+
+def compute_multiscale_statistics(
+    series: dict[str, list[float | None]],
+    windows: list[int],
+) -> dict[str, dict[str, Any]]:
+    """按多个时间尺度计算基线、残差、稳健尺度与标准化残差。"""
+    result: dict[str, dict[str, Any]] = {}
+    for window in windows:
+        baseline, residual = compute_baseline_residual(series, window)
+        scale = residual_scale(residual)
+        z_scores = {
+            metric: [
+                (value / scale.get(metric, 1.0))
+                if value is not None and scale.get(metric, 1.0) > 0
+                else None
+                for value in values
+            ]
+            for metric, values in residual.items()
+        }
+        result[str(window)] = {
+            "window": window,
+            "baseline": baseline,
+            "residual": residual,
+            "scale": scale,
+            "z_scores": z_scores,
+        }
+    return result
+
+
+def fuse_multiscale_z(
+    multiscale: dict[str, dict[str, Any]],
+) -> dict[str, list[float | None]]:
+    """逐桶选择绝对值最大的尺度 z，保留方向，作为融合时序表征。"""
+    if not multiscale:
+        return {}
+    first = next(iter(multiscale.values()))
+    metrics = list((first.get("z_scores") or {}).keys())
+    fused: dict[str, list[float | None]] = {}
+    for metric in metrics:
+        per_scale = [
+            (stats.get("z_scores") or {}).get(metric) or []
+            for stats in multiscale.values()
+        ]
+        n = max((len(values) for values in per_scale), default=0)
+        values_out: list[float | None] = []
+        for i in range(n):
+            candidates = [
+                values[i]
+                for values in per_scale
+                if i < len(values) and values[i] is not None
+            ]
+            values_out.append(
+                max(candidates, key=lambda value: abs(float(value)))
+                if candidates
+                else None
+            )
+        fused[metric] = values_out
+    return fused

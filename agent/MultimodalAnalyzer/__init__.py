@@ -2,5 +2,5 @@
 
 from .analyzer import AnalyzerConfig, run_analysis
 
-__version__ = "multimodal_analyzer_v1"
+__version__ = "multimodal_analyzer_v2_cross_scale"
 __all__ = ["AnalyzerConfig", "run_analysis"]

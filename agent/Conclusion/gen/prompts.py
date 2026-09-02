@@ -108,6 +108,13 @@ def build_evidence_package(
             "status": (skill3 or {}).get("status"),
             "anomalies": (skill3 or {}).get("anomalies") or [],
             "residual_top": _compact_residual(skill3, d_ts),
+            "risk_summary": (skill3 or {}).get("risk_summary") or {},
+            "multiscale": {
+                "windows": ((skill3 or {}).get("multiscale") or {}).get("windows") or [],
+                "primary_window": ((skill3 or {}).get("multiscale") or {}).get(
+                    "primary_window"
+                ),
+            },
             "need_recrawl": (skill3 or {}).get("need_recrawl", False),
             "model_version": (skill3 or {}).get("model_version"),
         },
@@ -128,6 +135,10 @@ def build_evidence_package(
         "rag": {
             "augment_used": bool((rag or {}).get("augment_used")),
             "chunks": (rag or {}).get("rag_chunks") or [],
+            "history_cases": (rag or {}).get("history_cases") or [],
+            "anomaly_examples": (rag or {}).get("anomaly_examples") or [],
+            "normal_examples": (rag or {}).get("normal_examples") or [],
+            "example_retrieval_method": (rag or {}).get("retrieval_method"),
         },
         # 优先级 5：高权重文本
         "top_texts": top_texts,
@@ -143,7 +154,15 @@ SYSTEM_PROMPT = """你是「单平台舆情感知」系统的结论生成模块�
 2. 每个实指判断（趋势/情绪/立场）必须绑定至少一个 evidence_id（桶 ts 或 content_id），且必须存在于给定数据中。
 3. 空数据（is_empty=true 或 empty_ratio 很高）只允许输出「无观测/证据不足」，禁止臆测。
 4. RAG 片段标注为「补充非主证」，与 D_ts 冲突时以 D_ts 为准。
-5. summary_analysis 用中文撰写，覆盖：要点概括、声量与情绪解读、立场与阵营、争议与风险、异常说明、不确定与缺口。
+5. 历史正常/异常示例是 Skill3 自动生成的弱标签（非人工金标），只用于帮助区分正常波动和异常传播；不得把历史案例事实移植到当前事件，也不得把弱标签当作已证实结论。
+6. risk_level 不得高于 Skill3.risk_summary.max_severity；无异常时应为 none，证据不足时为 unknown。
+7. summary_analysis 用中文撰写，覆盖：要点概括、声量与情绪解读、立场与阵营、争议与风险、异常说明、不确定与缺口。
+
+可核验分析流程（输出观察与证据，不输出隐藏思维过程）：
+1. global_observation：仅概括 D_ts 的全局态势和多尺度响应。
+2. local_evidence：列出 Skill3 已检测异常，必须带桶 ts 或 content_id。
+3. cross_check：检查文本、互动指标和历史正反例是否支持当前异常；历史例只能作类比。
+4. reassessment：主动排查空窗、采集偏差、正常波动等反证，再决定风险等级。
 
 只输出一个 JSON 对象，不要 Markdown。JSON schema：
 {
@@ -152,6 +171,13 @@ SYSTEM_PROMPT = """你是「单平台舆情感知」系统的结论生成模块�
   "claim_sentiment": "up|down|flat|unknown",  // 情绪走向
   "claim_stance": "support|oppose|neutral|mixed|unclear",
   "risk_flags": ["争议/偏见/突变等，中文短语"],
+  "risk_level": "none|warning|important|critical|unknown",
+  "anomaly_reasoning": {
+    "global_observation": "基于 D_ts 的全局观察",
+    "local_evidence": ["含 ts/content_id 的局部异常证据"],
+    "cross_check": "跨模态与历史正反例核验结果",
+    "reassessment": "误报可能与最终复核"
+  },
   "evidence_ids": ["桶 ts 或 content_id，必须来自给定数据"],
   "uncertainty": "high|mid|low",
   "summary_analysis": "中文概括分析，覆盖要点/阵营/争议/异常/缺口",

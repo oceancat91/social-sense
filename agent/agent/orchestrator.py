@@ -87,7 +87,11 @@ def _should_augment(
     meta = d_platform.get("D_meta") or {}
     if int(meta.get("n_text") or 0) > CONTEXT_TEXT_THRESHOLD:
         return True
-    if any(a.get("type") == "cross_modal_inconsistency" for a in skill3.get("anomalies") or []):
+    if any(
+        a.get("type") in ("cross_modal_inconsistency", "cross_scale_inconsistency")
+        or a.get("severity") in ("important", "critical")
+        for a in skill3.get("anomalies") or []
+    ):
         return True
     return False
 
@@ -151,11 +155,25 @@ def step_augment(state: State) -> State:
     d_platform = state["d_platform"]
     store = KnowledgeStore()
     store.write_d_platform(d_platform)
+    case_examples = store.retrieve_analysis_examples(d_platform)
     if _should_augment(d_platform, state.get("skill3") or {}, force_history=state.get("force_history", False)):
         keyword = (d_platform.get("D_meta") or {}).get("keyword") or state["args"].topic
-        state["rag"] = store.retrieve(keyword, top_k=8, keyword=keyword)
+        rag = store.retrieve(keyword, top_k=8, keyword=keyword)
+        rag.update(case_examples)
+        rag["augment_used"] = bool(
+            rag.get("rag_chunks") or rag.get("example_retrieval_used")
+        )
+        state["rag"] = rag
+    elif case_examples.get("example_retrieval_used"):
+        state["rag"] = {
+            **case_examples,
+            "augment_used": True,
+            "rag_chunks": [],
+            "history_cases": [],
+        }
     else:
         state["rag"] = None
+    store.write_analysis_case(d_platform, state.get("skill3") or {})
     return state
 
 

@@ -25,6 +25,9 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--in", dest="inp", required=True, help="输入 D_platform.json")
     p.add_argument("--out", default=None, help="输出 skill3 结果 JSON")
     p.add_argument("--tau", type=float, default=3.0, help="异常 z 阈值")
+    p.add_argument("--tau-cross-scale", type=float, default=2.5, help="跨尺度残差跨度阈值")
+    p.add_argument("--scale-windows", default=None, help="多尺度窗口，如 3,7,15")
+    p.add_argument("--no-multiscale", action="store_true", help="关闭跨尺度检测")
     p.add_argument("--no-text", action="store_true", help="关闭文本塔")
     p.add_argument("--dry-run", action="store_true", help="只打印摘要")
     args = p.parse_args(argv)
@@ -35,7 +38,23 @@ def main(argv: list[str] | None = None) -> None:
     with inp.open("r", encoding="utf-8") as f:
         d_platform = json.load(f)
 
-    cfg = AnalyzerConfig(tau=args.tau, enable_text_tower=not args.no_text)
+    scale_windows = None
+    if args.scale_windows:
+        try:
+            scale_windows = tuple(
+                int(value.strip())
+                for value in str(args.scale_windows).split(",")
+                if value.strip()
+            )
+        except ValueError as exc:
+            raise SystemExit("--scale-windows 必须是逗号分隔的整数") from exc
+    cfg = AnalyzerConfig(
+        tau=args.tau,
+        tau_cross_scale=args.tau_cross_scale,
+        multiscale_windows=scale_windows,
+        enable_multiscale=not args.no_multiscale,
+        enable_text_tower=not args.no_text,
+    )
     result = run_analysis(d_platform, cfg, out_dir=OUTPUT_DIR)
 
     summary = {

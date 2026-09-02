@@ -15,21 +15,33 @@ from typing import Any
 from .detectors import (
     RECRAWLABLE_TYPES,
     detect_cross_modal,
+    detect_cross_scale_inconsistency,
     detect_semantic_drift,
     detect_sentiment_flip,
     detect_spikes,
     detect_stance_shift,
+    enrich_anomalies,
 )
 from .temporal import (
-    compute_baseline_residual,
+    build_multiscale_windows,
+    compute_multiscale_statistics,
     extract_series,
-    residual_scale,
+    fuse_multiscale_z,
 )
 from .text_tower import analyze_text_tower
 
-MODEL_VERSION = "multimodal_analyzer_v1"
+MODEL_VERSION = "multimodal_analyzer_v2_cross_scale"
 
 SPIKE_METRICS = ("volume", "heat", "topic_heat", "topic_volume")
+CROSS_SCALE_METRICS = (
+    "volume",
+    "heat",
+    "topic_heat",
+    "topic_volume",
+    "sent_mean",
+    "controversy",
+    "bias_proxy",
+)
 
 HIDDEN_FEATURES = [
     "z_volume",
@@ -49,9 +61,12 @@ class AnalyzerConfig:
     tau_flip: float = 0.35      # 情绪突变最小幅度
     tau_stance: float = 0.3     # 立场主导切换所需主导占比
     tau_cross: float = 0.15     # 跨模态反向最小幅度
+    tau_cross_scale: float = 2.5  # 不同尺度标准化残差最小跨度
     tau_drift: float = 0.10     # 语义漂移相似度下界（低于视为漂移）
     min_drift_volume: int = 5   # 语义漂移两侧最小样本量（稀疏桶不算）
     baseline_window: int | None = None  # None = 自适应
+    multiscale_windows: tuple[int, ...] | None = None
+    enable_multiscale: bool = True
     enable_text_tower: bool = True
     hidden_dir: Path | None = None
 
@@ -64,19 +79,18 @@ def _adaptive_window(n_buckets: int) -> int:
 
 def _build_hidden_states(
     d_ts: list[dict[str, Any]],
-    residual: dict[str, list[float | None]],
-    scale: dict[str, float],
+    fused_z: dict[str, list[float | None]],
     text_tower: dict[str, Any],
 ) -> dict[str, Any]:
-    """构造每桶融合特征（供 RAG/结论侧引用，不直接当结论）。"""
+    """构造每桶融合特征；z_* 使用多尺度绝对值最大响应。"""
     bucket_sent = text_tower.get("bucket_sentiment") or []
     bucket_volume = text_tower.get("bucket_volume") or []
     per_bucket: dict[str, list[float | None]] = {}
     for i, b in enumerate(d_ts):
         def z(m: str) -> float | None:
-            r = residual.get(m, [None] * len(d_ts))[i]
-            s = scale.get(m, 1.0)
-            return round(r / s, 4) if (r is not None and s > 0) else None
+            values = fused_z.get(m) or []
+            value = values[i] if i < len(values) else None
+            return round(float(value), 4) if value is not None else None
 
         feat: list[float | None] = [
             z("volume"),
@@ -115,6 +129,11 @@ def run_analysis(
             "hidden_states": {"feature_names": HIDDEN_FEATURES, "per_bucket": {}},
             "residual": {},
             "baseline": {},
+            "multiscale": {"windows": [], "z_scores": {}},
+            "risk_summary": {
+                "max_severity": "none",
+                "severity_counts": {"warning": 0, "important": 0, "critical": 0},
+            },
             "need_recrawl": False,
             "recrawl_windows": [],
             "model_version": MODEL_VERSION,
@@ -124,15 +143,43 @@ def run_analysis(
     n = len(d_ts)
     window = cfg.baseline_window or _adaptive_window(n)
     series = extract_series(d_ts)
-    baseline, residual = compute_baseline_residual(series, window)
-    scale = residual_scale(residual)
+    windows = build_multiscale_windows(
+        n,
+        window,
+        cfg.multiscale_windows if cfg.enable_multiscale else (window,),
+    )
+    multiscale_stats = compute_multiscale_statistics(series, windows)
+    primary_window = min(windows, key=lambda value: abs(value - window))
+    primary = multiscale_stats[str(primary_window)]
+    baseline = primary["baseline"]
+    residual = primary["residual"]
+    scale = primary["scale"]
+    multiscale_z = {
+        scale_name: stats["z_scores"]
+        for scale_name, stats in multiscale_stats.items()
+    }
+    fused_z = fuse_multiscale_z(multiscale_stats)
 
     text_tower: dict[str, Any] = {}
     if cfg.enable_text_tower:
         text_tower = analyze_text_tower(d_platform)
 
     anomalies: list[dict[str, Any]] = []
-    anomalies += detect_spikes(d_ts, residual, scale, cfg.tau, SPIKE_METRICS)
+    anomalies += detect_spikes(
+        d_ts,
+        residual,
+        scale,
+        cfg.tau,
+        SPIKE_METRICS,
+        multiscale_z=multiscale_z,
+    )
+    if cfg.enable_multiscale and len(windows) >= 2:
+        anomalies += detect_cross_scale_inconsistency(
+            d_ts,
+            multiscale_z,
+            cfg.tau_cross_scale,
+            CROSS_SCALE_METRICS,
+        )
     anomalies += detect_sentiment_flip(d_ts, series, cfg.tau_flip)
     anomalies += detect_stance_shift(d_ts, cfg.tau_stance)
     if text_tower:
@@ -149,10 +196,42 @@ def run_analysis(
             seen[key] = a
     anomalies = sorted(seen.values(), key=lambda a: (a["ts"], a["type"]))
 
-    need_recrawl = any(a["type"] in RECRAWLABLE_TYPES and a["score"] >= cfg.tau for a in anomalies)
-    recrawl_windows = sorted({a["ts"] for a in anomalies if a["type"] in RECRAWLABLE_TYPES})
+    thresholds = {
+        "spike": cfg.tau,
+        "sentiment_flip": cfg.tau_flip,
+        "stance_shift": max(0.5, cfg.tau_stance),
+        "cross_modal": max(0.3, cfg.tau_cross),
+        "semantic_drift": max(0.5, 1.0 - cfg.tau_drift),
+        "cross_scale": cfg.tau_cross_scale,
+    }
+    empty_ratio = float(meta.get("empty_ratio") or 0)
+    anomalies = enrich_anomalies(anomalies, thresholds, empty_ratio=empty_ratio)
 
-    hidden_states = _build_hidden_states(d_ts, residual, scale, text_tower)
+    severity_counts = {"warning": 0, "important": 0, "critical": 0}
+    for anomaly in anomalies:
+        severity = str(anomaly.get("severity") or "warning")
+        if severity in severity_counts:
+            severity_counts[severity] += 1
+    severity_rank = {"none": 0, "warning": 1, "important": 2, "critical": 3}
+    max_severity = max(
+        (str(a.get("severity") or "warning") for a in anomalies),
+        key=lambda value: severity_rank.get(value, 0),
+        default="none",
+    )
+
+    def should_recrawl(anomaly: dict[str, Any]) -> bool:
+        if anomaly.get("type") not in RECRAWLABLE_TYPES:
+            return False
+        if anomaly.get("severity") in ("important", "critical"):
+            return True
+        return str(anomaly.get("type") or "").endswith("_spike") and float(
+            anomaly.get("score") or 0
+        ) >= cfg.tau
+
+    need_recrawl = any(should_recrawl(a) for a in anomalies)
+    recrawl_windows = sorted({a["ts"] for a in anomalies if should_recrawl(a)})
+
+    hidden_states = _build_hidden_states(d_ts, fused_z, text_tower)
     hidden_uri = None
     if out_dir is not None:
         out = Path(out_dir)
@@ -170,14 +249,27 @@ def run_analysis(
         "hidden_states": hidden_states,
         "residual": residual,
         "baseline": baseline,
+        "multiscale": {
+            "windows": windows,
+            "primary_window": primary_window,
+            "z_scores": multiscale_z,
+        },
+        "risk_summary": {
+            "max_severity": max_severity,
+            "severity_counts": severity_counts,
+        },
         "need_recrawl": need_recrawl,
         "recrawl_windows": recrawl_windows,
         "model_version": MODEL_VERSION,
         "config": {
             "tau": cfg.tau,
-            "baseline_window": window,
+            "baseline_window": primary_window,
+            "multiscale_windows": windows,
+            "tau_cross_scale": cfg.tau_cross_scale,
+            "enable_multiscale": cfg.enable_multiscale,
             "enable_text_tower": cfg.enable_text_tower,
             "spike_metrics": list(SPIKE_METRICS),
+            "cross_scale_metrics": list(CROSS_SCALE_METRICS),
         },
         "generated_at": datetime.now().isoformat(timespec="seconds"),
     }
