@@ -1,0 +1,278 @@
+[
+  {
+    "scope": "broad",
+    "topic": "体育竞技与健身",
+    "platforms": [
+      "bilibili",
+      "weibo"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\sports_fitness__broad.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.2887
+  },
+  {
+    "scope": "broad",
+    "topic": "医疗健康与心理",
+    "platforms": [
+      "bilibili",
+      "weibo"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\health_psychology__broad.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.3185
+  },
+  {
+    "scope": "broad",
+    "topic": "影视娱乐与明星",
+    "platforms": [
+      "bilibili",
+      "weibo"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\entertainment__broad.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.3697
+  },
+  {
+    "scope": "broad",
+    "topic": "教育科研与科普",
+    "platforms": [
+      "bilibili",
+      "weibo"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\education_science__broad.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.2355
+  },
+  {
+    "scope": "broad",
+    "topic": "文化历史与艺术",
+    "platforms": [
+      "bilibili",
+      "weibo"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\culture_history__broad.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.3395
+  },
+  {
+    "scope": "broad",
+    "topic": "时政与公共治理",
+    "platforms": [
+      "bilibili",
+      "weibo"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\public_affairs__broad.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.0898
+  },
+  {
+    "scope": "broad",
+    "topic": "游戏动漫与虚拟内容",
+    "platforms": [
+      "bilibili",
+      "weibo"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\games_anime__broad.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.3235
+  },
+  {
+    "scope": "broad",
+    "topic": "生活消费与家庭",
+    "platforms": [
+      "bilibili",
+      "weibo"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\life_consumption__broad.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.3502
+  },
+  {
+    "scope": "broad",
+    "topic": "社会事件与法治",
+    "platforms": [
+      "bilibili",
+      "weibo"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\society_law__broad.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.1128
+  },
+  {
+    "scope": "broad",
+    "topic": "科技工业与交通",
+    "platforms": [
+      "bilibili",
+      "weibo"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\technology_industry__broad.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.1003
+  },
+  {
+    "scope": "broad",
+    "topic": "自然环境与三农动物",
+    "platforms": [
+      "bilibili",
+      "weibo"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\nature_rural__broad.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.3363
+  },
+  {
+    "scope": "broad",
+    "topic": "财经商业与职场",
+    "platforms": [
+      "bilibili",
+      "weibo"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\economy_business__broad.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.0722
+  },
+  {
+    "scope": "hot",
+    "topic": "2026美加墨世界杯",
+    "platforms": [
+      "bilibili",
+      "weibo",
+      "xiaohongshu"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\sports_fitness__hot.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.217
+  },
+  {
+    "scope": "hot",
+    "topic": "AI漫剧爆发",
+    "platforms": [
+      "bilibili",
+      "weibo",
+      "xiaohongshu"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\games_anime__hot.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.2545
+  },
+  {
+    "scope": "hot",
+    "topic": "AI艺人与活人感之争",
+    "platforms": [
+      "bilibili",
+      "weibo",
+      "xiaohongshu"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\entertainment__hot.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.2834
+  },
+  {
+    "scope": "hot",
+    "topic": "中美关税战",
+    "platforms": [
+      "bilibili",
+      "weibo",
+      "xiaohongshu"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\public_affairs__hot.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.195
+  },
+  {
+    "scope": "hot",
+    "topic": "人形机器人商业化",
+    "platforms": [
+      "bilibili",
+      "weibo",
+      "xiaohongshu"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\technology_industry__hot.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.256
+  },
+  {
+    "scope": "hot",
+    "topic": "国潮与传统文化复兴",
+    "platforms": [
+      "bilibili",
+      "weibo",
+      "xiaohongshu"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\culture_history__hot.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.3155
+  },
+  {
+    "scope": "hot",
+    "topic": "学历贬值与就业难",
+    "platforms": [
+      "bilibili",
+      "weibo",
+      "xiaohongshu"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\education_science__hot.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.3013
+  },
+  {
+    "scope": "hot",
+    "topic": "戒网瘾双胞胎事件",
+    "platforms": [
+      "bilibili",
+      "weibo",
+      "xiaohongshu"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\society_law__hot.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.2196
+  },
+  {
+    "scope": "hot",
+    "topic": "房价下跌与楼市",
+    "platforms": [
+      "bilibili",
+      "weibo",
+      "xiaohongshu"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\economy_business__hot.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.3158
+  },
+  {
+    "scope": "hot",
+    "topic": "极端天气与气候",
+    "platforms": [
+      "bilibili",
+      "weibo",
+      "xiaohongshu"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\nature_rural__hot.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.2556
+  },
+  {
+    "scope": "hot",
+    "topic": "消费降级与反向消费",
+    "platforms": [
+      "bilibili",
+      "weibo",
+      "xiaohongshu"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\life_consumption__hot.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.2927
+  },
+  {
+    "scope": "hot",
+    "topic": "青少年心理健康",
+    "platforms": [
+      "bilibili",
+      "weibo",
+      "xiaohongshu"
+    ],
+    "file": "dataset\\real_multiplatform\\fusion\\health_psychology__hot.json",
+    "CT_status": "accepted",
+    "echo_chamber_score": 0.3007
+  }
+]

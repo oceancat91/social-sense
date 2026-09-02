@@ -1,0 +1,213 @@
+{
+  "schema_version": "platform_report_v1",
+  "platform": "douyin:生活消费与家庭",
+  "keyword": "生活消费与家庭",
+  "meta": {
+    "platform": "douyin:生活消费与家庭",
+    "keyword": "生活消费与家庭",
+    "time_range": {
+      "start": "2025-10-18T00:00:00+08:00",
+      "end": "2026-08-20T00:00:00+08:00"
+    },
+    "timezone": "Asia/Shanghai",
+    "granularity": "day",
+    "n_text": 4169,
+    "n_text_raw_in": 4219,
+    "n_buckets": 306,
+    "empty_ratio": 0.8202614379084967,
+    "is_empty": false,
+    "stance_global": "neutral",
+    "bias_score": 0.06595436039643426,
+    "confidence": 0.42254305588870233,
+    "sentiment_global_mean": 0.09018970165403974,
+    "clean_rule_version": "clean_c1c8_v1",
+    "source_skill_versions": {
+      "platform_crawler": "platform_crawler_v1",
+      "stance_profiler": "stance_profiler_v1"
+    },
+    "ext": {
+      "metric_profile": "dataset_spec_v1_default",
+      "merge_policy": "keep_higher_interact",
+      "sent_std_policy": "null_if_lt2",
+      "stance_provisional": false,
+      "clean_log": [
+        "C0: input_rows=4219",
+        "C2 drop empty/noise idx=1233",
+        "C2 drop empty/noise idx=1234",
+        "C2 drop empty/noise idx=1246",
+        "C2 drop empty/noise idx=1249",
+        "C2 drop empty/noise idx=1250",
+        "C2 drop empty/noise idx=1258",
+        "C2 drop empty/noise idx=1259",
+        "C2 drop empty/noise idx=1517",
+        "C2 drop empty/noise idx=1787",
+        "C2 drop empty/noise idx=1979",
+        "C2 drop empty/noise idx=1989",
+        "C2 drop empty/noise idx=2069",
+        "C2 drop empty/noise idx=2070",
+        "C2 drop empty/noise idx=2088",
+        "C2 drop empty/noise idx=2098",
+        "C2 drop empty/noise idx=2100",
+        "C2 drop empty/noise idx=2311",
+        "C2 drop empty/noise idx=2557",
+        "C2 drop empty/noise idx=2632",
+        "C2 drop empty/noise idx=2703",
+        "C2 drop empty/noise idx=2836",
+        "C2 drop empty/noise idx=2996",
+        "C2 drop empty/noise idx=3014",
+        "C2 drop empty/noise idx=3331",
+        "C2 drop empty/noise idx=3425",
+        "C2 drop empty/noise idx=3450",
+        "C2 drop empty/noise idx=3488",
+        "C2 drop empty/noise idx=3548",
+        "C2 drop empty/noise idx=3565",
+        "C2 drop empty/noise idx=3624",
+        "C2 drop empty/noise idx=3629",
+        "C2 drop empty/noise idx=3637",
+        "C2 drop empty/noise idx=3638",
+        "C2 drop empty/noise idx=3649",
+        "C2 drop empty/noise idx=3653",
+        "C2 drop empty/noise idx=3680",
+        "C2 drop empty/noise idx=3694",
+        "C2 drop empty/noise idx=3709",
+        "C2 drop empty/noise idx=3719",
+        "C2 drop empty/noise idx=3722",
+        "C2 drop empty/noise idx=3724",
+        "C2 drop empty/noise idx=3730",
+        "C2 drop empty/noise idx=3734",
+        "C2 drop empty/noise idx=3743",
+        "C2 drop empty/noise idx=3772",
+        "C2 drop empty/noise idx=3777",
+        "C2 drop empty/noise idx=3779",
+        "C2 drop empty/noise idx=3783",
+        "C2 drop empty/noise idx=3793",
+        "C2 drop empty/noise idx=3947",
+        "C1-C4: kept=4169 quarantine=0",
+        "C6: in_range=4169 out_of_range=0",
+        "C5: after_dedup=4169",
+        "C7: spam_marked; stance_lite applied; final=4169"
+      ],
+      "n_quarantine": 0,
+      "n_out_of_range": 0,
+      "alpha_reply": 1.0,
+      "beta_share": 1.0,
+      "topic_heat_metric": "video_topic_heat_v1",
+      "topic_heat_source": "search_pubdate",
+      "n_heat_videos": 0,
+      "topic_heat_formula": "sum_v log1p(play)+0.5*log1p(review)+0.25*log1p(favorites)+0.25*log1p(danmaku) by video pubdate bucket",
+      "topic_heat_peak_ts": "2025-10-18T00:00:00+08:00",
+      "topic_heat_peak": 0.0,
+      "topic_volume_sum": 0.0,
+      "topic_heat_sum": 0.0,
+      "stance_labeler": "lexicon:v2",
+      "stance_profiler_version": "stance_profiler_v1"
+    }
+  },
+  "stance_dist": {
+    "support": 0.06140561285680019,
+    "oppose": 0.010793955384984408,
+    "neutral": 0.9258815063564404,
+    "mixed": 0.000959462700887503,
+    "unclear": 0.000959462700887503
+  },
+  "stance_profile": {
+    "stance_global": "neutral",
+    "bias_score": 0.06595436039643426,
+    "confidence": 0.42254305588870233,
+    "sentiment_global_mean": 0.09018970165403974,
+    "sentiment_dist": {
+      "pos": 0.17174382345886305,
+      "neu": 0.7831614295994244,
+      "neg": 0.04509474694171264
+    },
+    "stance_ratios": {
+      "support": 0.06140561285680019,
+      "oppose": 0.010793955384984408,
+      "neutral": 0.9258815063564404,
+      "mixed": 0.000959462700887503,
+      "unclear": 0.000959462700887503
+    },
+    "keyword_clusters": [
+      {
+        "label": "情绪表达",
+        "weight": 937.0,
+        "sample_content_ids": [
+          "7671678119262569253",
+          "7672165953472037691",
+          "7672101106868486962"
+        ]
+      },
+      {
+        "label": "演技作品",
+        "weight": 61.0,
+        "sample_content_ids": [
+          "7562620789099840290",
+          "7562738165706949385",
+          "7562711069983867648"
+        ]
+      },
+      {
+        "label": "学业考试",
+        "weight": 46.0,
+        "sample_content_ids": [
+          "7671619533820773146",
+          "7672682645239874361",
+          "7562959544772035385"
+        ]
+      },
+      {
+        "label": "体育赛事",
+        "weight": 30.0,
+        "sample_content_ids": [
+          "7668677212057748275",
+          "7668714942300783417",
+          "7668716864503743291"
+        ]
+      },
+      {
+        "label": "圈层:米",
+        "weight": 26.0,
+        "sample_content_ids": [
+          "7672247178039853873",
+          "7671891058418877243",
+          "7671935829275460403"
+        ]
+      },
+      {
+        "label": "怀旧考古",
+        "weight": 22.0,
+        "sample_content_ids": [
+          "7562764826997965578",
+          "7672140785060725561",
+          "7671967514633929513"
+        ]
+      },
+      {
+        "label": "圈层:K",
+        "weight": 7.0,
+        "sample_content_ids": [
+          "7562711069983867648",
+          "7672100317093315377",
+          "7672017620950532914"
+        ]
+      },
+      {
+        "label": "圈层:预制",
+        "weight": 1.0,
+        "sample_content_ids": [
+          "7564035271130645305"
+        ]
+      }
+    ],
+    "n_labeled": 4169,
+    "model_version": "stance_profiler_v1",
+    "labeler": "lexicon:v2",
+    "platform": "douyin",
+    "keyword": "生活消费与家庭",
+    "time_range": {
+      "start": "2025-10-18T00:00:00+08:00",
+      "end": "2026-08-20T00:00:00+08:00"
+    }
+  },
+  "generated_at": "2026-08-21T10:32:25"
+}

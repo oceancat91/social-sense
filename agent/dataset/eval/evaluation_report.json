@@ -1,0 +1,946 @@
+{
+  "schema_version": "skill_evaluation_v1",
+  "generated_at": "2026-09-02T14:16:50",
+  "stance_profiler": {
+    "golden_n": 40,
+    "stance": {
+      "accuracy": 0.9,
+      "macro_precision": 0.9359,
+      "macro_recall": 0.7833,
+      "macro_f1": 0.818,
+      "per_class": {
+        "support": {
+          "precision": 0.9167,
+          "recall": 1.0,
+          "f1": 0.9565,
+          "tp": 11,
+          "fp": 1,
+          "fn": 0
+        },
+        "oppose": {
+          "precision": 0.8462,
+          "recall": 1.0,
+          "f1": 0.9167,
+          "tp": 11,
+          "fp": 2,
+          "fn": 0
+        },
+        "neutral": {
+          "precision": 0.9167,
+          "recall": 0.9167,
+          "f1": 0.9167,
+          "tp": 11,
+          "fp": 1,
+          "fn": 1
+        },
+        "mixed": {
+          "precision": 1.0,
+          "recall": 0.3333,
+          "f1": 0.5,
+          "tp": 1,
+          "fp": 0,
+          "fn": 2
+        },
+        "unclear": {
+          "precision": 1.0,
+          "recall": 0.6667,
+          "f1": 0.8,
+          "tp": 2,
+          "fp": 0,
+          "fn": 1
+        }
+      },
+      "confusion": {
+        "support->support": 11,
+        "oppose->oppose": 11,
+        "mixed->oppose": 1,
+        "neutral->neutral": 11,
+        "mixed->neutral": 1,
+        "neutral->oppose": 1,
+        "unclear->support": 1,
+        "mixed->mixed": 1,
+        "unclear->unclear": 2
+      }
+    },
+    "sentiment": {
+      "accuracy": 0.8,
+      "macro_precision": 0.8186,
+      "macro_recall": 0.7987,
+      "macro_f1": 0.8056,
+      "per_class": {
+        "pos": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "tp": 9,
+          "fp": 3,
+          "fn": 3
+        },
+        "neu": {
+          "precision": 0.7059,
+          "recall": 0.8,
+          "f1": 0.75,
+          "tp": 12,
+          "fp": 5,
+          "fn": 3
+        },
+        "neg": {
+          "precision": 1.0,
+          "recall": 0.8462,
+          "f1": 0.9167,
+          "tp": 11,
+          "fp": 0,
+          "fn": 2
+        }
+      },
+      "confusion": {
+        "pos->pos": 9,
+        "neg->neg": 11,
+        "pos->neu": 3,
+        "neg->neu": 2,
+        "neu->pos": 3,
+        "neu->neu": 12
+      }
+    },
+    "errors": [
+      {
+        "text": "前排支持，白嫖失败",
+        "platform": "bilibili",
+        "stance": {
+          "gold": "support",
+          "pred": "support"
+        },
+        "sentiment": {
+          "gold": "pos",
+          "pred": "neu"
+        }
+      },
+      {
+        "text": "我既佩服他的勇气，又觉得这做法离谱",
+        "platform": "bilibili",
+        "stance": {
+          "gold": "mixed",
+          "pred": "oppose"
+        },
+        "sentiment": {
+          "gold": "neg",
+          "pred": "neu"
+        }
+      },
+      {
+        "text": "这个配色有点高级",
+        "platform": "xiaohongshu",
+        "stance": {
+          "gold": "neutral",
+          "pred": "neutral"
+        },
+        "sentiment": {
+          "gold": "pos",
+          "pred": "neu"
+        }
+      },
+      {
+        "text": "支持正能量",
+        "platform": "douyin",
+        "stance": {
+          "gold": "support",
+          "pred": "support"
+        },
+        "sentiment": {
+          "gold": "pos",
+          "pred": "neu"
+        }
+      },
+      {
+        "text": "反对这种行为",
+        "platform": "douyin",
+        "stance": {
+          "gold": "oppose",
+          "pred": "oppose"
+        },
+        "sentiment": {
+          "gold": "neg",
+          "pred": "neu"
+        }
+      },
+      {
+        "text": "虽然不喜欢他，但这次做得对",
+        "platform": "weibo",
+        "stance": {
+          "gold": "mixed",
+          "pred": "neutral"
+        },
+        "sentiment": {
+          "gold": "neu",
+          "pred": "pos"
+        }
+      },
+      {
+        "text": "裂开了，心态崩了",
+        "platform": "bilibili",
+        "stance": {
+          "gold": "neutral",
+          "pred": "oppose"
+        },
+        "sentiment": {
+          "gold": "neg",
+          "pred": "neg"
+        }
+      },
+      {
+        "text": "绝了",
+        "platform": "douyin",
+        "stance": {
+          "gold": "unclear",
+          "pred": "support"
+        },
+        "sentiment": {
+          "gold": "neu",
+          "pred": "pos"
+        }
+      },
+      {
+        "text": "支持他的勇气，但反对他的做法",
+        "platform": "weibo",
+        "stance": {
+          "gold": "mixed",
+          "pred": "mixed"
+        },
+        "sentiment": {
+          "gold": "neu",
+          "pred": "pos"
+        }
+      }
+    ],
+    "n_errors": 9
+  },
+  "cross_platform": {
+    "n_topics": 24,
+    "topics": [
+      {
+        "topic": "broad:体育竞技与健身",
+        "platforms": [
+          "bilibili",
+          "weibo"
+        ],
+        "time_axis_length": 3593,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 3579,
+            "aligned_buckets": 3593,
+            "missing_buckets": 14,
+            "coverage_ratio": 0.9961
+          },
+          "weibo": {
+            "n_buckets_own": 1435,
+            "aligned_buckets": 3593,
+            "missing_buckets": 2158,
+            "coverage_ratio": 0.3994
+          }
+        },
+        "echo_chamber_score": 0.2887,
+        "stance_divergence": 0.006,
+        "sentiment_divergence": 0.0482,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "broad:医疗健康与心理",
+        "platforms": [
+          "bilibili",
+          "weibo"
+        ],
+        "time_axis_length": 3505,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 3505,
+            "aligned_buckets": 3505,
+            "missing_buckets": 0,
+            "coverage_ratio": 1.0
+          },
+          "weibo": {
+            "n_buckets_own": 1439,
+            "aligned_buckets": 3505,
+            "missing_buckets": 2066,
+            "coverage_ratio": 0.4106
+          }
+        },
+        "echo_chamber_score": 0.3185,
+        "stance_divergence": 0.0094,
+        "sentiment_divergence": 0.0131,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "broad:影视娱乐与明星",
+        "platforms": [
+          "bilibili",
+          "weibo"
+        ],
+        "time_axis_length": 3885,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 3884,
+            "aligned_buckets": 3885,
+            "missing_buckets": 1,
+            "coverage_ratio": 0.9997
+          },
+          "weibo": {
+            "n_buckets_own": 342,
+            "aligned_buckets": 3885,
+            "missing_buckets": 3543,
+            "coverage_ratio": 0.088
+          }
+        },
+        "echo_chamber_score": 0.3697,
+        "stance_divergence": 0.0398,
+        "sentiment_divergence": 0.0774,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "broad:教育科研与科普",
+        "platforms": [
+          "bilibili",
+          "weibo"
+        ],
+        "time_axis_length": 4908,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 4908,
+            "aligned_buckets": 4908,
+            "missing_buckets": 0,
+            "coverage_ratio": 1.0
+          },
+          "weibo": {
+            "n_buckets_own": 917,
+            "aligned_buckets": 4908,
+            "missing_buckets": 3991,
+            "coverage_ratio": 0.1868
+          }
+        },
+        "echo_chamber_score": 0.2355,
+        "stance_divergence": 0.0011,
+        "sentiment_divergence": 0.0047,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "broad:文化历史与艺术",
+        "platforms": [
+          "bilibili",
+          "weibo"
+        ],
+        "time_axis_length": 3649,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 3649,
+            "aligned_buckets": 3649,
+            "missing_buckets": 0,
+            "coverage_ratio": 1.0
+          },
+          "weibo": {
+            "n_buckets_own": 1435,
+            "aligned_buckets": 3649,
+            "missing_buckets": 2214,
+            "coverage_ratio": 0.3933
+          }
+        },
+        "echo_chamber_score": 0.3395,
+        "stance_divergence": 0.0168,
+        "sentiment_divergence": 0.0492,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "broad:时政与公共治理",
+        "platforms": [
+          "bilibili",
+          "weibo"
+        ],
+        "time_axis_length": 6240,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 6240,
+            "aligned_buckets": 6240,
+            "missing_buckets": 0,
+            "coverage_ratio": 1.0
+          },
+          "weibo": {
+            "n_buckets_own": 1705,
+            "aligned_buckets": 6240,
+            "missing_buckets": 4535,
+            "coverage_ratio": 0.2732
+          }
+        },
+        "echo_chamber_score": 0.0898,
+        "stance_divergence": 0.0071,
+        "sentiment_divergence": 0.0009,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "broad:游戏动漫与虚拟内容",
+        "platforms": [
+          "bilibili",
+          "weibo"
+        ],
+        "time_axis_length": 3362,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 3361,
+            "aligned_buckets": 3362,
+            "missing_buckets": 1,
+            "coverage_ratio": 0.9997
+          },
+          "weibo": {
+            "n_buckets_own": 3088,
+            "aligned_buckets": 3362,
+            "missing_buckets": 274,
+            "coverage_ratio": 0.9185
+          }
+        },
+        "echo_chamber_score": 0.3235,
+        "stance_divergence": 0.0308,
+        "sentiment_divergence": 0.0272,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "broad:生活消费与家庭",
+        "platforms": [
+          "bilibili",
+          "weibo"
+        ],
+        "time_axis_length": 3538,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 3538,
+            "aligned_buckets": 3538,
+            "missing_buckets": 0,
+            "coverage_ratio": 1.0
+          },
+          "weibo": {
+            "n_buckets_own": 1435,
+            "aligned_buckets": 3538,
+            "missing_buckets": 2103,
+            "coverage_ratio": 0.4056
+          }
+        },
+        "echo_chamber_score": 0.3502,
+        "stance_divergence": 0.0241,
+        "sentiment_divergence": 0.0789,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "broad:社会事件与法治",
+        "platforms": [
+          "bilibili",
+          "weibo"
+        ],
+        "time_axis_length": 3541,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 3541,
+            "aligned_buckets": 3541,
+            "missing_buckets": 0,
+            "coverage_ratio": 1.0
+          },
+          "weibo": {
+            "n_buckets_own": 150,
+            "aligned_buckets": 3541,
+            "missing_buckets": 3391,
+            "coverage_ratio": 0.0424
+          }
+        },
+        "echo_chamber_score": 0.1128,
+        "stance_divergence": 0.0007,
+        "sentiment_divergence": 0.0004,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "broad:科技工业与交通",
+        "platforms": [
+          "bilibili",
+          "weibo"
+        ],
+        "time_axis_length": 6145,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 6145,
+            "aligned_buckets": 6145,
+            "missing_buckets": 0,
+            "coverage_ratio": 1.0
+          },
+          "weibo": {
+            "n_buckets_own": 1008,
+            "aligned_buckets": 6145,
+            "missing_buckets": 5137,
+            "coverage_ratio": 0.164
+          }
+        },
+        "echo_chamber_score": 0.1003,
+        "stance_divergence": 0.0023,
+        "sentiment_divergence": 0.0005,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "broad:自然环境与三农动物",
+        "platforms": [
+          "bilibili",
+          "weibo"
+        ],
+        "time_axis_length": 4077,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 4077,
+            "aligned_buckets": 4077,
+            "missing_buckets": 0,
+            "coverage_ratio": 1.0
+          },
+          "weibo": {
+            "n_buckets_own": 1915,
+            "aligned_buckets": 4077,
+            "missing_buckets": 2162,
+            "coverage_ratio": 0.4697
+          }
+        },
+        "echo_chamber_score": 0.3363,
+        "stance_divergence": 0.0199,
+        "sentiment_divergence": 0.0489,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "broad:财经商业与职场",
+        "platforms": [
+          "bilibili",
+          "weibo"
+        ],
+        "time_axis_length": 5995,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 5995,
+            "aligned_buckets": 5995,
+            "missing_buckets": 0,
+            "coverage_ratio": 1.0
+          },
+          "weibo": {
+            "n_buckets_own": 315,
+            "aligned_buckets": 5995,
+            "missing_buckets": 5680,
+            "coverage_ratio": 0.0525
+          }
+        },
+        "echo_chamber_score": 0.0722,
+        "stance_divergence": 0.0009,
+        "sentiment_divergence": 0.0102,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "hot:2026美加墨世界杯",
+        "platforms": [
+          "bilibili",
+          "weibo",
+          "xiaohongshu"
+        ],
+        "time_axis_length": 4435,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 4430,
+            "aligned_buckets": 4435,
+            "missing_buckets": 5,
+            "coverage_ratio": 0.9989
+          },
+          "weibo": {
+            "n_buckets_own": 65,
+            "aligned_buckets": 4435,
+            "missing_buckets": 4370,
+            "coverage_ratio": 0.0147
+          },
+          "xiaohongshu": {
+            "n_buckets_own": 1515,
+            "aligned_buckets": 4435,
+            "missing_buckets": 2920,
+            "coverage_ratio": 0.3416
+          }
+        },
+        "echo_chamber_score": 0.217,
+        "stance_divergence": 0.0037,
+        "sentiment_divergence": 0.0654,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "hot:AI漫剧爆发",
+        "platforms": [
+          "bilibili",
+          "weibo",
+          "xiaohongshu"
+        ],
+        "time_axis_length": 2905,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 2905,
+            "aligned_buckets": 2905,
+            "missing_buckets": 0,
+            "coverage_ratio": 1.0
+          },
+          "weibo": {
+            "n_buckets_own": 177,
+            "aligned_buckets": 2905,
+            "missing_buckets": 2728,
+            "coverage_ratio": 0.0609
+          },
+          "xiaohongshu": {
+            "n_buckets_own": 2030,
+            "aligned_buckets": 2905,
+            "missing_buckets": 875,
+            "coverage_ratio": 0.6988
+          }
+        },
+        "echo_chamber_score": 0.2545,
+        "stance_divergence": 0.0079,
+        "sentiment_divergence": 0.0886,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "hot:AI艺人与活人感之争",
+        "platforms": [
+          "bilibili",
+          "weibo",
+          "xiaohongshu"
+        ],
+        "time_axis_length": 3298,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 3295,
+            "aligned_buckets": 3298,
+            "missing_buckets": 3,
+            "coverage_ratio": 0.9991
+          },
+          "weibo": {
+            "n_buckets_own": 223,
+            "aligned_buckets": 3298,
+            "missing_buckets": 3075,
+            "coverage_ratio": 0.0676
+          },
+          "xiaohongshu": {
+            "n_buckets_own": 1756,
+            "aligned_buckets": 3298,
+            "missing_buckets": 1542,
+            "coverage_ratio": 0.5324
+          }
+        },
+        "echo_chamber_score": 0.2834,
+        "stance_divergence": 0.0104,
+        "sentiment_divergence": 0.158,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "hot:中美关税战",
+        "platforms": [
+          "bilibili",
+          "weibo",
+          "xiaohongshu"
+        ],
+        "time_axis_length": 3741,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 3729,
+            "aligned_buckets": 3741,
+            "missing_buckets": 12,
+            "coverage_ratio": 0.9968
+          },
+          "weibo": {
+            "n_buckets_own": 471,
+            "aligned_buckets": 3741,
+            "missing_buckets": 3270,
+            "coverage_ratio": 0.1259
+          },
+          "xiaohongshu": {
+            "n_buckets_own": 1303,
+            "aligned_buckets": 3741,
+            "missing_buckets": 2438,
+            "coverage_ratio": 0.3483
+          }
+        },
+        "echo_chamber_score": 0.195,
+        "stance_divergence": 0.0053,
+        "sentiment_divergence": 0.0355,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "hot:人形机器人商业化",
+        "platforms": [
+          "bilibili",
+          "weibo",
+          "xiaohongshu"
+        ],
+        "time_axis_length": 3183,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 3183,
+            "aligned_buckets": 3183,
+            "missing_buckets": 0,
+            "coverage_ratio": 1.0
+          },
+          "weibo": {
+            "n_buckets_own": 1044,
+            "aligned_buckets": 3183,
+            "missing_buckets": 2139,
+            "coverage_ratio": 0.328
+          },
+          "xiaohongshu": {
+            "n_buckets_own": 1117,
+            "aligned_buckets": 3183,
+            "missing_buckets": 2066,
+            "coverage_ratio": 0.3509
+          }
+        },
+        "echo_chamber_score": 0.256,
+        "stance_divergence": 0.003,
+        "sentiment_divergence": 0.0577,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "hot:国潮与传统文化复兴",
+        "platforms": [
+          "bilibili",
+          "weibo",
+          "xiaohongshu"
+        ],
+        "time_axis_length": 2866,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 2866,
+            "aligned_buckets": 2866,
+            "missing_buckets": 0,
+            "coverage_ratio": 1.0
+          },
+          "weibo": {
+            "n_buckets_own": 268,
+            "aligned_buckets": 2866,
+            "missing_buckets": 2598,
+            "coverage_ratio": 0.0935
+          },
+          "xiaohongshu": {
+            "n_buckets_own": 1581,
+            "aligned_buckets": 2866,
+            "missing_buckets": 1285,
+            "coverage_ratio": 0.5516
+          }
+        },
+        "echo_chamber_score": 0.3155,
+        "stance_divergence": 0.0054,
+        "sentiment_divergence": 0.0848,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "hot:学历贬值与就业难",
+        "platforms": [
+          "bilibili",
+          "weibo",
+          "xiaohongshu"
+        ],
+        "time_axis_length": 3261,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 3260,
+            "aligned_buckets": 3261,
+            "missing_buckets": 1,
+            "coverage_ratio": 0.9997
+          },
+          "weibo": {
+            "n_buckets_own": 1654,
+            "aligned_buckets": 3261,
+            "missing_buckets": 1607,
+            "coverage_ratio": 0.5072
+          },
+          "xiaohongshu": {
+            "n_buckets_own": 1179,
+            "aligned_buckets": 3261,
+            "missing_buckets": 2082,
+            "coverage_ratio": 0.3615
+          }
+        },
+        "echo_chamber_score": 0.3013,
+        "stance_divergence": 0.0024,
+        "sentiment_divergence": 0.0734,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "hot:戒网瘾双胞胎事件",
+        "platforms": [
+          "bilibili",
+          "weibo",
+          "xiaohongshu"
+        ],
+        "time_axis_length": 4466,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 4466,
+            "aligned_buckets": 4466,
+            "missing_buckets": 0,
+            "coverage_ratio": 1.0
+          },
+          "weibo": {
+            "n_buckets_own": 2497,
+            "aligned_buckets": 4466,
+            "missing_buckets": 1969,
+            "coverage_ratio": 0.5591
+          },
+          "xiaohongshu": {
+            "n_buckets_own": 1381,
+            "aligned_buckets": 4466,
+            "missing_buckets": 3085,
+            "coverage_ratio": 0.3092
+          }
+        },
+        "echo_chamber_score": 0.2196,
+        "stance_divergence": 0.0013,
+        "sentiment_divergence": 0.0162,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "hot:房价下跌与楼市",
+        "platforms": [
+          "bilibili",
+          "weibo",
+          "xiaohongshu"
+        ],
+        "time_axis_length": 2418,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 2414,
+            "aligned_buckets": 2418,
+            "missing_buckets": 4,
+            "coverage_ratio": 0.9983
+          },
+          "weibo": {
+            "n_buckets_own": 1616,
+            "aligned_buckets": 2418,
+            "missing_buckets": 802,
+            "coverage_ratio": 0.6683
+          },
+          "xiaohongshu": {
+            "n_buckets_own": 1187,
+            "aligned_buckets": 2418,
+            "missing_buckets": 1231,
+            "coverage_ratio": 0.4909
+          }
+        },
+        "echo_chamber_score": 0.3158,
+        "stance_divergence": 0.005,
+        "sentiment_divergence": 0.0562,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "hot:极端天气与气候",
+        "platforms": [
+          "bilibili",
+          "weibo",
+          "xiaohongshu"
+        ],
+        "time_axis_length": 2972,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 2965,
+            "aligned_buckets": 2972,
+            "missing_buckets": 7,
+            "coverage_ratio": 0.9976
+          },
+          "weibo": {
+            "n_buckets_own": 157,
+            "aligned_buckets": 2972,
+            "missing_buckets": 2815,
+            "coverage_ratio": 0.0528
+          },
+          "xiaohongshu": {
+            "n_buckets_own": 1777,
+            "aligned_buckets": 2972,
+            "missing_buckets": 1195,
+            "coverage_ratio": 0.5979
+          }
+        },
+        "echo_chamber_score": 0.2556,
+        "stance_divergence": 0.0019,
+        "sentiment_divergence": 0.1146,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "hot:消费降级与反向消费",
+        "platforms": [
+          "bilibili",
+          "weibo",
+          "xiaohongshu"
+        ],
+        "time_axis_length": 2923,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 2920,
+            "aligned_buckets": 2923,
+            "missing_buckets": 3,
+            "coverage_ratio": 0.999
+          },
+          "weibo": {
+            "n_buckets_own": 1101,
+            "aligned_buckets": 2923,
+            "missing_buckets": 1822,
+            "coverage_ratio": 0.3767
+          },
+          "xiaohongshu": {
+            "n_buckets_own": 2270,
+            "aligned_buckets": 2923,
+            "missing_buckets": 653,
+            "coverage_ratio": 0.7766
+          }
+        },
+        "echo_chamber_score": 0.2927,
+        "stance_divergence": 0.0128,
+        "sentiment_divergence": 0.0672,
+        "CT_status": "accepted"
+      },
+      {
+        "topic": "hot:青少年心理健康",
+        "platforms": [
+          "bilibili",
+          "weibo",
+          "xiaohongshu"
+        ],
+        "time_axis_length": 3066,
+        "coverage": {
+          "bilibili": {
+            "n_buckets_own": 3062,
+            "aligned_buckets": 3066,
+            "missing_buckets": 4,
+            "coverage_ratio": 0.9987
+          },
+          "weibo": {
+            "n_buckets_own": 1443,
+            "aligned_buckets": 3066,
+            "missing_buckets": 1623,
+            "coverage_ratio": 0.4706
+          },
+          "xiaohongshu": {
+            "n_buckets_own": 1628,
+            "aligned_buckets": 3066,
+            "missing_buckets": 1438,
+            "coverage_ratio": 0.531
+          }
+        },
+        "echo_chamber_score": 0.3007,
+        "stance_divergence": 0.0044,
+        "sentiment_divergence": 0.0543,
+        "CT_status": "accepted"
+      }
+    ]
+  },
+  "multimodal_analyzer": {
+    "n_reports": 60,
+    "n_need_recrawl": 60,
+    "anomaly_type_distribution": {
+      "heat_spike": 2912,
+      "cross_scale_inconsistency": 2477,
+      "volume_spike": 563,
+      "stance_shift": 2
+    },
+    "severity_distribution": {
+      "warning": 83974,
+      "critical": 2148,
+      "important": 298
+    },
+    "note": "severity_distribution 来自报告内置的全量 severity_counts；anomaly_type_distribution 来自报告内置的 anomaly_type_counts，旧报告未内置时回退到 top-100 异常统计"
+  }
+}

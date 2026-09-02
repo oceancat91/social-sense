@@ -1,0 +1,2317 @@
+{
+  "CT_status": "accepted",
+  "scope": "cross_platform",
+  "n_platforms": 12,
+  "platforms": [
+    "douyin:时政与公共治理",
+    "douyin:医疗健康与心理",
+    "douyin:社会事件与法治",
+    "douyin:文化历史与艺术",
+    "douyin:教育科研与科普",
+    "douyin:科技工业与交通",
+    "douyin:财经商业与职场",
+    "douyin:生活消费与家庭",
+    "douyin:影视娱乐与明星",
+    "douyin:自然环境与三农动物",
+    "douyin:游戏动漫与虚拟内容",
+    "douyin:体育竞技与健身"
+  ],
+  "keyword": "时政与公共治理",
+  "time_range": {
+    "start": "2025-11-27T00:00:00+08:00",
+    "end": "2026-08-12T00:00:00+08:00"
+  },
+  "granularity": "day",
+  "summary": "各平台主导立场一致（neutral）；立场分布 JS 分歧 0.0034，情绪均值极差 0.1924；平台声量时间相关性 0.6703（同频共振）；跨平台情绪均值 0.069（中性）",
+  "claims": [
+    {
+      "text": "各平台主导立场一致（neutral）",
+      "platforms": [
+        "douyin:时政与公共治理",
+        "douyin:医疗健康与心理",
+        "douyin:社会事件与法治",
+        "douyin:文化历史与艺术",
+        "douyin:教育科研与科普",
+        "douyin:科技工业与交通",
+        "douyin:财经商业与职场",
+        "douyin:生活消费与家庭",
+        "douyin:影视娱乐与明星",
+        "douyin:自然环境与三农动物",
+        "douyin:游戏动漫与虚拟内容",
+        "douyin:体育竞技与健身"
+      ],
+      "evidence": "fuse.dominant_stance"
+    },
+    {
+      "text": "立场分布 JS 分歧 0.0034，情绪均值极差 0.1924",
+      "platforms": [
+        "douyin:时政与公共治理",
+        "douyin:医疗健康与心理",
+        "douyin:社会事件与法治",
+        "douyin:文化历史与艺术",
+        "douyin:教育科研与科普",
+        "douyin:科技工业与交通",
+        "douyin:财经商业与职场",
+        "douyin:生活消费与家庭",
+        "douyin:影视娱乐与明星",
+        "douyin:自然环境与三农动物",
+        "douyin:游戏动漫与虚拟内容",
+        "douyin:体育竞技与健身"
+      ],
+      "evidence": "fuse.stance_divergence/sentiment_divergence"
+    },
+    {
+      "text": "平台声量时间相关性 0.6703（同频共振）",
+      "platforms": [
+        "douyin:时政与公共治理",
+        "douyin:医疗健康与心理",
+        "douyin:社会事件与法治",
+        "douyin:文化历史与艺术",
+        "douyin:教育科研与科普",
+        "douyin:科技工业与交通",
+        "douyin:财经商业与职场",
+        "douyin:生活消费与家庭",
+        "douyin:影视娱乐与明星",
+        "douyin:自然环境与三农动物",
+        "douyin:游戏动漫与虚拟内容",
+        "douyin:体育竞技与健身"
+      ],
+      "evidence": "fuse.mean_volume_corr"
+    },
+    {
+      "text": "跨平台情绪均值 0.069（中性）",
+      "platforms": [
+        "douyin:时政与公共治理",
+        "douyin:医疗健康与心理",
+        "douyin:社会事件与法治",
+        "douyin:文化历史与艺术",
+        "douyin:教育科研与科普",
+        "douyin:科技工业与交通",
+        "douyin:财经商业与职场",
+        "douyin:生活消费与家庭",
+        "douyin:影视娱乐与明星",
+        "douyin:自然环境与三农动物",
+        "douyin:游戏动漫与虚拟内容",
+        "douyin:体育竞技与健身"
+      ],
+      "evidence": "fuse.sentiment_means"
+    }
+  ],
+  "risk_flags": [
+    "平台间一致性较好（指数 0.1594），茧房风险低"
+  ],
+  "echo_chamber": {
+    "score": 0.1594,
+    "components": {
+      "stance": 0.0069,
+      "sentiment": 0.1924,
+      "corr": 0.3297
+    }
+  },
+  "fusion": {
+    "platforms": [
+      "douyin:时政与公共治理",
+      "douyin:医疗健康与心理",
+      "douyin:社会事件与法治",
+      "douyin:文化历史与艺术",
+      "douyin:教育科研与科普",
+      "douyin:科技工业与交通",
+      "douyin:财经商业与职场",
+      "douyin:生活消费与家庭",
+      "douyin:影视娱乐与明星",
+      "douyin:自然环境与三农动物",
+      "douyin:游戏动漫与虚拟内容",
+      "douyin:体育竞技与健身"
+    ],
+    "stance_dist": {
+      "douyin:时政与公共治理": {
+        "support": 0.07212511499540018,
+        "oppose": 0.0044771542471634465,
+        "neutral": 0.917571297148114,
+        "mixed": 0.0020852499233364,
+        "unclear": 0.003741183685985894
+      },
+      "douyin:医疗健康与心理": {
+        "support": 0.0531380027739251,
+        "oppose": 0.003554091539528433,
+        "neutral": 0.9345527045769764,
+        "mixed": 0.0017337031900138697,
+        "unclear": 0.007021497919556172
+      },
+      "douyin:社会事件与法治": {
+        "support": 0.04429120806259117,
+        "oppose": 0.012199973478318525,
+        "neutral": 0.9378066569420501,
+        "mixed": 0.0015249966847898156,
+        "unclear": 0.004177164832250365
+      },
+      "douyin:文化历史与艺术": {
+        "support": 0.0404030617188257,
+        "oppose": 0.002616025578916772,
+        "neutral": 0.9450634628427478,
+        "mixed": 0.0002906695087685302,
+        "unclear": 0.011626780350741207
+      },
+      "douyin:教育科研与科普": {
+        "support": 0.06163854890285588,
+        "oppose": 0.011467637005182489,
+        "neutral": 0.9073767780350646,
+        "mixed": 0.0003307972213033411,
+        "unclear": 0.01918623883559378
+      },
+      "douyin:科技工业与交通": {
+        "support": 0.04267358245903572,
+        "oppose": 0.006837203819403513,
+        "neutral": 0.9379936343274785,
+        "mixed": 0.0005894141223623718,
+        "unclear": 0.01190616527171991
+      },
+      "douyin:财经商业与职场": {
+        "support": 0.03397612488521579,
+        "oppose": 0.006427915518824609,
+        "neutral": 0.9552341597796143,
+        "mixed": 0.0009182736455463728,
+        "unclear": 0.003443526170798898
+      },
+      "douyin:生活消费与家庭": {
+        "support": 0.06140561285680019,
+        "oppose": 0.010793955384984408,
+        "neutral": 0.9258815063564404,
+        "mixed": 0.000959462700887503,
+        "unclear": 0.000959462700887503
+      },
+      "douyin:影视娱乐与明星": {
+        "support": 0.06096361848574238,
+        "oppose": 0.005162241887905605,
+        "neutral": 0.9321533923303835,
+        "mixed": 0.0002458210422812193,
+        "unclear": 0.0014749262536873156
+      },
+      "douyin:自然环境与三农动物": {
+        "support": 0.037371134020618556,
+        "oppose": 0.006185567010309278,
+        "neutral": 0.9548969072164949,
+        "mixed": 0.0005154639175257732,
+        "unclear": 0.0010309278350515464
+      },
+      "douyin:游戏动漫与虚拟内容": {
+        "support": 0.02303754266211604,
+        "oppose": 0.002559726962457338,
+        "neutral": 0.9485210466439136,
+        "mixed": 0.0,
+        "unclear": 0.025881683731513082
+      },
+      "douyin:体育竞技与健身": {
+        "support": 0.06451612903225806,
+        "oppose": 0.005272952853598015,
+        "neutral": 0.9252481389578163,
+        "mixed": 0.0,
+        "unclear": 0.004962779156327543
+      }
+    },
+    "dominant_stance": {
+      "douyin:时政与公共治理": "neutral",
+      "douyin:医疗健康与心理": "neutral",
+      "douyin:社会事件与法治": "neutral",
+      "douyin:文化历史与艺术": "neutral",
+      "douyin:教育科研与科普": "neutral",
+      "douyin:科技工业与交通": "neutral",
+      "douyin:财经商业与职场": "neutral",
+      "douyin:生活消费与家庭": "neutral",
+      "douyin:影视娱乐与明星": "neutral",
+      "douyin:自然环境与三农动物": "neutral",
+      "douyin:游戏动漫与虚拟内容": "neutral",
+      "douyin:体育竞技与健身": "neutral"
+    },
+    "stance_divergence": 0.0034,
+    "stance_pair_divergences": [
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:医疗健康与心理"
+        ],
+        "stance_js": 0.001
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:社会事件与法治"
+        ],
+        "stance_js": 0.0027
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:文化历史与艺术"
+        ],
+        "stance_js": 0.0039
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:教育科研与科普"
+        ],
+        "stance_js": 0.0042
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:科技工业与交通"
+        ],
+        "stance_js": 0.0034
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:财经商业与职场"
+        ],
+        "stance_js": 0.0039
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:生活消费与家庭"
+        ],
+        "stance_js": 0.0014
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:影视娱乐与明星"
+        ],
+        "stance_js": 0.0009
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:自然环境与三农动物"
+        ],
+        "stance_js": 0.0037
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "stance_js": 0.0123
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:体育竞技与健身"
+        ],
+        "stance_js": 0.0009
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:社会事件与法治"
+        ],
+        "stance_js": 0.0016
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:文化历史与艺术"
+        ],
+        "stance_js": 0.0011
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:教育科研与科普"
+        ],
+        "stance_js": 0.0031
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:科技工业与交通"
+        ],
+        "stance_js": 0.001
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:财经商业与职场"
+        ],
+        "stance_js": 0.0017
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:生活消费与家庭"
+        ],
+        "stance_js": 0.0025
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:影视娱乐与明星"
+        ],
+        "stance_js": 0.0015
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:自然环境与三农动物"
+        ],
+        "stance_js": 0.0023
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "stance_js": 0.0066
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:体育竞技与健身"
+        ],
+        "stance_js": 0.0011
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:文化历史与艺术"
+        ],
+        "stance_js": 0.0029
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:教育科研与科普"
+        ],
+        "stance_js": 0.0037
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:科技工业与交通"
+        ],
+        "stance_js": 0.0015
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:财经商业与职场"
+        ],
+        "stance_js": 0.0009
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:生活消费与家庭"
+        ],
+        "stance_js": 0.0013
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:影视娱乐与明星"
+        ],
+        "stance_js": 0.002
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:自然环境与三农动物"
+        ],
+        "stance_js": 0.0013
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "stance_js": 0.0083
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:体育竞技与健身"
+        ],
+        "stance_js": 0.0022
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:教育科研与科普"
+        ],
+        "stance_js": 0.0033
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:科技工业与交通"
+        ],
+        "stance_js": 0.0005
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:财经商业与职场"
+        ],
+        "stance_js": 0.0018
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:生活消费与家庭"
+        ],
+        "stance_js": 0.0052
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:影视娱乐与明星"
+        ],
+        "stance_js": 0.0035
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:自然环境与三农动物"
+        ],
+        "stance_js": 0.003
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "stance_js": 0.0027
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:体育竞技与健身"
+        ],
+        "stance_js": 0.0025
+      },
+      {
+        "pair": [
+          "douyin:教育科研与科普",
+          "douyin:科技工业与交通"
+        ],
+        "stance_js": 0.0017
+      },
+      {
+        "pair": [
+          "douyin:教育科研与科普",
+          "douyin:财经商业与职场"
+        ],
+        "stance_js": 0.0058
+      },
+      {
+        "pair": [
+          "douyin:教育科研与科普",
+          "douyin:生活消费与家庭"
+        ],
+        "stance_js": 0.0052
+      },
+      {
+        "pair": [
+          "douyin:教育科研与科普",
+          "douyin:影视娱乐与明星"
+        ],
+        "stance_js": 0.0052
+      },
+      {
+        "pair": [
+          "douyin:教育科研与科普",
+          "douyin:自然环境与三农动物"
+        ],
+        "stance_js": 0.0072
+      },
+      {
+        "pair": [
+          "douyin:教育科研与科普",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "stance_js": 0.0067
+      },
+      {
+        "pair": [
+          "douyin:教育科研与科普",
+          "douyin:体育竞技与健身"
+        ],
+        "stance_js": 0.003
+      },
+      {
+        "pair": [
+          "douyin:科技工业与交通",
+          "douyin:财经商业与职场"
+        ],
+        "stance_js": 0.0015
+      },
+      {
+        "pair": [
+          "douyin:科技工业与交通",
+          "douyin:生活消费与家庭"
+        ],
+        "stance_js": 0.0039
+      },
+      {
+        "pair": [
+          "douyin:科技工业与交通",
+          "douyin:影视娱乐与明星"
+        ],
+        "stance_js": 0.0032
+      },
+      {
+        "pair": [
+          "douyin:科技工业与交通",
+          "douyin:自然环境与三农动物"
+        ],
+        "stance_js": 0.0028
+      },
+      {
+        "pair": [
+          "douyin:科技工业与交通",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "stance_js": 0.0035
+      },
+      {
+        "pair": [
+          "douyin:科技工业与交通",
+          "douyin:体育竞技与健身"
+        ],
+        "stance_js": 0.0021
+      },
+      {
+        "pair": [
+          "douyin:财经商业与职场",
+          "douyin:生活消费与家庭"
+        ],
+        "stance_js": 0.0028
+      },
+      {
+        "pair": [
+          "douyin:财经商业与职场",
+          "douyin:影视娱乐与明星"
+        ],
+        "stance_js": 0.0024
+      },
+      {
+        "pair": [
+          "douyin:财经商业与职场",
+          "douyin:自然环境与三农动物"
+        ],
+        "stance_js": 0.0004
+      },
+      {
+        "pair": [
+          "douyin:财经商业与职场",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "stance_js": 0.0061
+      },
+      {
+        "pair": [
+          "douyin:财经商业与职场",
+          "douyin:体育竞技与健身"
+        ],
+        "stance_js": 0.0029
+      },
+      {
+        "pair": [
+          "douyin:生活消费与家庭",
+          "douyin:影视娱乐与明星"
+        ],
+        "stance_js": 0.0007
+      },
+      {
+        "pair": [
+          "douyin:生活消费与家庭",
+          "douyin:自然环境与三农动物"
+        ],
+        "stance_js": 0.0019
+      },
+      {
+        "pair": [
+          "douyin:生活消费与家庭",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "stance_js": 0.0135
+      },
+      {
+        "pair": [
+          "douyin:生活消费与家庭",
+          "douyin:体育竞技与健身"
+        ],
+        "stance_js": 0.0016
+      },
+      {
+        "pair": [
+          "douyin:影视娱乐与明星",
+          "douyin:自然环境与三农动物"
+        ],
+        "stance_js": 0.0016
+      },
+      {
+        "pair": [
+          "douyin:影视娱乐与明星",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "stance_js": 0.0114
+      },
+      {
+        "pair": [
+          "douyin:影视娱乐与明星",
+          "douyin:体育竞技与健身"
+        ],
+        "stance_js": 0.0006
+      },
+      {
+        "pair": [
+          "douyin:自然环境与三农动物",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "stance_js": 0.0086
+      },
+      {
+        "pair": [
+          "douyin:自然环境与三农动物",
+          "douyin:体育竞技与健身"
+        ],
+        "stance_js": 0.0028
+      },
+      {
+        "pair": [
+          "douyin:游戏动漫与虚拟内容",
+          "douyin:体育竞技与健身"
+        ],
+        "stance_js": 0.0093
+      }
+    ],
+    "sentiment_divergence": 0.1924,
+    "sentiment_means": {
+      "douyin:时政与公共治理": 0.0646,
+      "douyin:医疗健康与心理": 0.1977,
+      "douyin:社会事件与法治": 0.0073,
+      "douyin:文化历史与艺术": 0.1252,
+      "douyin:教育科研与科普": 0.0793,
+      "douyin:科技工业与交通": 0.0519,
+      "douyin:财经商业与职场": 0.0321,
+      "douyin:生活消费与家庭": 0.0902,
+      "douyin:影视娱乐与明星": 0.041,
+      "douyin:自然环境与三农动物": 0.0402,
+      "douyin:游戏动漫与虚拟内容": 0.0053,
+      "douyin:体育竞技与健身": 0.094
+    },
+    "bias_scores": {
+      "douyin:时政与公共治理": 0.0734,
+      "douyin:医疗健康与心理": 0.0605,
+      "douyin:社会事件与法治": 0.0385,
+      "douyin:文化历史与艺术": 0.0456,
+      "douyin:教育科研与科普": 0.0603,
+      "douyin:科技工业与交通": 0.0399,
+      "douyin:财经商业与职场": 0.0307,
+      "douyin:生活消费与家庭": 0.066,
+      "douyin:影视娱乐与明星": 0.0624,
+      "douyin:自然环境与三农动物": 0.0411,
+      "douyin:游戏动漫与虚拟内容": 0.0282,
+      "douyin:体育竞技与健身": 0.0702
+    },
+    "temporal_corr": [
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:医疗健康与心理"
+        ],
+        "volume_corr": 0.0996
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:社会事件与法治"
+        ],
+        "volume_corr": 0.0249
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:文化历史与艺术"
+        ],
+        "volume_corr": 0.0956
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:教育科研与科普"
+        ],
+        "volume_corr": 0.0119
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:科技工业与交通"
+        ],
+        "volume_corr": 0.2248
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:财经商业与职场"
+        ],
+        "volume_corr": 0.0496
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:生活消费与家庭"
+        ],
+        "volume_corr": 0.0139
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:影视娱乐与明星"
+        ],
+        "volume_corr": -0.0034
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:自然环境与三农动物"
+        ],
+        "volume_corr": 0.0996
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "volume_corr": 0.0606
+      },
+      {
+        "pair": [
+          "douyin:时政与公共治理",
+          "douyin:体育竞技与健身"
+        ],
+        "volume_corr": 0.0835
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:社会事件与法治"
+        ],
+        "volume_corr": 0.5848
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:文化历史与艺术"
+        ],
+        "volume_corr": 0.7479
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:教育科研与科普"
+        ],
+        "volume_corr": 0.5905
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:科技工业与交通"
+        ],
+        "volume_corr": 0.4518
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:财经商业与职场"
+        ],
+        "volume_corr": 0.5066
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:生活消费与家庭"
+        ],
+        "volume_corr": 0.5467
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:影视娱乐与明星"
+        ],
+        "volume_corr": 0.5536
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:自然环境与三农动物"
+        ],
+        "volume_corr": 0.5896
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "volume_corr": 0.6095
+      },
+      {
+        "pair": [
+          "douyin:医疗健康与心理",
+          "douyin:体育竞技与健身"
+        ],
+        "volume_corr": 0.467
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:文化历史与艺术"
+        ],
+        "volume_corr": 0.7836
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:教育科研与科普"
+        ],
+        "volume_corr": 0.7884
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:科技工业与交通"
+        ],
+        "volume_corr": 0.7773
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:财经商业与职场"
+        ],
+        "volume_corr": 0.7657
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:生活消费与家庭"
+        ],
+        "volume_corr": 0.7562
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:影视娱乐与明星"
+        ],
+        "volume_corr": 0.7402
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:自然环境与三农动物"
+        ],
+        "volume_corr": 0.7922
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "volume_corr": 0.8307
+      },
+      {
+        "pair": [
+          "douyin:社会事件与法治",
+          "douyin:体育竞技与健身"
+        ],
+        "volume_corr": 0.7731
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:教育科研与科普"
+        ],
+        "volume_corr": 0.7842
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:科技工业与交通"
+        ],
+        "volume_corr": 0.8907
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:财经商业与职场"
+        ],
+        "volume_corr": 0.9076
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:生活消费与家庭"
+        ],
+        "volume_corr": 0.9266
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:影视娱乐与明星"
+        ],
+        "volume_corr": 0.897
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:自然环境与三农动物"
+        ],
+        "volume_corr": 0.9007
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "volume_corr": 0.8707
+      },
+      {
+        "pair": [
+          "douyin:文化历史与艺术",
+          "douyin:体育竞技与健身"
+        ],
+        "volume_corr": 0.7462
+      },
+      {
+        "pair": [
+          "douyin:教育科研与科普",
+          "douyin:科技工业与交通"
+        ],
+        "volume_corr": 0.7768
+      },
+      {
+        "pair": [
+          "douyin:教育科研与科普",
+          "douyin:财经商业与职场"
+        ],
+        "volume_corr": 0.7811
+      },
+      {
+        "pair": [
+          "douyin:教育科研与科普",
+          "douyin:生活消费与家庭"
+        ],
+        "volume_corr": 0.7914
+      },
+      {
+        "pair": [
+          "douyin:教育科研与科普",
+          "douyin:影视娱乐与明星"
+        ],
+        "volume_corr": 0.7845
+      },
+      {
+        "pair": [
+          "douyin:教育科研与科普",
+          "douyin:自然环境与三农动物"
+        ],
+        "volume_corr": 0.7788
+      },
+      {
+        "pair": [
+          "douyin:教育科研与科普",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "volume_corr": 0.8153
+      },
+      {
+        "pair": [
+          "douyin:教育科研与科普",
+          "douyin:体育竞技与健身"
+        ],
+        "volume_corr": 0.7807
+      },
+      {
+        "pair": [
+          "douyin:科技工业与交通",
+          "douyin:财经商业与职场"
+        ],
+        "volume_corr": 0.9355
+      },
+      {
+        "pair": [
+          "douyin:科技工业与交通",
+          "douyin:生活消费与家庭"
+        ],
+        "volume_corr": 0.9701
+      },
+      {
+        "pair": [
+          "douyin:科技工业与交通",
+          "douyin:影视娱乐与明星"
+        ],
+        "volume_corr": 0.9197
+      },
+      {
+        "pair": [
+          "douyin:科技工业与交通",
+          "douyin:自然环境与三农动物"
+        ],
+        "volume_corr": 0.9648
+      },
+      {
+        "pair": [
+          "douyin:科技工业与交通",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "volume_corr": 0.9259
+      },
+      {
+        "pair": [
+          "douyin:科技工业与交通",
+          "douyin:体育竞技与健身"
+        ],
+        "volume_corr": 0.8064
+      },
+      {
+        "pair": [
+          "douyin:财经商业与职场",
+          "douyin:生活消费与家庭"
+        ],
+        "volume_corr": 0.9485
+      },
+      {
+        "pair": [
+          "douyin:财经商业与职场",
+          "douyin:影视娱乐与明星"
+        ],
+        "volume_corr": 0.9186
+      },
+      {
+        "pair": [
+          "douyin:财经商业与职场",
+          "douyin:自然环境与三农动物"
+        ],
+        "volume_corr": 0.9156
+      },
+      {
+        "pair": [
+          "douyin:财经商业与职场",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "volume_corr": 0.837
+      },
+      {
+        "pair": [
+          "douyin:财经商业与职场",
+          "douyin:体育竞技与健身"
+        ],
+        "volume_corr": 0.7152
+      },
+      {
+        "pair": [
+          "douyin:生活消费与家庭",
+          "douyin:影视娱乐与明星"
+        ],
+        "volume_corr": 0.9623
+      },
+      {
+        "pair": [
+          "douyin:生活消费与家庭",
+          "douyin:自然环境与三农动物"
+        ],
+        "volume_corr": 0.94
+      },
+      {
+        "pair": [
+          "douyin:生活消费与家庭",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "volume_corr": 0.8788
+      },
+      {
+        "pair": [
+          "douyin:生活消费与家庭",
+          "douyin:体育竞技与健身"
+        ],
+        "volume_corr": 0.7641
+      },
+      {
+        "pair": [
+          "douyin:影视娱乐与明星",
+          "douyin:自然环境与三农动物"
+        ],
+        "volume_corr": 0.904
+      },
+      {
+        "pair": [
+          "douyin:影视娱乐与明星",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "volume_corr": 0.8185
+      },
+      {
+        "pair": [
+          "douyin:影视娱乐与明星",
+          "douyin:体育竞技与健身"
+        ],
+        "volume_corr": 0.7609
+      },
+      {
+        "pair": [
+          "douyin:自然环境与三农动物",
+          "douyin:游戏动漫与虚拟内容"
+        ],
+        "volume_corr": 0.8903
+      },
+      {
+        "pair": [
+          "douyin:自然环境与三农动物",
+          "douyin:体育竞技与健身"
+        ],
+        "volume_corr": 0.7682
+      },
+      {
+        "pair": [
+          "douyin:游戏动漫与虚拟内容",
+          "douyin:体育竞技与健身"
+        ],
+        "volume_corr": 0.845
+      }
+    ],
+    "mean_volume_corr": 0.6703,
+    "echo_chamber_score": 0.1594,
+    "echo_chamber_components": {
+      "stance": 0.0069,
+      "sentiment": 0.1924,
+      "corr": 0.3297
+    },
+    "per_bucket_divergence": [
+      {
+        "ts": "2024-09-03T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0028
+      },
+      {
+        "ts": "2024-09-09T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2024-09-13T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2024-09-21T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2024-10-02T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2024-10-22T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2024-11-02T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2024-11-15T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2024-12-14T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.6
+      },
+      {
+        "ts": "2025-03-13T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2025-04-30T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2025-07-09T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.6
+      },
+      {
+        "ts": "2025-10-22T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.4498
+      },
+      {
+        "ts": "2025-10-26T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1298
+      },
+      {
+        "ts": "2025-10-30T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0493
+      },
+      {
+        "ts": "2025-11-04T00:00",
+        "active_platforms": 2,
+        "sent_range": 1.3
+      },
+      {
+        "ts": "2025-12-05T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.2098
+      },
+      {
+        "ts": "2025-12-06T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0575
+      },
+      {
+        "ts": "2025-12-07T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1009
+      },
+      {
+        "ts": "2025-12-08T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.2185
+      },
+      {
+        "ts": "2025-12-09T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1313
+      },
+      {
+        "ts": "2025-12-10T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1647
+      },
+      {
+        "ts": "2025-12-11T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1118
+      },
+      {
+        "ts": "2025-12-12T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0069
+      },
+      {
+        "ts": "2025-12-19T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.6473
+      },
+      {
+        "ts": "2025-12-22T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0497
+      },
+      {
+        "ts": "2025-12-31T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1038
+      },
+      {
+        "ts": "2026-01-05T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0014
+      },
+      {
+        "ts": "2026-01-07T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0609
+      },
+      {
+        "ts": "2026-01-13T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0865
+      },
+      {
+        "ts": "2026-01-16T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0873
+      },
+      {
+        "ts": "2026-01-20T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.3697
+      },
+      {
+        "ts": "2026-01-21T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0876
+      },
+      {
+        "ts": "2026-01-26T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2026-01-29T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0284
+      },
+      {
+        "ts": "2026-02-02T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1468
+      },
+      {
+        "ts": "2026-02-08T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2026-02-12T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.2454
+      },
+      {
+        "ts": "2026-02-13T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.6156
+      },
+      {
+        "ts": "2026-02-17T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.173
+      },
+      {
+        "ts": "2026-02-18T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.358
+      },
+      {
+        "ts": "2026-02-19T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1271
+      },
+      {
+        "ts": "2026-02-20T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0308
+      },
+      {
+        "ts": "2026-02-21T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.057
+      },
+      {
+        "ts": "2026-02-22T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.6604
+      },
+      {
+        "ts": "2026-02-23T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0809
+      },
+      {
+        "ts": "2026-02-24T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0545
+      },
+      {
+        "ts": "2026-02-25T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.1219
+      },
+      {
+        "ts": "2026-02-26T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.4289
+      },
+      {
+        "ts": "2026-02-27T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.6
+      },
+      {
+        "ts": "2026-02-28T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.2018
+      },
+      {
+        "ts": "2026-03-01T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.1656
+      },
+      {
+        "ts": "2026-03-02T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.2062
+      },
+      {
+        "ts": "2026-03-03T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.9153
+      },
+      {
+        "ts": "2026-03-04T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.1132
+      },
+      {
+        "ts": "2026-03-05T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.6
+      },
+      {
+        "ts": "2026-03-06T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.1154
+      },
+      {
+        "ts": "2026-03-07T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.1063
+      },
+      {
+        "ts": "2026-03-08T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.086
+      },
+      {
+        "ts": "2026-03-09T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0594
+      },
+      {
+        "ts": "2026-03-10T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1269
+      },
+      {
+        "ts": "2026-03-11T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.3023
+      },
+      {
+        "ts": "2026-03-12T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.2475
+      },
+      {
+        "ts": "2026-03-13T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.05
+      },
+      {
+        "ts": "2026-03-14T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.1835
+      },
+      {
+        "ts": "2026-03-15T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.2154
+      },
+      {
+        "ts": "2026-03-16T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.1302
+      },
+      {
+        "ts": "2026-03-17T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.1368
+      },
+      {
+        "ts": "2026-03-18T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0065
+      },
+      {
+        "ts": "2026-03-19T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.3664
+      },
+      {
+        "ts": "2026-03-20T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.1691
+      },
+      {
+        "ts": "2026-03-21T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0822
+      },
+      {
+        "ts": "2026-03-22T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.235
+      },
+      {
+        "ts": "2026-03-23T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0311
+      },
+      {
+        "ts": "2026-03-24T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0454
+      },
+      {
+        "ts": "2026-03-25T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.2317
+      },
+      {
+        "ts": "2026-03-26T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0772
+      },
+      {
+        "ts": "2026-03-27T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0667
+      },
+      {
+        "ts": "2026-03-28T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.149
+      },
+      {
+        "ts": "2026-03-29T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0865
+      },
+      {
+        "ts": "2026-03-30T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.3736
+      },
+      {
+        "ts": "2026-03-31T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.0334
+      },
+      {
+        "ts": "2026-04-01T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0582
+      },
+      {
+        "ts": "2026-04-02T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.3879
+      },
+      {
+        "ts": "2026-04-03T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.2972
+      },
+      {
+        "ts": "2026-04-04T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1228
+      },
+      {
+        "ts": "2026-04-05T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.7103
+      },
+      {
+        "ts": "2026-04-06T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.4314
+      },
+      {
+        "ts": "2026-04-07T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.1023
+      },
+      {
+        "ts": "2026-04-08T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.019
+      },
+      {
+        "ts": "2026-04-09T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2026-04-10T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.5238
+      },
+      {
+        "ts": "2026-04-11T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2026-04-12T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0382
+      },
+      {
+        "ts": "2026-04-13T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1055
+      },
+      {
+        "ts": "2026-04-14T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2026-04-15T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2026-04-16T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.7
+      },
+      {
+        "ts": "2026-04-17T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2026-04-18T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.1434
+      },
+      {
+        "ts": "2026-04-19T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2026-04-20T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.0475
+      },
+      {
+        "ts": "2026-04-22T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0107
+      },
+      {
+        "ts": "2026-04-23T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2026-04-26T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2026-04-27T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0624
+      },
+      {
+        "ts": "2026-04-28T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0095
+      },
+      {
+        "ts": "2026-04-30T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0451
+      },
+      {
+        "ts": "2026-05-02T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.0912
+      },
+      {
+        "ts": "2026-05-03T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.6166
+      },
+      {
+        "ts": "2026-05-04T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.0828
+      },
+      {
+        "ts": "2026-05-05T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.6238
+      },
+      {
+        "ts": "2026-05-06T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.1065
+      },
+      {
+        "ts": "2026-05-07T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.003
+      },
+      {
+        "ts": "2026-05-08T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.1299
+      },
+      {
+        "ts": "2026-05-09T00:00",
+        "active_platforms": 3,
+        "sent_range": 0.0599
+      },
+      {
+        "ts": "2026-05-10T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.0764
+      },
+      {
+        "ts": "2026-05-11T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.3472
+      },
+      {
+        "ts": "2026-05-12T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.7029
+      },
+      {
+        "ts": "2026-05-13T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.6
+      },
+      {
+        "ts": "2026-05-14T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.6156
+      },
+      {
+        "ts": "2026-05-15T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.256
+      },
+      {
+        "ts": "2026-05-16T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.4335
+      },
+      {
+        "ts": "2026-05-17T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.6
+      },
+      {
+        "ts": "2026-05-18T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.2601
+      },
+      {
+        "ts": "2026-05-19T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.4277
+      },
+      {
+        "ts": "2026-05-20T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.6
+      },
+      {
+        "ts": "2026-05-21T00:00",
+        "active_platforms": 4,
+        "sent_range": 0.3187
+      },
+      {
+        "ts": "2026-05-22T00:00",
+        "active_platforms": 4,
+        "sent_range": 1.2
+      },
+      {
+        "ts": "2026-05-23T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.8633
+      },
+      {
+        "ts": "2026-05-24T00:00",
+        "active_platforms": 7,
+        "sent_range": 0.3856
+      },
+      {
+        "ts": "2026-05-25T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.1546
+      },
+      {
+        "ts": "2026-05-26T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.3133
+      },
+      {
+        "ts": "2026-05-27T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.2745
+      },
+      {
+        "ts": "2026-05-28T00:00",
+        "active_platforms": 8,
+        "sent_range": 0.444
+      },
+      {
+        "ts": "2026-05-29T00:00",
+        "active_platforms": 9,
+        "sent_range": 0.2443
+      },
+      {
+        "ts": "2026-05-30T00:00",
+        "active_platforms": 7,
+        "sent_range": 0.3433
+      },
+      {
+        "ts": "2026-05-31T00:00",
+        "active_platforms": 7,
+        "sent_range": 0.4046
+      },
+      {
+        "ts": "2026-06-01T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.1549
+      },
+      {
+        "ts": "2026-06-02T00:00",
+        "active_platforms": 7,
+        "sent_range": 0.4721
+      },
+      {
+        "ts": "2026-06-03T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.2278
+      },
+      {
+        "ts": "2026-06-04T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.1066
+      },
+      {
+        "ts": "2026-06-05T00:00",
+        "active_platforms": 7,
+        "sent_range": 0.394
+      },
+      {
+        "ts": "2026-06-06T00:00",
+        "active_platforms": 7,
+        "sent_range": 0.467
+      },
+      {
+        "ts": "2026-06-07T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.2387
+      },
+      {
+        "ts": "2026-06-08T00:00",
+        "active_platforms": 8,
+        "sent_range": 0.6995
+      },
+      {
+        "ts": "2026-06-09T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.1203
+      },
+      {
+        "ts": "2026-06-10T00:00",
+        "active_platforms": 8,
+        "sent_range": 0.2171
+      },
+      {
+        "ts": "2026-06-11T00:00",
+        "active_platforms": 8,
+        "sent_range": 0.0635
+      },
+      {
+        "ts": "2026-06-12T00:00",
+        "active_platforms": 8,
+        "sent_range": 0.3089
+      },
+      {
+        "ts": "2026-06-13T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.7325
+      },
+      {
+        "ts": "2026-06-14T00:00",
+        "active_platforms": 9,
+        "sent_range": 0.1384
+      },
+      {
+        "ts": "2026-06-15T00:00",
+        "active_platforms": 8,
+        "sent_range": 0.4677
+      },
+      {
+        "ts": "2026-06-16T00:00",
+        "active_platforms": 7,
+        "sent_range": 0.5941
+      },
+      {
+        "ts": "2026-06-17T00:00",
+        "active_platforms": 8,
+        "sent_range": 0.7612
+      },
+      {
+        "ts": "2026-06-18T00:00",
+        "active_platforms": 7,
+        "sent_range": 0.169
+      },
+      {
+        "ts": "2026-06-19T00:00",
+        "active_platforms": 7,
+        "sent_range": 0.163
+      },
+      {
+        "ts": "2026-06-20T00:00",
+        "active_platforms": 8,
+        "sent_range": 0.5524
+      },
+      {
+        "ts": "2026-06-21T00:00",
+        "active_platforms": 8,
+        "sent_range": 0.1836
+      },
+      {
+        "ts": "2026-06-22T00:00",
+        "active_platforms": 9,
+        "sent_range": 0.3394
+      },
+      {
+        "ts": "2026-06-23T00:00",
+        "active_platforms": 9,
+        "sent_range": 0.6
+      },
+      {
+        "ts": "2026-06-24T00:00",
+        "active_platforms": 10,
+        "sent_range": 0.6272
+      },
+      {
+        "ts": "2026-06-25T00:00",
+        "active_platforms": 7,
+        "sent_range": 0.4352
+      },
+      {
+        "ts": "2026-06-26T00:00",
+        "active_platforms": 7,
+        "sent_range": 0.2382
+      },
+      {
+        "ts": "2026-06-27T00:00",
+        "active_platforms": 7,
+        "sent_range": 0.2958
+      },
+      {
+        "ts": "2026-06-28T00:00",
+        "active_platforms": 9,
+        "sent_range": 0.6331
+      },
+      {
+        "ts": "2026-06-29T00:00",
+        "active_platforms": 8,
+        "sent_range": 0.1471
+      },
+      {
+        "ts": "2026-06-30T00:00",
+        "active_platforms": 8,
+        "sent_range": 0.3579
+      },
+      {
+        "ts": "2026-07-01T00:00",
+        "active_platforms": 8,
+        "sent_range": 0.2612
+      },
+      {
+        "ts": "2026-07-02T00:00",
+        "active_platforms": 9,
+        "sent_range": 0.3179
+      },
+      {
+        "ts": "2026-07-03T00:00",
+        "active_platforms": 9,
+        "sent_range": 0.4006
+      },
+      {
+        "ts": "2026-07-04T00:00",
+        "active_platforms": 10,
+        "sent_range": 0.3955
+      },
+      {
+        "ts": "2026-07-05T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.2358
+      },
+      {
+        "ts": "2026-07-06T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.2898
+      },
+      {
+        "ts": "2026-07-07T00:00",
+        "active_platforms": 10,
+        "sent_range": 0.7071
+      },
+      {
+        "ts": "2026-07-08T00:00",
+        "active_platforms": 10,
+        "sent_range": 0.7167
+      },
+      {
+        "ts": "2026-07-09T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.3134
+      },
+      {
+        "ts": "2026-07-10T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.4704
+      },
+      {
+        "ts": "2026-07-11T00:00",
+        "active_platforms": 10,
+        "sent_range": 0.3106
+      },
+      {
+        "ts": "2026-07-12T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.152
+      },
+      {
+        "ts": "2026-07-13T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.2827
+      },
+      {
+        "ts": "2026-07-14T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.6
+      },
+      {
+        "ts": "2026-07-15T00:00",
+        "active_platforms": 9,
+        "sent_range": 0.2261
+      },
+      {
+        "ts": "2026-07-16T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.265
+      },
+      {
+        "ts": "2026-07-17T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.4573
+      },
+      {
+        "ts": "2026-07-18T00:00",
+        "active_platforms": 10,
+        "sent_range": 0.3833
+      },
+      {
+        "ts": "2026-07-19T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.2943
+      },
+      {
+        "ts": "2026-07-20T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.3152
+      },
+      {
+        "ts": "2026-07-21T00:00",
+        "active_platforms": 10,
+        "sent_range": 0.3396
+      },
+      {
+        "ts": "2026-07-22T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.2323
+      },
+      {
+        "ts": "2026-07-23T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.4002
+      },
+      {
+        "ts": "2026-07-24T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.3623
+      },
+      {
+        "ts": "2026-07-25T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.6949
+      },
+      {
+        "ts": "2026-07-26T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.5631
+      },
+      {
+        "ts": "2026-07-27T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.512
+      },
+      {
+        "ts": "2026-07-28T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.4748
+      },
+      {
+        "ts": "2026-07-29T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.2064
+      },
+      {
+        "ts": "2026-07-30T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.4271
+      },
+      {
+        "ts": "2026-07-31T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.3944
+      },
+      {
+        "ts": "2026-08-01T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.8928
+      },
+      {
+        "ts": "2026-08-02T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.3484
+      },
+      {
+        "ts": "2026-08-03T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.4432
+      },
+      {
+        "ts": "2026-08-04T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.2443
+      },
+      {
+        "ts": "2026-08-05T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.5676
+      },
+      {
+        "ts": "2026-08-06T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.2237
+      },
+      {
+        "ts": "2026-08-07T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.3427
+      },
+      {
+        "ts": "2026-08-08T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.3941
+      },
+      {
+        "ts": "2026-08-09T00:00",
+        "active_platforms": 11,
+        "sent_range": 0.1646
+      },
+      {
+        "ts": "2026-08-10T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.2838
+      },
+      {
+        "ts": "2026-08-11T00:00",
+        "active_platforms": 12,
+        "sent_range": 0.4008
+      },
+      {
+        "ts": "2026-08-12T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.2162
+      },
+      {
+        "ts": "2026-08-13T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.1585
+      },
+      {
+        "ts": "2026-08-14T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.19
+      },
+      {
+        "ts": "2026-08-15T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.1059
+      },
+      {
+        "ts": "2026-08-16T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.1481
+      },
+      {
+        "ts": "2026-08-17T00:00",
+        "active_platforms": 6,
+        "sent_range": 0.2446
+      },
+      {
+        "ts": "2026-08-18T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.0812
+      },
+      {
+        "ts": "2026-08-19T00:00",
+        "active_platforms": 5,
+        "sent_range": 0.1942
+      }
+    ]
+  },
+  "llm_used": false,
+  "llm_error": null,
+  "generated_at": "2026-08-21T10:32:29",
+  "calibration": {
+    "gates": [
+      {
+        "gate": "CX1",
+        "pass": true,
+        "note": "12 个平台参与"
+      },
+      {
+        "gate": "CX2",
+        "pass": true,
+        "note": "echo=0.1594, 夸大=False, 漏报=False"
+      },
+      {
+        "gate": "CX3",
+        "pass": true,
+        "note": "无越界平台"
+      },
+      {
+        "gate": "CX4",
+        "pass": true,
+        "note": "claims 均有平台绑定"
+      },
+      {
+        "gate": "CX5",
+        "pass": true,
+        "note": "存在有效观测"
+      }
+    ],
+    "all_pass": true
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "schema_version": "platform_report_v1",
+  "platform": "douyin:游戏动漫与虚拟内容",
+  "keyword": "游戏动漫与虚拟内容",
+  "meta": {
+    "platform": "douyin:游戏动漫与虚拟内容",
+    "keyword": "游戏动漫与虚拟内容",
+    "time_range": {
+      "start": "2024-07-30T00:00:00+08:00",
+      "end": "2026-08-20T00:00:00+08:00"
+    },
+    "timezone": "Asia/Shanghai",
+    "granularity": "day",
+    "n_text": 3516,
+    "n_text_raw_in": 3583,
+    "n_buckets": 751,
+    "empty_ratio": 0.7749667110519307,
+    "is_empty": false,
+    "stance_global": "neutral",
+    "bias_score": 0.028237915447643095,
+    "confidence": 0.41297042093287833,
+    "sentiment_global_mean": 0.005260494923625401,
+    "clean_rule_version": "clean_c1c8_v1",
+    "source_skill_versions": {
+      "platform_crawler": "platform_crawler_v1",
+      "stance_profiler": "stance_profiler_v1"
+    },
+    "ext": {
+      "metric_profile": "dataset_spec_v1_default",
+      "merge_policy": "keep_higher_interact",
+      "sent_std_policy": "null_if_lt2",
+      "stance_provisional": false,
+      "clean_log": [
+        "C0: input_rows=3583",
+        "C2 drop empty/noise idx=1255",
+        "C2 drop empty/noise idx=1339",
+        "C2 drop empty/noise idx=1410",
+        "C2 drop empty/noise idx=1502",
+        "C2 drop empty/noise idx=1518",
+        "C2 drop empty/noise idx=1529",
+        "C2 drop empty/noise idx=1574",
+        "C2 drop empty/noise idx=1620",
+        "C2 drop empty/noise idx=1623",
+        "C2 drop empty/noise idx=1636",
+        "C2 drop empty/noise idx=1644",
+        "C2 drop empty/noise idx=1654",
+        "C2 drop empty/noise idx=1655",
+        "C2 drop empty/noise idx=1663",
+        "C2 drop empty/noise idx=1683",
+        "C2 drop empty/noise idx=1684",
+        "C2 drop empty/noise idx=1687",
+        "C2 drop empty/noise idx=1730",
+        "C2 drop empty/noise idx=1760",
+        "C2 drop empty/noise idx=1950",
+        "C2 drop empty/noise idx=1964",
+        "C2 drop empty/noise idx=2004",
+        "C2 drop empty/noise idx=2020",
+        "C2 drop empty/noise idx=2025",
+        "C2 drop empty/noise idx=2060",
+        "C2 drop empty/noise idx=2070",
+        "C2 drop empty/noise idx=2081",
+        "C2 drop empty/noise idx=2082",
+        "C2 drop empty/noise idx=2221",
+        "C2 drop empty/noise idx=2300",
+        "C2 drop empty/noise idx=2301",
+        "C2 drop empty/noise idx=2305",
+        "C2 drop empty/noise idx=2307",
+        "C2 drop empty/noise idx=2310",
+        "C2 drop empty/noise idx=2318",
+        "C2 drop empty/noise idx=2319",
+        "C2 drop empty/noise idx=2320",
+        "C2 drop empty/noise idx=2324",
+        "C2 drop empty/noise idx=2326",
+        "C2 drop empty/noise idx=2332",
+        "C2 drop empty/noise idx=2483",
+        "C2 drop empty/noise idx=2509",
+        "C2 drop empty/noise idx=2510",
+        "C2 drop empty/noise idx=2611",
+        "C2 drop empty/noise idx=2631",
+        "C2 drop empty/noise idx=2668",
+        "C2 drop empty/noise idx=2761",
+        "C2 drop empty/noise idx=2762",
+        "C2 drop empty/noise idx=2867",
+        "C2 drop empty/noise idx=2873",
+        "C2 drop empty/noise idx=2878",
+        "C2 drop empty/noise idx=2995",
+        "C2 drop empty/noise idx=3003",
+        "C2 drop empty/noise idx=3006",
+        "C2 drop empty/noise idx=3010",
+        "C2 drop empty/noise idx=3017",
+        "C2 drop empty/noise idx=3018",
+        "C2 drop empty/noise idx=3019",
+        "C2 drop empty/noise idx=3021",
+        "C2 drop empty/noise idx=3022",
+        "C2 drop empty/noise idx=3023",
+        "C2 drop empty/noise idx=3026",
+        "C2 drop empty/noise idx=3027",
+        "C2 drop empty/noise idx=3029",
+        "C2 drop empty/noise idx=3030",
+        "C2 drop empty/noise idx=3032",
+        "C2 drop empty/noise idx=3280",
+        "C1-C4: kept=3516 quarantine=0",
+        "C6: in_range=3516 out_of_range=0",
+        "C5: after_dedup=3516",
+        "C7: spam_marked; stance_lite applied; final=3516"
+      ],
+      "n_quarantine": 0,
+      "n_out_of_range": 0,
+      "alpha_reply": 1.0,
+      "beta_share": 1.0,
+      "topic_heat_metric": "video_topic_heat_v1",
+      "topic_heat_source": "search_pubdate",
+      "n_heat_videos": 0,
+      "topic_heat_formula": "sum_v log1p(play)+0.5*log1p(review)+0.25*log1p(favorites)+0.25*log1p(danmaku) by video pubdate bucket",
+      "topic_heat_peak_ts": "2024-07-30T00:00:00+08:00",
+      "topic_heat_peak": 0.0,
+      "topic_volume_sum": 0.0,
+      "topic_heat_sum": 0.0,
+      "stance_labeler": "lexicon:v2",
+      "stance_profiler_version": "stance_profiler_v1"
+    }
+  },
+  "stance_dist": {
+    "support": 0.02303754266211604,
+    "oppose": 0.002559726962457338,
+    "neutral": 0.9485210466439136,
+    "mixed": 0.0,
+    "unclear": 0.025881683731513082
+  },
+  "stance_profile": {
+    "stance_global": "neutral",
+    "bias_score": 0.028237915447643095,
+    "confidence": 0.41297042093287833,
+    "sentiment_global_mean": 0.005260494923625401,
+    "sentiment_dist": {
+      "pos": 0.06342434584755403,
+      "neu": 0.8842434584755404,
+      "neg": 0.05233219567690557
+    },
+    "stance_ratios": {
+      "support": 0.02303754266211604,
+      "oppose": 0.002559726962457338,
+      "neutral": 0.9485210466439136,
+      "mixed": 0.0,
+      "unclear": 0.025881683731513082
+    },
+    "keyword_clusters": [
+      {
+        "label": "情绪表达",
+        "weight": 422.0,
+        "sample_content_ids": [
+          "7675298671484191497",
+          "7672209168879452985",
+          "7672256716793332539"
+        ]
+      },
+      {
+        "label": "圈层:K",
+        "weight": 24.0,
+        "sample_content_ids": [
+          "7672342528938754853",
+          "7672633532842492709",
+          "7397596502569616166"
+        ]
+      },
+      {
+        "label": "圈层:米",
+        "weight": 15.0,
+        "sample_content_ids": [
+          "7672339941481202490",
+          "7672058800416916273",
+          "7672208056839275327"
+        ]
+      },
+      {
+        "label": "怀旧考古",
+        "weight": 13.0,
+        "sample_content_ids": [
+          "7663869213123380008",
+          "7397702040065884978",
+          "7397722760229159731"
+        ]
+      },
+      {
+        "label": "体育赛事",
+        "weight": 13.0,
+        "sample_content_ids": [
+          "7672044875668275978",
+          "7672847256365630257",
+          "7673338521801949987"
+        ]
+      },
+      {
+        "label": "圈层:W",
+        "weight": 9.0,
+        "sample_content_ids": [
+          "7455889141105640249",
+          "7672336817404150577",
+          "7672628527263613753"
+        ]
+      },
+      {
+        "label": "学业考试",
+        "weight": 8.0,
+        "sample_content_ids": [
+          "7668490991473296185",
+          "7674246614840132393",
+          "7672041427207701274"
+        ]
+      },
+      {
+        "label": "圈层:家人们",
+        "weight": 2.0,
+        "sample_content_ids": [
+          "7672257285976310565",
+          "7672197081519506213"
+        ]
+      }
+    ],
+    "n_labeled": 3516,
+    "model_version": "stance_profiler_v1",
+    "labeler": "lexicon:v2",
+    "platform": "douyin",
+    "keyword": "游戏动漫与虚拟内容",
+    "time_range": {
+      "start": "2024-07-30T00:00:00+08:00",
+      "end": "2026-08-20T00:00:00+08:00"
+    }
+  },
+  "generated_at": "2026-08-21T10:32:28"
+}

@@ -1,0 +1,244 @@
+{
+  "schema_version": "platform_report_v1",
+  "platform": "douyin:影视娱乐与明星",
+  "keyword": "影视娱乐与明星",
+  "meta": {
+    "platform": "douyin:影视娱乐与明星",
+    "keyword": "影视娱乐与明星",
+    "time_range": {
+      "start": "2025-12-05T00:00:00+08:00",
+      "end": "2026-08-20T00:00:00+08:00"
+    },
+    "timezone": "Asia/Shanghai",
+    "granularity": "day",
+    "n_text": 4068,
+    "n_text_raw_in": 4149,
+    "n_buckets": 258,
+    "empty_ratio": 0.6782945736434108,
+    "is_empty": false,
+    "stance_global": "neutral",
+    "bias_score": 0.06236171711745955,
+    "confidence": 0.41847787610619475,
+    "sentiment_global_mean": 0.040998898212395565,
+    "clean_rule_version": "clean_c1c8_v1",
+    "source_skill_versions": {
+      "platform_crawler": "platform_crawler_v1",
+      "stance_profiler": "stance_profiler_v1"
+    },
+    "ext": {
+      "metric_profile": "dataset_spec_v1_default",
+      "merge_policy": "keep_higher_interact",
+      "sent_std_policy": "null_if_lt2",
+      "stance_provisional": false,
+      "clean_log": [
+        "C0: input_rows=4149",
+        "C2 drop empty/noise idx=311",
+        "C2 drop empty/noise idx=314",
+        "C2 drop empty/noise idx=338",
+        "C2 drop empty/noise idx=371",
+        "C2 drop empty/noise idx=1185",
+        "C2 drop empty/noise idx=1207",
+        "C2 drop empty/noise idx=1211",
+        "C2 drop empty/noise idx=1217",
+        "C2 drop empty/noise idx=1235",
+        "C2 drop empty/noise idx=1248",
+        "C2 drop empty/noise idx=2241",
+        "C2 drop empty/noise idx=2258",
+        "C2 drop empty/noise idx=2292",
+        "C2 drop empty/noise idx=2293",
+        "C2 drop empty/noise idx=2433",
+        "C2 drop empty/noise idx=2481",
+        "C2 drop empty/noise idx=2509",
+        "C2 drop empty/noise idx=2523",
+        "C2 drop empty/noise idx=2683",
+        "C2 drop empty/noise idx=2701",
+        "C2 drop empty/noise idx=2713",
+        "C2 drop empty/noise idx=2719",
+        "C2 drop empty/noise idx=2992",
+        "C2 drop empty/noise idx=3004",
+        "C2 drop empty/noise idx=3034",
+        "C2 drop empty/noise idx=3041",
+        "C2 drop empty/noise idx=3053",
+        "C2 drop empty/noise idx=3082",
+        "C2 drop empty/noise idx=3090",
+        "C2 drop empty/noise idx=3108",
+        "C2 drop empty/noise idx=3123",
+        "C2 drop empty/noise idx=3125",
+        "C2 drop empty/noise idx=3282",
+        "C2 drop empty/noise idx=3332",
+        "C2 drop empty/noise idx=3360",
+        "C2 drop empty/noise idx=3658",
+        "C2 drop empty/noise idx=3675",
+        "C2 drop empty/noise idx=3693",
+        "C2 drop empty/noise idx=3699",
+        "C2 drop empty/noise idx=3706",
+        "C2 drop empty/noise idx=3724",
+        "C2 drop empty/noise idx=3732",
+        "C2 drop empty/noise idx=3747",
+        "C2 drop empty/noise idx=3758",
+        "C2 drop empty/noise idx=3829",
+        "C2 drop empty/noise idx=3866",
+        "C2 drop empty/noise idx=3881",
+        "C2 drop empty/noise idx=3889",
+        "C2 drop empty/noise idx=3890",
+        "C2 drop empty/noise idx=3894",
+        "C2 drop empty/noise idx=3897",
+        "C2 drop empty/noise idx=3904",
+        "C2 drop empty/noise idx=3906",
+        "C2 drop empty/noise idx=3907",
+        "C2 drop empty/noise idx=3994",
+        "C2 drop empty/noise idx=4003",
+        "C2 drop empty/noise idx=4004",
+        "C2 drop empty/noise idx=4017",
+        "C2 drop empty/noise idx=4023",
+        "C2 drop empty/noise idx=4026",
+        "C2 drop empty/noise idx=4028",
+        "C2 drop empty/noise idx=4033",
+        "C2 drop empty/noise idx=4035",
+        "C2 drop empty/noise idx=4040",
+        "C2 drop empty/noise idx=4041",
+        "C2 drop empty/noise idx=4050",
+        "C2 drop empty/noise idx=4068",
+        "C2 drop empty/noise idx=4074",
+        "C2 drop empty/noise idx=4075",
+        "C2 drop empty/noise idx=4079",
+        "C2 drop empty/noise idx=4086",
+        "C2 drop empty/noise idx=4088",
+        "C2 drop empty/noise idx=4096",
+        "C2 drop empty/noise idx=4099",
+        "C2 drop empty/noise idx=4102",
+        "C2 drop empty/noise idx=4104",
+        "C2 drop empty/noise idx=4106",
+        "C2 drop empty/noise idx=4118",
+        "C2 drop empty/noise idx=4124",
+        "C2 drop empty/noise idx=4127",
+        "C2 drop empty/noise idx=4144",
+        "C1-C4: kept=4068 quarantine=0",
+        "C6: in_range=4068 out_of_range=0",
+        "C5: after_dedup=4068",
+        "C7: spam_marked; stance_lite applied; final=4068"
+      ],
+      "n_quarantine": 0,
+      "n_out_of_range": 0,
+      "alpha_reply": 1.0,
+      "beta_share": 1.0,
+      "topic_heat_metric": "video_topic_heat_v1",
+      "topic_heat_source": "search_pubdate",
+      "n_heat_videos": 0,
+      "topic_heat_formula": "sum_v log1p(play)+0.5*log1p(review)+0.25*log1p(favorites)+0.25*log1p(danmaku) by video pubdate bucket",
+      "topic_heat_peak_ts": "2025-12-05T00:00:00+08:00",
+      "topic_heat_peak": 0.0,
+      "topic_volume_sum": 0.0,
+      "topic_heat_sum": 0.0,
+      "stance_labeler": "lexicon:v2",
+      "stance_profiler_version": "stance_profiler_v1"
+    }
+  },
+  "stance_dist": {
+    "support": 0.06096361848574238,
+    "oppose": 0.005162241887905605,
+    "neutral": 0.9321533923303835,
+    "mixed": 0.0002458210422812193,
+    "unclear": 0.0014749262536873156
+  },
+  "stance_profile": {
+    "stance_global": "neutral",
+    "bias_score": 0.06236171711745955,
+    "confidence": 0.41847787610619475,
+    "sentiment_global_mean": 0.040998898212395565,
+    "sentiment_dist": {
+      "pos": 0.10299901671583088,
+      "neu": 0.8534906588003933,
+      "neg": 0.043510324483775814
+    },
+    "stance_ratios": {
+      "support": 0.06096361848574238,
+      "oppose": 0.005162241887905605,
+      "neutral": 0.9321533923303835,
+      "mixed": 0.0002458210422812193,
+      "unclear": 0.0014749262536873156
+    },
+    "keyword_clusters": [
+      {
+        "label": "情绪表达",
+        "weight": 618.0,
+        "sample_content_ids": [
+          "7673182754385167123",
+          "7673069866308338467",
+          "7672382236063679269"
+        ]
+      },
+      {
+        "label": "怀旧考古",
+        "weight": 39.0,
+        "sample_content_ids": [
+          "7668945606254428965",
+          "7671709231885058853",
+          "7671664874951574324"
+        ]
+      },
+      {
+        "label": "演技作品",
+        "weight": 22.0,
+        "sample_content_ids": [
+          "7671840312331780927",
+          "7675546021501961011",
+          "7580669819776271110"
+        ]
+      },
+      {
+        "label": "圈层:K",
+        "weight": 17.0,
+        "sample_content_ids": [
+          "7672007590059066121",
+          "7672362151000425253",
+          "7672033009520739109"
+        ]
+      },
+      {
+        "label": "圈层:米",
+        "weight": 13.0,
+        "sample_content_ids": [
+          "7672348524651004724",
+          "7672325762918679359",
+          "7581662329310659385"
+        ]
+      },
+      {
+        "label": "学业考试",
+        "weight": 7.0,
+        "sample_content_ids": [
+          "7672036949527806779",
+          "7671982909369418502",
+          "7672408900314940209"
+        ]
+      },
+      {
+        "label": "圈层:W",
+        "weight": 3.0,
+        "sample_content_ids": [
+          "7669063512250123054",
+          "7660818604145525545",
+          "7669061436854813489"
+        ]
+      },
+      {
+        "label": "体育赛事",
+        "weight": 1.0,
+        "sample_content_ids": [
+          "7673661663220482853"
+        ]
+      }
+    ],
+    "n_labeled": 4068,
+    "model_version": "stance_profiler_v1",
+    "labeler": "lexicon:v2",
+    "platform": "douyin",
+    "keyword": "影视娱乐与明星",
+    "time_range": {
+      "start": "2025-12-05T00:00:00+08:00",
+      "end": "2026-08-20T00:00:00+08:00"
+    }
+  },
+  "generated_at": "2026-08-21T10:32:26"
+}

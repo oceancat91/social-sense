@@ -2,7 +2,7 @@
 
 这里存放**单个舆情事件 / 话题**经 PlatformCrawler + StanceProfiler 处理后的正式数据包，供后续分析 Skill 与实验复用。
 
-当前数据源平台：**哔哩哔哩（Bilibili）**。
+当前数据源平台：**哔哩哔哩、微博、小红书**。
 
 ---
 
@@ -12,6 +12,11 @@
 dataset/
 ├── README.md                 ← 本说明
 ├── INDEX.md                  ← 事件索引表（每入库一条就追加一行）
+├── real_multiplatform/       ← 清洗后真实多平台 ZIP 的接入结果
+│   ├── manifest.json         ← 文件名解码、哈希、行数、时间窗与产物索引
+│   ├── raw/                  ← 本地 CSV（已由 .gitignore 排除）
+│   ├── reports/              ← 平台报告（含 D_ts、Skill2、Skill3）
+│   └── fusion/               ← 同话题跨平台主控融合结果
 └── events/
     └── <event_id>/
         ├── meta.json         ← 事件介绍、来源、时间窗、处理链路
@@ -29,6 +34,32 @@ dataset/
 
 - 只用英文、数字、下划线，避免空格与特殊符号  
 - `keyword` 可用拼音或压缩中文文件名安全形式  
+
+---
+
+## 清洗后多平台 ZIP 接入
+
+`tools/import_clean_zips.py` 处理统一清洗 CSV，并完成：
+
+1. 根据 ZIP UTF-8 标志解码中文文件名；旧式 ZIP 再尝试 CP437 → UTF-8/GB18030 恢复。
+2. 文件名统一为 Unicode NFC，拒绝绝对路径与 `..` 路径穿越。
+3. 识别 `platform / domain / broad|hot / hot_topic`，映射平台别名
+   `bili → bilibili`、`xhs → xiaohongshu`。
+4. 生成稳定内容 ID，执行 C1–C8、构建 `D_platform`、运行 Skill2 和 Skill3。
+5. broad 数据按领域做 B站/微博融合；hot 数据按话题做 B站/微博/小红书融合。
+
+```powershell
+python agent/tools/import_clean_zips.py `
+  --archive "bilibili=D:/data/data_bili_clean.zip" `
+  --archive "weibo=D:/data/data_weibo_clean.zip" `
+  --archive "xiaohongshu=D:/data/data_xhs_clean.zip"
+```
+
+可用 `--sample 1000` 做快速抽样验证，或用 `--text-tower` 在 Skill3 中同时启用
+文本语义漂移分析。默认全量运行多尺度时序检测，但关闭高成本文本塔。
+
+本次接入结果：60 个 CSV、391,187 条原始记录、390,015 条有效文本、60 份平台报告、
+24 份跨平台融合结果。原始 CSV 只保存在本机；可复现的 manifest、报告与融合结果可入库。
 
 ---
 

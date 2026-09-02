@@ -1,0 +1,267 @@
+{
+  "schema_version": "platform_report_v1",
+  "platform": "douyin:自然环境与三农动物",
+  "keyword": "自然环境与三农动物",
+  "meta": {
+    "platform": "douyin:自然环境与三农动物",
+    "keyword": "自然环境与三农动物",
+    "time_range": {
+      "start": "2026-02-21T00:00:00+08:00",
+      "end": "2026-08-20T00:00:00+08:00"
+    },
+    "timezone": "Asia/Shanghai",
+    "granularity": "day",
+    "n_text": 3880,
+    "n_text_raw_in": 3993,
+    "n_buckets": 180,
+    "empty_ratio": 0.14444444444444443,
+    "is_empty": false,
+    "stance_global": "neutral",
+    "bias_score": 0.04114610375798931,
+    "confidence": 0.4171850515463918,
+    "sentiment_global_mean": 0.04021517824620904,
+    "clean_rule_version": "clean_c1c8_v1",
+    "source_skill_versions": {
+      "platform_crawler": "platform_crawler_v1",
+      "stance_profiler": "stance_profiler_v1"
+    },
+    "ext": {
+      "metric_profile": "dataset_spec_v1_default",
+      "merge_policy": "keep_higher_interact",
+      "sent_std_policy": "null_if_lt2",
+      "stance_provisional": false,
+      "clean_log": [
+        "C0: input_rows=3993",
+        "C2 drop empty/noise idx=800",
+        "C2 drop empty/noise idx=1294",
+        "C2 drop empty/noise idx=1323",
+        "C2 drop empty/noise idx=1324",
+        "C2 drop empty/noise idx=1351",
+        "C2 drop empty/noise idx=1369",
+        "C2 drop empty/noise idx=1407",
+        "C2 drop empty/noise idx=1414",
+        "C2 drop empty/noise idx=1426",
+        "C2 drop empty/noise idx=1434",
+        "C2 drop empty/noise idx=1465",
+        "C2 drop empty/noise idx=1476",
+        "C2 drop empty/noise idx=1878",
+        "C2 drop empty/noise idx=2233",
+        "C2 drop empty/noise idx=2363",
+        "C2 drop empty/noise idx=2399",
+        "C2 drop empty/noise idx=2405",
+        "C2 drop empty/noise idx=2422",
+        "C2 drop empty/noise idx=2443",
+        "C2 drop empty/noise idx=2446",
+        "C2 drop empty/noise idx=2453",
+        "C2 drop empty/noise idx=2474",
+        "C2 drop empty/noise idx=2493",
+        "C2 drop empty/noise idx=2494",
+        "C2 drop empty/noise idx=2521",
+        "C2 drop empty/noise idx=2524",
+        "C2 drop empty/noise idx=2532",
+        "C2 drop empty/noise idx=2647",
+        "C2 drop empty/noise idx=2658",
+        "C2 drop empty/noise idx=2668",
+        "C2 drop empty/noise idx=2682",
+        "C2 drop empty/noise idx=2690",
+        "C2 drop empty/noise idx=2700",
+        "C2 drop empty/noise idx=2716",
+        "C2 drop empty/noise idx=2717",
+        "C2 drop empty/noise idx=2720",
+        "C2 drop empty/noise idx=2732",
+        "C2 drop empty/noise idx=2735",
+        "C2 drop empty/noise idx=2736",
+        "C2 drop empty/noise idx=2740",
+        "C2 drop empty/noise idx=2747",
+        "C2 drop empty/noise idx=2821",
+        "C2 drop empty/noise idx=2828",
+        "C2 drop empty/noise idx=2851",
+        "C2 drop empty/noise idx=2891",
+        "C2 drop empty/noise idx=2910",
+        "C2 drop empty/noise idx=2951",
+        "C2 drop empty/noise idx=3132",
+        "C2 drop empty/noise idx=3227",
+        "C2 drop empty/noise idx=3294",
+        "C2 drop empty/noise idx=3316",
+        "C2 drop empty/noise idx=3346",
+        "C2 drop empty/noise idx=3365",
+        "C2 drop empty/noise idx=3386",
+        "C2 drop empty/noise idx=3442",
+        "C2 drop empty/noise idx=3443",
+        "C2 drop empty/noise idx=3444",
+        "C2 drop empty/noise idx=3450",
+        "C2 drop empty/noise idx=3461",
+        "C2 drop empty/noise idx=3478",
+        "C2 drop empty/noise idx=3481",
+        "C2 drop empty/noise idx=3574",
+        "C2 drop empty/noise idx=3602",
+        "C2 drop empty/noise idx=3603",
+        "C2 drop empty/noise idx=3615",
+        "C2 drop empty/noise idx=3618",
+        "C2 drop empty/noise idx=3624",
+        "C2 drop empty/noise idx=3627",
+        "C2 drop empty/noise idx=3631",
+        "C2 drop empty/noise idx=3639",
+        "C2 drop empty/noise idx=3642",
+        "C2 drop empty/noise idx=3643",
+        "C2 drop empty/noise idx=3644",
+        "C2 drop empty/noise idx=3645",
+        "C2 drop empty/noise idx=3650",
+        "C2 drop empty/noise idx=3653",
+        "C2 drop empty/noise idx=3654",
+        "C2 drop empty/noise idx=3695",
+        "C2 drop empty/noise idx=3719",
+        "C2 drop empty/noise idx=3740",
+        "C2 drop empty/noise idx=3749",
+        "C2 drop empty/noise idx=3775",
+        "C2 drop empty/noise idx=3779",
+        "C2 drop empty/noise idx=3783",
+        "C2 drop empty/noise idx=3795",
+        "C2 drop empty/noise idx=3796",
+        "C2 drop empty/noise idx=3809",
+        "C2 drop empty/noise idx=3811",
+        "C2 drop empty/noise idx=3817",
+        "C2 drop empty/noise idx=3818",
+        "C2 drop empty/noise idx=3821",
+        "C2 drop empty/noise idx=3823",
+        "C2 drop empty/noise idx=3827",
+        "C2 drop empty/noise idx=3829",
+        "C2 drop empty/noise idx=3831",
+        "C2 drop empty/noise idx=3832",
+        "C2 drop empty/noise idx=3833",
+        "C2 drop empty/noise idx=3837",
+        "C2 drop empty/noise idx=3840",
+        "C2 drop empty/noise idx=3841",
+        "C2 drop empty/noise idx=3844",
+        "C2 drop empty/noise idx=3845",
+        "C2 drop empty/noise idx=3846",
+        "C2 drop empty/noise idx=3848",
+        "C2 drop empty/noise idx=3849",
+        "C2 drop empty/noise idx=3851",
+        "C2 drop empty/noise idx=3853",
+        "C2 drop empty/noise idx=3854",
+        "C2 drop empty/noise idx=3855",
+        "C2 drop empty/noise idx=3856",
+        "C2 drop empty/noise idx=3859",
+        "C2 drop empty/noise idx=3961",
+        "C2 drop empty/noise idx=3966",
+        "C1-C4: kept=3880 quarantine=0",
+        "C6: in_range=3880 out_of_range=0",
+        "C5: after_dedup=3880",
+        "C7: spam_marked; stance_lite applied; final=3880"
+      ],
+      "n_quarantine": 0,
+      "n_out_of_range": 0,
+      "alpha_reply": 1.0,
+      "beta_share": 1.0,
+      "topic_heat_metric": "video_topic_heat_v1",
+      "topic_heat_source": "search_pubdate",
+      "n_heat_videos": 0,
+      "topic_heat_formula": "sum_v log1p(play)+0.5*log1p(review)+0.25*log1p(favorites)+0.25*log1p(danmaku) by video pubdate bucket",
+      "topic_heat_peak_ts": "2026-02-21T00:00:00+08:00",
+      "topic_heat_peak": 0.0,
+      "topic_volume_sum": 0.0,
+      "topic_heat_sum": 0.0,
+      "stance_labeler": "lexicon:v2",
+      "stance_profiler_version": "stance_profiler_v1"
+    }
+  },
+  "stance_dist": {
+    "support": 0.037371134020618556,
+    "oppose": 0.006185567010309278,
+    "neutral": 0.9548969072164949,
+    "mixed": 0.0005154639175257732,
+    "unclear": 0.0010309278350515464
+  },
+  "stance_profile": {
+    "stance_global": "neutral",
+    "bias_score": 0.04114610375798931,
+    "confidence": 0.4171850515463918,
+    "sentiment_global_mean": 0.04021517824620904,
+    "sentiment_dist": {
+      "pos": 0.09948453608247422,
+      "neu": 0.8626288659793815,
+      "neg": 0.03788659793814433
+    },
+    "stance_ratios": {
+      "support": 0.037371134020618556,
+      "oppose": 0.006185567010309278,
+      "neutral": 0.9548969072164949,
+      "mixed": 0.0005154639175257732,
+      "unclear": 0.0010309278350515464
+    },
+    "keyword_clusters": [
+      {
+        "label": "情绪表达",
+        "weight": 541.0,
+        "sample_content_ids": [
+          "7658303717511676730",
+          "7653355212623004453",
+          "7660092839271875385"
+        ]
+      },
+      {
+        "label": "圈层:米",
+        "weight": 19.0,
+        "sample_content_ids": [
+          "7671950591023039295",
+          "7673832384877331249",
+          "7611131800128226098"
+        ]
+      },
+      {
+        "label": "怀旧考古",
+        "weight": 15.0,
+        "sample_content_ids": [
+          "7673473855914459963",
+          "7669434840756175675",
+          "7672377118017553189"
+        ]
+      },
+      {
+        "label": "学业考试",
+        "weight": 4.0,
+        "sample_content_ids": [
+          "7657926024377860905",
+          "7675064187936129835",
+          "7649557139257819940"
+        ]
+      },
+      {
+        "label": "体育赛事",
+        "weight": 4.0,
+        "sample_content_ids": [
+          "7669652949786313507",
+          "7669623652900586297",
+          "7613141910492185390"
+        ]
+      },
+      {
+        "label": "圈层:K",
+        "weight": 4.0,
+        "sample_content_ids": [
+          "7672347339290870577",
+          "7672389088766542629",
+          "7672285347703931683"
+        ]
+      },
+      {
+        "label": "演技作品",
+        "weight": 1.0,
+        "sample_content_ids": [
+          "7672105322190144314"
+        ]
+      }
+    ],
+    "n_labeled": 3880,
+    "model_version": "stance_profiler_v1",
+    "labeler": "lexicon:v2",
+    "platform": "douyin",
+    "keyword": "自然环境与三农动物",
+    "time_range": {
+      "start": "2026-02-21T00:00:00+08:00",
+      "end": "2026-08-20T00:00:00+08:00"
+    }
+  },
+  "generated_at": "2026-08-21T10:32:27"
+}

@@ -1,0 +1,252 @@
+{
+  "schema_version": "platform_report_v1",
+  "platform": "douyin:体育竞技与健身",
+  "keyword": "体育竞技与健身",
+  "meta": {
+    "platform": "douyin:体育竞技与健身",
+    "keyword": "体育竞技与健身",
+    "time_range": {
+      "start": "2026-05-24T00:00:00+08:00",
+      "end": "2026-08-20T00:00:00+08:00"
+    },
+    "timezone": "Asia/Shanghai",
+    "granularity": "day",
+    "n_text": 3224,
+    "n_text_raw_in": 3313,
+    "n_buckets": 88,
+    "empty_ratio": 0.2159090909090909,
+    "is_empty": false,
+    "stance_global": "neutral",
+    "bias_score": 0.07020186923472314,
+    "confidence": 0.42127481389578164,
+    "sentiment_global_mean": 0.09402894285902295,
+    "clean_rule_version": "clean_c1c8_v1",
+    "source_skill_versions": {
+      "platform_crawler": "platform_crawler_v1",
+      "stance_profiler": "stance_profiler_v1"
+    },
+    "ext": {
+      "metric_profile": "dataset_spec_v1_default",
+      "merge_policy": "keep_higher_interact",
+      "sent_std_policy": "null_if_lt2",
+      "stance_provisional": false,
+      "clean_log": [
+        "C0: input_rows=3313",
+        "C2 drop empty/noise idx=492",
+        "C2 drop empty/noise idx=609",
+        "C2 drop empty/noise idx=942",
+        "C2 drop empty/noise idx=1044",
+        "C2 drop empty/noise idx=1373",
+        "C2 drop empty/noise idx=1429",
+        "C2 drop empty/noise idx=1432",
+        "C2 drop empty/noise idx=1437",
+        "C2 drop empty/noise idx=1439",
+        "C2 drop empty/noise idx=1444",
+        "C2 drop empty/noise idx=1445",
+        "C2 drop empty/noise idx=1446",
+        "C2 drop empty/noise idx=1447",
+        "C2 drop empty/noise idx=1449",
+        "C2 drop empty/noise idx=1451",
+        "C2 drop empty/noise idx=1453",
+        "C2 drop empty/noise idx=1459",
+        "C2 drop empty/noise idx=1643",
+        "C2 drop empty/noise idx=1974",
+        "C2 drop empty/noise idx=1995",
+        "C2 drop empty/noise idx=2006",
+        "C2 drop empty/noise idx=2032",
+        "C2 drop empty/noise idx=2044",
+        "C2 drop empty/noise idx=2049",
+        "C2 drop empty/noise idx=2060",
+        "C2 drop empty/noise idx=2062",
+        "C2 drop empty/noise idx=2071",
+        "C2 drop empty/noise idx=2073",
+        "C2 drop empty/noise idx=2074",
+        "C2 drop empty/noise idx=2076",
+        "C2 drop empty/noise idx=2082",
+        "C2 drop empty/noise idx=2083",
+        "C2 drop empty/noise idx=2202",
+        "C2 drop empty/noise idx=2239",
+        "C2 drop empty/noise idx=2244",
+        "C2 drop empty/noise idx=2277",
+        "C2 drop empty/noise idx=2278",
+        "C2 drop empty/noise idx=2280",
+        "C2 drop empty/noise idx=2281",
+        "C2 drop empty/noise idx=2282",
+        "C2 drop empty/noise idx=2284",
+        "C2 drop empty/noise idx=2387",
+        "C2 drop empty/noise idx=2399",
+        "C2 drop empty/noise idx=2400",
+        "C2 drop empty/noise idx=2412",
+        "C2 drop empty/noise idx=2434",
+        "C2 drop empty/noise idx=2437",
+        "C2 drop empty/noise idx=2438",
+        "C2 drop empty/noise idx=2439",
+        "C2 drop empty/noise idx=2442",
+        "C2 drop empty/noise idx=2444",
+        "C2 drop empty/noise idx=2445",
+        "C2 drop empty/noise idx=2446",
+        "C2 drop empty/noise idx=2449",
+        "C2 drop empty/noise idx=2450",
+        "C2 drop empty/noise idx=2451",
+        "C2 drop empty/noise idx=2454",
+        "C2 drop empty/noise idx=2455",
+        "C2 drop empty/noise idx=2456",
+        "C2 drop empty/noise idx=2458",
+        "C2 drop empty/noise idx=2459",
+        "C2 drop empty/noise idx=2460",
+        "C2 drop empty/noise idx=2461",
+        "C2 drop empty/noise idx=2462",
+        "C2 drop empty/noise idx=2464",
+        "C2 drop empty/noise idx=2466",
+        "C2 drop empty/noise idx=2479",
+        "C2 drop empty/noise idx=2492",
+        "C2 drop empty/noise idx=2506",
+        "C2 drop empty/noise idx=2509",
+        "C2 drop empty/noise idx=2639",
+        "C2 drop empty/noise idx=2677",
+        "C2 drop empty/noise idx=2681",
+        "C2 drop empty/noise idx=2682",
+        "C2 drop empty/noise idx=2683",
+        "C2 drop empty/noise idx=2686",
+        "C2 drop empty/noise idx=2687",
+        "C2 drop empty/noise idx=2690",
+        "C2 drop empty/noise idx=2741",
+        "C2 drop empty/noise idx=2749",
+        "C2 drop empty/noise idx=2751",
+        "C2 drop empty/noise idx=2766",
+        "C2 drop empty/noise idx=2768",
+        "C2 drop empty/noise idx=2774",
+        "C2 drop empty/noise idx=2952",
+        "C2 drop empty/noise idx=2955",
+        "C2 drop empty/noise idx=2956",
+        "C2 drop empty/noise idx=2957",
+        "C2 drop empty/noise idx=3182",
+        "C1-C4: kept=3224 quarantine=0",
+        "C6: in_range=3224 out_of_range=0",
+        "C5: after_dedup=3224",
+        "C7: spam_marked; stance_lite applied; final=3224"
+      ],
+      "n_quarantine": 0,
+      "n_out_of_range": 0,
+      "alpha_reply": 1.0,
+      "beta_share": 1.0,
+      "topic_heat_metric": "video_topic_heat_v1",
+      "topic_heat_source": "search_pubdate",
+      "n_heat_videos": 0,
+      "topic_heat_formula": "sum_v log1p(play)+0.5*log1p(review)+0.25*log1p(favorites)+0.25*log1p(danmaku) by video pubdate bucket",
+      "topic_heat_peak_ts": "2026-05-24T00:00:00+08:00",
+      "topic_heat_peak": 0.0,
+      "topic_volume_sum": 0.0,
+      "topic_heat_sum": 0.0,
+      "stance_labeler": "lexicon:v2",
+      "stance_profiler_version": "stance_profiler_v1"
+    }
+  },
+  "stance_dist": {
+    "support": 0.06451612903225806,
+    "oppose": 0.005272952853598015,
+    "neutral": 0.9252481389578163,
+    "mixed": 0.0,
+    "unclear": 0.004962779156327543
+  },
+  "stance_profile": {
+    "stance_global": "neutral",
+    "bias_score": 0.07020186923472314,
+    "confidence": 0.42127481389578164,
+    "sentiment_global_mean": 0.09402894285902295,
+    "sentiment_dist": {
+      "pos": 0.17431761786600497,
+      "neu": 0.7850496277915633,
+      "neg": 0.040632754342431764
+    },
+    "stance_ratios": {
+      "support": 0.06451612903225806,
+      "oppose": 0.005272952853598015,
+      "neutral": 0.9252481389578163,
+      "mixed": 0.0,
+      "unclear": 0.004962779156327543
+    },
+    "keyword_clusters": [
+      {
+        "label": "情绪表达",
+        "weight": 697.0,
+        "sample_content_ids": [
+          "7663701784937923391",
+          "7668730111327814438",
+          "7667063439063270185"
+        ]
+      },
+      {
+        "label": "体育赛事",
+        "weight": 148.0,
+        "sample_content_ids": [
+          "7667158470327894825",
+          "7667693836647056186",
+          "7675144405951333160"
+        ]
+      },
+      {
+        "label": "怀旧考古",
+        "weight": 37.0,
+        "sample_content_ids": [
+          "7673323221332017955",
+          "7672266247804175141",
+          "7672150696116765489"
+        ]
+      },
+      {
+        "label": "圈层:W",
+        "weight": 9.0,
+        "sample_content_ids": [
+          "7664832738880996145",
+          "7674140662329590574",
+          "7672418722485470001"
+        ]
+      },
+      {
+        "label": "圈层:K",
+        "weight": 8.0,
+        "sample_content_ids": [
+          "7663469920545538859",
+          "7672282452752696101",
+          "7643357093470651163"
+        ]
+      },
+      {
+        "label": "学业考试",
+        "weight": 7.0,
+        "sample_content_ids": [
+          "7663478883920495409",
+          "7672068811726422841",
+          "7669664988450325274"
+        ]
+      },
+      {
+        "label": "圈层:米",
+        "weight": 4.0,
+        "sample_content_ids": [
+          "7663549388468044601",
+          "7672299105755071291",
+          "7670518951818740480"
+        ]
+      },
+      {
+        "label": "圈层:家人们",
+        "weight": 1.0,
+        "sample_content_ids": [
+          "7664843504418014010"
+        ]
+      }
+    ],
+    "n_labeled": 3224,
+    "model_version": "stance_profiler_v1",
+    "labeler": "lexicon:v2",
+    "platform": "douyin",
+    "keyword": "体育竞技与健身",
+    "time_range": {
+      "start": "2026-05-24T00:00:00+08:00",
+      "end": "2026-08-20T00:00:00+08:00"
+    }
+  },
+  "generated_at": "2026-08-21T10:32:29"
+}

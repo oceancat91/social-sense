@@ -55,6 +55,8 @@ agent/Conclusion/outputs/
 agent/PlatformCrawler/crawler/*.txt
 agent/PlatformCrawler/crawler/*.csv
 agent/PlatformCrawler/adapters/*_cookie.txt
+# 外部真实数据仅本地保存；提交 manifest / reports / fusion，不提交大体积 CSV
+agent/dataset/real_multiplatform/raw/
 
 # 测试覆盖率
 htmlcov/

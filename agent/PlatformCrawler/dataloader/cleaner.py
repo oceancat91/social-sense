@@ -214,8 +214,12 @@ def clean_records(
         reply_count = _safe_float(item.get("reply_count"))
         share_or_coin = _safe_float(item.get("share_or_coin"))
 
-        # C2：无文本且无互动 → 丢弃
-        if (not text or _is_pure_noise(text)) and like <= 0 and reply_count <= 0:
+        # C2：规范化后空文本必须丢弃，否则会违反 D_platform 的有效文本计数契约。
+        # 纯噪声仍沿用原策略：无互动时丢弃，有互动时保留用于反映热度。
+        if not text:
+            clean_log.append(f"C2 drop empty idx={i}")
+            continue
+        if _is_pure_noise(text) and like <= 0 and reply_count <= 0:
             clean_log.append(f"C2 drop empty/noise idx={i}")
             continue
 

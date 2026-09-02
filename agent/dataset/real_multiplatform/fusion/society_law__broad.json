@@ -1,0 +1,312 @@
+{
+  "CT_status": "accepted",
+  "scope": "cross_platform",
+  "n_platforms": 2,
+  "platforms": [
+    "bilibili",
+    "weibo"
+  ],
+  "keyword": "社会事件与法治",
+  "time_range": {
+    "start": "2016-12-02T00:00:00+08:00",
+    "end": "2026-08-13T00:00:00+08:00"
+  },
+  "granularity": "day",
+  "summary": "各平台主导立场一致（neutral）；立场分布 JS 分歧 0.0007，情绪均值极差 0.0004；平台声量时间相关性 0.6264（同频共振）；跨平台情绪均值 -0.025（中性）",
+  "claims": [
+    {
+      "text": "各平台主导立场一致（neutral）",
+      "platforms": [
+        "bilibili",
+        "weibo"
+      ],
+      "evidence": "fuse.dominant_stance"
+    },
+    {
+      "text": "立场分布 JS 分歧 0.0007，情绪均值极差 0.0004",
+      "platforms": [
+        "bilibili",
+        "weibo"
+      ],
+      "evidence": "fuse.stance_divergence/sentiment_divergence"
+    },
+    {
+      "text": "平台声量时间相关性 0.6264（同频共振）",
+      "platforms": [
+        "bilibili",
+        "weibo"
+      ],
+      "evidence": "fuse.mean_volume_corr"
+    },
+    {
+      "text": "跨平台情绪均值 -0.025（中性）",
+      "platforms": [
+        "bilibili",
+        "weibo"
+      ],
+      "evidence": "fuse.sentiment_means"
+    }
+  ],
+  "risk_flags": [
+    "平台间一致性较好（指数 0.1128），茧房风险低"
+  ],
+  "echo_chamber": {
+    "score": 0.1128,
+    "components": {
+      "stance": 0.0015,
+      "sentiment": 0.0004,
+      "corr": 0.3736
+    }
+  },
+  "fusion": {
+    "platforms": [
+      "bilibili",
+      "weibo"
+    ],
+    "stance_dist": {
+      "bilibili": {
+        "support": 0.09078538102643857,
+        "oppose": 0.031298600311041994,
+        "neutral": 0.8691679626749611,
+        "mixed": 0.0033048211508553654,
+        "unclear": 0.005443234836702955
+      },
+      "weibo": {
+        "support": 0.09407693545791083,
+        "oppose": 0.03042008691453404,
+        "neutral": 0.8596491228070176,
+        "mixed": 0.008852406244970223,
+        "unclear": 0.007001448575567359
+      }
+    },
+    "dominant_stance": {
+      "bilibili": "neutral",
+      "weibo": "neutral"
+    },
+    "stance_divergence": 0.0007,
+    "stance_pair_divergences": [
+      {
+        "pair": [
+          "bilibili",
+          "weibo"
+        ],
+        "stance_js": 0.0007
+      }
+    ],
+    "sentiment_divergence": 0.0004,
+    "sentiment_means": {
+      "bilibili": -0.0249,
+      "weibo": -0.0245
+    },
+    "bias_scores": {
+      "bilibili": 0.0844,
+      "weibo": 0.071
+    },
+    "temporal_corr": [
+      {
+        "pair": [
+          "bilibili",
+          "weibo"
+        ],
+        "volume_corr": 0.6264
+      }
+    ],
+    "mean_volume_corr": 0.6264,
+    "echo_chamber_score": 0.1128,
+    "echo_chamber_components": {
+      "stance": 0.0015,
+      "sentiment": 0.0004,
+      "corr": 0.3736
+    },
+    "per_bucket_divergence": [
+      {
+        "ts": "2026-06-16T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2026-06-17T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0692
+      },
+      {
+        "ts": "2026-06-28T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.6324
+      },
+      {
+        "ts": "2026-07-04T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2026-07-06T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1692
+      },
+      {
+        "ts": "2026-07-07T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0485
+      },
+      {
+        "ts": "2026-07-14T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0721
+      },
+      {
+        "ts": "2026-07-15T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1739
+      },
+      {
+        "ts": "2026-07-16T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2026-07-17T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0
+      },
+      {
+        "ts": "2026-07-18T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1328
+      },
+      {
+        "ts": "2026-07-21T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.074
+      },
+      {
+        "ts": "2026-07-22T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1789
+      },
+      {
+        "ts": "2026-07-26T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1149
+      },
+      {
+        "ts": "2026-07-27T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.1159
+      },
+      {
+        "ts": "2026-07-28T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0701
+      },
+      {
+        "ts": "2026-07-29T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.148
+      },
+      {
+        "ts": "2026-07-30T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.2133
+      },
+      {
+        "ts": "2026-07-31T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.018
+      },
+      {
+        "ts": "2026-08-01T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0809
+      },
+      {
+        "ts": "2026-08-02T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0753
+      },
+      {
+        "ts": "2026-08-03T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.024
+      },
+      {
+        "ts": "2026-08-04T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0918
+      },
+      {
+        "ts": "2026-08-05T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0231
+      },
+      {
+        "ts": "2026-08-06T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0876
+      },
+      {
+        "ts": "2026-08-07T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0372
+      },
+      {
+        "ts": "2026-08-08T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0001
+      },
+      {
+        "ts": "2026-08-09T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0746
+      },
+      {
+        "ts": "2026-08-10T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0855
+      },
+      {
+        "ts": "2026-08-11T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0076
+      },
+      {
+        "ts": "2026-08-12T00:00",
+        "active_platforms": 2,
+        "sent_range": 0.0831
+      }
+    ]
+  },
+  "llm_used": false,
+  "llm_error": null,
+  "generated_at": "2026-09-02T10:26:15",
+  "calibration": {
+    "gates": [
+      {
+        "gate": "CX1",
+        "pass": true,
+        "note": "2 个平台参与"
+      },
+      {
+        "gate": "CX2",
+        "pass": true,
+        "note": "echo=0.1128, 夸大=False, 漏报=False"
+      },
+      {
+        "gate": "CX3",
+        "pass": true,
+        "note": "无越界平台"
+      },
+      {
+        "gate": "CX4",
+        "pass": true,
+        "note": "claims 均有平台绑定"
+      },
+      {
+        "gate": "CX5",
+        "pass": true,
+        "note": "存在有效观测"
+      }
+    ],
+    "all_pass": true
+  }
+}

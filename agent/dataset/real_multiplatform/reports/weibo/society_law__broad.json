@@ -1,0 +1,6587 @@
+{
+  "schema_version": "platform_report_v1",
+  "platform": "weibo",
+  "keyword": "社会事件与法治",
+  "time_range": {
+    "start": "2026-03-16T00:00:00+08:00",
+    "end": "2026-08-13T00:00:00+08:00"
+  },
+  "granularity": "day",
+  "meta": {
+    "platform": "weibo",
+    "keyword": "社会事件与法治",
+    "time_range": {
+      "start": "2026-03-16T00:00:00+08:00",
+      "end": "2026-08-13T00:00:00+08:00"
+    },
+    "timezone": "Asia/Shanghai",
+    "granularity": "day",
+    "n_text": 12426,
+    "n_text_raw_in": 12450,
+    "n_buckets": 150,
+    "empty_ratio": 0.7866666666666666,
+    "is_empty": false,
+    "stance_global": "neutral",
+    "bias_score": 0.07098763286982838,
+    "confidence": 0.4189639465636569,
+    "sentiment_global_mean": -0.024505186147491736,
+    "clean_rule_version": "clean_c1c8_v1",
+    "source_skill_versions": {
+      "platform_crawler": "platform_crawler_v1",
+      "stance_profiler": "stance_profiler_v1"
+    },
+    "ext": {
+      "metric_profile": "dataset_spec_v1_default",
+      "merge_policy": "keep_higher_interact",
+      "sent_std_policy": "null_if_lt2",
+      "stance_provisional": false,
+      "clean_log": [
+        "C0: input_rows=12450",
+        "C2 drop empty/noise idx=1756",
+        "C2 drop empty/noise idx=1804",
+        "C2 drop empty/noise idx=1964",
+        "C2 drop empty/noise idx=2094",
+        "C2 drop empty/noise idx=2558",
+        "C2 drop empty/noise idx=2795",
+        "C2 drop empty/noise idx=3348",
+        "C2 drop empty/noise idx=5435",
+        "C2 drop empty/noise idx=6381",
+        "C2 drop empty/noise idx=6513",
+        "C2 drop empty/noise idx=6514",
+        "C2 drop empty/noise idx=6515",
+        "C2 drop empty/noise idx=6516",
+        "C2 drop empty/noise idx=6517",
+        "C2 drop empty/noise idx=6518",
+        "C2 drop empty/noise idx=6519",
+        "C2 drop empty/noise idx=6520",
+        "C2 drop empty/noise idx=6521",
+        "C2 drop empty/noise idx=6522",
+        "C2 drop empty/noise idx=6523",
+        "C2 drop empty/noise idx=6524",
+        "C2 drop empty/noise idx=6525",
+        "C2 drop empty/noise idx=6526",
+        "C2 drop empty/noise idx=9458",
+        "C1-C4: kept=12426 quarantine=0",
+        "C6: in_range=12426 out_of_range=0",
+        "C5: after_dedup=12426",
+        "C7: spam_marked; stance_lite applied; final=12426"
+      ],
+      "n_quarantine": 0,
+      "n_out_of_range": 0,
+      "alpha_reply": 1.0,
+      "beta_share": 1.0,
+      "topic_heat_metric": "video_topic_heat_v1",
+      "topic_heat_source": "search_pubdate",
+      "n_heat_videos": 0,
+      "topic_heat_formula": "sum_v log1p(play)+0.5*log1p(review)+0.25*log1p(favorites)+0.25*log1p(danmaku) by video pubdate bucket",
+      "topic_heat_peak_ts": "2026-03-16T00:00:00+08:00",
+      "topic_heat_peak": 0.0,
+      "topic_volume_sum": 0.0,
+      "topic_heat_sum": 0.0,
+      "stance_labeler": "lexicon:v2",
+      "stance_profiler_version": "stance_profiler_v1"
+    }
+  },
+  "D_ts": [
+    {
+      "ts": "2026-03-16T00:00:00+08:00",
+      "ts_unix": 1773590400,
+      "platform": "weibo",
+      "volume": 20,
+      "heat": 28.836750195979004,
+      "sent_mean": -0.07987975860894865,
+      "sent_std": 0.20383100677263952,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.05,
+      "stance_neu_ratio": 0.95,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.09067166853721173,
+      "controversy": 0.0,
+      "volume_delta": null,
+      "heat_delta": null,
+      "n_like_sum": 5459.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "2e31a6c0f85ecc48cc2cd1fb0302cf3ccdef2c21",
+        "ac60e1a218f5f706e7268191ab05d7f4c75a6e46",
+        "bb6bb3b71509d85dcf85a1684c9aa1c45f4378f1",
+        "fbfb7753c47378248b6c9e65472437a8db453667",
+        "467adabe10f7dd679e6eec131e2580a97a78527f"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": null,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-17T00:00:00+08:00",
+      "ts_unix": 1773676800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": -20.0,
+      "heat_delta": -28.836750195979004,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-18T00:00:00+08:00",
+      "ts_unix": 1773763200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-19T00:00:00+08:00",
+      "ts_unix": 1773849600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-20T00:00:00+08:00",
+      "ts_unix": 1773936000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-21T00:00:00+08:00",
+      "ts_unix": 1774022400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-22T00:00:00+08:00",
+      "ts_unix": 1774108800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-23T00:00:00+08:00",
+      "ts_unix": 1774195200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-24T00:00:00+08:00",
+      "ts_unix": 1774281600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-25T00:00:00+08:00",
+      "ts_unix": 1774368000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-26T00:00:00+08:00",
+      "ts_unix": 1774454400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-27T00:00:00+08:00",
+      "ts_unix": 1774540800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-28T00:00:00+08:00",
+      "ts_unix": 1774627200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-29T00:00:00+08:00",
+      "ts_unix": 1774713600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-30T00:00:00+08:00",
+      "ts_unix": 1774800000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-03-31T00:00:00+08:00",
+      "ts_unix": 1774886400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-01T00:00:00+08:00",
+      "ts_unix": 1774972800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-02T00:00:00+08:00",
+      "ts_unix": 1775059200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-03T00:00:00+08:00",
+      "ts_unix": 1775145600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-04T00:00:00+08:00",
+      "ts_unix": 1775232000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-05T00:00:00+08:00",
+      "ts_unix": 1775318400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-06T00:00:00+08:00",
+      "ts_unix": 1775404800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-07T00:00:00+08:00",
+      "ts_unix": 1775491200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-08T00:00:00+08:00",
+      "ts_unix": 1775577600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-09T00:00:00+08:00",
+      "ts_unix": 1775664000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-10T00:00:00+08:00",
+      "ts_unix": 1775750400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-11T00:00:00+08:00",
+      "ts_unix": 1775836800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-12T00:00:00+08:00",
+      "ts_unix": 1775923200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-13T00:00:00+08:00",
+      "ts_unix": 1776009600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-14T00:00:00+08:00",
+      "ts_unix": 1776096000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-15T00:00:00+08:00",
+      "ts_unix": 1776182400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-16T00:00:00+08:00",
+      "ts_unix": 1776268800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-17T00:00:00+08:00",
+      "ts_unix": 1776355200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-18T00:00:00+08:00",
+      "ts_unix": 1776441600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-19T00:00:00+08:00",
+      "ts_unix": 1776528000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-20T00:00:00+08:00",
+      "ts_unix": 1776614400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-21T00:00:00+08:00",
+      "ts_unix": 1776700800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-22T00:00:00+08:00",
+      "ts_unix": 1776787200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-23T00:00:00+08:00",
+      "ts_unix": 1776873600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-24T00:00:00+08:00",
+      "ts_unix": 1776960000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-25T00:00:00+08:00",
+      "ts_unix": 1777046400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-26T00:00:00+08:00",
+      "ts_unix": 1777132800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-27T00:00:00+08:00",
+      "ts_unix": 1777219200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-28T00:00:00+08:00",
+      "ts_unix": 1777305600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-29T00:00:00+08:00",
+      "ts_unix": 1777392000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-04-30T00:00:00+08:00",
+      "ts_unix": 1777478400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-01T00:00:00+08:00",
+      "ts_unix": 1777564800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-02T00:00:00+08:00",
+      "ts_unix": 1777651200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-03T00:00:00+08:00",
+      "ts_unix": 1777737600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-04T00:00:00+08:00",
+      "ts_unix": 1777824000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-05T00:00:00+08:00",
+      "ts_unix": 1777910400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-06T00:00:00+08:00",
+      "ts_unix": 1777996800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-07T00:00:00+08:00",
+      "ts_unix": 1778083200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-08T00:00:00+08:00",
+      "ts_unix": 1778169600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-09T00:00:00+08:00",
+      "ts_unix": 1778256000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-10T00:00:00+08:00",
+      "ts_unix": 1778342400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-11T00:00:00+08:00",
+      "ts_unix": 1778428800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-12T00:00:00+08:00",
+      "ts_unix": 1778515200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-13T00:00:00+08:00",
+      "ts_unix": 1778601600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-14T00:00:00+08:00",
+      "ts_unix": 1778688000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-15T00:00:00+08:00",
+      "ts_unix": 1778774400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-16T00:00:00+08:00",
+      "ts_unix": 1778860800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-17T00:00:00+08:00",
+      "ts_unix": 1778947200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-18T00:00:00+08:00",
+      "ts_unix": 1779033600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-19T00:00:00+08:00",
+      "ts_unix": 1779120000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-20T00:00:00+08:00",
+      "ts_unix": 1779206400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-21T00:00:00+08:00",
+      "ts_unix": 1779292800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-22T00:00:00+08:00",
+      "ts_unix": 1779379200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-23T00:00:00+08:00",
+      "ts_unix": 1779465600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-24T00:00:00+08:00",
+      "ts_unix": 1779552000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-25T00:00:00+08:00",
+      "ts_unix": 1779638400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-26T00:00:00+08:00",
+      "ts_unix": 1779724800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-27T00:00:00+08:00",
+      "ts_unix": 1779811200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-28T00:00:00+08:00",
+      "ts_unix": 1779897600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-29T00:00:00+08:00",
+      "ts_unix": 1779984000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-30T00:00:00+08:00",
+      "ts_unix": 1780070400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-05-31T00:00:00+08:00",
+      "ts_unix": 1780156800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-01T00:00:00+08:00",
+      "ts_unix": 1780243200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-02T00:00:00+08:00",
+      "ts_unix": 1780329600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-03T00:00:00+08:00",
+      "ts_unix": 1780416000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-04T00:00:00+08:00",
+      "ts_unix": 1780502400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-05T00:00:00+08:00",
+      "ts_unix": 1780588800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-06T00:00:00+08:00",
+      "ts_unix": 1780675200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-07T00:00:00+08:00",
+      "ts_unix": 1780761600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-08T00:00:00+08:00",
+      "ts_unix": 1780848000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-09T00:00:00+08:00",
+      "ts_unix": 1780934400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-10T00:00:00+08:00",
+      "ts_unix": 1781020800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-11T00:00:00+08:00",
+      "ts_unix": 1781107200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-12T00:00:00+08:00",
+      "ts_unix": 1781193600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-13T00:00:00+08:00",
+      "ts_unix": 1781280000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-14T00:00:00+08:00",
+      "ts_unix": 1781366400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-15T00:00:00+08:00",
+      "ts_unix": 1781452800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-16T00:00:00+08:00",
+      "ts_unix": 1781539200,
+      "platform": "weibo",
+      "volume": 19,
+      "heat": 47.33318816524317,
+      "sent_mean": 0.0,
+      "sent_std": 0.0,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 1.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.0,
+      "controversy": 0.0,
+      "volume_delta": 19.0,
+      "heat_delta": 47.33318816524317,
+      "n_like_sum": 1156.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "1defffb0025f2ffb6410b42e69265d7298fb08e9",
+        "39d7c8c0d63b1a0e0e328fad2052db7d5ae74b3b",
+        "6dda5074787af47215947f27faf9c9f71aa9c549",
+        "a0978c378830014c341ac4843c2d9a3abdbab313",
+        "89af9eda9a33613196579ef9e10248c5869e5193"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-17T00:00:00+08:00",
+      "ts_unix": 1781625600,
+      "platform": "weibo",
+      "volume": 2,
+      "heat": 2.0794415416798357,
+      "sent_mean": 0.0,
+      "sent_std": 0.0,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 1.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.0,
+      "controversy": 0.0,
+      "volume_delta": -17.0,
+      "heat_delta": -45.25374662356334,
+      "n_like_sum": 1.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "f3f9ed07371914da670c69b8aac78c8f4fe20b56",
+        "f52c7525086ffc82b2bb770ae185162ea3b6761f"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-18T00:00:00+08:00",
+      "ts_unix": 1781712000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": -2.0,
+      "heat_delta": -2.0794415416798357,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-19T00:00:00+08:00",
+      "ts_unix": 1781798400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-20T00:00:00+08:00",
+      "ts_unix": 1781884800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-21T00:00:00+08:00",
+      "ts_unix": 1781971200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-22T00:00:00+08:00",
+      "ts_unix": 1782057600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-23T00:00:00+08:00",
+      "ts_unix": 1782144000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-24T00:00:00+08:00",
+      "ts_unix": 1782230400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-25T00:00:00+08:00",
+      "ts_unix": 1782316800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-26T00:00:00+08:00",
+      "ts_unix": 1782403200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-27T00:00:00+08:00",
+      "ts_unix": 1782489600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-28T00:00:00+08:00",
+      "ts_unix": 1782576000,
+      "platform": "weibo",
+      "volume": 9,
+      "heat": 12.838195124252344,
+      "sent_mean": 0.23587120550233195,
+      "sent_std": 0.2930656883389799,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 1.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.0,
+      "controversy": 0.0,
+      "volume_delta": 9.0,
+      "heat_delta": 12.838195124252344,
+      "n_like_sum": 232.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "d1dcf56e8628a0170e5308eb6306b8f2b49e236a",
+        "b1fed798d3694a15d5b8ed94385ca274d752cc65",
+        "4bc3b86258ff9cda875499147e13f59790ba3c24",
+        "142d43b5d1edc69270146f8272258decdfb3a5a4",
+        "f2e55126154cc47c7f70dab54c713b14fd3cc8f0"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-29T00:00:00+08:00",
+      "ts_unix": 1782662400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": -9.0,
+      "heat_delta": -12.838195124252344,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-06-30T00:00:00+08:00",
+      "ts_unix": 1782748800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-01T00:00:00+08:00",
+      "ts_unix": 1782835200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-02T00:00:00+08:00",
+      "ts_unix": 1782921600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-03T00:00:00+08:00",
+      "ts_unix": 1783008000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-04T00:00:00+08:00",
+      "ts_unix": 1783094400,
+      "platform": "weibo",
+      "volume": 1,
+      "heat": 5.924255797414532,
+      "sent_mean": 0.0,
+      "sent_std": null,
+      "stance_pos_ratio": 1.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.9999999976219849,
+      "controversy": 0.0,
+      "volume_delta": 1.0,
+      "heat_delta": 5.924255797414532,
+      "n_like_sum": 358.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "746070468fae7fd8c55477569394e48b3e42ddde"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-05T00:00:00+08:00",
+      "ts_unix": 1783180800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": -1.0,
+      "heat_delta": -5.924255797414532,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-06T00:00:00+08:00",
+      "ts_unix": 1783267200,
+      "platform": "weibo",
+      "volume": 1,
+      "heat": 3.2188758248682006,
+      "sent_mean": 0.0,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 1.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.0,
+      "controversy": 0.0,
+      "volume_delta": 1.0,
+      "heat_delta": 3.2188758248682006,
+      "n_like_sum": 17.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "4854dac87d901bbe942cefb10b24c805288c5b8d"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-07T00:00:00+08:00",
+      "ts_unix": 1783353600,
+      "platform": "weibo",
+      "volume": 1,
+      "heat": 0.6931471805599453,
+      "sent_mean": 0.0,
+      "sent_std": null,
+      "stance_pos_ratio": 1.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.9999999956761836,
+      "controversy": 0.0,
+      "volume_delta": 0.0,
+      "heat_delta": -2.525728644308255,
+      "n_like_sum": 1.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "6058ad0b3f73f0c224fa2c34bcd9c6775d38e4d2"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-08T00:00:00+08:00",
+      "ts_unix": 1783440000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": -1.0,
+      "heat_delta": -0.6931471805599453,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-09T00:00:00+08:00",
+      "ts_unix": 1783526400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-10T00:00:00+08:00",
+      "ts_unix": 1783612800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-11T00:00:00+08:00",
+      "ts_unix": 1783699200,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-12T00:00:00+08:00",
+      "ts_unix": 1783785600,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-13T00:00:00+08:00",
+      "ts_unix": 1783872000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-14T00:00:00+08:00",
+      "ts_unix": 1783958400,
+      "platform": "weibo",
+      "volume": 5,
+      "heat": 24.506332562821168,
+      "sent_mean": 0.0,
+      "sent_std": 0.0,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 1.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.0,
+      "controversy": 0.0,
+      "volume_delta": 5.0,
+      "heat_delta": 24.506332562821168,
+      "n_like_sum": 2683.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "e9f872220148b451926c0aa0959dae657b9f3f47",
+        "36864928c75fd5f800339c00d35ac6983632af3a",
+        "a14bbe4da66ba9e9edfbbad224c8073a1a948a60",
+        "7b0816465db21b305723c309ea1fa8b1b9c69e2d",
+        "7c59de32d6f1ffadee5aa2d381e08beefbd0afc9"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-15T00:00:00+08:00",
+      "ts_unix": 1784044800,
+      "platform": "weibo",
+      "volume": 8,
+      "heat": 24.30996148431557,
+      "sent_mean": -0.06063374687845636,
+      "sent_std": 0.18084191122341575,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.125,
+      "stance_neu_ratio": 0.875,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.12097799013067068,
+      "controversy": 0.0,
+      "volume_delta": 3.0,
+      "heat_delta": -0.19637107850559943,
+      "n_like_sum": 234.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "64411c1523b59ee31f72d6ab81bde2e4edb49ec3",
+        "02679432aba8d814917a3713244911227a547cc5",
+        "54eb9b7562b69b9f8874ab001c83c7e7d8a9dc5a",
+        "235da3b48f22d6b84a5c6791be711bee37eb610e",
+        "ce571447394491f2e58b6d0e1e63c5c41fb6e1a1"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-16T00:00:00+08:00",
+      "ts_unix": 1784131200,
+      "platform": "weibo",
+      "volume": 1,
+      "heat": 1.6094379124341003,
+      "sent_mean": 0.0,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 1.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.0,
+      "controversy": 0.0,
+      "volume_delta": -7.0,
+      "heat_delta": -22.70052357188147,
+      "n_like_sum": 4.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "69d28dd4caf43a1d990e36ed67c6953f402755d6"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-17T00:00:00+08:00",
+      "ts_unix": 1784217600,
+      "platform": "weibo",
+      "volume": 3,
+      "heat": 3.7376696182833684,
+      "sent_mean": 0.0,
+      "sent_std": 0.0,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 1.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.0,
+      "controversy": 0.0,
+      "volume_delta": 2.0,
+      "heat_delta": 2.1282317058492684,
+      "n_like_sum": 8.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "6c8e3083c33743be9a6844a8980a11e3bf19be2a",
+        "f93bd740f29debcc9648e165a35da1a362d6b67e",
+        "7e12094e16b1ec934780de57f0b55ebabf94f6a5"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-18T00:00:00+08:00",
+      "ts_unix": 1784304000,
+      "platform": "weibo",
+      "volume": 5,
+      "heat": 10.00242750039103,
+      "sent_mean": -0.15458117533389168,
+      "sent_std": 0.26239924806384074,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 1.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.0,
+      "controversy": 0.0,
+      "volume_delta": 2.0,
+      "heat_delta": 6.264757882107663,
+      "n_like_sum": 86.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "28f967ff99bab95202ed43e358b45046ce338a84",
+        "30beb290c51ec4907505f4429222309fed3a2c4b",
+        "a6e525f8391685be4468dff206731f65b04ffbc3",
+        "906af465f4897401d83a7d106c5eb531a3242b57",
+        "c0a9679528a7d8a884a7855c50ac3500799e65fa"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-19T00:00:00+08:00",
+      "ts_unix": 1784390400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": -5.0,
+      "heat_delta": -10.00242750039103,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-20T00:00:00+08:00",
+      "ts_unix": 1784476800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-21T00:00:00+08:00",
+      "ts_unix": 1784563200,
+      "platform": "weibo",
+      "volume": 3,
+      "heat": 2.1972245773362196,
+      "sent_mean": 0.0,
+      "sent_std": 0.0,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 1.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.0,
+      "controversy": 0.0,
+      "volume_delta": 3.0,
+      "heat_delta": 2.1972245773362196,
+      "n_like_sum": 1.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "b9db6c7d9e532aa296a709016041d87e91205d80",
+        "d3e25bc1cf648dfdaaf66e432ddda1e90bcb714f",
+        "374029a18b1db90bdbae501e966ab5f83a4ad6f3"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-22T00:00:00+08:00",
+      "ts_unix": 1784649600,
+      "platform": "weibo",
+      "volume": 21,
+      "heat": 57.29113565782107,
+      "sent_mean": 0.0,
+      "sent_std": 0.0,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 1.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.0,
+      "controversy": 0.0,
+      "volume_delta": 18.0,
+      "heat_delta": 55.09391108048485,
+      "n_like_sum": 1356.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "ede62b56e7137654193e3a85f1ad4bec33d30dac",
+        "f7226fb0cbc612738c99a97d9230cea2163ca253",
+        "3cd550411b5c60d10c48c2996d4a6a869d909602",
+        "7d0bc2d7632a9a8ab71b814972dadc78c63709ee",
+        "df731029301396bd63dbe4a790f0600712a86f41"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-23T00:00:00+08:00",
+      "ts_unix": 1784736000,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": -21.0,
+      "heat_delta": -57.29113565782107,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-24T00:00:00+08:00",
+      "ts_unix": 1784822400,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-25T00:00:00+08:00",
+      "ts_unix": 1784908800,
+      "platform": "weibo",
+      "volume": 0,
+      "heat": 0.0,
+      "sent_mean": null,
+      "sent_std": null,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": null,
+      "controversy": null,
+      "volume_delta": 0.0,
+      "heat_delta": 0.0,
+      "n_like_sum": 0,
+      "is_empty": true,
+      "sample_content_ids": [],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-26T00:00:00+08:00",
+      "ts_unix": 1784995200,
+      "platform": "weibo",
+      "volume": 9,
+      "heat": 14.771268126546977,
+      "sent_mean": -0.01909662876663673,
+      "sent_std": 0.31463807406838823,
+      "stance_pos_ratio": 0.1111111111111111,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.7777777777777778,
+      "stance_mixed_ratio": 0.1111111111111111,
+      "bias_proxy": 0.11785694768084055,
+      "controversy": 0.0,
+      "volume_delta": 9.0,
+      "heat_delta": 14.771268126546977,
+      "n_like_sum": 120.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "ce514bb10c87622acfa28c3a1cc99ca7e76dfc16",
+        "7229fc56aa74b2668c69d2696bf9b7ad6b46599b",
+        "090f8a6ae26ef56be3185c9f2bf26106cba8335d",
+        "574c33db3739cb4feb675f6ffef547a5f12e445c",
+        "7f7815c53cf204a87354072bbe0c69981333f27c"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-27T00:00:00+08:00",
+      "ts_unix": 1785081600,
+      "platform": "weibo",
+      "volume": 3,
+      "heat": 3.7376696182833684,
+      "sent_mean": -0.2113245730631329,
+      "sent_std": 0.2865949555928691,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 1.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.0,
+      "controversy": 0.0,
+      "volume_delta": -6.0,
+      "heat_delta": -11.033598508263609,
+      "n_like_sum": 8.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "12c115256fbce17362143a18041e73feea5747a0",
+        "7cd7188c86f1e96ed9bc752156fb5a39214e498a",
+        "a510ca611523663d7e391354d49dee39ade5c117"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-28T00:00:00+08:00",
+      "ts_unix": 1785168000,
+      "platform": "weibo",
+      "volume": 6,
+      "heat": 2.0794415416798357,
+      "sent_mean": 0.10791763216229534,
+      "sent_std": 0.23044384116663036,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 1.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.0,
+      "controversy": 0.0,
+      "volume_delta": 3.0,
+      "heat_delta": -1.6582280766035327,
+      "n_like_sum": 3.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "51e3acbf7f4830e831867ee90536f94c188b1933",
+        "43cc158f05328d8f20e194cf185b3e694da91c81",
+        "4306fb1b031a3aafb186b8d31312ea2a7fa0b8b8",
+        "bc5237b0450f67de779ffe9594261ab45f632f3f",
+        "84c0a67db320416fec2bd2e228db2f8f5233e29d"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-29T00:00:00+08:00",
+      "ts_unix": 1785254400,
+      "platform": "weibo",
+      "volume": 9,
+      "heat": 15.915977508449934,
+      "sent_mean": 0.07714452375383594,
+      "sent_std": 0.20083684097481216,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 1.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.0,
+      "controversy": 0.0,
+      "volume_delta": 3.0,
+      "heat_delta": 13.836535966770098,
+      "n_like_sum": 202.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "e4be7e09171d496511091597700de6063bf18646",
+        "6e4b1fd7e6d0dfe21da5ccdfdfe28439571e1285",
+        "c0ba2266de88baefb096ade4dd40747e7cad71a1",
+        "c7e8a8db17bca022b39c43b7f3d6db4972065d22",
+        "693809f665fe430a14992ac2a3a7f59afaffe998"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-30T00:00:00+08:00",
+      "ts_unix": 1785340800,
+      "platform": "weibo",
+      "volume": 3,
+      "heat": 2.995732273553991,
+      "sent_mean": 0.22651538838213087,
+      "sent_std": 0.29086081165055344,
+      "stance_pos_ratio": 0.0,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 1.0,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.0,
+      "controversy": 0.0,
+      "volume_delta": -6.0,
+      "heat_delta": -12.920245234895944,
+      "n_like_sum": 5.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "5f131a3a5251c4b579f2c45d924814d02667cbab",
+        "5c4979b845043fff4d855ac82ce2127c7c3a602d",
+        "81e2b6187bff420daad222173a14cbbdb0327d1c"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-07-31T00:00:00+08:00",
+      "ts_unix": 1785427200,
+      "platform": "weibo",
+      "volume": 5,
+      "heat": 2.4849066497880004,
+      "sent_mean": 0.0,
+      "sent_std": 0.0,
+      "stance_pos_ratio": 0.2,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.8,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.1896613749845731,
+      "controversy": 0.0,
+      "volume_delta": 2.0,
+      "heat_delta": -0.5108256237659905,
+      "n_like_sum": 4.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "c01574d1238433471d0b048946505e22311d7a45",
+        "eda01ac5668ea084172325318fe04783a690f0c4",
+        "cd3da9a5c181280dcebdff14b696a771cf710448",
+        "54d176b9ed96c697877a95918b529d57fe3ea30f",
+        "ae740e6f2e5a0f6c0ee7d23a327be006a1c2a4c9"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-08-01T00:00:00+08:00",
+      "ts_unix": 1785513600,
+      "platform": "weibo",
+      "volume": 26,
+      "heat": 95.08187286620822,
+      "sent_mean": -0.06317666013955274,
+      "sent_std": 0.25722387818558645,
+      "stance_pos_ratio": 0.038461538461538464,
+      "stance_neg_ratio": 0.0,
+      "stance_neu_ratio": 0.9615384615384616,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.04950630377882893,
+      "controversy": 0.0,
+      "volume_delta": 21.0,
+      "heat_delta": 92.59696621642021,
+      "n_like_sum": 5420.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "81a0bf74dbc0556b6da8c25e1c27584cdec077a5",
+        "af4f5870d843d3c1bca1852e0af9c1b7edec01f2",
+        "a67db51a609877547b397765c546c4f33cc5e6d0",
+        "96055b3b0d2384c703e2239f010ed81b30731e0a",
+        "886cf54698df8d259a36da69ab347d6e41d0b64f"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-08-02T00:00:00+08:00",
+      "ts_unix": 1785600000,
+      "platform": "weibo",
+      "volume": 23,
+      "heat": 57.9652846996246,
+      "sent_mean": 0.027071083182755223,
+      "sent_std": 0.12453837305434283,
+      "stance_pos_ratio": 0.21739130434782608,
+      "stance_neg_ratio": 0.043478260869565216,
+      "stance_neu_ratio": 0.7391304347826086,
+      "stance_mixed_ratio": 0.0,
+      "bias_proxy": 0.21822365683496464,
+      "controversy": 0.03780718336483932,
+      "volume_delta": -3.0,
+      "heat_delta": -37.11658816658362,
+      "n_like_sum": 6064.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "9717a760e75b6a045efc0d8c63b164827170db03",
+        "e284f0ad0ae58a825659e424b5c28a9a51981690",
+        "8d6614ad4dc38851fbcd55f749995bea0f8234a7",
+        "65cb9189989ee62b02be297ffd581b1f40644d02",
+        "7cbc252ebb041bf6ea7d81a8f29afee022cdfd5f"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-08-03T00:00:00+08:00",
+      "ts_unix": 1785686400,
+      "platform": "weibo",
+      "volume": 118,
+      "heat": 155.7577896265923,
+      "sent_mean": -0.002783351778526092,
+      "sent_std": 0.26584760137157054,
+      "stance_pos_ratio": 0.2288135593220339,
+      "stance_neg_ratio": 0.05084745762711865,
+      "stance_neu_ratio": 0.7033898305084746,
+      "stance_mixed_ratio": 0.01694915254237288,
+      "bias_proxy": 0.20493401917313067,
+      "controversy": 0.04653835104854927,
+      "volume_delta": 95.0,
+      "heat_delta": 97.79250492696772,
+      "n_like_sum": 7303.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "2dadf100f5ad8f49f68476a84d7ce88268a97068",
+        "4ecda991eb10dda3c432b129358ba829adb34120",
+        "9e4c61e2d2465eb4e85dc6afb4898a14929033fb",
+        "4eac0912ca7bf3bcaaba249f9e9dd20e28b93391",
+        "7d242912db5c9aa1f43891ed18f2f868a5e754b6"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-08-04T00:00:00+08:00",
+      "ts_unix": 1785772800,
+      "platform": "weibo",
+      "volume": 213,
+      "heat": 316.4769909724652,
+      "sent_mean": 0.03389781128758135,
+      "sent_std": 0.24978086224401475,
+      "stance_pos_ratio": 0.12206572769953052,
+      "stance_neg_ratio": 0.03286384976525822,
+      "stance_neu_ratio": 0.8262910798122066,
+      "stance_mixed_ratio": 0.018779342723004695,
+      "bias_proxy": 0.09471172494059349,
+      "controversy": 0.016046198946417158,
+      "volume_delta": 95.0,
+      "heat_delta": 160.7192013458729,
+      "n_like_sum": 9308.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "fbdd2421c1295387ce5176283571f8edc7ff289a",
+        "f89652b83de7b10c3052c4ca8047b88277736f88",
+        "b56ca6962a1b1ea7bc33370d4660fb6fba36ec33",
+        "1af9715bf527df7c8dcd2b3049429847d21799df",
+        "3fd30748f916695b4947305715a91cd51877e5f7"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-08-05T00:00:00+08:00",
+      "ts_unix": 1785859200,
+      "platform": "weibo",
+      "volume": 220,
+      "heat": 325.65587311886264,
+      "sent_mean": -0.04092150750838917,
+      "sent_std": 0.2727547599939709,
+      "stance_pos_ratio": 0.07727272727272727,
+      "stance_neg_ratio": 0.03636363636363636,
+      "stance_neu_ratio": 0.8727272727272727,
+      "stance_mixed_ratio": 0.013636363636363636,
+      "bias_proxy": 0.03614745071026042,
+      "controversy": 0.011239669421487603,
+      "volume_delta": 7.0,
+      "heat_delta": 9.178882146397427,
+      "n_like_sum": 27301.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "1700c9253e97e6ba6259854c43834df9a98b6e68",
+        "808a357d02274bb1dcd02672a3a7c974861919c8",
+        "48058535f83a18f200ddc1299e0f92a4c902bbfa",
+        "31670386e7cf6543a7648017056765ec48c50147",
+        "720219e033b07732ba7fdabc7fa58480572eb21b"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-08-06T00:00:00+08:00",
+      "ts_unix": 1785945600,
+      "platform": "weibo",
+      "volume": 335,
+      "heat": 531.2688905315545,
+      "sent_mean": -0.01076536068535624,
+      "sent_std": 0.215265116445851,
+      "stance_pos_ratio": 0.13134328358208955,
+      "stance_neg_ratio": 0.023880597014925373,
+      "stance_neu_ratio": 0.8298507462686567,
+      "stance_mixed_ratio": 0.014925373134328358,
+      "bias_proxy": 0.12125724520581734,
+      "controversy": 0.012546224103363778,
+      "volume_delta": 115.0,
+      "heat_delta": 205.61301741269182,
+      "n_like_sum": 16257.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "eace222a5970f8d8da15472999f7e771a40191d7",
+        "b21ca58f6137814f102c6f1a2eab2a1c2667288c",
+        "476b5cadec70d11e28801f3e842f6af93801c9e2",
+        "36479a7f65b2187d0a523740cf876eb973006bd9",
+        "253f10c27325048e80e3c9690980f80bc134f9c6"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-08-07T00:00:00+08:00",
+      "ts_unix": 1786032000,
+      "platform": "weibo",
+      "volume": 360,
+      "heat": 474.8646860020268,
+      "sent_mean": -0.030879334635428697,
+      "sent_std": 0.24013300589172248,
+      "stance_pos_ratio": 0.15,
+      "stance_neg_ratio": 0.041666666666666664,
+      "stance_neu_ratio": 0.7888888888888889,
+      "stance_mixed_ratio": 0.019444444444444445,
+      "bias_proxy": 0.1298422929660765,
+      "controversy": 0.024999999999999998,
+      "volume_delta": 25.0,
+      "heat_delta": -56.40420452952765,
+      "n_like_sum": 10439.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "cb512c9aa28be5cda74e20dea56213bf4b38e1cf",
+        "8b15ef5816755f540a428596ded8d0052093ea54",
+        "3c22c096fdcc8b19b677ef8769965f5f58ba0423",
+        "626cd5deac6953fe7c467e24b0bbe9724daf5923",
+        "999b9a8cc595480870a303928c87f3f33792ab36"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-08-08T00:00:00+08:00",
+      "ts_unix": 1786118400,
+      "platform": "weibo",
+      "volume": 207,
+      "heat": 308.49933789272956,
+      "sent_mean": -0.030713159879253372,
+      "sent_std": 0.2688145484436913,
+      "stance_pos_ratio": 0.15942028985507245,
+      "stance_neg_ratio": 0.057971014492753624,
+      "stance_neu_ratio": 0.7681159420289855,
+      "stance_mixed_ratio": 0.014492753623188406,
+      "bias_proxy": 0.12027460088494951,
+      "controversy": 0.03696702373450955,
+      "volume_delta": -153.0,
+      "heat_delta": -166.36534810929726,
+      "n_like_sum": 22998.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "7eaa7f3430d29b965cd6f2bfd28c86f254fa133e",
+        "6a236a8cbec3e700be0414c3b976d08bf1309d53",
+        "db219decbedbc204839306b17b771d4e362d2eea",
+        "b48769fdb7268f5bdbc8152be658eacc3f7208cc",
+        "b4d8ca96ab64207a30cc5741682524bbefec0b44"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-08-09T00:00:00+08:00",
+      "ts_unix": 1786204800,
+      "platform": "weibo",
+      "volume": 554,
+      "heat": 1422.732675139277,
+      "sent_mean": 0.0139531360841412,
+      "sent_std": 0.21475517674873396,
+      "stance_pos_ratio": 0.09747292418772563,
+      "stance_neg_ratio": 0.023465703971119134,
+      "stance_neu_ratio": 0.8664259927797834,
+      "stance_mixed_ratio": 0.01263537906137184,
+      "bias_proxy": 0.08233050693740245,
+      "controversy": 0.00914908313675403,
+      "volume_delta": 347.0,
+      "heat_delta": 1114.2333372465475,
+      "n_like_sum": 293510.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "874902de2d8b7a1e361ed9b3be1456522c79ea05",
+        "37f89ad9c79c9efd37dab89dd1f24b1f6b2d06e3",
+        "bceb21af8d7bb5fbf2fbfe251cd13a224ca557ae",
+        "373ec4d75f4982676c28a31d3475e7ff302834bf",
+        "d7474acc14a49dc6d94657d84bd24cb6a58a9f4a"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-08-10T00:00:00+08:00",
+      "ts_unix": 1786291200,
+      "platform": "weibo",
+      "volume": 594,
+      "heat": 953.3985982200134,
+      "sent_mean": 0.0024206372635507613,
+      "sent_std": 0.2446081287776952,
+      "stance_pos_ratio": 0.09595959595959595,
+      "stance_neg_ratio": 0.03198653198653199,
+      "stance_neu_ratio": 0.8569023569023569,
+      "stance_mixed_ratio": 0.015151515151515152,
+      "bias_proxy": 0.07313563385914777,
+      "controversy": 0.012277658742305205,
+      "volume_delta": 40.0,
+      "heat_delta": -469.3340769192637,
+      "n_like_sum": 58200.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "1cd77b31fddfd9cb89e4826d02af4ee2ec9c2390",
+        "cb8d40241c51be710565eb068076e619f6a46b42",
+        "c842df0b1966724bf3e529b449fa8fcdec9eaf33",
+        "f40715594c3f18ceef89f21754bc8197c8bb7721",
+        "5d706966d38a4baf21d2adb0563fac306e3a9f77"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-08-11T00:00:00+08:00",
+      "ts_unix": 1786377600,
+      "platform": "weibo",
+      "volume": 3710,
+      "heat": 6835.305412513282,
+      "sent_mean": -0.03112965715478,
+      "sent_std": 0.23684268021872196,
+      "stance_pos_ratio": 0.07493261455525606,
+      "stance_neg_ratio": 0.020485175202156335,
+      "stance_neu_ratio": 0.9002695417789758,
+      "stance_mixed_ratio": 0.00431266846361186,
+      "bias_proxy": 0.05812496069128956,
+      "controversy": 0.006140030950080281,
+      "volume_delta": 3116.0,
+      "heat_delta": 5881.906814293268,
+      "n_like_sum": 499122.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "686acf18ac76a70ca27e189cd233b633faf5fbb5",
+        "30b8473107ddc517437f0b8e08d90280cf5050ed",
+        "78ccc2a57e115400917b60d6970716cc4d36d675",
+        "24babd37c0b89a4c9f2645c2cfc4643ceb3d6528",
+        "1577638849a2f30ca4982f7a3c19912341903370"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    },
+    {
+      "ts": "2026-08-12T00:00:00+08:00",
+      "ts_unix": 1786464000,
+      "platform": "weibo",
+      "volume": 5932,
+      "heat": 7632.627437890563,
+      "sent_mean": -0.030068286971495693,
+      "sent_std": 0.24746200437493365,
+      "stance_pos_ratio": 0.09592043155765341,
+      "stance_neg_ratio": 0.03556979096426163,
+      "stance_neu_ratio": 0.8595751854349292,
+      "stance_mixed_ratio": 0.008934592043155765,
+      "bias_proxy": 0.06738519453803143,
+      "controversy": 0.013647478798829986,
+      "volume_delta": 2222.0,
+      "heat_delta": 797.3220253772806,
+      "n_like_sum": 241044.0,
+      "is_empty": false,
+      "sample_content_ids": [
+        "c01524cc917c724f63bd9e966eef174ef2ec845d",
+        "f9d8e7a4fbcddcc82d9015c849fe9520b5a769d1",
+        "af47c12b49bb1485b6ebce302b42e3fb7089249c",
+        "b694866e44f121c11fdad10517ce2f1976f2c52e",
+        "077564abfc1144e93efcb583cc4f524d9e756ef2"
+      ],
+      "topic_volume": 0.0,
+      "topic_heat": 0.0,
+      "topic_heat_delta": 0.0,
+      "ext": {
+        "sent_std_policy": "null_if_lt2",
+        "topic_play_sum": 0.0,
+        "topic_review_sum": 0.0,
+        "heat_source": "search_pubdate"
+      }
+    }
+  ],
+  "stance_dist": {
+    "support": 0.09407693545791083,
+    "oppose": 0.03042008691453404,
+    "neutral": 0.8596491228070176,
+    "mixed": 0.008852406244970223,
+    "unclear": 0.007001448575567359
+  },
+  "stance_profile": {
+    "stance_global": "neutral",
+    "bias_score": 0.07098763286982838,
+    "confidence": 0.4189639465636569,
+    "sentiment_global_mean": -0.024505186147491736,
+    "sentiment_dist": {
+      "pos": 0.0517463383228714,
+      "neu": 0.8685015290519877,
+      "neg": 0.07975213262514083
+    },
+    "stance_ratios": {
+      "support": 0.09407693545791083,
+      "oppose": 0.03042008691453404,
+      "neutral": 0.8596491228070176,
+      "mixed": 0.008852406244970223,
+      "unclear": 0.007001448575567359
+    },
+    "keyword_clusters": [
+      {
+        "label": "情绪表达",
+        "weight": 1708.0,
+        "sample_content_ids": [
+          "a507bcf94d92ebaedaf151ead6a178b09a17ef7d",
+          "8cf6883a9e2e05336ca6ff0be5bd6743432fec04",
+          "5e23d647d00882e408a179121b0fbef01fb87a2b"
+        ]
+      },
+      {
+        "label": "学业考试",
+        "weight": 192.0,
+        "sample_content_ids": [
+          "1b0d902761aa8091984baaa8671cef02a4612fe8",
+          "e0c96f52b69b3b6d7f5637ced25af7742bfd6a7c",
+          "0edb022d74ec9164ba1e54d769711acf61fb5beb"
+        ]
+      },
+      {
+        "label": "怀旧考古",
+        "weight": 129.0,
+        "sample_content_ids": [
+          "d688ed3d9ad56da414bd45a677c3c0e428a6ead8",
+          "62de724c4df9e89593d252f3a717f9c17df203bd",
+          "a8cf1500c0b7fb503ed21ce85e957cc5be94e5e5"
+        ]
+      },
+      {
+        "label": "演技作品",
+        "weight": 87.0,
+        "sample_content_ids": [
+          "5e23d647d00882e408a179121b0fbef01fb87a2b",
+          "94f5ba1449acc0d6c9cdb079651b58acd32d264c",
+          "b5a855a0d4cc88801a0ddacffd172a658ec22329"
+        ]
+      },
+      {
+        "label": "圈层:吃瓜",
+        "weight": 39.0,
+        "sample_content_ids": [
+          "b2d8f055f52c238f9546a76ea5bd8e7ac5e8a88b",
+          "f8c83b76b02f9394e311562a8744e5991202dcae",
+          "7aea1133dca36b5972d732df10c78ffc8821bb0f"
+        ]
+      },
+      {
+        "label": "体育赛事",
+        "weight": 23.0,
+        "sample_content_ids": [
+          "f02eb2650787f25d5883352b6fee23e784a6efb7",
+          "a316a05401a634f52d4560fb803ed740d28e9dae",
+          "c11da940ddaf22f7ce911952fa6b31088987d44b"
+        ]
+      },
+      {
+        "label": "圈层:塌房",
+        "weight": 4.0,
+        "sample_content_ids": [
+          "8615d0838017927ce303ba2a4a4c7a580720bed8",
+          "6fba7a5a1e0c3239e59f634b931fe6c9116bd08d",
+          "c4465c79917b4ed343776b19eca7b0dbf18fb275"
+        ]
+      },
+      {
+        "label": "圈层:yyds",
+        "weight": 2.0,
+        "sample_content_ids": [
+          "26da8b60872a11d1c37d733f50c1cb700e6aa509",
+          "d313c333f2a1a15311325c64832254152336fe12"
+        ]
+      }
+    ],
+    "n_labeled": 12426,
+    "model_version": "stance_profiler_v1",
+    "labeler": "lexicon:v2",
+    "platform": "weibo",
+    "keyword": "社会事件与法治",
+    "time_range": {
+      "start": "2026-03-16T00:00:00+08:00",
+      "end": "2026-08-13T00:00:00+08:00"
+    }
+  },
+  "skill3": {
+    "anomalies": [
+      {
+        "ts": "2026-08-12T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 7617.2838,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "c01524cc917c724f63bd9e966eef174ef2ec845d",
+          "f9d8e7a4fbcddcc82d9015c849fe9520b5a769d1",
+          "af47c12b49bb1485b6ebce302b42e3fb7089249c",
+          "b694866e44f121c11fdad10517ce2f1976f2c52e",
+          "077564abfc1144e93efcb583cc4f524d9e756ef2"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 398.661,
+            "31": 7320.1393,
+            "63": 7617.2838
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 7617.28，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-12T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 7218.6228,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "c01524cc917c724f63bd9e966eef174ef2ec845d",
+          "f9d8e7a4fbcddcc82d9015c849fe9520b5a769d1",
+          "af47c12b49bb1485b6ebce302b42e3fb7089249c",
+          "b694866e44f121c11fdad10517ce2f1976f2c52e",
+          "077564abfc1144e93efcb583cc4f524d9e756ef2"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 398.661,
+            "31": 7320.1393,
+            "63": 7617.2838
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 7218.62，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-08-11T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 6820.5341,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "686acf18ac76a70ca27e189cd233b633faf5fbb5",
+          "30b8473107ddc517437f0b8e08d90280cf5050ed",
+          "78ccc2a57e115400917b60d6970716cc4d36d675",
+          "24babd37c0b89a4c9f2645c2cfc4643ceb3d6528",
+          "1577638849a2f30ca4982f7a3c19912341903370"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 6526.8061,
+            "63": 6820.5341
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 6820.53，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-08-11T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 6820.5341,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "686acf18ac76a70ca27e189cd233b633faf5fbb5",
+          "30b8473107ddc517437f0b8e08d90280cf5050ed",
+          "78ccc2a57e115400917b60d6970716cc4d36d675",
+          "24babd37c0b89a4c9f2645c2cfc4643ceb3d6528",
+          "1577638849a2f30ca4982f7a3c19912341903370"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 6526.8061,
+            "63": 6820.5341
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 6820.53，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-12T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 5925.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "c01524cc917c724f63bd9e966eef174ef2ec845d",
+          "f9d8e7a4fbcddcc82d9015c849fe9520b5a769d1",
+          "af47c12b49bb1485b6ebce302b42e3fb7089249c",
+          "b694866e44f121c11fdad10517ce2f1976f2c52e",
+          "077564abfc1144e93efcb583cc4f524d9e756ef2"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 1111.0,
+            "31": 5722.0,
+            "63": 5925.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 5925.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-11T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 3704.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "686acf18ac76a70ca27e189cd233b633faf5fbb5",
+          "30b8473107ddc517437f0b8e08d90280cf5050ed",
+          "78ccc2a57e115400917b60d6970716cc4d36d675",
+          "24babd37c0b89a4c9f2645c2cfc4643ceb3d6528",
+          "1577638849a2f30ca4982f7a3c19912341903370"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 3503.0,
+            "63": 3704.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 3704.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-09T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 1412.7302,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "874902de2d8b7a1e361ed9b3be1456522c79ea05",
+          "37f89ad9c79c9efd37dab89dd1f24b1f6b2d06e3",
+          "bceb21af8d7bb5fbf2fbfe251cd13a224ca557ae",
+          "373ec4d75f4982676c28a31d3475e7ff302834bf",
+          "d7474acc14a49dc6d94657d84bd24cb6a58a9f4a"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 469.3341,
+            "31": 1266.9749,
+            "63": 1412.7302
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 1412.73，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-10T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 1410.3458,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "1cd77b31fddfd9cb89e4826d02af4ee2ec9c2390",
+          "cb8d40241c51be710565eb068076e619f6a46b42",
+          "c842df0b1966724bf3e529b449fa8fcdec9eaf33",
+          "f40715594c3f18ceef89f21754bc8197c8bb7721",
+          "5d706966d38a4baf21d2adb0563fac306e3a9f77"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": -469.3341,
+            "31": 721.27,
+            "63": 941.0118
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 1410.35，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-08-09T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 943.3962,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "874902de2d8b7a1e361ed9b3be1456522c79ea05",
+          "37f89ad9c79c9efd37dab89dd1f24b1f6b2d06e3",
+          "bceb21af8d7bb5fbf2fbfe251cd13a224ca557ae",
+          "373ec4d75f4982676c28a31d3475e7ff302834bf",
+          "d7474acc14a49dc6d94657d84bd24cb6a58a9f4a"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 469.3341,
+            "31": 1266.9749,
+            "63": 1412.7302
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 943.40，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-08-10T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 941.0118,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "1cd77b31fddfd9cb89e4826d02af4ee2ec9c2390",
+          "cb8d40241c51be710565eb068076e619f6a46b42",
+          "c842df0b1966724bf3e529b449fa8fcdec9eaf33",
+          "f40715594c3f18ceef89f21754bc8197c8bb7721",
+          "5d706966d38a4baf21d2adb0563fac306e3a9f77"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": -469.3341,
+            "31": 721.27,
+            "63": 941.0118
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 941.01，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-10T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 588.5,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "1cd77b31fddfd9cb89e4826d02af4ee2ec9c2390",
+          "cb8d40241c51be710565eb068076e619f6a46b42",
+          "c842df0b1966724bf3e529b449fa8fcdec9eaf33",
+          "f40715594c3f18ceef89f21754bc8197c8bb7721",
+          "5d706966d38a4baf21d2adb0563fac306e3a9f77"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 431.5,
+            "63": 588.5
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 588.50，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-09T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 549.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "874902de2d8b7a1e361ed9b3be1456522c79ea05",
+          "37f89ad9c79c9efd37dab89dd1f24b1f6b2d06e3",
+          "bceb21af8d7bb5fbf2fbfe251cd13a224ca557ae",
+          "373ec4d75f4982676c28a31d3475e7ff302834bf",
+          "d7474acc14a49dc6d94657d84bd24cb6a58a9f4a"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 436.0,
+            "63": 549.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 549.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-06T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 527.5312,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "eace222a5970f8d8da15472999f7e771a40191d7",
+          "b21ca58f6137814f102c6f1a2eab2a1c2667288c",
+          "476b5cadec70d11e28801f3e842f6af93801c9e2",
+          "36479a7f65b2187d0a523740cf876eb973006bd9",
+          "253f10c27325048e80e3c9690980f80bc134f9c6"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 56.4042,
+            "31": 454.7453,
+            "63": 527.5312
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 527.53，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-06T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 471.127,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "eace222a5970f8d8da15472999f7e771a40191d7",
+          "b21ca58f6137814f102c6f1a2eab2a1c2667288c",
+          "476b5cadec70d11e28801f3e842f6af93801c9e2",
+          "36479a7f65b2187d0a523740cf876eb973006bd9",
+          "253f10c27325048e80e3c9690980f80bc134f9c6"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 56.4042,
+            "31": 454.7453,
+            "63": 527.5312
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 471.13，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-08-07T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 471.127,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "cb512c9aa28be5cda74e20dea56213bf4b38e1cf",
+          "8b15ef5816755f540a428596ded8d0052093ea54",
+          "3c22c096fdcc8b19b677ef8769965f5f58ba0423",
+          "626cd5deac6953fe7c467e24b0bbe9724daf5923",
+          "999b9a8cc595480870a303928c87f3f33792ab36"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 379.7828,
+            "63": 471.127
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 471.13，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-08-07T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 471.127,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "cb512c9aa28be5cda74e20dea56213bf4b38e1cf",
+          "8b15ef5816755f540a428596ded8d0052093ea54",
+          "3c22c096fdcc8b19b677ef8769965f5f58ba0423",
+          "626cd5deac6953fe7c467e24b0bbe9724daf5923",
+          "999b9a8cc595480870a303928c87f3f33792ab36"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 379.7828,
+            "63": 471.127
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 471.13，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-08T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 467.9946,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "7eaa7f3430d29b965cd6f2bfd28c86f254fa133e",
+          "6a236a8cbec3e700be0414c3b976d08bf1309d53",
+          "db219decbedbc204839306b17b771d4e362d2eea",
+          "b48769fdb7268f5bdbc8152be658eacc3f7208cc",
+          "b4d8ca96ab64207a30cc5741682524bbefec0b44"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": -166.3653,
+            "31": 183.0795,
+            "63": 301.6293
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 467.99，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-08-07T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 355.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "cb512c9aa28be5cda74e20dea56213bf4b38e1cf",
+          "8b15ef5816755f540a428596ded8d0052093ea54",
+          "3c22c096fdcc8b19b677ef8769965f5f58ba0423",
+          "626cd5deac6953fe7c467e24b0bbe9724daf5923",
+          "999b9a8cc595480870a303928c87f3f33792ab36"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 25.0,
+            "31": 334.0,
+            "63": 355.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 355.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-06T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 330.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "eace222a5970f8d8da15472999f7e771a40191d7",
+          "b21ca58f6137814f102c6f1a2eab2a1c2667288c",
+          "476b5cadec70d11e28801f3e842f6af93801c9e2",
+          "36479a7f65b2187d0a523740cf876eb973006bd9",
+          "253f10c27325048e80e3c9690980f80bc134f9c6"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 310.5,
+            "63": 330.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 330.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-05T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 321.9182,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "1700c9253e97e6ba6259854c43834df9a98b6e68",
+          "808a357d02274bb1dcd02672a3a7c974861919c8",
+          "48058535f83a18f200ddc1299e0f92a4c902bbfa",
+          "31670386e7cf6543a7648017056765ec48c50147",
+          "720219e033b07732ba7fdabc7fa58480572eb21b"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 267.6906,
+            "63": 321.9182
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 321.92，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-08-05T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 321.9182,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "1700c9253e97e6ba6259854c43834df9a98b6e68",
+          "808a357d02274bb1dcd02672a3a7c974861919c8",
+          "48058535f83a18f200ddc1299e0f92a4c902bbfa",
+          "31670386e7cf6543a7648017056765ec48c50147",
+          "720219e033b07732ba7fdabc7fa58480572eb21b"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 267.6906,
+            "63": 321.9182
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 321.92，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-04T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 312.7393,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "fbdd2421c1295387ce5176283571f8edc7ff289a",
+          "f89652b83de7b10c3052c4ca8047b88277736f88",
+          "b56ca6962a1b1ea7bc33370d4660fb6fba36ec33",
+          "1af9715bf527df7c8dcd2b3049429847d21799df",
+          "3fd30748f916695b4947305715a91cd51877e5f7"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 258.8488,
+            "63": 312.7393
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 312.74，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-08-04T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 312.7393,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "fbdd2421c1295387ce5176283571f8edc7ff289a",
+          "f89652b83de7b10c3052c4ca8047b88277736f88",
+          "b56ca6962a1b1ea7bc33370d4660fb6fba36ec33",
+          "1af9715bf527df7c8dcd2b3049429847d21799df",
+          "3fd30748f916695b4947305715a91cd51877e5f7"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 258.8488,
+            "63": 312.7393
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 312.74，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-08T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 301.6293,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "7eaa7f3430d29b965cd6f2bfd28c86f254fa133e",
+          "6a236a8cbec3e700be0414c3b976d08bf1309d53",
+          "db219decbedbc204839306b17b771d4e362d2eea",
+          "b48769fdb7268f5bdbc8152be658eacc3f7208cc",
+          "b4d8ca96ab64207a30cc5741682524bbefec0b44"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": -166.3653,
+            "31": 183.0795,
+            "63": 301.6293
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 301.63，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-05T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 215.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "1700c9253e97e6ba6259854c43834df9a98b6e68",
+          "808a357d02274bb1dcd02672a3a7c974861919c8",
+          "48058535f83a18f200ddc1299e0f92a4c902bbfa",
+          "31670386e7cf6543a7648017056765ec48c50147",
+          "720219e033b07732ba7fdabc7fa58480572eb21b"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 197.0,
+            "63": 215.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 215.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-04T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 209.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "fbdd2421c1295387ce5176283571f8edc7ff289a",
+          "f89652b83de7b10c3052c4ca8047b88277736f88",
+          "b56ca6962a1b1ea7bc33370d4660fb6fba36ec33",
+          "1af9715bf527df7c8dcd2b3049429847d21799df",
+          "3fd30748f916695b4947305715a91cd51877e5f7"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 191.0,
+            "63": 209.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 209.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-08T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 202.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "7eaa7f3430d29b965cd6f2bfd28c86f254fa133e",
+          "6a236a8cbec3e700be0414c3b976d08bf1309d53",
+          "db219decbedbc204839306b17b771d4e362d2eea",
+          "b48769fdb7268f5bdbc8152be658eacc3f7208cc",
+          "b4d8ca96ab64207a30cc5741682524bbefec0b44"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": -153.0,
+            "31": 135.0,
+            "63": 202.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 202.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-27T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 155.7204,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "12c115256fbce17362143a18041e73feea5747a0",
+          "7cd7188c86f1e96ed9bc752156fb5a39214e498a",
+          "a510ca611523663d7e391354d49dee39ade5c117"
+        ],
+        "meta": {
+          "metric": "sent_mean",
+          "dominant_scale": "3",
+          "scale_scores": {
+            "3": -162.8787,
+            "31": -7.1583,
+            "63": -8.6256
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "sent_mean 在不同时间尺度的标准化残差跨度为 155.72，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-08-03T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 152.0201,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "2dadf100f5ad8f49f68476a84d7ce88268a97068",
+          "4ecda991eb10dda3c432b129358ba829adb34120",
+          "9e4c61e2d2465eb4e85dc6afb4898a14929033fb",
+          "4eac0912ca7bf3bcaaba249f9e9dd20e28b93391",
+          "7d242912db5c9aa1f43891ed18f2f868a5e754b6"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 98.4667,
+            "63": 152.0201
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 152.02，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-08-03T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 152.0201,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "2dadf100f5ad8f49f68476a84d7ce88268a97068",
+          "4ecda991eb10dda3c432b129358ba829adb34120",
+          "9e4c61e2d2465eb4e85dc6afb4898a14929033fb",
+          "4eac0912ca7bf3bcaaba249f9e9dd20e28b93391",
+          "7d242912db5c9aa1f43891ed18f2f868a5e754b6"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 98.4667,
+            "63": 152.0201
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 152.02，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-30T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 118.845,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "5f131a3a5251c4b579f2c45d924814d02667cbab",
+          "5c4979b845043fff4d855ac82ce2127c7c3a602d",
+          "81e2b6187bff420daad222173a14cbbdb0327d1c"
+        ],
+        "meta": {
+          "metric": "sent_mean",
+          "dominant_scale": "3",
+          "scale_scores": {
+            "3": 126.565,
+            "31": 7.72,
+            "63": 9.2456
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "sent_mean 在不同时间尺度的标准化残差跨度为 118.84，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-08-03T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 115.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "2dadf100f5ad8f49f68476a84d7ce88268a97068",
+          "4ecda991eb10dda3c432b129358ba829adb34120",
+          "9e4c61e2d2465eb4e85dc6afb4898a14929033fb",
+          "4eac0912ca7bf3bcaaba249f9e9dd20e28b93391",
+          "7d242912db5c9aa1f43891ed18f2f868a5e754b6"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 97.0,
+            "63": 115.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 115.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-01T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 91.863,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "81a0bf74dbc0556b6da8c25e1c27584cdec077a5",
+          "af4f5870d843d3c1bca1852e0af9c1b7edec01f2",
+          "a67db51a609877547b397765c546c4f33cc5e6d0",
+          "96055b3b0d2384c703e2239f010ed81b30731e0a",
+          "886cf54698df8d259a36da69ab347d6e41d0b64f"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 37.1166,
+            "31": 79.1659,
+            "63": 91.863
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 91.86，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-02T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 91.6036,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "9717a760e75b6a045efc0d8c63b164827170db03",
+          "e284f0ad0ae58a825659e424b5c28a9a51981690",
+          "8d6614ad4dc38851fbcd55f749995bea0f8234a7",
+          "65cb9189989ee62b02be297ffd581b1f40644d02",
+          "7cbc252ebb041bf6ea7d81a8f29afee022cdfd5f"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": -37.1166,
+            "31": 21.3617,
+            "63": 54.487
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 91.60，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-07-26T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 82.2188,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "ce514bb10c87622acfa28c3a1cc99ca7e76dfc16",
+          "7229fc56aa74b2668c69d2696bf9b7ad6b46599b",
+          "090f8a6ae26ef56be3185c9f2bf26106cba8335d",
+          "574c33db3739cb4feb675f6ffef547a5f12e445c",
+          "7f7815c53cf204a87354072bbe0c69981333f27c"
+        ],
+        "meta": {
+          "metric": "sent_mean",
+          "dominant_scale": "3",
+          "scale_scores": {
+            "3": 81.4394,
+            "31": -0.6469,
+            "63": -0.7795
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "sent_mean 在不同时间尺度的标准化残差跨度为 82.22，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-07-18T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 60.2537,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "28f967ff99bab95202ed43e358b45046ce338a84",
+          "30beb290c51ec4907505f4429222309fed3a2c4b",
+          "a6e525f8391685be4468dff206731f65b04ffbc3",
+          "906af465f4897401d83a7d106c5eb531a3242b57",
+          "c0a9679528a7d8a884a7855c50ac3500799e65fa"
+        ],
+        "meta": {
+          "metric": "sent_mean",
+          "dominant_scale": "3",
+          "scale_scores": {
+            "3": -65.4899,
+            "31": -5.2362,
+            "63": -6.3095
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "sent_mean 在不同时间尺度的标准化残差跨度为 60.25，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-07-22T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 55.2117,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "ede62b56e7137654193e3a85f1ad4bec33d30dac",
+          "f7226fb0cbc612738c99a97d9230cea2163ca253",
+          "3cd550411b5c60d10c48c2996d4a6a869d909602",
+          "7d0bc2d7632a9a8ab71b814972dadc78c63709ee",
+          "df731029301396bd63dbe4a790f0600712a86f41"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 55.0939,
+            "31": 54.8062,
+            "63": 55.2117
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 55.21，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-01T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 54.7464,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "81a0bf74dbc0556b6da8c25e1c27584cdec077a5",
+          "af4f5870d843d3c1bca1852e0af9c1b7edec01f2",
+          "a67db51a609877547b397765c546c4f33cc5e6d0",
+          "96055b3b0d2384c703e2239f010ed81b30731e0a",
+          "886cf54698df8d259a36da69ab347d6e41d0b64f"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 37.1166,
+            "31": 79.1659,
+            "63": 91.863
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 54.75，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-08-02T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 54.487,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "9717a760e75b6a045efc0d8c63b164827170db03",
+          "e284f0ad0ae58a825659e424b5c28a9a51981690",
+          "8d6614ad4dc38851fbcd55f749995bea0f8234a7",
+          "65cb9189989ee62b02be297ffd581b1f40644d02",
+          "7cbc252ebb041bf6ea7d81a8f29afee022cdfd5f"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": -37.1166,
+            "31": 21.3617,
+            "63": 54.487
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 54.49，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-15T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 49.3224,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "64411c1523b59ee31f72d6ab81bde2e4edb49ec3",
+          "02679432aba8d814917a3713244911227a547cc5",
+          "54eb9b7562b69b9f8874ab001c83c7e7d8a9dc5a",
+          "235da3b48f22d6b84a5c6791be711bee37eb610e",
+          "ce571447394491f2e58b6d0e1e63c5c41fb6e1a1"
+        ],
+        "meta": {
+          "metric": "sent_mean",
+          "dominant_scale": "3",
+          "scale_scores": {
+            "3": -51.3762,
+            "31": -2.0539,
+            "63": -2.4749
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "sent_mean 在不同时间尺度的标准化残差跨度为 49.32，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-06-16T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 47.3332,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "1defffb0025f2ffb6410b42e69265d7298fb08e9",
+          "39d7c8c0d63b1a0e0e328fad2052db7d5ae74b3b",
+          "6dda5074787af47215947f27faf9c9f71aa9c549",
+          "a0978c378830014c341ac4843c2d9a3abdbab313",
+          "89af9eda9a33613196579ef9e10248c5869e5193"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 45.2537,
+            "31": 47.3332,
+            "63": 47.3332
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 31 尺度的稳健异常分数为 47.33，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-04T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 31.7221,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "746070468fae7fd8c55477569394e48b3e42ddde"
+        ],
+        "meta": {
+          "metric": "bias_proxy",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 31.7221,
+            "63": 12.0509
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "bias_proxy 在不同时间尺度的标准化残差跨度为 31.72，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-07-07T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 31.2221,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "6058ad0b3f73f0c224fa2c34bcd9c6775d38e4d2"
+        ],
+        "meta": {
+          "metric": "bias_proxy",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 0.5,
+            "31": 31.7221,
+            "63": 12.0509
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "bias_proxy 在不同时间尺度的标准化残差跨度为 31.22，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-07-29T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 29.2235,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "e4be7e09171d496511091597700de6063bf18646",
+          "6e4b1fd7e6d0dfe21da5ccdfdfe28439571e1285",
+          "c0ba2266de88baefb096ade4dd40747e7cad71a1",
+          "c7e8a8db17bca022b39c43b7f3d6db4972065d22",
+          "693809f665fe430a14992ac2a3a7f59afaffe998"
+        ],
+        "meta": {
+          "metric": "sent_mean",
+          "dominant_scale": "3",
+          "scale_scores": {
+            "3": -26.0747,
+            "31": 2.6132,
+            "63": 3.1488
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "sent_mean 在不同时间尺度的标准化残差跨度为 29.22，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-03-16T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 28.8368,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "2e31a6c0f85ecc48cc2cd1fb0302cf3ccdef2c21",
+          "ac60e1a218f5f706e7268191ab05d7f4c75a6e46",
+          "bb6bb3b71509d85dcf85a1684c9aa1c45f4378f1",
+          "fbfb7753c47378248b6c9e65472437a8db453667",
+          "467adabe10f7dd679e6eec131e2580a97a78527f"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 14.4184,
+            "31": 28.8368,
+            "63": 28.8368
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 31 尺度的稳健异常分数为 28.84，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-14T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 25.6881,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "e9f872220148b451926c0aa0959dae657b9f3f47",
+          "36864928c75fd5f800339c00d35ac6983632af3a",
+          "a14bbe4da66ba9e9edfbbad224c8073a1a948a60",
+          "7b0816465db21b305723c309ea1fa8b1b9c69e2d",
+          "7c59de32d6f1ffadee5aa2d381e08beefbd0afc9"
+        ],
+        "meta": {
+          "metric": "sent_mean",
+          "dominant_scale": "3",
+          "scale_scores": {
+            "3": 25.6881,
+            "31": 0.0,
+            "63": 0.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "sent_mean 在不同时间尺度的标准化残差跨度为 25.69，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-07-14T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 24.5063,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "e9f872220148b451926c0aa0959dae657b9f3f47",
+          "36864928c75fd5f800339c00d35ac6983632af3a",
+          "a14bbe4da66ba9e9edfbbad224c8073a1a948a60",
+          "7b0816465db21b305723c309ea1fa8b1b9c69e2d",
+          "7c59de32d6f1ffadee5aa2d381e08beefbd0afc9"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 0.1964,
+            "31": 24.5063,
+            "63": 23.8132
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 31 尺度的稳健异常分数为 24.51，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-15T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 24.31,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "64411c1523b59ee31f72d6ab81bde2e4edb49ec3",
+          "02679432aba8d814917a3713244911227a547cc5",
+          "54eb9b7562b69b9f8874ab001c83c7e7d8a9dc5a",
+          "235da3b48f22d6b84a5c6791be711bee37eb610e",
+          "ce571447394491f2e58b6d0e1e63c5c41fb6e1a1"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 24.31,
+            "63": 23.1587
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 31 尺度的稳健异常分数为 24.31，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-01T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 23.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "81a0bf74dbc0556b6da8c25e1c27584cdec077a5",
+          "af4f5870d843d3c1bca1852e0af9c1b7edec01f2",
+          "a67db51a609877547b397765c546c4f33cc5e6d0",
+          "96055b3b0d2384c703e2239f010ed81b30731e0a",
+          "886cf54698df8d259a36da69ab347d6e41d0b64f"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 3.0,
+            "31": 17.0,
+            "63": 23.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 23.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-28T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 22.4191,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "51e3acbf7f4830e831867ee90536f94c188b1933",
+          "43cc158f05328d8f20e194cf185b3e694da91c81",
+          "4306fb1b031a3aafb186b8d31312ea2a7fa0b8b8",
+          "bc5237b0450f67de779ffe9594261ab45f632f3f",
+          "84c0a67db320416fec2bd2e228db2f8f5233e29d"
+        ],
+        "meta": {
+          "metric": "sent_mean",
+          "dominant_scale": "3",
+          "scale_scores": {
+            "3": 26.0747,
+            "31": 3.6555,
+            "63": 4.4048
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "sent_mean 在不同时间尺度的标准化残差跨度为 22.42，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-03-16T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 20.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "2e31a6c0f85ecc48cc2cd1fb0302cf3ccdef2c21",
+          "ac60e1a218f5f706e7268191ab05d7f4c75a6e46",
+          "bb6bb3b71509d85dcf85a1684c9aa1c45f4378f1",
+          "fbfb7753c47378248b6c9e65472437a8db453667",
+          "467adabe10f7dd679e6eec131e2580a97a78527f"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 10.0,
+            "31": 20.0,
+            "63": 20.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 31 尺度的稳健异常分数为 20.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-22T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 20.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "ede62b56e7137654193e3a85f1ad4bec33d30dac",
+          "f7226fb0cbc612738c99a97d9230cea2163ca253",
+          "3cd550411b5c60d10c48c2996d4a6a869d909602",
+          "7d0bc2d7632a9a8ab71b814972dadc78c63709ee",
+          "df731029301396bd63dbe4a790f0600712a86f41"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 18.0,
+            "31": 18.0,
+            "63": 20.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 20.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-08-02T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 20.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "9717a760e75b6a045efc0d8c63b164827170db03",
+          "e284f0ad0ae58a825659e424b5c28a9a51981690",
+          "8d6614ad4dc38851fbcd55f749995bea0f8234a7",
+          "65cb9189989ee62b02be297ffd581b1f40644d02",
+          "7cbc252ebb041bf6ea7d81a8f29afee022cdfd5f"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": -3.0,
+            "31": 8.0,
+            "63": 20.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 20.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-06-16T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 19.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "1defffb0025f2ffb6410b42e69265d7298fb08e9",
+          "39d7c8c0d63b1a0e0e328fad2052db7d5ae74b3b",
+          "6dda5074787af47215947f27faf9c9f71aa9c549",
+          "a0978c378830014c341ac4843c2d9a3abdbab313",
+          "89af9eda9a33613196579ef9e10248c5869e5193"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 17.0,
+            "31": 19.0,
+            "63": 19.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 31 尺度的稳健异常分数为 19.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-03-16T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 14.4184,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "2e31a6c0f85ecc48cc2cd1fb0302cf3ccdef2c21",
+          "ac60e1a218f5f706e7268191ab05d7f4c75a6e46",
+          "bb6bb3b71509d85dcf85a1684c9aa1c45f4378f1",
+          "fbfb7753c47378248b6c9e65472437a8db453667",
+          "467adabe10f7dd679e6eec131e2580a97a78527f"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 14.4184,
+            "31": 28.8368,
+            "63": 28.8368
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 14.42，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-07-29T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 12.9202,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "e4be7e09171d496511091597700de6063bf18646",
+          "6e4b1fd7e6d0dfe21da5ccdfdfe28439571e1285",
+          "c0ba2266de88baefb096ade4dd40747e7cad71a1",
+          "c7e8a8db17bca022b39c43b7f3d6db4972065d22",
+          "693809f665fe430a14992ac2a3a7f59afaffe998"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "3",
+          "scale_scores": {
+            "3": 12.9202,
+            "31": -4.197,
+            "63": 12.8087
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 3 尺度的稳健异常分数为 12.92，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-06-28T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 12.8382,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "d1dcf56e8628a0170e5308eb6306b8f2b49e236a",
+          "b1fed798d3694a15d5b8ed94385ca274d752cc65",
+          "4bc3b86258ff9cda875499147e13f59790ba3c24",
+          "142d43b5d1edc69270146f8272258decdfb3a5a4",
+          "f2e55126154cc47c7f70dab54c713b14fd3cc8f0"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "3",
+          "scale_scores": {
+            "3": 12.8382,
+            "31": 12.8382,
+            "63": 12.8382
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 3 尺度的稳健异常分数为 12.84，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-31T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 12.3479,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "c01574d1238433471d0b048946505e22311d7a45",
+          "eda01ac5668ea084172325318fe04783a690f0c4",
+          "cd3da9a5c181280dcebdff14b696a771cf710448",
+          "54d176b9ed96c697877a95918b529d57fe3ea30f",
+          "ae740e6f2e5a0f6c0ee7d23a327be006a1c2a4c9"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": -0.5108,
+            "31": -12.8587,
+            "63": -0.6224
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 12.35，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-07-26T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 12.2864,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "ce514bb10c87622acfa28c3a1cc99ca7e76dfc16",
+          "7229fc56aa74b2668c69d2696bf9b7ad6b46599b",
+          "090f8a6ae26ef56be3185c9f2bf26106cba8335d",
+          "574c33db3739cb4feb675f6ffef547a5f12e445c",
+          "7f7815c53cf204a87354072bbe0c69981333f27c"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 11.0336,
+            "31": 4.7688,
+            "63": 12.2864
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 12.29，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-06-28T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 9.6275,
+        "modality_hint": "temporal",
+        "evidence_ids": [
+          "d1dcf56e8628a0170e5308eb6306b8f2b49e236a",
+          "b1fed798d3694a15d5b8ed94385ca274d752cc65",
+          "4bc3b86258ff9cda875499147e13f59790ba3c24",
+          "142d43b5d1edc69270146f8272258decdfb3a5a4",
+          "f2e55126154cc47c7f70dab54c713b14fd3cc8f0"
+        ],
+        "meta": {
+          "metric": "sent_mean",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 7.9898,
+            "63": 9.6275
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "sent_mean 在不同时间尺度的标准化残差跨度为 9.63，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-06-28T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 9.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "d1dcf56e8628a0170e5308eb6306b8f2b49e236a",
+          "b1fed798d3694a15d5b8ed94385ca274d752cc65",
+          "4bc3b86258ff9cda875499147e13f59790ba3c24",
+          "142d43b5d1edc69270146f8272258decdfb3a5a4",
+          "f2e55126154cc47c7f70dab54c713b14fd3cc8f0"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "3",
+          "scale_scores": {
+            "3": 9.0,
+            "31": 9.0,
+            "63": 9.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 3 尺度的稳健异常分数为 9.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-18T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 8.393,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "28f967ff99bab95202ed43e358b45046ce338a84",
+          "30beb290c51ec4907505f4429222309fed3a2c4b",
+          "a6e525f8391685be4468dff206731f65b04ffbc3",
+          "906af465f4897401d83a7d106c5eb531a3242b57",
+          "c0a9679528a7d8a884a7855c50ac3500799e65fa"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 6.2648,
+            "31": 7.923,
+            "63": 8.393
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 63 尺度的稳健异常分数为 8.39，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-15T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 8.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "64411c1523b59ee31f72d6ab81bde2e4edb49ec3",
+          "02679432aba8d814917a3713244911227a547cc5",
+          "54eb9b7562b69b9f8874ab001c83c7e7d8a9dc5a",
+          "235da3b48f22d6b84a5c6791be711bee37eb610e",
+          "ce571447394491f2e58b6d0e1e63c5c41fb6e1a1"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 3.0,
+            "31": 8.0,
+            "63": 7.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 31 尺度的稳健异常分数为 8.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-26T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 6.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "ce514bb10c87622acfa28c3a1cc99ca7e76dfc16",
+          "7229fc56aa74b2668c69d2696bf9b7ad6b46599b",
+          "090f8a6ae26ef56be3185c9f2bf26106cba8335d",
+          "574c33db3739cb4feb675f6ffef547a5f12e445c",
+          "7f7815c53cf204a87354072bbe0c69981333f27c"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "3",
+          "scale_scores": {
+            "3": 6.0,
+            "31": 4.0,
+            "63": 6.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 3 尺度的稳健异常分数为 6.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-29T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 6.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "e4be7e09171d496511091597700de6063bf18646",
+          "6e4b1fd7e6d0dfe21da5ccdfdfe28439571e1285",
+          "c0ba2266de88baefb096ade4dd40747e7cad71a1",
+          "c7e8a8db17bca022b39c43b7f3d6db4972065d22",
+          "693809f665fe430a14992ac2a3a7f59afaffe998"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 3.0,
+            "31": 0.5,
+            "63": 6.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 6.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-04T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 5.9243,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "746070468fae7fd8c55477569394e48b3e42ddde"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "3",
+          "scale_scores": {
+            "3": 5.9243,
+            "31": 5.9243,
+            "63": 5.9243
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 3 尺度的稳健异常分数为 5.92，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-14T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 5.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "e9f872220148b451926c0aa0959dae657b9f3f47",
+          "36864928c75fd5f800339c00d35ac6983632af3a",
+          "a14bbe4da66ba9e9edfbbad224c8073a1a948a60",
+          "7b0816465db21b305723c309ea1fa8b1b9c69e2d",
+          "7c59de32d6f1ffadee5aa2d381e08beefbd0afc9"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 0.0,
+            "31": 5.0,
+            "63": 4.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 31 尺度的稳健异常分数为 5.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-24T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 5.0,
+        "modality_hint": "temporal",
+        "evidence_ids": [],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 0.0,
+            "31": -5.0,
+            "63": -1.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在不同时间尺度的标准化残差跨度为 5.00，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-07-25T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 5.0,
+        "modality_hint": "temporal",
+        "evidence_ids": [],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 0.0,
+            "31": -5.0,
+            "63": -2.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在不同时间尺度的标准化残差跨度为 5.00，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-07-18T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 4.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "28f967ff99bab95202ed43e358b45046ce338a84",
+          "30beb290c51ec4907505f4429222309fed3a2c4b",
+          "a6e525f8391685be4468dff206731f65b04ffbc3",
+          "906af465f4897401d83a7d106c5eb531a3242b57",
+          "c0a9679528a7d8a884a7855c50ac3500799e65fa"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 2.0,
+            "31": 4.0,
+            "63": 4.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 31 尺度的稳健异常分数为 4.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-05T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 3.2189,
+        "modality_hint": "temporal",
+        "evidence_ids": [],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "3",
+          "scale_scores": {
+            "3": -3.2189,
+            "31": 0.0,
+            "63": 0.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在不同时间尺度的标准化残差跨度为 3.22，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-07-06T00:00:00+08:00",
+        "type": "heat_spike",
+        "score": 3.2189,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "4854dac87d901bbe942cefb10b24c805288c5b8d"
+        ],
+        "meta": {
+          "metric": "heat",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 2.5257,
+            "31": 3.2189,
+            "63": 3.2189
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "heat 在 31 尺度的稳健异常分数为 3.22，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-20T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 3.0,
+        "modality_hint": "temporal",
+        "evidence_ids": [],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 0.0,
+            "31": -3.0,
+            "63": -1.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在不同时间尺度的标准化残差跨度为 3.00，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-07-23T00:00:00+08:00",
+        "type": "cross_scale_inconsistency",
+        "score": 3.0,
+        "modality_hint": "temporal",
+        "evidence_ids": [],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "31",
+          "scale_scores": {
+            "3": 0.0,
+            "31": -3.0,
+            "63": -1.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在不同时间尺度的标准化残差跨度为 3.00，超过阈值 2.50"
+      },
+      {
+        "ts": "2026-07-28T00:00:00+08:00",
+        "type": "volume_spike",
+        "score": 3.0,
+        "modality_hint": "comment",
+        "evidence_ids": [
+          "51e3acbf7f4830e831867ee90536f94c188b1933",
+          "43cc158f05328d8f20e194cf185b3e694da91c81",
+          "4306fb1b031a3aafb186b8d31312ea2a7fa0b8b8",
+          "bc5237b0450f67de779ffe9594261ab45f632f3f",
+          "84c0a67db320416fec2bd2e228db2f8f5233e29d"
+        ],
+        "meta": {
+          "metric": "volume",
+          "dominant_scale": "63",
+          "scale_scores": {
+            "3": 0.0,
+            "31": -2.0,
+            "63": 3.0
+          }
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "volume 在 63 尺度的稳健异常分数为 3.00，超过阈值 3.00"
+      },
+      {
+        "ts": "2026-07-07T00:00:00+08:00",
+        "type": "stance_shift",
+        "score": 1.0,
+        "modality_hint": "stance",
+        "evidence_ids": [
+          "6058ad0b3f73f0c224fa2c34bcd9c6775d38e4d2"
+        ],
+        "meta": {
+          "from": "neutral",
+          "to": "support"
+        },
+        "severity": "warning",
+        "confidence": "low",
+        "reason": "主导立场由 neutral 切换为 support，占比为 1.00"
+      }
+    ],
+    "n_anomalies": 76,
+    "anomalies_truncated": false,
+    "risk_summary": {
+      "max_severity": "warning",
+      "severity_counts": {
+        "warning": 76,
+        "important": 0,
+        "critical": 0
+      }
+    },
+    "severity_counts": {
+      "warning": 76
+    },
+    "multiscale_windows": [
+      3,
+      31,
+      63
+    ],
+    "need_recrawl": true
+  },
+  "OT1": {
+    "OT1_status": "not_run",
+    "claim_stance": "neutral",
+    "risk_flags": [],
+    "summary_analysis": ""
+  },
+  "source": {
+    "raw_csv": "dataset\\real_multiplatform\\raw\\weibo\\society_law__broad.csv",
+    "domain": "society_law",
+    "domain_name": "社会事件与法治",
+    "scope": "broad",
+    "hot_topic": ""
+  },
+  "generated_at": "2026-09-02T10:25:37+08:00"
+}

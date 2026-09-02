@@ -1,0 +1,218 @@
+[
+  {
+    "n_text": 16305,
+    "stance_global": "neutral",
+    "sentiment_global_mean": 0.06455586897603763,
+    "bias_score": 0.07343494086857397,
+    "stance_ratios": {
+      "support": 0.07212511499540018,
+      "oppose": 0.0044771542471634465,
+      "neutral": 0.917571297148114,
+      "mixed": 0.0020852499233364,
+      "unclear": 0.003741183685985894
+    },
+    "time_range": [
+      "2025-11-27",
+      "2026-08-12"
+    ],
+    "topic": "时政与公共治理"
+  },
+  {
+    "n_text": 11536,
+    "stance_global": "neutral",
+    "sentiment_global_mean": 0.19770843206793146,
+    "bias_score": 0.06046220581138913,
+    "stance_ratios": {
+      "support": 0.0531380027739251,
+      "oppose": 0.003554091539528433,
+      "neutral": 0.9345527045769764,
+      "mixed": 0.0017337031900138697,
+      "unclear": 0.007021497919556172
+    },
+    "time_range": [
+      "2026-05-02",
+      "2026-08-12"
+    ],
+    "topic": "医疗健康与心理"
+  },
+  {
+    "n_text": 15082,
+    "stance_global": "neutral",
+    "sentiment_global_mean": 0.007303459298841753,
+    "bias_score": 0.03847703565974802,
+    "stance_ratios": {
+      "support": 0.04429120806259117,
+      "oppose": 0.012199973478318525,
+      "neutral": 0.9378066569420501,
+      "mixed": 0.0015249966847898156,
+      "unclear": 0.004177164832250365
+    },
+    "time_range": [
+      "2026-02-17",
+      "2026-08-12"
+    ],
+    "topic": "社会事件与法治"
+  },
+  {
+    "n_text": 10321,
+    "stance_global": "neutral",
+    "sentiment_global_mean": 0.1251705830299333,
+    "bias_score": 0.04558201351644768,
+    "stance_ratios": {
+      "support": 0.0404030617188257,
+      "oppose": 0.002616025578916772,
+      "neutral": 0.9450634628427478,
+      "mixed": 0.0002906695087685302,
+      "unclear": 0.011626780350741207
+    },
+    "time_range": [
+      "2026-05-14",
+      "2026-08-18"
+    ],
+    "topic": "文化历史与艺术"
+  },
+  {
+    "n_text": 9069,
+    "stance_global": "neutral",
+    "sentiment_global_mean": 0.07926683187293306,
+    "bias_score": 0.060260049320666774,
+    "stance_ratios": {
+      "support": 0.06163854890285588,
+      "oppose": 0.011467637005182489,
+      "neutral": 0.9073767780350646,
+      "mixed": 0.0003307972213033411,
+      "unclear": 0.01918623883559378
+    },
+    "time_range": [
+      "2024-09-01",
+      "2026-08-12"
+    ],
+    "topic": "教育科研与科普"
+  },
+  {
+    "n_text": 8483,
+    "stance_global": "neutral",
+    "sentiment_global_mean": 0.051902486268765986,
+    "bias_score": 0.03991498844515332,
+    "stance_ratios": {
+      "support": 0.04267358245903572,
+      "oppose": 0.006837203819403513,
+      "neutral": 0.9379936343274785,
+      "mixed": 0.0005894141223623718,
+      "unclear": 0.01190616527171991
+    },
+    "time_range": [
+      "2026-07-01",
+      "2026-08-12"
+    ],
+    "topic": "科技工业与交通"
+  },
+  {
+    "n_text": 4356,
+    "stance_global": "neutral",
+    "sentiment_global_mean": 0.0320854726819905,
+    "bias_score": 0.030749458051527657,
+    "stance_ratios": {
+      "support": 0.03397612488521579,
+      "oppose": 0.006427915518824609,
+      "neutral": 0.9552341597796143,
+      "mixed": 0.0009182736455463728,
+      "unclear": 0.003443526170798898
+    },
+    "time_range": [
+      "2026-06-14",
+      "2026-08-12"
+    ],
+    "topic": "财经商业与职场"
+  },
+  {
+    "n_text": 4169,
+    "stance_global": "neutral",
+    "sentiment_global_mean": 0.09018970165403974,
+    "bias_score": 0.06595436039643426,
+    "stance_ratios": {
+      "support": 0.06140561285680019,
+      "oppose": 0.010793955384984408,
+      "neutral": 0.9258815063564404,
+      "mixed": 0.000959462700887503,
+      "unclear": 0.000959462700887503
+    },
+    "time_range": [
+      "2025-10-18",
+      "2026-08-20"
+    ],
+    "topic": "生活消费与家庭"
+  },
+  {
+    "n_text": 4068,
+    "stance_global": "neutral",
+    "sentiment_global_mean": 0.040998898212395565,
+    "bias_score": 0.06236171711745955,
+    "stance_ratios": {
+      "support": 0.06096361848574238,
+      "oppose": 0.005162241887905605,
+      "neutral": 0.9321533923303835,
+      "mixed": 0.0002458210422812193,
+      "unclear": 0.0014749262536873156
+    },
+    "time_range": [
+      "2025-12-05",
+      "2026-08-20"
+    ],
+    "topic": "影视娱乐与明星"
+  },
+  {
+    "n_text": 3880,
+    "stance_global": "neutral",
+    "sentiment_global_mean": 0.04021517824620904,
+    "bias_score": 0.04114610375798931,
+    "stance_ratios": {
+      "support": 0.037371134020618556,
+      "oppose": 0.006185567010309278,
+      "neutral": 0.9548969072164949,
+      "mixed": 0.0005154639175257732,
+      "unclear": 0.0010309278350515464
+    },
+    "time_range": [
+      "2026-02-21",
+      "2026-08-20"
+    ],
+    "topic": "自然环境与三农动物"
+  },
+  {
+    "n_text": 3516,
+    "stance_global": "neutral",
+    "sentiment_global_mean": 0.005260494923625401,
+    "bias_score": 0.028237915447643095,
+    "stance_ratios": {
+      "support": 0.02303754266211604,
+      "oppose": 0.002559726962457338,
+      "neutral": 0.9485210466439136,
+      "mixed": 0.0,
+      "unclear": 0.025881683731513082
+    },
+    "time_range": [
+      "2024-07-30",
+      "2026-08-20"
+    ],
+    "topic": "游戏动漫与虚拟内容"
+  },
+  {
+    "n_text": 3224,
+    "stance_global": "neutral",
+    "sentiment_global_mean": 0.09402894285902295,
+    "bias_score": 0.07020186923472314,
+    "stance_ratios": {
+      "support": 0.06451612903225806,
+      "oppose": 0.005272952853598015,
+      "neutral": 0.9252481389578163,
+      "mixed": 0.0,
+      "unclear": 0.004962779156327543
+    },
+    "time_range": [
+      "2026-05-24",
+      "2026-08-20"
+    ],
+    "topic": "体育竞技与健身"
+  }
+]
