@@ -14,9 +14,9 @@
 |------|--------|------|------|
 | 1 | **PlatformCrawler**（含内置清洗） | 数据源 Skill | 采集 + 规范清洗 → 原始可用文本与互动字段 |
 | 2 | **StanceProfiler** | 数据源 Skill | 立场/情绪/偏见画像 → 与 Skill1 共同整理出**时序+文本数据集** |
-| 3 | **MultimodalTemporalAnalyzer** | 分析计算 | 多模态时序–文本模型：异常、隐特征、残差 |
-| 4 | **KnowledgeAugmentor**（写入+检索一体） | 备用补充 | 与数据源 Skill 联动；主路径不足时才启用 |
-| 5 | **ConclusionGen** | 生成 | 严格受数据源与模型残差约束的初步结论 OT₀ |
+| 3 | **MultimodalTemporalAnalyzer** | 分析计算 | CrossAD 启发的多尺度时序–文本异常、等级与残差 |
+| 4 | **KnowledgeAugmentor**（写入+检索一体） | 备用补充 | BM25 + LLMAD 启发的历史正常/异常正反例 |
+| 5 | **ConclusionGen** | 生成 | 结构化观察、核验、复核与风险分级的初步结论 OT₀ |
 | 6 | **ResidualCalibrator** | 校准 | **强制多检**、不达标不得输出 OT₁ |
 
 **核心数据流（简化）**
@@ -148,14 +148,17 @@ Skill1 + Skill2 **必须**产出同一 schema，供跨平台对齐。指标紧�
 
 #### Skill 3. 多模态时序–文本分析 Skill（MultimodalTemporalAnalyzer）
 
-- **功能**：以 **多模态时序文本模型** 同时编码 `D_ts` 数值轨迹与 `D_text` 语义序列，检测舆情波动异常，输出中间隐特征与预测残差，作为后续 LLM 的**硬约束证据**（替代原「仅时序异常检测」单模态设定）。
-- **模型形态（约定）**
-  - **时序塔**：对 `volume/heat/sent_mean/controversy/...` 建模短期趋势与突变
+- **功能**：以 **多模态时序文本模型** 同时编码 `D_ts` 数值轨迹与 `D_text` 语义序列，检测舆情波动异常，输出中间隐特征与预测残差，作为后续 LLM 的**硬约束证据**。
+- **当前模型形态**
+  - **多尺度时序塔**：短/中/长窗口滑动中位数 + MAD 稳健 z-score
   - **文本塔**：对桶内加权文本（或代表性样本）编码语义漂移
-  - **融合头**：对齐时间步上的跨模态表征 → 异常分数、类型、残差向量
+  - **跨尺度头**：比较各尺度响应，检测 `cross_scale_inconsistency`
+  - **融合头**：对齐时间步 → 异常分数、类型、等级、原因、残差向量
 - **输入**：`D_platform`（`D_ts` + `D_text` + `D_meta`）/ 空时序占位帧
 - **输出**
-  - `anomalies[]`：`{ts, type, score, modality_hint}`（type 示例：`volume_spike` / `sentiment_flip` / `stance_shift` / `cross_modal_inconsistency`）
+  - `anomalies[]`：`{ts, type, score, severity, confidence, reason, evidence_ids}`  
+  - `multiscale`：各时间尺度窗口、z-score 与主尺度
+  - `risk_summary`：最高风险等级及数量分布
   - `hidden_states`：模型中间隐层特征（供 RAG/结论侧引用，不直接当结论）
   - `residual`：预测值 − 真实值（分指标）
   - `baseline`：正常基线轨迹
@@ -172,12 +175,13 @@ Skill1 + Skill2 **必须**产出同一 schema，供跨平台对齐。指标紧�
 将原「向量写入」与「本地 RAG」合并为**一个备用 Skill**，与数据源 Skill（Skill1/2 产出的 `D_platform`）绑定；**仅在主路径证据不足时启用**，不得替代 `D_ts`/`residual` 成为结论主依据。
 
 - **写入（被动）**：每轮 `D_platform` 更新后，将高 `evidence_weight` 文本 + 元数据 + 立场标签入库；`is_empty` 轮次跳过
-- **检索（按需）**：查询主题、条数、时间范围 → 召回本平台历史片段 / 同类事件背景
+- **案例库**：保存 Skill3 时序签名、异常类型与风险等级，标签明确标记为 `skill3_weak_label`
+- **检索（按需）**：BM25 召回文本；多变量 z-normalized DTW 分别召回相似异常例和正常例
 - **启用条件（满足任一）**
   1. `D_text` 总量超 LLM 上下文阈值
-  2. Skill3 报 `cross_modal_inconsistency` 或结论侧证据覆盖不足
+  2. Skill3 报跨模态/跨尺度异常或 `important` / `critical` 风险
   3. 主控显式要求历史对照
-- **输出**：`rag_chunks[]`、`history_cases[]`、`augment_used=true/false`
+- **输出**：`rag_chunks[]`、`history_cases[]`、`anomaly_examples[]`、`normal_examples[]`、`augment_used`
 - **约束**：RAG 内容在 Prompt 中的优先级**低于**时序残差与立场基准；与 `D_ts` 冲突时以数据源观测为准，并记入校准日志
 
 ---
@@ -192,7 +196,7 @@ Skill1 + Skill2 **必须**产出同一 schema，供跨平台对齐。指标紧�
   1. Skill3：`residual` + `anomalies` + `baseline`（硬约束段，必须置于 Prompt 首部）
   2. Skill2：`stance_profile` / `D_meta` 立场与偏见
   3. `D_ts` 关键桶摘要（声量/情绪/争议）
-  4. Skill4：`rag_chunks`（仅 `augment_used=true` 时出现，且标注「补充非主证」）
+  4. Skill4：`rag_chunks` + 历史正反例（均为补充非主证）
   5. `D_text` 高权重样本（条数上限可配）
 - **输出**：OT₀（结构化字段 + **自然语言分析摘要**）、核心观点摘要、`cited_bucket_ids` / `cited_content_ids`
 - **内置硬约束**
@@ -207,6 +211,8 @@ claim_trend        # 声量/热度趋势：up|down|flat|unknown
 claim_sentiment    # 情绪走向
 claim_stance       # 主导立场
 risk_flags[]       # 争议/偏见/突变风险
+risk_level         # none|warning|important|critical|unknown
+anomaly_reasoning  # 全局观察/局部证据/跨模态核验/误报复核
 evidence_ids[]     # 引用的桶或文本 ID
 uncertainty        # high|mid|low
 summary_analysis   # 自然语言概括分析（要点/阵营/争议焦点）
@@ -232,9 +238,9 @@ summary_analysis   # 自然语言概括分析（要点/阵营/争议焦点）
 | G4 证据覆盖 | 每个实指 claim 均有 `evidence_ids`，且 ID 存在于本轮 `D_platform` | 删除无证据句或整单驳回 |
 | G5 禁幻觉 | 不得引用未出现的平台外事实；RAG 与 `D_ts` 冲突时不得站 RAG | 删除冲突句 |
 | G6 空窗诚实 | `empty_ratio` 高或 `is_empty` 时，禁止强结论 | 改写为证据不足 |
-| G7 轮次上限 | 默认校准 1 轮，最多 `max_calib_rounds`（建议 ≤2） | 超限输出 `OT₁_status=failed_calibration` |
+| G7 风险一致性 | `risk_level` 不得夸大 Skill3，且结构化观察/证据/复核完整 | 受限改写或 `failed_calibration` |
 
-- **通过标准**：G1–G6 全过 → `OT₁_status=accepted`；否则不得进入上层对齐层的「有效结论」通道（可附带失败包供调试）。
+- **通过标准**：G1–G7 全过 → `OT₁_status=accepted`；校准仍限制最多 `max_calib_rounds` 轮。
 
 ---
 
@@ -290,6 +296,8 @@ summary_analysis   # 自然语言概括分析（要点/阵营/争议焦点）
 | 单事件正式数据集仓库 | `dataset/`（`README.md` / `events/<event_id>/`） |
 | 数据集规范 | `DATASET_SPEC.md` |
 | Agent 全链路编排 | `Agent/`（`agent.py` Skill1+2；`orchestrator.py` Skill1→6，LangGraph 状态图 + 线性兜底） |
+| Skill 封装层 | `skills/`（`base.py` 抽象 + `registry.py` 注册表 + `impls.py` 六项实现） |
+| Skill 验证工具 | `tools/evaluate_skills.py`（golden 立场标注 + 跨平台对齐 + Skill3 异常统计） |
 | 多平台多 Agent 架构 | 仓库根 `multiagent/`（契约 + 对齐 + 融合 + 主控 Agent） |
 
 **常用命令**
@@ -300,6 +308,23 @@ python -m PlatformCrawler.pipeline 话题词 --since 2026-07-01 --until 2026-08-
 
 # 仅清洗建库（已有评论 CSV）
 python -m PlatformCrawler.dataloader.cli --csv a.csv b.csv --keyword 话题词 --since 2026-07-01 --until 2026-08-14 --out out.json
+```
+
+**Skill 封装与验证**
+
+六项 Skill 已统一封装为 `skills/` 包（`Skill` 抽象 + `SkillContext` 状态载体 + `SkillRegistry` 注册表 + 六项实现），可独立调用或经 `run_pipeline` 串行执行：
+
+```python
+from skills import SkillContext, run_pipeline
+ctx = SkillContext(platform="bilibili", keyword="科比去世")
+run_pipeline(ctx)   # Skill1→6 串行执行，结果写入 ctx.d_platform/skill3/conclusion...
+```
+
+用历史数据验证 Skill 准确性（golden 立场标注 + 跨平台对齐覆盖度 + Skill3 异常统计）：
+
+```bash
+# 输出到 dataset/eval/evaluation_report.json
+python -m tools.evaluate_skills
 ```
 
 ---

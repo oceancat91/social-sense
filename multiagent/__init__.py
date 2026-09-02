@@ -6,6 +6,7 @@ from .contract import SCHEMA_VERSION, normalize_report
 from .align import align
 from .fuse import fuse
 from .master import run_master
+from .cross_platform_agent import CrossPlatformAgent, load_reports_dir
 
 __all__ = [
     "SCHEMA_VERSION",
@@ -13,4 +14,6 @@ __all__ = [
     "align",
     "fuse",
     "run_master",
+    "CrossPlatformAgent",
+    "load_reports_dir",
 ]

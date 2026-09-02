@@ -118,6 +118,16 @@ python -m multiagent --reports-dir path/to/reports/ --no-llm   # 纯确定性归
 # 编程调用
 from multiagent import run_master
 ct = run_master([bili_report, weibo_report], use_llm=True)
+
+# 面向对象封装（跨平台 Agent，附带平台覆盖度观测）
+from multiagent.cross_platform_agent import CrossPlatformAgent
+agent = CrossPlatformAgent([bili_report, weibo_report])
+coverage = agent.coverage()          # 各平台在公共时间轴上的桶覆盖度
+ct = agent.run(use_llm=False)        # 对齐 → 融合 → 归纳 → 校准
+
+# 从报告目录递归加载
+from multiagent import load_reports_dir
+reports = load_reports_dir("dataset/real_multiplatform/reports")
 ```
 
 ---
@@ -130,5 +140,6 @@ ct = run_master([bili_report, weibo_report], use_llm=True)
 | `align.py` | 时间轴对齐 + z-score 归一 |
 | `fuse.py` | 跨平台分歧 + 茧房指数 |
 | `master.py` | 主控 Agent：归纳 + CX 门禁 |
+| `cross_platform_agent.py` | 跨平台 Agent 封装：对齐 + 融合 + 归纳 + 覆盖度观测 |
 | `pipeline.py` / `__main__.py` | CLI 入口 |
 | `llm.py` | DeepSeek 客户端（叙事层，可降级为确定性模板） |
