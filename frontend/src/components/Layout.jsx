@@ -1,9 +1,6 @@
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { Layout as AntLayout, Menu, Dropdown, Avatar, Space } from 'antd'
 import {
-  DashboardOutlined,
-  UnorderedListOutlined,
-  BarChartOutlined,
   RadarChartOutlined,
   LogoutOutlined,
   UserOutlined,
@@ -12,9 +9,7 @@ import {
 const { Header, Sider, Content } = AntLayout
 
 const menuItems = [
-  { key: '/dashboard', icon: <DashboardOutlined />, label: '数据看板' },
-  { key: '/tasks', icon: <UnorderedListOutlined />, label: '监控任务' },
-  { key: '/analysis', icon: <BarChartOutlined />, label: '舆情分析' },
+  { key: '/agent', icon: <RadarChartOutlined />, label: '多Agent分析' },
 ]
 
 function Layout() {

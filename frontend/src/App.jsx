@@ -1,9 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/Layout'
 import Login from './pages/Login'
-import Dashboard from './pages/Dashboard'
-import Tasks from './pages/Tasks'
-import Analysis from './pages/Analysis'
+import AgentReports from './pages/AgentReports'
 import { isAuthenticated } from './utils'
 
 function ProtectedRoute({ children }) {
@@ -18,15 +16,13 @@ function App() {
     <Router>
       <Routes>
         <Route path="/login" element={
-          isAuthenticated() ? <Navigate to="/dashboard" replace /> : <Login />
+          isAuthenticated() ? <Navigate to="/agent" replace /> : <Login />
         } />
         <Route path="/" element={
           <ProtectedRoute><Layout /></ProtectedRoute>
         }>
-          <Route index element={<Navigate to="/dashboard" replace />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="tasks" element={<Tasks />} />
-          <Route path="analysis" element={<Analysis />} />
+          <Route index element={<Navigate to="/agent" replace />} />
+          <Route path="agent" element={<AgentReports />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
