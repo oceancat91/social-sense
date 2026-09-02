@@ -53,14 +53,22 @@ class PipelineService:
                 logger.exception('任务 %s 管道执行失败: %s', task_id, exc)
 
     @classmethod
-    def _execute(cls, task: MonitorTask, keyword: str, days: int, limit: int) -> dict:
-        """采集 → 清洗 → 分析 → 入库"""
+    def _execute(cls, task: MonitorTask, keyword: str, days: int, limit: int,
+                 progress_cb=None, phase_cb=None) -> dict:
+        """采集 → 清洗 → 分析 → 入库
+
+        :param progress_cb: 平台级采集进度回调 progress_cb(platform, state)
+        :param phase_cb: 阶段切换回调 phase_cb(phase)，phase 为 'clean'/'sentiment'
+        """
         # 1. 采集
         raw_records = CrawlerService.crawl(
-            keyword=keyword, platform=task.platform, days=days, limit=limit
+            keyword=keyword, platform=task.platform, days=days, limit=limit,
+            progress_cb=progress_cb,
         )
 
         # 2. 清洗去重（管道内）
+        if phase_cb:
+            phase_cb('clean')
         cleaned, clean_stats = CleaningService.clean_batch(raw_records)
 
         # 3. 与库内已有数据去重（支持重复运行）
@@ -72,6 +80,8 @@ class PipelineService:
         cleaned = [r for r in cleaned if r['content_hash'] not in existing_hashes]
 
         # 4. 情感分析 + 关键词提取 + 入库（分批）
+        if phase_cb:
+            phase_cb('sentiment')
         inserted = 0
         for i in range(0, len(cleaned), BATCH_SIZE):
             batch = cleaned[i:i + BATCH_SIZE]

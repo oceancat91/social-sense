@@ -174,6 +174,8 @@ class _LLMAnalyzer:
         self.model = model or self.DEFAULT_MODEL
         self.timeout = timeout
         self.max_workers = max_workers
+        self._auth_broken = False  # 鉴权失效后整批降级，避免逐条无效重试
+        self._conn_fail_count = 0  # 连续连接失败计数（偶发网络抖动不降级）
 
     @classmethod
     def from_env(cls) -> '_LLMAnalyzer':
@@ -193,13 +195,36 @@ class _LLMAnalyzer:
         """并发逐条调用大模型，返回 [{'sentiment':..., 'score':...}]"""
         if not texts:
             return []
+        if self._auth_broken:
+            return [_DictionaryAnalyzer.analyze(t) for t in texts]
         with ThreadPoolExecutor(max_workers=self.max_workers) as pool:
             return list(pool.map(self._analyze_one, texts))
 
     def _analyze_one(self, text: str) -> dict:
+        if self._auth_broken:
+            return _DictionaryAnalyzer.analyze(text)
         try:
             content = self._call_api(text)
+            self._conn_fail_count = 0  # 成功即重置
             return self._parse_result(content)
+        except (requests.Timeout, requests.ConnectionError) as exc:
+            # 网络/SSL 抖动多为偶发，连续多次失败才永久降级，避免误伤
+            self._conn_fail_count += 1
+            if self._conn_fail_count >= 3:
+                self._auth_broken = True
+                logger.warning('大模型连续连接失败 %d 次，后续整批降级为词典分析', self._conn_fail_count)
+            else:
+                logger.warning('大模型连接失败（%d/%d），该条降级为词典分析: %s',
+                               self._conn_fail_count, 3, exc)
+            return _DictionaryAnalyzer.analyze(text)
+        except requests.HTTPError as exc:
+            status = exc.response.status_code if exc.response is not None else None
+            if status in (401, 403):
+                self._auth_broken = True
+                logger.warning('大模型鉴权失败（HTTP %s），后续整批降级为词典分析', status)
+            else:
+                logger.warning('大模型请求失败（HTTP %s），该条降级为词典分析', status)
+            return _DictionaryAnalyzer.analyze(text)
         except Exception as exc:
             logger.warning('大模型分析失败（%s），该条降级为词典分析: %s', self.model, exc)
             return _DictionaryAnalyzer.analyze(text)

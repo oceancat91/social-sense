@@ -53,7 +53,7 @@ def extract_json(text: str) -> dict[str, Any]:
         return json.loads(m.group(0))
 
 
-def chat(system: str, user: str, *, temperature: float = 0.3, timeout: int = 90) -> str:
+def chat(system: str, user: str, *, temperature: float = 0.3, timeout: int = 30) -> str:
     env = load_env()
     api_key = env.get("DEEPSEEK_API_KEY")
     if not api_key:

@@ -169,24 +169,44 @@ def get_information(bv,flag):
     # 如果是动态
     elif flag == 3:
         resp = requests.get(f"https://www.bilibili.com/opus/{bv}",headers=get_Header())
+    else:
+        raise ValueError(f"未知类型 flag={flag}")
+
+    if resp.status_code != 200:
+        raise RuntimeError(f"请求失败 HTTP {resp.status_code}，无法获取视频信息 (bv={bv})")
+
+    text = resp.text
 
     if flag == 1:
-    # 提取视频oid
-        obj = re.compile(f'"aid":(?P<id>.*?),"bvid":"{bv}"')
-        oid = obj.search(resp.text).group('id')
-
+        # 视频 oid（aid）：按 bvid 精确定位，页面结构变化时逐级回退
+        oid = None
+        for pat in (
+            rf'"aid":(?P<id>\d+),"bvid":"{bv}"',
+            rf'"bvid":"{bv}".*?"aid":(?P<id>\d+)',
+            r'"aid":(?P<id>\d+)',
+        ):
+            m = re.search(pat, text)
+            if m:
+                oid = m.group('id')
+                break
     elif flag == 2:
-    # 番剧的oid
-        oid = re.findall(r'aid":(.+?),',resp.text)[0]
-
+        # 番剧的oid
+        m = re.findall(r'aid":(.+?),', text)
+        oid = m[0] if m else None
     elif flag == 3:
-    # 动态的oid
-        oid = re.findall(r'"rid_str":"(.+?)"',resp.text)[0]
+        # 动态的oid
+        m = re.findall(r'"rid_str":"(.+?)"', text)
+        oid = m[0] if m else None
+    else:
+        oid = None
+
+    if not oid:
+        raise RuntimeError(f"无法从页面解析视频 oid (bv={bv}, flag={flag})")
 
     # 提取标题
     try:
-        title = re.findall(r'<title>(.+?)</title>',resp.text)[0]
-    except:
+        title = re.findall(r'<title>(.+?)</title>', text)[0]
+    except Exception:
         title = "未识别"
 
     return oid, title

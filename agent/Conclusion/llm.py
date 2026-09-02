@@ -53,7 +53,7 @@ def chat(
     *,
     temperature: float = 0.3,
     model: str | None = None,
-    timeout: int = 90,
+    timeout: int = 30,
 ) -> str:
     env = load_env()
     api_key = env.get("DEEPSEEK_API_KEY")

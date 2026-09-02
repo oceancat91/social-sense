@@ -423,18 +423,23 @@ def run_full_analysis(
     rows_by_platform: dict[str, list[Any]],
     granularity: str = "day",
     use_llm: bool = True,
+    progress_cb=None,
 ) -> dict[str, Any]:
     """一站式：多平台 rows -> 各平台 report -> 跨平台 CT。
 
     rows_by_platform: {platform: [SentimentData...]}。
+    progress_cb: 可选进度回调 progress_cb(platform, done_index, total)。
     """
     reports: list[dict[str, Any]] = []
-    for platform in platforms:
+    total = len(platforms)
+    for idx, platform in enumerate(platforms, start=1):
         rows = rows_by_platform.get(platform, [])
         d_platform = build_d_platform_from_rows(
             rows, keyword=keyword, platform=platform, granularity=granularity
         )
         reports.append(run_platform_analysis(d_platform, with_conclusion=use_llm))
+        if progress_cb:
+            progress_cb(platform, idx, total)
 
     if len(reports) >= 2:
         ct = run_cross_platform_analysis(reports, use_llm=use_llm)

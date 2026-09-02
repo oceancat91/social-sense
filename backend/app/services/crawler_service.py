@@ -37,15 +37,21 @@ class CrawlerService:
 
     @classmethod
     def crawl(cls, keyword: str, platform: str = 'all',
-              days: int = 14, limit: int = 600) -> list:
+              days: int = 14, limit: int = 600, progress_cb=None) -> list:
         """
         按平台采集关键词相关舆情数据。
         :param keyword: 监控关键词（事件主题）
         :param platform: 平台标识，'all' 表示全平台
         :param days: 回溯天数
         :param limit: 数据量上限
+        :param progress_cb: 可选进度回调 progress_cb(platform, state)，
+            state 为 'running'（开始采集）或 'done'（采集结束，含 mock 兜底）。
         """
-        platforms = SUPPORTED_PLATFORMS if platform == 'all' else [platform]
+        if platform == 'all':
+            platforms = SUPPORTED_PLATFORMS
+        else:
+            # 支持逗号分隔的多平台（如 'bilibili,weibo,xiaohongshu'）
+            platforms = [p.strip().lower() for p in str(platform).split(',') if p.strip()]
         invalid = [p for p in platforms if p not in SUPPORTED_PLATFORMS]
         if invalid:
             raise ValueError(f'不支持的平台: {invalid}')
@@ -54,12 +60,16 @@ class CrawlerService:
         real_count = 0
         mock_platforms: list = []
         for p in platforms:
+            if progress_cb:
+                progress_cb(p, 'running')
             real = cls._try_real_crawl(keyword, p, days=days, limit=limit)
             if real:
                 records.extend(real)
                 real_count += len(real)
             else:
                 mock_platforms.append(p)
+            if progress_cb:
+                progress_cb(p, 'done')
 
         if mock_platforms:
             generator = MockDataGenerator(keyword=keyword, days=days)

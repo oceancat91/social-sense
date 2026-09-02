@@ -1,12 +1,10 @@
 """多 Agent 分析路由：跨平台多 Agent 分析任务的创建与查询"""
-from flask import Blueprint, request, jsonify, current_app
+from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
-from app import db
 from app.constants import PLATFORMS
 from app.models.agent_report import AgentReport
 from app.services.agent_engine import is_available
-from app.services.agent_service import AgentService
 
 agent_bp = Blueprint('agent', __name__)
 
@@ -24,35 +22,8 @@ def get_engine_status():
 @agent_bp.route('/analyze', methods=['POST'])
 @jwt_required()
 def create_analysis():
-    """创建跨平台多 Agent 分析任务（后台执行）"""
-    if not is_available():
-        return jsonify(code=503, message='多 Agent 引擎未部署（缺少 agent/multiagent 代码目录）'), 503
-
-    data = request.get_json() or {}
-    user_id = get_jwt_identity()
-
-    keyword = (data.get('keyword') or '').strip()
-    if not keyword:
-        return jsonify(code=400, message='关键词不能为空'), 400
-
-    platforms = data.get('platforms') or []
-    invalid = [p for p in platforms if p not in PLATFORMS]
-    if invalid:
-        return jsonify(code=400, message=f'不支持的平台: {invalid}'), 400
-
-    report = AgentReport(
-        task_id=data.get('task_id'),
-        user_id=user_id,
-        keyword=keyword,
-        platforms=','.join(platforms) if platforms else '',
-        status='pending',
-    )
-    db.session.add(report)
-    db.session.commit()
-
-    AgentService.run_in_background(current_app._get_current_object(), report.id)
-
-    return jsonify(code=200, message='分析任务已创建，正在后台执行', data=report.to_dict())
+    """创建跨平台多 Agent 分析任务（已停用：前端不再开放自定义搜索/分析）。"""
+    return jsonify(code=403, message='自定义搜索分析功能已停用，当前仅支持查看历史分析报告'), 403
 
 
 @agent_bp.route('/reports', methods=['GET'])

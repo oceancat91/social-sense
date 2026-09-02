@@ -41,7 +41,6 @@ def _digest_deterministic(
 ) -> dict[str, Any]:
     """确定性归纳：直接由融合指标拼装结构化断言（不依赖 LLM，保证与数据一致）。"""
     platforms = _platform_list(reports)
-    n = len(platforms)
     claims: list[dict[str, Any]] = []
     risk: list[str] = []
 
@@ -274,6 +273,13 @@ def run_master(
             "components": fused.get("echo_chamber_components"),
         },
         "fusion": fused,
+        # 对齐结果（暴露给前端做「跨平台对齐」可视化：统一 time_axis + 平台内 z-score）
+        "aligned": {
+            "time_axis": aligned.get("time_axis") or [],
+            "z_series": aligned.get("z_series") or {},
+            "granularity": aligned.get("granularity"),
+            "n_buckets": aligned.get("n_buckets"),
+        },
         "llm_used": bool(llm_summary),
         "llm_error": llm_error,
         "generated_at": datetime.now().isoformat(timespec="seconds"),
