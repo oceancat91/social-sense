@@ -1,86 +1,89 @@
 /* ============================================================
-   Social Sense 视觉系统 v2 - 舆情情报中枢
-   - 默认深色炭黑工作台，琥珀单一强调色
-   - 主题由界面按钮手动切换（data-theme），不跟随系统
-   - 形状纪律：锐利小圆角（4-8px）为主，刻度/标签单点强调
+   Social Sense 视觉系统 v3 - 中性冷灰 + 克制深蓝（与 landing 同源）
+   - 深浅色跟随系统 prefers-color-scheme，不提供手动切换
+   - 色板取自 landing/globals.css：中性冷灰基底、单一深蓝强调
+   - 形状纪律：小圆角（6-10px），刻度/标签单点强调
    - 数字一律 tabular-nums，紧致数据优先
    ============================================================ */
 
-/* ---------- 深色主题（默认） ---------- */
-:root,
-:root[data-theme='dark'] {
-  color-scheme: dark;
-
-  --accent: #e7a23d;
-  --accent-strong: #f0b45a;
-  --accent-ink: #211505; /* 琥珀按钮上的深色文字 */
-  --accent-soft: rgba(231, 162, 61, 0.12);
-  --accent-border: rgba(231, 162, 61, 0.34);
-
-  --bg-app: #0a0c0e; /* 工作台最底层：炭黑 */
-  --bg-panel: #12151a; /* 面板/卡片 */
-  --bg-panel-2: #0e1114; /* 凹陷区、表格头下的次面板 */
-  --bg-inset: #0d0f12; /* 输入框、深嵌区 */
-  --bg-hover: #1b2026;
-  --bg-sider: #0c0f12;
-  --bg-raise: #171b21; /* 悬浮层 */
-
-  --text-1: #e9ebec;
-  --text-2: #a5acb3;
-  --text-3: #6f7780;
-
-  --border: #232a30;
-  --border-strong: #313941;
-  --border-faint: #191f24;
-
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.28);
-  --shadow-pop: 0 10px 30px rgba(0, 0, 0, 0.5);
-
-  --success: #3ecf8e;
-  --warning: #e7a23d;
-  --danger: #f26b5e;
-
-  --chart-grid: #1a2026;
-  --chart-axis: #596169;
-  --chart-label: #8b939b;
-}
-
-/* ---------- 浅色主题（手动切换） ---------- */
-:root[data-theme='light'] {
+/* ---------- 浅色（系统默认） ---------- */
+:root {
   color-scheme: light;
 
-  --accent: #b45309;
-  --accent-strong: #92400e;
+  --accent: #2563eb;
+  --accent-strong: #1e40af;
   --accent-ink: #ffffff;
-  --accent-soft: rgba(180, 83, 9, 0.1);
-  --accent-border: rgba(180, 83, 9, 0.3);
+  --accent-soft: rgba(37, 99, 235, 0.08);
+  --accent-border: rgba(37, 99, 235, 0.28);
 
-  --bg-app: #eeebe4; /* 暖白工作台 */
-  --bg-panel: #ffffff;
-  --bg-panel-2: #f6f4ef;
-  --bg-inset: #f3f1eb;
-  --bg-hover: #efede6;
-  --bg-sider: #f4f1ea;
+  --bg-app: #f5f6f8;
+  --bg-panel: #fdfdfe;
+  --bg-panel-2: #eef0f4;
+  --bg-inset: #eef0f4;
+  --bg-hover: #eef0f4;
+  --bg-sider: #fdfdfe;
   --bg-raise: #ffffff;
 
-  --text-1: #1b1e22;
-  --text-2: #5b6269;
-  --text-3: #8b9096;
+  --text-1: #191d25;
+  --text-2: #4c5665;
+  --text-3: #5b6675;
 
-  --border: #e0ddd5;
-  --border-strong: #cfcbc0;
-  --border-faint: #ebe8e1;
+  --border: #e6e9ee;
+  --border-strong: #d6dae1;
+  --border-faint: #eef0f4;
 
-  --shadow-card: 0 1px 2px rgba(24, 20, 10, 0.05);
-  --shadow-pop: 0 12px 32px rgba(24, 20, 10, 0.14);
+  --shadow-card: 0 1px 2px rgb(20 24 36 / 0.04),
+    0 16px 48px -24px rgb(20 24 36 / 0.16);
+  --shadow-pop: 0 10px 30px rgb(20 24 36 / 0.14);
 
   --success: #15803d;
-  --warning: #b45309;
+  --warning: #d97706;
   --danger: #b91c1c;
 
-  --chart-grid: #eeece5;
-  --chart-axis: #c9c6bc;
-  --chart-label: #7c8288;
+  --chart-grid: #e6e9ee;
+  --chart-axis: #b6bdc7;
+  --chart-label: #5b6675;
+}
+
+/* ---------- 深色（跟随系统） ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --accent: #3b82f6;
+    --accent-strong: #60a5fa;
+    --accent-ink: #0b0f18;
+    --accent-soft: rgba(59, 130, 246, 0.12);
+    --accent-border: rgba(59, 130, 246, 0.35);
+
+    --bg-app: #0a0d13;
+    --bg-panel: #12161f;
+    --bg-panel-2: #1a2030;
+    --bg-inset: #0e1219;
+    --bg-hover: #1a2030;
+    --bg-sider: #0c0f16;
+    --bg-raise: #1a2030;
+
+    --text-1: #edf0f5;
+    --text-2: #a8b1c0;
+    --text-3: #7e8899;
+
+    --border: #222a3a;
+    --border-strong: #313c53;
+    --border-faint: #1b2130;
+
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3),
+      0 20px 60px -28px rgb(0 0 0 / 0.55);
+    --shadow-pop: 0 12px 32px rgb(0 0 0 / 0.5);
+
+    --success: #3ecf8e;
+    --warning: #f0a63f;
+    --danger: #f26b5e;
+
+    --chart-grid: #1a2030;
+    --chart-axis: #566174;
+    --chart-label: #a8b1c0;
+  }
 }
 
 /* ---------- 基础 ---------- */
@@ -354,7 +357,7 @@ code,
   color: var(--text-1);
   overflow: hidden;
   background:
-    radial-gradient(800px 480px at 12% -8%, rgba(231, 162, 61, 0.16), transparent 60%),
+    radial-gradient(800px 480px at 12% -8%, rgba(59, 130, 246, 0.16), transparent 60%),
     linear-gradient(168deg, var(--bg-panel) 0%, var(--bg-app) 55%, var(--bg-sider) 100%);
 }
 .ss-login__radar::before {
@@ -380,8 +383,8 @@ code,
   transform: translateY(-50%);
   pointer-events: none;
   box-shadow:
-    0 0 0 60px rgba(231, 162, 61, 0.035),
-    0 0 0 120px rgba(231, 162, 61, 0.03);
+    0 0 0 60px rgba(59, 130, 246, 0.05),
+    0 0 0 120px rgba(59, 130, 246, 0.03);
 }
 .ss-login__brand {
   position: relative;
@@ -392,7 +395,7 @@ code,
   letter-spacing: 0.01em;
 }
 .ss-login__brand .ss-brand__mark {
-  box-shadow: 0 0 24px rgba(231, 162, 61, 0.35);
+  box-shadow: 0 0 24px rgba(59, 130, 246, 0.28);
 }
 .ss-login__hero {
   position: relative;

@@ -5,7 +5,6 @@ import {
   Input,
   Button,
   Tabs,
-  Tooltip,
   App as AntApp,
 } from 'antd'
 import {
@@ -13,17 +12,13 @@ import {
   UserOutlined,
   LockOutlined,
   MailOutlined,
-  SunOutlined,
-  MoonOutlined,
 } from '@ant-design/icons'
 import api from '../services/api'
-import { useTheme } from '../theme'
 
 function Login() {
   const [loading, setLoading] = useState(false)
   const [activeTab, setActiveTab] = useState('login')
   const navigate = useNavigate()
-  const { dark, toggle } = useTheme()
   const { message, modal } = AntApp.useApp()
   const [form] = Form.useForm()
 
@@ -62,18 +57,6 @@ function Login() {
     }
   }
 
-  const toggleBtn = (
-    <Tooltip title={dark ? '切换浅色' : '切换深色'}>
-      <Button
-        type="text"
-        icon={dark ? <SunOutlined /> : <MoonOutlined />}
-        onClick={toggle}
-        aria-label="切换主题"
-        style={{ color: 'var(--text-2)' }}
-      />
-    </Tooltip>
-  )
-
   return (
     <div className="ss-login">
       <aside className="ss-login__radar">
@@ -106,8 +89,6 @@ function Login() {
       </aside>
 
       <div className="ss-login__side">
-        <div className="ss-login__toggle">{toggleBtn}</div>
-
         <div className="ss-login__panel">
           <h2>{activeTab === 'login' ? '接入情报台' : '创建账号'}</h2>
           <p className="sub">

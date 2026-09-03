@@ -1,13 +1,14 @@
 /**
- * 主题模块：界面按钮手动切换深浅色，不跟随系统。
+ * 主题模块：跟随系统深浅色（prefers-color-scheme），不提供手动切换。
  *
- * - 用户选择记忆在 localStorage（key: ss-theme），默认深色（情报中枢默认态）。
- * - CSS 变量由 global.css 基于 <html data-theme="dark|light"> 提供；
- * - antd ConfigProvider 通过 ThemeContext 同步 dark/light，注入统一语义色 token。
+ * - 深浅色由操作系统决定，实时监听系统变化自动切换；
+ * - antd ConfigProvider 的 dark/light algorithm 与图表组件均通过
+ *   ThemeContext 读取当前 mode；
+ * - CSS 变量由 global.css 基于 @media (prefers-color-scheme) 提供，
+ *   与 landing 营销页共用同一套中性冷灰 + 克制深蓝语义。
  */
 import {
   createContext,
-  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -16,23 +17,26 @@ import {
 import { ConfigProvider, theme as antdTheme } from 'antd'
 import zhCN from 'antd/locale/zh_CN'
 
-const STORAGE_KEY = 'ss-theme'
-
-/** 琥珀强调色（情报中枢主色；深色高饱和、浅色深琥珀保证对比） */
+/** 克制深蓝强调色（全站唯一 accent；浅色深蓝、深色亮蓝保证对比） */
 export const ACCENT = {
-  light: '#B45309',
-  dark: '#E7A23D',
+  light: '#2563EB',
+  dark: '#3B82F6',
 }
 
 // 语义色（两端主题），供 antd token 与图表/标签复用
 export const SEMANTIC = {
   success: { light: '#15803D', dark: '#3ECF8E' },
-  warning: { light: '#B45309', dark: '#E7A23D' },
+  warning: { light: '#D97706', dark: '#F0A63F' },
   danger: { light: '#B91C1C', dark: '#F26B5E' },
-  info: { light: '#1D4ED8', dark: '#7DA7F5' },
+  info: { light: '#2563EB', dark: '#7DA7F5' },
 }
 
 const pick = (obj, dark) => obj[dark ? 'dark' : 'light']
+
+function getSystemDark() {
+  if (typeof window === 'undefined') return true
+  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? true
+}
 
 function buildToken(dark) {
   const accent = pick(ACCENT, dark)
@@ -40,78 +44,56 @@ function buildToken(dark) {
     colorPrimary: accent,
     colorInfo: accent,
     colorLink: accent,
-    colorLinkHover: dark ? '#F0B45A' : '#92400E',
-    // 主按钮文字色：浅色用白、深色琥珀按钮用近黑保证对比
-    colorTextLightSolid: dark ? '#211505' : '#FFFFFF',
+    colorLinkHover: dark ? '#60A5FA' : '#1E40AF',
+    // 按钮文字色：浅色蓝底白字；深色亮蓝底用深字保证 WCAG 对比
+    colorTextLightSolid: dark ? '#0B0F18' : '#FFFFFF',
     colorSuccess: pick(SEMANTIC.success, dark),
     colorWarning: pick(SEMANTIC.warning, dark),
     colorError: pick(SEMANTIC.danger, dark),
-    borderRadius: 6,
-    borderRadiusSM: 4,
+    borderRadius: 8,
+    borderRadiusSM: 6,
     fontSize: 14,
     fontFamily:
       "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
-    colorBgLayout: dark ? '#0A0C0E' : '#EFEDE7',
-    colorBgContainer: dark ? '#12151A' : '#FFFFFF',
-    colorBgElevated: dark ? '#171B21' : '#FFFFFF',
-    colorBorder: dark ? '#262D34' : '#E0DDD5',
-    colorBorderSecondary: dark ? '#1A2026' : '#ECEAE3',
-    colorText: dark ? '#E9EBEC' : '#1B1E22',
-    colorTextSecondary: dark ? '#A5ACB3' : '#5B6269',
-    colorTextTertiary: dark ? '#707983' : '#8A9097',
-    colorTextQuaternary: dark ? '#4A515A' : '#B4B8BC',
-    colorFillQuaternary: dark ? '#0F1216' : '#F7F5F1',
-    colorFillTertiary: dark ? '#151A1F' : '#F0EEE8',
-    colorFillSecondary: dark ? '#1C222A' : '#E9E6DF',
-    colorFill: dark ? '#232A33' : '#DFDCD4',
-    colorBgTextHover: dark ? '#1A2027' : '#EFEDE7',
+    colorBgLayout: dark ? '#0A0D13' : '#F5F6F8',
+    colorBgContainer: dark ? '#12161F' : '#FDFDFE',
+    colorBgElevated: dark ? '#1A2030' : '#FFFFFF',
+    colorBorder: dark ? '#222A3A' : '#E6E9EE',
+    colorBorderSecondary: dark ? '#1B2130' : '#EEF0F4',
+    colorText: dark ? '#EDF0F5' : '#191D25',
+    colorTextSecondary: dark ? '#A8B1C0' : '#4C5665',
+    colorTextTertiary: dark ? '#7E8899' : '#5B6675',
+    colorTextQuaternary: dark ? '#566174' : '#A9B3C2',
+    colorFillQuaternary: dark ? '#12161F' : '#F7F8FA',
+    colorFillTertiary: dark ? '#1A2030' : '#F0F2F5',
+    colorFillSecondary: dark ? '#222A3A' : '#E8EBF0',
+    colorFill: dark ? '#2A3446' : '#DEE2EA',
+    colorBgTextHover: dark ? '#1A2030' : '#F0F2F5',
   }
 }
 
-/** 同步 data-theme + colorScheme 到 html 根元素 */
-function applyRootTheme(mode) {
-  const root = document.documentElement
-  root.setAttribute('data-theme', mode)
-  root.style.colorScheme = mode
-}
-
-function readInitial() {
-  try {
-    const v = localStorage.getItem(STORAGE_KEY)
-    if (v === 'light' || v === 'dark') return v
-  } catch {
-    /* ignore */
-  }
-  return 'dark'
-}
-
-/** 供组件读取当前主题状态与切换函数 */
-export const ThemeContext = createContext({ dark: true, mode: 'dark', toggle: () => {} })
+/** 供组件读取当前系统深浅状态 */
+export const ThemeContext = createContext({ dark: true, mode: 'dark' })
 export const useDarkMode = () => useContext(ThemeContext).dark
 export const useTheme = () => useContext(ThemeContext)
 
-/** 主题外壳：默认深色；手动切换并记忆 */
+/** 主题外壳：跟随系统深浅，自动切换 antd algorithm */
 export function ThemeGate({ children }) {
-  const [mode, setMode] = useState(readInitial)
-  const dark = mode === 'dark'
+  const [dark, setDark] = useState(getSystemDark)
 
   useEffect(() => {
-    applyRootTheme(mode)
-  }, [mode])
-
-  const toggle = useCallback(() => {
-    setMode((prev) => {
-      const next = prev === 'dark' ? 'light' : 'dark'
-      try {
-        localStorage.setItem(STORAGE_KEY, next)
-      } catch {
-        /* ignore */
-      }
-      return next
-    })
+    const mq = window.matchMedia('(prefers-color-scheme: dark)')
+    const onChange = (e) => setDark(e.matches)
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
   }, [])
 
-  const value = useMemo(() => ({ dark, mode, toggle }), [dark, mode, toggle])
+  useEffect(() => {
+    document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
+  }, [dark])
+
+  const mode = dark ? 'dark' : 'light'
+  const value = useMemo(() => ({ dark, mode }), [dark, mode])
   const token = buildToken(dark)
 
   return (
@@ -128,31 +110,31 @@ export function ThemeGate({ children }) {
               headerHeight: 48,
             },
             Layout: {
-              headerBg: dark ? '#0A0C0E' : '#EFEDE7',
+              headerBg: dark ? '#0A0D13' : '#F5F6F8',
               headerHeight: 56,
               headerPadding: '0 24px',
             },
             Table: {
-              headerBg: dark ? '#151A1F' : '#F4F2ED',
-              rowHoverBg: dark ? '#191F26' : '#F5F3EE',
-              headerColor: dark ? '#9AA3AB' : '#5B6269',
+              headerBg: dark ? '#1A2030' : '#F0F2F5',
+              rowHoverBg: dark ? '#1B2130' : '#F5F6F8',
+              headerColor: dark ? '#A8B1C0' : '#5B6675',
             },
             Menu: {
               darkItemBg: 'transparent',
-              darkItemSelectedBg: dark ? 'rgba(231,162,61,0.12)' : 'rgba(180,83,9,0.10)',
-              darkItemSelectedColor: dark ? '#E7A23D' : '#B45309',
-              darkItemHoverColor: dark ? '#E7A23D' : '#B45309',
-              darkItemColor: dark ? '#9AA3AB' : '#5B6269',
-              itemSelectedBg: 'rgba(180,83,9,0.10)',
-              itemSelectedColor: '#B45309',
-              itemBorderRadius: 6,
+              darkItemSelectedBg: dark ? 'rgba(59,130,246,0.14)' : 'rgba(37,99,235,0.10)',
+              darkItemSelectedColor: dark ? '#3B82F6' : '#1E40AF',
+              darkItemHoverColor: dark ? '#60A5FA' : '#1E40AF',
+              darkItemColor: dark ? '#A8B1C0' : '#5B6675',
+              itemSelectedBg: 'rgba(37,99,235,0.10)',
+              itemSelectedColor: '#1E40AF',
+              itemBorderRadius: 8,
               itemHeight: 40,
             },
             Tooltip: {
-              colorBgSpotlight: dark ? '#1C222A' : '#33383F',
+              colorBgSpotlight: dark ? '#1A2030' : '#33383F',
             },
             Segmented: {
-              itemSelectedBg: dark ? '#1C222A' : '#FFFFFF',
+              itemSelectedBg: dark ? '#1A2030' : '#FFFFFF',
             },
           },
         }}

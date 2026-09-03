@@ -3,19 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Social Sense - 跨平台舆情情报台</title>
+    <title>Social Sense - 跨平台舆情分析台</title>
     <script>
-      // 主题由用户手动切换并记忆，默认深色；不跟随系统。
-      (function () {
-        try {
-          var mode = localStorage.getItem('ss-theme')
-          if (mode !== 'light' && mode !== 'dark') mode = 'dark'
-          document.documentElement.setAttribute('data-theme', mode)
-          document.documentElement.style.colorScheme = mode
-        } catch (e) {
-          document.documentElement.setAttribute('data-theme', 'dark')
-        }
-      })()
+      // 主题跟随系统 prefers-color-scheme（与 landing 一致），
+      // 首帧同步 colorScheme 避免原生控件闪烁。
+      try {
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
+      } catch (e) {
+        document.documentElement.style.colorScheme = 'light'
+      }
     </script>
   </head>
   <body>

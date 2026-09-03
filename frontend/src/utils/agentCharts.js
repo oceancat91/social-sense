@@ -21,7 +21,7 @@ export const STANCE_META = {
   support: { name: '支持', color: '#15803D' },
   oppose: { name: '反对', color: '#B91C1C' },
   neutral: { name: '中立', color: '#8B9096' },
-  mixed: { name: '混合', color: '#B45309' },
+  mixed: { name: '混合', color: '#D97706' },
   unclear: { name: '不明', color: '#A8A19A' },
 }
 
@@ -31,7 +31,7 @@ const STANCE_DARK_COLOR = {
   support: '#3ECF8E',
   oppose: '#F26B5E',
   neutral: '#A5ACB3',
-  mixed: '#E7A23D',
+  mixed: '#F0A63F',
   unclear: '#6F7780',
 }
 
@@ -43,21 +43,21 @@ export function stanceColor(key, dark = false) {
 
 function themePalette(dark) {
   return {
-    text: dark ? '#E9EBEC' : '#1B1E22',
-    label: dark ? '#A5ACB3' : '#5B6269',
-    faint: dark ? '#6F7780' : '#8B9096',
-    axisLine: dark ? '#313941' : '#CFCBC0',
-    splitLine: dark ? '#1A2026' : '#EEEBE4',
+    text: dark ? '#EDF0F5' : '#191D25',
+    label: dark ? '#A8B1C0' : '#4C5665',
+    faint: dark ? '#7E8899' : '#5B6675',
+    axisLine: dark ? '#313C53' : '#D6DAE1',
+    splitLine: dark ? '#1A2030' : '#EEF0F4',
     tooltipBg: dark ? 'rgba(23,27,33,0.98)' : 'rgba(255,255,255,0.98)',
-    tooltipBorder: dark ? '#313941' : '#E0DDD5',
-    tooltipText: dark ? '#E9EBEC' : '#1B1E22',
-    heatmapTrack: dark ? '#0F1216' : '#F6F4EF',
-    dataZoomFiller: dark ? 'rgba(231,162,61,0.10)' : 'rgba(180,83,9,0.08)',
-    dataZoomBorder: dark ? '#313941' : '#CFCBC0',
-    dataZoomBg: dark ? '#151A1F' : '#F4F2ED',
+    tooltipBorder: dark ? '#313C53' : '#E6E9EE',
+    tooltipText: dark ? '#EDF0F5' : '#191D25',
+    heatmapTrack: dark ? '#0C0F16' : '#EEF0F4',
+    dataZoomFiller: dark ? 'rgba(59,130,246,0.12)' : 'rgba(37,99,235,0.08)',
+    dataZoomBorder: dark ? '#313C53' : '#D6DAE1',
+    dataZoomBg: dark ? '#1A2030' : '#F0F2F5',
     labelOnHeat: dark ? '#0D0F12' : '#FFFFFF',
-    accent: dark ? '#E7A23D' : '#B45309',
-    accentSoft: dark ? 'rgba(231,162,61,0.14)' : 'rgba(180,83,9,0.10)',
+    accent: dark ? '#3B82F6' : '#2563EB',
+    accentSoft: dark ? 'rgba(59,130,246,0.16)' : 'rgba(37,99,235,0.10)',
     success: SEMANTIC.success[dark ? 'dark' : 'light'],
     warning: SEMANTIC.warning[dark ? 'dark' : 'light'],
     danger: SEMANTIC.danger[dark ? 'dark' : 'light'],
@@ -125,7 +125,7 @@ export function echoGaugeOption(score, dark = false) {
         axisTick: { show: false },
         splitLine: {
           length: 9,
-          lineStyle: { color: dark ? '#2F3849' : '#D7DEE7', width: 2 },
+          lineStyle: { color: dark ? '#313C53' : '#D7DEE7', width: 2 },
         },
         axisLabel: {
           color: p.faint,
@@ -225,7 +225,7 @@ export function stanceDistOption(stanceDist, dark = false) {
       support: '#34D399',
       oppose: '#F87171',
       neutral: '#8A95A5',
-      mixed: '#FBBF24',
+      mixed: '#F0A63F',
       unclear: '#65718A',
     }[key] || base
   }
@@ -338,7 +338,7 @@ export function corrMatrixOption(temporalCorr, platforms, dark = false) {
         label: {
           show: true,
           fontSize: 11,
-          color: dark ? '#A5ACB3' : '#5B6269',
+          color: dark ? '#A8B1C0' : '#4C5665',
           formatter: (params) => {
             const val = params.value[2]
             return val === '-' ? '' : Number(val).toFixed(2)

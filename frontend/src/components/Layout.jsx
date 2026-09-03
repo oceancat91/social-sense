@@ -1,11 +1,9 @@
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
-import { Layout as AntLayout, Menu, Dropdown, Avatar, Space, Tooltip, Button } from 'antd'
+import { Layout as AntLayout, Menu, Dropdown, Avatar, Space } from 'antd'
 import {
   RadarChartOutlined,
   LogoutOutlined,
   UserOutlined,
-  SunOutlined,
-  MoonOutlined,
 } from '@ant-design/icons'
 import { useTheme } from '../theme'
 
@@ -18,7 +16,7 @@ const menuItems = [
 function Layout() {
   const navigate = useNavigate()
   const location = useLocation()
-  const { dark, toggle } = useTheme()
+  const { dark } = useTheme()
 
   const handleLogout = () => {
     localStorage.removeItem('token')
@@ -72,18 +70,9 @@ function Layout() {
       <AntLayout>
         <Header className="ss-header" style={{ background: 'var(--bg-app)' }}>
           <div className="ss-header__loc">
-            舆情情报台 <b>/ 多 AGENT 跨平台分析</b>
+            舆情分析台 <b>/ 多 AGENT 跨平台分析</b>
           </div>
           <Space size={14}>
-            <Tooltip title={dark ? '切换浅色' : '切换深色'}>
-              <Button
-                className="theme-toggle-btn"
-                type="text"
-                icon={dark ? <SunOutlined /> : <MoonOutlined />}
-                onClick={toggle}
-                aria-label="切换主题"
-              />
-            </Tooltip>
             <Dropdown menu={userMenu} placement="bottomRight">
               <Space style={{ cursor: 'pointer', padding: '2px 4px' }}>
                 <Avatar
