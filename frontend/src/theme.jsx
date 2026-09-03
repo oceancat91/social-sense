@@ -50,8 +50,10 @@ function buildToken(dark) {
     colorSuccess: pick(SEMANTIC.success, dark),
     colorWarning: pick(SEMANTIC.warning, dark),
     colorError: pick(SEMANTIC.danger, dark),
-    borderRadius: 8,
+    // 圆角分档：控件/输入/标签 6px（landing rounded-md），大卡 12px 见 Card 组件覆盖
+    borderRadius: 6,
     borderRadiusSM: 6,
+    borderRadiusLG: 12,
     fontSize: 14,
     fontFamily:
       "Inter Variable, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
@@ -110,10 +112,11 @@ export function ThemeGate({ children }) {
               headerFontSize: 14,
               headerBg: 'transparent',
               headerHeight: 48,
+              borderRadiusLG: 12,
             },
             Layout: {
               headerBg: dark ? '#0A0D13' : '#F5F6F8',
-              headerHeight: 56,
+              headerHeight: 64,
               headerPadding: '0 24px',
             },
             Table: {
@@ -129,7 +132,7 @@ export function ThemeGate({ children }) {
               darkItemColor: dark ? '#A8B1C0' : '#5B6675',
               itemSelectedBg: 'rgba(37,99,235,0.10)',
               itemSelectedColor: '#1E40AF',
-              itemBorderRadius: 8,
+              itemBorderRadius: 6,
               itemHeight: 40,
             },
             Tooltip: {

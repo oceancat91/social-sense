@@ -47,10 +47,7 @@ function Layout() {
           <div className="ss-brand__mark">
             <RadarChartOutlined />
           </div>
-          <div className="ss-brand__text">
-            <span className="ss-brand__name">Social Sense</span>
-            <span className="ss-brand__sub">OSINT · MULTI-AGENT</span>
-          </div>
+          <span className="ss-brand__name">Social Sense</span>
         </div>
 
         <Menu
@@ -68,7 +65,7 @@ function Layout() {
       </Sider>
 
       <AntLayout>
-        <Header className="ss-header" style={{ background: 'var(--bg-app)' }}>
+        <Header className="ss-header">
           <div className="ss-header__loc">
             舆情分析台 <b>/ 多 AGENT 跨平台分析</b>
           </div>
@@ -87,7 +84,7 @@ function Layout() {
         </Header>
 
         <Content className="ss-content">
-          <div className="page-enter" style={{ maxWidth: 1440, margin: '0 auto' }}>
+          <div className="page-enter" style={{ maxWidth: 1280, margin: '0 auto' }}>
             <Outlet />
           </div>
         </Content>

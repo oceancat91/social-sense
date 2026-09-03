@@ -139,7 +139,7 @@ export function echoGaugeOption(score, dark = false) {
           valueAnimation: true,
           formatter: (val) => (val * 100).toFixed(1) + '%',
           fontSize: 28,
-          fontWeight: 700,
+          fontWeight: 650,
           color: levelColor,
           offsetCenter: [0, '40%'],
         },

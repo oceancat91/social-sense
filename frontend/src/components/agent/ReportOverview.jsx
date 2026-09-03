@@ -57,7 +57,7 @@ export default function ReportOverview({
       <Col span={8} xs={24}>
         <Card loading={loading} style={{ height: '100%' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <div style={{ fontSize: 20, fontWeight: 700, letterSpacing: '-0.01em' }}>
+            <div style={{ fontSize: 20, fontWeight: 650, letterSpacing: '-0.02em' }}>
               {ct.keyword || '-'}
             </div>
             <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>

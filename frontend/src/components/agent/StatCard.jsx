@@ -24,13 +24,14 @@ export default function StatCard({ title, value, suffix, tone = 'accent', icon, 
           style={{
             width: 40,
             height: 40,
-            borderRadius: 8,
+            borderRadius: 6,
             flexShrink: 0,
             display: 'grid',
             placeItems: 'center',
             fontSize: 18,
             color,
-            background: 'color-mix(in srgb, var(--card-accent) 12%, transparent)',
+            background: 'color-mix(in srgb, var(--card-accent) 10%, transparent)',
+            border: '1px solid color-mix(in srgb, var(--card-accent) 26%, transparent)',
           }}
         >
           {icon}

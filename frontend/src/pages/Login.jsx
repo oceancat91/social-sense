@@ -68,7 +68,6 @@ function Login() {
         </div>
 
         <div className="ss-login__hero">
-          <span className="kick">舆情雷达 · 多智能体融合</span>
           <h1>
             跨平台舆情感知，<em>穿透信息茧房。</em>
           </h1>

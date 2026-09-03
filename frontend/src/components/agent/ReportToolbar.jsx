@@ -13,7 +13,6 @@ export default function ReportToolbar({ selectedId, reportOptions, onSelect, onR
       gap: 12,
     }}>
       <h2 className="page-title">
-        <span className="page-title-mark" />
         跨平台多 Agent 舆情分析
       </h2>
       <Space wrap>

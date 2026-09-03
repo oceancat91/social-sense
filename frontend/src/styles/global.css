@@ -23,6 +23,8 @@
   --bg-hover: #eef0f4;
   --bg-sider: #fdfdfe;
   --bg-raise: #ffffff;
+  --solid: #151a23;
+  --on-solid: #f5f6f8;
 
   --text-1: #191d25;
   --text-2: #4c5665;
@@ -56,17 +58,19 @@
     --accent-soft: rgba(59, 130, 246, 0.12);
     --accent-border: rgba(59, 130, 246, 0.35);
 
-    --bg-app: #0a0d13;
-    --bg-panel: #12161f;
-    --bg-panel-2: #1a2030;
-    --bg-inset: #0e1219;
-    --bg-hover: #1a2030;
-    --bg-sider: #0c0f16;
-    --bg-raise: #1a2030;
+  --bg-app: #0a0d13;
+  --bg-panel: #12161f;
+  --bg-panel-2: #1a2030;
+  --bg-inset: #0e1219;
+  --bg-hover: #1a2030;
+  --bg-sider: #0c0f16;
+  --bg-raise: #1a2030;
+  --solid: #e7ebf1;
+  --on-solid: #0d1017;
 
-    --text-1: #edf0f5;
-    --text-2: #a8b1c0;
-    --text-3: #7e8899;
+  --text-1: #edf0f5;
+  --text-2: #a8b1c0;
+  --text-3: #7e8899;
 
     --border: #222a3a;
     --border-strong: #313c53;
@@ -113,7 +117,6 @@ body {
 #root {
   min-height: 100vh;
 }
-
 a {
   color: var(--accent);
 }
@@ -172,20 +175,13 @@ code,
 
 .page-title {
   font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.015em;
+  font-weight: 650;
+  letter-spacing: -0.02em;
   margin: 0;
   color: var(--text-1);
   display: flex;
   align-items: center;
   gap: 12px;
-}
-.page-title .page-title-mark {
-  width: 3px;
-  height: 18px;
-  border-radius: 2px;
-  background: var(--accent);
-  flex-shrink: 0;
 }
 
 /* 顶部统计条的数字 */
@@ -197,7 +193,7 @@ code,
 
 /* ---------- 应用外壳：侧栏 ---------- */
 .ss-sider {
-  border-right: 1px solid var(--border-faint);
+  border-right: 1px solid var(--border);
 }
 .ss-brand {
   height: 64px;
@@ -205,19 +201,19 @@ code,
   align-items: center;
   gap: 12px;
   padding: 0 18px;
-  border-bottom: 1px solid var(--border-faint);
+  border-bottom: 1px solid var(--border);
 }
 .ss-brand__mark {
-  width: 30px;
-  height: 30px;
-  border-radius: 7px;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
   flex-shrink: 0;
   display: grid;
   place-items: center;
-  font-size: 16px;
-  color: var(--accent-ink);
-  background: linear-gradient(140deg, var(--accent-strong), var(--accent));
-  box-shadow: 0 0 0 1px var(--accent-border);
+  font-size: 15px;
+  color: var(--on-solid);
+  background: var(--solid);
+  box-shadow: 0 0 0 1px var(--border);
 }
 .ss-brand__text {
   display: flex;
@@ -226,8 +222,8 @@ code,
   min-width: 0;
 }
 .ss-brand__name {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text-1);
 }
@@ -237,8 +233,14 @@ code,
   font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
   letter-spacing: 0.02em;
 }
+.ss-brand__sub {
+  font-size: 10.5px;
+  color: var(--text-3);
+  font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
+  letter-spacing: 0.02em;
+}
 
-/* 菜单：琥珀选中态 + 左边 2px 指示条 */
+/* 菜单：选中态浅底 + 色字（无额外竖条装饰，与 landing 导航同克制） */
 .ss-sider .ant-menu-item {
   margin: 2px 8px;
 }
@@ -247,25 +249,18 @@ code,
 }
 .ss-sider .ant-menu-item-selected {
   font-weight: 600;
-  position: relative;
-}
-.ss-sider .ant-menu-item-selected::before {
-  content: '';
-  position: absolute;
-  left: -8px;
-  top: 8px;
-  bottom: 8px;
-  width: 3px;
-  border-radius: 2px;
-  background: var(--accent);
 }
 
 /* ---------- 应用外壳：顶栏 ---------- */
-.ss-header {
+.ant-layout-header.ss-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--border-faint);
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-app) 86%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  line-height: normal;
 }
 .ss-header__loc {
   font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
@@ -298,19 +293,21 @@ code,
 
 /* ---------- antd 面板类微调 ---------- */
 .ant-card {
-  box-shadow: var(--shadow-card);
-  border: 1px solid var(--border-faint);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-panel);
 }
 .ant-card .ant-card-head {
-  border-bottom: 1px solid var(--border-faint);
+  border-bottom: 1px solid var(--border);
   min-height: 46px;
 }
 .ant-card .ant-card-head .ant-card-head-title {
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: -0.01em;
+  color: var(--text-1);
 }
 .ant-alert {
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 /* 统计卡 */
@@ -323,10 +320,10 @@ code,
   margin-bottom: 0;
 }
 .stat-card .ant-statistic-title {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-3);
   margin-bottom: 2px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   font-weight: 500;
 }
 .stat-card .ant-statistic-content {
@@ -348,7 +345,7 @@ code,
   position: relative;
 }
 
-/* 左栏：雷达栅格品牌墙（随主题切换基底） */
+/* 左栏：品牌墙（克制背景，单一深蓝光晕，无装饰网格/同心圆） */
 .ss-login__radar {
   position: relative;
   display: flex;
@@ -358,34 +355,8 @@ code,
   color: var(--text-1);
   overflow: hidden;
   background:
-    radial-gradient(800px 480px at 12% -8%, rgba(59, 130, 246, 0.16), transparent 60%),
+    radial-gradient(800px 480px at 12% -8%, rgba(59, 130, 246, 0.14), transparent 60%),
     linear-gradient(168deg, var(--bg-panel) 0%, var(--bg-app) 55%, var(--bg-sider) 100%);
-}
-.ss-login__radar::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(var(--chart-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--chart-grid) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(130% 90% at 0% 0%, rgba(0, 0, 0, 0.9), transparent 72%);
-  pointer-events: none;
-}
-.ss-login__radar::after {
-  content: '';
-  position: absolute;
-  right: -140px;
-  top: 50%;
-  width: 420px;
-  height: 420px;
-  border: 1px solid var(--accent-border);
-  border-radius: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  box-shadow:
-    0 0 0 60px rgba(59, 130, 246, 0.05),
-    0 0 0 120px rgba(59, 130, 246, 0.03);
 }
 .ss-login__brand {
   position: relative;
@@ -396,26 +367,17 @@ code,
   letter-spacing: 0.01em;
 }
 .ss-login__brand .ss-brand__mark {
-  box-shadow: 0 0 24px rgba(59, 130, 246, 0.28);
+  box-shadow: 0 0 0 1px var(--border);
 }
 .ss-login__hero {
   position: relative;
 }
-.ss-login__hero .kick {
-  font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  color: var(--accent);
-  text-transform: uppercase;
-  margin-bottom: 18px;
-  display: inline-block;
-}
 .ss-login__hero h1 {
   margin: 0;
   font-size: clamp(30px, 3.8vw, 44px);
-  font-weight: 720;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
   max-width: 15em;
   color: var(--text-1);
 }
@@ -448,24 +410,19 @@ code,
   padding: 40px 24px;
   position: relative;
 }
-.ss-login__toggle {
-  position: absolute;
-  top: 22px;
-  right: 24px;
-}
 .ss-login__panel {
   width: 100%;
   max-width: 400px;
   background: var(--bg-panel);
-  border: 1px solid var(--border-faint);
-  border-radius: 8px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
   box-shadow: var(--shadow-card);
   padding: 30px 32px 34px;
 }
 .ss-login__panel h2 {
   font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 650;
+  letter-spacing: -0.025em;
   margin: 0 0 4px;
   color: var(--text-1);
 }
