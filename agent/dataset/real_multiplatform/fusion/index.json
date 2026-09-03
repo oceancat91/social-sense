@@ -4,132 +4,144 @@
     "topic": "体育竞技与健身",
     "platforms": [
       "bilibili",
-      "weibo"
+      "weibo",
+      "douyin"
     ],
     "file": "dataset\\real_multiplatform\\fusion\\sports_fitness__broad.json",
     "CT_status": "accepted",
-    "echo_chamber_score": 0.2887
+    "echo_chamber_score": 0.3325
   },
   {
     "scope": "broad",
     "topic": "医疗健康与心理",
     "platforms": [
       "bilibili",
-      "weibo"
+      "weibo",
+      "douyin"
     ],
     "file": "dataset\\real_multiplatform\\fusion\\health_psychology__broad.json",
     "CT_status": "accepted",
-    "echo_chamber_score": 0.3185
+    "echo_chamber_score": 0.3051
   },
   {
     "scope": "broad",
     "topic": "影视娱乐与明星",
     "platforms": [
       "bilibili",
-      "weibo"
+      "weibo",
+      "douyin"
     ],
     "file": "dataset\\real_multiplatform\\fusion\\entertainment__broad.json",
     "CT_status": "accepted",
-    "echo_chamber_score": 0.3697
+    "echo_chamber_score": 0.3467
   },
   {
     "scope": "broad",
     "topic": "教育科研与科普",
     "platforms": [
       "bilibili",
-      "weibo"
+      "weibo",
+      "douyin"
     ],
     "file": "dataset\\real_multiplatform\\fusion\\education_science__broad.json",
     "CT_status": "accepted",
-    "echo_chamber_score": 0.2355
+    "echo_chamber_score": 0.1877
   },
   {
     "scope": "broad",
     "topic": "文化历史与艺术",
     "platforms": [
       "bilibili",
-      "weibo"
+      "weibo",
+      "douyin"
     ],
     "file": "dataset\\real_multiplatform\\fusion\\culture_history__broad.json",
     "CT_status": "accepted",
-    "echo_chamber_score": 0.3395
+    "echo_chamber_score": 0.3325
   },
   {
     "scope": "broad",
     "topic": "时政与公共治理",
     "platforms": [
       "bilibili",
-      "weibo"
+      "weibo",
+      "douyin"
     ],
     "file": "dataset\\real_multiplatform\\fusion\\public_affairs__broad.json",
     "CT_status": "accepted",
-    "echo_chamber_score": 0.0898
+    "echo_chamber_score": 0.2482
   },
   {
     "scope": "broad",
     "topic": "游戏动漫与虚拟内容",
     "platforms": [
       "bilibili",
-      "weibo"
+      "weibo",
+      "douyin"
     ],
     "file": "dataset\\real_multiplatform\\fusion\\games_anime__broad.json",
     "CT_status": "accepted",
-    "echo_chamber_score": 0.3235
+    "echo_chamber_score": 0.3255
   },
   {
     "scope": "broad",
     "topic": "生活消费与家庭",
     "platforms": [
       "bilibili",
-      "weibo"
+      "weibo",
+      "douyin"
     ],
     "file": "dataset\\real_multiplatform\\fusion\\life_consumption__broad.json",
     "CT_status": "accepted",
-    "echo_chamber_score": 0.3502
+    "echo_chamber_score": 0.3289
   },
   {
     "scope": "broad",
     "topic": "社会事件与法治",
     "platforms": [
       "bilibili",
-      "weibo"
+      "weibo",
+      "douyin"
     ],
     "file": "dataset\\real_multiplatform\\fusion\\society_law__broad.json",
     "CT_status": "accepted",
-    "echo_chamber_score": 0.1128
+    "echo_chamber_score": 0.1387
   },
   {
     "scope": "broad",
     "topic": "科技工业与交通",
     "platforms": [
       "bilibili",
-      "weibo"
+      "weibo",
+      "douyin"
     ],
     "file": "dataset\\real_multiplatform\\fusion\\technology_industry__broad.json",
     "CT_status": "accepted",
-    "echo_chamber_score": 0.1003
+    "echo_chamber_score": 0.1628
   },
   {
     "scope": "broad",
     "topic": "自然环境与三农动物",
     "platforms": [
       "bilibili",
-      "weibo"
+      "weibo",
+      "douyin"
     ],
     "file": "dataset\\real_multiplatform\\fusion\\nature_rural__broad.json",
     "CT_status": "accepted",
-    "echo_chamber_score": 0.3363
+    "echo_chamber_score": 0.3357
   },
   {
     "scope": "broad",
     "topic": "财经商业与职场",
     "platforms": [
       "bilibili",
-      "weibo"
+      "weibo",
+      "douyin"
     ],
     "file": "dataset\\real_multiplatform\\fusion\\economy_business__broad.json",
     "CT_status": "accepted",
-    "echo_chamber_score": 0.0722
+    "echo_chamber_score": 0.1573
   },
   {
     "scope": "hot",

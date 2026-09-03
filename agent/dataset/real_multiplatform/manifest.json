@@ -3143,17 +3143,19 @@
   "summary": {
     "platforms": [
       "bilibili",
+      "douyin",
       "weibo",
       "xiaohongshu"
     ],
     "files_per_platform": {
       "bilibili": 24,
       "weibo": 24,
-      "xiaohongshu": 12
+      "xiaohongshu": 12,
+      "douyin": 12
     },
-    "n_csv": 60,
-    "raw_rows": 391187,
-    "n_text": 390015,
+    "n_csv": 72,
+    "raw_rows": 496010,
+    "n_text": 484024,
     "n_cross_platform_fusions": 24,
     "sample_per_file": 0,
     "text_tower_enabled": false
@@ -3435,5 +3437,197 @@
       "CT_status": "accepted",
       "echo_chamber_score": 0.3007
     }
-  ]
+  ],
+  "douyin_run": {
+    "csv": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\all_comments_cleaned.csv",
+    "generated_at": "2026-09-03T13:09:00+08:00",
+    "domains": [
+      {
+        "domain": "culture_history",
+        "domain_name": "文化历史与艺术",
+        "scope": "broad",
+        "report": "dataset\\real_multiplatform\\reports\\douyin\\culture_history__broad.json",
+        "n_text": 10321,
+        "n_buckets": 96,
+        "stance_global": "neutral",
+        "sentiment_global_mean": 0.12936629919156406,
+        "bias_score": 0.04629707499910494,
+        "n_anomalies": 100,
+        "max_severity": "critical"
+      },
+      {
+        "domain": "economy_business",
+        "domain_name": "财经商业与职场",
+        "scope": "broad",
+        "report": "dataset\\real_multiplatform\\reports\\douyin\\economy_business__broad.json",
+        "n_text": 4356,
+        "n_buckets": 59,
+        "stance_global": "neutral",
+        "sentiment_global_mean": 0.03397423503382483,
+        "bias_score": 0.031021156967642422,
+        "n_anomalies": 73,
+        "max_severity": "critical"
+      },
+      {
+        "domain": "education_science",
+        "domain_name": "教育科研与科普",
+        "scope": "broad",
+        "report": "dataset\\real_multiplatform\\reports\\douyin\\education_science__broad.json",
+        "n_text": 9069,
+        "n_buckets": 710,
+        "stance_global": "neutral",
+        "sentiment_global_mean": 0.08240250382285653,
+        "bias_score": 0.060674026894191935,
+        "n_anomalies": 100,
+        "max_severity": "warning"
+      },
+      {
+        "domain": "entertainment",
+        "domain_name": "影视娱乐与明星",
+        "scope": "broad",
+        "report": "dataset\\real_multiplatform\\reports\\douyin\\entertainment__broad.json",
+        "n_text": 4068,
+        "n_buckets": 258,
+        "stance_global": "neutral",
+        "sentiment_global_mean": 0.0436801716624157,
+        "bias_score": 0.06274700461974408,
+        "n_anomalies": 100,
+        "max_severity": "warning"
+      },
+      {
+        "domain": "games_anime",
+        "domain_name": "游戏动漫与虚拟内容",
+        "scope": "broad",
+        "report": "dataset\\real_multiplatform\\reports\\douyin\\games_anime__broad.json",
+        "n_text": 3516,
+        "n_buckets": 751,
+        "stance_global": "neutral",
+        "sentiment_global_mean": 0.006429491233780266,
+        "bias_score": 0.028422785803873366,
+        "n_anomalies": 100,
+        "max_severity": "warning"
+      },
+      {
+        "domain": "health_psychology",
+        "domain_name": "医疗健康与心理",
+        "scope": "broad",
+        "report": "dataset\\real_multiplatform\\reports\\douyin\\health_psychology__broad.json",
+        "n_text": 11536,
+        "n_buckets": 102,
+        "stance_global": "neutral",
+        "sentiment_global_mean": 0.20498379804272954,
+        "bias_score": 0.06213264652003339,
+        "n_anomalies": 100,
+        "max_severity": "critical"
+      },
+      {
+        "domain": "life_consumption",
+        "domain_name": "生活消费与家庭",
+        "scope": "broad",
+        "report": "dataset\\real_multiplatform\\reports\\douyin\\life_consumption__broad.json",
+        "n_text": 4169,
+        "n_buckets": 306,
+        "empty_ratio": 0.8202614379084967,
+        "time_range": {
+          "start": "2025-10-18T00:00:00+08:00",
+          "end": "2026-08-20T00:00:00+08:00"
+        },
+        "stance_global": "neutral",
+        "sentiment_global_mean": 0.08631314224292486,
+        "bias_score": 0.06703920288820735,
+        "n_anomalies": 114,
+        "max_severity": "warning"
+      },
+      {
+        "domain": "nature_rural",
+        "domain_name": "自然环境与三农动物",
+        "scope": "broad",
+        "report": "dataset\\real_multiplatform\\reports\\douyin\\nature_rural__broad.json",
+        "n_text": 3880,
+        "n_buckets": 180,
+        "empty_ratio": 0.14444444444444443,
+        "time_range": {
+          "start": "2026-02-21T00:00:00+08:00",
+          "end": "2026-08-20T00:00:00+08:00"
+        },
+        "stance_global": "neutral",
+        "sentiment_global_mean": 0.04227362763493619,
+        "bias_score": 0.04144508847863146,
+        "n_anomalies": 213,
+        "max_severity": "critical"
+      },
+      {
+        "domain": "public_affairs",
+        "domain_name": "时政与公共治理",
+        "scope": "broad",
+        "report": "dataset\\real_multiplatform\\reports\\douyin\\public_affairs__broad.json",
+        "n_text": 16305,
+        "n_buckets": 258,
+        "empty_ratio": 0.007751937984496124,
+        "time_range": {
+          "start": "2025-11-27T00:00:00+08:00",
+          "end": "2026-08-12T00:00:00+08:00"
+        },
+        "stance_global": "neutral",
+        "sentiment_global_mean": 0.06696582826022429,
+        "bias_score": 0.0738505669620093,
+        "n_anomalies": 350,
+        "max_severity": "critical"
+      },
+      {
+        "domain": "society_law",
+        "domain_name": "社会事件与法治",
+        "scope": "broad",
+        "report": "dataset\\real_multiplatform\\reports\\douyin\\society_law__broad.json",
+        "n_text": 15082,
+        "n_buckets": 176,
+        "empty_ratio": 0.4602272727272727,
+        "time_range": {
+          "start": "2026-02-17T00:00:00+08:00",
+          "end": "2026-08-12T00:00:00+08:00"
+        },
+        "stance_global": "neutral",
+        "sentiment_global_mean": 0.007741537083964214,
+        "bias_score": 0.03865669142492165,
+        "n_anomalies": 185,
+        "max_severity": "critical"
+      },
+      {
+        "domain": "sports_fitness",
+        "domain_name": "体育竞技与健身",
+        "scope": "broad",
+        "report": "dataset\\real_multiplatform\\reports\\douyin\\sports_fitness__broad.json",
+        "n_text": 3224,
+        "n_buckets": 88,
+        "empty_ratio": 0.2159090909090909,
+        "time_range": {
+          "start": "2026-05-24T00:00:00+08:00",
+          "end": "2026-08-20T00:00:00+08:00"
+        },
+        "stance_global": "neutral",
+        "sentiment_global_mean": 0.09374194158085408,
+        "bias_score": 0.07034782050239799,
+        "n_anomalies": 91,
+        "max_severity": "critical"
+      },
+      {
+        "domain": "technology_industry",
+        "domain_name": "科技工业与交通",
+        "scope": "broad",
+        "report": "dataset\\real_multiplatform\\reports\\douyin\\technology_industry__broad.json",
+        "n_text": 8483,
+        "n_buckets": 42,
+        "empty_ratio": 0.0,
+        "time_range": {
+          "start": "2026-07-01T00:00:00+08:00",
+          "end": "2026-08-12T00:00:00+08:00"
+        },
+        "stance_global": "neutral",
+        "sentiment_global_mean": 0.05317346080250956,
+        "bias_score": 0.04011808772381961,
+        "n_anomalies": 61,
+        "max_severity": "critical"
+      }
+    ]
+  }
 }
