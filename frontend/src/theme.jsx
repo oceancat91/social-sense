@@ -54,7 +54,9 @@ function buildToken(dark) {
     borderRadiusSM: 6,
     fontSize: 14,
     fontFamily:
-      "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "Inter Variable, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+    fontFamilyCode:
+      "JetBrains Mono Variable, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
     colorBgLayout: dark ? '#0A0D13' : '#F5F6F8',
     colorBgContainer: dark ? '#12161F' : '#FDFDFE',
     colorBgElevated: dark ? '#1A2030' : '#FFFFFF',
