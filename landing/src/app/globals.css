@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------
+   Social Sense 营销页 设计令牌
+   GA / Hootsuite 可信数据风: 中性冷灰 + 单一克制深蓝强调。
+   light 与 dark 通过 prefers-color-scheme 切换, 全页单一主题锁。
+   ------------------------------------------------------------- */
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo,
+    Consolas, monospace;
+
+  /* light (默认) */
+  --color-page: #f5f6f8;
+  --color-card: #fdfdfe;
+  --color-card2: #eef0f4;
+  --color-line: #e6e9ee;
+  --color-line2: #d6dae1;
+  --color-txt: #191d25;
+  --color-txt2: #4c5665;
+  --color-txt3: #5b6675;
+  --color-solid: #151a23;
+  --color-on-solid: #f5f6f8;
+  --color-feature: #111a2c;
+  --color-on-feature: #f0f3f9;
+  --color-feature-mut: #a9b3c4;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1e40af;
+  --color-accent-deep: #1d4ed8;
+  --color-accent-tint: #eaf0fd;
+  --color-accent-line: #cfdcf7;
+  --color-on-accent: #f8f9fb;
+  --shadow-card: 0 1px 2px rgb(20 24 36 / 0.04),
+    0 16px 48px -24px rgb(20 24 36 / 0.16);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-page: #0a0d13;
+    --color-card: #12161f;
+    --color-card2: #1a2030;
+    --color-line: #222a3a;
+    --color-line2: #313c53;
+    --color-txt: #edf0f5;
+    --color-txt2: #a8b1c0;
+    --color-txt3: #7e8899;
+    --color-solid: #e7ebf1;
+    --color-on-solid: #0d1017;
+    --color-feature: #182031;
+    --color-on-feature: #e9edf4;
+    --color-feature-mut: #96a2b5;
+    --color-accent: #3b82f6;
+    --color-accent-hover: #2563eb;
+    --color-accent-deep: #7ea4f6;
+    --color-accent-tint: #17253f;
+    --color-accent-line: #2a3b60;
+    --color-on-accent: #0b0f18;
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3),
+      0 20px 60px -28px rgb(0 0 0 / 0.55);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-page);
+  color: var(--color-txt);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
