@@ -215,29 +215,11 @@ code,
   background: var(--solid);
   box-shadow: 0 0 0 1px var(--border);
 }
-.ss-brand__text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.3;
-  min-width: 0;
-}
 .ss-brand__name {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text-1);
-}
-.ss-brand__sub {
-  font-size: 10.5px;
-  color: var(--text-3);
-  font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
-  letter-spacing: 0.02em;
-}
-.ss-brand__sub {
-  font-size: 10.5px;
-  color: var(--text-3);
-  font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
-  letter-spacing: 0.02em;
 }
 
 /* 菜单：选中态浅底 + 色字（无额外竖条装饰，与 landing 导航同克制） */
@@ -276,14 +258,6 @@ code,
   color: var(--text-1);
   font-weight: 500;
   font-size: 14px;
-}
-.theme-toggle-btn.ant-btn {
-  border-color: var(--border);
-  color: var(--text-2);
-}
-.theme-toggle-btn.ant-btn:hover {
-  color: var(--accent);
-  border-color: var(--accent-border);
 }
 
 /* ---------- 应用外壳：内容 ---------- */
@@ -355,8 +329,8 @@ code,
   color: var(--text-1);
   overflow: hidden;
   background:
-    radial-gradient(800px 480px at 12% -8%, rgba(59, 130, 246, 0.14), transparent 60%),
-    linear-gradient(168deg, var(--bg-panel) 0%, var(--bg-app) 55%, var(--bg-sider) 100%);
+    radial-gradient(760px 460px at 14% -10%, rgba(59, 130, 246, 0.13), transparent 62%),
+    var(--bg-panel);
 }
 .ss-login__brand {
   position: relative;
