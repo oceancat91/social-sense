@@ -22,7 +22,7 @@ import {
   Check,
 } from "@phosphor-icons/react/dist/ssr";
 
-const PRODUCT_URL = "https://socialsense.cn";
+const PRODUCT_URL = "https://socialsense.cn/app";
 
 const PLATFORMS = ["微博", "抖音", "B站", "小红书", "知乎", "快手"];
 

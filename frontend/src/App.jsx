@@ -13,7 +13,7 @@ function ProtectedRoute({ children }) {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/app">
       <Routes>
         <Route path="/login" element={
           isAuthenticated() ? <Navigate to="/agent" replace /> : <Login />
