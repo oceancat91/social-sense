@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { Row, Col, Card, Empty, message } from 'antd'
+import { Row, Col, Card, Empty, App as AntApp } from 'antd'
 import api from '../services/api'
 import { platformName } from '../utils/platforms'
 import { formatDate } from '../utils'
+import { useDarkMode } from '../theme'
 import {
   alignedSeriesOption,
   stanceDistOption,
@@ -23,6 +24,8 @@ import DivergencePanel from '../components/agent/DivergencePanel'
  * components/agent/ 下各职责单一的面板模块。
  */
 function AgentReports() {
+  const dark = useDarkMode()
+  const { message } = AntApp.useApp()
   const [reports, setReports] = useState([])
   const [selectedId, setSelectedId] = useState(null)
   const [detail, setDetail] = useState(null)
@@ -37,7 +40,7 @@ function AgentReports() {
     } catch {
       message.error('获取分析报告列表失败')
     }
-  }, [])
+  }, [message])
 
   const fetchDetail = useCallback(async (id) => {
     if (!id) { setDetail(null); return }
@@ -50,7 +53,7 @@ function AgentReports() {
     } finally {
       setLoading(false)
     }
-  }, [])
+  }, [message])
 
   useEffect(() => { fetchReports() }, [fetchReports])
 
@@ -87,8 +90,8 @@ function AgentReports() {
       yName: '声量 z-score',
       granularity: ct.granularity,
       area: true,
-    }),
-    [hasResult, aligned, ct.granularity],
+    }, dark),
+    [hasResult, aligned, ct.granularity, dark],
   )
   const sentimentOption = useMemo(
     () => hasResult && alignedSeriesOption({
@@ -98,12 +101,18 @@ function AgentReports() {
       title: '跨平台情绪均值对齐（z-score）',
       yName: '情绪 z-score',
       granularity: ct.granularity,
-    }),
-    [hasResult, aligned, ct.granularity],
+    }, dark),
+    [hasResult, aligned, ct.granularity, dark],
   )
-  const stanceOption = useMemo(() => stanceDistOption(fusion.stance_dist), [fusion.stance_dist])
-  const corrOption = useMemo(() => corrMatrixOption(fusion.temporal_corr, platforms), [fusion.temporal_corr, platforms])
-  const divergenceOption = useMemo(() => divergenceTimelineOption(fusion.per_bucket_divergence), [fusion.per_bucket_divergence])
+  const stanceOption = useMemo(() => stanceDistOption(fusion.stance_dist, dark), [fusion.stance_dist, dark])
+  const corrOption = useMemo(
+    () => corrMatrixOption(fusion.temporal_corr, platforms, dark),
+    [fusion.temporal_corr, platforms, dark],
+  )
+  const divergenceOption = useMemo(
+    () => divergenceTimelineOption(fusion.per_bucket_divergence, dark),
+    [fusion.per_bucket_divergence, dark],
+  )
 
   const reportOptions = reports.map(r => ({
     value: r.id,

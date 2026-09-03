@@ -1,13 +1,15 @@
 import { Card, Empty } from 'antd'
 import ReactECharts from 'echarts-for-react'
 import { echoGaugeOption } from '../../utils/agentCharts'
+import { useDarkMode } from '../../theme'
 
-/** 信息茧房指数仪表盘 */
+/** 回声室指数仪表盘 */
 export default function EchoChamberPanel({ echoScore, loading }) {
+  const dark = useDarkMode()
   return (
-    <Card title="信息茧房指数" loading={loading}>
+    <Card title="回声室指数" loading={loading}>
       {echoScore != null
-        ? <ReactECharts option={echoGaugeOption(echoScore)} style={{ height: 240 }} />
+        ? <ReactECharts option={echoGaugeOption(echoScore, dark)} style={{ height: 240 }} />
         : <Empty />}
     </Card>
   )

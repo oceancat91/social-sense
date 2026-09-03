@@ -1,20 +1,24 @@
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
-import { Layout as AntLayout, Menu, Dropdown, Avatar, Space } from 'antd'
+import { Layout as AntLayout, Menu, Dropdown, Avatar, Space, Tooltip, Button } from 'antd'
 import {
   RadarChartOutlined,
   LogoutOutlined,
   UserOutlined,
+  SunOutlined,
+  MoonOutlined,
 } from '@ant-design/icons'
+import { useTheme } from '../theme'
 
 const { Header, Sider, Content } = AntLayout
 
 const menuItems = [
-  { key: '/agent', icon: <RadarChartOutlined />, label: '多Agent分析' },
+  { key: '/agent', icon: <RadarChartOutlined />, label: '跨平台分析台' },
 ]
 
 function Layout() {
   const navigate = useNavigate()
   const location = useLocation()
+  const { dark, toggle } = useTheme()
 
   const handleLogout = () => {
     localStorage.removeItem('token')
@@ -22,69 +26,79 @@ function Layout() {
   }
 
   const userMenu = {
-    items: [
-      { key: 'logout', icon: <LogoutOutlined />, label: '退出登录' },
-    ],
+    items: [{ key: 'logout', icon: <LogoutOutlined />, label: '退出登录' }],
     onClick: ({ key }) => key === 'logout' && handleLogout(),
   }
 
   return (
     <AntLayout style={{ minHeight: '100vh' }}>
       <Sider
-        width={216}
-        theme="light"
+        width={224}
+        theme={dark ? 'dark' : 'light'}
+        className="ss-sider"
         style={{
-          background: 'var(--sidebar-bg)',
+          background: 'var(--bg-sider)',
           position: 'sticky',
           top: 0,
           height: '100vh',
           overflow: 'auto',
-          boxShadow: '2px 0 16px rgba(13, 27, 62, 0.25)',
-          zIndex: 10,
+          zIndex: 20,
         }}
       >
-        <div style={{
-          height: 64,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 10,
-          borderBottom: '1px solid rgba(255,255,255,0.1)',
-        }}>
-          <RadarChartOutlined style={{ fontSize: 26, color: '#5a8dff' }} />
-          <div>
-            <div style={{ color: '#fff', fontSize: 17, fontWeight: 700, lineHeight: 1.2 }}>Social Sense</div>
-            <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: 11, lineHeight: 1.4 }}>社交舆情感知平台</div>
+        <div className="ss-brand">
+          <div className="ss-brand__mark">
+            <RadarChartOutlined />
+          </div>
+          <div className="ss-brand__text">
+            <span className="ss-brand__name">Social Sense</span>
+            <span className="ss-brand__sub">OSINT · MULTI-AGENT</span>
           </div>
         </div>
+
         <Menu
-          theme="dark"
+          theme={dark ? 'dark' : 'light'}
           mode="inline"
           selectedKeys={[location.pathname]}
           items={menuItems}
           onClick={({ key }) => navigate(key)}
-          style={{ background: 'transparent', borderInlineEnd: 'none', marginTop: 8 }}
+          style={{
+            background: 'transparent',
+            borderInlineEnd: 'none',
+            paddingTop: 6,
+          }}
         />
       </Sider>
+
       <AntLayout>
-        <Header style={{
-          background: '#fff',
-          padding: '0 24px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-          borderBottom: '1px solid #edf0f6',
-          boxShadow: '0 1px 6px rgba(16, 42, 100, 0.04)',
-        }}>
-          <Dropdown menu={userMenu} placement="bottomRight">
-            <Space style={{ cursor: 'pointer', padding: '0 8px' }}>
-              <Avatar size={34} style={{ background: 'linear-gradient(135deg, #1a73e8, #6a3de8)' }} icon={<UserOutlined />} />
-              <span style={{ fontWeight: 500, color: '#2b2f3a' }}>管理员</span>
-            </Space>
-          </Dropdown>
+        <Header className="ss-header" style={{ background: 'var(--bg-app)' }}>
+          <div className="ss-header__loc">
+            舆情情报台 <b>/ 多 AGENT 跨平台分析</b>
+          </div>
+          <Space size={14}>
+            <Tooltip title={dark ? '切换浅色' : '切换深色'}>
+              <Button
+                className="theme-toggle-btn"
+                type="text"
+                icon={dark ? <SunOutlined /> : <MoonOutlined />}
+                onClick={toggle}
+                aria-label="切换主题"
+              />
+            </Tooltip>
+            <Dropdown menu={userMenu} placement="bottomRight">
+              <Space style={{ cursor: 'pointer', padding: '2px 4px' }}>
+                <Avatar
+                  size={28}
+                  icon={<UserOutlined />}
+                  style={{ background: 'var(--accent)', color: 'var(--accent-ink)', fontSize: 13 }}
+                />
+                <span className="ss-header__user">管理员</span>
+              </Space>
+            </Dropdown>
+          </Space>
         </Header>
-        <Content style={{ margin: 24, padding: 24, background: 'transparent' }}>
-          <div className="page-enter">
+
+        <Content className="ss-content">
+          <div className="page-enter" style={{ maxWidth: 1440, margin: '0 auto' }}>
             <Outlet />
           </div>
         </Content>

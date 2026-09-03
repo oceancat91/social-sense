@@ -7,19 +7,36 @@ export default function AlignmentPanel({ volumeOption, sentimentOption, isSingle
   return (
     <>
       <Card
-        title={<span><ThunderboltOutlined style={{ color: 'var(--primary)' }} /> 跨平台对齐呈现（统一时间轴，缺失断点不插值）</span>}
+        title={(
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+            <ThunderboltOutlined style={{ color: 'var(--accent)' }} />
+            跨平台对齐呈现
+            <span className="sys-label" style={{ color: 'var(--text-3)', fontSize: 12, fontWeight: 400 }}>
+              统一时间轴 · 缺失断点不插值
+            </span>
+          </span>
+        )}
         style={{ marginBottom: 16 }}
         loading={loading}
       >
         {isSingle && (
-          <Alert type="info" showIcon message="当前为单平台分析，跨平台对齐图仅展示该平台自身时序。" style={{ marginBottom: 12 }} />
+          <Alert
+            type="info"
+            showIcon
+            message="当前为单平台分析，跨平台对齐图仅展示该平台自身时序。"
+            style={{ marginBottom: 12 }}
+          />
         )}
-        {volumeOption ? <ReactECharts option={volumeOption} style={{ height: 340 }} /> : <Empty description="无可对齐的时序数据" />}
+        {volumeOption
+          ? <ReactECharts option={volumeOption} style={{ height: 340 }} />
+          : <Empty description="无可对齐的时序数据" />}
       </Card>
       <Row gutter={16} style={{ marginBottom: 16 }}>
         <Col span={24} xs={24}>
           <Card loading={loading}>
-            {sentimentOption ? <ReactECharts option={sentimentOption} style={{ height: 320 }} /> : <Empty description="无情绪时序数据" />}
+            {sentimentOption
+              ? <ReactECharts option={sentimentOption} style={{ height: 320 }} />
+              : <Empty description="无情绪时序数据" />}
           </Card>
         </Col>
       </Row>

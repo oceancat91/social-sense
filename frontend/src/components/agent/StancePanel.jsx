@@ -7,12 +7,16 @@ export default function StancePanel({ stanceOption, corrOption, loading }) {
     <Row gutter={16} style={{ marginBottom: 16 }}>
       <Col span={12} xs={24}>
         <Card loading={loading}>
-          {stanceOption ? <ReactECharts option={stanceOption} style={{ height: 320 }} /> : <Empty />}
+          {stanceOption
+            ? <ReactECharts option={stanceOption} style={{ height: 320 }} />
+            : <Empty />}
         </Card>
       </Col>
       <Col span={12} xs={24}>
         <Card loading={loading}>
-          {corrOption ? <ReactECharts option={corrOption} style={{ height: 320 }} /> : <Empty description="至少需两个平台方可计算共振" />}
+          {corrOption
+            ? <ReactECharts option={corrOption} style={{ height: 320 }} />
+            : <Empty description="至少需两个平台方可计算共振" />}
         </Card>
       </Col>
     </Row>
