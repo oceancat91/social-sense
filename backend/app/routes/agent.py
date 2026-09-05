@@ -1,6 +1,7 @@
 """多 Agent 分析路由：跨平台多 Agent 分析任务的创建与查询"""
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
+from sqlalchemy.orm import defer
 
 from app.constants import PLATFORMS
 from app.models.agent_report import AgentReport
@@ -34,7 +35,10 @@ def get_reports():
     page = request.args.get('page', 1, type=int)
     page_size = request.args.get('page_size', 10, type=int)
 
-    pagination = AgentReport.query.filter_by(user_id=user_id) \
+    # 列表只投影轻量字段：result 为 LONGTEXT（单条可达数 MB），
+    # 若随列表一起 SELECT，每次请求都要搬运几十 MB，会打满低内存服务器导致偶发不可用。
+    pagination = AgentReport.query.options(defer(AgentReport.result)) \
+        .filter_by(user_id=user_id) \
         .order_by(AgentReport.created_at.desc()) \
         .paginate(page=page, per_page=page_size, error_out=False)
 
