@@ -4,15 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Social Sense - 跨平台舆情分析台</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script>
-      // 主题跟随系统 prefers-color-scheme（与 landing 一致），
-      // 首帧同步 colorScheme 避免原生控件闪烁。
-      try {
-        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches
-        document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
-      } catch (e) {
-        document.documentElement.style.colorScheme = 'light'
-      }
+      // 统一浅色：固定 colorScheme 为 light，避免原生控件出现深色样式
+      document.documentElement.style.colorScheme = 'light'
     </script>
   </head>
   <body>

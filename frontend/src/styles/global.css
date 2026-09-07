@@ -1,6 +1,6 @@
 /* ============================================================
    Social Sense 视觉系统 v3 - 中性冷灰 + 克制深蓝（与 landing 同源）
-   - 深浅色跟随系统 prefers-color-scheme，不提供手动切换
+   - 统一浅色，不跟随系统 prefers-color-scheme
    - 色板取自 landing/globals.css：中性冷灰基底、单一深蓝强调
    - 形状纪律：小圆角（6-10px），刻度/标签单点强调
    - 数字一律 tabular-nums，紧致数据优先
@@ -45,49 +45,6 @@
   --chart-grid: #e6e9ee;
   --chart-axis: #b6bdc7;
   --chart-label: #5b6675;
-}
-
-/* ---------- 深色（跟随系统） ---------- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-
-    --accent: #3b82f6;
-    --accent-strong: #60a5fa;
-    --accent-ink: #0b0f18;
-    --accent-soft: rgba(59, 130, 246, 0.12);
-    --accent-border: rgba(59, 130, 246, 0.35);
-
-  --bg-app: #0a0d13;
-  --bg-panel: #12161f;
-  --bg-panel-2: #1a2030;
-  --bg-inset: #0e1219;
-  --bg-hover: #1a2030;
-  --bg-sider: #0c0f16;
-  --bg-raise: #1a2030;
-  --solid: #e7ebf1;
-  --on-solid: #0d1017;
-
-  --text-1: #edf0f5;
-  --text-2: #a8b1c0;
-  --text-3: #7e8899;
-
-    --border: #222a3a;
-    --border-strong: #313c53;
-    --border-faint: #1b2130;
-
-    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3),
-      0 20px 60px -28px rgb(0 0 0 / 0.55);
-    --shadow-pop: 0 12px 32px rgb(0 0 0 / 0.5);
-
-    --success: #3ecf8e;
-    --warning: #f0a63f;
-    --danger: #f26b5e;
-
-    --chart-grid: #1a2030;
-    --chart-axis: #566174;
-    --chart-label: #a8b1c0;
-  }
 }
 
 /* ---------- 基础 ---------- */

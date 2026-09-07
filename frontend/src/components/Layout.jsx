@@ -6,6 +6,7 @@ import {
   UserOutlined,
 } from '@ant-design/icons'
 import { useTheme } from '../theme'
+import BrandMark from './BrandMark'
 
 const { Header, Sider, Content } = AntLayout
 
@@ -45,7 +46,7 @@ function Layout() {
       >
         <div className="ss-brand">
           <div className="ss-brand__mark">
-            <RadarChartOutlined />
+            <BrandMark size={18} />
           </div>
           <span className="ss-brand__name">Social Sense</span>
         </div>

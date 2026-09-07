@@ -8,12 +8,12 @@ import {
   App as AntApp,
 } from 'antd'
 import {
-  RadarChartOutlined,
   UserOutlined,
   LockOutlined,
   MailOutlined,
 } from '@ant-design/icons'
 import api from '../services/api'
+import BrandMark from '../components/BrandMark'
 
 function Login() {
   const [loading, setLoading] = useState(false)
@@ -62,7 +62,7 @@ function Login() {
       <aside className="ss-login__radar">
         <div className="ss-login__brand">
           <span className="ss-brand__mark">
-            <RadarChartOutlined />
+            <BrandMark size={18} />
           </span>
           <span>Social Sense</span>
         </div>

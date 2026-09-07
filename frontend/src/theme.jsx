@@ -1,10 +1,9 @@
 /**
- * 主题模块：跟随系统深浅色（prefers-color-scheme），不提供手动切换。
+ * 主题模块：统一浅色（不跟随系统，不提供手动切换）。
  *
- * - 深浅色由操作系统决定，实时监听系统变化自动切换；
- * - antd ConfigProvider 的 dark/light algorithm 与图表组件均通过
- *   ThemeContext 读取当前 mode；
- * - CSS 变量由 global.css 基于 @media (prefers-color-scheme) 提供，
+ * - antd ConfigProvider 固定 default algorithm；
+ * - ThemeContext 固定 mode='light'，图表组件按浅色渲染；
+ * - CSS 变量由 global.css 的 :root 浅色语义提供，
  *   与 landing 营销页共用同一套中性冷灰 + 克制深蓝语义。
  */
 import {
@@ -12,7 +11,6 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
 } from 'react'
 import { ConfigProvider, theme as antdTheme } from 'antd'
 import zhCN from 'antd/locale/zh_CN'
@@ -32,11 +30,6 @@ export const SEMANTIC = {
 }
 
 const pick = (obj, dark) => obj[dark ? 'dark' : 'light']
-
-function getSystemDark() {
-  if (typeof window === 'undefined') return true
-  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? true
-}
 
 function buildToken(dark) {
   const accent = pick(ACCENT, dark)
@@ -77,24 +70,17 @@ function buildToken(dark) {
 }
 
 /** 供组件读取当前系统深浅状态 */
-export const ThemeContext = createContext({ dark: true, mode: 'dark' })
+export const ThemeContext = createContext({ dark: false, mode: 'light' })
 export const useDarkMode = () => useContext(ThemeContext).dark
 export const useTheme = () => useContext(ThemeContext)
 
-/** 主题外壳：跟随系统深浅，自动切换 antd algorithm */
+/** 主题外壳：统一浅色，固定 antd 默认 algorithm */
 export function ThemeGate({ children }) {
-  const [dark, setDark] = useState(getSystemDark)
+  const dark = false
 
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)')
-    const onChange = (e) => setDark(e.matches)
-    mq.addEventListener('change', onChange)
-    return () => mq.removeEventListener('change', onChange)
+    document.documentElement.style.colorScheme = 'light'
   }, [])
-
-  useEffect(() => {
-    document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
-  }, [dark])
 
   const mode = dark ? 'dark' : 'light'
   const value = useMemo(() => ({ dark, mode }), [dark, mode])

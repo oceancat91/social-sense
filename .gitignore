@@ -76,3 +76,6 @@ docker-compose.override.yml
 tmp/
 temp/
 *.tmp
+
+# 临时截图（本地调试产物）
+.tmp-shot/

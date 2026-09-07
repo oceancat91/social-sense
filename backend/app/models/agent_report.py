@@ -2,6 +2,8 @@
 import json
 from datetime import datetime
 
+from sqlalchemy.dialects.mysql import LONGTEXT
+
 from app import db
 
 
@@ -16,7 +18,8 @@ class AgentReport(db.Model):
     status = db.Column(db.String(20), default='pending')  # pending/running/success/failed/partial
     progress = db.Column(db.Text)                        # 结构化进度（JSON 字符串）
     # result 含完整平台报告 + 对齐时序，单条可达数 MB，须用 LONGTEXT（TEXT 仅 64KB）
-    result = db.Column(db.LONGTEXT)                      # run_full_analysis 输出（JSON 字符串）
+    # 仅 MySQL 用 LONGTEXT；SQLite 等回退 TEXT（with_variant 按方言切换）
+    result = db.Column(db.Text().with_variant(LONGTEXT, 'mysql'))  # run_full_analysis 输出（JSON 字符串）
     error = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
