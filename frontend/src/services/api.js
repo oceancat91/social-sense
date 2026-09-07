@@ -18,7 +18,10 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
+    // 401 未授权 / 422 token 过期或无效（flask-jwt-extended 对过期 token 默认返回 422）
+    // 两者都应视为登录态失效，清除本地 token 并跳转登录页重新登录。
+    const status = error.response?.status
+    if (status === 401 || status === 422) {
       localStorage.removeItem('token')
       window.location.href = '/app/login'
     }
