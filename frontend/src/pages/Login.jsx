@@ -62,7 +62,7 @@ function Login() {
       <aside className="ss-login__radar">
         <div className="ss-login__brand">
           <span className="ss-brand__mark">
-            <BrandMark size={18} />
+            <BrandMark size={24} />
           </span>
           <span>Social Sense</span>
         </div>

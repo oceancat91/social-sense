@@ -161,20 +161,20 @@ code,
   border-bottom: 1px solid var(--border);
 }
 .ss-brand__mark {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
   flex-shrink: 0;
   display: grid;
   place-items: center;
-  font-size: 15px;
+  font-size: 20px;
   color: var(--on-solid);
   background: var(--solid);
   box-shadow: 0 0 0 1px var(--border);
 }
 .ss-brand__name {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 650;
   letter-spacing: -0.01em;
   color: var(--text-1);
 }

@@ -46,7 +46,7 @@ function Layout() {
       >
         <div className="ss-brand">
           <div className="ss-brand__mark">
-            <BrandMark size={18} />
+            <BrandMark size={24} />
           </div>
           <span className="ss-brand__name">Social Sense</span>
         </div>
