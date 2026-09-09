@@ -60,8 +60,10 @@ section[id] {
 
 /* ---------- 顶栏导航：悬浮深色底（替代下划线） ---------- */
 .nav-link {
-  padding: 6px 14px;
-  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 18px;
   color: var(--color-txt2);
   transition: background-color 0.2s ease, color 0.2s ease;
 }

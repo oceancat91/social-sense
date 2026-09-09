@@ -258,7 +258,7 @@ function Header() {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-7 text-sm text-txt2 lg:flex">
+        <nav className="hidden items-stretch self-stretch text-sm text-txt2 lg:flex">
           {NAV.map((item) => (
             <a
               key={item.href}
