@@ -5,9 +5,6 @@ import { platformName } from '../utils/platforms'
 import { formatDate } from '../utils'
 import { useDarkMode } from '../theme'
 import {
-  alignedSeriesOption,
-  stanceDistOption,
-  corrMatrixOption,
   divergenceTimelineOption,
 } from '../utils/agentCharts'
 import HeroBanner from '../components/agent/HeroBanner'
@@ -83,35 +80,7 @@ function AgentReports() {
   const dominant = fusion.dominant_stance || {}
   const hasResult = !!result
 
-  // ---- 图表 option 组装 ----
-  const volumeOption = useMemo(
-    () => hasResult && alignedSeriesOption({
-      timeAxis: aligned.time_axis,
-      zSeries: aligned.z_series,
-      metric: 'volume',
-      title: '跨平台声量对齐（z-score，统一时间轴）',
-      yName: '声量 z-score',
-      granularity: ct.granularity,
-      area: true,
-    }, dark),
-    [hasResult, aligned, ct.granularity, dark],
-  )
-  const sentimentOption = useMemo(
-    () => hasResult && alignedSeriesOption({
-      timeAxis: aligned.time_axis,
-      zSeries: aligned.z_series,
-      metric: 'sent_mean',
-      title: '跨平台情绪均值对齐（z-score）',
-      yName: '情绪 z-score',
-      granularity: ct.granularity,
-    }, dark),
-    [hasResult, aligned, ct.granularity, dark],
-  )
-  const stanceOption = useMemo(() => stanceDistOption(fusion.stance_dist, dark), [fusion.stance_dist, dark])
-  const corrOption = useMemo(
-    () => corrMatrixOption(fusion.temporal_corr, platforms, dark),
-    [fusion.temporal_corr, platforms, dark],
-  )
+  // ---- ECharts 仅保留分歧时序；其余图表使用 Lieflat SVG 原语 ----
   const divergenceOption = useMemo(
     () => divergenceTimelineOption(fusion.per_bucket_divergence, dark),
     [fusion.per_bucket_divergence, dark],
@@ -144,7 +113,7 @@ function AgentReports() {
       ) : (
         <>
           <Reveal delay={60}>
-            <Section index="01" title="概览" desc="关键词 / 回声室 / 共振 / 立场">
+            <Section title="概览" desc="关键词 / 回声室 / 共振 / 立场">
               <ReportOverview
                 detail={detail}
                 ct={ct}
@@ -159,16 +128,15 @@ function AgentReports() {
           </Reveal>
 
           <Reveal delay={110}>
-            <Section index="02" title="跨平台结论" desc="主控 Agent 归纳">
+            <Section title="跨平台结论" desc="主控 Agent 归纳">
               <ConclusionPanel ct={ct} loading={loading} />
             </Section>
           </Reveal>
 
           <Reveal delay={150}>
-            <Section index="03" title="对齐呈现" desc="统一时间轴">
+            <Section title="对齐呈现" desc="峰值条码 / 情绪分布">
               <AlignmentPanel
-                volumeOption={volumeOption}
-                sentimentOption={sentimentOption}
+                aligned={aligned}
                 isSingle={isSingle}
                 loading={loading}
               />
@@ -176,13 +144,18 @@ function AgentReports() {
           </Reveal>
 
           <Reveal delay={190}>
-            <Section index="04" title="立场与共振" desc="分布 / 相关性">
-              <StancePanel stanceOption={stanceOption} corrOption={corrOption} loading={loading} />
+            <Section title="立场与共振" desc="分布 / 相关性">
+              <StancePanel
+                stanceDist={fusion.stance_dist}
+                temporalCorr={fusion.temporal_corr}
+                platforms={platforms}
+                loading={loading}
+              />
             </Section>
           </Reveal>
 
           <Reveal delay={230}>
-            <Section index="05" title="分歧与门禁" desc="扩散 / 校准">
+            <Section title="分歧与门禁" desc="扩散 / 校准">
               <DivergencePanel divergenceOption={divergenceOption} calib={calib} loading={loading} />
             </Section>
           </Reveal>

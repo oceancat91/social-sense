@@ -1,25 +1,13 @@
-import { Outlet, useNavigate, useLocation } from 'react-router-dom'
-import { Layout as AntLayout, Menu, Dropdown, Avatar, Space } from 'antd'
-import {
-  RadarChartOutlined,
-  LogoutOutlined,
-  UserOutlined,
-} from '@ant-design/icons'
-import { useTheme } from '../theme'
+import { Outlet, useNavigate } from 'react-router-dom'
+import { Layout as AntLayout, Dropdown } from 'antd'
 import BrandMark from './BrandMark'
-import ScrollProgress from './agent/ScrollProgress'
 import NoiseOverlay from './agent/NoiseOverlay'
+import AgentBackground from './agent/AgentBackground'
 
-const { Header, Sider, Content } = AntLayout
-
-const menuItems = [
-  { key: '/agent', icon: <RadarChartOutlined />, label: '跨平台分析台' },
-]
+const { Header, Content } = AntLayout
 
 function Layout() {
   const navigate = useNavigate()
-  const location = useLocation()
-  const { dark } = useTheme()
 
   const handleLogout = () => {
     localStorage.removeItem('token')
@@ -27,75 +15,38 @@ function Layout() {
   }
 
   const userMenu = {
-    items: [{ key: 'logout', icon: <LogoutOutlined />, label: '退出登录' }],
+    items: [{ key: 'logout', label: '退出登录' }],
     onClick: ({ key }) => key === 'logout' && handleLogout(),
   }
 
   return (
     <>
-      <ScrollProgress />
+      <AgentBackground />
       <NoiseOverlay />
-      <AntLayout style={{ minHeight: '100vh' }}>
-      <Sider
-        width={224}
-        theme={dark ? 'dark' : 'light'}
-        className="ss-sider"
-        style={{
-          background: 'var(--bg-sider)',
-          position: 'sticky',
-          top: 0,
-          height: '100vh',
-          overflow: 'auto',
-          zIndex: 20,
-        }}
-      >
-        <div className="ss-brand">
-          <div className="ss-brand__mark">
-            <BrandMark size={24} />
-          </div>
-          <span className="ss-brand__name">Social Sense</span>
-        </div>
-
-        <Menu
-          theme={dark ? 'dark' : 'light'}
-          mode="inline"
-          selectedKeys={[location.pathname]}
-          items={menuItems}
-          onClick={({ key }) => navigate(key)}
-          style={{
-            background: 'transparent',
-            borderInlineEnd: 'none',
-            paddingTop: 6,
-          }}
-        />
-      </Sider>
-
-      <AntLayout>
+      <AntLayout className="ss-app-shell">
         <Header className="ss-header">
-          <div className="ss-header__loc">
-            舆情分析台 <b>/ 多 AGENT 跨平台分析</b>
-          </div>
-          <Space size={14}>
-            <Dropdown menu={userMenu} placement="bottomRight">
-              <Space style={{ cursor: 'pointer', padding: '2px 4px' }}>
-                <Avatar
-                  size={28}
-                  icon={<UserOutlined />}
-                  style={{ background: 'var(--accent)', color: 'var(--accent-ink)', fontSize: 13 }}
-                />
-                <span className="ss-header__user">管理员</span>
-              </Space>
+          <div className="ss-header__inner">
+            <div className="ss-brand">
+              <span className="ss-brand__mark">
+                <BrandMark size={25} />
+              </span>
+              <span className="ss-brand__name">Social Sense</span>
+            </div>
+
+            <Dropdown menu={userMenu} placement="bottomRight" trigger={['click']}>
+              <button type="button" className="ss-user-menu" aria-label="打开管理员菜单">
+                管理员
+              </button>
             </Dropdown>
-          </Space>
+          </div>
         </Header>
 
         <Content className="ss-content">
-          <div className="page-enter" style={{ maxWidth: 1280, margin: '0 auto' }}>
+          <div className="page-enter ss-page-frame">
             <Outlet />
           </div>
         </Content>
       </AntLayout>
-    </AntLayout>
     </>
   )
 }

@@ -158,7 +158,8 @@ export default function SplitText({
               scrollTrigger: {
                 trigger: el,
                 start,
-                once: true,
+                once: false,
+                toggleActions: "play none none reset",
                 fastScrollEnd: true,
                 anticipatePin: 0.4,
               },

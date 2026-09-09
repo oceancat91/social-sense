@@ -1,9 +1,21 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { useState } from "react";
+import dynamic from "next/dynamic";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useMotionValueEvent,
+} from "motion/react";
 import SplitText from "@/components/SplitText";
 import BrandMark from "@/components/BrandMark";
 import SignalChart from "@/components/SignalChart";
+import InsightParallelChart from "@/components/InsightParallelChart";
+import { LIEFLAT } from "@/components/lieflatTheme";
+import ScrollProgress from "@/components/ScrollProgress";
+import NoiseOverlay from "@/components/NoiseOverlay";
+import BackgroundLayers from "@/components/BackgroundLayers";
 import {
   GlobeHemisphereWest,
   FunnelSimple,
@@ -24,16 +36,14 @@ import {
   CaretDown,
 } from "@phosphor-icons/react/dist/ssr";
 
+const DataField3D = dynamic(() => import("@/components/DataField3D"), {
+  ssr: false,
+  loading: () => <div className="data-field data-field--loading" />,
+});
+
 const PRODUCT_URL = "https://socialsense.cn/app/";
 
 const PLATFORMS = ["微博", "抖音", "B站", "小红书", "知乎", "快手"];
-
-const SIGNALS = [
-  "时间对齐的声量与情绪曲线",
-  "支持 / 反对 / 中立立场分布",
-  "跨平台声量共振与分歧",
-  "回声室指数与校准门禁",
-];
 
 const PIPELINE = [
   {
@@ -81,10 +91,56 @@ const TOPICS = [
 
 /* 真实样本指标：时序点数 / 声量共振 / 回声室指数 */
 const INSIGHTS = [
-  { topic: "AI艺人与活人感之争", points: "3298", resonance: "0.24", echo: "0.28" },
-  { topic: "人形机器人商业化", points: "3183", resonance: "0.21", echo: "0.26" },
-  { topic: "消费降级与反向消费", points: "2923", resonance: "0.13", echo: "0.29" },
-  { topic: "国潮与传统文化复兴", points: "2866", resonance: "0.05", echo: "0.32" },
+  { topic: "AI艺人与活人感之争", points: 3298, resonance: 0.24, echo: 0.28 },
+  { topic: "人形机器人商业化", points: 3183, resonance: 0.21, echo: 0.26 },
+  { topic: "消费降级与反向消费", points: 2923, resonance: 0.13, echo: 0.29 },
+  { topic: "国潮与传统文化复兴", points: 2866, resonance: 0.05, echo: 0.32 },
+];
+
+/* 三种能力信号 */
+const CAPABILITIES = [
+  {
+    icon: ArrowsMerge,
+    title: "跨平台对齐与共振",
+    desc: "不同平台量纲不可直接相加，按平台内 z-score 归一后对齐到统一时间轴，声量与情绪才真正可比。",
+    note: "声量共振与错峰，一眼可辨。",
+  },
+  {
+    icon: ChartPieSlice,
+    title: "立场与情绪画像",
+    desc: "对每条讨论做情绪倾向与支持 / 反对 / 中立标注，输出每平台结构化画像。",
+    note: "叠加领域词表与知识增强，口径透明可复算。",
+  },
+  {
+    icon: Gauge,
+    title: "回声室指数",
+    desc: "综合立场分歧、情绪分歧与声量失振，输出跨平台量化指数，直接衡量信息茧房强度。",
+    note: "融合结论需通过 CX1-CX5 校准门禁。",
+  },
+];
+
+/* 适用角色 */
+const ROLES = [
+  {
+    icon: SuitcaseSimple,
+    title: "社区运营",
+    desc: "定位危机拐点与观点分化平台，处理时机更早。",
+  },
+  {
+    icon: Lightbulb,
+    title: "产品经理",
+    desc: "把跨平台需求声量对齐，识别被忽略的真实呼声。",
+  },
+  {
+    icon: ChartLineUp,
+    title: "数据与增长分析师",
+    desc: "口径一致的时间序列，可直接用于复算与建模。",
+  },
+  {
+    icon: Megaphone,
+    title: "市场团队",
+    desc: "用声量共振与回声室读数校准叙事与投放策略。",
+  },
 ];
 
 /* CX1-CX5 校准门禁（与 multiagent/master.py 保持一致） */
@@ -125,9 +181,12 @@ const NAV = [
 
 export default function Page() {
   return (
-    <div className="min-h-[100dvh] overflow-x-hidden bg-page font-sans text-txt antialiased">
+    <div className="relative min-h-[100dvh] overflow-x-hidden bg-page font-sans text-txt antialiased">
+      <BackgroundLayers />
+      <ScrollProgress />
+      <NoiseOverlay />
       <Header />
-      <main className="w-full max-w-full">
+      <main className="relative z-10 w-full max-w-full pt-16">
         <Hero />
         <PlatformStrip />
         <Method />
@@ -160,7 +219,7 @@ function Reveal({
       className={className}
       initial={reduce ? false : { opacity: 0, y: 20 }}
       whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: false, margin: "-60px" }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay }}
     >
       {children}
@@ -176,31 +235,50 @@ const CTA_CLASS =
 /* ---------- S1 顶栏 ---------- */
 
 function Header() {
+  // 滚动状态：用 Motion useScroll + useMotionValueEvent（替代 window scroll listener）
+  const { scrollY } = useScroll();
+  const [scrolled, setScrolled] = useState(false);
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 8);
+  });
+
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-page/85 backdrop-blur">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur transition-all duration-300 ${
+        scrolled
+          ? "border-line bg-page/95 shadow-[0_12px_32px_-20px_rgb(20_24_36/0.25)]"
+          : "border-transparent bg-page/70"
+      }`}
+    >
       <div className="flex h-16 w-full items-center justify-between px-6 md:px-8">
-        <a href="#top" className="flex items-center gap-3">
-          <span className="grid size-10 place-items-center rounded-lg bg-solid text-on-solid">
+        <a href="#top" className="group flex items-center gap-3">
+          <span className="grid size-10 place-items-center rounded-lg bg-solid text-on-solid transition-transform duration-300 ease-out group-hover:scale-[1.04]">
             <BrandMark size={25} />
           </span>
-          <span className="text-lg font-semibold tracking-tight">
+          <span className="font-brand text-xl font-semibold tracking-[-0.035em]">
             Social Sense
           </span>
         </a>
-        <nav className="hidden items-center gap-6 text-sm text-txt2 lg:flex">
+
+        <nav className="hidden items-center gap-7 text-sm text-txt2 lg:flex">
           {NAV.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="transition-colors hover:text-txt"
+              className="nav-link transition-colors duration-200 hover:text-txt"
             >
               {item.label}
             </a>
           ))}
         </nav>
-        <a href={PRODUCT_URL} className={CTA_CLASS}>
+
+        <a href={PRODUCT_URL} className={`${CTA_CLASS} group`}>
           进入分析台
-          <ArrowUpRight size={15} weight="bold" />
+          <ArrowUpRight
+            size={15}
+            weight="bold"
+            className="transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
         </a>
       </div>
     </header>
@@ -211,9 +289,10 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top">
-      <div className="mx-auto grid w-full max-w-7xl gap-14 px-6 pb-20 pt-16 md:pt-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-20 lg:pt-24">
-        <div>
+    <section id="top" className="hero-stage relative overflow-hidden">
+      <div className="hero-glow" aria-hidden="true" />
+      <div className="relative mx-auto grid min-h-[calc(100dvh-4rem)] w-full max-w-7xl gap-8 px-6 pb-12 pt-12 md:pt-16 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-10 lg:pb-16 lg:pt-20">
+        <div className="relative z-10">
           <h1 className="text-4xl font-semibold leading-[1.14] tracking-tight text-txt md:text-[54px] lg:text-[60px]">
             <SplitText
               tag="span"
@@ -261,41 +340,8 @@ function Hero() {
           </Reveal>
         </div>
 
-        {/* 真实能力模块预览 */}
-        <Reveal delay={0.45}>
-          <div className="rounded-xl border border-line bg-card p-7 shadow-card">
-            <div className="flex items-center justify-between border-b border-line pb-4">
-              <p className="text-sm font-semibold">平台覆盖</p>
-              <span className="font-mono text-xs text-txt3">
-                {PLATFORMS.length} platforms
-              </span>
-            </div>
-            <div className="flex flex-wrap gap-2 py-5">
-              {PLATFORMS.map((p) => (
-                <span
-                  key={p}
-                  className="inline-flex items-center gap-1.5 rounded-md bg-card2 px-2.5 py-1.5 text-sm text-txt"
-                >
-                  <Check size={13} weight="bold" className="text-accent" />
-                  {p}
-                </span>
-              ))}
-            </div>
-            <div className="border-t border-line pt-5">
-              <p className="mb-3 text-xs font-medium text-txt3">可产出信号</p>
-              <ul className="space-y-2.5">
-                {SIGNALS.map((s) => (
-                  <li key={s} className="flex items-center gap-2.5 text-sm text-txt2">
-                    <Check size={14} weight="bold" className="text-accent" />
-                    {s}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <p className="mt-5 border-t border-line pt-4 text-xs leading-relaxed text-txt3">
-              口径：平台内 z-score 归一后跨平台可比，缺失窗口如实留空，不做插值。
-            </p>
-          </div>
+        <Reveal delay={0.28} className="relative min-h-[390px] lg:min-h-[560px]">
+          <DataField3D />
         </Reveal>
       </div>
     </section>
@@ -337,22 +383,26 @@ function PlatformStrip() {
 function Method() {
   return (
     <section id="method" className="mx-auto w-full max-w-7xl px-6 py-24 md:py-28">
-      <div className="max-w-2xl">
-        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-          从原始评论到可信结论
-        </h2>
-        <p className="mt-4 text-txt2">
-          五段管线贯穿采集到校准，每一步都产出可检查的中间结果。
-        </p>
-      </div>
-      <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <Reveal>
+        <div className="max-w-2xl">
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+            从原始评论到可信结论
+          </h2>
+          <p className="mt-4 text-txt2">
+            五段管线贯穿采集到校准，每一步都产出可检查的中间结果。
+          </p>
+        </div>
+      </Reveal>
+      <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
         {PIPELINE.map((item, i) => (
-          <Reveal key={item.title} delay={i * 0.05}>
-            <div className="h-full rounded-xl border border-line bg-card p-6 transition-colors hover:border-line2">
-              <span className="inline-flex size-10 items-center justify-center rounded-md border border-line text-accent">
-                <item.icon size={19} weight="bold" />
+          <Reveal key={item.title} delay={i * 0.08}>
+            <div className="flow-step group pt-6">
+              <span className="flow-step__icon inline-flex size-10 items-center justify-center text-txt3">
+                <item.icon size={20} weight="bold" />
               </span>
-              <h3 className="mt-5 text-[15px] font-semibold">{item.title}</h3>
+              <h3 className="mt-5 text-[15px] font-semibold transition-colors duration-300 group-hover:text-accent">
+                {item.title}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-txt2">
                 {item.desc}
               </p>
@@ -364,88 +414,38 @@ function Method() {
   );
 }
 
-/* ---------- S5 能力 bento ---------- */
+/* ---------- S5 能力 ---------- */
 
 function Capabilities() {
   return (
-    <section
-      id="capabilities"
-      className="border-y border-line bg-card"
-    >
+    <section id="capabilities" className="border-y border-line bg-card">
       <div className="mx-auto w-full max-w-7xl px-6 py-24 md:py-28">
-        <div className="max-w-2xl">
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            三种信号，支撑一种判断
-          </h2>
-          <p className="mt-4 text-txt2">
-            对齐、画像与回声室测算互相咬合，共同约束结论不能脱离数据。
-          </p>
-        </div>
+        <Reveal>
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+              三种信号，支撑一种判断
+            </h2>
+            <p className="mt-4 text-txt2">
+              对齐、画像与回声室测算互相咬合，共同约束结论不能脱离数据。
+            </p>
+          </div>
+        </Reveal>
 
-        <div className="mt-14 grid gap-4 lg:grid-cols-2">
-          <Reveal className="lg:row-span-2">
-            <div className="flex h-full flex-col justify-between rounded-xl bg-feature p-8 text-on-feature lg:p-10">
-              <div>
-                <span className="inline-flex size-11 items-center justify-center rounded-md bg-accent text-on-accent">
-                  <ArrowsMerge size={22} weight="bold" />
+        <div className="mt-14 grid divide-y divide-line md:grid-cols-3 md:divide-x md:divide-y-0">
+          {CAPABILITIES.map((item, i) => (
+            <Reveal key={item.title} delay={i * 0.07} className="md:px-8 md:first:pl-0 md:last:pr-0">
+              <div className="group py-8 md:py-0">
+                <span className="inline-flex size-11 items-center justify-center rounded-md border border-line text-accent transition-transform duration-300 ease-out group-hover:scale-105">
+                  <item.icon size={22} weight="bold" />
                 </span>
-                <h3 className="mt-7 text-2xl font-semibold tracking-tight">
-                  跨平台对齐与共振
+                <h3 className="mt-6 text-lg font-semibold tracking-tight">
+                  {item.title}
                 </h3>
-                <p className="mt-4 max-w-[40ch] leading-relaxed text-feature-mut">
-                  不同平台量纲不可直接相加。按平台内 z-score 归一后对齐到统一时间轴，声量与情绪才真正可比。共振与错峰，一眼可辨。
-                </p>
+                <p className="mt-3 leading-relaxed text-txt2">{item.desc}</p>
+                <p className="mt-6 text-sm text-txt3">{item.note}</p>
               </div>
-              <ul className="mt-10 space-y-3 text-sm text-on-feature/85">
-                <li className="flex items-center gap-2.5">
-                  <Check size={15} weight="bold" className="text-accent" />
-                  声量共振与错峰
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <Check size={15} weight="bold" className="text-accent" />
-                  缺失窗口如实留空
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <Check size={15} weight="bold" className="text-accent" />
-                  平台内归一，跨平台可比
-                </li>
-              </ul>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div className="h-full rounded-xl border border-line bg-page p-8">
-              <span className="inline-flex size-11 items-center justify-center rounded-md border border-line text-accent">
-                <ChartPieSlice size={22} weight="bold" />
-              </span>
-              <h3 className="mt-6 text-lg font-semibold tracking-tight">
-                立场与情绪画像
-              </h3>
-              <p className="mt-3 leading-relaxed text-txt2">
-                对每条讨论做情绪倾向与支持 / 反对 / 中立标注，输出每平台结构化画像。
-              </p>
-              <p className="mt-6 text-sm text-txt3">
-                叠加领域词表与知识增强，口径透明可复算。
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div className="h-full rounded-xl bg-accent-tint p-8 ring-1 ring-inset ring-accent-line">
-              <span className="inline-flex size-11 items-center justify-center rounded-md bg-accent text-on-accent">
-                <Gauge size={22} weight="bold" />
-              </span>
-              <h3 className="mt-6 text-lg font-semibold tracking-tight">
-                回声室指数
-              </h3>
-              <p className="mt-3 leading-relaxed text-txt">
-                综合立场分歧、情绪分歧与声量失振，输出跨平台量化指数，直接衡量信息茧房强度。
-              </p>
-              <p className="mt-6 text-sm text-txt2">
-                融合结论需通过 CX1-CX5 校准门禁。
-              </p>
-            </div>
-          </Reveal>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
@@ -457,23 +457,28 @@ function Capabilities() {
 function Insights() {
   return (
     <section id="insights" className="mx-auto w-full max-w-7xl px-6 py-24 md:py-32">
-      <div className="max-w-2xl">
-        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-          真实话题，实时洞察
-        </h2>
-        <p className="mt-4 text-txt2">
-          从十二个领域热点出发，观察跨平台声量与情绪如何共振或错峰。指标来自真实话题样本。
-        </p>
-      </div>
-
-      {/* 声量共振可视化 */}
       <Reveal>
-        <div className="mt-14 rounded-xl bg-feature p-8 text-on-feature lg:p-10">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
-            <p className="text-sm font-semibold">声量共振与错峰</p>
-            <span className="font-mono text-xs text-feature-mut">
-              z-score 归一 / 时间对齐
-            </span>
+        <div className="max-w-2xl">
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+            真实话题，实时洞察
+          </h2>
+          <p className="mt-4 text-txt2">
+            从十二个领域热点出发，观察跨平台声量与情绪如何共振或错峰。指标来自真实话题样本。
+          </p>
+        </div>
+      </Reveal>
+
+      {/* F2 Hairline Line：短时序多平台对齐 */}
+      <Reveal>
+        <div className="lf-chart-frame feature-surface mt-14 px-6 py-10 md:px-10 lg:px-14">
+          <div className="lf-chart-head">
+            <div>
+              <p className="lf-chart-title">声量在平台之间错峰传播</p>
+              <p className="lf-chart-sub">
+                一点代表一个时间桶 / z-score 统一量纲 / 缺失不插值
+              </p>
+            </div>
+            <span className="lf-chart-code">F2 HAIRLINE LINE</span>
           </div>
           <div className="mt-6 grid items-center gap-8 lg:grid-cols-[1.35fr_1fr]">
             <SignalChart className="w-full" />
@@ -481,15 +486,15 @@ function Insights() {
               <p className="text-lg font-semibold leading-snug">
                 同一话题，各平台的讨论节奏并不相同。
               </p>
-              <p className="mt-4 leading-relaxed text-feature-mut">
+              <p className="mt-4 leading-relaxed text-[#5B6675]">
                 B站与微博的声量在此处同步抬升，抖音则明显错峰。真实样本显示，跨平台声量以错峰为主，只看单一平台，很难还原事件全貌。
               </p>
-              <ul className="mt-6 space-y-2.5 text-sm text-on-feature/85">
+              <ul className="mt-6 space-y-2.5 text-sm text-[#44546A]">
                 {[
-                  ["B站", "#3b82f6"],
-                  ["微博", "#9aa7b8"],
-                  ["抖音", "#6b7a90"],
-                  ["小红书", "#cbd5e1"],
+                  ["B站", LIEFLAT.SERIES[0]],
+                  ["微博", LIEFLAT.SERIES[1]],
+                  ["抖音", LIEFLAT.SERIES[2]],
+                  ["小红书", LIEFLAT.SERIES[3]],
                 ].map(([name, color]) => (
                   <li key={name} className="flex items-center gap-2.5">
                     <span
@@ -502,41 +507,26 @@ function Insights() {
               </ul>
             </div>
           </div>
+          <p className="lf-chart-source">HAIRLINE LINE / SOCIAL SENSE SAMPLE / CUSTOM BLUE</p>
         </div>
       </Reveal>
 
-      {/* 真实样本指标 */}
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {INSIGHTS.map((item, i) => (
-          <Reveal key={item.topic} delay={i * 0.05}>
-            <div className="h-full rounded-xl border border-line bg-card p-6">
-              <h3 className="text-[15px] font-semibold leading-snug">
-                {item.topic}
-              </h3>
-              <div className="mt-5 grid grid-cols-3 gap-3">
-                <div>
-                  <p className="font-mono text-lg font-medium text-txt">
-                    {item.points}
-                  </p>
-                  <p className="mt-1 text-xs text-txt3">时序点</p>
-                </div>
-                <div>
-                  <p className="font-mono text-lg font-medium text-txt">
-                    {item.resonance}
-                  </p>
-                  <p className="mt-1 text-xs text-txt3">声量共振</p>
-                </div>
-                <div>
-                  <p className="font-mono text-lg font-medium text-txt">
-                    {item.echo}
-                  </p>
-                  <p className="mt-1 text-xs text-txt3">回声室</p>
-                </div>
-              </div>
+      {/* L20 Parallel Coordinates：同一话题跨三个连续指标 */}
+      <Reveal>
+        <div className="lf-chart-frame mt-10 px-6 py-9 md:px-10">
+          <div className="lf-chart-head">
+            <div>
+              <p className="lf-chart-title">高声量不等于高共振</p>
+              <p className="lf-chart-sub">
+                一根发丝线代表一个真实话题 / 三根轴保留各自原始单位
+              </p>
             </div>
-          </Reveal>
-        ))}
-      </div>
+            <span className="lf-chart-code">L20 PARALLEL COORDINATES</span>
+          </div>
+          <InsightParallelChart insights={INSIGHTS} />
+          <p className="lf-chart-source">PARALLEL COORDINATES / REAL MULTIPLATFORM DATA / CUSTOM BLUE</p>
+        </div>
+      </Reveal>
 
       {/* 话题标签 */}
       <Reveal>
@@ -561,44 +551,25 @@ function Roles() {
   return (
     <section id="roles" className="border-y border-line bg-card">
       <div className="mx-auto w-full max-w-7xl px-6 py-24 md:py-28">
-        <div className="max-w-2xl">
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            为决策者而做
-          </h2>
-          <p className="mt-4 text-txt2">
-            不是多一块看板，而是把社交数据翻译成各岗位能直接使用的语言。
-          </p>
-        </div>
-        <div className="mt-14 grid gap-4 md:grid-cols-2">
-          {[
-            {
-              icon: SuitcaseSimple,
-              title: "社区运营",
-              desc: "定位危机拐点与观点分化平台，处理时机更早。",
-            },
-            {
-              icon: Lightbulb,
-              title: "产品经理",
-              desc: "把跨平台需求声量对齐，识别被忽略的真实呼声。",
-            },
-            {
-              icon: ChartLineUp,
-              title: "数据与增长分析师",
-              desc: "口径一致的时间序列，可直接用于复算与建模。",
-            },
-            {
-              icon: Megaphone,
-              title: "市场团队",
-              desc: "用声量共振与回声室读数校准叙事与投放策略。",
-            },
-          ].map((role, i) => (
+        <Reveal>
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+              为决策者而做
+            </h2>
+            <p className="mt-4 text-txt2">
+              不是多一块看板，而是把社交数据翻译成各岗位能直接使用的语言。
+            </p>
+          </div>
+        </Reveal>
+        <div className="mt-14 grid border-t border-line md:grid-cols-2">
+          {ROLES.map((role, i) => (
             <Reveal key={role.title} delay={(i % 2) * 0.06}>
-              <div className="flex h-full gap-5 rounded-xl border border-line bg-page p-7 transition-colors hover:border-line2">
-                <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-md bg-solid text-on-solid">
+              <div className="group flex gap-5 border-b border-line py-10 md:odd:pr-10 md:even:pl-10 md:even:border-l">
+                <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-md bg-solid text-on-solid transition-transform duration-300 ease-out group-hover:scale-105">
                   <role.icon size={21} weight="bold" />
                 </span>
                 <div>
-                  <h3 className="text-lg font-semibold tracking-tight">
+                  <h3 className="text-lg font-semibold tracking-tight transition-colors duration-300 group-hover:text-accent">
                     {role.title}
                   </h3>
                   <p className="mt-2 leading-relaxed text-txt2">{role.desc}</p>
@@ -617,38 +588,42 @@ function Roles() {
 function Caliber() {
   return (
     <section id="caliber" className="mx-auto w-full max-w-7xl px-6 py-24 md:py-28">
-      <div className="max-w-2xl">
-        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-          口径可追溯
-        </h2>
-        <p className="mt-4 text-txt2">结论如何得出，每一步都写清楚。</p>
-      </div>
       <Reveal>
-        <div className="mt-10 rounded-xl border border-line bg-card p-8">
-          <div className="flex flex-col gap-5 md:flex-row md:gap-7">
-            <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-md border border-line text-accent">
-              <Database size={21} weight="bold" />
-            </span>
-            <p className="max-w-4xl leading-relaxed text-txt2">
-              声量、情绪与立场均基于平台内清洗后的讨论文本计算。各平台量纲不同，
-              统一采用平台内 z-score 归一后对齐到同一时间轴；缺失时间窗如实留空，不做插值。
-              跨平台结论须通过 CX1-CX5 校准门禁后方可输出，每一次推断都能回溯到数据。
-            </p>
-          </div>
+        <div className="max-w-2xl">
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+            口径可追溯
+          </h2>
+          <p className="mt-4 text-txt2">结论如何得出，每一步都写清楚。</p>
+        </div>
+      </Reveal>
+      <Reveal>
+        <div className="mt-10 flex max-w-4xl flex-col gap-5 md:flex-row md:gap-7">
+          <span className="inline-flex size-11 shrink-0 items-center justify-center text-accent">
+            <Database size={21} weight="bold" />
+          </span>
+          <p className="leading-relaxed text-txt2">
+            声量、情绪与立场均基于平台内清洗后的讨论文本计算。各平台量纲不同，
+            统一采用平台内 z-score 归一后对齐到同一时间轴；缺失时间窗如实留空，不做插值。
+            跨平台结论须通过 CX1-CX5 校准门禁后方可输出，每一次推断都能回溯到数据。
+          </p>
         </div>
       </Reveal>
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="mt-10 max-w-4xl divide-y divide-line border-t border-line">
         {GATES.map((gate, i) => (
           <Reveal key={gate.id} delay={i * 0.05}>
-            <div className="h-full rounded-xl border border-line bg-page p-5">
-              <p className="font-mono text-xs font-medium text-accent">
+            <div className="group flex items-start gap-6 py-5">
+              <span className="shrink-0 font-mono text-xs font-medium leading-6 text-accent">
                 {gate.id}
-              </p>
-              <h3 className="mt-2 text-sm font-semibold">{gate.name}</h3>
-              <p className="mt-2 text-[13px] leading-relaxed text-txt2">
-                {gate.desc}
-              </p>
+              </span>
+              <div>
+                <h3 className="text-sm font-semibold transition-colors duration-300 group-hover:text-accent">
+                  {gate.name}
+                </h3>
+                <p className="mt-1 text-[13px] leading-relaxed text-txt2">
+                  {gate.desc}
+                </p>
+              </div>
             </div>
           </Reveal>
         ))}
@@ -663,14 +638,16 @@ function Faq() {
   return (
     <section id="faq" className="border-t border-line bg-card">
       <div className="mx-auto w-full max-w-3xl px-6 py-24 md:py-28">
-        <div className="max-w-2xl">
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            常见问题
-          </h2>
-          <p className="mt-4 text-txt2">
-            关于口径、平台与可信度的常见疑问。
-          </p>
-        </div>
+        <Reveal>
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+              常见问题
+            </h2>
+            <p className="mt-4 text-txt2">
+              关于口径、平台与可信度的常见疑问。
+            </p>
+          </div>
+        </Reveal>
         <div className="mt-12 divide-y divide-line border-y border-line">
           {FAQS.map((item, i) => (
             <Reveal key={item.q} delay={i * 0.04}>
@@ -715,21 +692,15 @@ function Closing() {
   );
 }
 
-/* ---------- 页脚 ---------- */
+/* ---------- 页脚（无 logo，仅文字与导航） ---------- */
 
 function Footer() {
   return (
-    <footer className="border-t border-line">
+    <footer className="relative z-10 border-t border-line">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-start justify-between gap-6 px-6 py-10 md:flex-row md:items-center">
-        <div className="flex items-center gap-2.5">
-          <span className="grid size-6 place-items-center rounded bg-solid text-on-solid">
-            <BrandMark size={15} />
-          </span>
-          <span className="text-sm font-semibold">Social Sense</span>
-          <span className="font-mono text-xs text-txt3">
-            © {new Date().getFullYear()}
-          </span>
-        </div>
+        <span className="font-brand text-base font-semibold tracking-[-0.025em]">
+          Social Sense
+        </span>
         <nav className="flex flex-wrap items-center gap-6 text-sm text-txt2">
           {NAV.map((item) => (
             <a

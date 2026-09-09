@@ -5,6 +5,7 @@ import App from './App'
 import ThemeGate from './theme'
 import '@fontsource-variable/inter'
 import '@fontsource-variable/jetbrains-mono'
+import '@fontsource-variable/outfit'
 import './styles/global.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

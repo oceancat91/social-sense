@@ -1,6 +1,7 @@
 import { Empty, Table, Skeleton } from 'antd'
 import ReactECharts from 'echarts-for-react'
 import SoftTag from './SoftTag'
+import LieflatChartFrame from './LieflatChartFrame'
 
 const gatesColumns = [
   { title: '门禁', dataIndex: 'gate', width: 90 },
@@ -25,9 +26,16 @@ export default function DivergencePanel({ divergenceOption, calib, loading }) {
   return (
     <div className="split">
       <div className="split__col">
-        {divergenceOption
-          ? <ReactECharts option={divergenceOption} style={{ height: 320 }} />
-          : <Empty description="无分桶分歧数据" />}
+        <LieflatChartFrame
+          title="情绪分歧沿时间形成可见峰值"
+          subtitle="每根垂线代表一个分歧时桶 / 顶点连接只呈现观测顺序"
+          code="L3 BARCODE LOLLIPOP"
+          source="SENTIMENT RANGE / SOCIAL SENSE REPORT / CUSTOM BLUE"
+        >
+          {divergenceOption
+            ? <ReactECharts option={divergenceOption} style={{ height: 320 }} />
+            : <Empty description="无分桶分歧数据" />}
+        </LieflatChartFrame>
       </div>
       <div className="split__col">
         <div className="gates">

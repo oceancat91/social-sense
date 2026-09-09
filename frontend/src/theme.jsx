@@ -103,7 +103,7 @@ export function ThemeGate({ children }) {
             Layout: {
               headerBg: dark ? '#0A0D13' : '#F5F6F8',
               headerHeight: 64,
-              headerPadding: '0 24px',
+              headerPadding: '0',
             },
             Table: {
               headerBg: dark ? '#1A2030' : '#F0F2F5',

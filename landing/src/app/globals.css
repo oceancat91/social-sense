@@ -9,6 +9,7 @@
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-brand: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo,
     Consolas, monospace;
 
@@ -55,6 +56,430 @@ section[id] {
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
+}
+
+/* ---------- 顶栏导航：下划线滑入（restrained motion） ---------- */
+.nav-link {
+  position: relative;
+  padding-block: 2px;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1.5px;
+  width: 100%;
+  border-radius: 1px;
+  background: var(--color-txt);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ---------- 全局噪点纹理（surface texture） ---------- */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 140px 140px;
+}
+
+/* ---------- 全局背景层次：浅蓝空气场 + 柔性波场 ---------- */
+.atmosphere-base {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(80% 58% at 92% 4%, rgb(214 230 255 / 0.78), transparent 66%),
+    radial-gradient(64% 46% at 6% 16%, rgb(236 244 255 / 0.92), transparent 72%),
+    linear-gradient(180deg, #f9fbff 0%, #f4f7fc 48%, #f5f6f8 100%);
+}
+
+.atmosphere-wave {
+  position: absolute;
+  right: -18vw;
+  border-radius: 50%;
+  border: 1px solid rgb(96 145 228 / 0.16);
+  background:
+    radial-gradient(circle at 42% 28%, rgb(255 255 255 / 0.68), transparent 34%),
+    linear-gradient(145deg, rgb(255 255 255 / 0.3), rgb(129 169 235 / 0.06));
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.7),
+    0 -20px 80px rgb(76 125 211 / 0.05);
+  transform: rotate(-11deg);
+  transform-origin: center;
+}
+
+.atmosphere-wave--far {
+  top: 5vh;
+  width: 88vw;
+  height: 38vw;
+  opacity: 0.46;
+  filter: blur(3px);
+  animation: atmosphereDriftFar 22s ease-in-out infinite alternate;
+}
+
+.atmosphere-wave--mid {
+  top: 18vh;
+  right: -26vw;
+  width: 92vw;
+  height: 32vw;
+  opacity: 0.34;
+  transform: rotate(-7deg);
+  animation: atmosphereDriftMid 27s ease-in-out infinite alternate;
+}
+
+.atmosphere-wave--near {
+  top: 31vh;
+  right: -31vw;
+  width: 96vw;
+  height: 27vw;
+  opacity: 0.24;
+  transform: rotate(-4deg);
+  filter: blur(1px);
+  animation: atmosphereDriftNear 31s ease-in-out infinite alternate;
+}
+
+@keyframes atmosphereDriftFar {
+  to { transform: translate3d(-2.5%, 2%, 0) rotate(-8deg) scale(1.03); }
+}
+@keyframes atmosphereDriftMid {
+  to { transform: translate3d(-4%, -2%, 0) rotate(-10deg) scale(1.04); }
+}
+@keyframes atmosphereDriftNear {
+  to { transform: translate3d(-3%, -3%, 0) rotate(-2deg) scale(1.025); }
+}
+
+.ambient-glow {
+  position: fixed;
+  inset: -12% -10%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(760px 540px at 12% 2%, rgba(80, 133, 226, 0.08), transparent 66%),
+    radial-gradient(720px 520px at 88% 24%, rgba(46, 104, 213, 0.09), transparent 64%),
+    radial-gradient(840px 560px at 50% 102%, rgba(68, 121, 214, 0.05), transparent 66%);
+  filter: blur(14px);
+  will-change: transform;
+}
+
+/* ---------- Hero 局部景深 ---------- */
+.hero-stage {
+  isolation: isolate;
+}
+
+.hero-stage::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 34%;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgb(245 246 248 / 0.72));
+}
+
+.hero-glow {
+  position: absolute;
+  inset: -24% -12%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(620px 380px at 12% 12%, rgba(82, 137, 228, 0.13), transparent 66%),
+    radial-gradient(580px 360px at 82% 56%, rgba(47, 111, 229, 0.11), transparent 62%),
+    radial-gradient(360px 240px at 56% 8%, rgba(157, 192, 244, 0.12), transparent 66%);
+  filter: blur(9px);
+  animation: heroGlowDrift 18s ease-in-out infinite alternate;
+}
+@keyframes heroGlowDrift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-2%, 2%, 0) scale(1.06);
+  }
+}
+
+/* ---------- Hero 3D 数据场 ---------- */
+.data-field {
+  position: relative;
+  width: 100%;
+  min-height: 390px;
+  height: min(54vw, 560px);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.data-field::before {
+  content: "";
+  position: absolute;
+  inset: 12% 4% 8%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgb(212 229 255 / 0.64) 0%,
+    rgb(224 237 255 / 0.25) 44%,
+    transparent 72%
+  );
+  filter: blur(18px);
+}
+
+.data-field canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+.data-field__fallback {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 0;
+  width: min(70%, 360px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgb(37 99 235 / 0.12);
+  transform: translate(-50%, -50%);
+  background:
+    radial-gradient(circle at 42% 38%, rgb(255 255 255 / 0.9), transparent 18%),
+    radial-gradient(circle, rgb(207 226 255 / 0.52), transparent 68%);
+}
+
+.data-field[data-webgl="unavailable"] .data-field__fallback {
+  opacity: 1;
+}
+
+.data-field:not([data-webgl="unavailable"]) .data-field__fallback {
+  opacity: 0.28;
+}
+
+.data-field__labels {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.data-field__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 4px 7px;
+  border: 1px solid rgb(87 127 195 / 0.18);
+  border-radius: 5px;
+  background: rgb(249 251 255 / 0.74);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.8);
+  color: var(--color-txt2);
+  font-size: 11px;
+  line-height: 1;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+  transform: translate3d(-100px, -100px, 0);
+  transition: opacity 0.25s ease;
+}
+
+.data-field--loading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 42%;
+  height: 1px;
+  transform: translate(-50%, -50%) scaleX(0.35);
+  transform-origin: left;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  animation: dataFieldLoading 1.4s ease-in-out infinite alternate;
+}
+
+@keyframes dataFieldLoading {
+  to { transform: translate(-50%, -50%) scaleX(1); opacity: 0.35; }
+}
+
+@media (max-width: 767px) {
+  .atmosphere-wave {
+    right: -64vw;
+    width: 160vw;
+    height: 84vw;
+  }
+  .atmosphere-wave--mid { top: 28vh; }
+  .atmosphere-wave--near { top: 42vh; }
+  .data-field {
+    min-height: 360px;
+    height: 72vw;
+  }
+}
+
+/* ---------- Lieflat Charts：品牌蓝 custom 色系 ---------- */
+.lf-chart-frame {
+  color: #192f5d;
+  background-color: #f7f9fc;
+  border-top: 1px solid #d9e1eb;
+}
+
+.feature-surface {
+  background-image:
+    linear-gradient(to right, rgba(49, 90, 155, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(49, 90, 155, 0.055) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.lf-chart-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #d9e1eb;
+}
+
+.lf-chart-title {
+  color: #192f5d;
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.lf-chart-sub {
+  margin-top: 4px;
+  color: #5b6675;
+  font-size: 11.5px;
+  line-height: 1.6;
+}
+
+.lf-chart-code,
+.lf-chart-source {
+  color: #a8b7cc;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.lf-chart-code {
+  padding-top: 2px;
+  white-space: nowrap;
+}
+
+.lf-chart-source {
+  margin-top: 12px;
+}
+
+.lf-parallel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 0.34fr);
+  align-items: center;
+  gap: 28px;
+  margin-top: 18px;
+}
+
+.lf-parallel svg {
+  display: block;
+  width: 100%;
+}
+
+.lf-parallel__legend {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lf-parallel__legend li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 0;
+  color: #44546a;
+  font-size: 12px;
+}
+
+.lf-parallel__key {
+  display: block;
+  width: 18px;
+  height: 2px;
+}
+
+.lf-parallel__index {
+  color: #a8b7cc;
+  font-family: var(--font-mono);
+  font-size: 9px;
+}
+
+@media (max-width: 767px) {
+  .lf-chart-head {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .lf-parallel {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .lf-parallel__legend {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+  }
+}
+
+/* ---------- 流程步骤：顶部 hairline 悬停强调（去卡片后的节奏） ---------- */
+.flow-step {
+  position: relative;
+}
+.flow-step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-line);
+  transform-origin: left;
+  transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.flow-step::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.flow-step:hover::after {
+  transform: scaleX(1);
+}
+.flow-step .flow-step__icon {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.flow-step:hover .flow-step__icon {
+  transform: translateY(-3px);
+  color: var(--color-accent);
+}
+
+/* ---------- 数据行：hairline 分隔 + 悬停背景（去卡片） ---------- */
+.data-row {
+  transition: background-color 0.25s ease;
+}
+.data-row:hover {
+  background: var(--color-card2);
 }
 
 /* 平台数据源 marquee */

@@ -1,22 +1,38 @@
 import { Empty, Skeleton } from 'antd'
-import ReactECharts from 'echarts-for-react'
+import LieflatChartFrame from './LieflatChartFrame'
+import StanceField from './StanceField'
+import CorrelationArcMatrix from './CorrelationArcMatrix'
 
-/** 立场对齐（各平台立场分布堆叠）+ 声量共振（两两相关性矩阵），两列细分隔线 */
-export default function StancePanel({ stanceOption, corrOption, loading }) {
+/** L14 立场单位场 + L4 弧形关系矩阵 */
+export default function StancePanel({ stanceDist, temporalCorr, platforms, loading }) {
   if (loading) {
     return <Skeleton active paragraph={{ rows: 8 }} title={false} />
   }
   return (
     <div className="split">
       <div className="split__col">
-        {stanceOption
-          ? <ReactECharts option={stanceOption} style={{ height: 320 }} />
-          : <Empty />}
+        <LieflatChartFrame
+          title="中立讨论占据多数平台"
+          subtitle="每个平台严格拆成 100 个单位点 / 一点代表 1%"
+          code="L14 HUNDRED FIELD"
+          source="STANCE DISTRIBUTION / SOCIAL SENSE REPORT / CUSTOM BLUE"
+        >
+          {Object.keys(stanceDist || {}).length
+            ? <StanceField stanceDist={stanceDist} />
+            : <Empty />}
+        </LieflatChartFrame>
       </div>
       <div className="split__col">
-        {corrOption
-          ? <ReactECharts option={corrOption} style={{ height: 320 }} />
-          : <Empty description="至少需两个平台方可计算共振" />}
+        <LieflatChartFrame
+          title="共振关系沿平台弧线展开"
+          subtitle="圆面积编码相关强度 / 实心为正相关 / 空心为负相关"
+          code="L4 ARC MATRIX"
+          source="TEMPORAL CORRELATION / SOCIAL SENSE REPORT / CUSTOM BLUE"
+        >
+          {platforms?.length
+            ? <CorrelationArcMatrix temporalCorr={temporalCorr} platforms={platforms} />
+            : <Empty description="至少需两个平台方可计算共振" />}
+        </LieflatChartFrame>
       </div>
     </div>
   )

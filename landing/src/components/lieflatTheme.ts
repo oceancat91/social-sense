@@ -1,0 +1,21 @@
+/**
+ * Lieflat Charts custom palette.
+ * 由 Social Sense 既有品牌蓝推导，所有图表只从这些语义角色取色。
+ */
+export const LIEFLAT = {
+  BG: "#F7F9FC",
+  TXT: "#192F5D",
+  MUT: "#5B6675",
+  LAB: "#44546A",
+  FAINT: "#A8B7CC",
+  FLOOR: "#C7D2E1",
+  QUIET: "#E4E9F0",
+  TRACK: "#E8EDF4",
+  GRID: "#D9E1EB",
+  DATA: "#315A9B",
+  DATA2: "#6D8FBE",
+  HERO: "#2563EB",
+  FAINT_DATA: "#B9C8DB",
+  HALO: "#F7F9FC",
+  SERIES: ["#2563EB", "#192F5D", "#6D8FBE", "#B9C8DB"],
+} as const;
