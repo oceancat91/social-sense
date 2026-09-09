@@ -30,8 +30,6 @@ import {
   ChartLineUp,
   Megaphone,
   Database,
-  ArrowRight,
-  ArrowUpRight,
   Check,
   CaretDown,
 } from "@phosphor-icons/react/dist/ssr";
@@ -271,15 +269,6 @@ function Header() {
             </a>
           ))}
         </nav>
-
-        <a href={PRODUCT_URL} className={`${CTA_CLASS} group`}>
-          进入分析台
-          <ArrowUpRight
-            size={15}
-            weight="bold"
-            className="transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-          />
-        </a>
       </div>
     </header>
   );
@@ -328,7 +317,6 @@ function Hero() {
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a href={PRODUCT_URL} className={CTA_CLASS}>
                 进入分析台
-                <ArrowRight size={16} weight="bold" />
               </a>
               <a
                 href="#capabilities"
@@ -680,12 +668,6 @@ function Closing() {
           <h2 className="mx-auto max-w-2xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
             让社交数据支撑每一次决策
           </h2>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <a href={PRODUCT_URL} className={`${CTA_CLASS} mt-10`}>
-            进入分析台
-            <ArrowRight size={16} weight="bold" />
-          </a>
         </Reveal>
       </div>
     </section>

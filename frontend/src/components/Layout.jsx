@@ -26,12 +26,12 @@ function Layout() {
       <AntLayout className="ss-app-shell">
         <Header className="ss-header">
           <div className="ss-header__inner">
-            <div className="ss-brand">
+            <a href="https://socialsense.cn/" className="ss-brand">
               <span className="ss-brand__mark">
                 <BrandMark size={25} />
               </span>
               <span className="ss-brand__name">Social Sense</span>
-            </div>
+            </a>
 
             <Dropdown menu={userMenu} placement="bottomRight" trigger={['click']}>
               <button type="button" className="ss-user-menu" aria-label="打开管理员菜单">
