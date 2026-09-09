@@ -380,6 +380,522 @@ code,
   }
 }
 
+/* ============================================================
+   分析台动效系统 v3 — 滚动入场 / hero / 深色卡 / 信号涟漪
+   ============================================================ */
+
+/* ---------- 全局动效层：滚动进度条 + 噪点纹理 ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 60;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--accent), #60a5fa);
+  transform: scaleX(0);
+  transform-origin: left;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
+}
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 140px 140px;
+}
+
+/* ---------- 滚动入场（Reveal） ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- 分区系统：序号标题 + 滚动 draw-in 细分隔线 ---------- */
+.section {
+  margin-top: 36px;
+}
+.section__head {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+.section__head::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--border) 46%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+}
+.section.is-drawn .section__head::after {
+  transform: scaleX(1);
+}
+.section__index {
+  font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 600;
+}
+.section__title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--text-1);
+}
+.section__desc {
+  margin-left: auto;
+  font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--text-3);
+}
+
+/* ---------- 概览三列：细分隔线分栏 ---------- */
+.overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.9fr) minmax(0, 1.15fr);
+  align-items: stretch;
+}
+.overview__col {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.overview__col + .overview__col {
+  border-left: 1px solid var(--border);
+  padding-left: 28px;
+}
+.overview-stats {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+.overview-stats__label {
+  font-size: 12px;
+  color: var(--text-3);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* 简洁指标（替代统计卡） */
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.metric__icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.metric__label {
+  font-size: 12px;
+  color: var(--text-3);
+}
+.metric__value {
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--text-1);
+  line-height: 1.2;
+}
+
+/* ---------- 两列细分隔线分栏（图表并排） ---------- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.split__col { min-width: 0; }
+.split__col + .split__col {
+  border-left: 1px solid var(--border);
+  padding-left: 28px;
+}
+.split__col:first-child {
+  padding-right: 28px;
+}
+
+/* ---------- 图表块标题（替代 Card title） ---------- */
+.chart-block + .chart-block {
+  margin-top: 28px;
+}
+.chart-block__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: 12px;
+}
+.chart-block__meta {
+  font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--text-3);
+  font-weight: 400;
+}
+
+/* ---------- 提示行（替代 Alert） ---------- */
+.note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-2);
+  padding: 10px 12px;
+  border-left: 2px solid var(--accent);
+  background: var(--accent-soft);
+  margin-bottom: 24px;
+}
+.note__tag {
+  font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---------- 结论：风险提示 + 断言列表 ---------- */
+.risk-list {
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.risk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-left: 2px solid var(--border-strong);
+  background: var(--bg-inset);
+  font-size: 13.5px;
+  color: var(--text-1);
+}
+.risk-item__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+.risk-item__text { line-height: 1.7; }
+
+.claims {
+  margin-top: 20px;
+}
+.claims__title {
+  font-size: 12px;
+  color: var(--text-3);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.claims__row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 2px;
+  border-bottom: 1px solid var(--border-faint);
+  font-size: 13px;
+}
+.claims__mark { color: var(--accent); flex-shrink: 0; }
+.claims__text { color: var(--text-2); }
+.claims__src {
+  color: var(--text-3);
+  margin-left: auto;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+/* ---------- 门禁表标题 ---------- */
+.gates__title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: 12px;
+}
+
+/* ---------- 响应式分栏折叠 ---------- */
+@media (max-width: 960px) {
+  .overview { grid-template-columns: 1fr; }
+  .overview__col + .overview__col {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-left: 0;
+    padding-top: 24px;
+    margin-top: 24px;
+  }
+  .split { grid-template-columns: 1fr; }
+  .split__col + .split__col {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-left: 0;
+    padding-top: 24px;
+    margin-top: 24px;
+  }
+  .split__col:first-child { padding-right: 0; }
+}
+
+/* ---------- Hero 区 ---------- */
+.ss-hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 30px 0 26px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  background:
+    radial-gradient(720px 420px at 10% -30%, rgba(59, 130, 246, 0.10), transparent 62%),
+    radial-gradient(560px 320px at 100% 130%, rgba(37, 99, 235, 0.06), transparent 55%);
+}
+.ss-hero__glow {
+  position: absolute;
+  inset: -40% -18%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(560px 320px at 18% 24%, rgba(59, 130, 246, 0.14), transparent 60%),
+    radial-gradient(520px 300px at 82% 78%, rgba(37, 99, 235, 0.10), transparent 55%);
+  filter: blur(6px);
+  animation: glowDrift 16s ease-in-out infinite alternate;
+}
+@keyframes glowDrift {
+  0% { transform: translate3d(-2%, -1.5%, 0) scale(1); }
+  100% { transform: translate3d(2%, 1.5%, 0) scale(1.07); }
+}
+.ss-hero__copy { min-width: 260px; position: relative; z-index: 1; }
+.ss-hero__eyebrow {
+  font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 9px;
+  flex-shrink: 0;
+  animation: livePulse 2.2s ease-out infinite;
+}
+@keyframes livePulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45); }
+  70% { box-shadow: 0 0 0 9px rgba(37, 99, 235, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+.ss-hero__copy h1 {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--text-1);
+}
+.ss-hero__copy p {
+  margin: 12px 0 0;
+  max-width: 34em;
+  color: var(--text-2);
+  font-size: 14.5px;
+  line-height: 1.8;
+}
+.ss-hero__side {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 460px;
+}
+.ss-hero__controls {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.ss-hero__field {
+  width: 200px;
+  height: 120px;
+}
+.ss-hero__arc {
+  transform-origin: 100px 104px;
+  animation: rippleBreath 3.4s ease-in-out infinite;
+}
+.ss-hero__arc--2 { animation-delay: 0.5s; }
+.ss-hero__arc--3 { animation-delay: 1s; }
+@keyframes rippleBreath {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+.ss-hero__sweep {
+  transform-origin: 100px 104px;
+  animation: heroSweep 4.6s linear infinite;
+}
+@keyframes heroSweep {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 960px) {
+  .ss-hero__side { align-items: stretch; max-width: none; }
+  .ss-hero__field { display: none; }
+}
+
+/* ---------- 报告概览：深色关键词块（直角，无边框阴影） ---------- */
+.overview-key {
+  background: linear-gradient(160deg, #181d28 0%, #131821 100%);
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.overview-key__label {
+  font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: #7c8aa0;
+  margin-bottom: 10px;
+}
+.overview-key__title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #f5f6f8;
+  margin-bottom: 14px;
+  overflow-wrap: break-word;
+}
+.overview-key__tags,
+.overview-key__status {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.overview-key__meta {
+  font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: #8b97a8;
+  border-top: 1px solid #262d3a;
+  padding-top: 12px;
+}
+
+/* ---------- 报告概览：回声室指数环列 ---------- */
+.overview-echo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.overview-echo__title {
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--text-1);
+}
+.overview-echo__ring {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 2px;
+}
+.overview-echo__hint {
+  text-align: center;
+  font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--text-3);
+}
+
+/* ---------- 回声室指数「信号涟漪环」 ---------- */
+.echo-signal {
+  position: relative;
+  display: inline-block;
+}
+.echo-signal__num {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.echo-signal__unit {
+  font-size: 13px;
+  font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
+}
+.echo-signal__value {
+  transition: stroke-dasharray 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.echo-signal__sweep {
+  transform-origin: 100px 100px;
+  animation: echoSweep 3.4s linear infinite;
+}
+@keyframes echoSweep {
+  to { transform: rotate(360deg); }
+}
+.echo-signal__ripple {
+  animation: echoRipple 3.6s ease-in-out infinite;
+}
+.echo-signal__ripple--slow {
+  animation-delay: 0.5s;
+  animation-duration: 4.6s;
+}
+@keyframes echoRipple {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.5; }
+}
+.echo-signal__label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-top: 6px;
+}
+
 /* ---------- 减弱动效（可访问性） ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -389,5 +905,12 @@ code,
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .section__head::after {
+    transform: scaleX(1) !important;
   }
 }

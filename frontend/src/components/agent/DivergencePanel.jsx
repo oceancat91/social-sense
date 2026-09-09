@@ -1,4 +1,4 @@
-import { Row, Col, Card, Empty, Table } from 'antd'
+import { Empty, Table, Skeleton } from 'antd'
 import ReactECharts from 'echarts-for-react'
 import SoftTag from './SoftTag'
 
@@ -17,19 +17,21 @@ const gatesColumns = [
   { title: '说明', dataIndex: 'note' },
 ]
 
-/** 分歧扩散（分桶情绪极差时序）+ 跨平台校准门禁（CX1-CX5） */
+/** 分歧扩散（分桶情绪极差时序）+ 跨平台校准门禁（CX1-CX5），两列细分隔线 */
 export default function DivergencePanel({ divergenceOption, calib, loading }) {
+  if (loading) {
+    return <Skeleton active paragraph={{ rows: 8 }} title={false} />
+  }
   return (
-    <Row gutter={16} style={{ marginBottom: 16 }}>
-      <Col span={12} xs={24}>
-        <Card loading={loading}>
-          {divergenceOption
-            ? <ReactECharts option={divergenceOption} style={{ height: 320 }} />
-            : <Empty description="无分桶分歧数据" />}
-        </Card>
-      </Col>
-      <Col span={12} xs={24}>
-        <Card title="跨平台校准门禁（CX1-CX5）" loading={loading}>
+    <div className="split">
+      <div className="split__col">
+        {divergenceOption
+          ? <ReactECharts option={divergenceOption} style={{ height: 320 }} />
+          : <Empty description="无分桶分歧数据" />}
+      </div>
+      <div className="split__col">
+        <div className="gates">
+          <div className="gates__title">跨平台校准门禁（CX1-CX5）</div>
           <Table
             dataSource={calib.gates || []}
             columns={gatesColumns}
@@ -42,8 +44,8 @@ export default function DivergencePanel({ divergenceOption, calib, loading }) {
               </SoftTag>
             )}
           />
-        </Card>
-      </Col>
-    </Row>
+        </div>
+      </div>
+    </div>
   )
 }

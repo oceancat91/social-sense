@@ -1,46 +1,37 @@
-import { Card, Alert } from 'antd'
+import { Skeleton } from 'antd'
 import { platformName } from '../../utils/platforms'
 
-/** 主控 Agent 归纳结论：summary + 风险提示 + 可验证断言 */
+/** 主控 Agent 归纳结论：summary + 风险提示 + 可验证断言（简洁分区，无卡片盒） */
 export default function ConclusionPanel({ ct, loading }) {
+  if (loading) {
+    return <Skeleton active paragraph={{ rows: 5 }} title={false} />
+  }
   return (
-    <Card title="跨平台结论（主控 Agent 归纳）" loading={loading}>
-      <p style={{ fontSize: 14.5, lineHeight: 1.9, color: 'var(--text-1)' }}>{ct.summary || '-'}</p>
-      <div style={{ margin: '12px 0' }}>
-        {ct.risk_flags?.map((r, i) => (
-          <Alert
-            key={i}
-            type={i === 0 ? 'warning' : 'info'}
-            showIcon
-            message={r}
-            style={{ marginBottom: 8 }}
-          />
-        ))}
-      </div>
-      <div style={{ fontWeight: 600, fontSize: 14, margin: '8px 0 4px' }}>可验证断言（claims）</div>
-      <div style={{ maxHeight: 208, overflow: 'auto', marginTop: 6 }}>
+    <div>
+      <p style={{ fontSize: 14.5, lineHeight: 1.9, color: 'var(--text-1)', margin: 0 }}>{ct.summary || '-'}</p>
+
+      {ct.risk_flags?.length > 0 && (
+        <div className="risk-list">
+          {ct.risk_flags.map((r, i) => (
+            <div key={i} className="risk-item">
+              <span className="risk-item__dot" style={{ background: i === 0 ? 'var(--warning)' : 'var(--accent)' }} />
+              <span className="risk-item__text">{r}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="claims">
+        <div className="claims__title">可验证断言（claims）</div>
         {ct.claims?.map((c, i) => (
-          <div
-            key={i}
-            style={{
-              padding: '8px 2px',
-              borderTop: i === 0 ? '1px solid var(--border-faint)' : 'none',
-              borderBottom: '1px solid var(--border-faint)',
-              fontSize: 13,
-              display: 'flex',
-              alignItems: 'baseline',
-              gap: 8,
-            }}
-          >
-            <span style={{ color: 'var(--accent)', flexShrink: 0 }}>›</span>
-            <span style={{ color: 'var(--text-2)' }}>{c.text}</span>
-            <span style={{ color: 'var(--text-3)', marginLeft: 'auto', whiteSpace: 'nowrap', fontSize: 12 }}>
-              [{c.platforms?.map(platformName).join('、')}]
-            </span>
+          <div key={i} className="claims__row">
+            <span className="claims__mark">›</span>
+            <span className="claims__text">{c.text}</span>
+            <span className="claims__src">[{c.platforms?.map(platformName).join('、')}]</span>
           </div>
         ))}
         {!ct.claims?.length && <div style={{ color: 'var(--text-3)', fontSize: 13 }}>无断言</div>}
       </div>
-    </Card>
+    </div>
   )
 }

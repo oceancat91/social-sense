@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { Row, Col, Card, Empty, App as AntApp } from 'antd'
+import { Empty, App as AntApp } from 'antd'
 import api from '../services/api'
 import { platformName } from '../utils/platforms'
 import { formatDate } from '../utils'
@@ -10,9 +10,10 @@ import {
   corrMatrixOption,
   divergenceTimelineOption,
 } from '../utils/agentCharts'
-import ReportToolbar from '../components/agent/ReportToolbar'
+import HeroBanner from '../components/agent/HeroBanner'
+import Reveal from '../components/agent/Reveal'
+import Section from '../components/agent/Section'
 import ReportOverview from '../components/agent/ReportOverview'
-import EchoChamberPanel from '../components/agent/EchoChamberPanel'
 import ConclusionPanel from '../components/agent/ConclusionPanel'
 import AlignmentPanel from '../components/agent/AlignmentPanel'
 import StancePanel from '../components/agent/StancePanel'
@@ -22,6 +23,8 @@ import DivergencePanel from '../components/agent/DivergencePanel'
  * 多 Agent 跨平台分析页（薄容器）：
  * 仅负责数据获取、状态管理与图表 option 组装，具体展示拆分为
  * components/agent/ 下各职责单一的面板模块。
+ * 视觉上与 landing 首页同源：hero 区 + 细分隔线分区 + 信号涟漪资产 + stagger 入场，
+ * 避免卡片/便当盒堆叠。
  */
 function AgentReports() {
   const dark = useDarkMode()
@@ -116,56 +119,73 @@ function AgentReports() {
 
   const reportOptions = reports.map(r => ({
     value: r.id,
-    label: `#${r.id} · ${r.keyword}（${(r.platforms || []).map(platformName).join('/')}）· ${formatDate(r.created_at)}`,
+    label: `#${r.id} / ${r.keyword}（${(r.platforms || []).map(platformName).join('/')}）/ ${formatDate(r.created_at)}`,
   }))
 
   const isSingle = ct.scope === 'single_platform' || platforms.length < 2
 
   return (
     <div>
-      <ReportToolbar
-        selectedId={selectedId}
-        reportOptions={reportOptions}
-        onSelect={setSelectedId}
-        onRefresh={fetchReports}
-      />
+      <Reveal>
+        <HeroBanner
+          selectedId={selectedId}
+          reportOptions={reportOptions}
+          onSelect={setSelectedId}
+          onRefresh={fetchReports}
+        />
+      </Reveal>
 
       {!hasResult ? (
-        <Card>
+        <div className="section">
           <Empty description={detail?.status === 'failed'
             ? `分析失败：${detail?.error || '未知错误'}`
             : '暂无可展示的报告。'} />
-        </Card>
+        </div>
       ) : (
         <>
-          <ReportOverview
-            detail={detail}
-            ct={ct}
-            platforms={platforms}
-            echoScore={echoScore}
-            components={components}
-            dominant={dominant}
-            fusion={fusion}
-            loading={loading}
-          />
+          <Reveal delay={60}>
+            <Section index="01" title="概览" desc="关键词 / 回声室 / 共振 / 立场">
+              <ReportOverview
+                detail={detail}
+                ct={ct}
+                platforms={platforms}
+                echoScore={echoScore}
+                components={components}
+                dominant={dominant}
+                fusion={fusion}
+                loading={loading}
+              />
+            </Section>
+          </Reveal>
 
-          <Row gutter={16} style={{ marginBottom: 16 }}>
-            <Col span={8} xs={24}>
-              <EchoChamberPanel echoScore={echoScore} loading={loading} />
-            </Col>
-            <Col span={16} xs={24}>
+          <Reveal delay={110}>
+            <Section index="02" title="跨平台结论" desc="主控 Agent 归纳">
               <ConclusionPanel ct={ct} loading={loading} />
-            </Col>
-          </Row>
+            </Section>
+          </Reveal>
 
-          <AlignmentPanel
-            volumeOption={volumeOption}
-            sentimentOption={sentimentOption}
-            isSingle={isSingle}
-            loading={loading}
-          />
-          <StancePanel stanceOption={stanceOption} corrOption={corrOption} loading={loading} />
-          <DivergencePanel divergenceOption={divergenceOption} calib={calib} loading={loading} />
+          <Reveal delay={150}>
+            <Section index="03" title="对齐呈现" desc="统一时间轴">
+              <AlignmentPanel
+                volumeOption={volumeOption}
+                sentimentOption={sentimentOption}
+                isSingle={isSingle}
+                loading={loading}
+              />
+            </Section>
+          </Reveal>
+
+          <Reveal delay={190}>
+            <Section index="04" title="立场与共振" desc="分布 / 相关性">
+              <StancePanel stanceOption={stanceOption} corrOption={corrOption} loading={loading} />
+            </Section>
+          </Reveal>
+
+          <Reveal delay={230}>
+            <Section index="05" title="分歧与门禁" desc="扩散 / 校准">
+              <DivergencePanel divergenceOption={divergenceOption} calib={calib} loading={loading} />
+            </Section>
+          </Reveal>
         </>
       )}
     </div>

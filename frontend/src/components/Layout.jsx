@@ -7,6 +7,8 @@ import {
 } from '@ant-design/icons'
 import { useTheme } from '../theme'
 import BrandMark from './BrandMark'
+import ScrollProgress from './agent/ScrollProgress'
+import NoiseOverlay from './agent/NoiseOverlay'
 
 const { Header, Sider, Content } = AntLayout
 
@@ -30,7 +32,10 @@ function Layout() {
   }
 
   return (
-    <AntLayout style={{ minHeight: '100vh' }}>
+    <>
+      <ScrollProgress />
+      <NoiseOverlay />
+      <AntLayout style={{ minHeight: '100vh' }}>
       <Sider
         width={224}
         theme={dark ? 'dark' : 'light'}
@@ -91,6 +96,7 @@ function Layout() {
         </Content>
       </AntLayout>
     </AntLayout>
+    </>
   )
 }
 

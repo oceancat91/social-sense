@@ -178,12 +178,12 @@ const CTA_CLASS =
 function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-page/85 backdrop-blur">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6">
-        <a href="#top" className="flex items-center gap-2.5">
-          <span className="grid size-7 place-items-center rounded-md bg-solid text-on-solid">
-            <BrandMark size={17} />
+      <div className="flex h-16 w-full items-center justify-between px-6 md:px-8">
+        <a href="#top" className="flex items-center gap-3">
+          <span className="grid size-10 place-items-center rounded-lg bg-solid text-on-solid">
+            <BrandMark size={25} />
           </span>
-          <span className="text-[15px] font-semibold tracking-tight">
+          <span className="text-lg font-semibold tracking-tight">
             Social Sense
           </span>
         </a>

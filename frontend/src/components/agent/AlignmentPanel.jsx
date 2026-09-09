@@ -1,45 +1,34 @@
-import { Row, Col, Card, Alert, Empty } from 'antd'
-import { ThunderboltOutlined } from '@ant-design/icons'
+import { Empty, Skeleton } from 'antd'
 import ReactECharts from 'echarts-for-react'
 
-/** 跨平台对齐呈现：统一时间轴上的声量/情绪 z-score 曲线（缺失断点不插值） */
+/** 跨平台对齐呈现：统一时间轴上的声量/情绪 z-score 曲线（缺失断点不插值，无卡片盒） */
 export default function AlignmentPanel({ volumeOption, sentimentOption, isSingle, loading }) {
+  if (loading) {
+    return <Skeleton active paragraph={{ rows: 8 }} title={false} />
+  }
   return (
-    <>
-      <Card
-        title={(
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-            <ThunderboltOutlined style={{ color: 'var(--accent)' }} />
-            跨平台对齐呈现
-            <span className="sys-label" style={{ color: 'var(--text-3)', fontSize: 12, fontWeight: 400 }}>
-              统一时间轴 · 缺失断点不插值
-            </span>
-          </span>
-        )}
-        style={{ marginBottom: 16 }}
-        loading={loading}
-      >
-        {isSingle && (
-          <Alert
-            type="info"
-            showIcon
-            message="当前为单平台分析，跨平台对齐图仅展示该平台自身时序。"
-            style={{ marginBottom: 12 }}
-          />
-        )}
+    <div>
+      {isSingle && (
+        <div className="note">
+          <span className="note__tag">提示</span>
+          当前为单平台分析，跨平台对齐图仅展示该平台自身时序。
+        </div>
+      )}
+      <div className="chart-block">
+        <div className="chart-block__title">
+          跨平台声量对齐（z-score，统一时间轴）
+          <span className="chart-block__meta">缺失断点不插值</span>
+        </div>
         {volumeOption
           ? <ReactECharts option={volumeOption} style={{ height: 340 }} />
           : <Empty description="无可对齐的时序数据" />}
-      </Card>
-      <Row gutter={16} style={{ marginBottom: 16 }}>
-        <Col span={24} xs={24}>
-          <Card loading={loading}>
-            {sentimentOption
-              ? <ReactECharts option={sentimentOption} style={{ height: 320 }} />
-              : <Empty description="无情绪时序数据" />}
-          </Card>
-        </Col>
-      </Row>
-    </>
+      </div>
+      <div className="chart-block">
+        <div className="chart-block__title">跨平台情绪均值对齐（z-score）</div>
+        {sentimentOption
+          ? <ReactECharts option={sentimentOption} style={{ height: 320 }} />
+          : <Empty description="无情绪时序数据" />}
+      </div>
+    </div>
   )
 }
