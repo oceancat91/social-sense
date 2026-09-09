@@ -263,7 +263,7 @@ function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="nav-link transition-colors duration-200 hover:text-txt"
+              className="nav-link"
             >
               {item.label}
             </a>
@@ -317,12 +317,6 @@ function Hero() {
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a href={PRODUCT_URL} className={CTA_CLASS}>
                 进入分析台
-              </a>
-              <a
-                href="#capabilities"
-                className="inline-flex items-center gap-2 rounded-md border border-line2 px-5 py-3 text-sm font-semibold text-txt2 transition-colors hover:border-txt3 hover:text-txt"
-              >
-                查看能力
               </a>
             </div>
           </Reveal>

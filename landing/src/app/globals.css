@@ -58,27 +58,17 @@ section[id] {
   outline-offset: 2px;
 }
 
-/* ---------- 顶栏导航：下划线滑入（restrained motion） ---------- */
+/* ---------- 顶栏导航：悬浮深色底（替代下划线） ---------- */
 .nav-link {
-  position: relative;
-  padding-block: 2px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  color: var(--color-txt2);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  height: 1.5px;
-  width: 100%;
-  border-radius: 1px;
-  background: var(--color-txt);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.nav-link:hover::after,
-.nav-link:focus-visible::after {
-  transform: scaleX(1);
+.nav-link:hover,
+.nav-link:focus-visible {
+  background: var(--color-solid);
+  color: var(--color-on-solid);
 }
 
 /* ---------- 全局噪点纹理（surface texture） ---------- */
