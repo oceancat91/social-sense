@@ -256,7 +256,7 @@ section[id] {
 }
 
 .data-field:not([data-webgl="unavailable"]) .data-field__fallback {
-  opacity: 0.28;
+  opacity: 0.14;
 }
 
 .data-field__labels {
@@ -266,22 +266,39 @@ section[id] {
   pointer-events: none;
 }
 
+/* 仪器铭牌：细圆点 + 等宽字，无边框方盒，避免面板感 */
 .data-field__label {
   position: absolute;
   left: 0;
   top: 0;
-  padding: 4px 7px;
-  border: 1px solid rgb(87 127 195 / 0.18);
-  border-radius: 5px;
-  background: rgb(249 251 255 / 0.74);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.8);
-  color: var(--color-txt2);
-  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #33415c;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
   line-height: 1;
+  letter-spacing: 0.04em;
   white-space: nowrap;
-  backdrop-filter: blur(8px);
-  transform: translate3d(-100px, -100px, 0);
-  transition: opacity 0.25s ease;
+  text-shadow:
+    0 0 6px rgb(245 247 252 / 0.95),
+    0 0 12px rgb(245 247 252 / 0.85),
+    0 0 20px rgb(245 247 252 / 0.7);
+  transform: translate3d(-200px, -200px, 0);
+  transition: opacity 0.3s ease;
+}
+
+.data-field__label::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #2563eb;
+  box-shadow: 0 0 6px rgb(37 99 235 / 0.5);
 }
 
 .data-field--loading::after {
