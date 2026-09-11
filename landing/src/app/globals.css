@@ -73,6 +73,115 @@ section[id] {
   color: var(--color-on-solid);
 }
 
+/* ---------- 主 CTA：常驻透明毛玻璃拟态 ---------- */
+/* 玻璃面取与页面背景同一色系的半透明底，边缘由细边框界定。
+   光感遵循 taste-skill 附录 C 的"诚实玻璃近似"：不用生硬的反光条，
+   改用「左上角自然扩散的柔光 + 内圈 1px 细边 + 顶部边缘高光」三层，
+   让光像从上方洒下来，而不是一条锐利的镜面反光带。
+   hover 交互保持克制：底色微透、柔光微亮，不做位移缩放，文字稳定不抖。 */
+.cta-glass {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgb(203 210 221 / 0.85);
+  background-color: rgb(245 246 248 / 0.28);
+  color: var(--color-txt);
+  backdrop-filter: blur(16px) saturate(170%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.55),
+    inset 0 -1px 0 rgb(255 255 255 / 0.14),
+    0 10px 26px -22px rgb(31 64 128 / 0.28);
+  transition:
+    background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* hover 只做颜色与光效增强，不做位移/缩放，文字保持稳定 */
+.cta-glass:hover {
+  background-color: rgb(245 246 248 / 0.42);
+  border-color: rgb(186 195 208 / 0.95);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.72),
+    inset 0 -1px 0 rgb(255 255 255 / 0.2),
+    0 14px 34px -20px rgb(31 64 128 / 0.38);
+}
+
+/* 左上角自然扩散的柔光：从顶角溢出、向外渐隐，避免硬反光条 */
+.cta-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 20% -12%, rgb(255 255 255 / 0.42), transparent 42%),
+    linear-gradient(90deg, rgb(255 255 255 / 0.14), transparent 46%, rgb(255 255 255 / 0.08));
+  opacity: 0.9;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* hover 时柔光更亮一点，暗示"活起来" */
+.cta-glass:hover::before {
+  opacity: 1;
+}
+
+/* 内圈细边：1px 内描边，勾勒玻璃厚度而非一道反光 */
+.cta-glass::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  border-radius: inherit;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  pointer-events: none;
+}
+
+/* 按下时仅压暗一点（颜色反馈），不缩放、不位移，文字不抖 */
+.cta-glass:active {
+  background-color: rgb(245 246 248 / 0.5);
+}
+
+/* ---------- 顶栏：滚动时自然淡入毛玻璃面 ---------- */
+/* 关键点：blur 半径不是突变的常量，而是注册过的可插值长度，
+   滚动过阈值时由 CSS 过渡平滑爬升，避免"啪"地一下出现毛玻璃。
+   只有离散的已滚动状态走 JS，连续变化全部交给合成层。 */
+@property --ss-header-blur {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --ss-header-sat {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+.ss-header {
+  --ss-header-blur: 0px;
+  --ss-header-sat: 100%;
+  border-bottom: 1px solid transparent;
+  background-color: rgb(246 249 253 / 0);
+  backdrop-filter: blur(var(--ss-header-blur)) saturate(var(--ss-header-sat));
+  box-shadow: 0 10px 28px -22px rgb(20 24 36 / 0);
+  transition:
+    --ss-header-blur 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    --ss-header-sat 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ss-header[data-lifted="true"] {
+  --ss-header-blur: 14px;
+  --ss-header-sat: 150%;
+  border-color: var(--color-line);
+  background-color: rgb(246 249 253 / 0.82);
+  box-shadow: 0 10px 28px -22px rgb(20 24 36 / 0.22);
+}
+
 /* ---------- 全局噪点纹理（surface texture） ---------- */
 .noise-overlay {
   position: fixed;
@@ -98,6 +207,72 @@ section[id] {
     linear-gradient(180deg, #f9fbff 0%, #f4f7fc 48%, #f5f6f8 100%);
 }
 
+/* ---------- 极光模糊场：高模糊柔光光斑，柔焦主体 ---------- */
+/* 借鉴 deepseek 官网的柔光背景质感：大尺度、低饱和、强模糊的光斑相互叠压，
+   让背景读作一层雾化的光而不是清晰的形状。模糊施加在每个光斑自身，
+   动画只改 transform，浏览器可预栅格化模糊结果并在合成层上位移。 */
+.atmosphere-aurora {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.atmosphere-aurora__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(56px);
+  will-change: transform;
+}
+
+.atmosphere-aurora__blob--one {
+  top: -14%;
+  right: -6%;
+  width: 62vw;
+  height: 52vw;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(104 152 242 / 0.5),
+    rgb(104 152 242 / 0) 68%
+  );
+  animation: auroraDriftOne 28s ease-in-out infinite alternate;
+}
+
+.atmosphere-aurora__blob--two {
+  top: 16%;
+  left: -14%;
+  width: 54vw;
+  height: 46vw;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(186 214 255 / 0.62),
+    rgb(186 214 255 / 0) 70%
+  );
+  animation: auroraDriftTwo 34s ease-in-out infinite alternate;
+}
+
+.atmosphere-aurora__blob--three {
+  top: 60%;
+  left: 24%;
+  width: 58vw;
+  height: 40vw;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(158 194 246 / 0.38),
+    rgb(158 194 246 / 0) 72%
+  );
+  animation: auroraDriftThree 40s ease-in-out infinite alternate;
+}
+
+@keyframes auroraDriftOne {
+  to { transform: translate3d(-4%, 3%, 0) scale(1.08); }
+}
+@keyframes auroraDriftTwo {
+  to { transform: translate3d(5%, -3%, 0) scale(1.06); }
+}
+@keyframes auroraDriftThree {
+  to { transform: translate3d(-3%, -4%, 0) scale(1.05); }
+}
+
 .atmosphere-wave {
   position: absolute;
   right: -18vw;
@@ -117,8 +292,8 @@ section[id] {
   top: 5vh;
   width: 88vw;
   height: 38vw;
-  opacity: 0.46;
-  filter: blur(3px);
+  opacity: 0.44;
+  filter: blur(7px);
   animation: atmosphereDriftFar 22s ease-in-out infinite alternate;
 }
 
@@ -127,7 +302,8 @@ section[id] {
   right: -26vw;
   width: 92vw;
   height: 32vw;
-  opacity: 0.34;
+  opacity: 0.32;
+  filter: blur(5px);
   transform: rotate(-7deg);
   animation: atmosphereDriftMid 27s ease-in-out infinite alternate;
 }
@@ -137,9 +313,9 @@ section[id] {
   right: -31vw;
   width: 96vw;
   height: 27vw;
-  opacity: 0.24;
+  opacity: 0.22;
   transform: rotate(-4deg);
-  filter: blur(1px);
+  filter: blur(3px);
   animation: atmosphereDriftNear 31s ease-in-out infinite alternate;
 }
 

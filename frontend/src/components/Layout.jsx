@@ -1,13 +1,23 @@
 import { Outlet, useNavigate } from 'react-router-dom'
 import { Layout as AntLayout, Dropdown } from 'antd'
+import { useEffect, useState } from 'react'
 import BrandMark from './BrandMark'
 import NoiseOverlay from './agent/NoiseOverlay'
 import AgentBackground from './agent/AgentBackground'
 
-const { Header, Content } = AntLayout
+const { Content } = AntLayout
 
 function Layout() {
   const navigate = useNavigate()
+  const [lifted, setLifted] = useState(false)
+
+  // 只记录离散的「已滚动」状态；模糊半径、底色、hairline 的连续过渡交给 CSS（合成层插值）。
+  useEffect(() => {
+    const onScroll = () => setLifted(window.scrollY > 16)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const handleLogout = () => {
     localStorage.removeItem('token')
@@ -24,7 +34,7 @@ function Layout() {
       <AgentBackground />
       <NoiseOverlay />
       <AntLayout className="ss-app-shell">
-        <Header className="ss-header">
+        <header className="ss-header" data-lifted={lifted}>
           <div className="ss-header__inner">
             <a href="https://socialsense.cn/" className="ss-brand">
               <span className="ss-brand__mark">
@@ -39,7 +49,7 @@ function Layout() {
               </button>
             </Dropdown>
           </div>
-        </Header>
+        </header>
 
         <Content className="ss-content">
           <div className="page-enter ss-page-frame">

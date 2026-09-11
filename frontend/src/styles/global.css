@@ -255,17 +255,48 @@ code,
   color: var(--text-1);
 }
 
-.ant-layout-header.ss-header {
+/* ---------- 顶栏：与 Top 页一致 —— 顶部透明，滚动后自然淡入毛玻璃 ---------- */
+/* 关键点：blur 半径不是突变的常量，而是注册过的可插值长度，
+   滚动过阈值时由 CSS 过渡平滑爬升，避免"啪"地一下出现毛玻璃。
+   只有离散的已滚动状态走 JS，连续变化全部交给合成层。 */
+@property --ss-header-blur {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --ss-header-sat {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+.ss-header {
+  --ss-header-blur: 0px;
+  --ss-header-sat: 100%;
   position: fixed;
   inset: 0 0 auto;
   z-index: 50;
   height: 64px;
   padding: 0;
-  border-bottom: 1px solid var(--border);
-  background: rgb(249 251 255 / 0.82);
-  backdrop-filter: blur(18px) saturate(145%);
-  -webkit-backdrop-filter: blur(18px) saturate(145%);
   line-height: normal;
+  border-bottom: 1px solid transparent;
+  background-color: rgb(246 249 253 / 0);
+  backdrop-filter: blur(var(--ss-header-blur)) saturate(var(--ss-header-sat));
+  box-shadow: 0 10px 28px -22px rgb(20 24 36 / 0);
+  transition:
+    --ss-header-blur 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    --ss-header-sat 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ss-header[data-lifted="true"] {
+  --ss-header-blur: 14px;
+  --ss-header-sat: 150%;
+  border-color: var(--border);
+  background-color: rgb(246 249 253 / 0.82);
+  box-shadow: 0 10px 28px -22px rgb(20 24 36 / 0.22);
 }
 .ss-header__inner {
   width: 100%;

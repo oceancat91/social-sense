@@ -184,7 +184,7 @@ export default function Page() {
       <ScrollProgress />
       <NoiseOverlay />
       <Header />
-      <main className="relative z-10 w-full max-w-full pt-16">
+      <main className="relative z-10 w-full max-w-full">
         <Hero />
         <PlatformStrip />
         <Method />
@@ -228,25 +228,23 @@ function Reveal({
 /* ---------- 统一主 CTA ---------- */
 
 const CTA_CLASS =
-  "inline-flex items-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:scale-[0.98]";
+  "cta-glass inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
 
 /* ---------- S1 顶栏 ---------- */
 
 function Header() {
-  // 滚动状态：用 Motion useScroll + useMotionValueEvent（替代 window scroll listener）
+  // 只记录离散的"已滚动"状态；模糊半径、底色、hairline 的连续过渡全部交给 CSS。
+  // 逐帧跟滚动量走的是 CSS 变量插值（合成层），React 不参与重渲染。
   const { scrollY } = useScroll();
-  const [scrolled, setScrolled] = useState(false);
+  const [lifted, setLifted] = useState(false);
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setScrolled(latest > 8);
+    setLifted(latest > 16);
   });
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur transition-all duration-300 ${
-        scrolled
-          ? "border-line bg-page/95 shadow-[0_12px_32px_-20px_rgb(20_24_36/0.25)]"
-          : "border-transparent bg-page/70"
-      }`}
+      data-lifted={lifted}
+      className="ss-header fixed inset-x-0 top-0 z-50"
     >
       <div className="flex h-16 w-full items-center justify-between px-6 md:px-8">
         <a href="#top" className="group flex items-center gap-3">
@@ -280,7 +278,7 @@ function Hero() {
   return (
     <section id="top" className="hero-stage relative overflow-hidden">
       <div className="hero-glow" aria-hidden="true" />
-      <div className="relative mx-auto grid min-h-[calc(100dvh-4rem)] w-full max-w-7xl gap-8 px-6 pb-12 pt-12 md:pt-16 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-10 lg:pb-16 lg:pt-20">
+      <div className="relative mx-auto grid min-h-[100dvh] w-full max-w-7xl gap-8 px-6 pb-12 pt-28 md:pt-32 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-10 lg:pb-16 lg:pt-36">
         <div className="relative z-10">
           <h1 className="text-4xl font-semibold leading-[1.14] tracking-tight text-txt md:text-[54px] lg:text-[60px]">
             <SplitText
