@@ -13,30 +13,30 @@ export default function AlignmentPanel({ aligned, isSingle, loading }) {
       {isSingle && (
         <div className="note">
           <span className="note__tag">提示</span>
-          当前为单平台分析，跨平台对齐图仅展示该平台自身时序。
+          当前只有单一平台的数据，跨平台对比暂时做不了。
         </div>
       )}
       <LieflatChartFrame
         className="chart-block"
-        title="声量在平台之间呈现长周期错峰"
-        subtitle="每根发丝代表等宽时间窗内的绝对峰值 / 最多 96 窗 / 缺失保持空白"
-        code="L3 BARCODE LOLLIPOP"
-        source="ALIGNED VOLUME / SOCIAL SENSE REPORT / CUSTOM BLUE"
+        title="同一件事，各平台的热度并不同步"
+        subtitle="谁先火、谁在跟，一根根看得很清楚。"
+        code="跨平台热度"
+        source="Social Sense · 跨平台声量"
       >
         {aligned?.time_axis?.length && Object.keys(aligned?.z_series || {}).length
           ? <AlignedBarcodeChart timeAxis={aligned.time_axis} zSeries={aligned.z_series} />
-          : <Empty description="无可对齐的时序数据" />}
+          : <Empty description="暂无可用数据" />}
       </LieflatChartFrame>
       <LieflatChartFrame
         className="chart-block"
-        title="各平台情绪集中区间并不相同"
-        subtitle="每道山脊代表一个平台 / 横轴裁切至 1% 至 99% 分位且尾部并入两端 / 虚线为中位数"
-        code="L19 RIDGELINE"
-        source="ALIGNED SENTIMENT / SOCIAL SENSE REPORT / CUSTOM BLUE"
+        title="每个平台的情绪重心，落在不同位置"
+        subtitle="山脊越高，说明该平台的情绪越集中。"
+        code="情绪分布"
+        source="Social Sense · 情绪分布"
       >
         {Object.keys(aligned?.z_series || {}).length
           ? <SentimentRidgeline zSeries={aligned.z_series} />
-          : <Empty description="无情绪时序数据" />}
+          : <Empty description="暂无可用数据" />}
       </LieflatChartFrame>
     </div>
   )

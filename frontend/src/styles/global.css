@@ -86,7 +86,7 @@ a {
   letter-spacing: 0.01em;
 }
 
-/* 终端感小号代码标签（门禁、粒度等） */
+/* 终端感小号代码标签（校验项、采样精度等） */
 code,
 .sys-label {
   font-family: "JetBrains Mono Variable", ui-monospace, SFMono-Regular,
@@ -312,6 +312,9 @@ code,
   }
 }
 .ss-user-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   border: 0;
   padding: 8px 0 8px 16px;
   background: transparent;
@@ -485,13 +488,16 @@ code,
   color: var(--text-3);
   font-size: 13px;
   margin-bottom: 24px;
-  font-family: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
 }
 .ss-login__panel .ant-input-affix-wrapper,
 .ss-login__panel .ant-input {
   border-radius: 6px;
 }
 .ss-login__panel .field-prefix {
+  color: var(--text-3);
+}
+.ss-login__panel .ant-input-suffix,
+.ss-login__panel .ant-input-password-icon {
   color: var(--text-3);
 }
 
@@ -839,7 +845,12 @@ code,
   border-bottom: 1px solid var(--border-faint);
   font-size: 13px;
 }
-.claims__mark { color: var(--accent); flex-shrink: 0; }
+.claims__mark {
+  color: var(--accent);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+}
 .claims__text { color: var(--text-2); }
 .claims__src {
   color: var(--text-3);
@@ -848,7 +859,7 @@ code,
   font-size: 12px;
 }
 
-/* ---------- 门禁表标题 ---------- */
+/* ---------- 校验表格标题 ---------- */
 .gates__title {
   font-size: 13.5px;
   font-weight: 600;

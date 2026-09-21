@@ -172,6 +172,6 @@
 
 ## 5. 数据采集说明
 
-当前阶段采集由多平台模拟数据源驱动（`scripts/seed_demo.py` / `scripts/crawl.py`），模拟热点事件在 6 大平台的完整生命周期与跨平台传播时序。真实平台采集器已在 `crawler_service.py` 预留接口，接入合规数据源后可按平台逐步替换。
+当前阶段采集由多平台模拟数据源驱动（`scripts/bootstrap/seed_demo.py` / `scripts/operations/crawl.py`），模拟热点事件在 6 大平台的完整生命周期与跨平台传播时序。真实平台采集器已在 `crawler_service.py` 预留接口，接入合规数据源后可按平台逐步替换。
 
 情感分析默认使用 HuggingFace 预训练模型（`SENTIMENT_MODEL_NAME`），模型不可用或置信度不足时自动降级：预训练模型 → 词典分析（含否定词、程度副词处理）。

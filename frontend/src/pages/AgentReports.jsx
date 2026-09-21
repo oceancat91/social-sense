@@ -113,7 +113,7 @@ function AgentReports() {
       ) : (
         <>
           <Reveal delay={60}>
-            <Section title="概览" desc="关键词 / 回声室 / 共振 / 立场">
+            <Section title="概览" desc="一眼掌握全局">
               <ReportOverview
                 detail={detail}
                 ct={ct}
@@ -128,13 +128,13 @@ function AgentReports() {
           </Reveal>
 
           <Reveal delay={110}>
-            <Section title="跨平台结论" desc="主控 Agent 归纳">
+            <Section title="跨平台结论" desc="AI 归纳的核心判断">
               <ConclusionPanel ct={ct} loading={loading} />
             </Section>
           </Reveal>
 
           <Reveal delay={150}>
-            <Section title="对齐呈现" desc="峰值条码 / 情绪分布">
+            <Section title="节奏对齐" desc="谁先火，谁在跟">
               <AlignmentPanel
                 aligned={aligned}
                 isSingle={isSingle}
@@ -144,7 +144,7 @@ function AgentReports() {
           </Reveal>
 
           <Reveal delay={190}>
-            <Section title="立场与共振" desc="分布 / 相关性">
+            <Section title="立场与共振" desc="谁在同声，谁在分化">
               <StancePanel
                 stanceDist={fusion.stance_dist}
                 temporalCorr={fusion.temporal_corr}
@@ -155,7 +155,7 @@ function AgentReports() {
           </Reveal>
 
           <Reveal delay={230}>
-            <Section title="分歧与门禁" desc="扩散 / 校准">
+            <Section title="分歧与校验" desc="分歧在哪爆发，结论是否可信">
               <DivergencePanel divergenceOption={divergenceOption} calib={calib} loading={loading} />
             </Section>
           </Reveal>

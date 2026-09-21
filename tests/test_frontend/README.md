@@ -1,16 +1,3 @@
 # 前端测试
 
-前端测试使用 Vitest + React Testing Library。
-
-## 运行测试
-
-```bash
-cd frontend
-npm run test
-```
-
-## 测试规范
-
-- 组件测试文件放在 `__tests__/` 目录下
-- 文件命名格式：`ComponentName.test.jsx`
-- 每个组件至少包含渲染测试和基本交互测试
+分析工作台（`frontend/`）与介绍页（`landing/`）目前没有自动化测试套件。涉及 UI、路由或可视化的改动，请在浏览器中按实际用户路径手动验证。

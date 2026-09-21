@@ -85,11 +85,14 @@ export default function SplitText({
 
   useEffect(() => {
     if (typeof document === "undefined") return;
-    if (document.fonts?.status === "loaded") {
-      setFontsLoaded(true);
-    } else {
-      document.fonts?.ready.then(() => setFontsLoaded(true));
-    }
+    let cancelled = false;
+    const ready = document.fonts?.ready ?? Promise.resolve();
+    ready.then(() => {
+      if (!cancelled) setFontsLoaded(true);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   useGSAP(

@@ -92,7 +92,7 @@ model_version          # 本 Skill 版本号
 
 ## 人怎么用（实现后的目标命令）
 
-仍在 **`pytorch` 根目录**执行。
+仍在 **`agent/`** 目录执行。
 
 ### 最常用：给已有 D_platform「盖章」正式画像
 

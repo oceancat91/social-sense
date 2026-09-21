@@ -2,7 +2,7 @@
 
 这里存放**单个舆情事件 / 话题**经 PlatformCrawler + StanceProfiler 处理后的正式数据包，供后续分析 Skill 与实验复用。
 
-当前数据源平台：**哔哩哔哩、微博、小红书**。
+当前数据源平台：**哔哩哔哩、微博、小红书、抖音、快手**（知乎走适配器，正式事件包按入库索引为准）。
 
 ---
 
@@ -12,6 +12,7 @@
 dataset/
 ├── README.md                 ← 本说明
 ├── INDEX.md                  ← 事件索引表（每入库一条就追加一行）
+├── domains.json              ← 12 个分析领域的 code ↔ 中文名
 ├── real_multiplatform/       ← 清洗后真实多平台 ZIP 的接入结果
 │   ├── manifest.json         ← 文件名解码、哈希、行数、时间窗与产物索引
 │   ├── raw/                  ← 本地 CSV（已由 .gitignore 排除）
@@ -129,7 +130,7 @@ python agent/tools/import_clean_zips.py `
 ### 推荐：StanceProfiler 一键写入
 
 ```powershell
-cd d:\Pycharm\PycharmProject\cvProject\KobeBryant\pytorch
+cd agent
 
 python -m StanceProfiler.pipeline `
   --in PlatformCrawler\outputs\D_platform_xxx.json `

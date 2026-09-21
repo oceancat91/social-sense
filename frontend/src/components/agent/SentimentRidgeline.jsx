@@ -79,7 +79,7 @@ export default function SentimentRidgeline({ zSeries, metric = 'sent_mean' }) {
       className="sentiment-ridge"
       viewBox={`0 0 ${width} ${height}`}
       role="img"
-      aria-label="各平台情绪 z-score 分布脊线"
+      aria-label="各平台情绪分布脊线"
       tabIndex="0"
       onClick={() => setReplay(value => value + 1)}
       onKeyDown={(event) => {

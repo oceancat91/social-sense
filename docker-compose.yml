@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   mysql:
     image: mysql:8.0
@@ -42,6 +40,11 @@ services:
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin123}
       - HF_ENDPOINT=https://hf-mirror.com
       - SENTIMENT_MODEL_NAME=lxyuan/distilbert-base-multilingual-cased-sentiments-student
+      - LLM_API_KEY=${LLM_API_KEY:-}
+      - LLM_BASE_URL=${LLM_BASE_URL:-https://api.deepseek.com}
+      - LLM_MODEL=${LLM_MODEL:-deepseek-chat}
+      - LLM_TIMEOUT=${LLM_TIMEOUT:-30}
+      - LLM_MAX_WORKERS=${LLM_MAX_WORKERS:-8}
       # 多 Agent 引擎：代码目录挂载 + DeepSeek 密钥
       - AGENT_ROOT=/app/agent
       - MULTIAGENT_ROOT=/app/multiagent

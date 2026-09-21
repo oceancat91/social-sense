@@ -1,7 +1,9 @@
 import { Outlet, useNavigate } from 'react-router-dom'
 import { Layout as AntLayout, Dropdown } from 'antd'
 import { useEffect, useState } from 'react'
+import { ChevronDown, ChevronUp } from 'lucide'
 import BrandMark from './BrandMark'
+import MorphGlyph from './MorphGlyph'
 import NoiseOverlay from './agent/NoiseOverlay'
 import AgentBackground from './agent/AgentBackground'
 
@@ -10,6 +12,7 @@ const { Content } = AntLayout
 function Layout() {
   const navigate = useNavigate()
   const [lifted, setLifted] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   // 只记录离散的「已滚动」状态；模糊半径、底色、hairline 的连续过渡交给 CSS（合成层插值）。
   useEffect(() => {
@@ -43,9 +46,17 @@ function Layout() {
               <span className="ss-brand__name">Social Sense</span>
             </a>
 
-            <Dropdown menu={userMenu} placement="bottomRight" trigger={['click']}>
+            {/* 管理员菜单：chevron 由 morphicons 在展开/收起之间做真实形变，
+                不再依赖 CSS 旋转。 */}
+            <Dropdown
+              menu={userMenu}
+              placement="bottomRight"
+              trigger={['click']}
+              onOpenChange={setMenuOpen}
+            >
               <button type="button" className="ss-user-menu" aria-label="打开管理员菜单">
                 管理员
+                <MorphGlyph icon={menuOpen ? ChevronUp : ChevronDown} size={14} />
               </button>
             </Dropdown>
           </div>

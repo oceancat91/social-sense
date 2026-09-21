@@ -41,24 +41,10 @@ from PlatformCrawler.dataloader.builder import build_d_platform  # noqa: E402
 from PlatformCrawler.dataloader.cleaner import clean_records  # noqa: E402
 from StanceProfiler.profiler import profile_d_platform  # noqa: E402
 from multiagent.master import run_master  # noqa: E402
+from tools.domains import DOMAIN_NAMES  # noqa: E402
 
 TZ = ZoneInfo("Asia/Shanghai")
 csv.field_size_limit(20 * 1024 * 1024)
-
-DOMAIN_NAMES = {
-    "culture_history": "文化历史与艺术",
-    "economy_business": "财经商业与职场",
-    "education_science": "教育科研与科普",
-    "entertainment": "影视娱乐与明星",
-    "games_anime": "游戏动漫与虚拟内容",
-    "health_psychology": "医疗健康与心理",
-    "life_consumption": "生活消费与家庭",
-    "nature_rural": "自然环境与三农动物",
-    "public_affairs": "时政与公共治理",
-    "society_law": "社会事件与法治",
-    "sports_fitness": "体育竞技与健身",
-    "technology_industry": "科技工业与交通",
-}
 
 REQUIRED_COLUMNS = {
     "platform",

@@ -21,9 +21,9 @@ export const CT_STATUS = {
 /** 分析阶段定义（后端 progress.phase -> 展示名与序号） */
 export const PHASES = [
   { key: 'collect', index: 1, text: '采集舆情数据' },
-  { key: 'clean', index: 2, text: '清洗与情感分析' },
-  { key: 'skill', index: 3, text: '单平台 Agent 分析' },
-  { key: 'fusion', index: 4, text: '跨平台对齐融合' },
+  { key: 'clean', index: 2, text: '清洗并读懂情绪' },
+  { key: 'skill', index: 3, text: '单平台洞察' },
+  { key: 'fusion', index: 4, text: '跨平台融合' },
 ]
 
 /** 平台进度状态 -> 展示 */

@@ -8,12 +8,15 @@ import {
   App as AntApp,
 } from 'antd'
 import {
-  UserOutlined,
-  LockOutlined,
-  MailOutlined,
-} from '@ant-design/icons'
+  User,
+  Lock,
+  Mail,
+  Eye,
+  EyeOff,
+} from 'lucide'
 import api from '../services/api'
 import BrandMark from '../components/BrandMark'
+import MorphGlyph from '../components/MorphGlyph'
 
 function Login() {
   const [loading, setLoading] = useState(false)
@@ -72,8 +75,8 @@ function Login() {
             跨平台舆情感知，<em>穿透信息茧房。</em>
           </h1>
           <p>
-            多平台采集、立场画像与时间对齐融合，量化平台间的情绪分歧与回声室效应，
-            让公开讨论真正可被观察。
+            多平台同步采集，情绪与立场一次读懂，
+            让信息茧房无处藏身。
           </p>
         </div>
 
@@ -91,7 +94,7 @@ function Login() {
         <div className="ss-login__panel">
           <h2>{activeTab === 'login' ? '接入情报台' : '创建账号'}</h2>
           <p className="sub">
-            {activeTab === 'login' ? 'AUTH / LOGIN' : 'AUTH / REGISTER'}
+            {activeTab === 'login' ? '继续你的跨平台观察' : '创建账号，开始观察'}
           </p>
 
           <Form form={form} layout="vertical" onFinish={onFinish} autoComplete="off">
@@ -108,10 +111,17 @@ function Login() {
                   children: (
                     <>
                       <Form.Item label="邮箱" name="email" rules={[{ required: true, message: '请输入邮箱' }]}>
-                        <Input prefix={<MailOutlined className="field-prefix" />} placeholder="请输入邮箱" size="large" />
+                        <Input prefix={<MorphGlyph icon={Mail} size={16} className="field-prefix" />} placeholder="请输入邮箱" size="large" />
                       </Form.Item>
                       <Form.Item label="密码" name="password" rules={[{ required: true, message: '请输入密码' }]}>
-                        <Input.Password prefix={<LockOutlined className="field-prefix" />} placeholder="请输入密码" size="large" />
+                        <Input.Password
+                          prefix={<MorphGlyph icon={Lock} size={16} className="field-prefix" />}
+                          iconRender={(visible) => (
+                            <MorphGlyph icon={visible ? Eye : EyeOff} size={16} />
+                          )}
+                          placeholder="请输入密码"
+                          size="large"
+                        />
                       </Form.Item>
                       <Form.Item style={{ marginBottom: 0, marginTop: 26 }}>
                         <Button type="primary" htmlType="submit" loading={loading} block size="large">
@@ -127,13 +137,20 @@ function Login() {
                   children: (
                     <>
                       <Form.Item label="用户名" name="username" rules={[{ required: true, message: '请输入用户名' }]}>
-                        <Input prefix={<UserOutlined className="field-prefix" />} placeholder="请输入用户名" size="large" />
+                        <Input prefix={<MorphGlyph icon={User} size={16} className="field-prefix" />} placeholder="请输入用户名" size="large" />
                       </Form.Item>
                       <Form.Item label="邮箱" name="email" rules={[{ required: true, message: '请输入邮箱' }]}>
-                        <Input prefix={<MailOutlined className="field-prefix" />} placeholder="请输入邮箱" size="large" />
+                        <Input prefix={<MorphGlyph icon={Mail} size={16} className="field-prefix" />} placeholder="请输入邮箱" size="large" />
                       </Form.Item>
                       <Form.Item label="密码" name="password" rules={[{ required: true, message: '请输入密码' }, { min: 6, message: '密码至少 6 位' }]}>
-                        <Input.Password prefix={<LockOutlined className="field-prefix" />} placeholder="请输入密码（至少 6 位）" size="large" />
+                        <Input.Password
+                          prefix={<MorphGlyph icon={Lock} size={16} className="field-prefix" />}
+                          iconRender={(visible) => (
+                            <MorphGlyph icon={visible ? Eye : EyeOff} size={16} />
+                          )}
+                          placeholder="请输入密码（至少 6 位）"
+                          size="large"
+                        />
                       </Form.Item>
                       <Form.Item style={{ marginBottom: 0, marginTop: 26 }}>
                         <Button type="primary" htmlType="submit" loading={loading} block size="large">

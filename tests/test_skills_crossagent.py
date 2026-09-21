@@ -134,7 +134,8 @@ class SkillValidationTests(unittest.TestCase):
         alignment = evaluate_alignment(reports_dir)
         self.assertEqual(alignment["n_topics"], 24)
         anomaly = evaluate_anomaly(reports_dir)
-        self.assertEqual(anomaly["n_reports"], 60)
+        # bilibili/weibo 各 24 份，xiaohongshu/douyin 各 12 份。
+        self.assertEqual(anomaly["n_reports"], 72)
 
 
 if __name__ == "__main__":

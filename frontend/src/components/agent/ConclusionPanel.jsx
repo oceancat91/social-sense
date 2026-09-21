@@ -1,5 +1,7 @@
 import { Skeleton } from 'antd'
+import { ChevronRight } from 'lucide'
 import { platformName } from '../../utils/platforms'
+import MorphGlyph from '../MorphGlyph'
 
 /** 主控 Agent 归纳结论：summary + 风险提示 + 可验证断言（简洁分区，无卡片盒） */
 export default function ConclusionPanel({ ct, loading }) {
@@ -22,15 +24,15 @@ export default function ConclusionPanel({ ct, loading }) {
       )}
 
       <div className="claims">
-        <div className="claims__title">可验证断言（claims）</div>
+        <div className="claims__title">可验证的判断</div>
         {ct.claims?.map((c, i) => (
           <div key={i} className="claims__row">
-            <span className="claims__mark">›</span>
+            <span className="claims__mark"><MorphGlyph icon={ChevronRight} size={13} /></span>
             <span className="claims__text">{c.text}</span>
             <span className="claims__src">[{c.platforms?.map(platformName).join('、')}]</span>
           </div>
         ))}
-        {!ct.claims?.length && <div style={{ color: 'var(--text-3)', fontSize: 13 }}>无断言</div>}
+        {!ct.claims?.length && <div style={{ color: 'var(--text-3)', fontSize: 13 }}>暂无判断</div>}
       </div>
     </div>
   )

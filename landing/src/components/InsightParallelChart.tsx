@@ -141,14 +141,13 @@ export default function InsightParallelChart({ insights }: { insights: Insight[]
       </svg>
 
       <ol className="lf-parallel__legend">
-        {ranked.map(({ item }, index) => (
+        {ranked.map(({ item }) => (
           <li key={item.topic}>
             <span
               className="lf-parallel__key"
               style={{ backgroundColor: item === hero.item ? LIEFLAT.HERO : LIEFLAT.DATA2 }}
             />
             <span>{item.topic}</span>
-            <span className="lf-parallel__index">{String(index + 1).padStart(2, "0")}</span>
           </li>
         ))}
       </ol>

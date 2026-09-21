@@ -52,13 +52,13 @@
 
 #### Skill 1. 平台定向采集与清洗 Skill（PlatformCrawler）
 
-- **实现基座**：`bilibili-comment-crawler/`
-  - 关键词/话题全站检索：`B站关键词搜索.py`
-  - 视频/动态评论抓取：`B站评论爬虫.py`、`B站动态爬虫.py`
-  - 鉴权：`auto_get_cookie.py` / `setup_cookie.py`（`bili_cookie.txt`）
+- **实现基座**：`PlatformCrawler/`
+  - B 站检索与评论：`crawler/B站关键词搜索.py`、`crawler/B站评论爬虫.py`、`crawler/B站动态爬虫.py`
+  - 其余平台：`adapters/`（微博、抖音、小红书、知乎、快手）
+  - 鉴权：`crawler/auto_get_cookie.py` / `crawler/setup_cookie.py`（`bili_cookie.txt`）
 - **功能**：按关键词/话题检索内容实体 → 抓取帖文/评论及互动量 → **在同一 Skill 内完成规范清洗与字段标准化**（清洗不再拆为独立 Skill）
 - **输入**
-  - `platform`：平台标识（首期固定 `bilibili`）
+  - `platform`：平台标识（`bilibili` / `weibo` / `douyin` / `xiaohongshu` / `zhihu` / `kuaishou`）
   - `keyword`：话题关键词
   - `time_range`：`[start, end]`
   - `granularity`：时序粒度 `hour` | `day`
@@ -248,11 +248,11 @@ summary_analysis   # 自然语言概括分析（要点/阵营/争议焦点）
 
 **定位**：单一社交平台话题舆情全流程；输出标准化平台级数据包；**不**输出全局最终结论。
 
-> **实现入口**：`python -m Agent.orchestrator --topic 话题词`
+> **实现入口**（从仓库根目录运行）：`python -m agent.agent.orchestrator --topic 话题词`
 > 编排用 LangGraph 状态图（未安装 `langgraph` 时自动回退线性执行）；跑完 Skill1→6 后额外输出契约版 `platform_report_*.json`，供上层 `multiagent/` 消费。
 
 1. **任务初始化**  
-   接收主控参数：`platform`（首期 `bilibili`）、`keyword`、`time_range`、`granularity`；加载 `bilibili-comment-crawler` 鉴权与配额配置。
+   接收主控参数：`platform`（`bilibili` / `weibo` / `douyin` / `xiaohongshu` / `zhihu` / `kuaishou`）、`keyword`、`time_range`、`granularity`；加载 `PlatformCrawler` 鉴权与配额配置。
 
 2. **数据源构建（Skill1 → Skill2，顺序执行、联合出品）**  
    - 调用 **Skill1 PlatformCrawler**：关键词检索 → 评论采集 → **规范清洗 C1–C8**  
@@ -295,7 +295,7 @@ summary_analysis   # 自然语言概括分析（要点/阵营/争议焦点）
 | Skill5+6 结论生成与校准 | `Conclusion/`（`gen/` 生成 OT₀ + `calib/` G1–G7 门禁 / `pipeline.py`） |
 | 单事件正式数据集仓库 | `dataset/`（`README.md` / `events/<event_id>/`） |
 | 数据集规范 | `DATASET_SPEC.md` |
-| Agent 全链路编排 | `Agent/`（`agent.py` Skill1+2；`orchestrator.py` Skill1→6，LangGraph 状态图 + 线性兜底） |
+| Agent 全链路编排 | `agent/`（`agent.py` Skill1+2；`orchestrator.py` Skill1→6，LangGraph 状态图 + 线性兜底） |
 | Skill 封装层 | `skills/`（`base.py` 抽象 + `registry.py` 注册表 + `impls.py` 六项实现） |
 | Skill 验证工具 | `tools/evaluate_skills.py`（golden 立场标注 + 跨平台对齐 + Skill3 异常统计） |
 | 多平台多 Agent 架构 | 仓库根 `multiagent/`（契约 + 对齐 + 融合 + 主控 Agent） |
@@ -304,10 +304,10 @@ summary_analysis   # 自然语言概括分析（要点/阵营/争议焦点）
 
 ```bash
 # 全流水线
-python -m PlatformCrawler.pipeline 话题词 --since 2026-07-01 --until 2026-08-14 --max-videos 3 --comment-pages 2
+python -m agent.PlatformCrawler.pipeline 话题词 --since 2026-07-01 --until 2026-08-14 --max-videos 3 --comment-pages 2
 
 # 仅清洗建库（已有评论 CSV）
-python -m PlatformCrawler.dataloader.cli --csv a.csv b.csv --keyword 话题词 --since 2026-07-01 --until 2026-08-14 --out out.json
+python -m agent.PlatformCrawler.dataloader.cli --csv a.csv b.csv --keyword 话题词 --since 2026-07-01 --until 2026-08-14 --out out.json
 ```
 
 **Skill 封装与验证**
@@ -315,7 +315,7 @@ python -m PlatformCrawler.dataloader.cli --csv a.csv b.csv --keyword 话题词 -
 六项 Skill 已统一封装为 `skills/` 包（`Skill` 抽象 + `SkillContext` 状态载体 + `SkillRegistry` 注册表 + 六项实现），可独立调用或经 `run_pipeline` 串行执行：
 
 ```python
-from skills import SkillContext, run_pipeline
+from agent.skills import SkillContext, run_pipeline
 ctx = SkillContext(platform="bilibili", keyword="科比去世")
 run_pipeline(ctx)   # Skill1→6 串行执行，结果写入 ctx.d_platform/skill3/conclusion...
 ```
@@ -324,7 +324,7 @@ run_pipeline(ctx)   # Skill1→6 串行执行，结果写入 ctx.d_platform/skil
 
 ```bash
 # 输出到 dataset/eval/evaluation_report.json
-python -m tools.evaluate_skills
+python -m agent.tools.evaluate_skills
 ```
 
 ---
@@ -348,10 +348,10 @@ python -m tools.evaluate_skills
 
 ```bash
 # 单平台流水线（--platform 非 bilibili 走通用适配器）
-python -m PlatformCrawler.pipeline 话题词 --platform weibo --since 2026-07-01 --until 2026-08-14
+python -m agent.PlatformCrawler.pipeline 话题词 --platform weibo --since 2026-07-01 --until 2026-08-14
 
 # 全链路编排（Skill1→6，--platform 分发）
-python -m Agent.orchestrator --topic 话题词 --platform xiaohongshu
+python -m agent.agent.orchestrator --topic 话题词 --platform xiaohongshu
 ```
 
 > 各平台真实采集需先配置对应 `*_cookie.txt`（详见各 adapter 文件头注释）；抖音/小红书/快手签名算法由平台前端 JS 生成，存在失效风险，失效时仅需替换 adapter 内签名函数，采集流程与字段映射不受影响。

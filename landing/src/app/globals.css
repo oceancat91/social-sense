@@ -73,41 +73,75 @@ section[id] {
   color: var(--color-on-solid);
 }
 
-/* ---------- 主 CTA：常驻透明毛玻璃拟态 ---------- */
-/* 玻璃面取与页面背景同一色系的半透明底，边缘由细边框界定。
-   光感遵循 taste-skill 附录 C 的"诚实玻璃近似"：不用生硬的反光条，
-   改用「左上角自然扩散的柔光 + 内圈 1px 细边 + 顶部边缘高光」三层，
-   让光像从上方洒下来，而不是一条锐利的镜面反光带。
-   hover 交互保持克制：底色微透、柔光微亮，不做位移缩放，文字稳定不抖。 */
+/* ---------- 移动端导航面板：与顶栏同源的玻璃层，落在 header 内部 ---------- */
+.ss-mobile-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 24px 20px;
+  border-top: 1px solid var(--color-line);
+  background-color: rgb(246 249 253 / 0.94);
+  backdrop-filter: blur(18px) saturate(150%);
+}
+@media (min-width: 768px) {
+  .ss-mobile-nav {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+.ss-mobile-nav__link {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--color-line);
+  color: var(--color-txt2);
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.ss-mobile-nav__link:last-of-type {
+  border-bottom: 0;
+}
+.ss-mobile-nav__link:hover,
+.ss-mobile-nav__link:focus-visible {
+  color: var(--color-txt);
+}
+
+/* ---------- 主 CTA：透明玻璃光感 ---------- */
+/* 不使用 backdrop blur：背景保持清晰可见。材质只由透明折射层、
+   白色细边、顶部高光和冷蓝投影建立，避免读成磨砂毛玻璃。 */
 .cta-glass {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  border: 1px solid rgb(203 210 221 / 0.85);
-  background-color: rgb(245 246 248 / 0.28);
+  border: 1px solid rgb(255 255 255 / 0.88);
+  background:
+    linear-gradient(
+      135deg,
+      rgb(255 255 255 / 0.12),
+      rgb(255 255 255 / 0.015) 58%,
+      rgb(255 255 255 / 0.06)
+    ),
+    rgb(255 255 255 / 0.015);
   color: var(--color-txt);
-  backdrop-filter: blur(16px) saturate(170%);
   box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.55),
-    inset 0 -1px 0 rgb(255 255 255 / 0.14),
-    0 10px 26px -22px rgb(31 64 128 / 0.28);
+    inset 0 1px 0 rgb(255 255 255 / 0.72),
+    inset 0 0 0 1px rgb(255 255 255 / 0.1),
+    inset 0 -1px 0 rgb(94 126 176 / 0.08),
+    0 12px 30px -22px rgb(31 64 128 / 0.3);
   transition:
-    background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
     border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* hover 只做颜色与光效增强，不做位移/缩放，文字保持稳定 */
+/* hover 只增强边缘光与投影，不改变位置，文字保持稳定 */
 .cta-glass:hover {
-  background-color: rgb(245 246 248 / 0.42);
-  border-color: rgb(186 195 208 / 0.95);
+  border-color: rgb(255 255 255 / 1);
   box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.72),
-    inset 0 -1px 0 rgb(255 255 255 / 0.2),
+    inset 0 1px 0 rgb(255 255 255 / 0.9),
+    inset 0 0 0 1px rgb(255 255 255 / 0.16),
+    inset 0 -1px 0 rgb(94 126 176 / 0.12),
     0 14px 34px -20px rgb(31 64 128 / 0.38);
 }
 
-/* 左上角自然扩散的柔光：从顶角溢出、向外渐隐，避免硬反光条 */
+/* 清透玻璃的自然反射：低强度顶角光和横向微光，不模糊背后内容 */
 .cta-glass::before {
   content: "";
   position: absolute;
@@ -115,9 +149,9 @@ section[id] {
   z-index: -1;
   border-radius: inherit;
   background:
-    radial-gradient(circle at 20% -12%, rgb(255 255 255 / 0.42), transparent 42%),
-    linear-gradient(90deg, rgb(255 255 255 / 0.14), transparent 46%, rgb(255 255 255 / 0.08));
-  opacity: 0.9;
+    radial-gradient(circle at 18% -20%, rgb(255 255 255 / 0.48), transparent 40%),
+    linear-gradient(90deg, rgb(255 255 255 / 0.1), transparent 48%, rgb(255 255 255 / 0.05));
+  opacity: 0.72;
   pointer-events: none;
   transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -127,20 +161,13 @@ section[id] {
   opacity: 1;
 }
 
-/* 内圈细边：1px 内描边，勾勒玻璃厚度而非一道反光 */
-.cta-glass::after {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  z-index: -1;
-  border-radius: inherit;
-  border: 1px solid rgb(255 255 255 / 0.14);
-  pointer-events: none;
-}
-
-/* 按下时仅压暗一点（颜色反馈），不缩放、不位移，文字不抖 */
+/* 按下时只收紧光线，不缩放、不位移，文字不抖 */
 .cta-glass:active {
-  background-color: rgb(245 246 248 / 0.5);
+  border-color: rgb(255 255 255 / 0.78);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.62),
+    inset 0 0 0 1px rgb(255 255 255 / 0.08),
+    0 8px 24px -20px rgb(31 64 128 / 0.3);
 }
 
 /* ---------- 顶栏：滚动时自然淡入毛玻璃面 ---------- */

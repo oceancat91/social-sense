@@ -23,7 +23,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Social Sense | 跨平台舆情决策平台",
   description:
-    "实时采集多平台社交数据，对齐声量与情绪，量化回声室效应，把跨平台舆情读成可决策的信号。",
+    "六大平台实时追踪，把嘈杂的舆论收敛成一眼可读的决策信号。",
 };
 
 export default function RootLayout({

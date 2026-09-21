@@ -12,10 +12,10 @@ export default function StancePanel({ stanceDist, temporalCorr, platforms, loadi
     <div className="split">
       <div className="split__col">
         <LieflatChartFrame
-          title="中立讨论占据多数平台"
-          subtitle="每个平台严格拆成 100 个单位点 / 一点代表 1%"
-          code="L14 HUNDRED FIELD"
-          source="STANCE DISTRIBUTION / SOCIAL SENSE REPORT / CUSTOM BLUE"
+          title="沉默的大多数，才是舆论的底色"
+          subtitle="每个平台拆成 100 个点，一点代表 1%。"
+          code="立场构成"
+          source="Social Sense · 立场分布"
         >
           {Object.keys(stanceDist || {}).length
             ? <StanceField stanceDist={stanceDist} />
@@ -24,14 +24,14 @@ export default function StancePanel({ stanceDist, temporalCorr, platforms, loadi
       </div>
       <div className="split__col">
         <LieflatChartFrame
-          title="共振关系沿平台弧线展开"
-          subtitle="圆面积编码相关强度 / 实心为正相关 / 空心为负相关"
-          code="L4 ARC MATRIX"
-          source="TEMPORAL CORRELATION / SOCIAL SENSE REPORT / CUSTOM BLUE"
+          title="哪些平台在同声，哪些在背离"
+          subtitle="圆越大共振越强，实心为同向，空心为反向。"
+          code="共振关系"
+          source="Social Sense · 跨平台共振"
         >
           {platforms?.length
             ? <CorrelationArcMatrix temporalCorr={temporalCorr} platforms={platforms} />
-            : <Empty description="至少需两个平台方可计算共振" />}
+            : <Empty description="至少需要两个平台才能比较共振" />}
         </LieflatChartFrame>
       </div>
     </div>

@@ -78,7 +78,7 @@ export function divergenceTimelineOption(perBucket, dark = false) {
         const item = params[0]
         const raw = perBucket[item?.dataIndex]
         return raw
-          ? `时间 ${raw.ts.slice(0, 10)}<br/>情绪极差 <b>${Number(raw.sent_range).toFixed(4)}</b><br/>活跃平台 ${raw.active_platforms}`
+          ? `时间 ${raw.ts.slice(0, 10)}<br/>分歧幅度 <b>${Number(raw.sent_range).toFixed(4)}</b><br/>参与平台 ${raw.active_platforms}`
           : ''
       },
     },
@@ -92,7 +92,7 @@ export function divergenceTimelineOption(perBucket, dark = false) {
     },
     yAxis: {
       type: 'value',
-      name: '情绪极差',
+      name: '分歧幅度',
       nameTextStyle: { color: p.faint },
       splitLine: SPLIT_LINE(dark),
       axisLabel: AXIS_LABEL(dark),
@@ -100,7 +100,7 @@ export function divergenceTimelineOption(perBucket, dark = false) {
     },
     series: [
       {
-        name: '时桶发丝',
+        name: '分歧柱',
         type: 'bar',
         barWidth: 1.4,
         silent: true,
@@ -108,7 +108,7 @@ export function divergenceTimelineOption(perBucket, dark = false) {
         data: values,
       },
       {
-        name: '情绪极差',
+        name: '分歧幅度',
         type: 'line',
         smooth: false,
         symbol: 'none',

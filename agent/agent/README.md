@@ -10,16 +10,16 @@
 
 ## 用法
 
-先 `Ctrl+C` 停掉旧的交互进程，再在 `pytorch` 根目录：
+先 `Ctrl+C` 停掉旧的交互进程，再在 `agent/` 目录：
 
 ```powershell
-python -m Agent --topic 科比去世
+python -m agent --topic 科比去世
 ```
 
 或：
 
 ```powershell
-python -m Agent
+python -m agent
 # 只问话题，不再问日期
 ```
 

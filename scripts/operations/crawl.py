@@ -1,9 +1,10 @@
 """数据采集命令行脚本：采集 → 清洗 → 情感分析 → 入库"""
 import argparse
 import sys
-import os
+from pathlib import Path
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'backend'))
+REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPOSITORY_ROOT / 'backend'))
 
 from app import create_app
 from app.models.task import MonitorTask
@@ -26,7 +27,10 @@ def main():
     with app.app_context():
         user = User.query.filter_by(username=args.user).first()
         if not user:
-            print(f'用户 {args.user} 不存在，请先运行 init_db.py 初始化')
+            print(
+                f'用户 {args.user} 不存在，'
+                '请先运行 scripts/bootstrap/init_db.py 初始化'
+            )
             sys.exit(1)
 
         task = MonitorTask.query.filter_by(

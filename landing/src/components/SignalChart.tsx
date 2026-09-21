@@ -207,7 +207,7 @@ export default function SignalChart({ className = "" }: { className?: string }) 
         letterSpacing="0.08em"
         fill={LIEFLAT.FAINT}
       >
-        一点代表一个时间桶 / 空心点代表周末 / 浅蓝区代表同步抬升窗口
+        浅蓝区 = 多个平台同时被点燃
       </text>
     </svg>
   );

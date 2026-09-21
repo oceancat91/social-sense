@@ -2,7 +2,7 @@
 
 一句话：输入**话题词 + 时间范围**，自动完成「搜视频 → 抓评论 → 清洗 → 做成标准舆情数据集」。
 
-当前只接了 **B 站**。产出文件符合项目根目录的 [`DATASET_SPEC.md`](../DATASET_SPEC.md)。
+B 站走 `crawler/` 全链路脚本；微博 / 抖音 / 小红书 / 知乎 / 快手走 `adapters/`。产出符合 [`DATASET_SPEC.md`](../DATASET_SPEC.md)。
 
 ---
 
@@ -33,10 +33,10 @@
 
 ## 使用前准备（只需一次）
 
-1. 打开终端，进入**项目根目录**（注意是 `pytorch` 这一层）：
+1. 打开终端，进入 **`agent/`** 目录（本 Skill 的 Python 包根）：
 
 ```powershell
-cd d:\Pycharm\PycharmProject\cvProject\KobeBryant\pytorch
+cd agent
 ```
 
 2. 安装依赖（若未装过）：
@@ -67,7 +67,7 @@ cd ..\..
 
 ## 最常用：一键跑通
 
-仍在 **`pytorch` 根目录**执行：
+仍在 **`agent/`** 目录执行：
 
 ```powershell
 python -m PlatformCrawler.pipeline 舞剧红楼梦 --since 2026-07-01 --until 2026-08-14 --max-videos 3 --comment-pages 2
@@ -189,7 +189,7 @@ PlatformCrawler/
 ## 常见问题
 
 **1. 提示找不到模块 / import 失败**  
-请在 `pytorch` 根目录运行 `python -m PlatformCrawler...`，不要只在子文件夹里乱跑。
+请在 `agent/` 目录运行 `python -m PlatformCrawler...`，不要只在子文件夹里乱跑。
 
 **2. 搜索成功、评论也爬了，但 JSON 里 `D_text` 是空的**  
 多半是**页数不够**：`--comment-mode latest` 从最新往旧翻，若 `--comment-pages` 太小，还没翻进 `--since/--until` 就停了。  

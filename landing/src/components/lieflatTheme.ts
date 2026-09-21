@@ -17,5 +17,6 @@ export const LIEFLAT = {
   HERO: "#2563EB",
   FAINT_DATA: "#B9C8DB",
   HALO: "#F7F9FC",
-  SERIES: ["#2563EB", "#192F5D", "#6D8FBE", "#B9C8DB"],
+  SERIES: ["#2563EB", "#192F5D", "#6D8FBE", "#B9C8DB", "#91A8C8", "#D4DDE9"],
+  RAMP: ["#E4E9F0", "#B9C8DB", "#91A8C8", "#6D8FBE", "#315A9B", "#192F5D"],
 } as const;

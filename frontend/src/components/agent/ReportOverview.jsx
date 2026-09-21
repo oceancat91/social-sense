@@ -63,7 +63,7 @@ export default function ReportOverview({
                 <dd>{statusMeta.text || '-'} / {ctMeta.text || '-'}</dd>
               </div>
               <div className="overview-key__fact">
-                <dt>数据粒度</dt>
+                <dt>采样精度</dt>
                 <dd>{ct.granularity || '-'}</dd>
               </div>
               <div className="overview-key__fact overview-key__fact--wide">
@@ -104,7 +104,7 @@ export default function ReportOverview({
                   <EchoBand label="情绪分歧" percent={Math.round((components.sentiment ?? 0) * 100)} shade={LIEFLAT.DATA} />
                   <EchoBand label="声量失振" percent={Math.round((components.corr ?? 0) * 100)} shade={LIEFLAT.DATA2} />
                 </div>
-                <div className="overview-stats__source">L15 BALLOT TALLY / 每格 5%</div>
+                <div className="overview-stats__source">每格代表 5%</div>
               </div>
 
               <div className="overview-stats__block">
