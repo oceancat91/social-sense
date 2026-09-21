@@ -1,7 +1,7 @@
 """用户模型"""
-from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from app import db
+from app.utils.clock import utcnow
 
 
 class User(db.Model):
@@ -12,7 +12,7 @@ class User(db.Model):
     email = db.Column(db.String(100), unique=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
     role = db.Column(db.String(20), default='user')
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=utcnow)
 
     tasks = db.relationship('MonitorTask', backref='user', lazy=True)
 

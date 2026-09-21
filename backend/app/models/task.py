@@ -1,6 +1,6 @@
 """监控任务模型"""
-from datetime import datetime
 from app import db
+from app.utils.clock import utcnow
 
 
 class MonitorTask(db.Model):
@@ -12,8 +12,8 @@ class MonitorTask(db.Model):
     platform = db.Column(db.String(50), default='all')   # all 表示全平台采集
     status = db.Column(db.String(20), default='active')  # active / collecting / paused
     data_count = db.Column(db.Integer, default=0)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=utcnow)
+    updated_at = db.Column(db.DateTime, default=utcnow, onupdate=utcnow)
 
     sentiment_data = db.relationship('SentimentData', backref='task', lazy=True)
 

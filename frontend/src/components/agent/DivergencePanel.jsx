@@ -1,10 +1,17 @@
 import { Empty, Table, Skeleton } from 'antd'
-import ReactECharts from 'echarts-for-react'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import * as echarts from 'echarts/core'
+import { BarChart, LineChart } from 'echarts/charts'
+import { GridComponent, TooltipComponent } from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
 import SoftTag from './SoftTag'
 import LieflatChartFrame from './LieflatChartFrame'
 
+// 按需注册：本面板只画「分歧柱 + 分歧折线」，无需整包 echarts（约 1 MB -> 约 0.3 MB）。
+echarts.use([BarChart, LineChart, GridComponent, TooltipComponent, CanvasRenderer])
+
 const gatesColumns = [
-  { title: '门禁', dataIndex: 'gate', width: 90 },
+  { title: '校验项', dataIndex: 'gate', width: 90 },
   {
     title: '结果',
     dataIndex: 'pass',
@@ -18,7 +25,7 @@ const gatesColumns = [
   { title: '说明', dataIndex: 'note' },
 ]
 
-/** 分歧扩散（分桶情绪极差时序）+ 跨平台校准门禁（CX1-CX5），两列细分隔线 */
+/** 分歧扩散（分桶分歧回一线时序）+ 可信校验，两列细分隔线 */
 export default function DivergencePanel({ divergenceOption, calib, loading }) {
   if (loading) {
     return <Skeleton active paragraph={{ rows: 8 }} title={false} />
@@ -27,19 +34,19 @@ export default function DivergencePanel({ divergenceOption, calib, loading }) {
     <div className="split">
       <div className="split__col">
         <LieflatChartFrame
-          title="情绪分歧沿时间形成可见峰值"
-          subtitle="每根垂线代表一个分歧时桶 / 顶点连接只呈现观测顺序"
-          code="L3 BARCODE LOLLIPOP"
-          source="SENTIMENT RANGE / SOCIAL SENSE REPORT / CUSTOM BLUE"
+          title="分歧在哪些时刻集中爆发"
+          subtitle="每一根竖线代表一个时间点，越高分歧越大。"
+          code="分歧强度"
+          source="Social Sense · 情绪分歧"
         >
           {divergenceOption
-            ? <ReactECharts option={divergenceOption} style={{ height: 320 }} />
-            : <Empty description="无分桶分歧数据" />}
+            ? <ReactEChartsCore echarts={echarts} option={divergenceOption} style={{ height: 320 }} />
+            : <Empty description="暂无可用数据" />}
         </LieflatChartFrame>
       </div>
       <div className="split__col">
         <div className="gates">
-          <div className="gates__title">跨平台校准门禁（CX1-CX5）</div>
+          <div className="gates__title">可信校验</div>
           <Table
             dataSource={calib.gates || []}
             columns={gatesColumns}
@@ -48,7 +55,7 @@ export default function DivergencePanel({ divergenceOption, calib, loading }) {
             pagination={false}
             footer={() => (
               <SoftTag color={calib.all_pass ? 'var(--success)' : 'var(--danger)'}>
-                {calib.all_pass ? '全部通过' : '存在未通过门禁'}
+                {calib.all_pass ? '全部通过' : '有项目未通过'}
               </SoftTag>
             )}
           />

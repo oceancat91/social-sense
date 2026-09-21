@@ -1,10 +1,10 @@
 """多 Agent 分析报告模型：持久化跨平台分析结果"""
 import json
-from datetime import datetime
 
 from sqlalchemy.dialects.mysql import LONGTEXT
 
 from app import db
+from app.utils.clock import utcnow
 
 
 class AgentReport(db.Model):
@@ -21,8 +21,8 @@ class AgentReport(db.Model):
     # 仅 MySQL 用 LONGTEXT；SQLite 等回退 TEXT（with_variant 按方言切换）
     result = db.Column(db.Text().with_variant(LONGTEXT, 'mysql'))  # run_full_analysis 输出（JSON 字符串）
     error = db.Column(db.Text)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=utcnow)
+    updated_at = db.Column(db.DateTime, default=utcnow, onupdate=utcnow)
 
     def to_dict(self, include_result: bool = False):
         data = {

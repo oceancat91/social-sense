@@ -1,7 +1,7 @@
 """舆情数据模型"""
 import json
-from datetime import datetime
 from app import db
+from app.utils.clock import utcnow
 
 
 class SentimentData(db.Model):
@@ -23,7 +23,7 @@ class SentimentData(db.Model):
     comment_count = db.Column(db.Integer, default=0)
     share_count = db.Column(db.Integer, default=0)
     published_at = db.Column(db.DateTime, index=True)
-    collected_at = db.Column(db.DateTime, default=datetime.utcnow)
+    collected_at = db.Column(db.DateTime, default=utcnow)
 
     __table_args__ = (
         db.UniqueConstraint('task_id', 'content_hash', name='uq_task_content'),
