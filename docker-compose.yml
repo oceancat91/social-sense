@@ -51,6 +51,11 @@ services:
       - AGENT_OUTPUT_DIR=/app/agent_outputs
       - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-}
       - DEEPSEEK_MODEL=${DEEPSEEK_MODEL:-deepseek-chat}
+      # 档案阵列数据源。容器内 backend 位于 /app，而 agent 是挂载到 /app/agent 的，
+      # 所以 config.py 的默认值（<仓库根>/agent/... 即 /agent/...）在容器里并不存在，
+      # 会一直走快照兜底。这里显式指向挂载点，让 /api/v1/archives 按报告实时计算。
+      - ARCHIVE_DATA_DIR=/app/agent/dataset/real_multiplatform/reports
+      - ARCHIVE_EVAL_PATH=/app/agent/dataset/eval/evaluation_report.json
     volumes:
       - ./agent:/app/agent:ro
       - ./multiagent:/app/multiagent:ro
