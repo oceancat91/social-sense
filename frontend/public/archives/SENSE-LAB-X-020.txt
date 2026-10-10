@@ -1,0 +1,17 @@
+﻿SENSE LAB · SOCIAL SENSE ARCHIVE
+FILE X-020 / 社会事件与法治
+SOCIETY & LAW
+
+平台：B站 / 微博
+编目范围：2016-12-02 至 2026-08-13
+主导立场：中立
+访问范围：RESTRICTED
+
+社会事件与法治：对齐轴长 3541，覆盖 B站 100.0% / 微博 4.2%。
+
+研究记录
+1. 自有时间桶 B站 3541 / 微博 150
+2. 缺桶 B站 0 / 微博 3391
+
+数据来源：https://github.com/oceancat91/social-sense
+本文由 Social Sense 跨平台观测数据生成，数值来自已归档报告。

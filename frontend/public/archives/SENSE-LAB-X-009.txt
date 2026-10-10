@@ -1,0 +1,18 @@
+﻿SENSE LAB · SOCIAL SENSE ARCHIVE
+FILE X-009 / 教育科研与科普
+EDUCATION & SCIENCE
+
+平台：B站 / 微博
+编目范围：2013-03-08 至 2026-08-15
+主导立场：中立
+访问范围：RESTRICTED
+
+教育科研与科普：融合 accepted，对齐轴长 4908，茧房指数 0.235。
+
+研究记录
+1. B站 中立（偏向 0.14，情绪 +0.026）
+2. 微博 中立（偏向 0.14，情绪 +0.021）
+3. 立场分歧 0.0011 / 情绪分歧 0.0047
+
+数据来源：https://github.com/oceancat91/social-sense
+本文由 Social Sense 跨平台观测数据生成，数值来自已归档报告。

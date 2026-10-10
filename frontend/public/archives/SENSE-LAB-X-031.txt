@@ -1,0 +1,17 @@
+﻿SENSE LAB · SOCIAL SENSE ARCHIVE
+FILE X-031 / 财经商业与职场
+ECONOMY & BUSINESS
+
+平台：B站 / 微博
+编目范围：2010-03-16 至 2026-08-14
+主导立场：中立
+访问范围：RESTRICTED
+
+财经商业与职场：立场分歧 0.0009，情绪分歧 0.0102。
+
+研究记录
+1. B站 支持 11.1% / 反对 1.3% / 中立 86.9%
+2. 微博 支持 11.0% / 反对 1.6% / 中立 86.1%
+
+数据来源：https://github.com/oceancat91/social-sense
+本文由 Social Sense 跨平台观测数据生成，数值来自已归档报告。

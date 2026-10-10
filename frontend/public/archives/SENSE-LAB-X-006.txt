@@ -1,0 +1,19 @@
+﻿SENSE LAB · SOCIAL SENSE ARCHIVE
+FILE X-006 / 医疗健康与心理
+HEALTH & PSYCHOLOGY
+
+平台：B站 / 微博
+编目范围：2017-01-12 至 2026-08-18
+主导立场：中立
+访问范围：RESTRICTED
+
+医疗健康与心理：B站 7558 条、微博 8157 条，观测 2017-01-12 至 2026-08-18。
+
+研究记录
+1. 时间桶 B站 3505 / 微博 1439
+2. 空窗 B站 56.0% / 微博 93.1%
+3. 综合置信 0.43
+4. 空窗偏高，只记录已观测分布
+
+数据来源：https://github.com/oceancat91/social-sense
+本文由 Social Sense 跨平台观测数据生成，数值来自已归档报告。

@@ -1,0 +1,17 @@
+node_modules/
+backups/
+dist/
+.tools/
+*.mp4
+*.blend1
+optix7cache.db
+.worktrees/
+video/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+
+# Local integration checkout
+.main-integration/

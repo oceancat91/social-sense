@@ -1,0 +1,18 @@
+﻿SENSE LAB · SOCIAL SENSE ARCHIVE
+FILE X-040 / 体育竞技与健身
+SPORTS & FITNESS
+
+平台：B站 / 微博
+编目范围：2016-10-15 至 2026-08-17
+主导立场：中立
+访问范围：RESTRICTED
+
+体育竞技与健身：情绪分歧 0.0482，立场分歧 0.0060。
+
+研究记录
+1. B站 正 12.7% / 中 76.0% / 负 11.3%
+2. 微博 正 14.6% / 中 79.6% / 负 5.8%
+3. 情绪均值 B站 +0.014 / 微博 +0.062
+
+数据来源：https://github.com/oceancat91/social-sense
+本文由 Social Sense 跨平台观测数据生成，数值来自已归档报告。

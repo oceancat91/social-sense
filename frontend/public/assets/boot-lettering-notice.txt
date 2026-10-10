@@ -1,0 +1,23 @@
+Opening lettering / 开场文字
+
+字形来自 Novecento Sans Wide，作者 Jan Tonellato / Synthview Type Design。
+https://typography.synthview.com/novecento-sans-font-family.php
+
+开场与角落标题的固定英文短语以字形轮廓（outlined graphics）形式内置于
+src/boot-lettering-art.json，不使用或分发字体文件。
+
+字体版权与所有权归 Jan Tonellato / Synthview 所有；本项目 MIT 许可不覆盖该字体。
+
+字形来源与许可：
+- Normal / DemiBold：作者的 DaFont 免费桌面版
+  https://www.dafont.com/novecento-sans.font
+  https://typography.synthview.com/pdf/eula-free-font-dafont.pdf
+- Bold：使用者自有的 MyFonts 桌面版
+
+两版许可均允许将字符作为图形对象导入。桌面字体文件不得再分发或嵌入本项目。
+修改短语需另行取得字体并在本地重新导出轮廓。
+
+Webfont 说明：本项目不内置 Novecento webfont 套件。若自行安装，
+MyFonts / Monotype Font Software For Web Content EULA (v260616) 约束其使用，
+且该许可不随本项目 MIT 许可一并授予。
+https://www.myfonts.com/pages/license-agreement?id=eula_2267&eula_lang=eula_en

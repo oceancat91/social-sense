@@ -1,0 +1,18 @@
+﻿SENSE LAB · SOCIAL SENSE ARCHIVE
+FILE X-037 / 科技工业与交通
+TECHNOLOGY & INDUSTRY
+
+平台：B站 / 微博
+编目范围：2009-10-17 至 2026-08-14
+主导立场：中立
+访问范围：RESTRICTED
+
+科技工业与交通：情绪分歧 0.0005，立场分歧 0.0023。
+
+研究记录
+1. B站 正 13.6% / 中 76.5% / 负 9.9%
+2. 微博 正 9.5% / 中 85.1% / 负 5.4%
+3. 情绪均值 B站 +0.024 / 微博 +0.023
+
+数据来源：https://github.com/oceancat91/social-sense
+本文由 Social Sense 跨平台观测数据生成，数值来自已归档报告。

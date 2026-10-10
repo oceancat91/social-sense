@@ -7,7 +7,7 @@
 | 目录 | 职责 |
 | --- | --- |
 | `backend/` | Flask API、数据模型和业务服务 |
-| `frontend/` | React/Vite 分析工作台 |
+| `frontend/` | Three.js 三维档案终端（TypeScript + Vite） |
 | `landing/` | Next.js 项目介绍页 |
 | `agent/` | 单平台 Agent 的采集、画像、分析、增强与结论流水线 |
 | `multiagent/` | 跨平台报告契约、对齐、融合与主控归纳 |
@@ -60,7 +60,7 @@ python -m scripts.dataset.prepare.clean_analysis --src path/to/raw --dst path/to
 ## 架构概览
 
 ```text
-React 分析台 / Next.js 介绍页
+Three.js 档案终端 / Next.js 介绍页
              │
         Flask API
              │

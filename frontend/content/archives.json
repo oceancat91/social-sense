@@ -1,0 +1,689 @@
+{
+  "categories": [
+    "舆情概览",
+    "跨平台结论",
+    "节奏对齐",
+    "立场共振",
+    "分歧演化"
+  ],
+  "columns": [
+    "节奏对齐",
+    "立场共振",
+    "舆情概览",
+    "分歧演化",
+    "跨平台结论"
+  ],
+  "records": [
+    {
+      "id": "X-001",
+      "title": "教育科研与科普",
+      "en": "EDUCATION & SCIENCE",
+      "department": "B站 / 微博",
+      "category": "舆情概览",
+      "date": "2013-03-08 至 2026-08-15",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "教育科研与科普：B站 6494 条、微博 6212 条，观测 2013-03-08 至 2026-08-15。",
+      "findings": [
+        "时间桶 B站 4908 / 微博 917",
+        "空窗 B站 57.1% / 微博 82.1%",
+        "综合置信 0.43",
+        "空窗偏高，只记录已观测分布"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-002",
+      "title": "影视娱乐与明星",
+      "en": "FILM & ENTERTAINMENT",
+      "department": "B站 / 微博",
+      "category": "舆情概览",
+      "date": "2015-12-28 至 2026-08-17",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "影视娱乐与明星：B站 7281 条、微博 9062 条，观测 2015-12-28 至 2026-08-17。",
+      "findings": [
+        "时间桶 B站 3884 / 微博 342",
+        "空窗 B站 60.5% / 微博 53.2%",
+        "综合置信 0.44"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-003",
+      "title": "时政与公共治理",
+      "en": "PUBLIC AFFAIRS",
+      "department": "B站 / 微博",
+      "category": "舆情概览",
+      "date": "2009-07-13 至 2026-08-13",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "时政与公共治理：B站 13464 条、微博 10510 条，观测 2009-07-13 至 2026-08-13。",
+      "findings": [
+        "时间桶 B站 6240 / 微博 1705",
+        "空窗 B站 71.4% / 微博 85.6%",
+        "综合置信 0.42",
+        "空窗偏高，只记录已观测分布"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-004",
+      "title": "社会事件与法治",
+      "en": "SOCIETY & LAW",
+      "department": "B站 / 微博",
+      "category": "舆情概览",
+      "date": "2016-12-02 至 2026-08-13",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "社会事件与法治：B站 5144 条、微博 12426 条，观测 2016-12-02 至 2026-08-13。",
+      "findings": [
+        "时间桶 B站 3541 / 微博 150",
+        "空窗 B站 72.1% / 微博 78.7%",
+        "综合置信 0.42",
+        "空窗偏高，只记录已观测分布"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-005",
+      "title": "科技工业与交通",
+      "en": "TECHNOLOGY & INDUSTRY",
+      "department": "B站 / 微博",
+      "category": "舆情概览",
+      "date": "2009-10-17 至 2026-08-14",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "科技工业与交通：B站 4828 条、微博 11397 条，观测 2009-10-17 至 2026-08-14。",
+      "findings": [
+        "时间桶 B站 6145 / 微博 1008",
+        "空窗 B站 83.7% / 微博 92.3%",
+        "综合置信 0.42",
+        "空窗偏高，只记录已观测分布"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-006",
+      "title": "医疗健康与心理",
+      "en": "HEALTH & PSYCHOLOGY",
+      "department": "B站 / 微博",
+      "category": "舆情概览",
+      "date": "2017-01-12 至 2026-08-18",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "医疗健康与心理：B站 7558 条、微博 8157 条，观测 2017-01-12 至 2026-08-18。",
+      "findings": [
+        "时间桶 B站 3505 / 微博 1439",
+        "空窗 B站 56.0% / 微博 93.1%",
+        "综合置信 0.43",
+        "空窗偏高，只记录已观测分布"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-007",
+      "title": "财经商业与职场",
+      "en": "ECONOMY & BUSINESS",
+      "department": "B站 / 微博",
+      "category": "舆情概览",
+      "date": "2010-03-16 至 2026-08-14",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "财经商业与职场：B站 7483 条、微博 5779 条，观测 2010-03-16 至 2026-08-14。",
+      "findings": [
+        "时间桶 B站 5995 / 微博 315",
+        "空窗 B站 71.8% / 微博 84.1%",
+        "综合置信 0.42",
+        "空窗偏高，只记录已观测分布"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-008",
+      "title": "体育竞技与健身",
+      "en": "SPORTS & FITNESS",
+      "department": "B站 / 微博",
+      "category": "舆情概览",
+      "date": "2016-10-15 至 2026-08-17",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "体育竞技与健身：B站 7324 条、微博 9991 条，观测 2016-10-15 至 2026-08-17。",
+      "findings": [
+        "时间桶 B站 3579 / 微博 1435",
+        "空窗 B站 54.5% / 微博 88.9%",
+        "综合置信 0.43",
+        "空窗偏高，只记录已观测分布"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-009",
+      "title": "教育科研与科普",
+      "en": "EDUCATION & SCIENCE",
+      "department": "B站 / 微博",
+      "category": "跨平台结论",
+      "date": "2013-03-08 至 2026-08-15",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "教育科研与科普：融合 accepted，对齐轴长 4908，茧房指数 0.235。",
+      "findings": [
+        "B站 中立（偏向 0.14，情绪 +0.026）",
+        "微博 中立（偏向 0.14，情绪 +0.021）",
+        "立场分歧 0.0011 / 情绪分歧 0.0047"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-010",
+      "title": "影视娱乐与明星",
+      "en": "FILM & ENTERTAINMENT",
+      "department": "B站 / 微博",
+      "category": "跨平台结论",
+      "date": "2015-12-28 至 2026-08-17",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "影视娱乐与明星：融合 accepted，对齐轴长 3885，茧房指数 0.370。",
+      "findings": [
+        "B站 中立（偏向 0.12，情绪 +0.035）",
+        "微博 中立（偏向 0.31，情绪 +0.113）",
+        "立场分歧 0.0398 / 情绪分歧 0.0774"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-011",
+      "title": "时政与公共治理",
+      "en": "PUBLIC AFFAIRS",
+      "department": "B站 / 微博",
+      "category": "跨平台结论",
+      "date": "2009-07-13 至 2026-08-13",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "时政与公共治理：融合 accepted，对齐轴长 6240，茧房指数 0.090。",
+      "findings": [
+        "B站 中立（偏向 0.09，情绪 +0.002）",
+        "微博 中立（偏向 0.13，情绪 +0.003）",
+        "立场分歧 0.0071 / 情绪分歧 0.0009"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-012",
+      "title": "社会事件与法治",
+      "en": "SOCIETY & LAW",
+      "department": "B站 / 微博",
+      "category": "跨平台结论",
+      "date": "2016-12-02 至 2026-08-13",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "社会事件与法治：融合 accepted，对齐轴长 3541，茧房指数 0.113。",
+      "findings": [
+        "B站 中立（偏向 0.08，情绪 -0.025）",
+        "微博 中立（偏向 0.07，情绪 -0.025）",
+        "立场分歧 0.0007 / 情绪分歧 0.0004"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-013",
+      "title": "科技工业与交通",
+      "en": "TECHNOLOGY & INDUSTRY",
+      "department": "B站 / 微博",
+      "category": "跨平台结论",
+      "date": "2009-10-17 至 2026-08-14",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "科技工业与交通：融合 accepted，对齐轴长 6145，茧房指数 0.100。",
+      "findings": [
+        "B站 中立（偏向 0.16，情绪 +0.024）",
+        "微博 中立（偏向 0.11，情绪 +0.023）",
+        "立场分歧 0.0023 / 情绪分歧 0.0005"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-014",
+      "title": "医疗健康与心理",
+      "en": "HEALTH & PSYCHOLOGY",
+      "department": "B站 / 微博",
+      "category": "跨平台结论",
+      "date": "2017-01-12 至 2026-08-18",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "医疗健康与心理：融合 accepted，对齐轴长 3505，茧房指数 0.319。",
+      "findings": [
+        "B站 中立（偏向 0.09，情绪 -0.049）",
+        "微博 中立（偏向 0.14，情绪 -0.062）",
+        "立场分歧 0.0094 / 情绪分歧 0.0131"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-015",
+      "title": "财经商业与职场",
+      "en": "ECONOMY & BUSINESS",
+      "department": "B站 / 微博",
+      "category": "跨平台结论",
+      "date": "2010-03-16 至 2026-08-14",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "财经商业与职场：融合 accepted，对齐轴长 5995，茧房指数 0.072。",
+      "findings": [
+        "B站 中立（偏向 0.12，情绪 +0.014）",
+        "微博 中立（偏向 0.10，情绪 +0.004）",
+        "立场分歧 0.0009 / 情绪分歧 0.0102"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-016",
+      "title": "体育竞技与健身",
+      "en": "SPORTS & FITNESS",
+      "department": "B站 / 微博",
+      "category": "跨平台结论",
+      "date": "2016-10-15 至 2026-08-17",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "体育竞技与健身：融合 accepted，对齐轴长 3593，茧房指数 0.289。",
+      "findings": [
+        "B站 中立（偏向 0.11，情绪 +0.014）",
+        "微博 中立（偏向 0.17，情绪 +0.062）",
+        "立场分歧 0.0060 / 情绪分歧 0.0482"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-017",
+      "title": "教育科研与科普",
+      "en": "EDUCATION & SCIENCE",
+      "department": "B站 / 微博",
+      "category": "节奏对齐",
+      "date": "2013-03-08 至 2026-08-15",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "教育科研与科普：对齐轴长 4908，覆盖 B站 100.0% / 微博 18.7%。",
+      "findings": [
+        "自有时间桶 B站 4908 / 微博 917",
+        "缺桶 B站 0 / 微博 3991"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-018",
+      "title": "影视娱乐与明星",
+      "en": "FILM & ENTERTAINMENT",
+      "department": "B站 / 微博",
+      "category": "节奏对齐",
+      "date": "2015-12-28 至 2026-08-17",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "影视娱乐与明星：对齐轴长 3885，覆盖 B站 100.0% / 微博 8.8%。",
+      "findings": [
+        "自有时间桶 B站 3884 / 微博 342",
+        "缺桶 B站 1 / 微博 3543"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-019",
+      "title": "时政与公共治理",
+      "en": "PUBLIC AFFAIRS",
+      "department": "B站 / 微博",
+      "category": "节奏对齐",
+      "date": "2009-07-13 至 2026-08-13",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "时政与公共治理：对齐轴长 6240，覆盖 B站 100.0% / 微博 27.3%。",
+      "findings": [
+        "自有时间桶 B站 6240 / 微博 1705",
+        "缺桶 B站 0 / 微博 4535"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-020",
+      "title": "社会事件与法治",
+      "en": "SOCIETY & LAW",
+      "department": "B站 / 微博",
+      "category": "节奏对齐",
+      "date": "2016-12-02 至 2026-08-13",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "社会事件与法治：对齐轴长 3541，覆盖 B站 100.0% / 微博 4.2%。",
+      "findings": [
+        "自有时间桶 B站 3541 / 微博 150",
+        "缺桶 B站 0 / 微博 3391"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-021",
+      "title": "科技工业与交通",
+      "en": "TECHNOLOGY & INDUSTRY",
+      "department": "B站 / 微博",
+      "category": "节奏对齐",
+      "date": "2009-10-17 至 2026-08-14",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "科技工业与交通：对齐轴长 6145，覆盖 B站 100.0% / 微博 16.4%。",
+      "findings": [
+        "自有时间桶 B站 6145 / 微博 1008",
+        "缺桶 B站 0 / 微博 5137"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-022",
+      "title": "医疗健康与心理",
+      "en": "HEALTH & PSYCHOLOGY",
+      "department": "B站 / 微博",
+      "category": "节奏对齐",
+      "date": "2017-01-12 至 2026-08-18",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "医疗健康与心理：对齐轴长 3505，覆盖 B站 100.0% / 微博 41.1%。",
+      "findings": [
+        "自有时间桶 B站 3505 / 微博 1439",
+        "缺桶 B站 0 / 微博 2066"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-023",
+      "title": "财经商业与职场",
+      "en": "ECONOMY & BUSINESS",
+      "department": "B站 / 微博",
+      "category": "节奏对齐",
+      "date": "2010-03-16 至 2026-08-14",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "财经商业与职场：对齐轴长 5995，覆盖 B站 100.0% / 微博 5.2%。",
+      "findings": [
+        "自有时间桶 B站 5995 / 微博 315",
+        "缺桶 B站 0 / 微博 5680"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-024",
+      "title": "体育竞技与健身",
+      "en": "SPORTS & FITNESS",
+      "department": "B站 / 微博",
+      "category": "节奏对齐",
+      "date": "2016-10-15 至 2026-08-17",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "体育竞技与健身：对齐轴长 3593，覆盖 B站 99.6% / 微博 39.9%。",
+      "findings": [
+        "自有时间桶 B站 3579 / 微博 1435",
+        "缺桶 B站 14 / 微博 2158"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-025",
+      "title": "教育科研与科普",
+      "en": "EDUCATION & SCIENCE",
+      "department": "B站 / 微博",
+      "category": "立场共振",
+      "date": "2013-03-08 至 2026-08-15",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "教育科研与科普：立场分歧 0.0011，情绪分歧 0.0047。",
+      "findings": [
+        "B站 支持 13.3% / 反对 1.8% / 中立 84.3%",
+        "微博 支持 14.4% / 反对 1.7% / 中立 82.8%"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-026",
+      "title": "影视娱乐与明星",
+      "en": "FILM & ENTERTAINMENT",
+      "department": "B站 / 微博",
+      "category": "立场共振",
+      "date": "2015-12-28 至 2026-08-17",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "影视娱乐与明星：立场分歧 0.0398，情绪分歧 0.0774。",
+      "findings": [
+        "B站 支持 10.6% / 反对 2.3% / 中立 86.4%",
+        "微博 支持 30.8% / 反对 2.3% / 中立 64.1%"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-027",
+      "title": "时政与公共治理",
+      "en": "PUBLIC AFFAIRS",
+      "department": "B站 / 微博",
+      "category": "立场共振",
+      "date": "2009-07-13 至 2026-08-13",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "时政与公共治理：立场分歧 0.0071，情绪分歧 0.0009。",
+      "findings": [
+        "B站 支持 9.4% / 反对 1.8% / 中立 88.1%",
+        "微博 支持 13.5% / 反对 2.1% / 中立 81.3%"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-028",
+      "title": "社会事件与法治",
+      "en": "SOCIETY & LAW",
+      "department": "B站 / 微博",
+      "category": "立场共振",
+      "date": "2016-12-02 至 2026-08-13",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "社会事件与法治：立场分歧 0.0007，情绪分歧 0.0004。",
+      "findings": [
+        "B站 支持 9.1% / 反对 3.1% / 中立 86.9%",
+        "微博 支持 9.4% / 反对 3.0% / 中立 86.0%"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-029",
+      "title": "科技工业与交通",
+      "en": "TECHNOLOGY & INDUSTRY",
+      "department": "B站 / 微博",
+      "category": "立场共振",
+      "date": "2009-10-17 至 2026-08-14",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "科技工业与交通：立场分歧 0.0023，情绪分歧 0.0005。",
+      "findings": [
+        "B站 支持 15.3% / 反对 1.7% / 中立 81.9%",
+        "微博 支持 11.1% / 反对 1.4% / 中立 85.7%"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-030",
+      "title": "医疗健康与心理",
+      "en": "HEALTH & PSYCHOLOGY",
+      "department": "B站 / 微博",
+      "category": "立场共振",
+      "date": "2017-01-12 至 2026-08-18",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "医疗健康与心理：立场分歧 0.0094，情绪分歧 0.0131。",
+      "findings": [
+        "B站 支持 8.1% / 反对 3.0% / 中立 88.2%",
+        "微博 支持 15.5% / 反对 2.4% / 中立 80.7%"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-031",
+      "title": "财经商业与职场",
+      "en": "ECONOMY & BUSINESS",
+      "department": "B站 / 微博",
+      "category": "立场共振",
+      "date": "2010-03-16 至 2026-08-14",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "财经商业与职场：立场分歧 0.0009，情绪分歧 0.0102。",
+      "findings": [
+        "B站 支持 11.1% / 反对 1.3% / 中立 86.9%",
+        "微博 支持 11.0% / 反对 1.6% / 中立 86.1%"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-032",
+      "title": "体育竞技与健身",
+      "en": "SPORTS & FITNESS",
+      "department": "B站 / 微博",
+      "category": "立场共振",
+      "date": "2016-10-15 至 2026-08-17",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "体育竞技与健身：立场分歧 0.0060，情绪分歧 0.0482。",
+      "findings": [
+        "B站 支持 10.5% / 反对 1.9% / 中立 87.0%",
+        "微博 支持 17.3% / 反对 1.6% / 中立 80.3%"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-033",
+      "title": "教育科研与科普",
+      "en": "EDUCATION & SCIENCE",
+      "department": "B站 / 微博",
+      "category": "分歧演化",
+      "date": "2013-03-08 至 2026-08-15",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "教育科研与科普：情绪分歧 0.0047，立场分歧 0.0011。",
+      "findings": [
+        "B站 正 14.0% / 中 74.8% / 负 11.1%",
+        "微博 正 11.3% / 中 81.0% / 负 7.7%",
+        "情绪均值 B站 +0.026 / 微博 +0.021"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-034",
+      "title": "影视娱乐与明星",
+      "en": "FILM & ENTERTAINMENT",
+      "department": "B站 / 微博",
+      "category": "分歧演化",
+      "date": "2015-12-28 至 2026-08-17",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "影视娱乐与明星：情绪分歧 0.0774，立场分歧 0.0398。",
+      "findings": [
+        "B站 正 18.0% / 中 69.0% / 负 13.0%",
+        "微博 正 26.5% / 中 63.4% / 负 10.1%",
+        "情绪均值 B站 +0.035 / 微博 +0.113"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-035",
+      "title": "时政与公共治理",
+      "en": "PUBLIC AFFAIRS",
+      "department": "B站 / 微博",
+      "category": "分歧演化",
+      "date": "2009-07-13 至 2026-08-13",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "时政与公共治理：情绪分歧 0.0009，立场分歧 0.0071。",
+      "findings": [
+        "B站 正 12.2% / 中 76.8% / 负 11.0%",
+        "微博 正 8.8% / 中 83.8% / 负 7.4%",
+        "情绪均值 B站 +0.002 / 微博 +0.003"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-036",
+      "title": "社会事件与法治",
+      "en": "SOCIETY & LAW",
+      "department": "B站 / 微博",
+      "category": "分歧演化",
+      "date": "2016-12-02 至 2026-08-13",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "社会事件与法治：情绪分歧 0.0004，立场分歧 0.0007。",
+      "findings": [
+        "B站 正 10.5% / 中 76.1% / 负 13.4%",
+        "微博 正 5.2% / 中 86.9% / 负 8.0%",
+        "情绪均值 B站 -0.025 / 微博 -0.025"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-037",
+      "title": "科技工业与交通",
+      "en": "TECHNOLOGY & INDUSTRY",
+      "department": "B站 / 微博",
+      "category": "分歧演化",
+      "date": "2009-10-17 至 2026-08-14",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "科技工业与交通：情绪分歧 0.0005，立场分歧 0.0023。",
+      "findings": [
+        "B站 正 13.6% / 中 76.5% / 负 9.9%",
+        "微博 正 9.5% / 中 85.1% / 负 5.4%",
+        "情绪均值 B站 +0.024 / 微博 +0.023"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-038",
+      "title": "医疗健康与心理",
+      "en": "HEALTH & PSYCHOLOGY",
+      "department": "B站 / 微博",
+      "category": "分歧演化",
+      "date": "2017-01-12 至 2026-08-18",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "医疗健康与心理：情绪分歧 0.0131，立场分歧 0.0094。",
+      "findings": [
+        "B站 正 9.9% / 中 72.8% / 负 17.3%",
+        "微博 正 10.9% / 中 69.5% / 负 19.7%",
+        "情绪均值 B站 -0.049 / 微博 -0.062"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-039",
+      "title": "财经商业与职场",
+      "en": "ECONOMY & BUSINESS",
+      "department": "B站 / 微博",
+      "category": "分歧演化",
+      "date": "2010-03-16 至 2026-08-14",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "财经商业与职场：情绪分歧 0.0102，立场分歧 0.0009。",
+      "findings": [
+        "B站 正 12.2% / 中 78.0% / 负 9.7%",
+        "微博 正 8.5% / 中 84.0% / 负 7.5%",
+        "情绪均值 B站 +0.014 / 微博 +0.004"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    },
+    {
+      "id": "X-040",
+      "title": "体育竞技与健身",
+      "en": "SPORTS & FITNESS",
+      "department": "B站 / 微博",
+      "category": "分歧演化",
+      "date": "2016-10-15 至 2026-08-17",
+      "lead": "中立",
+      "clearance": "RESTRICTED",
+      "abstract": "体育竞技与健身：情绪分歧 0.0482，立场分歧 0.0060。",
+      "findings": [
+        "B站 正 12.7% / 中 76.0% / 负 11.3%",
+        "微博 正 14.6% / 中 79.6% / 负 5.8%",
+        "情绪均值 B站 +0.014 / 微博 +0.062"
+      ],
+      "source": "https://github.com/oceancat91/social-sense"
+    }
+  ]
+}

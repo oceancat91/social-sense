@@ -1,0 +1,17 @@
+﻿SENSE LAB · SOCIAL SENSE ARCHIVE
+FILE X-030 / 医疗健康与心理
+HEALTH & PSYCHOLOGY
+
+平台：B站 / 微博
+编目范围：2017-01-12 至 2026-08-18
+主导立场：中立
+访问范围：RESTRICTED
+
+医疗健康与心理：立场分歧 0.0094，情绪分歧 0.0131。
+
+研究记录
+1. B站 支持 8.1% / 反对 3.0% / 中立 88.2%
+2. 微博 支持 15.5% / 反对 2.4% / 中立 80.7%
+
+数据来源：https://github.com/oceancat91/social-sense
+本文由 Social Sense 跨平台观测数据生成，数值来自已归档报告。

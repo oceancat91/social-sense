@@ -1,0 +1,19 @@
+﻿SENSE LAB · SOCIAL SENSE ARCHIVE
+FILE X-001 / 教育科研与科普
+EDUCATION & SCIENCE
+
+平台：B站 / 微博
+编目范围：2013-03-08 至 2026-08-15
+主导立场：中立
+访问范围：RESTRICTED
+
+教育科研与科普：B站 6494 条、微博 6212 条，观测 2013-03-08 至 2026-08-15。
+
+研究记录
+1. 时间桶 B站 4908 / 微博 917
+2. 空窗 B站 57.1% / 微博 82.1%
+3. 综合置信 0.43
+4. 空窗偏高，只记录已观测分布
+
+数据来源：https://github.com/oceancat91/social-sense
+本文由 Social Sense 跨平台观测数据生成，数值来自已归档报告。

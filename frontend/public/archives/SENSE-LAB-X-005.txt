@@ -1,0 +1,19 @@
+﻿SENSE LAB · SOCIAL SENSE ARCHIVE
+FILE X-005 / 科技工业与交通
+TECHNOLOGY & INDUSTRY
+
+平台：B站 / 微博
+编目范围：2009-10-17 至 2026-08-14
+主导立场：中立
+访问范围：RESTRICTED
+
+科技工业与交通：B站 4828 条、微博 11397 条，观测 2009-10-17 至 2026-08-14。
+
+研究记录
+1. 时间桶 B站 6145 / 微博 1008
+2. 空窗 B站 83.7% / 微博 92.3%
+3. 综合置信 0.42
+4. 空窗偏高，只记录已观测分布
+
+数据来源：https://github.com/oceancat91/social-sense
+本文由 Social Sense 跨平台观测数据生成，数值来自已归档报告。

@@ -1,0 +1,17 @@
+﻿SENSE LAB · SOCIAL SENSE ARCHIVE
+FILE X-023 / 财经商业与职场
+ECONOMY & BUSINESS
+
+平台：B站 / 微博
+编目范围：2010-03-16 至 2026-08-14
+主导立场：中立
+访问范围：RESTRICTED
+
+财经商业与职场：对齐轴长 5995，覆盖 B站 100.0% / 微博 5.2%。
+
+研究记录
+1. 自有时间桶 B站 5995 / 微博 315
+2. 缺桶 B站 0 / 微博 5680
+
+数据来源：https://github.com/oceancat91/social-sense
+本文由 Social Sense 跨平台观测数据生成，数值来自已归档报告。
