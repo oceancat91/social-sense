@@ -228,7 +228,15 @@ const rollingTitles = [selectionTitle, columnTitle, hoverTitle, categoryTitle, c
 const selectedCode = createRollingNumber($("#selected-code"), codeOptions);
 const hoverCode = createRollingNumber($("#hover-code"), codeOptions);
 const audio = new TerminalAudio();
-function configureAudio() { audio.configure(prefs); }
+/**
+ * 「无声进入」只作用于本次会话：不写回偏好、不落盘，所以刷新后入口页照常出现。
+ * 想永久关掉音频要用设置里的开关——那才会写进 localStorage。
+ * 此前两者混在一起（无声进入直接 prefs.sound/music = false 并保存），
+ * 导致一次无声进入之后入口页永久消失。
+ */
+let sessionMuted = false;
+const audioPrefs = () => (sessionMuted ? { ...prefs, sound: false, music: false } : prefs);
+function configureAudio() { audio.configure(audioPrefs()); }
 configureAudio();
 const reviewEntry = reviewParams.has("scene") || reviewParams.has("time") || reviewParams.get("review") === "1";
 let started = false;
@@ -686,7 +694,7 @@ function motionPreferenceNoteMarkup() {
   return `<div id="motion-preference-note" class="motion-preference-note"><p>${motionSummary(prefs.motion)}</p><span>预设：${preset === "full" ? "完整动画" : preset === "reduced" ? "减少动画" : "自定义"} · 选择会保存在本站</span>${allEnabled ? "" : '<button data-action="enable-motion">启用完整动画并重播 ↻</button>'}</div>`;
 }
 function settingsMarkup() {
-  return `<h2>SYSTEM SETTINGS<small>终端偏好设置</small></h2><p class="settings-intro">SOCIAL SENSE <span>·</span> SESSION AUTHORIZED</p><div class="settings-list">${themeSettingsMarkup(prefs.colorTheme === "dark")}<label><div><strong>SUPER PERFORMANCE</strong><span>降低三维画质和渲染分辨率，保留完整动效；关闭后恢复原画质</span></div><input type="checkbox" data-pref="superPerformance" ${prefs.superPerformance ? "checked" : ""}/><i class="toggle"></i></label>${audioSettingsMarkup(prefs)}</div>${motionPreferenceNoteMarkup()}${motionSettingsMarkup(prefs.motion, prefs.motionPreset)}${qualityMarkup(prefs.rendering)}${pwaSettingsMarkup()}<div class="settings-shortcuts"><span>KEYBOARD CONTROLS</span><p><kbd>←</kbd><kbd>→</kbd> 切列 <kbd>↑</kbd><kbd>↓</kbd> 选档 <kbd>ENTER</kbd> 读取 <kbd>/</kbd> 检索 <kbd>ESC</kbd> 返回</p>}</div><div class="settings-bottom">${document.fullscreenEnabled ? '<button data-action="fullscreen">FULLSCREEN <span>↗</span></button>' : ''}<button data-action="restart">REINITIALIZE SYSTEM <span>↻</span></button></div><div class="modal-bottom"><span>ANALYSIS OS / 1.0 · 使用 MiSans 字体（小米） <a href="${assetUrl("fonts/MiSans-license.pdf")}" target="_blank" rel="noopener">字体许可</a></span><span>POWERED BY SENSE LAB</span></div>`;
+  return `<h2>SYSTEM SETTINGS<small>终端偏好设置</small></h2><p class="settings-intro">SOCIAL SENSE <span>·</span> SESSION AUTHORIZED</p><div class="settings-list">${themeSettingsMarkup(prefs.colorTheme === "dark")}<label><div><strong>SUPER PERFORMANCE</strong><span>降低三维画质和渲染分辨率，保留完整动效；关闭后恢复原画质</span></div><input type="checkbox" data-pref="superPerformance" ${prefs.superPerformance ? "checked" : ""}/><i class="toggle"></i></label>${audioSettingsMarkup(audioPrefs())}</div>${motionPreferenceNoteMarkup()}${motionSettingsMarkup(prefs.motion, prefs.motionPreset)}${qualityMarkup(prefs.rendering)}${pwaSettingsMarkup()}<div class="settings-shortcuts"><span>KEYBOARD CONTROLS</span><p><kbd>←</kbd><kbd>→</kbd> 切列 <kbd>↑</kbd><kbd>↓</kbd> 选档 <kbd>ENTER</kbd> 读取 <kbd>/</kbd> 检索 <kbd>ESC</kbd> 返回</p>}</div><div class="settings-bottom">${document.fullscreenEnabled ? '<button data-action="fullscreen">FULLSCREEN <span>↗</span></button>' : ''}<button data-action="restart">REINITIALIZE SYSTEM <span>↻</span></button></div><div class="modal-bottom"><span>ANALYSIS OS / 1.0 · 使用 MiSans 字体（小米） <a href="${assetUrl("fonts/MiSans-license.pdf")}" target="_blank" rel="noopener">字体许可</a></span><span>POWERED BY SENSE LAB</span></div>`;
 }
 
 document.addEventListener("input", (e) => {
@@ -719,6 +727,11 @@ document.addEventListener("change", (e) => {
   if (el.dataset.pref) {
     const key = el.dataset.pref;
     if (key === "sound" || key === "music" || key === "quality" || key === "superPerformance") prefs[key] = el.checked;
+    if ((key === "sound" || key === "music") && el.checked) {
+      // 用户在设置里主动打开音频：解除本次会话的静音，并借这个手势恢复音频上下文。
+      sessionMuted = false;
+      void audio.unlock().catch(() => { /* 恢复失败也不影响偏好写入 */ });
+    }
     if (key === "sound" || key === "music") saveAudioPrefs(); else savePrefs();
     audio.play("confirm");
   }
@@ -1100,9 +1113,9 @@ function completeStartup(silent: boolean) {
   if (started || !ready) return;
   started = true;
   if (silent) {
-    prefs.sound = false;
-    prefs.music = false;
-    saveAudioPrefs();
+    // 仅本次静音；偏好保持用户原来的设置。
+    sessionMuted = true;
+    configureAudio();
   }
   audio.releaseEntry();
   audio.restartBoot();

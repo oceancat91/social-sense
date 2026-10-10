@@ -1,12 +1,70 @@
 #viewport > .loading { position: fixed; }
-.entry-controls { display: flex; align-items: center; flex-direction: column; margin-top: 32px; max-width: calc(100vw - 40px); text-align: center; }
-.entry-start { min-height: 48px; padding: 8px 24px; border-block: 1px solid #969183; font-size: 16px; letter-spacing: 2px; }
-.entry-start:disabled, .entry-start[aria-disabled="true"] { color: #888277; cursor: wait; }
-.entry-start:focus-visible, .entry-silent:focus-visible { outline: 2px solid #555c45; outline-offset: 5px; }
-.entry-silent { min-height: 44px; margin-top: 12px; font-size: 13px; color: #666454; text-decoration: underline; text-underline-offset: 4px; }
-.entry-status { font-size: 12px; color: #777468; line-height: 1.8; margin: 14px 0 0; }
+/* 标志与状态行整体上移，把屏幕正中让给中央提示（padding 让 flex 居中内容上抬一半） */
+#viewport > .loading { padding-bottom: clamp(150px, 30vh, 320px); }
+
+/* 中央提示容器：绝对定位到屏幕正中，不参与上面的 flex 流 */
+.entry-controls {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: calc(100vw - 48px);
+  text-align: center;
+}
+
+/* 提示本身：默认透明并略微下沉，加上 .is-shown 后淡入就位 */
+.entry-status {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 2px;
+  line-height: 1.9;
+  color: #777468;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .5s ease, transform .5s ease, color .25s ease, letter-spacing .35s ease;
+}
+.entry-status.is-shown { opacity: 1; transform: none; }
+
+/* 悬浮 / 聚焦交互：只在该状态确实可点击时启用，避免“正在准备声音…”也像按钮 */
+.entry-status.is-interactive { cursor: pointer; }
+.entry-status.is-interactive:hover,
+.entry-status.is-interactive:focus-visible {
+  color: #171713;
+  letter-spacing: 4px;
+}
+.entry-status.is-interactive:focus-visible { outline: 2px solid #555c45; outline-offset: 8px; }
+
+/* 下划线随悬浮从左展开 */
+.entry-status::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 10px auto 0;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform .35s ease;
+}
+.entry-status.is-interactive:hover::after,
+.entry-status.is-interactive:focus-visible::after { transform: scaleX(1); }
+
+.entry-silent {
+  min-height: 44px;
+  margin-top: 18px;
+  font-size: 13px;
+  color: #666454;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.entry-silent:focus-visible { outline: 2px solid #555c45; outline-offset: 5px; }
+
 .loading[data-entry="waiting"] > i:after, .loading[data-entry="error"] > i:after { animation: none; width: 100%; }
 @media (max-width: 600px) {
   .loading-mark { width: 125px; margin-bottom: 32px; }
   .loading > span { font-size: 9px; letter-spacing: 1.3px; }
+  #viewport > .loading { padding-bottom: clamp(120px, 26vh, 240px); }
+  .entry-status { font-size: 12px; letter-spacing: 1.6px; }
 }
