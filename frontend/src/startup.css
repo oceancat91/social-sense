@@ -28,28 +28,15 @@
 }
 .entry-status.is-shown { opacity: 1; transform: none; }
 
-/* 悬浮 / 聚焦交互：只在该状态确实可点击时启用，避免“正在准备声音…”也像按钮 */
+/* 悬浮 / 聚焦交互：只在该状态确实可点击时启用，避免“正在准备声音…”也像按钮。
+   不给 :focus-visible 加轮廓——提示本身变黑、字距拉开已经是清楚的反馈，
+   而轮廓会在悬浮时冒出来成个方框。 */
 .entry-status.is-interactive { cursor: pointer; }
 .entry-status.is-interactive:hover,
 .entry-status.is-interactive:focus-visible {
   color: #171713;
   letter-spacing: 4px;
 }
-.entry-status.is-interactive:focus-visible { outline: 2px solid #555c45; outline-offset: 8px; }
-
-/* 下划线随悬浮从左展开 */
-.entry-status::after {
-  content: "";
-  display: block;
-  height: 1px;
-  margin: 10px auto 0;
-  width: 100%;
-  background: currentColor;
-  transform: scaleX(0);
-  transition: transform .35s ease;
-}
-.entry-status.is-interactive:hover::after,
-.entry-status.is-interactive:focus-visible::after { transform: scaleX(1); }
 
 .entry-silent {
   min-height: 44px;
