@@ -1,8 +1,17 @@
 """应用配置"""
 import os
+from pathlib import Path
+
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# 路径锚点。两种布局都要成立：
+#   仓库内  backend/app/config.py -> backend/ -> 仓库根
+#   Docker  /app/app/config.py    -> /app/    -> /        （rootDir: backend，COPY . .）
+# 所以只依赖 parents[1]（backend/ 本身），不要用 parents[2] 当仓库根。
+_BACKEND_DIR = Path(__file__).resolve().parents[1]
+_REPO_ROOT = _BACKEND_DIR.parent
 
 
 class Config:
@@ -55,3 +64,20 @@ class Config:
     )
     # 每个任务单次采集的最大数据量
     CRAWL_MAX_RECORDS = int(os.getenv('CRAWL_MAX_RECORDS', '600'))
+
+    # 档案阵列（前端 SENSE LAB 终端）的数据源。
+    # 开发环境直接读 cross-platform 报告；生产镜像只打包 backend/，
+    # 报告目录不存在时 archive_service 会回落到 ARCHIVE_SNAPSHOT_PATH
+    # （快照随 backend/data/ 一起进镜像，所以用 _BACKEND_DIR 定位）。
+    ARCHIVE_DATA_DIR = os.getenv(
+        'ARCHIVE_DATA_DIR',
+        str(_REPO_ROOT / 'agent' / 'dataset' / 'real_multiplatform' / 'reports'),
+    )
+    ARCHIVE_EVAL_PATH = os.getenv(
+        'ARCHIVE_EVAL_PATH',
+        str(_REPO_ROOT / 'agent' / 'dataset' / 'eval' / 'evaluation_report.json'),
+    )
+    ARCHIVE_SNAPSHOT_PATH = os.getenv(
+        'ARCHIVE_SNAPSHOT_PATH',
+        str(_BACKEND_DIR / 'data' / 'archives.snapshot.json'),
+    )
