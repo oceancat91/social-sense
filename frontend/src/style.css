@@ -389,6 +389,13 @@ button {
 .settings-glyph {
   font-size: 27px;
 }
+/* 主页导航里的背景音乐快捷开关；关掉时整体压暗，与设置面板里的开关共用 prefs.music。 */
+.music-glyph {
+  font-size: 27px;
+}
+.music-button[aria-pressed="false"] {
+  opacity: 0.42;
+}
 .archive-ui {
   opacity: 0;
   pointer-events: none;

@@ -43,7 +43,6 @@ import {
   type MotionPreset,
   type StoredMotion,
 } from "./motion-preferences";
-import { StartupGate } from "./startup";
 import "./startup.css";
 import { paintTheme, themeSettingsMarkup } from "./theme-ui";
 
@@ -59,6 +58,7 @@ $("#stage").innerHTML = `
   <nav class="system-nav" aria-label="系统导航">
     <button data-action="search"><span class="nav-glyph">⌕</span> ARCHIVE INDEX <span class="key">/</span></button>
     <button data-action="saved" aria-label="查看收藏档案" title="收藏档案">＋ SAVED <span id="saved-count">00</span></button>
+    <button class="music-button" data-action="music" aria-pressed="true" aria-label="背景音乐" title="背景音乐"><span class="music-glyph" aria-hidden="true">♪</span><span class="music-label">音乐 开</span></button>
     <button class="settings-button" data-action="settings" aria-label="系统设置" title="系统设置"><span class="settings-glyph" aria-hidden="true">◷</span><span class="settings-label">设置</span></button>
   </nav>
   <button id="skip" class="skip" data-action="skip">ENTER SYSTEM <span>↗</span></button>
@@ -228,34 +228,27 @@ const rollingTitles = [selectionTitle, columnTitle, hoverTitle, categoryTitle, c
 const selectedCode = createRollingNumber($("#selected-code"), codeOptions);
 const hoverCode = createRollingNumber($("#hover-code"), codeOptions);
 const audio = new TerminalAudio();
-/**
- * 「无声进入」只作用于本次会话：不写回偏好、不落盘，所以刷新后入口页照常出现。
- * 想永久关掉音频要用设置里的开关——那才会写进 localStorage。
- * 此前两者混在一起（无声进入直接 prefs.sound/music = false 并保存），
- * 导致一次无声进入之后入口页永久消失。
- */
-let sessionMuted = false;
-const audioPrefs = () => (sessionMuted ? { ...prefs, sound: false, music: false } : prefs);
-function configureAudio() { audio.configure(audioPrefs()); }
+function configureAudio() { audio.configure(prefs); }
 configureAudio();
-const reviewEntry = reviewParams.has("scene") || reviewParams.has("time") || reviewParams.get("review") === "1";
+const musicButton = $(".music-button");
+const musicLabel = $(".music-label");
+/** 主页导航的背景音乐快捷开关，与设置面板里的音乐开关共用 prefs.music。 */
+function syncMusicButton() {
+  musicButton.setAttribute("aria-pressed", String(prefs.music));
+  musicLabel.textContent = prefs.music ? "音乐 开" : "音乐 关";
+}
+syncMusicButton();
 let started = false;
 const loading = $("#loading");
-// The entry screen uses the actual viewport, including portrait phones; the
-// reference animation still uses its calibrated 1920 x 1080 stage.
+// 载入遮罩用真实视口（含竖屏手机）；参考动画仍用校准过的 1920 x 1080 舞台。
 $("#viewport").append(loading);
 $("#stage").inert = true;
 $(".mobile-entry").inert = true;
-const entry = !reviewEntry && (prefs.sound || prefs.music) ? new StartupGate({
-  root: loading,
-  unlock: () => audio.unlock(),
-  cancel: () => audio.cancelEntry(),
-  start: silent => completeStartup(silent),
-}) : undefined;
-if (entry) {
-  audio.holdForEntry();
-  if (prefs.music) void audio.prepareMusic().catch(() => { /* Entry offers retry. */ });
-}
+// 资源就绪后直接进入开场动画，不再有入口页。
+// 两个连带处理：音乐改为立刻预取（原先是在“等待点击”那段窗口里拉的），
+// 以及 completeStartup 里的首次交互补 unlock —— 没有手势时音频上下文会停在
+// suspended，用户一旦点击/按键就把声音接进正在播放的开场。
+if (prefs.music) void audio.prepareMusic().catch(() => { /* 拿不到就静音开场 */ });
 let audioPreview = false, audioPreviewRequest = 0;
 let scene: ArchiveScene | undefined;
 let viewer: ModelViewer | undefined;
@@ -694,7 +687,7 @@ function motionPreferenceNoteMarkup() {
   return `<div id="motion-preference-note" class="motion-preference-note"><p>${motionSummary(prefs.motion)}</p><span>预设：${preset === "full" ? "完整动画" : preset === "reduced" ? "减少动画" : "自定义"} · 选择会保存在本站</span>${allEnabled ? "" : '<button data-action="enable-motion">启用完整动画并重播 ↻</button>'}</div>`;
 }
 function settingsMarkup() {
-  return `<h2>SYSTEM SETTINGS<small>终端偏好设置</small></h2><p class="settings-intro">SOCIAL SENSE <span>·</span> SESSION AUTHORIZED</p><div class="settings-list">${themeSettingsMarkup(prefs.colorTheme === "dark")}<label><div><strong>SUPER PERFORMANCE</strong><span>降低三维画质和渲染分辨率，保留完整动效；关闭后恢复原画质</span></div><input type="checkbox" data-pref="superPerformance" ${prefs.superPerformance ? "checked" : ""}/><i class="toggle"></i></label>${audioSettingsMarkup(audioPrefs())}</div>${motionPreferenceNoteMarkup()}${motionSettingsMarkup(prefs.motion, prefs.motionPreset)}${qualityMarkup(prefs.rendering)}${pwaSettingsMarkup()}<div class="settings-shortcuts"><span>KEYBOARD CONTROLS</span><p><kbd>←</kbd><kbd>→</kbd> 切列 <kbd>↑</kbd><kbd>↓</kbd> 选档 <kbd>ENTER</kbd> 读取 <kbd>/</kbd> 检索 <kbd>ESC</kbd> 返回</p>}</div><div class="settings-bottom">${document.fullscreenEnabled ? '<button data-action="fullscreen">FULLSCREEN <span>↗</span></button>' : ''}<button data-action="restart">REINITIALIZE SYSTEM <span>↻</span></button></div><div class="modal-bottom"><span>ANALYSIS OS / 1.0 · 使用 MiSans 字体（小米） <a href="${assetUrl("fonts/MiSans-license.pdf")}" target="_blank" rel="noopener">字体许可</a></span><span>POWERED BY SENSE LAB</span></div>`;
+  return `<h2>SYSTEM SETTINGS<small>终端偏好设置</small></h2><p class="settings-intro">SOCIAL SENSE <span>·</span> SESSION AUTHORIZED</p><div class="settings-list">${themeSettingsMarkup(prefs.colorTheme === "dark")}<label><div><strong>SUPER PERFORMANCE</strong><span>降低三维画质和渲染分辨率，保留完整动效；关闭后恢复原画质</span></div><input type="checkbox" data-pref="superPerformance" ${prefs.superPerformance ? "checked" : ""}/><i class="toggle"></i></label>${audioSettingsMarkup(prefs)}</div>${motionPreferenceNoteMarkup()}${motionSettingsMarkup(prefs.motion, prefs.motionPreset)}${qualityMarkup(prefs.rendering)}${pwaSettingsMarkup()}<div class="settings-shortcuts"><span>KEYBOARD CONTROLS</span><p><kbd>←</kbd><kbd>→</kbd> 切列 <kbd>↑</kbd><kbd>↓</kbd> 选档 <kbd>ENTER</kbd> 读取 <kbd>/</kbd> 检索 <kbd>ESC</kbd> 返回</p>}</div><div class="settings-bottom">${document.fullscreenEnabled ? '<button data-action="fullscreen">FULLSCREEN <span>↗</span></button>' : ''}<button data-action="restart">REINITIALIZE SYSTEM <span>↻</span></button></div><div class="modal-bottom"><span>ANALYSIS OS / 1.0 · 使用 MiSans 字体（小米） <a href="${assetUrl("fonts/MiSans-license.pdf")}" target="_blank" rel="noopener">字体许可</a></span><span>POWERED BY SENSE LAB</span></div>`;
 }
 
 document.addEventListener("input", (e) => {
@@ -728,11 +721,11 @@ document.addEventListener("change", (e) => {
     const key = el.dataset.pref;
     if (key === "sound" || key === "music" || key === "quality" || key === "superPerformance") prefs[key] = el.checked;
     if ((key === "sound" || key === "music") && el.checked) {
-      // 用户在设置里主动打开音频：解除本次会话的静音，并借这个手势恢复音频上下文。
-      sessionMuted = false;
+      // 在设置里打开音频：这次点击本身就是手势，借此恢复音频上下文。
       void audio.unlock().catch(() => { /* 恢复失败也不影响偏好写入 */ });
     }
     if (key === "sound" || key === "music") saveAudioPrefs(); else savePrefs();
+    if (key === "music") syncMusicButton();
     audio.play("confirm");
   }
   if (el.dataset.motion) {
@@ -839,6 +832,14 @@ document.addEventListener("click", (e) => {
   if (action === "search" || action === "saved" || action === "settings") {
     el.focus({ preventScroll: true });
     openModal(action);
+  }
+  if (action === "music") {
+    prefs.music = !prefs.music;
+    saveAudioPrefs();
+    syncMusicButton();
+    // 这次点击本身就是手势：打开音乐时借它恢复音频上下文，音乐才接得进来
+    // （自动进入没有入口页，unlocked 一直是 false）。
+    if (prefs.music) void audio.unlock().catch(() => { /* 恢复失败就保持静音 */ });
   }
   if (action === "close-modal") closeModal();
   if (action === "bookmark") toggleSaved();
@@ -1101,21 +1102,26 @@ async function start() {
     savePrefs();
     ready = true;
     select(0);
-    if (entry) entry.ready();
-    else completeStartup(false);
+    completeStartup();
   } catch (error) {
     console.error(error);
     $("#loading").innerHTML =
       '<div class="error-state"><strong>CONNECTION INTERRUPTED</strong><p>三维档案资源未能载入。请确认浏览器已启用硬件加速，然后重新连接。</p><button onclick="location.reload()">RECONNECT →</button></div>';
   }
 }
-function completeStartup(silent: boolean) {
+function completeStartup() {
   if (started || !ready) return;
   started = true;
-  if (silent) {
-    // 仅本次静音；偏好保持用户原来的设置。
-    sessionMuted = true;
-    configureAudio();
+  // 自动进入没有用户手势，音频上下文会停在 suspended。等用户第一次交互时补一次
+  // unlock，声音就能接进正在播放的开场；完全不交互则整个开场静音。
+  if (prefs.sound || prefs.music) {
+    const arm = () => {
+      window.removeEventListener("pointerdown", arm);
+      window.removeEventListener("keydown", arm);
+      void audio.unlock();
+    };
+    window.addEventListener("pointerdown", arm);
+    window.addEventListener("keydown", arm);
   }
   audio.releaseEntry();
   audio.restartBoot();
@@ -1130,13 +1136,12 @@ function completeStartup(silent: boolean) {
   loading.classList.add("loaded");
   loading.inert = true;
   setTimeout(() => {
-    const restoreFocus = loading.contains(document.activeElement) || document.activeElement === document.body;
     loading.remove();
-    if (entry && restoreFocus) {
-      const skip = $("#skip");
-      const target = mode === "boot" ? skip.getClientRects().length ? skip : $(".mobile-entry") : $(".read-file");
-      target.focus({ preventScroll: true });
-    }
+    // 载入遮罩消失后把焦点交给终端，键盘用户可以直接操作（入口页已移除，
+    // 不再需要“焦点还留在遮罩里就交还给入口提示”那套判断）。
+    const skip = $("#skip");
+    const target = mode === "boot" ? skip.getClientRects().length ? skip : $(".mobile-entry") : $(".read-file");
+    target.focus({ preventScroll: true });
   }, fade);
   requestAnimationFrame(frame);
   // Do not compete with entry audio/font downloads. Full offline installation
@@ -1177,7 +1182,7 @@ Object.assign(window, {
       fps: Math.round(fps),
       mode,
       ready,
-      startup: started ? "started" : entry?.phase ?? "loading",
+      startup: started ? "started" : "loading",
       motion: { reduced: motionIsReduced(), preset: prefs.motionPreset },
       bootTime: mode === "boot" ? started ? (frozenTime ?? performance.now() / 1000 - bootStart) + 5 : 6.76 : null,
       selected: records[selected].id,
