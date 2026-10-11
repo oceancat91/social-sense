@@ -9,4 +9,4 @@ export const bootMarkContour =
 
 // Optical spacing for this fixed wordmark, measured from the reference glyphs.
 const analysisPositions = [2, 28, 55, 81, 103, 129, 154, 166];
-export const brandHeading = `<h1>SENSE LAB</h1><div>SYNTHESIZE INFORMATION</div><p><span class="brand-analysis" role="img" aria-label="ANALYSIS">${[..."ANALYSIS"].map((letter, i) => `<span aria-hidden="true" style="left:${analysisPositions[i]}px">${letter}</span>`).join("")}</span> <b>OS</b></p>`;
+export const brandHeading = `<h1 data-boot-brand-track="0">SENSE LAB</h1><p data-boot-brand-track="2"><span class="brand-analysis" role="img" aria-label="ANALYSIS">${[..."ANALYSIS"].map((letter, i) => `<span aria-hidden="true" style="left:${analysisPositions[i]}px">${letter}</span>`).join("")}</span> <b>OS</b></p>`;

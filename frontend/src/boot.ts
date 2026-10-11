@@ -161,8 +161,10 @@ export class BootSequence {
     this.opacity(".brand", 1);
     this.el(".brand").style.transform = "none";
     this.brandLines.forEach((node, i) => {
-      node.style.opacity = String(s.brand[i].opacity);
-      node.style.transform = `translateX(${s.brand[i].x}px)`;
+      // Retain each line's original animation when a brand line is removed.
+      const track = s.brand[Number(node.dataset.bootBrandTrack ?? i)];
+      node.style.opacity = String(track.opacity);
+      node.style.transform = `translateX(${track.x}px)`;
     });
     this.opacity(".powered", s.poweredLetters > 0);
     this.el(".powered").style.clipPath =
