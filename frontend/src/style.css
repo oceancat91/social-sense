@@ -422,6 +422,37 @@ button {
 .music-button[aria-pressed="false"] {
   opacity: 0.42;
 }
+/* 设置入口移到品牌右侧（原先在右上角导航里）。可见性与导航一致：开场不显示，
+   进入档案界面后淡入。 */
+.brand-tools {
+  position: absolute;
+  left: 372px;                          /* 品牌 left 59 + 宽 270 + 间距 43 */
+  top: calc(var(--header-top) + 34px);  /* 让“齿轮+设置”这一组与品牌块垂直居中 */
+  transform: translateY(-50%);
+  z-index: 6;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s;
+}
+[data-mode="archive"] .brand-tools,
+[data-mode="detail"] .brand-tools {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* 移出 .system-nav 后要自己补齐那套按钮样式；.settings-label 绝对定位在按钮下方
+   （见 responsive.css），基准必须是按钮本身，所以这里必须 relative。 */
+.brand-tools .settings-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 28px;
+  font-size: 14px;
+  letter-spacing: 0.7px;
+}
+.brand-tools .settings-button:hover {
+  color: #9b7247;
+}
 .archive-ui {
   opacity: 0;
   pointer-events: none;
