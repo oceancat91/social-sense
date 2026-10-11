@@ -872,8 +872,7 @@ button {
   padding-top: 22px;
   overflow-y: auto;
   overflow-x: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: #bbb4a6 transparent;
+  scrollbar-width: none;
 }
 .panel-label {
   font-size: 9px;
@@ -1165,8 +1164,7 @@ button {
   padding-block: 14px;
   /* Match the list's classic scrollbar gutter, including after filtering. */
   overflow-y: hidden;
-  scrollbar-gutter: stable;
-  scrollbar-width: thin;
+  scrollbar-width: none;
   border-top: 1px solid #bfb7a7;
   border-bottom: 1px solid #bfb7a7;
   font-size: 9px;
@@ -1177,9 +1175,7 @@ button {
   height: 387px;
   overflow-y: auto;
   overflow-x: hidden;
-  scrollbar-gutter: stable;
-  scrollbar-width: thin;
-  scrollbar-color: #bbb4a6 transparent;
+  scrollbar-width: none;
 }
 .result-row {
   width: 100%;
@@ -2283,3 +2279,15 @@ button {
 #boot-fallback[hidden] { display: none; }
 #boot-fallback strong { font-size: 18px; letter-spacing: 1px; }
 #boot-fallback p { max-width: 30em; font-size: 13px; line-height: 1.8; color: #77746a; }
+
+/* 隐藏滚动条外观但保留滚动能力（触摸滑动、滚轮、键盘都照常）。
+   scrollbar-width 覆盖 Firefox / 新版 Chrome；Safari 直到 18.2 才认这个属性，
+   所以必须同时写 ::-webkit-scrollbar，否则 iOS 上依然会露出那条灰杠。 */
+* {
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}

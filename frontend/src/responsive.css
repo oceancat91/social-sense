@@ -36,7 +36,7 @@
 [data-layout="desktop"] .archive-navigation { left: 26.25%; }
 [data-layout="desktop"] .column-navigation { left: 52.34375%; }
 [data-layout="desktop"] .archive-hint { left: 26.302083%; }
-[data-layout="desktop"] .detail-content { left: 60.104167%; width: min(636px, 33.125%); max-height: calc(100% - 369px); overflow-y: auto; scrollbar-width: thin; }
+[data-layout="desktop"] .detail-content { left: 60.104167%; width: min(636px, 33.125%); max-height: calc(100% - 369px); overflow-y: auto; scrollbar-width: none; }
 [data-layout="desktop"] .terminal-modal { max-width: calc(100% - 100px); }
 [data-layout="desktop"] .viewer-help, [data-layout="desktop"] .viewer-reset { width: 25%; }
 
@@ -85,7 +85,7 @@
 :is([data-layout="compact"], [data-layout="portrait"]) .object-caption > div { font-size: 11px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .object-caption > small { display: none; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-open { margin-top: 8px; min-height: 44px; padding: 5px 0; font-size: 12px; }
-:is([data-layout="compact"], [data-layout="portrait"]) .detail-content { left: 53%; top: 84px; width: calc(47% - var(--edge)); bottom: 53px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding: 0 3px 12px 0; }
+:is([data-layout="compact"], [data-layout="portrait"]) .detail-content { left: 53%; top: 84px; width: calc(47% - var(--edge)); bottom: 53px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none; padding: 0 3px 12px 0; }
 :is([data-layout="compact"], [data-layout="portrait"]) .detail-kicker { font-size: 11px; gap: 8px; flex-wrap: wrap; }
 :is([data-layout="compact"], [data-layout="portrait"]) .detail-content h2 { font-size: 27px; margin: 14px 0 8px; letter-spacing: -.6px; overflow-wrap: anywhere; }
 :is([data-layout="compact"], [data-layout="portrait"]) .detail-title-cn { font-size: 18px; gap: 10px; flex-wrap: wrap; }
@@ -130,7 +130,7 @@
 
 /* Dialogs remain inside the visual viewport when a software keyboard opens. */
 :is([data-layout="compact"], [data-layout="portrait"]) .modal-backdrop { top: var(--modal-top, 0px); height: var(--modal-height, 100%); bottom: auto; padding: var(--top-edge) var(--edge) var(--bottom-edge); }
-:is([data-layout="compact"], [data-layout="portrait"]) .terminal-modal { width: min(760px, 100%); height: 100%; max-height: 850px; padding: 16px 20px; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+:is([data-layout="compact"], [data-layout="portrait"]) .terminal-modal { width: min(760px, 100%); height: 100%; max-height: 850px; padding: 16px 20px; overflow: auto; overscroll-behavior: contain; scrollbar-width: none; }
 :is([data-layout="compact"], [data-layout="portrait"]) .modal-top { padding-bottom: 8px; font-size: 11px; gap: 12px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .modal-top button { min-height: 44px; min-width: 44px; gap: 8px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .terminal-modal h2 { font-size: 25px; margin: 18px 0; flex-wrap: wrap; gap: 8px; }
