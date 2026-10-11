@@ -3,9 +3,7 @@
   height: auto;
   max-height: 950px;
   overflow-y: auto;
-  scrollbar-gutter: stable;
-  scrollbar-color: #aca18d transparent;
-  scrollbar-width: thin;
+  scrollbar-width: none;
 }
 .settings-modal .modal-bottom {
   position: static;
