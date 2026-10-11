@@ -12,7 +12,8 @@
 [data-mobile-boot="true"] [data-layout="opening"] .powered { left: var(--edge); right: auto; bottom: 50px; }
 .mobile-entry { display: none; }
 .system-nav .settings-button { position: relative; }
-.settings-label { position: absolute; left: 50%; top: calc(100% + 3px); transform: translateX(-50%); font-size: 10px; white-space: nowrap; letter-spacing: 1px; }
+/* 标签排在齿轮右侧，作为普通 flex 子元素参与布局（原先绝对定位在齿轮下方）。 */
+.settings-label { white-space: nowrap; }
 .pwa-update-notice { position: absolute; z-index: 12; right: var(--edge); bottom: var(--bottom-edge, 32px); max-width: calc(100% - 2 * var(--edge)); min-height: 44px; display: flex; align-items: center; gap: 20px; padding: 0 16px; background: #30362a; color: #f1efdf; font-size: 12px; }
 .pwa-update-notice button { min-height: 44px; color: inherit; white-space: nowrap; border-left: 1px solid #737767; padding-left: 16px; font-size: inherit; }
 .pwa-update-notice[hidden], .pwa-update-notice[inert], [data-mode="boot"] .pwa-update-notice { display: none; }

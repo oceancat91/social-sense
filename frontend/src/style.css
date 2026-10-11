@@ -427,7 +427,7 @@ button {
 .brand-tools {
   position: absolute;
   left: 372px;                          /* 品牌 left 59 + 宽 270 + 间距 43 */
-  top: calc(var(--header-top) + 34px);  /* 让“齿轮+设置”这一组与品牌块垂直居中 */
+  top: calc(var(--header-top) + 44px);  /* 让“齿轮+设置”这一行与品牌块垂直居中 */
   transform: translateY(-50%);
   z-index: 6;
   display: flex;
@@ -440,12 +440,12 @@ button {
   opacity: 1;
   pointer-events: auto;
 }
-/* 移出 .system-nav 后要自己补齐那套按钮样式；.settings-label 绝对定位在按钮下方
-   （见 responsive.css），基准必须是按钮本身，所以这里必须 relative。 */
+/* 移出 .system-nav 后要自己补齐那套按钮样式（字号 14px 与 ARCHIVE INDEX / SAVED
+   对齐）。标签现在是普通 flex 子元素，排在齿轮右侧。 */
 .brand-tools .settings-button {
-  position: relative;
   display: flex;
   align-items: center;
+  gap: 8px;
   min-height: 28px;
   font-size: 14px;
   letter-spacing: 0.7px;
