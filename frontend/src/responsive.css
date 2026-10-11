@@ -48,8 +48,6 @@
 }
 :is([data-layout="compact"], [data-layout="portrait"]) .brand { left: var(--edge); top: var(--top-edge); transform: scale(.48) !important; transform-origin: top left; }
 /* 品牌缩放后宽约 270×.48≈130，设置入口紧接其后；竖屏缩放更小，位次前移。 */
-:is([data-layout="compact"], [data-layout="portrait"]) .brand-tools { left: calc(var(--edge) + 140px); top: var(--top-edge); transform: none; }
-:is([data-layout="compact"], [data-layout="portrait"]) .brand-tools .settings-button { min-height: 44px; min-width: 44px; justify-content: center; }
 :is([data-layout="compact"], [data-layout="portrait"]) .system-nav { top: var(--top-edge); right: var(--edge); gap: 18px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .system-nav button { min-height: 44px; min-width: 44px; font-size: 11px; justify-content: center; gap: 7px; }
 :is([data-layout="compact"], [data-layout="portrait"]) :is(.key, .powered, .archive-hint, .hover-label) { display: none; }
@@ -106,7 +104,6 @@
 
 /* Portrait keeps the specimen above an independently scrollable document. */
 [data-layout="portrait"] .brand { transform: scale(.42) !important; }
-[data-layout="portrait"] .brand-tools { left: calc(var(--edge) + 124px); }
 [data-layout="portrait"] .system-nav { gap: 8px; }
 [data-layout="portrait"] .system-nav button[data-action="search"] { font-size: 0; gap: 0; }
 [data-layout="portrait"] .system-nav button[data-action="saved"] { font-size: 11px; }

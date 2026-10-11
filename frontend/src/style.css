@@ -423,37 +423,8 @@ button {
 .music-button[aria-pressed="false"] {
   opacity: 0.42;
 }
-/* 设置入口移到品牌右侧（原先在右上角导航里）。可见性与导航一致：开场不显示，
-   进入档案界面后淡入。 */
-.brand-tools {
-  position: absolute;
-  left: 372px;                          /* 品牌 left 59 + 宽 270 + 间距 43 */
-  top: calc(var(--header-top) + 44px);  /* 让“齿轮+设置”这一行与品牌块垂直居中 */
-  transform: translateY(-50%);
-  z-index: 6;
-  display: flex;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.8s;
-}
-[data-mode="archive"] .brand-tools,
-[data-mode="detail"] .brand-tools {
-  opacity: 1;
-  pointer-events: auto;
-}
-/* 移出 .system-nav 后要自己补齐那套按钮样式（字号 14px 与 ARCHIVE INDEX / SAVED
-   对齐）。标签现在是普通 flex 子元素，排在齿轮右侧。 */
-.brand-tools .settings-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 28px;
-  font-size: 14px;
-  letter-spacing: 0.7px;
-}
-.brand-tools .settings-button:hover {
-  color: #9b7247;
-}
+/* 设置入口现在是导航最右端的一项，按钮样式（字号、间距、悬浮色）全部
+   由 .system-nav button 提供；这里只说明标签已是普通 flex 子元素、排在齿轮右侧。 */
 .archive-ui {
   opacity: 0;
   pointer-events: none;
