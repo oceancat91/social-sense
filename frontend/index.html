@@ -19,6 +19,20 @@
   </head>
   <body>
     <main id="viewport"><div id="stage"></div></main>
+    <div id="boot-fallback" hidden>
+      <strong>浏览器版本过低</strong>
+      <p>本终端需要较新的浏览器才能运行。请升级系统与 Safari，或改用 Chrome、Edge 打开。</p>
+    </div>
+    <script>
+      // 模块脚本若因语法过新而解析失败，主程序一行都不会执行、页面只剩白屏。
+      // 这里用经典脚本兜底：若干秒后仍未收到启动信号，就把白屏换成可读提示。
+      setTimeout(function () {
+        if (!window.__senseLabBooted) {
+          var el = document.getElementById("boot-fallback");
+          if (el) el.hidden = false;
+        }
+      }, 9000);
+    </script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

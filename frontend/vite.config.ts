@@ -18,6 +18,12 @@ export default defineConfig(() => ({
     name: "versioned-model-assets", apply: "build",
     buildStart() { for (const model of models) this.emitFile({type:"asset",fileName:model.fileName,source:model.source}); },
   }],
+  // 默认构建目标是 baseline-widely-available（约 Safari 16），老 iPhone 的 Safari
+  // 会因为解析不了新语法而整页白屏。降到 safari13，让 esbuild 把可选链、空值合并、
+  // 类字段等语法降级，覆盖到 iOS 13 及以上。
+  build: {
+    target: ["es2019", "safari13"],
+  },
   // 开发期把 /api 转发到 Flask 后端（默认 :5000，可用 VITE_API_PROXY 覆盖）。
   // 生产环境由 nginx 反代，见 deploy/nginx-social-sense.conf。
   server: {

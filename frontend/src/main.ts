@@ -713,7 +713,7 @@ document.addEventListener("input", (e) => {
 });
 document.addEventListener("change", (e) => {
   const el = e.target as HTMLInputElement;
-  if (el.id === "quality-preset" && Object.hasOwn(qualityPresets, el.value)) {
+  if (el.id === "quality-preset" && Object.prototype.hasOwnProperty.call(qualityPresets, el.value)) {
     prefs.rendering = { ...qualityPresets[el.value as QualityPreset] };
     savePrefs();
   } else if (el.dataset.quality) {
@@ -891,7 +891,7 @@ document.addEventListener("keydown", (e) => {
     ];
     const visible = focusables.filter(el => el.getClientRects().length > 0);
     const first = visible[0],
-      last = visible.at(-1);
+      last = visible[visible.length - 1];
     if (e.shiftKey && document.activeElement === first) {
       e.preventDefault();
       last?.focus();
@@ -1152,6 +1152,9 @@ function completeStartup() {
   // begins after startup is complete and remains atomic.
   setTimeout(() => void initPwa(notify), 1500);
 }
+// 模块已成功解析并执行到这里。index.html 里的兜底脚本据此判断要不要把白屏
+// 换成“浏览器版本过低”的提示（旧 iOS 解析不了模块脚本时，这里根本不会执行）。
+Object.assign(window, { __senseLabBooted: true });
 updateSelection();
 void start();
 // Deterministic review controls: the running application, never a video surrogate.

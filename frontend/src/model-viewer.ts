@@ -482,7 +482,7 @@ export class ModelViewer {
         ),
       ];
       const first = elements[0],
-        last = elements.at(-1);
+        last = elements[elements.length - 1];
       if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
         last?.focus();

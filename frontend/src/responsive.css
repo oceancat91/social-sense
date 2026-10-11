@@ -53,21 +53,21 @@
 :is([data-layout="compact"], [data-layout="portrait"]) .system-nav { top: var(--top-edge); right: var(--edge); gap: 18px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .system-nav button { min-height: 44px; min-width: 44px; font-size: 11px; justify-content: center; gap: 7px; }
 :is([data-layout="compact"], [data-layout="portrait"]) :is(.key, .powered, .archive-hint, .hover-label) { display: none; }
-:is([data-layout="compact"], [data-layout="portrait"]) .system-footer { left: var(--edge); right: var(--edge); bottom: var(--bottom-edge); font-size: 8px; gap: 12px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .system-footer { left: var(--edge); right: var(--edge); bottom: var(--bottom-edge); font-size: 11px; gap: 12px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .system-footer > span:nth-child(2) { display: none; }
-:is([data-layout="compact"], [data-layout="portrait"]) .system-footer button { margin-left: auto; font-size: 9px; min-height: 28px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .system-footer button { margin-left: auto; font-size: 11px; min-height: 44px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .archive-callout { left: 53%; top: 35%; width: calc(47% - var(--edge)); }
-:is([data-layout="compact"], [data-layout="portrait"]) .eyebrow { font-size: 9px; letter-spacing: .4px; margin-bottom: 12px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .eyebrow { font-size: 11px; letter-spacing: .4px; margin-bottom: 12px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .eyebrow > span { margin-left: 5px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .file-title { font-size: 20px; gap: 6px; min-height: 44px; white-space: nowrap; }
 :is([data-layout="compact"], [data-layout="portrait"]) .file-open { font-size: 20px; margin-left: auto; opacity: 1; }
 :is([data-layout="compact"], [data-layout="portrait"]) .callout-rule { margin: 8px 0 0 20px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .callout-rule i { left: -20px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .file-summary { margin: 12px 0 0; width: 100%; gap: 8px; font-size: 15px; flex-wrap: wrap; }
-:is([data-layout="compact"], [data-layout="portrait"]) .file-summary > span:last-child { font-size: 8px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .file-summary > span:last-child { font-size: 11px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .read-file { margin: 8px 0 0; min-height: 44px; font-size: 11px; gap: 36px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .archive-counter { left: var(--edge); bottom: 61px; }
-:is([data-layout="compact"], [data-layout="portrait"]) .archive-counter .tiny-label { font-size: 8px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .archive-counter .tiny-label { font-size: 11px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .archive-counter > div { font-size: 34px; margin-top: 4px; gap: 10px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .archive-counter i { font-size: 20px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .count-total { font-size: 15px; }
@@ -78,30 +78,30 @@
 :is([data-layout="compact"], [data-layout="portrait"]) .column-navigation { left: auto; right: var(--edge); bottom: 62px; gap: 8px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .column-navigation > div { min-width: 100px; gap: 4px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .column-navigation strong { font-size: 13px; }
-:is([data-layout="compact"], [data-layout="portrait"]) .column-navigation > div > span { font-size: 8px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .column-navigation > div > span { font-size: 11px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .back-button { left: var(--edge); top: 84px; min-height: 44px; gap: 8px; }
-:is([data-layout="compact"], [data-layout="portrait"]) .back-button span { font-size: 10px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .back-button span { font-size: 11px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .back-button small { display: none; }
 :is([data-layout="compact"], [data-layout="portrait"]) .object-caption { left: var(--edge); bottom: 55px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .object-caption > span { font-size: 20px; }
-:is([data-layout="compact"], [data-layout="portrait"]) .object-caption > div { font-size: 8px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .object-caption > div { font-size: 11px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .object-caption > small { display: none; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-open { margin-top: 8px; min-height: 44px; padding: 5px 0; font-size: 12px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .detail-content { left: 53%; top: 84px; width: calc(47% - var(--edge)); bottom: 53px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding: 0 3px 12px 0; }
-:is([data-layout="compact"], [data-layout="portrait"]) .detail-kicker { font-size: 9px; gap: 8px; flex-wrap: wrap; }
+:is([data-layout="compact"], [data-layout="portrait"]) .detail-kicker { font-size: 11px; gap: 8px; flex-wrap: wrap; }
 :is([data-layout="compact"], [data-layout="portrait"]) .detail-content h2 { font-size: 27px; margin: 14px 0 8px; letter-spacing: -.6px; overflow-wrap: anywhere; }
 :is([data-layout="compact"], [data-layout="portrait"]) .detail-title-cn { font-size: 18px; gap: 10px; flex-wrap: wrap; }
 :is([data-layout="compact"], [data-layout="portrait"]) .detail-rule { margin-top: 18px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .metadata { margin: 18px 0; gap: 14px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .metadata dd { font-size: 13px; margin-top: 5px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .detail-tabs { gap: 16px; }
-:is([data-layout="compact"], [data-layout="portrait"]) .detail-tabs button { min-height: 44px; padding: 8px 0; font-size: 9px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .detail-tabs button { min-height: 44px; padding: 8px 0; font-size: 11px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .detail-tabs button span { font-size: 12px; margin-left: 4px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .tab-panel { height: auto; overflow: visible; padding-top: 12px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .tab-panel p { font-size: 15px; text-align: left; }
 :is([data-layout="compact"], [data-layout="portrait"]) .detail-actions { gap: 12px; }
-:is([data-layout="compact"], [data-layout="portrait"]) .solid-button { font-size: 9px; padding: 0 12px; gap: 10px; }
-:is([data-layout="compact"], [data-layout="portrait"]) .export-button { width: 88px; font-size: 10px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .solid-button { font-size: 11px; padding: 0 12px; gap: 10px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .export-button { width: 88px; font-size: 11px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .detail-footnote { gap: 12px; line-height: 1.8; flex-wrap: wrap; }
 
 /* Portrait keeps the specimen above an independently scrollable document. */
@@ -109,7 +109,7 @@
 [data-layout="portrait"] .brand-tools { left: calc(var(--edge) + 124px); }
 [data-layout="portrait"] .system-nav { gap: 8px; }
 [data-layout="portrait"] .system-nav button[data-action="search"] { font-size: 0; gap: 0; }
-[data-layout="portrait"] .system-nav button[data-action="saved"] { font-size: 10px; }
+[data-layout="portrait"] .system-nav button[data-action="saved"] { font-size: 11px; }
 [data-layout="portrait"] .saved-label { display: none; }
 [data-layout="portrait"] .archive-callout { left: var(--edge); top: auto; bottom: 205px; width: calc(100% - 2 * var(--edge)); }
 [data-layout="portrait"] .archive-counter { bottom: 58px; }
@@ -134,7 +134,7 @@
 /* Dialogs remain inside the visual viewport when a software keyboard opens. */
 :is([data-layout="compact"], [data-layout="portrait"]) .modal-backdrop { top: var(--modal-top, 0px); height: var(--modal-height, 100%); bottom: auto; padding: var(--top-edge) var(--edge) var(--bottom-edge); }
 :is([data-layout="compact"], [data-layout="portrait"]) .terminal-modal { width: min(760px, 100%); height: 100%; max-height: 850px; padding: 16px 20px; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; }
-:is([data-layout="compact"], [data-layout="portrait"]) .modal-top { padding-bottom: 8px; font-size: 9px; gap: 12px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .modal-top { padding-bottom: 8px; font-size: 11px; gap: 12px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .modal-top button { min-height: 44px; min-width: 44px; gap: 8px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .terminal-modal h2 { font-size: 25px; margin: 18px 0; flex-wrap: wrap; gap: 8px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .terminal-modal h2 small { font-size: 12px; }
@@ -147,7 +147,7 @@
 :is([data-layout="compact"], [data-layout="portrait"]) .result-name { gap: 10px; padding-right: 12px; font-size: 14px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .result-name > b { font-size: 12px; flex-basis: 48px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .search-results { height: auto; overflow: visible; }
-:is([data-layout="compact"], [data-layout="portrait"]) .modal-bottom { position: static; margin-top: 22px; gap: 12px; font-size: 8px; flex-wrap: wrap; }
+:is([data-layout="compact"], [data-layout="portrait"]) .modal-bottom { position: static; margin-top: 22px; gap: 12px; font-size: 11px; flex-wrap: wrap; }
 :is([data-layout="compact"], [data-layout="portrait"]) .audio-settings { grid-template-columns: 1fr; gap: 0; }
 :is([data-layout="compact"], [data-layout="portrait"]) .settings-list label { gap: 16px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .motion-settings-head { align-items: flex-start; flex-wrap: wrap; gap: 8px; }
@@ -171,22 +171,22 @@
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-back span { font-size: 13px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-back kbd { display: none; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-heading { margin-left: 24px; padding-top: 4px; }
-:is([data-layout="compact"], [data-layout="portrait"]) .viewer-heading > span { font-size: 8px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .viewer-heading > span { font-size: 11px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-heading h2 { font-size: 20px; margin: 5px 0; }
-:is([data-layout="compact"], [data-layout="portrait"]) .viewer-heading p { font-size: 9px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .viewer-heading p { font-size: 11px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-index { font-size: 30px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-index > span { font-size: 18px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-surface { top: 68px; right: var(--edge); }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-surface button { min-height: 44px; padding: 8px 16px; font-size: 12px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-footer { bottom: calc(var(--bottom-edge) + 18px); left: var(--edge); right: var(--edge); gap: 12px; }
-:is([data-layout="compact"], [data-layout="portrait"]) .viewer-help { width: auto; max-width: 160px; font-size: 10px; gap: 5px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .viewer-help { width: auto; max-width: 160px; font-size: 11px; gap: 5px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-reset { width: auto; min-height: 44px; font-size: 12px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-reset span { margin-left: 8px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-actions button { min-width: 100px; min-height: 44px; padding: 10px 12px; font-size: 12px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-actions button span { margin-right: 4px; }
-:is([data-layout="compact"], [data-layout="portrait"]) .viewer-state { bottom: var(--bottom-edge); font-size: 9px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .viewer-state { bottom: var(--bottom-edge); font-size: 11px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-parts { top: 130px; right: var(--edge); width: 110px; }
-:is([data-layout="compact"], [data-layout="portrait"]) .viewer-parts > div { font-size: 8px; margin-bottom: 10px; }
+:is([data-layout="compact"], [data-layout="portrait"]) .viewer-parts > div { font-size: 11px; margin-bottom: 10px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-parts p { margin: 0 0 6px; padding: 0 0 6px 20px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-parts strong { font-size: 11px; }
 :is([data-layout="compact"], [data-layout="portrait"]) .viewer-parts small { display: none; }

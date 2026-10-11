@@ -99,6 +99,7 @@ button {
   top: var(--header-top);
   z-index: 5;
   line-height: 1;
+  -webkit-user-select: none;
   user-select: none;
   width: 270px;
   white-space: nowrap;
@@ -1022,6 +1023,7 @@ button {
   inset: 0;
   z-index: 20;
   background: rgba(227, 224, 215, 0.45);
+  -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
   display: flex;
   align-items: center;
@@ -2292,3 +2294,21 @@ button {
 [data-mode="detail"] .boot {
   visibility: hidden;
 }
+
+/* 浏览器无法运行本终端时的可见兜底（例如旧版 iOS 解析不了模块脚本，原先只会白屏）。 */
+#boot-fallback {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 14px;
+  padding: 32px;
+  text-align: center;
+  background: #e8e5e1;
+  color: #171713;
+}
+#boot-fallback[hidden] { display: none; }
+#boot-fallback strong { font-size: 18px; letter-spacing: 1px; }
+#boot-fallback p { max-width: 30em; font-size: 13px; line-height: 1.8; color: #77746a; }

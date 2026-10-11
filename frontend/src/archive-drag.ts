@@ -48,7 +48,7 @@ export class ArchiveDrag {
       lane: dx * this.inverse.lane.x + dy * this.inverse.lane.y,
       row: dx * this.inverse.row.x + dy * this.inverse.row.y,
     };
-    const previous = this.samples.at(-1);
+    const previous = this.samples[this.samples.length - 1];
     if (previous) {
       const delta = { x: x - this.pointer.x, y: y - this.pointer.y };
       if (Math.hypot(delta.x, delta.y) > 1e-9) {
@@ -75,7 +75,7 @@ export class ArchiveDrag {
   /** Actual release velocity in both tracks, in cells/second. */
   releaseVelocity(time: number, reduced: boolean): DragPosition {
     const first = this.samples[0],
-      last = this.samples.at(-1);
+      last = this.samples[this.samples.length - 1];
     if (
       reduced ||
       !first ||
