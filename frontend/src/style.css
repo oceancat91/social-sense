@@ -2291,3 +2291,14 @@ button {
   height: 0;
   display: none;
 }
+
+/* 箭头图标：宽高跟随所在元素的 font-size，颜色走 currentColor 继承。
+   overflow: visible 防止圆头描边在边缘被裁掉。 */
+.arrow-glyph {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  vertical-align: -0.14em;
+  overflow: visible;
+}

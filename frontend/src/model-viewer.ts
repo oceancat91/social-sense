@@ -4,6 +4,7 @@ import { themeEnvironment } from "./theme-material";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { createArchiveLighting } from "./archive-lighting";
 import { damp } from "./motion";
+import { arrow } from "./icons";
 import { ViewerCameraMotion } from "./viewer-camera";
 import { normalizeQuality, type RenderQuality } from "./render-quality";
 import {
@@ -100,17 +101,17 @@ export class ModelViewer {
       <div class="viewer-canvas"></div>
       <div class="scene-atmosphere viewer-atmosphere" aria-hidden="true"></div>
       <header class="viewer-header">
-        <button class="viewer-back" data-viewer="close">← <span>返回档案</span><kbd>ESC</kbd></button>
+        <button class="viewer-back" data-viewer="close">${arrow("left")} <span>返回档案</span><kbd>ESC</kbd></button>
         <div class="viewer-heading"><span>SENSE LAB / OBJECT STUDY</span><h2 id="viewer-title">档案模型</h2><p id="viewer-file"></p></div>
         <span class="viewer-index">360<span>°</span></span>
       </header>
       <div class="viewer-surface" role="group" aria-label="玻璃模式"><button data-viewer="clear" aria-pressed="true">清晰</button><button data-viewer="frosted" aria-pressed="false">磨砂</button></div>
       <aside class="viewer-parts" aria-label="模型装配结构"><div>ASSEMBLY / 装配结构</div>${PARTS.map((p, i) => `<p><span>${String(i + 1).padStart(2, "0")}</span><strong>${p.label}</strong><small>${p.en}</small></p>`).join("")}</aside>
-      <div class="viewer-loading" role="status"><span>正在载入模型…</span><button data-viewer="retry" hidden>重新载入 ↗</button></div>
+      <div class="viewer-loading" role="status"><span>正在载入模型…</span><button data-viewer="retry" hidden>重新载入 ${arrow("up-right")}</button></div>
       <footer class="viewer-footer">
         <div class="viewer-help"><span>拖动旋转</span><span>↑ ↓ ← → 平移</span><span>滚轮缩放</span></div>
         <div class="viewer-actions"><button data-viewer="explode" aria-pressed="false"><span>＋</span> 拆解档案</button><button data-viewer="assemble" aria-pressed="true"><span>−</span> 一键重组</button></div>
-        <button class="viewer-reset" data-viewer="reset">复位视角 <span>↗</span></button>
+        <button class="viewer-reset" data-viewer="reset">复位视角 <span>${arrow("up-right")}</span></button>
       </footer>
       <div class="viewer-state" aria-live="polite">已组装</div>`;
     parent.appendChild(this.root);
