@@ -11,6 +11,7 @@
 | `landing/` | Next.js 项目介绍页 |
 | `agent/` | 单平台 Agent 的采集、画像、分析、增强与结论流水线 |
 | `multiagent/` | 跨平台报告契约、对齐、融合与主控归纳 |
+| `config/` | 本地环境变量配置与示例；详见 [`config/README.md`](config/README.md) |
 | `scripts/` | 可直接执行的初始化、运维和数据集工具；详见 [`scripts/README.md`](scripts/README.md) |
 | `docs/` | 产品、架构、API 与部署文档；详见 [`docs/README.md`](docs/README.md) |
 | `deploy/` | Docker、Nginx 与云部署辅助文件 |
@@ -18,10 +19,10 @@
 
 ## 快速开始
 
-要求：Python 3.9+、Node.js 18+。MySQL 可选；本地开发可在 `.env` 中设置 `DB_DRIVER=sqlite`。
+要求：Python 3.9+、Node.js 18+。MySQL 可选；本地开发可在 `config/.env` 中设置 `DB_DRIVER=sqlite`。
 
 ```bash
-cp .env.example .env
+cp config/.env.example config/.env
 pip install -r backend/requirements.txt
 npm --prefix frontend install
 
@@ -51,7 +52,7 @@ python scripts/operations/crawl.py --keyword "人工智能" --platform all --day
 python scripts/operations/verify_api.py
 
 # 后端测试
-python -m pytest tests/test_backend -v
+python -m pytest -c tests/pytest.ini tests/test_backend -v
 
 # 整理外部 CSV 为分析数据集（显式指定输入、输出路径）
 python -m scripts.dataset.prepare.clean_analysis --src path/to/raw --dst path/to/cleaned
@@ -73,4 +74,4 @@ Three.js 档案终端 / Next.js 介绍页
 
 ## 贡献与许可
 
-提交规范与开发约定见 [`CONTRIBUTING.md`](CONTRIBUTING.md)。本项目使用 [MIT License](LICENSE)。
+提交规范与开发约定见 [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md)。本项目使用 [MIT License](docs/LICENSE)。

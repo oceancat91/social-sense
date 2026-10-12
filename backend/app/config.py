@@ -4,14 +4,21 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv()
-
 # 路径锚点。两种布局都要成立：
 #   仓库内  backend/app/config.py -> backend/ -> 仓库根
 #   Docker  /app/app/config.py    -> /app/    -> /        （rootDir: backend，COPY . .）
 # 所以只依赖 parents[1]（backend/ 本身），不要用 parents[2] 当仓库根。
 _BACKEND_DIR = Path(__file__).resolve().parents[1]
 _REPO_ROOT = _BACKEND_DIR.parent
+
+# 显式定位本地配置，不依赖启动命令的工作目录。
+# 容器/云平台直接注入的环境变量优先；旧布局的 .env 仍可作为兼容来源。
+for _env_path in (
+    _REPO_ROOT / 'config' / '.env',
+    _REPO_ROOT / '.env',
+    _BACKEND_DIR / '.env',
+):
+    load_dotenv(_env_path, override=False)
 
 
 class Config:

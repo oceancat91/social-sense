@@ -1,7 +1,7 @@
 """
 多平台主控层 DeepSeek 客户端（与 agent/Conclusion/llm.py 同口径，独立可用）。
 
-.env 查找顺序：仓库根目录 → agent/ 目录。
+.env 查找顺序：config/ → 仓库根目录 → agent/ 目录。
 """
 
 from __future__ import annotations
@@ -20,7 +20,7 @@ DEFAULT_MODEL = os.getenv("DEEPSEEK_MODEL", "deepseek-chat")
 
 def _env_paths() -> list[Path]:
     root = Path(__file__).resolve().parents[1]
-    return [root / ".env", root / "agent" / ".env"]
+    return [root / "config" / ".env", root / ".env", root / "agent" / ".env"]
 
 
 def load_env() -> dict[str, str]:
@@ -57,7 +57,7 @@ def chat(system: str, user: str, *, temperature: float = 0.3, timeout: int = 30)
     env = load_env()
     api_key = env.get("DEEPSEEK_API_KEY")
     if not api_key:
-        raise RuntimeError("未找到 DEEPSEEK_API_KEY")
+        raise RuntimeError("未找到 DEEPSEEK_API_KEY，请在 config/.env 中配置")
     model = env.get("DEEPSEEK_MODEL") or DEFAULT_MODEL
     resp = requests.post(
         DEEPSEEK_URL,

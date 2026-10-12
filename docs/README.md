@@ -10,5 +10,7 @@
 | [部署文档.md](部署文档.md) | Docker、腾讯云及生产运维 |
 | [CrossAD.md](CrossAD.md) | 跨平台对齐与分析设计依据 |
 | [LLMAD.md](LLMAD.md) | LLM 辅助分析设计依据 |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | 贡献流程与提交规范 |
+| [LICENSE](LICENSE) | MIT 开源许可 |
 
 Agent 的可执行架构与数据规范分别位于 [../agent/README.md](../agent/README.md)、[../agent/DATASET_SPEC.md](../agent/DATASET_SPEC.md) 和 [../multiagent/README.md](../multiagent/README.md)。

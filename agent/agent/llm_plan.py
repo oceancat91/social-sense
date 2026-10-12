@@ -19,7 +19,7 @@ from typing import Any
 import requests
 
 ROOT = Path(__file__).resolve().parents[1]
-ENV_PATH = ROOT / ".env"
+ENV_PATHS = (ROOT.parent / "config" / ".env", ROOT.parent / ".env", ROOT / ".env")
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 DEFAULT_MODEL = os.getenv("DEEPSEEK_MODEL", "deepseek-chat")
 COMMENT_PAGES_FIXED = 2
@@ -34,13 +34,18 @@ KNOWN_EVENT_STARTS: dict[str, str] = {
 
 def _load_env() -> dict[str, str]:
     out: dict[str, str] = {}
-    if ENV_PATH.exists():
-        for line in ENV_PATH.read_text(encoding="utf-8").splitlines():
+    for env_path in ENV_PATHS:
+        if not env_path.exists():
+            continue
+        file_env: dict[str, str] = {}
+        for line in env_path.read_text(encoding="utf-8").splitlines():
             line = line.strip()
             if not line or line.startswith("#") or "=" not in line:
                 continue
             k, v = line.split("=", 1)
-            out[k.strip()] = v.strip().strip('"').strip("'")
+            file_env[k.strip()] = v.strip().strip('"').strip("'")
+        for k, v in file_env.items():
+            out.setdefault(k, v)
     for k in ("DEEPSEEK_API_KEY", "DEEPSEEK_MODEL"):
         if os.getenv(k):
             out[k] = os.getenv(k, "")
@@ -170,7 +175,7 @@ def plan_analysis_window(topic: str, *, today: date | None = None) -> dict[str, 
     env = _load_env()
     api_key = env.get("DEEPSEEK_API_KEY")
     if not api_key:
-        raise RuntimeError("未找到 DEEPSEEK_API_KEY，请在项目根目录 .env 中配置")
+        raise RuntimeError("未找到 DEEPSEEK_API_KEY，请在 config/.env 中配置")
 
     model = env.get("DEEPSEEK_MODEL") or DEFAULT_MODEL
     hint = _guess_event_start(topic)

@@ -13,20 +13,25 @@ from typing import Any
 import requests
 
 ROOT = Path(__file__).resolve().parents[1]
-ENV_PATH = ROOT / ".env"
+ENV_PATHS = (ROOT.parent / "config" / ".env", ROOT.parent / ".env", ROOT / ".env")
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 DEFAULT_MODEL = os.getenv("DEEPSEEK_MODEL", "deepseek-chat")
 
 
 def load_env() -> dict[str, str]:
     env: dict[str, str] = {}
-    if ENV_PATH.exists():
-        for line in ENV_PATH.read_text(encoding="utf-8").splitlines():
+    for env_path in ENV_PATHS:
+        if not env_path.exists():
+            continue
+        file_env: dict[str, str] = {}
+        for line in env_path.read_text(encoding="utf-8").splitlines():
             line = line.strip()
             if not line or line.startswith("#") or "=" not in line:
                 continue
             k, v = line.split("=", 1)
-            env[k.strip()] = v.strip().strip('"').strip("'")
+            file_env[k.strip()] = v.strip().strip('"').strip("'")
+        for k, v in file_env.items():
+            env.setdefault(k, v)
     for k in ("DEEPSEEK_API_KEY", "DEEPSEEK_MODEL"):
         if os.getenv(k):
             env[k] = os.getenv(k, "")
@@ -58,7 +63,7 @@ def chat(
     env = load_env()
     api_key = env.get("DEEPSEEK_API_KEY")
     if not api_key:
-        raise RuntimeError("未找到 DEEPSEEK_API_KEY，请在 agent/.env 中配置")
+        raise RuntimeError("未找到 DEEPSEEK_API_KEY，请在 config/.env 中配置")
     model = model or env.get("DEEPSEEK_MODEL") or DEFAULT_MODEL
     resp = requests.post(
         DEEPSEEK_URL,

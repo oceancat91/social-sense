@@ -46,10 +46,14 @@ cd social-sense
 
 # 3. 运行配置
 info "[3/5] 生成运行配置..."
-if [ ! -f ".env" ]; then
+mkdir -p config
+if [ ! -f "config/.env" ] && [ -f ".env" ]; then
+    mv .env config/.env
+fi
+if [ ! -f "config/.env" ]; then
     DB_PASS=$(python3 -c "import secrets; print(secrets.token_hex(16))" 2>/dev/null || openssl rand -hex 16)
     SECRET_KEY=$(python3 -c "import secrets; print(secrets.token_hex(32))" 2>/dev/null || openssl rand -hex 32)
-    cat > .env <<ENVEOF
+    cat > config/.env <<ENVEOF
 DB_PASSWORD=${DB_PASS}
 APP_SECRET_KEY=${SECRET_KEY}
 ADMIN_EMAIL=admin@social-sense.com
@@ -62,21 +66,26 @@ LLM_MAX_WORKERS=8
 DEEPSEEK_API_KEY=
 DEEPSEEK_MODEL=deepseek-chat
 ENVEOF
-    success "配置文件 .env 已生成"
+    success "配置文件 config/.env 已生成"
 else
-    success "配置文件 .env 已存在，跳过"
+    success "配置文件 config/.env 已存在，跳过"
 fi
+
+# 从仓库根目录执行，固定配置和环境文件位置。
+compose() {
+    docker compose --env-file config/.env -f deploy/docker-compose.yml "$@"
+}
 
 # 4. 构建和启动
 info "[4/5] 构建镜像并启动服务（约 3-5 分钟）..."
-docker compose up -d --build
+compose up -d --build
 success "服务已启动"
 
 # 5. 等待后端就绪后灌入演示数据
 info "[5/5] 等待后端就绪..."
 BACKEND_READY=0
 for _ in $(seq 1 30); do
-    if docker compose exec -T backend python -c \
+    if compose exec -T backend python -c \
         "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/health', timeout=2)" \
         >/dev/null 2>&1; then
         BACKEND_READY=1
@@ -85,11 +94,11 @@ for _ in $(seq 1 30); do
     sleep 2
 done
 if [ "$BACKEND_READY" -ne 1 ]; then
-    echo "后端未在 60 秒内就绪，请运行 docker compose logs backend 排查。" >&2
+    echo "后端未在 60 秒内就绪，请运行 docker compose --env-file config/.env -f deploy/docker-compose.yml logs backend 排查。" >&2
     exit 1
 fi
 info "灌入演示数据..."
-docker compose exec -T backend python scripts/seed_demo.py
+compose exec -T backend python scripts/seed_demo.py
 
 SERVER_IP=$(curl -fsS ifconfig.me 2>/dev/null || curl -fsS ip.sb 2>/dev/null || echo "你的服务器IP")
 echo ""
@@ -101,10 +110,10 @@ echo -e "  访问地址:  ${YELLOW}http://${SERVER_IP}/app/${NC}"
 echo -e "  登录邮箱:  ${YELLOW}admin@social-sense.com${NC}"
 echo -e "  登录密码:  ${YELLOW}admin123${NC}"
 echo ""
-echo "  数据库密码已保存在 .env 文件中"
+echo "  数据库密码已保存在 config/.env 文件中"
 echo "  建议首次登录后修改管理员密码"
 echo ""
 echo "  常用运维命令:"
-echo "    docker compose ps"
-echo "    docker compose logs -f backend"
-echo "    docker compose restart"
+echo "    docker compose --env-file config/.env -f deploy/docker-compose.yml ps"
+echo "    docker compose --env-file config/.env -f deploy/docker-compose.yml logs -f backend"
+echo "    docker compose --env-file config/.env -f deploy/docker-compose.yml restart"

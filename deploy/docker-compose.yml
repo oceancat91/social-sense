@@ -1,3 +1,6 @@
+# 保持原仓库目录对应的项目名，迁移文件后复用已有容器和数据卷。
+name: social-sense
+
 services:
   mysql:
     image: mysql:8.0
@@ -24,7 +27,7 @@ services:
     restart: unless-stopped
 
   backend:
-    build: ./backend
+    build: ../backend
     container_name: social-sense-backend
     environment:
       - APP_ENV=production
@@ -57,8 +60,8 @@ services:
       - ARCHIVE_DATA_DIR=/app/agent/dataset/real_multiplatform/reports
       - ARCHIVE_EVAL_PATH=/app/agent/dataset/eval/evaluation_report.json
     volumes:
-      - ./agent:/app/agent:ro
-      - ./multiagent:/app/multiagent:ro
+      - ../agent:/app/agent:ro
+      - ../multiagent:/app/multiagent:ro
       - agent_outputs:/app/agent_outputs
     depends_on:
       mysql:
@@ -68,7 +71,7 @@ services:
     restart: unless-stopped
 
   frontend:
-    build: ./frontend
+    build: ../frontend
     container_name: social-sense-frontend
     ports:
       - "80:80"

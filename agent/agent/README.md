@@ -23,7 +23,7 @@ python -m agent
 # 只问话题，不再问日期
 ```
 
-需要 `.env` 中有 `DEEPSEEK_API_KEY`。可选 `DEEPSEEK_MODEL=deepseek-chat`。
+需要仓库根目录下的 `config/.env` 中有 `DEEPSEEK_API_KEY`。可选 `DEEPSEEK_MODEL=deepseek-chat`。加载顺序为 `config/.env` → 根目录 `.env` → `agent/.env`，进程环境变量优先。
 
 ## 规划策略
 
