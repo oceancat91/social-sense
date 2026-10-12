@@ -2302,3 +2302,18 @@ button {
   vertical-align: -0.14em;
   overflow: visible;
 }
+
+/* ON 与 OFF 宽度差 5.5px，而导航是右对齐的（right: 59px）：右端锚定不动，
+   左边的 ARCHIVE INDEX / SAVED 会被顶得左右跳。用一个不可见的 "OFF" 占位，
+   让两种状态宽度一致 —— 用内容而非固定像素，字号或字距变化时依然成立。 */
+.music-label {
+  display: inline-block;
+  text-align: left;
+}
+.music-label::after {
+  content: "OFF";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
