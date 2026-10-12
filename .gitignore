@@ -88,3 +88,9 @@ temp/
 
 # 临时截图（本地调试产物）
 .tmp-shot/
+
+# PM2 进程配置：服务器上的实际文件常带 env 块（数据库密码、API Key 等），
+# 本仓库不跟踪它。需要模板时另存为 ecosystem.config.example.js 再提交。
+ecosystem.config.js
+ecosystem.config.cjs
+ecosystem.config.json
