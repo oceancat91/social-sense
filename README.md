@@ -24,9 +24,30 @@
 
 要求：Python 3.9+、Node.js 18+。MySQL 可选；本地开发可在 `config/.env` 中设置 `DB_DRIVER=sqlite`。
 
+> **先建虚拟环境，再用它装依赖。** 下面所有 `python` / `pip` 命令都假定你已经激活了虚拟环境；
+> 没激活的话，裸 `python` 会落到系统解释器上，缺包报错会很难查（尤其是预测功能要的 torch，
+> 体积大、很容易只装在某个环境里）。
+
+```bash
+# 建虚拟环境（只需一次）
+python -m venv .venv
+
+# 激活：Windows PowerShell        .venv\Scripts\Activate.ps1
+#       Windows cmd               .venv\Scripts\activate.bat
+#       macOS / Linux             source .venv/bin/activate
+```
+
+激活后提示符前面会出现 `(.venv)`。**不想激活也行**，把下面的 `python` 换成解释器的完整路径即可：
+Windows 是 `.venv\Scripts\python.exe`，macOS / Linux 是 `.venv/bin/python`。
+
 ```bash
 cp config/.env.example config/.env
 pip install -r backend/requirements.txt
+
+# 预测功能需要额外的重依赖（torch / matplotlib / scipy / scikit-learn 等）
+# 不跑预测的话这行可以跳过
+pip install -r social_forecast/requirements.txt
+
 npm --prefix frontend install
 
 python scripts/bootstrap/init_db.py
@@ -36,6 +57,10 @@ python backend/run.py
 # 新终端
 npm --prefix frontend run dev
 ```
+
+依赖分两份是**故意的**：`backend/requirements.txt` 是后端跑起来的最小集，
+`social_forecast/requirements.txt` 只有预测功能才需要（torch 一个就上 GB），
+不跑预测的部署不必装。
 
 默认打开 `http://localhost:3000/app/`，管理员账户为
 `admin@social-sense.com` / `admin123`。

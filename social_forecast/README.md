@@ -46,6 +46,26 @@ GPU 可选；笔记本建议看 SAFE_RUN.md
 pip install -r social_forecast/requirements.txt
 ```
 
+> **务必装在项目的虚拟环境里。** 本目录的命令都写作 `python -u …`，前提是虚拟环境已激活；
+> 没激活时裸 `python` 会落到系统解释器上，那里通常没有 torch，报错信息也不容易指向真正的原因。
+> Windows 不想激活就把 `python` 换成 `.venv\Scripts\python.exe`（相对仓库根目录）。
+
+> ⚠️ **跑异常检测会覆盖已跟踪的产物文件。** `data/social/` 里既有**输入**（`*.csv`，含各平台日度数据）
+> 也有**生成物**：`figures/*.png`（三张异常图）和 `report.md`。重跑异常检测/报告会把它们重写，
+> 于是 `git status` 会变脏。
+>
+> 其中 `report.md` 是**用 DeepSeek 生成的那一份**（文件头写着 `生成模型：deepseek-chat`）。
+> 用 `--template-llm` 跑会把这份 LLM 报告**降级覆盖成模板版**。只想验证链路、不想动仓库内容的话：
+>
+> ```bash
+> git stash push -- social_forecast/data/social/     # 跑之前先收起来
+> python -u workflow/forecast_ai/run_workflow.py --template-llm
+> git checkout -- social_forecast/data/social/       # 跑完还原
+> ```
+>
+> 数值结果是确定的：实测重跑后 `anomalies.csv` **一字未变**（15 个异常日完全一致），
+> 变的只是图片的字节（matplotlib 版本渲染差异）和报告文本（LLM 版 ↔ 模板版）。
+
 > **权重不在版本库。** `checkpoints/*.pt`（单个约 950 MB）已被 `.gitignore` 排除，新克隆的仓库没有权重。
 > 加载器在找不到权重时会给出明确报错，可用 `python -u scripts/export_smoke_checkpoint.py`
 > 导出一个轻量权重先把链路跑通。
