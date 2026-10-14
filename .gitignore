@@ -105,3 +105,8 @@ social_forecast/results/workflow/
 
 # --- model/ 是另一份仓库克隆（含独立 .git、3.8 GB 权重与 .env 密钥），不属于本仓库 ---
 /model/
+
+# 预测仪表盘的 HTTP Basic 账号密码文件。
+# 线上由 deploy/setup-forecast-auth.sh 生成到 /etc/nginx/，不进版本库；
+# 本地为测试生成的任何 .htpasswd 也不要提交。
+.htpasswd*

@@ -74,6 +74,11 @@ http://localhost:5000/forecast
 
 API：`/api/v1/forecast/status`、`/dashboard-data`、`/predict`、`/report`。
 
+> 这是全项目唯一不加 JWT 的业务接口（仪表盘是独立静态页，`dashboard.js` 不带 token，
+> 直接加 `@jwt_required` 会让页面变空白）。**线上由 nginx 层用 HTTP Basic 密码保护**，
+> 账号密码用 `sudo bash deploy/setup-forecast-auth.sh` 生成，详见
+> [`docs/部署文档.md`](docs/部署文档.md) 的「正式域名双站点部署」一节。
+
 项目介绍页可另行运行：
 
 ```bash
