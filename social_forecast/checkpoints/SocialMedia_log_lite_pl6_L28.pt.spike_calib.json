@@ -1,0 +1,14 @@
+{
+  "checkpoint": "D:\\Pycharm\\PycharmProject\\cvProject\\KobeBryant\\TimeSeries\\ICLR\\ICML\\method_origin\\social-sense\\social_forecast\\checkpoints\\SocialMedia_log_lite_pl6_L28.pt",
+  "created_at": "2026-10-12T19:48:33.867391",
+  "seq_len": 28,
+  "pred_len": 6,
+  "stride": 7,
+  "n_windows": 188,
+  "pred_gain_q50": 0.0817502848803997,
+  "pred_gain_q75": 0.4766610115766525,
+  "pred_gain_q90": 0.9130630075931551,
+  "n_warn": 47,
+  "warn_rate": 0.25,
+  "note": "生产预警阈值 = pred_gain_q75（预测涨幅 75 分位，排名口径）"
+}

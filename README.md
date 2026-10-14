@@ -6,11 +6,14 @@
 
 | 目录 | 职责 |
 | --- | --- |
-| `backend/` | Flask API、数据模型和业务服务 |
+| `backend/` | Flask API、数据模型和业务服务（含 `forecast_service` 预测适配） |
 | `frontend/` | Three.js 三维档案终端（TypeScript + Vite） |
 | `landing/` | Next.js 项目介绍页 |
 | `agent/` | 单平台 Agent 的采集、画像、分析、增强与结论流水线 |
 | `multiagent/` | 跨平台报告契约、对齐、融合与主控归纳 |
+| `social_forecast/` | 时序预测 + 异常归因模型（checkpoint / 推理 / DeepSeek 报告）；详见 [`social_forecast/README.md`](social_forecast/README.md) |
+| `workflow/` | 端到端流水线（异常 → 预测 → LLM）；详见 [`workflow/forecast_ai/README.md`](workflow/forecast_ai/README.md) |
+| `result/` | 预测模型的决策口径实验报告与图表；详见 [`result/README.md`](result/README.md) |
 | `config/` | 本地环境变量配置与示例；详见 [`config/README.md`](config/README.md) |
 | `scripts/` | 可直接执行的初始化、运维和数据集工具；详见 [`scripts/README.md`](scripts/README.md) |
 | `docs/` | 产品、架构、API 与部署文档；详见 [`docs/README.md`](docs/README.md) |
@@ -35,7 +38,18 @@ npm --prefix frontend run dev
 ```
 
 默认打开 `http://localhost:3000/app/`，管理员账户为
-`admin@social-sense.com` / `admin123`。项目介绍页可另行运行：
+`admin@social-sense.com` / `admin123`。
+
+**热度预测仪表盘**（模型权重不进版本库，需先按
+[`social_forecast/README.md`](social_forecast/README.md) 准备 checkpoint）：
+
+```text
+http://localhost:5000/forecast
+```
+
+API：`/api/v1/forecast/status`、`/dashboard-data`、`/predict`、`/report`。
+
+项目介绍页可另行运行：
 
 ```bash
 npm --prefix landing install
@@ -56,6 +70,12 @@ python -m pytest -c tests/pytest.ini tests/test_backend -v
 
 # 整理外部 CSV 为分析数据集（显式指定输入、输出路径）
 python -m scripts.dataset.prepare.clean_analysis --src path/to/raw --dst path/to/cleaned
+
+# 时序预测 + AI 归因端到端工作流（需先有 checkpoint；--template-llm 表示不调 DeepSeek）
+python -u workflow/forecast_ai/run_workflow.py --template-llm
+
+# 重算预测模型的实验报告与图表
+python -u result/build_report.py
 ```
 
 ## 架构概览

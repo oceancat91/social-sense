@@ -1,0 +1,98 @@
+{
+  "version": "social_forecast_ckpt_v1",
+  "created_at": "2026-10-12T09:13:38.139717+00:00",
+  "domain": "SocialMedia_log",
+  "capacity": "lite",
+  "config": {
+    "c_mode": "response",
+    "c_numeric": true,
+    "d_ff": 64,
+    "ds_saa_dim": 64,
+    "ema_adapt": "series",
+    "ema_alpha": 0.05,
+    "ema_learnable": true,
+    "enc_in": 1,
+    "fourier_K": 3,
+    "jump_hidden": 32,
+    "jump_pos_weight": 5.0,
+    "jump_theta": 0.5,
+    "pred_len": 6,
+    "resid_n_bands": 4,
+    "response_K": 3,
+    "seasonal_adaptive": false,
+    "seasonal_periods": 7,
+    "seq_len": 28,
+    "t_head": "residual",
+    "task_name": "long_term_forecast",
+    "text_scale_gate": true,
+    "trend_mode": "mix",
+    "use_ds_saa": true,
+    "use_enc_T": false,
+    "use_enc_eq": false
+  },
+  "scaler": {
+    "mean": [
+      4.279887718849097
+    ],
+    "scale": [
+      0.5218814204507405
+    ]
+  },
+  "gate": {
+    "silent_C": false,
+    "drop": [
+      "S"
+    ],
+    "theta": 0.05,
+    "support_gate": false,
+    "force_drop_T": false,
+    "calendar_mode": "short",
+    "seasonal_period": 7
+  },
+  "response_lib": {
+    "n_bps": 11,
+    "n_snippets": 11,
+    "K": 3
+  },
+  "metrics": {
+    "domain": "SocialMedia_log",
+    "seed": 2025,
+    "capacity": "lite",
+    "trend_mode": "mix",
+    "text_scale_gate": 1,
+    "t_endo": 1,
+    "force_silent_C": 0,
+    "persist": 1.524642162726429,
+    "ts": 1.8557631958835301,
+    "ts_plain": 1.9744359127437796,
+    "w_test": 0.12454896420240402,
+    "s3_text": 1.9883198548515941,
+    "s3_off": 1.86171886522048,
+    "s3_Csilent": 1.9883198548515941,
+    "C_contrib": 0.0,
+    "C_enabled": true,
+    "T_enabled": true,
+    "drop": "S",
+    "fire_rate": 0.11965096963725927,
+    "theta": 0.05,
+    "n_snippets": 11,
+    "vs_ts_pct": 7.142972727452637,
+    "dir_model": 0.672340452671051,
+    "dir_persist": 0.12765957415103912,
+    "spike_n": 66,
+    "spike_thr": 1.6921725273132324,
+    "warn_recall_model": 0.030303030302571164,
+    "warn_recall_persist": 0.0,
+    "warn_prec_model": 0.39999999992,
+    "warn_prec_persist": 0.0,
+    "warn_f1_model": 0.05633802803650069,
+    "warn_f1_persist": 0.0,
+    "spike_auc_model": 0.6236858379715523,
+    "spike_auc_persist": 0.5,
+    "gain90_true": 2.3401434421539307,
+    "gain90_pred": 0.9323312044143677
+  },
+  "has_dssaa": true,
+  "n_model_params": 125111773,
+  "ckpt_path": "D:\\Pycharm\\PycharmProject\\cvProject\\KobeBryant\\TimeSeries\\ICLR\\ICML\\method_origin\\social-sense\\social_forecast\\checkpoints\\SocialMedia_log_lite_pl6_L28.pt"
+}

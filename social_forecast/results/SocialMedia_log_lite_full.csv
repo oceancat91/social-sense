@@ -1,0 +1,2 @@
+domain,seed,capacity,trend_mode,text_scale_gate,t_endo,force_silent_C,persist,ts,ts_plain,w_test,s3_text,s3_off,s3_Csilent,C_contrib,C_enabled,T_enabled,drop,fire_rate,theta,n_snippets,vs_ts_pct
+SocialMedia_log,2025,lite,mix,1,1,0,1.524642162726429,1.998249269813375,1.9947569557576992,0.13286083936691284,2.047847435560845,2.047847435560845,2.047847435560845,0.0,False,False,TSR,0.0,0.2,11,2.4820810144523366

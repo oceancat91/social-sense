@@ -94,3 +94,14 @@ temp/
 ecosystem.config.js
 ecosystem.config.cjs
 ecosystem.config.json
+
+# --- 时序预测模型（social_forecast）---
+# 真实密钥只在本地，不进版本库（示例见 social_forecast/llm_config.example.json）
+social_forecast/.env
+# 模型权重体积大（单个约 950 MB），由训练或 scripts/export_smoke_checkpoint.py 本地生成
+social_forecast/checkpoints/*.pt
+# 闭环运行产物（run_workflow.py 生成，含 LLM 调用结果）
+social_forecast/results/workflow/
+
+# --- model/ 是另一份仓库克隆（含独立 .git、3.8 GB 权重与 .env 密钥），不属于本仓库 ---
+/model/

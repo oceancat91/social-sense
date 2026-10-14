@@ -1,0 +1,62 @@
+{
+  "version": "social_forecast_ckpt_v1",
+  "created_at": "2026-10-12T07:34:39.280221+00:00",
+  "domain": "SocialMedia_log",
+  "capacity": "lite",
+  "config": {
+    "c_mode": "response",
+    "d_ff": 64,
+    "ds_saa_dim": 64,
+    "ema_adapt": "series",
+    "ema_alpha": 0.05,
+    "ema_learnable": true,
+    "enc_in": 1,
+    "fourier_K": 3,
+    "jump_hidden": 32,
+    "jump_pos_weight": 5.0,
+    "jump_theta": 0.5,
+    "pred_len": 6,
+    "resid_n_bands": 4,
+    "response_K": 3,
+    "seasonal_adaptive": false,
+    "seasonal_periods": 7,
+    "seq_len": 28,
+    "t_head": "residual",
+    "task_name": "long_term_forecast",
+    "text_scale_gate": true,
+    "trend_mode": "mix",
+    "use_ds_saa": false,
+    "use_enc_T": false,
+    "use_enc_eq": false
+  },
+  "scaler": {
+    "mean": [
+      4.279887718849097
+    ],
+    "scale": [
+      0.5218814204507405
+    ]
+  },
+  "gate": {
+    "silent_C": true,
+    "drop": [
+      "T",
+      "S",
+      "R"
+    ],
+    "theta": 0.5,
+    "support_gate": false,
+    "smoke": true
+  },
+  "response_lib": {
+    "n_bps": 0,
+    "n_snippets": 0,
+    "K": 0
+  },
+  "metrics": {
+    "note": "smoke checkpoint — not a full e2e train"
+  },
+  "has_dssaa": false,
+  "n_model_params": 49373,
+  "ckpt_path": "D:\\Pycharm\\PycharmProject\\cvProject\\KobeBryant\\TimeSeries\\ICLR\\ICML\\method_origin\\social-sense\\social_forecast\\checkpoints\\SocialMedia_log_lite_pl6_L28_smoke.pt"
+}

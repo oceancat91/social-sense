@@ -1,0 +1,8 @@
+.env
+llm_config.json
+__pycache__/
+*.pyc
+.pytest_cache/
+checkpoints/*.pt
+!checkpoints/.gitkeep
+results/workflow/

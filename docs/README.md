@@ -13,4 +13,14 @@
 | [CONTRIBUTING.md](CONTRIBUTING.md) | 贡献流程与提交规范 |
 | [LICENSE](LICENSE) | MIT 开源许可 |
 
+预测模型相关文档不在本目录：
+
+| 文档 | 内容 |
+| --- | --- |
+| [../social_forecast/README.md](../social_forecast/README.md) | 时序模型训练 / 导出 / 加载 |
+| [../social_forecast/MODEL.md](../social_forecast/MODEL.md) | 模型结构说明 |
+| [../workflow/forecast_ai/README.md](../workflow/forecast_ai/README.md) | 预测 checkpoint + DeepSeek 归因端到端工作流 |
+| [../result/README.md](../result/README.md) | 决策口径实验报告与图表 |
+| [../result/MODEL_ANALYSIS.md](../result/MODEL_ANALYSIS.md) | 完整实验分析 |
+
 Agent 的可执行架构与数据规范分别位于 [../agent/README.md](../agent/README.md)、[../agent/DATASET_SPEC.md](../agent/DATASET_SPEC.md) 和 [../multiagent/README.md](../multiagent/README.md)。
