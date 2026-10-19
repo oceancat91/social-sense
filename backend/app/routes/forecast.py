@@ -224,6 +224,20 @@ def forecast_report():
     return jsonify(code=404, message="尚无报告，请先跑 workflow"), 404
 
 
+@forecast_bp.route("/asset/<path:name>", methods=["GET"])
+def forecast_asset(name: str):
+    """仪表盘的本地静态资源（CSS / JS / vendor 依赖）。
+
+    为什么不直接用 Flask 默认的 /static/ 前缀：线上 Nginx 只代理了 /forecast
+    与 /api/，/static/ 会落到落地页的 try_files 兜底，返回 index.html
+    （状态码 200、content-type 是 text/html），结果是页面没样式、脚本根本不执行。
+    挂到 /api/v1/forecast/ 之下可以复用已有代理，并自动继承 Basic Auth。
+    send_from_directory 自带路径穿越防护。
+    """
+    static_dir = Path(current_app.root_path) / "static" / "forecast"
+    return send_from_directory(static_dir, name)
+
+
 @forecast_bp.route("/ui/", methods=["GET"])
 @forecast_bp.route("/ui", methods=["GET"])
 def forecast_ui():

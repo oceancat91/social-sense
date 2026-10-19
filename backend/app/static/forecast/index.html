@@ -4,12 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Social Sense · 热度预测与归因</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
-  <link rel="stylesheet" href="/static/forecast/dashboard.css" />
+  <!-- 资源全部走 /api/v1/forecast/asset/*：该前缀已被 Nginx 代理且继承 Basic Auth。
+       不要用 /static/*：线上 /static/* 会落到落地页的 try_files 兜底，
+       返回 200 但内容是 HTML，导致页面无样式、脚本不执行。
+       Chart.js 与 marked 已本地化到 vendor/，不依赖 jsdelivr；
+       字体走 dashboard.css 里的系统字体回退（Segoe UI / Georgia），不依赖 Google Fonts。 -->
+  <script src="/api/v1/forecast/asset/vendor/chart.umd.min.js"></script>
+  <script src="/api/v1/forecast/asset/vendor/marked.min.js"></script>
+  <link rel="stylesheet" href="/api/v1/forecast/asset/dashboard.css" />
 </head>
 <body>
   <div class="bg"></div>
@@ -62,6 +64,6 @@
     <a href="/app/" target="_blank" rel="noopener">三维档案终端</a>
   </footer>
 
-  <script src="/static/forecast/dashboard.js"></script>
+  <script src="/api/v1/forecast/asset/dashboard.js"></script>
 </body>
 </html>
