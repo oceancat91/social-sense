@@ -978,8 +978,11 @@ def run_domain(dataset: str, pred_len: int, calendar_mode: str, encoder,
         "theta": th,
         "n_snippets": len(lib["snippets"]),
         "vs_ts_pct": 100.0 * (mse_full - mse_ts) / max(mse_ts, 1e-12),
-        "pred_gain_q75": pred_gain_q75,
         **dirres,
+        # Production calibration must come from the numeric validation path.
+        # dirres contains a same-named diagnostic computed on text/test data.
+        "test_text_pred_gain_q75": dirres.get("pred_gain_q75"),
+        "pred_gain_q75": pred_gain_q75,
     }
 
     # ---- export checkpoint (weights + config; architecture unchanged) ----

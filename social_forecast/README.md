@@ -143,7 +143,27 @@ checkpoints/SocialMedia_log_lite_pl6_L28.meta.json
 python -u scripts\export_smoke_checkpoint.py
 ```
 
-### 3. 加载推理（可嵌入 social-sense）
+### 3. 独立 CPU 重训与小内存部署导出
+
+完整重训可以单独运行，避免覆盖已有异常分析报告和顶层权重。需要先准备本地 GPT-2 编码器，然后从仓库根目录运行：
+
+```powershell
+.venv\Scripts\python.exe -u social_forecast/scripts/retrain_cpu.py --run-id retrain_20261019 --encoder-dir social_forecast/language_model/openai-community/gpt2 --encoder-revision 607a30d783dfa663caf39e06633721c8d4cfcd7e --seed 2025 --threads 2
+```
+
+相同 `run-id` 的目录已存在时会拒绝覆盖；再次训练请使用新的名称。日志、运行配置与指标位于 `social_forecast/results/<run-id>/`，正式权重位于 `social_forecast/checkpoints/<run-id>/`。
+
+为 CPU 数值推理导出不含文本编码器的正式部署包：
+
+```powershell
+.venv\Scripts\python.exe social_forecast/scripts/export_numeric_checkpoint.py --checkpoint social_forecast/checkpoints/retrain_20261019/SocialMedia_log_lite_pl6_L28.pt --output social_forecast/checkpoints/retrain_20261019/SocialMedia_log_lite_pl6_L28_numeric.pt
+```
+
+轻量包保留重新训练的数值参数、归一化、门控、响应模板和指标，不是随机 smoke 权重，也不包含文本编码分支。应以完整权重和轻量权重的同输入预测等价校验作为部署依据；2GB 服务器的实际内存占用还需要计入 PyTorch 运行时与其他服务。
+
+本次压缩包比对记录见 [results/retrain_20261019/COMPARISON.md](results/retrain_20261019/COMPARISON.md)，新训练与独立验证结果见 [results/retrain_20261019/REPORT.md](results/retrain_20261019/REPORT.md)。
+
+### 4. 加载推理（可嵌入 social-sense）
 
 ```powershell
 # 模块 API
@@ -168,7 +188,7 @@ python -u scripts\run_workflow.py --template-llm
 python -u scripts\run_workflow.py
 ```
 
-### 4. 归因报告（可接你自己的 AI）
+### 5. 归因报告（可接你自己的 AI）
 
 `scripts/llm_reporter.py` 支持两种后端，**不写死任何厂商、不要 SDK、只依赖 `requests`**：
 

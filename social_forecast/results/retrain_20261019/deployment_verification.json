@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "created_at": "2026-10-19T08:50:38.007490+00:00",
+  "protocol": {
+    "path": "CPU numeric inference, with_text=False, batch=1",
+    "torch_version": "2.13.0+cpu",
+    "threads": 2,
+    "seq_len": 28,
+    "pred_len": 6,
+    "target_space": "StandardScaler(train-only) applied to log1p(OT)",
+    "split": "chronological 70% train, remaining 10% val, 20% test",
+    "rows": {
+      "all": 1339,
+      "train": 937,
+      "validation": 135,
+      "test": 267
+    },
+    "windows": {
+      "train": 904,
+      "validation": 130,
+      "test": 262
+    },
+    "dates": {
+      "first": "2023-01-01",
+      "last": "2026-08-31"
+    },
+    "direction_rule": "sign(mean future - origin), true abs delta > q10",
+    "spike_label_rule": "true max future - origin > test true gain q75",
+    "warning_rule": "predicted max future - origin > saved validation q75"
+  },
+  "artifacts": {
+    "full_checkpoint": {
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\social_forecast\\checkpoints\\retrain_20261019\\SocialMedia_log_lite_pl6_L28.pt",
+      "bytes": 500577024,
+      "sha256": "5dcd5e92532f741e74196d020ce95b688f3192c1c89de48ff71d568e2d58fbc0"
+    },
+    "numeric_checkpoint": {
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\social_forecast\\checkpoints\\retrain_20261019\\SocialMedia_log_lite_pl6_L28_numeric.pt",
+      "bytes": 247981,
+      "sha256": "445f2f975f350971683f562f53f0c4d1b97cde418fc0be0c3831184020e7e816"
+    },
+    "evaluation_csv": {
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\social_forecast\\data\\SocialMedia_log.csv",
+      "bytes": 1228671,
+      "sha256": "27c27ce7cac0d1a5e71278d1ce4803da25d9900dbca0f2aa9dee4b4df89b6d3a"
+    }
+  },
+  "equivalence": {
+    "all_test_windows_passed": true,
+    "max_abs_scaled_prediction_error": 0.0,
+    "absolute_tolerance": 1e-06,
+    "relative_tolerance": 1e-06,
+    "components_and_raw_predictions_checked": true
+  },
+  "validation_threshold": {
+    "saved_pred_gain_q75": 0.46937644481658936,
+    "measured_numeric_validation_pred_gain_q75": 0.46937644481658936,
+    "absolute_error": 0.0,
+    "tolerance": 1e-05
+  },
+  "numeric_holdout_metrics": {
+    "standardized_mse": 1.8885908126831055,
+    "persist_standardized_mse": 1.5246421098709106,
+    "direction_accuracy": 0.6553191489361702,
+    "direction_active_windows": 235,
+    "direction_flat_abs_delta_q10": 0.07355928421020508,
+    "spike_auc": 0.6100803957946814,
+    "spike_true_gain_q75": 1.6921725273132324,
+    "spike_windows": 66,
+    "warning_windows": 68,
+    "saved_validation_threshold_recall": 0.3939393939393939,
+    "saved_validation_threshold_precision": 0.38235294117647056,
+    "saved_validation_threshold_f1": 0.38805970149253727,
+    "confusion": {
+      "tp": 26,
+      "fp": 42,
+      "fn": 40,
+      "tn": 154
+    }
+  },
+  "numeric_model_parameters": 49373,
+  "limitations": [
+    "These are numeric deployment metrics, not text-assisted training metrics.",
+    "Overlapping chronological windows are not independent samples.",
+    "Test-set quantiles define evaluation labels only; warning calibration uses the saved validation-set threshold.",
+    "Peak server RAM and latency were not measured by this verifier."
+  ]
+}

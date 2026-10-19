@@ -54,12 +54,14 @@ python -u scripts/run_full_experiment.py --capacity lite
 
 ## 内存提示
 
-一个 954 MB 的权重文件里，实际只有约一半会被加载：
+原始约 955 MiB 的完整权重包同时保存 `model_state` 与 `dssaa_state`；训练时文本模块已挂到 `model.dssaa` 上，所以其中大部分文本编码器参数重复保存：
 
 ```
-model_state    477.4 MB   ← 纯数值通路，服务实际加载
-dssaa_state    477.1 MB   ← 文本语义编码器，with_text=False 时不加载
+model_state 的 dssaa.*   约 477 MiB   文本编码模块
+dssaa_state              约 477 MiB   再次保存的文本编码模块
+其余数值状态              约 315 KiB   数值预测参数与历史缓存
 ```
 
-所以服务常驻内存约 0.8 GB（含 torch 运行时），`torch.load` 读整个文件的瞬间峰值约 1.5 GB。
-部署到小内存服务器前请先确认这一点。
+当前 `with_text=False` 不构建文本模块，但原加载器仍先读取整个 checkpoint；启动峰值与模型常驻内存不能直接由文件大小推算。CPU 数值模型约 49,373 个参数，实际进程还需计入 PyTorch、Python 和请求处理开销，应在目标服务器测量。
+
+`scripts/export_numeric_checkpoint.py` 可从正式训练权重导出独立数值部署包，保留全部数值状态、配置、归一化、响应模板和校准信息。导出后须验证完整包与数值包的预测一致性。`checkpoints/retrain_20261019/` 中的新训练结果独立保存，不覆盖上面的旧权重。

@@ -4,5 +4,7 @@ __pycache__/
 *.pyc
 .pytest_cache/
 checkpoints/*.pt
+checkpoints/**/*.pt
 !checkpoints/.gitkeep
+language_model/
 results/workflow/
