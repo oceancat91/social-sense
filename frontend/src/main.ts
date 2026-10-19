@@ -1115,20 +1115,44 @@ async function loadArchiveData() {
   });
   updateSelection();
 }
+/** 三维资源最多阻塞「进入」的时长；超时先放行界面，模型在后台继续加载。 */
+const SCENE_TIMEOUT_MS = 12000;
+
 async function start() {
   try {
     scene = new ArchiveScene($("#three-scene"));
     scene.setTheme(prefs.colorTheme === "dark", true);
+
+    // 进入流程的四个依赖以前放在同一个 Promise.all 里：三维模型（约 3.4 MB）、
+    // 档案数据、字体，任何一个失败都会走进下面的 catch，把整个入口变成
+    // "CONNECTION INTERRUPTED" 错误页。弱网下这就是「进入不稳定」的成因。
+    // 现在：模型最多等 SCENE_TIMEOUT_MS（超时先放行界面，模型到了再显示），
+    // 数据与字体各自降级，互不拖死。
+    const sceneLoad: Promise<void> = scene
+      ? scene.load().catch((error: unknown) => {
+          console.warn("三维档案资源加载失败，降级为简化界面", error);
+        })
+      : Promise.resolve();
+    const sceneGuard = new Promise<void>((resolve) => setTimeout(resolve, SCENE_TIMEOUT_MS));
+
+    const openingFaces: [string, string][] = [
+      ["300 20px MiSans", "ACCESS WELCOME TO INTERNAL DATABASE"],
+      ["400 20px MiSans", "身份信息确认请求已接收开始处理权限验证通过欢迎访问舆情感知内部资料档案编号保密级别商业区选择档案：0123456789 ID CONFIRMED"],
+      ["600 20px MiSans", "SYNTHESIZE INFORMATION ANALYSIS OS"],
+      ["700 20px MiSans", "SENSE LAB WELCOME TO INTERNAL DATABASE"],
+    ];
+
     await Promise.all([
-      scene?.load(),
-      // 与三维资源并行取数，不额外拉长启动时间。
-      loadArchiveData(),
+      Promise.race([sceneLoad, sceneGuard]),
+      // 与三维资源并行取数，不额外拉长启动时间；失败则沿用构建期内置副本。
+      loadArchiveData().catch((error: unknown) => {
+        console.warn("档案数据加载失败，沿用内置副本", error);
+      }),
       // With unicode-range faces, preload the opening's actual characters,
       // not every font shard. Other archive text loads on demand.
-      document.fonts.load("300 20px MiSans", "ACCESS WELCOME TO INTERNAL DATABASE"),
-      document.fonts.load("400 20px MiSans", "身份信息确认请求已接收开始处理权限验证通过欢迎访问舆情感知内部资料档案编号保密级别商业区选择档案：0123456789 ID CONFIRMED"),
-      document.fonts.load("600 20px MiSans", "SYNTHESIZE INFORMATION ANALYSIS OS"),
-      document.fonts.load("700 20px MiSans", "SENSE LAB WELCOME TO INTERNAL DATABASE"),
+      ...openingFaces.map(([face, text]) =>
+        document.fonts.load(face, text).catch(() => undefined),
+      ),
     ]);
     if (scene) bindScene(scene);
     savePrefs();
@@ -1138,7 +1162,7 @@ async function start() {
   } catch (error) {
     console.error(error);
     $("#loading").innerHTML =
-      `<div class="error-state"><strong>CONNECTION INTERRUPTED</strong><p>三维档案资源未能载入。请确认浏览器已启用硬件加速，然后重新连接。</p><button onclick="location.reload()">RECONNECT ${arrow("right")}</button></div>`;
+      `<div class="error-state"><strong>CONNECTION INTERRUPTED</strong><p>界面初始化失败。请刷新页面重试；若反复出现，请确认浏览器已启用硬件加速。</p><button onclick="location.reload()">RECONNECT ${arrow("right")}</button></div>`;
   }
 }
 function completeStartup() {
