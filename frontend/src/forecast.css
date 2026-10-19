@@ -1,6 +1,9 @@
 /**
  * 热度预测面板（三维终端内的模态视图）。
- * 只负责面板内部布局；外层模态外壳（.terminal-modal / .modal-top）沿用 style.css。
+ *
+ * 配色必须跟随应用本身：终端的模态是**浅色**的——底色 #e8e5e1、正文字 #080a08、
+ * 强调色 #9b7247。早期版本按深色主题写死了白字，结果白字白底、内容完全看不清。
+ * 这里统一用 style.css 里的实际色值，并把图表色通过 CSS 变量传给 canvas。
  */
 
 .forecast-modal {
@@ -16,11 +19,21 @@
   overflow-y: auto;
   max-height: calc(min(84vh, 900px) - 64px);
 
-  --forecast-line: #ed821b;
-  --forecast-predict: #6fd3ff;
-  --forecast-grid: rgba(255, 255, 255, 0.1);
-  --forecast-text: rgba(255, 255, 255, 0.55);
-  --forecast-line-soft: rgba(255, 255, 255, 0.14);
+  /* 主题色板（与 style.css 一致） */
+  --forecast-ink: #080a08;
+  --forecast-muted: #726f67;
+  --forecast-subtle: #8f8a80;
+  --forecast-accent: #9b7247;
+  --forecast-border: rgba(8, 10, 8, 0.16);
+  --forecast-surface: rgba(8, 10, 8, 0.035);
+
+  /* 图表用色（forecast-panel.ts 会从 canvas 上读这几个值） */
+  --forecast-line: #9b7247;
+  --forecast-predict: #2f6f8f;
+  --forecast-grid: rgba(8, 10, 8, 0.12);
+  --forecast-text: rgba(8, 10, 8, 0.55);
+
+  color: var(--forecast-ink);
 }
 
 .forecast-head {
@@ -35,6 +48,7 @@
   margin: 0;
   font-size: 1.28rem;
   letter-spacing: 0.02em;
+  color: var(--forecast-ink);
 }
 
 .forecast-title h2 small {
@@ -43,13 +57,13 @@
   font-size: 0.68rem;
   letter-spacing: 0.16em;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--forecast-subtle);
 }
 
 .forecast-title p {
   margin: 6px 0 0;
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--forecast-muted);
 }
 
 .forecast-actions {
@@ -61,9 +75,9 @@
 .forecast-status {
   font-size: 0.76rem;
   padding: 4px 10px;
-  border: 1px solid var(--forecast-line-soft);
+  border: 1px solid var(--forecast-border);
   border-radius: 999px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--forecast-muted);
   white-space: nowrap;
   max-width: 46ch;
   overflow: hidden;
@@ -71,25 +85,25 @@
 }
 
 .forecast-status.ok {
-  border-color: rgba(120, 220, 160, 0.5);
-  color: #8ee0b0;
+  border-color: rgba(46, 107, 69, 0.45);
+  color: #2e6b45;
 }
 
 .forecast-status.warn {
-  border-color: rgba(240, 190, 90, 0.5);
-  color: #f0be5a;
+  border-color: rgba(138, 90, 18, 0.45);
+  color: #8a5a12;
 }
 
 .forecast-status.error {
-  border-color: rgba(240, 110, 110, 0.55);
-  color: #f06e6e;
+  border-color: rgba(140, 47, 47, 0.5);
+  color: #8c2f2f;
 }
 
 .forecast-panel {
-  border: 1px solid var(--forecast-line-soft);
+  border: 1px solid var(--forecast-border);
   border-radius: 10px;
   padding: 14px 16px 16px;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.45);
 }
 
 .forecast-panel-head {
@@ -105,7 +119,7 @@
   font-size: 0.86rem;
   letter-spacing: 0.06em;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--forecast-ink);
 }
 
 .forecast-badges {
@@ -118,23 +132,24 @@
   font-size: 0.72rem;
   padding: 3px 9px;
   border-radius: 999px;
-  border: 1px solid var(--forecast-line-soft);
+  border: 1px solid var(--forecast-border);
   letter-spacing: 0.04em;
+  color: var(--forecast-muted);
 }
 
 .forecast-badge.up {
-  color: #8ee0b0;
-  border-color: rgba(120, 220, 160, 0.45);
+  color: #2e6b45;
+  border-color: rgba(46, 107, 69, 0.4);
 }
 
 .forecast-badge.down {
-  color: #f08a8a;
-  border-color: rgba(240, 110, 110, 0.45);
+  color: #8c2f2f;
+  border-color: rgba(140, 47, 47, 0.4);
 }
 
 .forecast-badge.warn {
-  color: #f0be5a;
-  border-color: rgba(240, 190, 90, 0.45);
+  color: #8a5a12;
+  border-color: rgba(138, 90, 18, 0.4);
 }
 
 .forecast-chart {
@@ -164,32 +179,32 @@
 }
 
 .forecast-glyph {
-  color: var(--forecast-line);
+  color: var(--forecast-accent);
   font-weight: 600;
 }
 
 .forecast-label {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--forecast-muted);
 }
 
 .forecast-bar {
   height: 5px;
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.09);
+  background: rgba(8, 10, 8, 0.09);
   overflow: hidden;
 }
 
 .forecast-bar i {
   display: block;
   height: 100%;
-  background: var(--forecast-line);
+  background: var(--forecast-accent);
   border-radius: 3px;
 }
 
 .forecast-value {
   text-align: right;
   font-variant-numeric: tabular-nums;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--forecast-ink);
 }
 
 .forecast-events {
@@ -207,7 +222,7 @@
   align-items: center;
   font-size: 0.76rem;
   padding: 5px 0;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.07);
+  border-bottom: 1px dashed rgba(8, 10, 8, 0.1);
 }
 
 .forecast-event:last-child {
@@ -215,29 +230,29 @@
 }
 
 .forecast-date {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--forecast-ink);
   font-variant-numeric: tabular-nums;
 }
 
 .forecast-z {
-  color: #f0be5a;
+  color: #8a5a12;
   font-variant-numeric: tabular-nums;
 }
 
 .forecast-trigger {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--forecast-muted);
 }
 
 .forecast-ot {
   text-align: right;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--forecast-muted);
   font-variant-numeric: tabular-nums;
 }
 
 .forecast-report {
   font-size: 0.8rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--forecast-muted);
   white-space: pre-wrap;
   max-height: 260px;
   overflow-y: auto;
@@ -246,10 +261,10 @@
 .forecast-muted {
   margin: 0;
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--forecast-subtle);
 }
 
-/* 右上角导航里的预测入口：沿用导航按钮的外观，只补充 glyph 尺寸 */
+/* 右上角导航里的预测入口：沿用导航按钮外观，只补 glyph 尺寸 */
 .forecast-glyph-nav {
   display: inline-flex;
   align-items: center;

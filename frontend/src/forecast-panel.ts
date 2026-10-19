@@ -252,6 +252,9 @@ function renderBadges(host: HTMLElement, dashboard: ForecastDashboard): void {
 export async function mountForecast(root: HTMLElement): Promise<void> {
   const el = collect(root);
 
+  /** 拉一次数据。可重试：部署重启后端时会出现极短窗口的瞬时失败。 */
+  const fetchOnce = async (): Promise<ForecastDashboard> => fetchForecastDashboard();
+
   const load = async (): Promise<void> => {
     el.status.textContent = "加载中…";
     el.status.className = "forecast-status";
@@ -269,7 +272,17 @@ export async function mountForecast(root: HTMLElement): Promise<void> {
         el.status.className = "forecast-status warn";
       }
 
-      const dashboard = await fetchForecastDashboard();
+      // 首次失败自动重试一次（800ms 后），盖住后端重启的瞬时不可用。
+      let dashboard: ForecastDashboard;
+      try {
+        dashboard = await fetchOnce();
+      } catch {
+        el.status.textContent = "网络不稳定，正在重试…";
+        el.status.className = "forecast-status warn";
+        await new Promise((resolve) => setTimeout(resolve, 800));
+        dashboard = await fetchOnce();
+      }
+
       renderBadges(document.getElementById("forecast-badges") ?? el.status, dashboard);
       drawChart(el.chart, dashboard);
       renderComponents(el.components, dashboard);
@@ -285,9 +298,9 @@ export async function mountForecast(root: HTMLElement): Promise<void> {
       }
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      el.status.textContent = `取数失败：${message}`;
+      el.status.textContent = `取数失败：${message}（点「刷新」重试）`;
       el.status.className = "forecast-status error";
-      el.report.textContent = "预测数据暂时不可用。可能是后端未安装 numpy/torch，或权重未就位。";
+      el.report.textContent = "预测数据暂时不可用。可能是后端正在重启、未安装 numpy/torch，或权重未就位。";
     } finally {
       el.refresh.disabled = false;
     }
