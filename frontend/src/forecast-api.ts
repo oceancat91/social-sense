@@ -68,8 +68,11 @@ function unwrap<T>(body: unknown): T {
   return body as T;
 }
 
-async function getJson<T>(path: string): Promise<T> {
+async function getJson<T>(path: string, signal?: AbortSignal): Promise<T> {
   const controller = new AbortController();
+  const abort = () => controller.abort();
+  signal?.addEventListener("abort", abort, { once: true });
+  if (signal?.aborted) abort();
   const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
   try {
     const response = await fetch(`${API_BASE}/forecast${path}`, {
@@ -85,6 +88,7 @@ async function getJson<T>(path: string): Promise<T> {
     throw error;
   } finally {
     clearTimeout(timer);
+    signal?.removeEventListener("abort", abort);
   }
 }
 
@@ -94,8 +98,8 @@ const numArray = (value: unknown): number[] =>
 const strArray = (value: unknown): string[] =>
   Array.isArray(value) ? value.map((v) => String(v)) : [];
 
-export async function fetchForecastStatus(): Promise<ForecastStatus> {
-  const raw = await getJson<Record<string, unknown>>("/status");
+export async function fetchForecastStatus(signal?: AbortSignal): Promise<ForecastStatus> {
+  const raw = await getJson<Record<string, unknown>>("/status", signal);
   const model = (raw.model ?? null) as Record<string, unknown> | null;
   return {
     modelLoaded: Boolean(raw.model_loaded),
@@ -107,9 +111,10 @@ export async function fetchForecastStatus(): Promise<ForecastStatus> {
   };
 }
 
-export async function fetchForecastDashboard(historyDays = 90): Promise<ForecastDashboard> {
+export async function fetchForecastDashboard(historyDays = 90, signal?: AbortSignal): Promise<ForecastDashboard> {
   const raw = await getJson<Record<string, unknown>>(
     `/dashboard-data?hist=${encodeURIComponent(String(historyDays))}`,
+    signal,
   );
 
   const history = (raw.history ?? {}) as Record<string, unknown>;

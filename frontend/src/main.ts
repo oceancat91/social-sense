@@ -139,6 +139,7 @@ let previousFocus: HTMLElement | null = null;
 const detailTransition = new SurfaceTransition($("#detail-ui"), undefined, 180, 180);
 const tabTransition = new ContentTransition();
 let modalTransition: SurfaceTransition | undefined;
+let disposeForecast: (() => void) | undefined;
 let modalClosing = false;
 let modalSiblings: { node: HTMLElement; inert: boolean }[] = [];
 let pendingDetailFocus = false;
@@ -606,6 +607,8 @@ function openModal(kind: NonNullable<typeof modal>) {
   }
   modalClosing = false;
   modal = kind;
+  $("#stage").classList.toggle("forecast-open", kind === "forecast");
+  if (kind === "forecast") $("#stage").scrollTo(0, 0);
   searchQuery = "";
   filter = "全部档案";
   audio.play("page-open");
@@ -618,10 +621,13 @@ function closeModal(afterClose?: () => void) {
   }
   if (modalClosing) return;
   modalClosing = true;
+  disposeForecast?.();
+  disposeForecast = undefined;
   audio.play("page-close");
   modalTransition!.hide(!motionActive("surfaceTransitions"), () => {
     modal = null;
     modalClosing = false;
+    $("#stage").classList.remove("forecast-open");
     $("#modal-root").replaceChildren();
     modalTransition = undefined;
     modalSiblings.forEach(({ node, inert }) => (node.inert = inert));
@@ -634,22 +640,28 @@ function closeModal(afterClose?: () => void) {
 }
 function renderModal() {
   if (!modal) return;
+  disposeForecast?.();
+  disposeForecast = undefined;
 
   // 预测面板自成一套内容，走独立分支，避免把大段模板塞进下面的三元表达式里。
   if (modal === "forecast") {
     modalTransition?.dispose();
     $("#modal-root").innerHTML =
-      `<div class="modal-backdrop"><section class="terminal-modal forecast-modal" role="dialog" aria-modal="true" aria-label="热度预测与事件归因"><div class="modal-top"><span>SENSE LAB / FORECAST &amp; ATTRIBUTION</span><button data-action="close-modal" aria-label="关闭窗口">CLOSE <span>×</span></button></div>${forecastMarkup()}</section></div>`;
+      `<div class="modal-backdrop forecast-backdrop"><section class="terminal-modal forecast-modal" role="dialog" aria-modal="true" aria-label="热度预测与事件归因"><div class="modal-top"><span>SENSE LAB / FORECAST &amp; ATTRIBUTION</span><button data-action="close-modal" aria-label="关闭窗口">返回档案 <span>×</span></button></div>${forecastMarkup()}</section></div>`;
     const forecastBackdrop = $(".modal-backdrop");
     forecastBackdrop.hidden = true;
-    modalTransition = new SurfaceTransition(forecastBackdrop, $(".terminal-modal"));
+    modalTransition = new SurfaceTransition(forecastBackdrop, $(".terminal-modal"), 460, 240);
     modalTransition.show(!motionActive("surfaceTransitions"));
     forecastBackdrop.addEventListener("click", (event) => {
       if (event.target === event.currentTarget) closeModal();
     });
     requestAnimationFrame(() => {
       if (forecastBackdrop.isConnected && !modalClosing) {
-        void mountForecast($(".forecast-body"));
+        disposeForecast = mountForecast($(".forecast-body"), {
+          surfaces: motionActive("surfaceTransitions"),
+          numbers: motionActive("rollingNumbers"),
+        });
+        $('[data-action="close-modal"]').focus({ preventScroll: true });
       }
     });
     return;
@@ -914,7 +926,7 @@ document.addEventListener("keydown", (e) => {
   if (modal && e.key === "Tab") {
     const focusables = [
       ...$("#modal-root").querySelectorAll<HTMLElement>(
-        'button,input:not(:disabled),select:not(:disabled),summary,[tabindex="0"]',
+        'button:not(:disabled),input:not(:disabled),select:not(:disabled),summary,[tabindex="0"]',
       ),
     ];
     const visible = focusables.filter(el => el.getClientRects().length > 0);

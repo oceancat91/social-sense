@@ -1,313 +1,330 @@
-/**
- * 热度预测 · 事件归因面板。
- *
- * 作为三维终端内的一个模态视图（与「设置 / 检索 / 收藏」同级），
- * 不再是独立的 /forecast 页面。图表用 canvas 2D 手绘，不引入 Chart.js。
- */
-
-import { fetchForecastDashboard, fetchForecastStatus, stripMarkdown, type ForecastDashboard, type ForecastStatus } from "./forecast-api";
+import {
+  createRollingNumber,
+  type RollingNumberController,
+} from "@kitlangton/rolling-number";
+import {
+  fetchForecastDashboard,
+  fetchForecastStatus,
+  stripMarkdown,
+  type ForecastDashboard,
+} from "./forecast-api";
+import { ForecastChart } from "./forecast-chart";
 import { escapeHtml } from "./html";
 
-export interface ForecastElements {
-  status: HTMLElement;
-  chart: HTMLCanvasElement;
-  components: HTMLElement;
-  events: HTMLElement;
-  report: HTMLElement;
-  refresh: HTMLButtonElement;
-}
+const skeleton =
+  '<div class="forecast-skeleton" aria-hidden="true"><i></i><i></i><i></i></div>';
+const empty = (text: string) => `<p class="forecast-empty">${text}</p>`;
 
-/** 面板骨架。数据由 mountForecast 异步填充。 */
 export function forecastMarkup(): string {
-  return `<div class="forecast-body">
-    <div class="forecast-head">
+  return `<div class="forecast-body" data-state="loading" aria-busy="true">
+    <header class="forecast-head" data-forecast-reveal>
       <div class="forecast-title">
-        <h2>热度预测 <small>FORECAST &amp; ATTRIBUTION</small></h2>
-        <p>ŷ = T̂ + Ŝ + Ĉ + R̂ · 历史 28 天 → 预测 6 天</p>
+        <span class="forecast-eyebrow">SIGNAL OBSERVATORY / 舆情观测</span>
+        <h2>FORECAST<small>热度预测与归因</small></h2>
+        <p>从历史信号，读懂下一次变化。</p>
       </div>
       <div class="forecast-actions">
-        <span class="forecast-status" id="forecast-status" aria-live="polite">加载中…</span>
-        <button type="button" class="ghost" id="forecast-refresh">刷新</button>
+        <span class="forecast-status" id="forecast-status" role="status">正在连接预测数据</span>
+        <button type="button" class="forecast-refresh" id="forecast-refresh" disabled><span>刷新数据</span><span class="forecast-refresh-icon" aria-hidden="true">↻</span></button>
       </div>
-    </div>
-
-    <section class="forecast-panel">
-      <div class="forecast-panel-head">
-        <h3>近期热度与 6 日预测</h3>
-        <div class="forecast-badges" id="forecast-badges"></div>
-      </div>
-      <canvas id="forecast-chart" class="forecast-chart" height="220"></canvas>
+    </header>
+    <section class="forecast-metrics" aria-label="预测摘要" data-forecast-reveal>
+      <div class="forecast-metric"><span class="forecast-eyebrow">LATEST / 最新观测</span><strong id="forecast-latest">—</strong><small id="forecast-latest-date">等待历史数据</small></div>
+      <div class="forecast-metric"><span class="forecast-eyebrow">OUTLOOK / 预测终点</span><strong id="forecast-outlook">—</strong><small id="forecast-outlook-date">等待预测数据</small></div>
+      <div class="forecast-metric"><span class="forecast-eyebrow">EVENTS / 异常事件</span><strong id="forecast-count">—</strong><small id="forecast-window">当前观测窗口</small></div>
     </section>
-
+    <section class="forecast-panel forecast-trend" data-forecast-reveal>
+      <div class="forecast-panel-head"><h3><span class="forecast-section-no">01</span>热度轨迹</h3><div class="forecast-badges" id="forecast-badges"></div></div>
+      <div class="forecast-chart-meta"><span id="forecast-range">正在读取观测窗口</span><div class="forecast-legend"><span>历史观测</span><span>未来预测</span></div></div>
+      <div class="forecast-chart-wrap">
+        <canvas id="forecast-chart" class="forecast-chart" height="240" role="img" aria-label="热度曲线，等待数据" aria-describedby="forecast-readout"></canvas>
+        <div class="forecast-chart-message" id="forecast-chart-message"><span class="forecast-scan" aria-hidden="true"></span><span>正在读取热度序列</span></div>
+      </div>
+      <p class="forecast-chart-readout" id="forecast-readout" aria-live="off">历史实线 / 预测虚线</p>
+    </section>
     <div class="forecast-split">
-      <section class="forecast-panel">
-        <div class="forecast-panel-head"><h3>分量（标准化空间）</h3></div>
-        <div class="forecast-components" id="forecast-components"></div>
+      <section class="forecast-panel" data-forecast-reveal>
+        <div class="forecast-panel-head"><h3><span class="forecast-section-no">02</span>信号分解</h3><span class="forecast-note">标准化均值</span></div>
+        <div class="forecast-components" id="forecast-components">${skeleton}</div>
+        <p class="forecast-formula">ŷ = T̂ + Ŝ + Ĉ + R̂ <span>趋势 / 季节 / 冲击 / 残差</span></p>
       </section>
-
-      <section class="forecast-panel">
-        <div class="forecast-panel-head"><h3>异常事件（稳健 z）</h3></div>
-        <div class="forecast-events" id="forecast-events"></div>
+      <section class="forecast-panel" data-forecast-reveal>
+        <div class="forecast-panel-head"><h3><span class="forecast-section-no">03</span>异常事件</h3><span class="forecast-note">稳健 z 分数</span></div>
+        <div class="forecast-events" id="forecast-events">${skeleton}</div>
       </section>
     </div>
-
-    <section class="forecast-panel">
-      <div class="forecast-panel-head"><h3>AI 归因报告</h3></div>
-      <article class="forecast-report" id="forecast-report"></article>
+    <section class="forecast-panel forecast-report-panel" data-forecast-reveal>
+      <div class="forecast-panel-head"><h3><span class="forecast-section-no">04</span>AI 归因报告</h3><span class="forecast-note">ATTRIBUTION / 事件解读</span></div>
+      <article class="forecast-report" id="forecast-report">${skeleton}</article>
     </section>
+    <footer class="forecast-footer"><span>SENSE LAB / ANALYSIS OS</span><span>历史信号 <i>→</i> 趋势预测 <i>→</i> 事件归因</span></footer>
   </div>`;
 }
 
-function collect(root: HTMLElement): ForecastElements {
-  const pick = <T extends Element>(selector: string): T => {
-    const el = root.querySelector<T>(selector);
-    if (!el) throw new Error(`预测面板缺少元素：${selector}`);
-    return el;
-  };
-  return {
-    status: pick<HTMLElement>("#forecast-status"),
-    chart: pick<HTMLCanvasElement>("#forecast-chart"),
-    components: pick<HTMLElement>("#forecast-components"),
-    events: pick<HTMLElement>("#forecast-events"),
-    report: pick<HTMLElement>("#forecast-report"),
-    refresh: pick<HTMLButtonElement>("#forecast-refresh"),
-  };
-}
-
-/** 画一条折线图：实线历史 + 虚线预测，带极值与首尾日期标注。 */
-function drawChart(canvas: HTMLCanvasElement, dashboard: ForecastDashboard): void {
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  const cssWidth = canvas.clientWidth || 640;
-  const cssHeight = canvas.clientHeight || 220;
-  canvas.width = Math.round(cssWidth * dpr);
-  canvas.height = Math.round(cssHeight * dpr);
-  const ctx = canvas.getContext("2d");
-  if (!ctx) return;
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  ctx.clearRect(0, 0, cssWidth, cssHeight);
-
-  const history = dashboard.ot;
-  const forecast = dashboard.prediction;
-  if (history.length === 0 && forecast.length === 0) return;
-
-  const pad = { top: 16, right: 14, bottom: 26, left: 46 };
-  const plotW = Math.max(10, cssWidth - pad.left - pad.right);
-  const plotH = Math.max(10, cssHeight - pad.top - pad.bottom);
-
-  const all = [...history, ...forecast];
-  const min = Math.min(...all);
-  const max = Math.max(...all);
-  const span = max - min || 1;
-  const total = Math.max(1, history.length + forecast.length - 1);
-
-  const xAt = (index: number): number => pad.left + (plotW * index) / total;
-  const yAt = (value: number): number => pad.top + plotH * (1 - (value - min) / span);
-
-  const styles = getComputedStyle(canvas);
-  const lineColor = styles.getPropertyValue("--forecast-line").trim() || "#ed821b";
-  const forecastColor = styles.getPropertyValue("--forecast-predict").trim() || "#6fd3ff";
-  const gridColor = styles.getPropertyValue("--forecast-grid").trim() || "rgba(255,255,255,0.12)";
-  const textColor = styles.getPropertyValue("--forecast-text").trim() || "rgba(255,255,255,0.55)";
-
-  // 横向网格 + 纵轴刻度
-  ctx.strokeStyle = gridColor;
-  ctx.fillStyle = textColor;
-  ctx.lineWidth = 1;
-  ctx.font = "11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace";
-  ctx.textAlign = "right";
-  ctx.textBaseline = "middle";
-  for (let i = 0; i <= 3; i += 1) {
-    const y = pad.top + (plotH * i) / 3;
-    ctx.beginPath();
-    ctx.moveTo(pad.left, y);
-    ctx.lineTo(pad.left + plotW, y);
-    ctx.stroke();
-    const value = max - (span * i) / 3;
-    ctx.fillText(value.toFixed(1), pad.left - 8, y);
-  }
-
-  // 历史
-  if (history.length > 1) {
-    ctx.beginPath();
-    ctx.strokeStyle = lineColor;
-    ctx.lineWidth = 1.6;
-    ctx.lineJoin = "round";
-    history.forEach((value, index) => {
-      const x = xAt(index);
-      const y = yAt(value);
-      if (index === 0) ctx.moveTo(x, y);
-      else ctx.lineTo(x, y);
-    });
-    ctx.stroke();
-  }
-
-  // 预测（从最后一个历史点接出，虚线）
-  if (forecast.length > 0) {
-    const start = Math.max(0, history.length - 1);
-    ctx.beginPath();
-    ctx.strokeStyle = forecastColor;
-    ctx.lineWidth = 2;
-    ctx.setLineDash([5, 4]);
-    forecast.forEach((value, index) => {
-      const x = xAt(start + index + (history.length ? 1 : 0));
-      const y = yAt(value);
-      if (index === 0 && history.length > 0) {
-        ctx.moveTo(xAt(start), yAt(history[history.length - 1]));
-        ctx.lineTo(x, y);
-      } else if (index === 0) ctx.moveTo(x, y);
-      else ctx.lineTo(x, y);
-    });
-    ctx.stroke();
-    ctx.setLineDash([]);
-
-    // 预测点
-    ctx.fillStyle = forecastColor;
-    forecast.forEach((value, index) => {
-      const x = xAt(start + index + (history.length ? 1 : 0));
-      ctx.beginPath();
-      ctx.arc(x, yAt(value), 2.4, 0, Math.PI * 2);
-      ctx.fill();
-    });
-  }
-
-  // 横轴首尾日期
-  ctx.fillStyle = textColor;
-  ctx.textBaseline = "top";
-  ctx.textAlign = "left";
-  const firstDate = dashboard.dates[0] ?? "";
-  if (firstDate) ctx.fillText(firstDate, pad.left, pad.top + plotH + 8);
-  ctx.textAlign = "right";
-  const lastDate =
-    dashboard.predictionDates[dashboard.predictionDates.length - 1] ??
-    dashboard.dates[dashboard.dates.length - 1] ??
-    "";
-  if (lastDate) ctx.fillText(lastDate, pad.left + plotW, pad.top + plotH + 8);
-}
-
-function renderComponents(host: HTMLElement, dashboard: ForecastDashboard): void {
-  const components = dashboard.components;
-  if (!components) {
-    host.innerHTML = `<p class="forecast-muted">无分量数据</p>`;
+function renderComponents(
+  host: HTMLElement,
+  dashboard: ForecastDashboard,
+): void {
+  if (!dashboard.components) {
+    host.innerHTML = empty("当前结果未提供信号分量。");
     return;
   }
   const rows: [string, string, number[]][] = [
-    ["T̂", "趋势", components.T],
-    ["Ŝ", "季节", components.S],
-    ["Ĉ", "冲击", components.C],
-    ["R̂", "残差", components.R],
+    ["T̂", "趋势", dashboard.components.T],
+    ["Ŝ", "季节", dashboard.components.S],
+    ["Ĉ", "冲击", dashboard.components.C],
+    ["R̂", "残差", dashboard.components.R],
   ];
   host.innerHTML = rows
     .map(([glyph, label, values]) => {
-      const mean = values.length ? values.reduce((a, b) => a + b, 0) / values.length : 0;
-      const magnitude = Math.min(1, Math.abs(mean) / 4);
-      return `<div class="forecast-component">
-        <span class="forecast-glyph">${glyph}</span>
-        <span class="forecast-label">${label}</span>
-        <span class="forecast-bar"><i style="width:${(magnitude * 100).toFixed(1)}%"></i></span>
-        <span class="forecast-value">${mean.toFixed(3)}</span>
-      </div>`;
+      const mean = values.length
+        ? values.reduce((a, b) => a + b, 0) / values.length
+        : null;
+      const magnitude = Math.min(1, Math.abs(mean ?? 0) / 4);
+      return `<div class="forecast-component"><span class="forecast-component-symbol">${glyph}</span><span class="forecast-label">${label}</span><span class="forecast-bar" aria-hidden="true"><i style="--bar-scale:${magnitude}"></i></span><span class="forecast-value">${mean === null ? "—" : mean.toFixed(3)}</span></div>`;
     })
     .join("");
 }
 
 function renderEvents(host: HTMLElement, dashboard: ForecastDashboard): void {
-  if (dashboard.anomalies.length === 0) {
-    host.innerHTML = `<p class="forecast-muted">最近窗口内没有异常日</p>`;
-    return;
-  }
-  host.innerHTML = dashboard.anomalies
-    .slice(0, 8)
-    .map(
-      (event) => `<div class="forecast-event">
-        <span class="forecast-date">${escapeHtml(event.date)}</span>
-        <span class="forecast-z">z=${event.zMax.toFixed(1)}</span>
-        <span class="forecast-trigger">${escapeHtml(event.trigger)}</span>
-        <span class="forecast-ot">OT ${event.ot.toLocaleString("zh-CN")}</span>
-      </div>`,
-    )
-    .join("");
+  host.innerHTML = dashboard.anomalies.length
+    ? dashboard.anomalies
+        .slice(0, 8)
+        .map(
+          (event) =>
+            `<div class="forecast-event"><span class="forecast-date">${escapeHtml(event.date)}</span><span class="forecast-z">z ${event.zMax.toFixed(1)}</span><span class="forecast-trigger">${escapeHtml(event.trigger)}</span><span class="forecast-ot">OT ${event.ot.toLocaleString("zh-CN")}</span></div>`,
+        )
+        .join("")
+    : empty("最近观测窗口内没有异常日。");
 }
 
 function renderBadges(host: HTMLElement, dashboard: ForecastDashboard): void {
   const badges: string[] = [];
-  if (dashboard.direction) {
+  if (dashboard.direction === "up" || dashboard.direction === "down") {
     const up = dashboard.direction === "up";
     badges.push(
-      `<span class="forecast-badge ${up ? "up" : "down"}">${up ? "↑" : "↓"} ${up ? "看涨" : "看跌"}${
-        dashboard.directionDelta !== null ? ` ${dashboard.directionDelta.toFixed(2)}` : ""
-      }</span>`,
+      `<span class="forecast-badge">${up ? "↗ 上升趋势" : "↘ 下降趋势"}${dashboard.directionDelta !== null ? ` ${dashboard.directionDelta.toFixed(2)}` : ""}</span>`,
     );
   }
-  if (dashboard.spikeWarning) {
+  if (dashboard.spikeWarning)
     badges.push(
-      `<span class="forecast-badge warn">尖峰预警${
-        dashboard.spikeGain !== null ? ` +${dashboard.spikeGain.toFixed(2)}` : ""
-      }</span>`,
+      `<span class="forecast-badge warn">尖峰预警${dashboard.spikeGain !== null ? ` +${dashboard.spikeGain.toFixed(2)}` : ""}</span>`,
     );
-  }
   host.innerHTML = badges.join("");
 }
 
-/** 挂载：拉数据 → 渲染。任何失败都只影响面板自身。 */
-export async function mountForecast(root: HTMLElement): Promise<void> {
-  const el = collect(root);
+export interface ForecastMotion {
+  surfaces: boolean;
+  numbers: boolean;
+}
 
-  /** 拉一次数据。可重试：部署重启后端时会出现极短窗口的瞬时失败。 */
-  const fetchOnce = async (): Promise<ForecastDashboard> => fetchForecastDashboard();
+/** Own requests, observers and finite animations for exactly one modal lifetime. */
+export function mountForecast(
+  root: HTMLElement,
+  motion: ForecastMotion,
+): () => void {
+  const pick = <T extends HTMLElement>(selector: string) =>
+    root.querySelector<T>(selector)!;
+  const status = pick("#forecast-status");
+  const refresh = pick<HTMLButtonElement>("#forecast-refresh");
+  const components = pick("#forecast-components");
+  const events = pick("#forecast-events");
+  const report = pick("#forecast-report");
+  const chartMessage = pick("#forecast-chart-message");
+  const request = new AbortController();
+  const animations = new Set<Animation>();
+  const counters = new Map<string, RollingNumberController>();
+  let disposed = false;
+  let loading = false;
+  let hasData = false;
+  root.dataset.motion = motion.surfaces ? "full" : "reduced";
+  const chart = new ForecastChart(
+    pick<HTMLCanvasElement>("#forecast-chart"),
+    pick("#forecast-readout"),
+    () => motion.surfaces,
+  );
 
-  const load = async (): Promise<void> => {
-    el.status.textContent = "加载中…";
-    el.status.className = "forecast-status";
-    el.refresh.disabled = true;
+  const animate = (
+    element: HTMLElement,
+    frames: Keyframe[],
+    delay = 0,
+    duration = 620,
+  ) => {
+    if (!motion.surfaces) return;
+    const animation = element.animate(frames, {
+      duration,
+      delay,
+      easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+      fill: "backwards",
+    });
+    animations.add(animation);
+    void animation.finished
+      .then(() => animations.delete(animation))
+      .catch(() => {});
+  };
+  const reveal = (element: HTMLElement, delay = 0) =>
+    animate(
+      element,
+      [
+        { opacity: 0, transform: "translateY(14px)" },
+        { opacity: 1, transform: "translateY(0)" },
+      ],
+      delay,
+    );
+  // Sections below the fold enter when read, instead of finishing offscreen.
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries
+        .filter((entry) => entry.isIntersecting)
+        .forEach((entry, index) => {
+          const element = entry.target as HTMLElement;
+          reveal(element, index * 65);
+          element.classList.add("is-revealed");
+          observer.unobserve(element);
+        });
+    },
+    { root, threshold: 0.08 },
+  );
+  root
+    .querySelectorAll<HTMLElement>("[data-forecast-reveal]")
+    .forEach((element) => observer.observe(element));
+
+  const setStatus = (message: string, kind = "") => {
+    status.textContent = message;
+    status.className = `forecast-status ${kind}`;
+  };
+  const setNumber = (selector: string, value: number | undefined) => {
+    const host = pick(selector);
+    if (value === undefined) {
+      counters.get(selector)?.destroy();
+      counters.delete(selector);
+      host.textContent = "—";
+      return;
+    }
+    let counter = counters.get(selector);
+    if (!counter) {
+      counter = createRollingNumber(host, {
+        value: 0,
+        animated: false,
+        duration: 650,
+        motionBlur: true,
+        locales: "zh-CN",
+        format: { maximumFractionDigits: 1 },
+      });
+      counters.set(selector, counter);
+    }
+    counter.update({ value, animated: motion.numbers });
+  };
+  const fetchDashboard = async () => {
     try {
-      // 先看模型状态：未加载时给出明确原因，而不是让图表空着。
-      let status: ForecastStatus | null = null;
-      try {
-        status = await fetchForecastStatus();
-      } catch {
-        status = null;
-      }
-      if (status && !status.modelLoaded) {
-        el.status.textContent = `模型未加载${status.loadError ? `：${status.loadError}` : ""}`;
-        el.status.className = "forecast-status warn";
-      }
-
-      // 首次失败自动重试一次（800ms 后），盖住后端重启的瞬时不可用。
-      let dashboard: ForecastDashboard;
-      try {
-        dashboard = await fetchOnce();
-      } catch {
-        el.status.textContent = "网络不稳定，正在重试…";
-        el.status.className = "forecast-status warn";
-        await new Promise((resolve) => setTimeout(resolve, 800));
-        dashboard = await fetchOnce();
-      }
-
-      renderBadges(document.getElementById("forecast-badges") ?? el.status, dashboard);
-      drawChart(el.chart, dashboard);
-      renderComponents(el.components, dashboard);
-      renderEvents(el.events, dashboard);
-      el.report.textContent = stripMarkdown(dashboard.reportMarkdown) || "尚无归因报告，请先运行 workflow。";
-
-      if (status && status.modelLoaded) {
-        el.status.textContent = status.checkpointName ? `模型就绪 · ${status.checkpointName}` : "模型就绪";
-        el.status.className = "forecast-status ok";
-      } else if (!status) {
-        el.status.textContent = "已取到预测数据（模型状态未知）";
-        el.status.className = "forecast-status";
-      }
+      return await fetchForecastDashboard(90, request.signal);
     } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      el.status.textContent = `取数失败：${message}（点「刷新」重试）`;
-      el.status.className = "forecast-status error";
-      el.report.textContent = "预测数据暂时不可用。可能是后端正在重启、未安装 numpy/torch，或权重未就位。";
-    } finally {
-      el.refresh.disabled = false;
+      if (disposed) throw error;
+      setStatus("连接暂时中断，正在重试", "warn");
+      await new Promise((resolve) => setTimeout(resolve, 800));
+      if (disposed) throw error;
+      return fetchForecastDashboard(90, request.signal);
     }
   };
+  const load = async () => {
+    if (loading || disposed) return;
+    loading = true;
+    root.dataset.state = "loading";
+    root.setAttribute("aria-busy", "true");
+    refresh.disabled = true;
+    setStatus(hasData ? "正在更新观测数据" : "正在连接预测数据");
+    if (!hasData)
+      chartMessage.innerHTML =
+        '<span class="forecast-scan" aria-hidden="true"></span><span>正在读取热度序列</span>';
+    try {
+      const [model, dashboard] = await Promise.all([
+        fetchForecastStatus(request.signal).catch(() => null),
+        fetchDashboard(),
+      ]);
+      if (disposed) return;
+      renderBadges(pick("#forecast-badges"), dashboard);
+      setNumber("#forecast-latest", dashboard.ot[dashboard.ot.length - 1]);
+      setNumber(
+        "#forecast-outlook",
+        dashboard.prediction[dashboard.prediction.length - 1],
+      );
+      setNumber("#forecast-count", dashboard.anomalies.length);
+      pick("#forecast-latest-date").textContent =
+        dashboard.dates[dashboard.dates.length - 1] ?? "暂无历史观测";
+      pick("#forecast-outlook-date").textContent =
+        dashboard.predictionDates[dashboard.predictionDates.length - 1] ??
+        "暂无预测结果";
+      pick("#forecast-window").textContent =
+        `${dashboard.ot.length} 个历史观测中的异常日`;
+      pick("#forecast-range").textContent =
+        `${dashboard.ot.length} 个历史观测 → ${dashboard.prediction.length} 个预测值`;
+      chartMessage.hidden =
+        dashboard.ot.length + dashboard.prediction.length > 0;
+      if (!chartMessage.hidden)
+        chartMessage.textContent = "当前观测窗口暂无热度序列";
+      chart.update(dashboard);
+      renderComponents(components, dashboard);
+      renderEvents(events, dashboard);
+      report.textContent =
+        stripMarkdown(dashboard.reportMarkdown) || "当前结果尚未生成归因报告。";
+      if (hasData)
+        [components, events, report].forEach((element, index) =>
+          reveal(element, index * 60),
+        );
+      components
+        .querySelectorAll<HTMLElement>(".forecast-bar i")
+        .forEach((bar, index) =>
+          animate(
+            bar,
+            [
+              { transform: "scaleX(0)" },
+              {
+                transform: `scaleX(${bar.style.getPropertyValue("--bar-scale")})`,
+              },
+            ],
+            index * 65,
+            850,
+          ),
+        );
+      root.dataset.state = "ready";
+      hasData = true;
+      if (model?.modelLoaded) setStatus("预测数据已同步", "ok");
+      else if (model) setStatus("模型未就绪 · 已显示可用数据", "warn");
+      else setStatus("数据已读取 · 模型状态暂不可用", "warn");
+    } catch (error) {
+      if (disposed) return;
+      root.dataset.state = "error";
+      const message = error instanceof Error ? error.message : String(error);
+      setStatus(
+        `${hasData ? "更新失败，保留上次结果" : "暂时无法读取数据"} · ${message}`,
+        "error",
+      );
+      if (!hasData) {
+        chartMessage.textContent = "数据暂不可用，点击「刷新数据」重试";
+        components.innerHTML = empty("连接恢复后显示信号分量。");
+        events.innerHTML = empty("连接恢复后显示异常事件。");
+        report.textContent = "暂时无法读取归因报告，请稍后刷新。";
+        pick("#forecast-range").textContent = "等待连接恢复";
+      }
+    } finally {
+      loading = false;
+      if (!disposed) {
+        root.setAttribute("aria-busy", "false");
+        refresh.disabled = false;
+      }
+    }
+  };
+  const onRefresh = () => void load();
+  refresh.addEventListener("click", onRefresh);
+  void load();
 
-  el.refresh.addEventListener("click", () => void load());
-  // 模态的 clientWidth 在插入后下一帧才有效，所以首屏用 rAF 触发。
-  // 不挂 window resize 监听：每次打开模态都会新建 DOM，挂了会累积。
-  requestAnimationFrame(() => void load());
+  return () => {
+    disposed = true;
+    request.abort();
+    observer.disconnect();
+    chart.dispose();
+    animations.forEach((animation) => animation.cancel());
+    counters.forEach((counter) => counter.destroy());
+    refresh.removeEventListener("click", onRefresh);
+  };
 }
