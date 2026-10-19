@@ -11,6 +11,8 @@ import "@kitlangton/rolling-number/styles.css";
 import "./style.css";
 import "./quality-settings.css";
 import "./responsive.css";
+import "./forecast.css";
+import { forecastMarkup, mountForecast } from "./forecast-panel";
 import { viewportLayout, openingLayout } from "./viewport-layout";
 import { assetUrl } from "./asset-url";
 import { initPwa, pwaSettingsMarkup } from "./pwa";
@@ -62,6 +64,7 @@ $("#stage").innerHTML = `
     <button data-action="search"><span class="nav-glyph">⌕</span> ARCHIVE INDEX</button>
     <button data-action="saved" aria-label="查看收藏档案" title="收藏档案">${savedGlyph}<span class="saved-label">SAVED</span><span id="saved-count">00</span></button>
     <button class="music-button" data-action="music" aria-pressed="true" aria-label="背景音乐" title="背景音乐"><span class="music-glyph" aria-hidden="true">♪</span><span class="music-label">ON</span></button>
+  <button class="forecast-button" data-action="forecast" aria-label="热度预测与事件归因" title="热度预测"><span class="forecast-glyph-nav" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M3 17l6-6 4 4 7-7"/><path d="M20 8v5h-5"/></svg></span><span class="forecast-label-nav">预测</span></button>
   <button class="settings-button" data-action="settings" aria-label="系统设置" title="系统设置"><span class="settings-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M19.14 12.94c.04-.3.06-.61.06-.94s-.02-.64-.07-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.61-.22l-2.39.96a7.06 7.06 0 0 0-1.62-.94l-.36-2.54a.5.5 0 0 0-.49-.42h-3.84a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96a.5.5 0 0 0-.61.22L2.67 8.84a.5.5 0 0 0 .12.64l2.03 1.58c-.05.3-.08.63-.08.94s.03.64.08.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32c.13.23.4.32.61.22l2.39-.96c.49.38 1.03.7 1.62.94l.36 2.54a.5.5 0 0 0 .49.42h3.84a.5.5 0 0 0 .49-.42l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96a.5.5 0 0 0 .61-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"/></svg></span><span class="settings-label">设置</span></button>
   </nav>
   <button id="skip" class="skip" data-action="skip">ENTER SYSTEM <span class="skip-label">进入系统</span></button>
@@ -107,7 +110,7 @@ let mode: Mode = "boot",
   bootStart = 0,
   lastStep = "",
   ready = false;
-let modal: "search" | "saved" | "settings" | null = null,
+let modal: "search" | "saved" | "settings" | "forecast" | null = null,
   searchQuery = "",
   filter = "全部档案";
 let activeTab = "overview";
@@ -631,6 +634,27 @@ function closeModal(afterClose?: () => void) {
 }
 function renderModal() {
   if (!modal) return;
+
+  // 预测面板自成一套内容，走独立分支，避免把大段模板塞进下面的三元表达式里。
+  if (modal === "forecast") {
+    modalTransition?.dispose();
+    $("#modal-root").innerHTML =
+      `<div class="modal-backdrop"><section class="terminal-modal forecast-modal" role="dialog" aria-modal="true" aria-label="热度预测与事件归因"><div class="modal-top"><span>SENSE LAB / FORECAST &amp; ATTRIBUTION</span><button data-action="close-modal" aria-label="关闭窗口">CLOSE <span>×</span></button></div>${forecastMarkup()}</section></div>`;
+    const forecastBackdrop = $(".modal-backdrop");
+    forecastBackdrop.hidden = true;
+    modalTransition = new SurfaceTransition(forecastBackdrop, $(".terminal-modal"));
+    modalTransition.show(!motionActive("surfaceTransitions"));
+    forecastBackdrop.addEventListener("click", (event) => {
+      if (event.target === event.currentTarget) closeModal();
+    });
+    requestAnimationFrame(() => {
+      if (forecastBackdrop.isConnected && !modalClosing) {
+        void mountForecast($(".forecast-body"));
+      }
+    });
+    return;
+  }
+
   modalTransition?.dispose();
   $("#modal-root").innerHTML =
     `<div class="modal-backdrop"><section class="terminal-modal ${modal === "settings" ? "settings-modal" : ""}" role="dialog" aria-modal="true" aria-label="${modal === "settings" ? "系统设置" : modal === "saved" ? "收藏档案" : "档案检索"}"><div class="modal-top"><span>SENSE LAB / ${modal === "settings" ? "SYSTEM PREFERENCES" : "ARCHIVE DIRECTORY"}</span><button data-action="close-modal" aria-label="关闭窗口">CLOSE <span>×</span></button></div>${modal === "settings" ? settingsMarkup() : `<h2>${modal === "saved" ? "SAVED ARCHIVES" : "ARCHIVE INDEX"}<small>${modal === "saved" ? "收藏档案" : "内部档案检索"}</small></h2><div class="search-field"><span>⌕</span><input id="archive-search" type="search" autocomplete="off" placeholder="输入档案编号、名称或平台" aria-label="检索档案"/><span class="key">ESC</span></div><div class="category-filters">${categories.map((c, i) => `<button data-filter="${escapeHtml(c)}" class="${i === 0 ? "active" : ""}">${escapeHtml(c)}</button>`).join("")}</div><div class="result-header"><span>FILE / 档案</span><span>DEPARTMENT / 平台</span><span>ACCESS</span></div><div id="search-results" class="search-results"></div><div class="modal-bottom"><span id="result-count"></span><span>INTERNAL DATABASE <i>●</i> CONNECTED</span></div>`}</section></div>`;
@@ -832,7 +856,12 @@ document.addEventListener("click", (e) => {
     setMode("archive");
     audio.play("back");
   }
-  if (action === "search" || action === "saved" || action === "settings") {
+  if (
+    action === "search" ||
+    action === "saved" ||
+    action === "settings" ||
+    action === "forecast"
+  ) {
     el.focus({ preventScroll: true });
     openModal(action);
   }

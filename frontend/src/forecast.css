@@ -1,0 +1,276 @@
+/**
+ * 热度预测面板（三维终端内的模态视图）。
+ * 只负责面板内部布局；外层模态外壳（.terminal-modal / .modal-top）沿用 style.css。
+ */
+
+.forecast-modal {
+  width: min(1120px, 94vw);
+  max-height: min(84vh, 900px);
+}
+
+.forecast-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px 22px 24px;
+  overflow-y: auto;
+  max-height: calc(min(84vh, 900px) - 64px);
+
+  --forecast-line: #ed821b;
+  --forecast-predict: #6fd3ff;
+  --forecast-grid: rgba(255, 255, 255, 0.1);
+  --forecast-text: rgba(255, 255, 255, 0.55);
+  --forecast-line-soft: rgba(255, 255, 255, 0.14);
+}
+
+.forecast-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.forecast-title h2 {
+  margin: 0;
+  font-size: 1.28rem;
+  letter-spacing: 0.02em;
+}
+
+.forecast-title h2 small {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.forecast-title p {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.forecast-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.forecast-status {
+  font-size: 0.76rem;
+  padding: 4px 10px;
+  border: 1px solid var(--forecast-line-soft);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  max-width: 46ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.forecast-status.ok {
+  border-color: rgba(120, 220, 160, 0.5);
+  color: #8ee0b0;
+}
+
+.forecast-status.warn {
+  border-color: rgba(240, 190, 90, 0.5);
+  color: #f0be5a;
+}
+
+.forecast-status.error {
+  border-color: rgba(240, 110, 110, 0.55);
+  color: #f06e6e;
+}
+
+.forecast-panel {
+  border: 1px solid var(--forecast-line-soft);
+  border-radius: 10px;
+  padding: 14px 16px 16px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.forecast-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.forecast-panel-head h3 {
+  margin: 0;
+  font-size: 0.86rem;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.forecast-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.forecast-badge {
+  font-size: 0.72rem;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--forecast-line-soft);
+  letter-spacing: 0.04em;
+}
+
+.forecast-badge.up {
+  color: #8ee0b0;
+  border-color: rgba(120, 220, 160, 0.45);
+}
+
+.forecast-badge.down {
+  color: #f08a8a;
+  border-color: rgba(240, 110, 110, 0.45);
+}
+
+.forecast-badge.warn {
+  color: #f0be5a;
+  border-color: rgba(240, 190, 90, 0.45);
+}
+
+.forecast-chart {
+  width: 100%;
+  height: 220px;
+  display: block;
+}
+
+.forecast-split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.forecast-components {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.forecast-component {
+  display: grid;
+  grid-template-columns: 1.4rem 2.2rem 1fr 4.4rem;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+}
+
+.forecast-glyph {
+  color: var(--forecast-line);
+  font-weight: 600;
+}
+
+.forecast-label {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.forecast-bar {
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.09);
+  overflow: hidden;
+}
+
+.forecast-bar i {
+  display: block;
+  height: 100%;
+  background: var(--forecast-line);
+  border-radius: 3px;
+}
+
+.forecast-value {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.forecast-events {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 190px;
+  overflow-y: auto;
+}
+
+.forecast-event {
+  display: grid;
+  grid-template-columns: 6.6rem 4.4rem 5.4rem 1fr;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.76rem;
+  padding: 5px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.07);
+}
+
+.forecast-event:last-child {
+  border-bottom: 0;
+}
+
+.forecast-date {
+  color: rgba(255, 255, 255, 0.8);
+  font-variant-numeric: tabular-nums;
+}
+
+.forecast-z {
+  color: #f0be5a;
+  font-variant-numeric: tabular-nums;
+}
+
+.forecast-trigger {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.forecast-ot {
+  text-align: right;
+  color: rgba(255, 255, 255, 0.65);
+  font-variant-numeric: tabular-nums;
+}
+
+.forecast-report {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+  white-space: pre-wrap;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.forecast-muted {
+  margin: 0;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* 右上角导航里的预测入口：沿用导航按钮的外观，只补充 glyph 尺寸 */
+.forecast-glyph-nav {
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 720px) {
+  .forecast-body {
+    padding: 14px 14px 18px;
+    gap: 14px;
+  }
+
+  .forecast-chart {
+    height: 180px;
+  }
+
+  .forecast-event {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2px;
+  }
+
+  .forecast-status {
+    max-width: 100%;
+  }
+}
