@@ -28,25 +28,33 @@ def create_app():
     from app.routes.analysis import analysis_bp
     from app.routes.agent import agent_bp
     from app.routes.archives import archives_bp
-    from app.routes.forecast import forecast_bp
 
     app.register_blueprint(auth_bp, url_prefix='/api/v1/auth')
     app.register_blueprint(task_bp, url_prefix='/api/v1/tasks')
     app.register_blueprint(analysis_bp, url_prefix='/api/v1/analysis')
     app.register_blueprint(agent_bp, url_prefix='/api/v1/agent')
     app.register_blueprint(archives_bp, url_prefix='/api/v1')
-    app.register_blueprint(forecast_bp, url_prefix='/api/v1/forecast')
 
-    # 预测仪表盘静态页。蓝图自身也提供 /api/v1/forecast/ui，
-    # 这里额外给一个短路径 /forecast 方便本地直接打开。
-    # 注意：不加 @app.route('/')，本项目根路径归 Next.js 落地页所有。
-    @app.route('/forecast')
-    @app.route('/forecast/')
-    def forecast_dashboard():
-        from flask import send_from_directory
-        from pathlib import Path
-        static_dir = Path(app.root_path) / 'static' / 'forecast'
-        return send_from_directory(static_dir, 'index.html')
+    # 预测功能是可选的：它的依赖（numpy/pandas/torch）体积大，只在需要预测的机器上装。
+    # 这里整体包一层 try/except，保证预测模块的任何导入问题都不会拖垮整个后端 ——
+    # 线上曾因为 forecast.py 顶层 import numpy 而在没装 numpy 的服务器上面临启动崩溃。
+    try:
+        from app.routes.forecast import forecast_bp
+
+        app.register_blueprint(forecast_bp, url_prefix='/api/v1/forecast')
+
+        # 预测仪表盘静态页。蓝图自身也提供 /api/v1/forecast/ui，
+        # 这里额外给一个短路径 /forecast 方便直接打开。
+        # 注意：不加 @app.route('/')，本项目根路径归 Next.js 落地页所有。
+        @app.route('/forecast')
+        @app.route('/forecast/')
+        def forecast_dashboard():
+            from flask import send_from_directory
+            from pathlib import Path
+            static_dir = Path(app.root_path) / 'static' / 'forecast'
+            return send_from_directory(static_dir, 'index.html')
+    except Exception as exc:  # noqa: BLE001
+        app.logger.warning('预测模块未启用（其余功能不受影响）: %s', exc)
 
     # Render 健康检查端点
     @app.route('/health')

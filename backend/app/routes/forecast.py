@@ -8,9 +8,11 @@ import threading
 from datetime import datetime, timezone
 from pathlib import Path
 
-import numpy as np
-import pandas as pd
 from flask import Blueprint, current_app, jsonify, request, send_from_directory
+
+# numpy / pandas 只在真正读数据的地方导入，不放在模块顶层。
+# 原因：这两个包只有预测功能需要，若放在顶层，没装它们的环境（例如只跑后端的
+# 2 GB 服务器）会连 create_app() 都失败 —— 一个可选功能不该让整个站点起不来。
 
 logger = logging.getLogger(__name__)
 
@@ -49,6 +51,8 @@ def _get_service(force: bool = False):
 
 
 def _load_ot_frame():
+    import pandas as pd  # 惰性导入，见文件头说明
+
     csv_path = _FORECAST / "data" / "SocialMedia_log.csv"
     if not csv_path.exists():
         raise FileNotFoundError(f"missing {csv_path}")
@@ -100,6 +104,9 @@ def forecast_status():
 @forecast_bp.route("/dashboard-data", methods=["GET"])
 def dashboard_data():
     """仪表盘一次拉取：历史序列 + 最新预测 + 异常 + 报告。"""
+    import numpy as np  # 惰性导入，见文件头说明
+    import pandas as pd  # 惰性导入，见文件头说明
+
     hist_n = request.args.get("hist", default=90, type=int)
     hist_n = max(30, min(hist_n, 365))
 
