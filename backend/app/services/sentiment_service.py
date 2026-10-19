@@ -313,16 +313,43 @@ class SentimentService:
 
     @classmethod
     def _analyzer(cls):
-        """确定使用的分析器：大模型（配置了 Key）→ 预训练模型 → 词典兜底"""
+        """确定使用的分析器。
+
+        由 SENTIMENT_BACKEND 显式控制（部署到小内存机器时务必设成 dict 或 llm）：
+
+          auto         大模型（配了 Key）→ 预训练模型 → 词典（默认，向后兼容）
+          llm          只走大模型；没有 Key 就降级词典，绝不加载本地 Transformer
+          transformers 只走本地预训练模型
+          dict         只走词典
+
+        之所以要这个开关：本地预训练模型会把 transformers/torch 拉进进程，
+        在 2 GB 机器上是主要的内存风险，而原先的行为是「没配 LLM_API_KEY 就自动加载」。
+        """
+        backend = (os.getenv('SENTIMENT_BACKEND') or 'auto').strip().lower()
+        if backend not in ('auto', 'llm', 'transformers', 'dict'):
+            logger.warning('SENTIMENT_BACKEND=%r 无效，按 auto 处理', backend)
+            backend = 'auto'
+
         if cls._use_llm is None:
-            analyzer = _LLMAnalyzer.from_env()
-            if analyzer.available:
-                cls._llm = analyzer
-                cls._use_llm = True
-                logger.info('情感分析：已启用大模型 %s', analyzer.model)
-            else:
-                cls._use_llm = False
+            cls._use_llm = False
+            cls._use_transformer = False
+
+            if backend in ('auto', 'llm'):
+                analyzer = _LLMAnalyzer.from_env()
+                if analyzer.available:
+                    cls._llm = analyzer
+                    cls._use_llm = True
+                    logger.info('情感分析：已启用大模型 %s', analyzer.model)
+                elif backend == 'llm':
+                    logger.warning('SENTIMENT_BACKEND=llm 但未配置 LLM_API_KEY，降级为词典分析')
+
+            if cls._use_llm:
+                pass
+            elif backend in ('auto', 'transformers'):
                 cls._load_transformer()
+            else:
+                logger.info('情感分析：SENTIMENT_BACKEND=%s，跳过本地预训练模型，使用词典分析', backend)
+
         if cls._use_llm:
             return cls._llm
         return cls._transformer if cls._use_transformer else None

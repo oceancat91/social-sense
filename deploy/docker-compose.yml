@@ -27,7 +27,14 @@ services:
     restart: unless-stopped
 
   backend:
-    build: ../backend
+    # 构建上下文必须是仓库根：预测功能要 workflow/ 与 social_forecast/，
+    # 它们与 backend/ 同级，只给 ../backend 会 COPY 不到（原先的配置就缺这两个目录）。
+    build:
+      context: ..
+      dockerfile: backend/Dockerfile
+      # 需要预测功能时打开（CPU 版 torch 约 1 GB）：
+      # args:
+      #   INSTALL_FORECAST_DEPS: "1"
     container_name: social-sense-backend
     environment:
       - APP_ENV=production
@@ -43,6 +50,11 @@ services:
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin123}
       - HF_ENDPOINT=https://hf-mirror.com
       - SENTIMENT_MODEL_NAME=lxyuan/distilbert-base-multilingual-cased-sentiments-student
+      # 情感分析后端：auto（默认，向后兼容）/ llm / transformers / dict。
+      # 小内存机器请显式设 dict 或 llm，避免 transformers+torch 被拉进进程。
+      - SENTIMENT_BACKEND=${SENTIMENT_BACKEND:-auto}
+      # 预测权重：留空则自动扫描（优先 *_numeric.pt）；生产建议显式指定到具体文件。
+      - FORECAST_CHECKPOINT=${FORECAST_CHECKPOINT:-}
       - LLM_API_KEY=${LLM_API_KEY:-}
       - LLM_BASE_URL=${LLM_BASE_URL:-https://api.deepseek.com}
       - LLM_MODEL=${LLM_MODEL:-deepseek-chat}
@@ -63,6 +75,9 @@ services:
       - ../agent:/app/agent:ro
       - ../multiagent:/app/multiagent:ro
       - agent_outputs:/app/agent_outputs
+      # 权重与数据不进镜像（.dockerignore 已排除），运行期只读挂载。
+      - ../social_forecast/checkpoints:/app/social_forecast/checkpoints:ro
+      - ../social_forecast/data:/app/social_forecast/data:ro
     depends_on:
       mysql:
         condition: service_healthy

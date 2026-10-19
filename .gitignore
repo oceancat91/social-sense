@@ -110,3 +110,7 @@ social_forecast/results/workflow/
 # 线上由 deploy/setup-forecast-auth.sh 生成到 /etc/nginx/，不进版本库；
 # 本地为测试生成的任何 .htpasswd 也不要提交。
 .htpasswd*
+
+# 根目录下的 PDF（多为 md 的导出件或临时材料），不进版本库
+/*.pdf
+
