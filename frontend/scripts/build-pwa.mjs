@@ -1,7 +1,18 @@
-import { readdir, readFile, writeFile } from "node:fs/promises";
+import { readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 const root=resolve('dist');
+
+// public/ 里的未压缩模型会被原样复制进 dist/assets，而运行期真正请求的是 Vite 加了
+// hash 的那份（asset-url 的映射表会把 assets/archive-*.glb 改写成带 hash 的路径）。
+// 两份各占约 3.3 MB，纯属重复。这里只删「确实存在同名 hash 版本」的原件，
+// 压缩版（archive-*.draco.glb）与回退链都不受影响。
+const bare=await readdir(root,{recursive:true});
+for(const name of ['archive-cassette','archive-assembly']){
+  const hashed=bare.some(p=>new RegExp(`^assets/${name}\\.[0-9a-f]{16}\\.glb$`).test(p.replaceAll('\\','/')));
+  if(hashed) await rm(resolve(root,`assets/${name}.glb`),{force:true});
+}
+
 const all=await readdir(root,{recursive:true});
 const files=all.map(path=>path.replaceAll('\\','/')).filter(path=>
   path==='index.html'||path==='manifest.webmanifest'||path==='favicon.svg'||

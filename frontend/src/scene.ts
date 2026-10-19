@@ -7,6 +7,8 @@ import { disposeThreeTree } from "./three-resources";
 import { ThemeWave } from "./theme-motion";
 import { themeMaterial, themeEnvironment } from "./theme-material";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
+import type { GLTF } from "three/addons/loaders/GLTFLoader.js";
 import { createArchiveLighting, type LightingLook } from "./archive-lighting";
 import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
@@ -36,6 +38,34 @@ import { labelMarkSvg } from "./brand";
 import { archiveFraming } from "./viewport-layout";
 import { ArchiveDrag, ArchivePlaneMomentum, type DragAxis, type DragProjection, type DragPosition } from "./archive-drag";
 import { assetUrl as publicAsset } from "./asset-url";
+
+/**
+ * 三维模型加载。
+ *
+ * 模型已用 Draco 压缩：archive-cassette / archive-assembly 从 3.40 MB / 3.19 MB
+ * 降到约 280 KB，首屏少下载约 6 MB。代价是运行时需要 Draco 解码器
+ * （public/draco，wasm 路径实际加载约 245 KB）。
+ *
+ * 解码器或压缩文件任何一个加载失败，三维场景就会整块消失，所以这里一律带回退：
+ * 失败即退回未压缩的原模型 —— 压缩不该以「场景变砖」为代价。
+ */
+let dracoLoader: DRACOLoader | undefined;
+
+function createGltfLoader(): GLTFLoader {
+  const loader = new GLTFLoader();
+  dracoLoader ??= new DRACOLoader().setDecoderPath(publicAsset("draco/"));
+  loader.setDRACOLoader(dracoLoader);
+  return loader;
+}
+
+async function loadModel(compressedUrl: string, fallbackUrl: string): Promise<GLTF> {
+  try {
+    return await createGltfLoader().loadAsync(compressedUrl);
+  } catch (error) {
+    console.warn("Draco 压缩模型加载失败，回退到未压缩模型", error);
+    return createGltfLoader().loadAsync(fallbackUrl);
+  }
+}
 import { fullMotion, reducedMotion, type MotionPreferences } from "./motion-preferences";
 import {
   archiveWave,
@@ -279,7 +309,9 @@ export class ArchiveScene {
   async load(assetUrl = publicAsset("assets/archive-cassette.glb")) {
     this.labelMark.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(labelMarkSvg)}`;
     await this.labelMark.decode();
-    const gltf = await new GLTFLoader().loadAsync(
+    // 优先加载 Draco 压缩版（约 280 KB）；解码器或压缩文件异常时退回 assetUrl。
+    const gltf = await loadModel(
+      publicAsset("assets/archive-cassette.draco.glb"),
       assetUrl,
     );
     gltf.scene.updateMatrixWorld(true);
@@ -442,8 +474,10 @@ export class ArchiveScene {
 
   private assemblyTemplate?: Promise<THREE.Group>;
   async createAssemblyModel() {
-    this.assemblyTemplate ??= new GLTFLoader()
-      .loadAsync(publicAsset("assets/archive-assembly.glb"))
+    this.assemblyTemplate ??= loadModel(
+      publicAsset("assets/archive-assembly.draco.glb"),
+      publicAsset("assets/archive-assembly.glb"),
+    )
       .then((gltf) => {
         gltf.scene.updateMatrixWorld(true);
         return gltf.scene;
