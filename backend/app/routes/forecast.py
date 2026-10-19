@@ -214,6 +214,18 @@ def dashboard_data():
             noise = jitter.normal(0.0, 0.015, len(yhat)) * level
             yhat = [float(v + d + n) for v, d, n in zip(yhat, drift, noise)]
 
+        # 方向标签以「实际展示的曲线」为准，而不是模型第一轮的原始判定。
+        # 递归 21 步并叠加扰动后，曲线可能整体上行，而原始判定是基于另一段输入、
+        # 且刚好卡在阈值边缘的决策（不同 torch 版本间甚至会翻转）。两者不一致时
+        # 用户会看到「曲线在涨、标签写着看跌」。这里统一以用户看到的曲线为准。
+        if len(yhat) >= 2 and yhat[0]:
+            change = (yhat[-1] - yhat[0]) / abs(yhat[0])
+            direction = "up" if change >= 0 else "down"
+            direction_delta = float(change)
+        else:
+            direction = head.get("direction")
+            direction_delta = head.get("direction_delta")
+
         # 预测起点 = 今天（数据已补齐到昨天），逐日递增。
         fut_dates = [
             (today + timedelta(days=offset)).strftime("%Y-%m-%d")
@@ -222,8 +234,8 @@ def dashboard_data():
         prediction = {
             "dates": fut_dates,
             "yhat_raw": yhat,
-            "direction": head.get("direction"),
-            "direction_delta": head.get("direction_delta"),
+            "direction": direction,
+            "direction_delta": direction_delta,
             "spike_warning": head.get("spike_warning"),
             "spike_gain": head.get("spike_gain"),
             "origin_raw": head.get("origin_raw"),
