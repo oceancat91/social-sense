@@ -264,11 +264,8 @@
   color: var(--forecast-subtle);
 }
 
-/* 右上角导航里的预测入口：沿用导航按钮外观，只补 glyph 尺寸 */
-.forecast-glyph-nav {
-  display: inline-flex;
-  align-items: center;
-}
+/* 导航入口的图标尺寸/填充沿用 style.css 的 .settings-glyph 组（已把 .forecast-glyph 并进去），
+   这里不再重复定义，避免两处规则打架。 */
 
 @media (max-width: 720px) {
   .forecast-body {

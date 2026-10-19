@@ -397,7 +397,8 @@ button {
   margin-left: 6px;
 }
 .settings-glyph,
-.saved-glyph {
+.saved-glyph,
+.forecast-glyph {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -406,7 +407,8 @@ button {
   height: 23px;
 }
 .settings-glyph svg,
-.saved-glyph svg {
+.saved-glyph svg,
+.forecast-glyph svg {
   display: block;
   width: 100%;
   height: 100%;
