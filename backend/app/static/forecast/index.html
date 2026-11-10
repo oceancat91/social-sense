@@ -27,7 +27,7 @@
       <div class="ev-list" id="evList"></div>
     </section>
 
-    <section class="panel span-2">
+    <section class="panel">
       <div class="panel-head">
         <h2 id="chartTitle">爆发后衰减：预测 vs 真实</h2>
         <div class="badges" id="dirBadges"></div>
@@ -37,21 +37,24 @@
       <p class="note" id="caveat"></p>
     </section>
 
-    <section class="panel span-2">
+    <div class="pair">
+    <section class="panel">
       <div class="panel-head"><h2>模型四分量分解</h2><div class="badges" id="compBadge"></div></div>
       <canvas id="compChart" height="104"></canvas>
       <dl class="kpi" id="compKpi" style="margin-top:12px"></dl>
       <p class="note" id="compNote"></p>
     </section>
 
-    <section class="panel span-2">
+    <section class="panel">
       <div class="panel-head"><h2>传播时序：博文 → 评论</h2><div class="badges" id="propBadge"></div></div>
       <canvas id="propChart" height="96"></canvas>
       <dl class="kpi" id="propKpi" style="margin-top:12px"></dl>
       <p class="note" id="propNote"></p>
     </section>
+    </div>
 
-    <section class="panel span-2">
+    <div class="pair">
+    <section class="panel">
       <div class="panel-head"><h2>跨平台分布</h2><div class="badges" id="platBadge"></div></div>
       <div id="platBody"></div>
     </section>
@@ -60,6 +63,7 @@
       <div class="panel-head"><h2>全部事件指标</h2></div>
       <div id="allTau"></div>
     </section>
+    </div>
   </main>
 
   <script src="/api/v1/forecast/asset/events.js"></script>
