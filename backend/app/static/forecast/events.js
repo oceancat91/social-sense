@@ -27,7 +27,7 @@ const fmt = (n) => (n == null ? "—" : Number(n).toLocaleString("zh-CN", { maxi
 function setStatus(text, kind) {
   const el = $("statusPill");
   el.textContent = text;
-  el.style.color = kind === "err" ? "#e88" : kind === "ok" ? "#7fe0b8" : "";
+  el.style.color = kind === "err" ? "#b86110" : kind === "ok" ? "#a67d48" : "";
 }
 
 /* ---------- 事件列表 ---------- */
@@ -61,14 +61,12 @@ function renderAllTau() {
   const rows = sorted
     .map((e) => {
       const w = Math.max(2, ((e.half_life_days ?? 0) / max) * 100);
-      return `<div style="font-size:11px;margin-bottom:7px">
-        <div style="display:flex;justify-content:space-between;margin-bottom:2px">
-          <span style="opacity:.8">${e.name.length > 12 ? e.name.slice(0, 12) + "…" : e.name}</span>
-          <span style="color:#7fe0b8;font-variant-numeric:tabular-nums">${fmt(e.half_life_days)} 天</span>
+      return `<div class="tau-row">
+        <div class="row-head">
+          <span class="row-name">${e.name.length > 12 ? e.name.slice(0, 12) + "…" : e.name}</span>
+          <span class="row-val">${fmt(e.half_life_days)} 天</span>
         </div>
-        <div style="height:4px;border-radius:2px;background:rgba(255,255,255,.07)">
-          <div style="height:4px;border-radius:2px;background:rgba(127,224,184,.65);width:${w}%"></div>
-        </div>
+        <div class="tau-bar"><i style="width:${w}%"></i></div>
       </div>`;
     })
     .join("");
@@ -128,8 +126,8 @@ function drawChart(d) {
         {
           label: "历史声量",
           data: histSeries,
-          borderColor: "rgba(160,180,220,.85)",
-          backgroundColor: "rgba(160,180,220,.08)",
+          borderColor: "rgba(8,10,8,.55)",
+          backgroundColor: "rgba(8,10,8,.05)",
           borderWidth: 2,
           pointRadius: 0,
           tension: 0.25,
@@ -138,7 +136,7 @@ function drawChart(d) {
         {
           label: "预测（指数衰减）",
           data: predSeries,
-          borderColor: "rgba(127,224,184,.95)",
+          borderColor: "#a67d48",
           borderWidth: 2,
           borderDash: [5, 4],
           pointRadius: 0,
@@ -147,7 +145,7 @@ function drawChart(d) {
         {
           label: "真实值",
           data: actualSeries,
-          borderColor: "rgba(240,180,120,.9)",
+          borderColor: "#ed821b",
           borderWidth: 1.6,
           pointRadius: 0,
           tension: 0.25,
@@ -159,18 +157,18 @@ function drawChart(d) {
       animation: false,
       interaction: { mode: "index", intersect: false },
       plugins: {
-        legend: { labels: { color: "rgba(230,235,245,.8)", boxWidth: 12, font: { size: 11 } } },
+        legend: { labels: { color: "rgba(8,10,8,.7)", boxWidth: 12, font: { size: 11 } } },
         tooltip: { callbacks: { label: (c) => `${c.dataset.label}: ${fmt(c.parsed.y)}` } },
       },
       scales: {
         x: {
-          ticks: { color: "rgba(200,210,230,.5)", maxTicksLimit: 9, font: { size: 10 } },
-          grid: { color: "rgba(255,255,255,.05)" },
+          ticks: { color: "rgba(8,10,8,.45)", maxTicksLimit: 9, font: { size: 10 } },
+          grid: { color: "rgba(8,10,8,.08)" },
         },
         y: {
           beginAtZero: true,
-          ticks: { color: "rgba(200,210,230,.5)", font: { size: 10 } },
-          grid: { color: "rgba(255,255,255,.05)" },
+          ticks: { color: "rgba(8,10,8,.45)", font: { size: 10 } },
+          grid: { color: "rgba(8,10,8,.08)" },
         },
       },
     },
@@ -273,8 +271,8 @@ function renderPropagation(d, eventWindow) {
         {
           label: "博文",
           data: post,
-          borderColor: "rgba(160,180,220,.9)",
-          backgroundColor: "rgba(160,180,220,.07)",
+          borderColor: "rgba(8,10,8,.6)",
+          backgroundColor: "rgba(8,10,8,.05)",
           borderWidth: 1.8,
           pointRadius: 0,
           tension: 0.25,
@@ -284,7 +282,7 @@ function renderPropagation(d, eventWindow) {
         {
           label: "评论",
           data: cmt,
-          borderColor: "rgba(240,180,120,.9)",
+          borderColor: "#ed821b",
           borderWidth: 1.8,
           pointRadius: 0,
           tension: 0.25,
@@ -297,12 +295,12 @@ function renderPropagation(d, eventWindow) {
       animation: false,
       interaction: { mode: "index", intersect: false },
       plugins: {
-        legend: { labels: { color: "rgba(230,235,245,.8)", boxWidth: 12, font: { size: 11 } } },
+        legend: { labels: { color: "rgba(8,10,8,.7)", boxWidth: 12, font: { size: 11 } } },
       },
       scales: {
-        x: { ticks: { color: "rgba(200,210,230,.5)", maxTicksLimit: 8, font: { size: 10 } }, grid: { color: "rgba(255,255,255,.05)" } },
-        y: { position: "left", beginAtZero: true, ticks: { color: "rgba(160,180,220,.7)", font: { size: 10 } }, grid: { color: "rgba(255,255,255,.05)" } },
-        y1: { position: "right", beginAtZero: true, ticks: { color: "rgba(240,180,120,.7)", font: { size: 10 } }, grid: { drawOnChartArea: false } },
+        x: { ticks: { color: "rgba(8,10,8,.45)", maxTicksLimit: 8, font: { size: 10 } }, grid: { color: "rgba(255,255,255,.05)" } },
+        y: { position: "left", beginAtZero: true, ticks: { color: "rgba(8,10,8,.5)", font: { size: 10 } }, grid: { color: "rgba(255,255,255,.05)" } },
+        y1: { position: "right", beginAtZero: true, ticks: { color: "#b86110", font: { size: 10 } }, grid: { drawOnChartArea: false } },
       },
     },
   });

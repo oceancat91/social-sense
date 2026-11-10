@@ -7,34 +7,10 @@
   <!-- 资源走 /api/v1/forecast/asset/*：该前缀已被 Nginx 代理且继承 Basic Auth。
        不要用 /static/*：线上会落到落地页 try_files 兜底，返回 HTML 而非脚本。 -->
   <script src="/api/v1/forecast/asset/vendor/chart.umd.min.js"></script>
-  <link rel="stylesheet" href="/api/v1/forecast/asset/dashboard.css" />
-  <style>
-    .ev-list { display: flex; flex-direction: column; gap: 8px; max-height: 62vh; overflow-y: auto; }
-    .ev-card {
-      border: 1px solid rgba(255,255,255,.10); border-radius: 10px; padding: 10px 12px;
-      cursor: pointer; transition: background .15s, border-color .15s;
-      background: rgba(255,255,255,.02);
-    }
-    .ev-card:hover { background: rgba(255,255,255,.05); }
-    .ev-card.active { border-color: rgba(120,220,180,.55); background: rgba(120,220,180,.08); }
-    .ev-card h3 { font-size: 13px; margin: 0 0 4px; font-weight: 600; line-height: 1.35; }
-    .ev-card .sub { font-size: 11px; opacity: .62; display: flex; gap: 10px; flex-wrap: wrap; }
-    .ev-card .tau { color: #7fe0b8; }
-    .kpi { display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 8px; }
-    .kpi div { background: rgba(255,255,255,.03); border-radius: 8px; padding: 8px 10px; }
-    .kpi dt { font-size: 10px; opacity: .55; letter-spacing: .04em; text-transform: uppercase; }
-    .kpi dd { margin: 2px 0 0; font-size: 16px; font-weight: 600; font-variant-numeric: tabular-nums; }
-    .note { font-size: 11px; opacity: .62; line-height: 1.6; margin: 8px 0 0; }
-    table.plat { width: 100%; border-collapse: collapse; font-size: 12px; }
-    table.plat th, table.plat td { text-align: left; padding: 5px 8px; border-bottom: 1px solid rgba(255,255,255,.06); }
-    table.plat th { font-weight: 500; opacity: .55; font-size: 11px; }
-    .warn { color: #e8b26a; }
-    .ok { color: #7fe0b8; }
-  </style>
+  <link rel="stylesheet" href="/api/v1/forecast/asset/events.css" />
 </head>
 <body>
-  <div class="bg"></div>
-  <header class="top">
+    <header class="top">
     <div class="brand">
       <span class="mark">SS</span>
       <div>
