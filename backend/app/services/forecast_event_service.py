@@ -88,6 +88,7 @@ def list_events() -> List[Dict[str, Any]]:
                 "name": item.get("name", f.stem),
                 "description": item.get("description", ""),
                 "keywords": item.get("keywords", []),
+                "synthetic": bool(item.get("synthetic", False)),
                 "start": str(df["date"].min().date()),
                 "end": str(df["date"].max().date()),
                 "days": int(len(df)),
@@ -274,3 +275,19 @@ def event_propagation(event_id: str) -> Dict[str, Any]:
         }
         data["active_days"] = hi - lo + 1
     return data
+
+def event_components(event_id: str) -> Dict[str, Any]:
+    """该事件的模型四分量（T/S/C/R）与方向/尖峰指标。
+
+    数据由 scripts/extract_model_components.py 预先用仓库 RepMoE 模型推理得到，
+    不在请求时跑模型（24 个事件逐个推理太慢）。
+    """
+    if not event_id or "/" in event_id or "\\" in event_id or ".." in event_id:
+        raise ValueError("非法事件标识")
+    p = _EVENT_DIR / "_components.json"
+    if not p.exists():
+        raise FileNotFoundError("模型分量尚未生成")
+    allc = json.loads(p.read_text(encoding="utf-8"))
+    if event_id not in allc:
+        raise FileNotFoundError(f"该事件无模型分量: {event_id}")
+    return allc[event_id]

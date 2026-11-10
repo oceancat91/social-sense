@@ -384,6 +384,19 @@ def forecast_event_propagation(event_id: str):
         return jsonify(code=503, message=f"传播时序不可用: {e}"), 503
 
 
+@forecast_bp.route("/event/<event_id>/components", methods=["GET"])
+def forecast_event_components(event_id: str):
+    """事件的四分量分解（T/S/C/R）+ 方向 Δ / 尖峰增益。"""
+    try:
+        from app.services.forecast_event_service import event_components
+
+        return jsonify(code=200, message="ok", data=event_components(event_id))
+    except FileNotFoundError as e:
+        return jsonify(code=404, message=str(e)), 404
+    except Exception as e:  # noqa: BLE001
+        return jsonify(code=503, message=f"模型分量不可用: {e}"), 503
+
+
 @forecast_bp.route("/asset/<path:name>", methods=["GET"])
 def forecast_asset(name: str):
     """仪表盘的本地静态资源（CSS / JS / vendor 依赖）。

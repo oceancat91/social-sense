@@ -46,7 +46,7 @@ function renderList() {
       <div class="sub">
         <span>${ev.start} ~ ${ev.end}</span>
         <span>峰值 ${fmt(ev.peak)}</span>
-        <span class="tau">τ ${fmt(ev.tau_days)} 天</span>
+        <span class="tau">τ ${fmt(ev.tau_days)} 天</span>${ev.synthetic ? '<span style="color:#b86110">合成</span>' : ""}
       </div>`;
     card.addEventListener("click", () => select(ev.event_id));
     list.appendChild(card);
@@ -94,6 +94,9 @@ async function select(id) {
 
     const p = await getJSON(`${API}/event/${encodeURIComponent(id)}/platforms`).catch(() => null);
     renderPlatforms(p);
+
+    const comp = await getJSON(`${API}/event/${encodeURIComponent(id)}/components`).catch(() => null);
+    renderComponents(comp);
 
     const prop = await getJSON(`${API}/event/${encodeURIComponent(id)}/propagation`).catch(() => null);
     renderPropagation(prop, ev ? { start: ev.start, end: ev.end } : null);
@@ -323,6 +326,80 @@ function renderPropagation(d, eventWindow) {
   note.textContent = `${type}。仅同时具备博文与评论的事件可做此项分析。`;
 }
 
+
+/* ---------- 模型四分量 ---------- */
+
+let compChartRef = null;
+
+function renderComponents(d) {
+  const badge = $("compBadge");
+  const kpi = $("compKpi");
+  const note = $("compNote");
+
+  if (!d || !d.components) {
+    badge.innerHTML = `<span class="badge warn">无数据</span>`;
+    $("compChart").style.display = "none";
+    kpi.innerHTML = "";
+    note.textContent = "该事件没有模型分量数据。";
+    note.className = "note warn";
+    return;
+  }
+
+  $("compChart").style.display = "";
+  badge.innerHTML = `<span class="badge">${d.model?.name || "RepMoE"}</span>`;
+
+  const keys = ["T", "S", "C", "R"];
+  const colors = {
+    T: "#080a08",
+    S: "#a67d48",
+    C: "#ed821b",
+    R: "#8b93a1",
+  };
+  const labels = { T: "T̂ 趋势", S: "Ŝ 季节", C: "Ĉ 冲击", R: "R̂ 残差" };
+  const datasets = keys
+    .filter((k) => Array.isArray(d.components[k]) && d.components[k].length)
+    .map((k) => ({
+      label: labels[k],
+      data: d.components[k],
+      borderColor: colors[k],
+      borderWidth: k === "C" ? 2.2 : 1.6,
+      pointRadius: 0,
+      tension: 0.25,
+      borderDash: k === "C" ? [6, 3] : undefined,
+    }));
+
+  const ctx = $("compChart").getContext("2d");
+  if (compChartRef) compChartRef.destroy();
+  compChartRef = new Chart(ctx, {
+    type: "line",
+    data: { labels: datasets[0]?.data.map((_, i) => `+${i + 1}`) || [], datasets },
+    options: {
+      responsive: true,
+      animation: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { labels: { color: "rgba(8,10,8,.7)", boxWidth: 12, font: { size: 11 } } },
+      },
+      scales: {
+        x: { ticks: { color: "rgba(8,10,8,.45)", font: { size: 10 } }, grid: { color: "rgba(8,10,8,.06)" } },
+        y: { ticks: { color: "rgba(8,10,8,.45)", font: { size: 10 } }, grid: { color: "rgba(8,10,8,.08)" } },
+      },
+    },
+  });
+
+  const items = [
+    ["模型", d.model?.name || "RepMoE"],
+    ["方向 Δ", fmt(d.direction_delta)],
+    ["尖峰增益", fmt(d.spike_gain)],
+    ["触发度", fmt(d.fire)],
+    ["窗口起点", d.window_dates?.[0] || "—"],
+    ["窗口长度", `${d.window_volume?.length || 0} 天`],
+  ];
+  kpi.innerHTML = items.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
+  note.className = "note";
+  note.textContent =
+    d.caveat || "四分量表示模型如何分解这段曲线（标准化空间），属定性解释。";
+}
 /* ---------- 启动 ---------- */
 
 async function boot() {
