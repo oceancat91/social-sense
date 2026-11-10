@@ -209,3 +209,16 @@ def event_platforms(event_id: str) -> Dict[str, Any]:
     if not p.exists():
         raise FileNotFoundError(f"该事件尚无跨平台画像: {event_id}")
     return json.loads(p.read_text(encoding="utf-8"))
+
+def event_propagation(event_id: str) -> Dict[str, Any]:
+    """事件传播时序：评论相对博文的时间滞后。
+
+    只有同时具备「博文 + 评论」的事件才有数据（上海落户、新冠）。
+    其余事件抛 FileNotFoundError，由调用方如实返回"无数据"，不做外推。
+    """
+    if not event_id or "/" in event_id or "\\" in event_id or ".." in event_id:
+        raise ValueError("非法事件标识")
+    p = _EVENT_DIR / "propagation" / f"{event_id}.json"
+    if not p.exists():
+        raise FileNotFoundError(f"该事件无传播时序数据: {event_id}")
+    return json.loads(p.read_text(encoding="utf-8"))

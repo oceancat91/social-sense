@@ -1,0 +1,38 @@
+{
+  "shanghai_luohu": {
+    "event_id": "shanghai_luohu",
+    "name": "上海非沪籍高校毕业生落户政策",
+    "post_count": 22568,
+    "comment_count": 19765,
+    "comment_per_post": 0.88,
+    "post_days": 1793,
+    "comment_days": 48,
+    "start": "2018-01-02",
+    "end": "2022-12-31",
+    "best_lag_days": 0,
+    "best_lag_corr": 0.5287,
+    "post_peak_day": "2018-08-07",
+    "comment_peak_day": "2018-08-07",
+    "peak_lag_days": 0,
+    "post_tau_days": 1.0,
+    "comment_tau_days": 0.75
+  },
+  "xinguan": {
+    "event_id": "xinguan",
+    "name": "新冠疫情政策",
+    "post_count": 14156,
+    "comment_count": 1292,
+    "comment_per_post": 0.09,
+    "post_days": 35,
+    "comment_days": 87,
+    "start": "2020-01-20",
+    "end": "2021-01-22",
+    "best_lag_days": 4,
+    "best_lag_corr": 0.3538,
+    "post_peak_day": "2020-01-26",
+    "comment_peak_day": "2020-01-28",
+    "peak_lag_days": 2,
+    "post_tau_days": 9.75,
+    "comment_tau_days": 2.25
+  }
+}

@@ -96,6 +96,9 @@ async function select(id) {
 
     const p = await getJSON(`${API}/event/${encodeURIComponent(id)}/platforms`).catch(() => null);
     renderPlatforms(p);
+
+    const prop = await getJSON(`${API}/event/${encodeURIComponent(id)}/propagation`).catch(() => null);
+    renderPropagation(prop, ev ? { start: ev.start, end: ev.end } : null);
     setStatus("数据就绪", "ok");
   } catch (err) {
     setStatus(`加载失败：${err.message}`, "err");
@@ -220,6 +223,106 @@ function renderPlatforms(p) {
   $("platBody").innerHTML = `
     <table class="plat">${head}${rows || `<tr><td colspan="4" style="opacity:.5">无记录</td></tr>`}</table>
     <p class="note ${adequate ? "ok" : "warn"}">${p.verdict || ""}</p>`;
+}
+
+
+/* ---------- 传播时序 ---------- */
+
+let propChartRef = null;
+
+function renderPropagation(d, eventWindow) {
+  const badge = $("propBadge");
+  const kpi = $("propKpi");
+  const note = $("propNote");
+
+  if (!d) {
+    badge.innerHTML = `<span class="badge warn">无数据</span>`;
+    $("propChart").style.display = "none";
+    kpi.innerHTML = "";
+    note.textContent = "该事件没有「博文 + 评论」成对数据，无法做传播时序分析。不做外推。";
+    note.className = "note warn";
+    return;
+  }
+
+  $("propChart").style.display = "";
+  badge.innerHTML = `<span class="badge ok">${d.post_count.toLocaleString()} 博文 / ${d.comment_count.toLocaleString()} 评论</span>`;
+
+  // 只画事件窗口附近，避免 1794 天的长尾把图压扁
+  let dates = d.series.dates;
+  let post = d.series.post;
+  let cmt = d.series.comment;
+  if (eventWindow && eventWindow.start && eventWindow.end) {
+    const from = dates.indexOf(eventWindow.start);
+    const to = dates.indexOf(eventWindow.end);
+    if (from >= 0 && to > from) {
+      const a = Math.max(0, from - 7);
+      const b = Math.min(dates.length, to + 8);
+      dates = dates.slice(a, b);
+      post = post.slice(a, b);
+      cmt = cmt.slice(a, b);
+    }
+  }
+
+  const ctx = $("propChart").getContext("2d");
+  if (propChartRef) propChartRef.destroy();
+  propChartRef = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: dates,
+      datasets: [
+        {
+          label: "博文",
+          data: post,
+          borderColor: "rgba(160,180,220,.9)",
+          backgroundColor: "rgba(160,180,220,.07)",
+          borderWidth: 1.8,
+          pointRadius: 0,
+          tension: 0.25,
+          fill: true,
+          yAxisID: "y",
+        },
+        {
+          label: "评论",
+          data: cmt,
+          borderColor: "rgba(240,180,120,.9)",
+          borderWidth: 1.8,
+          pointRadius: 0,
+          tension: 0.25,
+          yAxisID: "y1",
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      animation: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { labels: { color: "rgba(230,235,245,.8)", boxWidth: 12, font: { size: 11 } } },
+      },
+      scales: {
+        x: { ticks: { color: "rgba(200,210,230,.5)", maxTicksLimit: 8, font: { size: 10 } }, grid: { color: "rgba(255,255,255,.05)" } },
+        y: { position: "left", beginAtZero: true, ticks: { color: "rgba(160,180,220,.7)", font: { size: 10 } }, grid: { color: "rgba(255,255,255,.05)" } },
+        y1: { position: "right", beginAtZero: true, ticks: { color: "rgba(240,180,120,.7)", font: { size: 10 } }, grid: { drawOnChartArea: false } },
+      },
+    },
+  });
+
+  const items = [
+    ["最佳滞后", `${d.best_lag_days} 天`],
+    ["滞后相关性", fmt(d.best_lag_corr)],
+    ["峰值差", `${d.peak_lag_days} 天`],
+    ["评论:博文", fmt(d.comment_per_post)],
+    ["博文 τ", `${fmt(d.post_tau_days)} 天`],
+    ["评论 τ", `${fmt(d.comment_tau_days)} 天`],
+  ];
+  kpi.innerHTML = items.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
+
+  const type =
+    d.best_lag_days === 0 && d.comment_per_post >= 0.5
+      ? "即时讨论型：评论紧跟博文，同一天到峰"
+      : "延迟聚集型：博文先发酵，评论数天后才跟上";
+  note.className = "note ok";
+  note.textContent = `${type}。仅同时具备博文与评论的事件可做此项分析。`;
 }
 
 /* ---------- 启动 ---------- */
