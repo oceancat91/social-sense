@@ -35,6 +35,38 @@ _GLOBAL_TAU: Optional[float] = None
 _TAU_CACHE: Dict[str, float] = {}
 
 
+def _trim_zeros(values, dates, half_window: int = 30, min_points: int = 8):
+    """以序列峰值日为中心取 ±half_window 天，再裁掉两端连续的零值日。
+
+    为什么是这个规则（三种都试过）：
+      -「首个非零到末个非零」: 原始数据长期爬取、零星帖子散布数年，
+        上海落户会拉到 1412 天，比事件本身长得多
+      -「声量质量分位」: 这些事件声量高度集中在峰值单点，
+        按 3%~97% 分位切，sanhai / 上海落户都只剩 1 个点
+      -「峰值±窗口 + 去零」: 先框住事件本身，再去掉两侧没发帖的空白日，
+        既保证有足够点数画曲线，又不会拖一条贴 0 的平线
+    """
+    n = len(values)
+    if n == 0:
+        return 0, 0
+    arr = [float(v) for v in values]
+    peak = max(range(n), key=lambda i: arr[i])
+    lo = max(0, peak - half_window)
+    hi = min(n - 1, peak + half_window)
+
+    # 两端去零：从 lo 往后找到第一个有声量的日子，从 hi 往前找到最后一个
+    a = lo
+    while a < hi and arr[a] <= 0:
+        a += 1
+    b = hi
+    while b > a and arr[b] <= 0:
+        b -= 1
+
+    # 点数太少就退回固定窗口，否则图上只剩一两个点看不出形态
+    if b - a + 1 < min_points:
+        a, b = lo, hi
+    return a, b
+
 def list_events() -> List[Dict[str, Any]]:
     """事件目录（含中文名、时间范围、峰值、半衰期）。"""
     cat = _EVENT_DIR / "catalog.json"
@@ -160,9 +192,12 @@ def forecast_event(event_id: str, horizon: int = HORIZON, anchor: str = "peak", 
     pred_global = _predict(peak_val, dates, tau_g, horizon)
 
     pred_dates = pd.date_range(dates.iloc[peak_idx], periods=horizon + 1, freq="D")[1:]
+    # history 只展示有波动的舆情发生期：峰值前后各 30 天，再去掉两端零值日。
+    a, b = _trim_zeros(y, dates, half_window=30)
+    b = min(b, peak_idx)  # 历史段截至峰值日；峰值之后由预测/真实值承接
     history = [
         {"date": str(pd.Timestamp(dates.iloc[i]).date()), "volume": float(y[i])}
-        for i in range(max(0, peak_idx - 55), peak_idx + 1)
+        for i in range(a, b + 1)
     ]
 
     return {
@@ -221,4 +256,21 @@ def event_propagation(event_id: str) -> Dict[str, Any]:
     p = _EVENT_DIR / "propagation" / f"{event_id}.json"
     if not p.exists():
         raise FileNotFoundError(f"该事件无传播时序数据: {event_id}")
-    return json.loads(p.read_text(encoding="utf-8"))
+    data = json.loads(p.read_text(encoding="utf-8"))
+
+    # 只保留「舆情发生期」：博文或评论任一侧有声量的首日到末日。
+    # 原始序列按首次发帖日到末次发帖日铺满日历，中间和两侧会有大量空白日。
+    series = data.get("series") or {}
+    dates = series.get("dates") or []
+    post = series.get("post") or []
+    comment = series.get("comment") or []
+    if dates and len(dates) == len(post) == len(comment):
+        merged = [max(float(a), float(b)) for a, b in zip(post, comment)]
+        lo, hi = _trim_zeros(merged, dates, half_window=30)
+        data["series"] = {
+            "dates": dates[lo : hi + 1],
+            "post": post[lo : hi + 1],
+            "comment": comment[lo : hi + 1],
+        }
+        data["active_days"] = hi - lo + 1
+    return data
