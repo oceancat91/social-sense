@@ -323,6 +323,54 @@ def forecast_report():
     return jsonify(code=404, message="尚无报告，请先跑 workflow"), 404
 
 
+@forecast_bp.route("/events", methods=["GET"])
+def forecast_events():
+    """事件目录：6 个真实舆情事件的元信息（名称、时间范围、峰值）。"""
+    try:
+        from app.services.forecast_event_service import list_events
+
+        return jsonify(code=200, message="ok", data={"events": list_events()})
+    except Exception as e:  # noqa: BLE001
+        return jsonify(code=503, message=f"事件目录不可用: {e}"), 503
+
+
+@forecast_bp.route("/event/<event_id>", methods=["GET"])
+def forecast_event_detail(event_id: str):
+    """单个事件的热度预测。
+
+    默认 anchor=peak：用峰值前 28 天预测峰值后 21 天，并与真实值对比（回测）。
+    事件都是历史数据，假装预测"今天"没有意义，峰值锚定才能做可检验的评估。
+    """
+    horizon = request.args.get("horizon", default=21, type=int)
+    anchor = request.args.get("anchor", default="peak", type=str)
+    if anchor not in ("peak", "latest"):
+        return jsonify(code=400, message="anchor 只能是 peak 或 latest"), 400
+    try:
+        from app.services.forecast_event_service import forecast_event
+
+        data = forecast_event(
+            event_id, horizon=max(6, min(int(horizon), 30)), anchor=anchor
+        )
+        return jsonify(code=200, message="ok", data=data)
+    except FileNotFoundError as e:
+        return jsonify(code=404, message=str(e)), 404
+    except Exception as e:  # noqa: BLE001
+        return jsonify(code=503, message=f"事件预测失败: {e}"), 503
+
+
+@forecast_bp.route("/event/<event_id>/platforms", methods=["GET"])
+def forecast_event_platforms(event_id: str):
+    """事件的跨平台对照画像。样本不足时明确返回 adequate=false。"""
+    try:
+        from app.services.forecast_event_service import event_platforms
+
+        return jsonify(code=200, message="ok", data=event_platforms(event_id))
+    except FileNotFoundError as e:
+        return jsonify(code=404, message=str(e)), 404
+    except Exception as e:  # noqa: BLE001
+        return jsonify(code=503, message=f"跨平台画像不可用: {e}"), 503
+
+
 @forecast_bp.route("/asset/<path:name>", methods=["GET"])
 def forecast_asset(name: str):
     """仪表盘的本地静态资源（CSS / JS / vendor 依赖）。

@@ -1,0 +1,32 @@
+{
+  "xinguan": {
+    "total": 743,
+    "platforms": 5,
+    "adequate": true
+  },
+  "geren_yinsi": {
+    "total": 430,
+    "platforms": 5,
+    "adequate": true
+  },
+  "fangdichanshui": {
+    "total": 91,
+    "platforms": 4,
+    "adequate": false
+  },
+  "sanhai": {
+    "total": 55,
+    "platforms": 4,
+    "adequate": false
+  },
+  "suanfa_tuijian": {
+    "total": 23,
+    "platforms": 2,
+    "adequate": false
+  },
+  "shanghai_luohu": {
+    "total": 6,
+    "platforms": 2,
+    "adequate": false
+  }
+}

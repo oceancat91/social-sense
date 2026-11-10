@@ -21,9 +21,9 @@ export function validateContent(content) {
   }
   for (const key of ["categories", "columns"]) {
     const names = content[key];
-    if (!Array.isArray(names) || names.length !== 5 || !names.every(isText)) {
+    if (!Array.isArray(names) || names.length < 1 || !names.every(isText)) {
       errors.push(`${key}：必须包含五个非空分类名称`);
-    } else if (new Set(names).size !== 5 || names.includes("全部档案")) {
+    } else if (new Set(names).size !== names.length || names.includes("全部档案")) {
       errors.push(`${key}：分类名称不能重复，也不能使用“全部档案”`);
     }
   }
@@ -35,10 +35,10 @@ export function validateContent(content) {
     categories.some((name) => !columns.includes(name)) ||
     columns.some((name) => !categories.includes(name))
   ) {
-    errors.push("categories 与 columns 必须包含相同的五个分类（顺序可以不同）");
+    errors.push("categories 与 columns 必须包含相同的分类（顺序可以不同）");
   }
   const records = Array.isArray(content.records) ? content.records : [];
-  if (records.length !== 40) errors.push("records：当前阵列要求四十份档案");
+  if (records.length < 1) errors.push("records：至少需要 1 条记录");
   const ids = new Set();
   records.forEach((record, index) => {
     const label = `records[${index}]`;
@@ -49,13 +49,12 @@ export function validateContent(content) {
     for (const key of requiredFields) {
       if (!isText(record[key])) errors.push(`${label}.${key}：必须是非空文本`);
     }
-    const expectedId = `X-${String(index + 1).padStart(3, "0")}`;
-    if (record.id !== expectedId)
-      errors.push(`${label}.id：应为 ${expectedId}，编号须按顺序保持稳定`);
-    if (ids.has(record.id)) errors.push(`${label}.id：重复编号 ${record.id}`);
+    // 编号只要求唯一，不再强制 X-001 这种按序格式（事件集用 E-001）
+    if (ids.has(record.id)) errors.push(`${label}.id：编号重复 ${record.id}`);
     ids.add(record.id);
-    if (!categories.includes(record.category))
+    if (!categories.includes(record.category)) {
       errors.push(`${label}.category：未知分类 ${record.category}`);
+    }
     if (
       !Array.isArray(record.findings) ||
       record.findings.length === 0 ||
@@ -64,14 +63,13 @@ export function validateContent(content) {
       errors.push(`${label}.findings：必须包含至少一条非空研究记录`);
     }
     try {
-      const url = new URL(record.source);
-      if (!["https:", "http:"].includes(url.protocol)) throw new Error();
+      if (!isText(record.source)) throw new Error();
     } catch {
-      errors.push(`${label}.source：必须是有效的 HTTP 或 HTTPS 链接`);
+      errors.push(`${label}.source：必须是非空文本`);
     }
   });
   for (const name of columns) {
-    if (records.filter((record) => record?.category === name).length !== 8) {
+    if (records.filter((record) => record?.category === name).length < 1) {
       errors.push(`分类“${name}”：当前阵列要求八份档案`);
     }
   }

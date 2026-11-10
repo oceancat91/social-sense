@@ -40,6 +40,7 @@ class _Tee:
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--dataset", default="SocialMedia_log", help="data/<dataset>.csv")
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--encoder-dir", required=True, type=Path)
     parser.add_argument("--encoder-revision", default="")
@@ -76,10 +77,10 @@ def main(argv: list[str] | None = None) -> None:
     sys.path.insert(0, str(ROOT))
     os.chdir(ROOT)
 
-    data_path = ROOT / "data" / "SocialMedia_log.csv"
+    data_path = ROOT / "data" / f"{args.dataset}.csv"
     source_path = ROOT / "test" / "test_event_response_e2e.py"
     training_args = [
-        str(source_path), "SocialMedia_log", "--capacity", "lite",
+        str(source_path), args.dataset, "--capacity", "lite",
         "--seq_len", "28", "--pred_len", "6", "--seasonal_period", "7",
         "--calendar", "short", "--no_ctx", "--direction", "--seed", str(args.seed),
         "--out", str(result_dir / "metrics.csv"), "--ckpt_dir", str(checkpoint_dir),
@@ -112,7 +113,7 @@ def main(argv: list[str] | None = None) -> None:
         with (result_dir / "training.log").open("w", encoding="utf-8", buffering=1) as log:
             with redirect_stdout(_Tee(sys.stdout, log)):
                 entry.main()
-        checkpoint = checkpoint_dir / "SocialMedia_log_lite_pl6_L28.pt"
+        checkpoint = checkpoint_dir / f"{args.dataset}_lite_pl6_L28.pt"
         if not checkpoint.is_file() or not checkpoint.with_suffix(".meta.json").is_file():
             raise RuntimeError("training finished without exporting a valid checkpoint and metadata")
         manifest["status"] = "trained"

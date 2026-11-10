@@ -1,0 +1,12 @@
+{
+  "event_id": "fangdichanshui",
+  "window": [
+    "2021-10-09",
+    "2021-11-07"
+  ],
+  "total_samples": 0,
+  "platform_count": 0,
+  "adequate": false,
+  "platforms": [],
+  "verdict": "窗口内样本不足（0 条 / 0 平台），不做跨平台结论"
+}

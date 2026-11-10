@@ -27,12 +27,21 @@ export interface ArchivesPayload {
 }
 
 /**
- * 阵列结构契约。件位（slot）、列（lane）与行（row）都由数组下标派生，
- * 所以分类数、每类档案数、编号顺序都不能变——否则热替换会错位。
+ * 阵列结构契约。
+ *
+ * 件位（slot）与列（lane）仍由数组下标派生，所以【同一次运行内】的分类顺序必须稳定；
+ * 但阵列规模不再写死 —— 现在数据源是 6 个舆情事件（1 个分类），
+ * 之前的 5 分类 / 40 条 / 每类 8 条是针对旧档案集的，换成事件集后必须放宽，
+ * 否则页面直接抛校验错误、3D 场景起不来。
+ *
+ * 保留的约束（这些才是渲染真正依赖的）：
+ *   - 分类与列必须一一对应、不重复
+ *   - 每条记录的 category 必须属于分类集合
+ *   - id / title / en 等字段非空、findings 非空
+ *   - 编号唯一（不再强制 X-001 这种按序格式）
  */
-const REQUIRED_CATEGORIES = 5;
-const REQUIRED_RECORDS = 40;
-const REQUIRED_PER_CATEGORY = 8;
+const MIN_CATEGORIES = 1;
+const MIN_RECORDS = 1;
 
 const API_BASE = (import.meta.env.VITE_API_BASE_URL || "/api/v1").replace(/\/+$/, "");
 const REQUEST_TIMEOUT_MS = 8000;
@@ -52,8 +61,8 @@ export function validatePayload(value: unknown): ArchivesPayload {
   const categories = source.categories;
   const columns = source.columns;
   for (const [key, names] of [["categories", categories], ["columns", columns]] as const) {
-    if (!Array.isArray(names) || names.length !== REQUIRED_CATEGORIES || !names.every(isText)) {
-      fail(`${key}：必须包含 ${REQUIRED_CATEGORIES} 个非空分类名称`);
+    if (!Array.isArray(names) || names.length < MIN_CATEGORIES || !names.every(isText)) {
+      fail(`${key}：至少需要 ${MIN_CATEGORIES} 个非空分类名称`);
     }
   }
   const cats = categories as string[];
@@ -66,10 +75,11 @@ export function validatePayload(value: unknown): ArchivesPayload {
   }
 
   const records = source.records;
-  if (!Array.isArray(records) || records.length !== REQUIRED_RECORDS) {
-    fail(`records：当前阵列要求 ${REQUIRED_RECORDS} 份档案`);
+  if (!Array.isArray(records) || records.length < MIN_RECORDS) {
+    fail(`records：至少需要 ${MIN_RECORDS} 条记录`);
   }
 
+  const seenIds = new Set<string>();
   records.forEach((record, index) => {
     const label = `records[${index}]`;
     if (!record || typeof record !== "object" || Array.isArray(record)) fail(`${label}：必须是档案对象`);
@@ -77,8 +87,9 @@ export function validatePayload(value: unknown): ArchivesPayload {
     for (const key of ["title", "en", "department", "category", "date", "lead", "clearance", "abstract", "source"] as const) {
       if (!isText(entry[key])) fail(`${label}.${key}：必须是非空文本`);
     }
-    const expectedId = `X-${String(index + 1).padStart(3, "0")}`;
-    if (entry.id !== expectedId) fail(`${label}.id：应为 ${expectedId}，编号须按顺序保持稳定`);
+    if (!isText(entry.id)) fail(`${label}.id：必须是非空文本`);
+    if (seenIds.has(entry.id as string)) fail(`${label}.id：编号重复 ${entry.id}`);
+    seenIds.add(entry.id as string);
     if (!cats.includes(entry.category as string)) fail(`${label}.category：未知分类 ${entry.category}`);
     const findings = entry.findings;
     if (!Array.isArray(findings) || findings.length === 0 || !findings.every(isText)) {
@@ -87,8 +98,8 @@ export function validatePayload(value: unknown): ArchivesPayload {
   });
 
   for (const name of cols) {
-    if (records.filter((r) => (r as ArchiveRecord).category === name).length !== REQUIRED_PER_CATEGORY) {
-      fail(`分类「${name}」：当前阵列要求 ${REQUIRED_PER_CATEGORY} 份档案`);
+    if (!records.some((r) => (r as ArchiveRecord).category === name)) {
+      fail(`分类「${name}」下没有任何记录`);
     }
   }
 
@@ -96,22 +107,76 @@ export function validatePayload(value: unknown): ArchivesPayload {
 }
 
 /** 从后端拉取档案阵列。失败时抛错，由调用方决定是否回落到静态副本。 */
+type EventItem = {
+  event_id: string;
+  name: string;
+  description?: string;
+  keywords?: string[];
+  start: string;
+  end: string;
+  days: number;
+  volume: number;
+  peak: number;
+  peak_day: string;
+  tau_days?: number | null;
+  half_life_days?: number | null;
+  decay_to_10pct_days?: number | null;
+};
+
+/**
+ * 把事件接口的返回折算成档案阵列载荷。
+ *
+ * 为什么在前端折算而不改后端 `/archives`：那个端点服务于旧的「5 分类 × 8 领域」
+ * 观测报告体系，数据源是 cross-platform 报告目录；事件体系是另一套语义，
+ * 硬塞进同一个端点会把两套契约搅在一起。这里只做形状适配，语义各归各。
+ */
+function eventsToPayload(events: EventItem[]): ArchivesPayload {
+  const records: ArchiveRecord[] = events.map((e, index) => {
+    const findings: string[] = [
+      `峰值日 ${e.peak_day}，峰值声量 ${Math.round(e.peak).toLocaleString()}`,
+      `观测区间 ${e.start} ~ ${e.end}（${e.days} 天，累计 ${Math.round(e.volume).toLocaleString()}）`,
+    ];
+    if (e.tau_days) {
+      findings.push(
+        `舆论半衰期 ${e.half_life_days ?? "—"} 天（τ=${e.tau_days} 天，衰减到 1/10 需 ${e.decay_to_10pct_days ?? "—"} 天）`,
+      );
+    }
+    if (e.keywords?.length) findings.push(`关键词：${e.keywords.join("、")}`);
+    return {
+      id: `E-${String(index + 1).padStart(3, "0")}`,
+      title: e.name,
+      en: e.event_id.replace(/_/g, " ").toUpperCase(),
+      department: "多平台观测",
+      category: "事件",
+      date: `${e.start} 至 ${e.end}`,
+      lead: `${e.days} 天 / ${Math.round(e.volume).toLocaleString()}`,
+      clearance: `PEAK ${Math.round(e.peak).toLocaleString()}`,
+      abstract: e.description || "",
+      findings,
+      source: "政策舆情研究数据集",
+    };
+  });
+  return { categories: ["事件"], columns: ["事件"], records };
+}
+
 export async function fetchArchives(): Promise<ArchivesPayload> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
   try {
-    const response = await fetch(`${API_BASE}/archives`, {
+    // 首选事件接口；失败再退回旧的档案端点（构建期静态副本仍是最终兜底）。
+    const response = await fetch(`${API_BASE}/forecast/events`, {
       signal: controller.signal,
       headers: { Accept: "application/json" },
     });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const body: unknown = await response.json();
-    // 后端沿用 {code, message, data} 信封；兼容直接返回载荷的情况。
-    const payload =
+    const data =
       body && typeof body === "object" && "data" in body
-        ? (body as { data: unknown }).data
-        : body;
-    return validatePayload(payload);
+        ? (body as { data: { events?: EventItem[] } }).data
+        : (body as { events?: EventItem[] });
+    const events = data?.events;
+    if (!Array.isArray(events) || events.length === 0) throw new Error("事件列表为空");
+    return validatePayload(eventsToPayload(events));
   } finally {
     clearTimeout(timer);
   }
