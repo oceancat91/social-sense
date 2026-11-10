@@ -19,7 +19,7 @@ import { initPwa, pwaSettingsMarkup } from "./pwa";
 import { createRollingNumber, createRollingText } from "@kitlangton/rolling-number";
 import { ArchiveScene } from "./scene";
 import { ModelViewer } from "./model-viewer";
-import { createContour3D } from "./contour3d";
+import { createTrajectoryChart } from "./contour3d";
 import { ContentTransition, SurfaceTransition } from "./ui-transitions";
 import { BootSequence } from "./boot";
 import { wrap, type ArchiveNavigation } from "./archive-loop";
@@ -686,23 +686,16 @@ function predictionMarkup(d: any, c: any): string {
  * 真正的 3D 等高面仍在制作中，这里先给二维等高线 SVG。
  * 入口保持左下角「溯源&amp;预测」按钮不变，后续换 3D 时只改这里的内容。
  */
-function openContourViewer(): void {
+async function openContourViewer(): Promise<void> {
   const r = records[selected];
   const eid = (r as { event_id?: string }).event_id;
   const root = document.getElementById("modal-root");
   if (!root) return;
 
-  const body = eid
-    ? `<figure class="contour-figure">
-         <img src="/contours/${encodeURIComponent(eid)}.svg" alt="事件热度等高线" />
-         <figcaption>横轴时间 · 纵轴局部强度 · 曲线为等声量线</figcaption>
-       </figure>
-       <p class="prediction-caveat">3D 等高线为随机生成的示意曲面（同一事件每次一致，不同事件互不相同），不代表真实数据。</p>`
-    : `<p>该档案没有关联事件，无等高线数据。</p>`;
-
+  // 先渲染骨架，数据回来再填图 —— 避免点开等半天没反应
   root.innerHTML = `
     <div class="contour-viewer-backdrop" data-action="close-contour">
-      <section class="contour-viewer" role="dialog" aria-modal="true" aria-label="溯源与预测查看">
+      <section class="contour-viewer" role="dialog" aria-modal="true" aria-label="溯源与预测">
         <header class="contour-viewer-head">
           <div>
             <span class="contour-viewer-eyebrow">TRACE &amp; FORECAST / 溯源与预测</span>
@@ -712,23 +705,34 @@ function openContourViewer(): void {
           <button class="contour-viewer-close" data-action="close-contour" aria-label="关闭">关闭</button>
         </header>
         <div class="contour-viewer-body">
-          <div class="contour3d-slot"></div>
-          ${body}
+          <div class="contour3d-slot"><p class="prediction-loading">正在读取该事件的热度轨迹…</p></div>
+          <p class="prediction-caveat">曲线为实时读取的该事件日度声量：墨色为历史、铜色虚线为指数衰减预测、橙色为真实值。</p>
         </div>
       </section>
     </div>`;
   root.hidden = false;
+  root.querySelector<HTMLButtonElement>(".contour-viewer-close")?.focus({ preventScroll: true });
 
-  // 3D 数字化等高线：每个事件用 event_id 做种子，随机但确定性 ——
-  // 同一事件每次打开一致，换事件就换一张曲面。
-  const slot = root.querySelector<HTMLElement>(".contour3d-slot");
-  if (slot) {
-    const canvas = createContour3D(eid || "unknown-event", { width: 760, height: 430 });
-    slot.appendChild(canvas);
+  if (!eid) {
+    const slot = root.querySelector<HTMLElement>(".contour3d-slot");
+    if (slot) slot.innerHTML = `<p>该档案没有关联事件，无热度轨迹数据。</p>`;
+    return;
   }
 
-  const close = root.querySelector<HTMLButtonElement>(".contour-viewer-close");
-  close?.focus({ preventScroll: true });
+  try {
+    const res = await fetch(`/api/v1/forecast/event/${encodeURIComponent(eid)}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const body = await res.json();
+    const data = body?.data ?? body;
+    const slot = root.querySelector<HTMLElement>(".contour3d-slot");
+    if (slot) {
+      slot.innerHTML = "";
+      slot.appendChild(createTrajectoryChart(data, { width: 760, height: 400 }));
+    }
+  } catch (err) {
+    const slot = root.querySelector<HTMLElement>(".contour3d-slot");
+    if (slot) slot.innerHTML = `<p>热度轨迹读取失败：${escapeHtml(String(err))}</p>`;
+  }
 }
 
 function closeContourViewer(): void {
