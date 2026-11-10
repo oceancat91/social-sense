@@ -19,7 +19,7 @@ import { initPwa, pwaSettingsMarkup } from "./pwa";
 import { createRollingNumber, createRollingText } from "@kitlangton/rolling-number";
 import { ArchiveScene } from "./scene";
 import { ModelViewer } from "./model-viewer";
-import { createTrajectoryChart } from "./contour3d";
+import { createContour3D } from "./contour3d";
 import { ContentTransition, SurfaceTransition } from "./ui-transitions";
 import { BootSequence } from "./boot";
 import { wrap, type ArchiveNavigation } from "./archive-loop";
@@ -720,14 +720,26 @@ async function openContourViewer(): Promise<void> {
   }
 
   try {
-    const res = await fetch(`/api/v1/forecast/event/${encodeURIComponent(eid)}`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const body = await res.json();
+    const [evRes, compRes] = await Promise.all([
+      fetch(`/api/v1/forecast/event/${encodeURIComponent(eid)}`),
+      fetch(`/api/v1/forecast/event/${encodeURIComponent(eid)}/components`).catch(() => null),
+    ]);
+    if (!evRes.ok) throw new Error(`HTTP ${evRes.status}`);
+    const body = await evRes.json();
     const data = body?.data ?? body;
+    let comps = null;
+    if (compRes && compRes.ok) {
+      try {
+        const cb = await compRes.json();
+        comps = cb?.data ?? cb;
+      } catch {
+        comps = null;
+      }
+    }
     const slot = root.querySelector<HTMLElement>(".contour3d-slot");
     if (slot) {
       slot.innerHTML = "";
-      slot.appendChild(createTrajectoryChart(data, { width: 760, height: 400 }));
+      slot.appendChild(createContour3D(data, comps, { width: 820 }));
     }
   } catch (err) {
     const slot = root.querySelector<HTMLElement>(".contour3d-slot");
