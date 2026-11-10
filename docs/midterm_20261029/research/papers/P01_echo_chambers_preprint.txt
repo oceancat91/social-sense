@@ -1,0 +1,1509 @@
+## PDF page 1
+Echo Chambers on Social Media: A comparative analysis
+Matteo Cinelli, 1,∗ Gianmarco De Francisci Morales, 2,† Alessandro
+Galeazzi,3,‡ Walter Quattrociocchi, 4,§ and Michele Starnini 2,¶
+1Applico Lab – ISC CNR, Via dei Taurini 19, 00185 Roma, Italy
+2ISI Foundation, via Chisola 5, 10126 Torino, Italy
+3University of Brescia, Via Branze, 59, 25123 Brescia , Italy
+4Ca’Foscari Univerity of Venice, via Torino 155, 30172 Venezia, Italy
+Recent studies have shown that online users tend to select information adhering to their system
+of beliefs, ignore information that does not, and join groups – i.e., echo chambers – around a
+shared narrative. Although a quantitative methodology for their identiﬁcation is still missing, the
+phenomenon of echo chambers is widely debated both at scientiﬁc and political level. To shed
+light on this issue, we introduce an operational deﬁnition of echo chambers and perform a massive
+comparative analysis on more than 1B pieces of contents produced by 1M users on four social media
+platforms: Facebook, Twitter, Reddit, and Gab. We infer the leaning of users about controversial
+topics – ranging from vaccines to abortion – and reconstruct their interaction networks by analyzing
+diﬀerent features, such as shared links domain, followed pages, follower relationship and commented
+posts. Our method quantiﬁes the existence of echo-chambers along two main dimensions: homophily
+in the interaction networks and bias in the information diﬀusion toward likely-minded peers. We
+ﬁnd peculiar diﬀerences across social media. Indeed, while Facebook and Twitter present clear-cut
+echo chambers in all the observed dataset, Reddit and Gab do not. Finally, we test the role of the
+social media platform on news consumption by comparing Reddit and Facebook. Again, we ﬁnd
+support for the hypothesis that platforms implementing news feed algorithms like Facebook may
+elicit the emergence of echo-chambers.
+INTRODUCTION
+Social media allow users to access and share an unprece-
+dented amount of information, thus changing the way we
+interact, debate and form our opinions [ 1, 2]. The wide
+availability of content sparked the enthusiastic idea that
+users might be better informed and exposed to diversiﬁed
+point of views [ 3–5]. However, the human attention span
+remains limited [6, 7] and news feed algorithms might in-
+ﬂuence the selection process by promoting content similar
+to the ones already seen, thus reducing content diver-
+sity [8, 9] and eventually leading to polarization [ 10–13].
+On top of opinion polarization, users show the tendency
+to select information that adheres to their beliefs and join
+polarized groups formed around a shared narrative, called
+echo chambers [14–18]. Inside these closed communities
+formed by users having similar preferences and content
+consumption patterns, the information spreading is often
+biased [14, 19–23]. Such a conﬁguration might hamper
+the democratic deliberative process by altering the way
+facts are perceived [24].
+Nowadays, echo chambers are one of the most debated
+issues in relation to the social media environment [ 15, 25],
+given their potential role in fostering actions of political
+manipulation and inﬂuence on voting behavior [ 26–28].
+Some studies point out echo chambers as an emerging
+∗ matteo.cinelli@uniroma2.it
+† gdfm@acm.org
+‡ a.galeazzi002@unibs.it
+§ w.quattrociocchi@unive.it
+¶ michele.starnini@gmail.com
+eﬀect of human tendencies, such as selective exposure
+and contagion [29–31]. Moreover, group polarization the-
+ory [32] has been proposed as a mechanism to model the
+dynamics leaning to the emergence of echo-chambers in
+online social networks [ 33]. It is remarkable that ma-
+jor social media and former U.S. Presidents alike have
+voiced such concerns [34]. Recently, however, the eﬀects
+and the very existence of echo chambers have been ques-
+tioned [3, 35–37]. This heated debate calls for a quantita-
+tive analysis able to gauge the presence of echo chambers
+across topics and social media. In this work, we provide
+a formal assessment of echo chambers by introducing an
+operational deﬁnition independent of the social media
+platform considered.
+We propose a deﬁnition of echo chambers based on
+the coexistence of two main ingredients: ( i) opinion po-
+larization with respect to a controversial topic, and ( ii)
+homophilic interactions between users, i.e., the preference
+to interact with like-minded peers. We operationalize
+these two abstract concepts into observables that can be
+quantiﬁed empirically, thus providing a common method-
+ological ground to obtain consistent results and compare
+them across diﬀerent social media. We perform a com-
+parative analysis on four major social media platforms:
+Facebook, Twitter, Reddit, and Gab. These media share
+some common features and functionalities (e.g., they all
+allow social feedback actions such as likes or upvotes) and
+design (e.g., Gab is similar to Twitter) but also distinc-
+tive features (e.g., Reddit is organized in communities of
+interest called subreddits).
+While the environment and the main features behind
+mainstream social media have been widely investigated,
+other social media such as Reddit and especially Gab have
+arXiv:2004.09603v1  [physics.soc-ph]  20 Apr 2020
+
+## PDF page 2
+2
+been somewhat overlooked. Reddit is one of the most
+visited websites worldwide [38] and is organized as a fo-
+rum to collect discussions about a wide amount of topics,
+ranging from politics to emotional support. Gab is rela-
+tively diﬀerent, as it claims to be a social platform aimed
+at protecting free speech. Such a claim, together with the
+political leaning of its developers, made Gab the “safe
+haven” for the alt-right movement. However, low modera-
+tion and regulation on content has resulted in widespread
+hate speech. For these reasons, it has been repeatedly
+suspended by its service provider, and its mobile app was
+banned from both App and Play stores [ 39]. All these fea-
+tures make the comparison of the aforementioned social
+media particularly interesting for investigation. Overall,
+we take into account the interactions of more than 1M
+active users on the four platforms, for a total of more
+than 1B unique pieces of content, including posts and
+social interactions. Our ﬁndings suggest that platforms
+organized around social networks and with algorithms
+accounting for social feedback may increase polarization
+and favor the emergence of echo chambers.
+CHARACTERIZING ECHO CHAMBERS IN
+SOCIAL MEDIA
+At an abstract level, the echo chamber phenomenon
+can be understood in the context of selective exposure
+theory [40]. Humans have a tendency to seek informa-
+tion adhering to their pre-existing opinion, a phenomenon
+sometimes referred to as conﬁrmation bias [41]. Such
+a tendency has been proven to be dominant in content
+consumption on online social media [ 14, 19, 20, 42]. In
+a social context, this tendency may foster the emergence
+of homophilic clusters of individuals. This, in turn, cre-
+ates an environment where individuals are surrounded
+by people whose opinion agrees with their own: an echo
+chamber.
+A fundamental mechanism to explain the origin of the
+tendency to selective exposure can be found in cognitive
+dissonance theory [43]. The theory posits that individuals
+strive towards internal consistency of thoughts and beliefs,
+by virtue of the fact that inconsistency, or dissonance, is
+psychologically uncomfortable. An individual will thus
+try to avoid information and situations that are likely to
+increase their dissonance, and seek instead consonant ones.
+Cognitive dissonance is thus possibly the primum movens,
+or innate root cause, of the ultimate formation of echo
+chambers. According to group polarization theory [ 32],
+an echo chamber can act as a mechanism to reinforce an
+existing opinion within a group, and as a result move the
+entire group towards more extreme opinions. The lack
+of exposure to alternative opinions also creates a false
+perception of unanimity, and thus a diﬀerent perception
+of reality across groups, which may hinder the democratic
+debate given the lack of a shared common ground on
+which to operate.
+Operational deﬁnitions
+An echo-chamber can be deﬁned as an environment
+in which the opinion, political leaning, or belief of an
+individual about a certain topic are reinforced due to
+repeated interactions with peers who share similar points
+of view. Two key elements are needed for this scenario
+to take place. First, a group of individuals that share
+a common opinion in opposition to other individuals or
+groups characterized by diﬀerent attitudes regarding the
+same topic. Second, social interactions that convey a
+ﬂow of information between these individuals about the
+topic under consideration, that can thus inﬂuence their
+beliefs on the subject. Such interactions are more likely
+to be established between individuals characterized by
+similar opinions, that is, there is a certain degree of ho-
+mophily in social interactions. Therefore, echo-chambers
+are characterized by the coexistence of two elements: ( i)
+opinion polarization with respect to a controversial topic,
+and (ii) homophily in interactions, i.e. the preference
+to interact with like-minded peers. These two abstract
+concepts need to be operationalized in order to be gauged
+on empirical social systems, and in particular within the
+speciﬁc context of online social media.
+In order to quantify the degree of polarization in social
+systems, one needs ﬁrst to identify the attitude of users,
+at a micro level. On online social media, the individual
+leaning of a user i toward a speciﬁc topic, xi, can be
+inferred in diﬀerent ways, via the content produced, or the
+endorsement network among users [ 44, 45]. With respect
+to the content, its leaning can be deﬁned as the attitude
+expressed by a piece of content towards a speciﬁc topic.
+This leaning can be explicit (e.g., arguments supporting a
+narrative) or implicit (e.g., framing and agenda setting).
+Let us consider a useri producing a numberai of contents,
+Ci ={c1,c 2,...,c ai}, whereai is the activity of useri and
+each content leaning is assigned a numeric value. Then
+the individual leaning of user i can be deﬁned as the
+average of the leanings of contents produced,
+xi≡
+∑ai
+j=1cj
+ai
+. (1)
+Once individual leanings are inferred, polarization can
+be deﬁned as a state of the system such that the distribu-
+tion of leanings, P (x), is heterogeneous. If opinions are
+assumed to be embedded in a one-dimensional space, as
+usual in case of topics characterized by positive versus
+negative stances, polarization can be quantiﬁed by a bi-
+modal distribution. That is, if opinions are represented
+on an axis, x∈ [−1, +1], without loss of generality, polar-
+ization is then characterized by two well-separated peaks
+in P (x), for positive and negative opinions, while neutral
+ones are absent or underrepresented in the population.
+Note that polarization can happen independently from
+the structure or the very presence of social interactions.
+Homophily in social interactions can be quantiﬁed by
+representing interactions as a social network, and then
+analyzing its structure with respect to the opinions of
+
+## PDF page 3
+3
+the agents [21, 46–48]. From online social media, social
+networks can be reconstructed in diﬀerent ways, where
+links represent social relationships or interactions. Since
+we are interested in capturing the possible exchange of
+opinion between users, we assume directed links to repre-
+sent the substrate over which information may ﬂow. For
+instance, if user i follows user j on Twitter, user i can
+see tweets produced by user j, thus there is a ﬂow of
+information from node j to node i in the network. That
+is, when the reconstructed network is directed, we assume
+the link direction points to possible inﬂuencers (opposite
+of information ﬂow). Actions such as mentions or retweets
+may convey similar ﬂows. In some cases, direct relations
+between users are not available in the data, so one needs
+to assume some proxy for social connections, e.g., a link
+between two users if they comment the same post on
+Facebook. Crucially, the two elements characterizing the
+presence of echo-chambers, polarization and homophilic
+interactions, should be quantiﬁed independently.
+Implementation on social media
+This section explains how we implement the operational
+deﬁnitions deﬁned above on diﬀerent social media. For
+each medium, we detail (i) how we quantify the individual
+leaning of users, and ( ii) how we reconstruct the inter-
+action network on top of which the information spread.
+Further details are provided in the Materials and Methods
+Section.
+Twitter. We consider the set of tweets posted by user
+i that contain links to news organizations of known po-
+litical leaning. To each news organization is associated a
+political leaning score [ 49] ranging from extreme left to
+extreme right in accordance to the classiﬁcation reported
+in Materials and Methods. We infer the individual leaning
+of a user i, xi∈ [−1, +1] by averaging the scores of the
+news organizations linked by user i according to Eq. (1).
+We analyze three diﬀerent data sets collected on Twitter
+related to controversial topics: gun control, Obamacare,
+and abortion. For each data set, the social interaction
+network is reconstructed by using the following relation,
+so that there exists a direct link from node i to node j if
+user i follows user j. Henceforth we focus on the data set
+about abortion, others are shown in the Supplementary
+Material (SM).
+F acebook. The individual leaning of users is quantiﬁed
+by considering endorsements in the form of likes to posts.
+While other actions such as comments or shares could be
+taken into account, the written text may radically change
+the inferred leaning. Additionally, while a like is usually
+a positive feedback on a news item, comments and share
+can be associated to diﬀerent purposes [ 8]. A comment
+can have multiple features and meanings and can generate
+collective debate, while a share indicates a desire to spread
+a news item to friends. Posts are produced by pages that
+are labeled in a certain number of categories, and to
+each category we assign a numerical value (e.g., Anti-Vax
+(+1) or Pro-Vax (-1)). Each like to a post (only one like
+per post is allowed) represents an endorsement for that
+content, which is assumed to be aligned with the labeling
+of the page. Thus, the individual leaning of a user is
+deﬁned as the average of the content leanings of the posts
+liked by the user, according to Eq. (1).
+We analyze three diﬀerent data sets collected on Face-
+book regarding a speciﬁc topic of discussion: vaccines,
+science versus conspiracy, and news. The interaction net-
+work is deﬁned by considering comments. In such an
+interaction network two users are connected if they co-
+commented at least one post. Henceforth we focus on the
+data set about vaccines and news, others are shown in
+the SM.
+Reddit. Here, the individual leaning of users is quan-
+tiﬁed similarly to Twitter, by considering the links to
+news organizations in the content produced by the users,
+submissions and comments. The interaction network is
+deﬁned by considering comments and submissions, by
+reconstructing the information ﬂow. There exists a direct
+link from node i to node j if user i comments on a sub-
+mission or comment by userj (we assume thati reads the
+comment they are replying to, which is written by j). We
+analyze three data sets collected on diﬀerent subreddits:
+the donald, politics, and news. In the following we focus
+on the data set collected on the Politics and on the News
+subreddit, others are shown in the SM.
+Gab. The political leaning xi of user i is computed
+by considering the set of contents posted by user i that
+contain a link to news organizations of known political
+leaning, similarly to Twitter and Reddit. To obtain the
+leaning xi of user i, we averaged the scores of each link
+posted by user i according to Eq. (1). The interaction
+network is reconstructed by exploiting the co-commenting
+relationships under posts in the same way as for Facebook.
+Given two users i and j, an undirected edge between i
+and j exists if and only if they comment under the same
+post.
+COMPARATIVE ANALYSIS
+In the following we compare the presence or absence of
+echo-chambers across social media. We select one data set
+for each social media: Abortion (Twitter), Vaccines (Face-
+book), Politics (Reddit), and Gab as a whole. Results
+for other data sets for the same medium are qualitatively
+similar, as shown in the SM. We ﬁrst characterize echo-
+chambers in the topology of the networks, then look at
+their eﬀects on information diﬀusion. Finally, we directly
+compare Facebook and Reddit on a common topic, news
+consumption, to highlight the diﬀerences in the behavior
+of users.
+
+## PDF page 4
+4
+(a) Twitter
+ (b) Reddit
+(c) Facebook
+ (d) Gab
+FIG. 1: Joint distribution of the leaning of users x and the
+average leaning of their neighborhood xN N for diﬀerent data
+sets. Colors represent the density of users: the lighter, the
+larger the number of users. Marginal distribution P (x) and
+P N(x) are plotted on the x and y axis, respectively.
+Homophily in the interaction networks
+The topology of the interaction network can reveal the
+presence of echo-chambers, where users are surrounded
+by peers with similar leaning and thus are exposed with
+higher probability to similar contents. In network terms,
+this translates into a node i with a given leaning xi more
+likely to be connected with nodes with a leaning close to
+xi [21]. This concept can be quantiﬁed by deﬁning, for
+each user i, the average leaning of their neighborhood, as
+xN
+i ≡ 1
+k→
+i
+∑
+jAijxj, where Aij is the adjacency matrix of
+the interaction network, Aij = 1 if there is a link from
+node i to node j, Aij = 0 otherwise, and k→
+i = ∑
+jAij is
+the out-degree of node i.
+Fig. 1 shows the correlation between the leaning of a
+user i and the leaning of their neighbors, xN
+i , for the four
+social media under consideration. The probability dis-
+tributions P (x) (individual leaning) and P N(x) (average
+leaning of neighbors) are plotted on the x and y axis, re-
+spectively. All plots are color-coded contour maps, which
+represent the number of users in the phase space ( x,x N):
+the brighter the area in the map, the larger the density
+of users in that area. The topics of vaccines and abor-
+tion, on Facebook and Twitter, respectively, clearly show
+two distinct groups whose leanings diﬀer quite starkly,
+as indicated by the two bright areas characterized by a
+high density of users with like-minded neighbors. Simi-
+1
+10
+100
+1000
+1 2 3 4 5
+Community ID
+Community Size
+Against 
+Abortion
+Pro 
+Abortion
+(a) Twitter
+1
+10
+100
+1000
+10000
+0 5 10 15 20
+Community ID
+Community Size
+Extreme 
+Left
+Extreme 
+Right (b) Reddit
+101
+103
+105
+0 20 40 60
+Community ID
+Community Size
+Pro Vaccines
+Anti Vaccines
+(c) Facebook
+1
+10
+100
+1000
+10000
+0 5 10 15 20
+Community ID
+Community Size
+Extreme 
+Left
+Extreme 
+Right (d) Gab
+FIG. 2: Size and average leaning of communities detected in
+diﬀerent data sets.
+lar behavior is found for diﬀerent topics from the same
+social media platform, see SM. Conversely, Reddit and
+Gab show a diﬀerent picture. The corresponding plots in
+Fig. 1 display a single bright area, indicating that users
+do not split into groups with opposite leaning but form a
+single community, biased to the left (Reddit) or the right
+(Gab). Similar results are found for diﬀerent data sets on
+Reddit, see SM.
+Homophilic interactions can be revealed by the com-
+munity structure of the interaction networks. We detect
+communities by applying the Louvain algorithm for com-
+munity detection [50]. We remove singleton communities
+with only one user and look at the average leaning of
+each community, determined as the average of individual
+leanings of its members.
+Fig. 2 shows the communities emerging for each social
+medium, arranged by increasing average leaning on the
+x-axis (color-coded from blue to red), while the y-axis
+reports the size of the community. We ﬁnd a picture
+that conﬁrms the pattern observed before. On Facebook
+and Twitter, communities span the whole spectrum of
+possible leanings, but each community is formed by users
+with similar leaning. Some communities are characterized
+by very strong average leaning, especially in the case of
+Facebook. Conversely, communities on Reddit and Gab
+do not cover the whole spectrum, and all show similar
+average leaning. Furthermore, it is noticeable the almost
+total absence of communities with leaning very close to 0,
+conﬁrming the polarized state of the systems. In addition,
+the number of communities identiﬁed is diﬀerent among
+
+## PDF page 5
+5
+the four social media. The similar number of communi-
+ties found in Gab and Reddit and the strong diﬀerence
+with respect to Facebook and Twitter suggests that both
+platforms structure and feedback algorithm may have an
+impact on the clustering process of users.
+Eﬀects on information spreading
+The presence of echo chambers can be gauged by simple
+models of information spreading: users are expected to
+exchange information more likely with peers sharing a
+similar leaning [21, 44, 51]. Classical epidemic models such
+as the susceptible-infected-recovered (SIR) model [ 52]
+have been used to study the diﬀusion of information, such
+as rumors or news [ 53, 54]. In the SIR model, each agent
+can be in either of three states: susceptible (unaware
+of the circulating information), infectious (aware and
+willing to spread it further), or recovered (aware but not
+willing to transmit it anymore). Susceptible (unaware)
+users may become infectious (aware) upon contact with
+infected neighbors, with certain transmission probability
+β. Infectious users can spontaneously become recovered
+with probability ν. In order to measure the eﬀects of the
+leaning of users on the diﬀusion of information, we run
+the SIR dynamics on the interaction networks, by starting
+the epidemic process with only one node i infected, and
+stopping it when no more infectious nodes are left.
+The set of nodes in a recovered state at the end of
+the dynamics started with user i as seed of infection,
+i.e., those that become aware of the information initially
+propagated by user i, forms the set of inﬂuence of user i,
+Ii [55]. The set of inﬂuence of a user thus represents those
+individuals that can be reached by a piece of content sent
+by him/her, depending on the eﬀective infection ratio
+β/ν. One can compute the average leaning of the set of
+inﬂuence of user i, µi, as
+µi≡|I i|−1 ∑
+j∈Ii
+xj. (2)
+The quantityµi indicates how polarized are the users that
+can be reached by a message initially propagated by user
+i [21].
+Fig. 3 shows the average leaning⟨µ(x)⟩ of the inﬂuence
+sets reached by users with leaningx, for the diﬀerent data
+sets under consideration. The recovery rate ν is ﬁxed at
+0.2 for every dataset, while relationship between infection
+rateβ and average degree⟨k⟩ vary from dataset to dataset
+and is reported in the caption of each ﬁgure. More details
+about the network used for the SIR model are reported
+in Table I in Methods and Material Section. Again, one
+can observe a clear distinction between Facebook and
+Twitter, on one side, and Reddit and Gab on the other
+side. For the topics of vaccines and abortion, on Facebook
+and Twitter, respectively, users with a given leaning are
+much more likely to be reached by information propagated
+by users with similar leaning, i.e., ⟨µ(x)⟩∼ x. Similar
+behavior is found for diﬀerent topics from the same social
+●
+●
+●●●
+●
+●●
+●
+●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+40
+80
+120
+160
+Influence Set 
+Average Size
+(a) Twitter
+● ●●● ●● ● ●●
+●●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+20002500300035004000
+Influence Set 
+Average Size (b) Reddit
+●
+●
+●
+●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+1000
+2000
+3000
+4000
+Influence Set 
+Average Size
+(c) Facebook
+● ●●●● ●●●●
+●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+ 100
+200
+300
+Influence Set 
+Average Size (d) Gab
+FIG. 3: Average leaning ⟨µ(x)⟩ of the inﬂuence sets reached
+by users with leaning x, for diﬀerent data sets under
+consideration. Size and color of each point represents the
+average size of the inﬂuence sets. The parameters of the SIR
+dynamics are set to β = 0.10⟨k⟩−1 for panel (a),
+β = 0.01⟨k⟩−1 for panel (b), β = 0.05⟨k⟩−1 for panel (c) and
+β = 0.05⟨k⟩−1 for panel (d), while ν is ﬁxed at 0.2 for all
+simulations.
+media platform, see SM. Conversely, Reddit and Gab
+show a diﬀerent behavior: the average leaning of the set
+of inﬂuence, ⟨µ(x)⟩, does not depend on the leaning x.
+These results indicate that in some social media, namely
+Twitter and Facebook, information diﬀusion is biased
+toward individuals that share similar leaning, while in
+others – Reddit and Gab in our analysis – this eﬀect is
+absent. The quantity ⟨µ(x)⟩, indeed, gauges the strength
+of the echo chambers eﬀect: the more ⟨µ(x)⟩ is close to
+x, the stronger the echo chamber eﬀect, while if ⟨µ(x)⟩
+is independent of x, echo-chambers are not present. Our
+results are robust with respect to diﬀerent values of the
+eﬀective infection ratio β/ν, see SM.
+Furthermore, Fig. 3 shows that the spreading capacity,
+represented by the average size of the inﬂuence sets (color
+coded in Fig. 3), depends on the leaning of the users. On
+Twitter, pro-abortion users are more likely to reach larger
+audiences, the same is true for anti-vax users on Facebook,
+left-leaning users on Reddit, and right-leaning users on
+Gab (in this data set, left-leaning users are almost absent
+though).
+
+## PDF page 6
+6
+News Consumption on Facebook and Reddit
+The striking diﬀerences observed across social media,
+in terms of homophily in the interaction networks and
+information diﬀusion, could be attributed to diﬀerent
+topics taken into account. For this reason, here we com-
+pare Facebook and Reddit on a common topic, news
+consumption. Facebook and Reddit are particularly apt
+to a cross-comparison since they share the deﬁnition of
+individual leaning (computed by using the classiﬁcation
+provided by mediabiasfactcheck.org, see Methods for fur-
+ther details) and the rationale in creating connections
+among users that is based on an interaction network.
+Fig. 4 shows a direct comparison of news consumption
+on Facebook and Reddit along the metrics used in the pre-
+vious Sections to quantify the presence of echo-chambers:
+i) the correlation between the leaning of a user x and the
+average leaning of neighbors xN (top row), ii) the average
+leaning of communities detected in the networks (middle
+row), and iii) the average leaning ⟨µ(x)⟩ of the inﬂuence
+sets reached by users with leaning x, by running SIR
+dynamics (bottom row). One can see that all three mea-
+sures conﬁrm the picture obtained for other data sets: On
+Facebook, we observe a clear separation among users de-
+pending on their leaning, while on Reddit users’ leanings
+are more homogeneous and show only one peak. In the
+latter social media, even users displaying a more extreme
+leaning (noticeable in the marginal histogram of Figure
+4 panel b top row) tend to interact with the majority.
+Moreover, on Facebook the leaning of the seed user has
+an eﬀect on who the ﬁnal recipients of the information
+are, therefore indicating the presence of echo-chambers.
+On Reddit this eﬀect is absent.
+CONCLUSIONS
+The presence and eﬀects of echo chambers on online
+social media is a widely debated topic that has profound
+implications on the way we consume information online
+and form our opinions. The wide availability of con-
+tent combined with conﬁrmation bias and news feed al-
+gorithms may foster the emergence of groups of users
+around a shared narrative. Furthermore, the similarity
+of interests may exacerbate polarization and reinforce
+existing users tendencies and attitudes. To shed light on
+this issue, in this paper, we introduced an operational
+deﬁnition aimed at identifying echo chambers. We per-
+formed a massive comparative analysis on more than 1B
+pieces of contents produced by 1M users on four social
+media platforms: Facebook, Twitter, Reddit, and Gab.
+The proposed method quantiﬁes the presence of echo-
+chambers along two main dimensions: (i) homophily in
+the interaction networks, and (ii) bias in the information
+diﬀusion toward likely-minded peers. Our results show
+peculiar diﬀerences across social media: while Facebook
+and Twitter are dominated by echo chambers in all the
+observed dataset, Reddit and Gab are not. Furthermore,
+1
+10
+100
+1000
+10000
+2 4 6 8 10 12
+Community ID
+Community Size
+Extreme 
+Left
+Extreme 
+Right
+1
+10
+100
+1000
+0 10 20 30 40
+Community ID
+Community Size
+Extreme Left
+Extreme Right
+● ●●
+●
+●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+5
+10
+15
+20
+Influence Set 
+Average Size
+(a) Facebook
+●
+●● ● ●●
+●
+●● ●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+600
+700
+800
+900
+Influence Set 
+Average Size (b) Reddit
+FIG. 4: Direct comparison of news consumption on
+Facebook (left column) and Reddit (right column). Joint
+distribution of the leaning of users x and the average leaning
+of their nearest-neighbor xN (top row), size and average
+leaning of communities detected in the interaction networks
+(middle row), and average leaning ⟨µ(x)⟩ of the inﬂuence sets
+reached by users with leaning x, by running SIR dynamics
+(bottom row) with parameters β = 0.05⟨k⟩ for panel (a) and
+β = 0.006⟨k⟩ for panel (b) and ν = 0.2 for both.
+we perform a direct comparison of news consumption on
+both Reddit and Facebook. We found support for the hy-
+pothesis that platforms organized around social network
+and with news feed algorithms which take into account
+users’ preferences foster the emergence of echo-chambers.
+MATERIALS AND METHODS
+Labelling of media sources
+The labeling of news outlets is based on the informa-
+tion reported by Media Bias/Fact Check (MBFC [56]), an
+
+## PDF page 7
+7
+FIG. 5: Example of two news sources, namely New York Time and Breitbart, classiﬁed on mediabiasfactcheck.org. Notice that,
+although Breitbart is labeled as ”Questionnable”, a explicit leaning appears in its description.
+0
+100
+200
+300
+400
+500
+Extreme Left
+Left
+Left−Center
+Least
+Right−Center
+Right
+Extreme Right
+FIG. 6: Distribution of the leanings assigned to each source,
+ranging from Extreme Left (numerical value: -1, colored in
+blue) to Extreme Right (numerical value: +1, colored in red).
+independent fact-checking organization that rates news
+outlets on the base of the reliability and of the political
+bias of the contents they produce and share. The website
+provides the political bias related to a wide range of media
+outlets. The labeling provided by MBFC, retrieved in
+June 2019, ranges from Extreme Left to Extreme Right for
+what concerns the political bias. Certain media outlets are
+instead classiﬁed as ‘questionable’ sources or ‘conspiracy-
+pseudoscience’ sources if they tend to publish misinforma-
+tion or false contents. However, most of the news outlets
+without an explicit political label reported by MBFC
+actually have a political bias (e.g., breitbart) that is re-
+ported in their description, as shown in Figure 5. These
+media outlets often have a political bias that is classiﬁed
+as extreme (either left or right). Considering the impor-
+tance of including such media outlets in our analysis, we
+manually reported their classiﬁcation from the description
+provided by MBFC, thus adding 468 outlets to the pool
+of 1722 news outlets that already have a clear political
+label. The total number of media outlets for which we
+have a political label is 2190 and the overall leaning is
+summarized in Figure 6.
+Empirical data sets
+Here we report details on data collection for diﬀerent
+social media, summarized in Table I.
+Twitter
+Gun control. We consider C = 19M tweets spanning
+14 days in June 2016, produced by N = 7506 users. We
+reconstruct a directed follow network formed by E =
+1 053 275 directed edges. The largest weakly connected
+component includes more than 99% of nodes. We identify
+the individual leaning of Nc = 6994 users.
+Obamacare. We consider C = 34M tweets spanning 7
+days in June 2016, produced by N = 8773 users. We
+reconstruct a directed follow network formed by E =
+3 797 871 directed edges. The largest weakly connected
+component includes more than 99% of nodes. We identify
+the individual leaning of Nc = 7899 users.
+Abortion. We consider C = 34M tweets spanning 7
+days in June 2016, produced by N = 3995 users. We
+reconstruct a directed follow network formed by E =
+2 330 276 directed edges. The largest weakly connected
+component includes more than 99% of nodes. We identify
+the individual leaning of Nc = 3809 users.
+Facebook
+Science and Conspiracy . The dataset was built by
+downloading posts of selected Facebook pages divided into
+two groups, namely conspiracy news and science news.
+Conspiracy pages were selected based on their name, their
+self description and with the aid of debunking pages. The
+
+## PDF page 8
+8
+TABLE I: For each data set, we report: the starting date of collection T0, time span T expressed in days (d) or years (y),
+number of unique contents C, number of users N, coverage nc (fraction of users with classiﬁed leaning), size of the giant
+component G and average node degree ⟨k⟩.
+Media Data set T0 T C N n c G ⟨k⟩
+Twitter
+Gun control 06/2016 14 d 19 M 7506 0.93 3964 798
+Obamacare 06/2016 7 d 34 M 8773 0.90 8703 1405
+Abortion 06/2016 7 d 34 M 3995 0.95 798 478
+Facebook
+Sci/Cons 01/2010 5 y 75 172 183 378 1.00 181960 228
+Vaccines 01/2010 7 y 94 776 221 758 1.00 220275 419
+News 01/2010 6 y 15 540 38 663 1.00 38594 700
+Reddit
+Politics 01/2017 1 y 353 864 240 455 0.15 240455 9
+The Donald 01/2017 1 y 1 .234 M 138 617 0.16 138617 31
+News 01/2017 1 y 723 235 179 549 0.20 179549 3
+Gab Gab 11/2017 1 y 13 M 165 162 0.13 20701 328
+selection process was iterated until convergence among an-
+notators. The dataset, that includes post from pages and
+comments to such posts, was created by using Facebook
+Graph API and has previously been explored [ 57]. We
+consider 75 172 posts by 73 pages categorized in Science
+(34) and Conspiracy (39) that involve N = 183 378 active
+users (at least 1 like and 1 comments) that co-commented
+20 807 976 times. The largest connected component of
+the co-commenting network has G = 181 960 nodes and
+E = 20 807 491 links.
+V accines. The dataset was generated in three steps:
+ﬁrst a search for pages containing the keywords vaccine,
+vaccines, or vaccination was made. Then the raw outcome
+was cleaned from spurious pages. Finally all the posts
+and comments of selected pages were downloaded and
+pages were manually classiﬁed in Pro-Vax and Anti-Vax
+groups. The dataset was created by using Facebook Graph
+API and has previously been explored [ 58]. Thus, we
+consider 94 776 posts by 243 pages categorized in Pro-
+Vax (145) and Anti-Vax (98) that involve 221 758 active
+users (at least 1 like and 1 comment) that co-commented
+46 198 446 times. The largest connected components of
+the co-commenting network has N = 220 275 nodes and
+E = 46 193 632 links.
+News. To build this dataset, a set of Facebook pages
+of news outlets listed by the Europe Media Monitor was
+identiﬁed as ﬁrst step. By using the Facebook Graph API,
+all the posts and comments related to these pages in the
+periods between 2010-2015 were downloaded. Facebook
+pages are labelled according to the annotation provided by
+mediabiasfactcheck.org. The dataset without annotations
+and has previously been explored [ 8]. We consider 15 540
+posts by 180 pages categorized from Left to Right (Left
+(12), Left-Center (80), Least-Biased (42), Right-Center
+(33), Right (13)), 38663 active users ( ≥ 3 likes and 3
+comments) that co-commented 13 525 230 times. The
+largest connected component of the co-interaction network
+has G = 38 594 nodes and E = 13 525 119 links.
+Reddit
+Politics. We consider 353 864 comments and submissions
+posted on the subreddit politics in the year 2017. From
+comments a submissions we reconstructed a directed net-
+work formed by N = 240 455 users and E = 5 030 565
+directed edges. The largest weakly connected compo-
+nent includes more than 0.99% of nodes. We identify the
+individual leaning of Nc = 37 148 users.
+The Donald. We consider 1.234M comments and sub-
+missions posted on the subreddit The Donald in the year
+2017. From comments a submissions we reconstructed
+a directed network formed by N = 138 617 users and
+E = 5 025 290 directed edges. The largest weakly con-
+nected component includes more than 0 .99% of nodes.
+We identify the individual leaning of Nc = 21 905 users.
+News. We consider 723 235 comments and submissions
+posted on the subreddit news in the year 2017. From com-
+ments a submissions we reconstructed a directed network
+formed by N = 179 549 users and E = 1 070 589directed
+edges. The largest weakly connected component includes
+more than 0.99% of nodes. We identify the individual
+leaning of Nc = 36 875 users.
+Gab
+The dataset, downloaded from https://files.
+pushshift.io/gab, spans from the ﬁrst Gab post (oc-
+curred in 2016) to the late 2018 and it includes data
+regarding post-reply relationships, number of upvotes of
+posts, repost or replies and their timestamps. We se-
+lected all the contents (post, reply, quote) from 11/2017
+to 10/2018, that is C = 13 580 937unique pieces of con-
+tent created by N = 165 162 unique users. We consider
+all the post that have a link to an external source, for an
+amount of 3 302 621 posts (excluding youtube links). By
+extracting the domain from each link we obtain 75 436
+unique domains. In this set, 1650 unique domains for a
+total of 1 454 502URLs (44%) were labelled in the MBFC
+database. We were able to compute the political leaning
+
+## PDF page 9
+9
+of Nc = 31 286 users. We also reconstructed the interac-
+tion network using co-commenting as a proxy. The largest
+connected component includes G = 20 701 nodes, about
+the 66% of the users with leaning, E = 8 273 412 edges.
+[1] Walter Quattrociocchi. Part 2-social and political chal-
+lenges: 2.1 western democracy in crisis? In Global Risk
+Report World Economic Forum, 2017.
+[2] An Nguyen and Hong Tien Vu. Testing popular news
+discourse on the “echo chamber” eﬀect: Does political
+polarisation occur among those relying on social media as
+their primary politics news source? First Monday, 24(5),
+2019.
+[3] Elizabeth Dubois and Grant Blank. The echo chamber is
+overstated: the moderating eﬀect of political interest and
+diverse media. Information, Communication & Society ,
+21(5):729–745, 2018.
+[4] Leticia Bode. Political news in the news feed: Learning
+politics from social media. Mass communication and
+society, 19(1):24–48, 2016.
+[5] Nic Newman, Richard Fletcher, Antonis Kalogeropoulos,
+and Rasmus Nielsen. Reuters institute digital news report
+2019, volume 2019. Reuters Institute for the Study of
+Journalism, 2019.
+[6] Andrea Baronchelli. The emergence of consensus: a
+primer. Royal Society open science, 5(2):172189, 2018.
+[7] Matteo Cinelli, Emanuele Brugnoli, Ana Lucia Schmidt,
+Fabiana Zollo, Walter Quattrociocchi, and Antonio Scala.
+Selective exposure shapes the facebook news diet. PloS
+one, 15(3):e0229129, 2020.
+[8] Ana Luc´ ıa Schmidt, Fabiana Zollo, Michela Del Vicario,
+Alessandro Bessi, Antonio Scala, Guido Caldarelli, H Eu-
+gene Stanley, and Walter Quattrociocchi. Anatomy of
+news consumption on facebook. Proceedings of the Na-
+tional Academy of Sciences , 114(12):3035–3039, 2017.
+[9] Matteo Cinelli, Walter Quattrociocchi, Alessandro
+Galeazzi, Carlo Michele Valensise, Emanuele Brugnoli,
+Ana Lucia Schmidt, Paola Zola, Fabiana Zollo, and An-
+tonio Scala. The covid-19 social media infodemic. arXiv
+preprint arXiv:2003.05004, 2020.
+[10] Michael D Conover, Jacob Ratkiewicz, Matthew Fran-
+cisco, Bruno Gon¸ calves, Filippo Menczer, and Alessandro
+Flammini. Political polarization on twitter. In Fifth in-
+ternational AAAI conference on weblogs and social media ,
+2011.
+[11] Christopher A Bail, Lisa P Argyle, Taylor W Brown,
+John P Bumpus, Haohan Chen, MB Fallin Hunzaker,
+Jaemin Lee, Marcus Mann, Friedolin Merhout, and
+Alexander Volfovsky. Exposure to opposing views on so-
+cial media can increase political polarization. Proceedings
+of the National Academy of Sciences , 115(37):9216–9221,
+2018.
+[12] Nicola Perra and Luis EC Rocha. Modelling opinion dy-
+namics in the age of algorithmic personalisation. Scientiﬁc
+reports, 9(1):1–11, 2019.
+[13] Kazutoshi Sasahara, Wen Chen, Hao Peng, Giovanni Luca
+Ciampaglia, Alessandro Flammini, and Filippo Menczer.
+On the inevitability of online echo chambers. arXiv
+preprint arXiv:1905.03919, 2019.
+[14] Michela Del Vicario, Alessandro Bessi, Fabiana Zollo,
+Fabio Petroni, Antonio Scala, Guido Caldarelli, H Eugene
+Stanley, and Walter Quattrociocchi. The spreading of mis-
+information online. Proceedings of the National Academy
+of Sciences, 113(3):554–559, 2016.
+[15] Kathleen Hall Jamieson and Joseph N Cappella. Echo
+chamber: Rush Limbaugh and the conservative media
+establishment. Oxford University Press, 2008.
+[16] R Kelly Garrett. Echo chambers online?: Politically
+motivated selective exposure among Internet news users.
+Journal of Computer-Mediated Communication, 14(2):265–
+285, 2009.
+[17] Walter Quattrociocchi, Antonio Scala, and Cass R Sun-
+stein. Echo chambers on Facebook. Available at SSRN
+2795110, 2016.
+[18] Kiran Garimella, Gianmarco De Francisci Morales, Aris-
+tides Gionis, and Michael Mathioudakis. Political dis-
+course on social media: Echo chambers, gatekeepers, and
+the price of bipartisanship. In Proceedings of the 2018
+World Wide Web Conference , WWW ’18, pages 913–922,
+Republic and Canton of Geneva, Switzerland, 2018. In-
+ternational World Wide Web Conferences Steering Com-
+mittee.
+[19] Alessandro Bessi, Mauro Coletto, George Alexandru
+Davidescu, Antonio Scala, Guido Caldarelli, and Wal-
+ter Quattrociocchi. Science vs conspiracy: Collective
+narratives in the age of misinformation. PloS one ,
+10(2):e0118093, 2015.
+[20] Kiran Garimella, Gianmarco De Francisci Morales, Aris-
+tides Gionis, and Michael Mathioudakis. The Eﬀect of
+Collective Attention on Controversial Debates on Social
+Media. In WebSci ’17: 9th International ACM Web Sci-
+ence Conference, pages 43–52, 2017.
+[21] Wesley Cota, Silvio C. Ferreira, Romualdo Pastor-
+Satorras, and Michele Starnini. Quantifying echo chamber
+eﬀects in information spreading over political communi-
+cation networks. EPJ Data Science , 8(1):35, Dec 2019.
+[22] Duilio Balsamo, Valeria Gelardi, Chengyuan Han, Daniele
+Rama, Abhishek Samantray, Claudia Zucca, and Michele
+Starnini. Inside the echo chamber: Disentangling
+network dynamics from polarization. arXiv preprint
+arXiv:1906.09076, 2019.
+[23] Alessandro Cossard, Gianmarco De Francisci Morales,
+Kyriaki Kalimeri, Yelena Mejova, Daniela Paolotti, and
+Michele Starnini. Falling into the echo chamber: the
+italian vaccination debate on twitter. arXiv preprint
+arXiv:2003.11906, 2020.
+[24] Cass R Sunstein. Republic.com 2.0. Princeton University
+Press, 2009.
+[25] Walter Quattrociocchi. Inside the echo chamber.Scientiﬁc
+American, 316(4):60–63, 2017.
+[26] Chengcheng Shao, Giovanni Luca Ciampaglia, Onur Varol,
+Alessandro Flammini, and Filippo Menczer. The spread of
+fake news by social bots. arXiv preprint arXiv:1707.07592,
+pages 96–104, 2017.
+[27] David MJ Lazer, Matthew A Baum, Yochai Benkler,
+Adam J Berinsky, Kelly M Greenhill, Filippo Menczer,
+Miriam J Metzger, Brendan Nyhan, Gordon Pennycook,
+David Rothschild, et al. The science of fake news. Science,
+359(6380):1094–1096, 2018.
+
+## PDF page 10
+10
+[28] Alexandre Bovet and Hern´ an A Makse. Inﬂuence of fake
+news in twitter during the 2016 us presidential election.
+Nature communications, 10(1):7, 2019.
+[29] Itai Himelboim, Stephen McCreery, and Marc Smith.
+Birds of a feather tweet together: Integrating network
+and content analyses to examine cross-ideology exposure
+on twitter. Journal of computer-mediated communication,
+18(2):154–174, 2013.
+[30] Seth Flaxman, Sharad Goel, and Justin M Rao. Filter
+bubbles, echo chambers, and online news consumption.
+Public opinion quarterly , 80(S1):298–320, 2016.
+[31] Dimitar Nikolov, Diego FM Oliveira, Alessandro Flam-
+mini, and Filippo Menczer. Measuring online social bub-
+bles. PeerJ Computer Science, 1:e38, 2015.
+[32] Cass R Sunstein. The law of group polarization. Journal
+of political philosophy, 10(2):175–195, 2002.
+[33] Fabian Baumann, Philipp Lorenz-Spreen, Igor M. Sokolov,
+and Michele Starnini. Modeling echo chambers and po-
+larization dynamics in social networks. Phys. Rev. Lett.,
+124:048301, Jan 2020.
+[34] E.g., Obama foundation’s attempt to address the issue of
+echo chambers. https://www.engadget.com/2017/07/
+05/obama-foundation-social-media-echo-chambers
+Facebook’s CEO Mark Zuckerberg’s open letter. https:
+//www.facebook.com/notes/mark-zuckerberg/
+building-global-community/10103508221158471/.
+[35] Pablo Barber´ a, John T Jost, Jonathan Nagler, Joshua A
+Tucker, and Richard Bonneau. Tweeting from left to
+right: Is online political communication more than an
+echo chamber? Psychological science, 26(10):1531–1542,
+2015.
+[36] Axel Bruns. Echo chamber? what echo chamber? review-
+ing the evidence. 2017.
+[37] Axel Bruns. Are Filter Bubbles Real? John Wiley & Sons,
+2019.
+[38] https://www.alexa.com/siteinfo/reddit.com.
+[39] Savvas Zannettou, Barry Bradlyn, Emiliano De Cristofaro,
+Haewoon Kwak, Michael Sirivianos, Gianluca Stringini,
+and Jeremy Blackburn. What is gab: A bastion of free
+speech or an alt-right echo chamber. In Companion Pro-
+ceedings of the The Web Conference 2018 , pages 1007–
+1014. International World Wide Web Conferences Steering
+Committee, 2018.
+[40] Joseph T Klapper. The eﬀects of mass communication.
+1960.
+[41] Raymond S Nickerson. Conﬁrmation bias: A ubiquitous
+phenomenon in many guises. Review of general psychology,
+2(2):175–220, 1998.
+[42] Michela Del Vicario, Gianna Vivaldo, Alessandro Bessi,
+Fabiana Zollo, Antonio Scala, Guido Caldarelli, and Wal-
+ter Quattrociocchi. Echo chambers: Emotional contagion
+and group polarization on facebook. Scientiﬁc reports,
+6:37825, 2016.
+[43] Leon Festinger. A theory of cognitive dissonance, volume 2.
+Stanford university press, 1962.
+[44] Kiran Garimella, Gianmarco De Francisci Morales, Aris-
+tides Gionis, and Michael Mathioudakis. Quantifying
+Controversy in Social Media. In WSDM ’16: 9th ACM
+International Conference on Web Search and Data Mining,
+pages 33–42, 2016.
+[45] Kiran Garimella, Gianmarco De Francisci Morales, Aris-
+tides Gionis, and Michael Mathioudakis. Quantifying
+controversy on social media. TSC: ACM Transactions on
+Social Computing, 1(1):3, 2018.
+[46] Gueorgi Kossinets and Duncan J Watts. Origins of ho-
+mophily in an evolving social network. American journal
+of sociology, 115(2):405–450, 2009.
+[47] Luca Maria Aiello, Alain Barrat, Rossano Schifanella,
+Ciro Cattuto, Benjamin Markines, and Filippo Menczer.
+Friendship prediction and homophily in social media.
+ACM Transactions on the Web (TWEB) , 6(2):9, 2012.
+[48] Alessandro Bessi, Fabio Petroni, Michela Del Vicario,
+Fabiana Zollo, Aris Anagnostopoulos, Antonio Scala,
+Guido Caldarelli, and Walter Quattrociocchi. Homophily
+and polarization in the age of misinformation. The Euro-
+pean Physical Journal Special Topics, 225(10):2047–2059,
+2016.
+[49] Eytan Bakshy, Solomon Messing, and Lada A Adamic.
+Exposure to ideologically diverse news and opinion on
+facebook. Science, 348(6239):1130–1132, 2015.
+[50] Vincent D Blondel, Jean-Loup Guillaume, Renaud Lam-
+biotte, and Etienne Lefebvre. Fast unfolding of communi-
+ties in large networks. Journal of statistical mechanics:
+theory and experiment, 2008(10):P10008, 2008.
+[51] Kiran Garimella, Gianmarco De Francisci Morales, Aris-
+tides Gionis, and Michael Mathioudakis. Reducing Con-
+troversy by Connecting Opposing Views. In WSDM ’17:
+10th ACM International Conference on Web Search and
+Data Mining, pages 81–90, 2017.
+[52] R. M. Anderson and R. M. May. Infectious diseases in
+humans. Oxford University Press, Oxford, 1992.
+[53] Laijun Zhao, Hongxin Cui, Xiaoyan Qiu, Xiaoli Wang, and
+Jiajia Wang. Sir rumor spreading model in the new media
+age. Physica A: Statistical Mechanics and its Applications,
+392(4):995 – 1003, 2013.
+[54] Clara Granell, Sergio G´ omez, and Alex Arenas. Dynami-
+cal interplay between awareness and epidemic spreading
+in multiplex networks. Phys. Rev. Lett., 111:128701, Sep
+2013.
+[55] Petter Holme. Network reachability of real-world contact
+sequences. Phys. Rev. E , 71:046119, Apr 2005.
+[56] https://mediabiasfactcheck.com.
+[57] Alessandro Bessi, Fabiana Zollo, Michela Del Vicario,
+Michelangelo Puliga, Antonio Scala, Guido Caldarelli,
+Brian Uzzi, and Walter Quattrociocchi. Users polarization
+on facebook and youtube. PloS one, 11(8):e0159641, 2016.
+[58] Ana Luc´ ıa Schmidt, Fabiana Zollo, Antonio Scala, Cor-
+nelia Betsch, and Walter Quattrociocchi. Polarization of
+the vaccination debate on facebook. Vaccine, 36(25):3606–
+3612, 2018.
+
+## PDF page 11
+11
+Supplementary InformationEcho Chambers on Social Media: A comparative analysis
+Here we show additional results not shown in the main paper: additional data sets in Section I and additional results
+for the SIR dynamics run with diﬀerent parameters in Section II
+I. ADDITIONAL DATA SETS
+In this section we report the results obtained for other four data sets not shown in the main paper, namely “Science
+and Conspiracy” (Facebook), “Gun control” (Twitter), “Obamacare” (Twitter) and ‘The Donald” (Reddit). The
+techniques and the pipeline is the same used for the datasets analyzed in the main paper.
+A. Science and Conspiracy
+(a)
+1e+01
+1e+03
+1e+05
+0 5 10 15 20
+Community ID
+Community Size
+Science
+Conspiracy (b)
+●
+●
+●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+seed leaning
+influence set leaning
+2.0
+2.5
+3.0
+3.5
+Influence set 
+average size
+(c)
+●
+●
+●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+30
+60
+90
+Influence Set 
+Average Size (d)
+FIG. 7: Science vs Conspiracy. Panel (a): Individual leaning versus neighborhood leaning. Panel (b): Community detection.
+Panel (c) and (d): average leaning ⟨µ(x)⟩ of the inﬂuence sets reached by users with leaning x, for infection probability
+β = 0.01⟨k⟩−1 and β = 0.02⟨k⟩−1, respectively, where ⟨k⟩ is the average degree of the network.
+Figure 7 displays the results obtained for the Facebook dataset called “Science and Conspiracy”, described in
+Materials and Methods of the main paper. Panel (a) shows the joint distribution of the leaning of users, x, against
+the average leaning of their neighborhood X N. We note that the community referred to as “Science”, to which is
+associated a leaning of -1, is much smaller than the community called ”Conspiracy” and for this reason it is not clearly
+
+## PDF page 12
+12
+visible in the density plot but only in the histograms at its margins. Panel (b) shows the size and average leaning of
+communities detected by the Louvain algorithm.
+Panels (c) and (d) show the results of the SIR dynamics: the average leaning ⟨µ(x)⟩ of the inﬂuence sets reached by
+users with leaning x, for two diﬀerent values of the infection probability, while the recovery rate is ﬁxed ν = 0.2. Size
+and color of each point is related to the average size of the inﬂuence sets.
+B. Guncontrol
+(a)
+1
+10
+100
+1000
+1 2 3
+Number of Communities
+Community Size
+Against 
+Guncontro
+Pro 
+Guncontrol (b)
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+20
+40
+60
+80
+Influence Set 
+Average Size
+(c)
+●
+●
+●
+●●
+●
+●
+●
+●
+●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+3.54.04.55.05.5
+Influence Set 
+Average Size (d)
+FIG. 8: Gun control. Panel (a): Individual leaning versus neighborhood leaning. Panel (b): Community detection. Panel (c)
+and (d): average leaning ⟨µ(x)⟩ of the inﬂuence sets reached by users with leaning x, for infection probability β = 0.1⟨k⟩−1 and
+β = 0.2⟨k⟩−1, respectively, where ⟨k⟩ is the average degree of the network.
+Figure 8 shows the results obtained for the Twitter dataset “Gun control”, described in Materials and Methods of
+the main paper. Panel (a) shows the joint distribution of the leaning of users, x, against the average leaning of their
+neighborhood X N, in which two diﬀerent regions are clearly visible. Panel (b) shows the size and average leaning of
+communities detected by the Louvain algorithm.
+Panels (c) and (d) show the results of the SIR dynamics: the average leaning ⟨µ(x)⟩ of the inﬂuence sets reached by
+users with leaning x, for two diﬀerent values of the infection probability, while the recovery rate is ﬁxed ν = 0.2. Size
+and color of each point is related to the average size of the inﬂuence sets.
+
+## PDF page 13
+13
+(a)
+0.33
+1
+10
+100
+1000
+1 2 3 4
+Number of Communities
+Community Size
+Against Obamacare
+Pro Obamacare
+(b)
+●
+●
+●●●
+●
+●
+●
+●
+●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+100200300400500
+Influence Set 
+Average Size
+(c)
+●●● ●
+●
+●
+●
+●
+●
+●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+4
+6
+8
+10
+Influence Set 
+Average Size (d)
+FIG. 9: Obamacare. Panel (a): Individual leaning versus neighborhood leaning. Panel (b): Community detection. Panel (c)
+and (d): average leaning ⟨µ(x)⟩ of the inﬂuence sets reached by users with leaning x, for infection probability β = 0.1⟨k⟩−1 and
+β = 0.2⟨k⟩−1, respectively, where ⟨k⟩ is the average degree of the network.
+C. Obamacare
+Figure 9 shows the results obtained for the Twitter dataset referred to as “Obamacare”, described in Materials
+and Methods of the main paper. Panel (a) shows the joint distribution of the leaning of users, x, against the average
+leaning of their neighborhood X N, in which two interconnected regions are clearly visible. Panel (b) shows the size
+and average leaning of communities detected by the Louvain algorithm.
+Panels (c) and (d) show the results of the SIR dynamics: the average leaning ⟨µ(x)⟩ of the inﬂuence sets reached by
+users with leaning x, for two diﬀerent values of the infection probability, while the recovery rate is ﬁxed ν = 0.2. Size
+and color of each point is related to the average size of the inﬂuence sets.
+D. TheDonald
+Figure 10 shows the results obtained for the Reddit dataset “The Donald”, described in Materials and Methods of
+the main paper. Panel (a) displays the joint distribution of the leaning of users, x, against the average leaning of their
+neighborhood X N, showing a unique region spanning most of the x-axis and concentrated on the values around 0.25 on
+the y-axis. Such a region is also characterized by few peaks of leaning (spanning mainly from Center to Extreme Right)
+that are displayed in the histogram on the top margin. Panel (b) shows the size and average leaning of communities
+detected by the Louvain algorithm.
+Panels (c) and (d) show the results of the SIR dynamics: the average leaning ⟨µ(x)⟩ of the inﬂuence sets reached by
+
+## PDF page 14
+14
+(a)
+1
+10
+100
+1000
+0 10 20 30
+Community ID
+Community Size
+Extreme 
+Left
+Extreme 
+Right (b)
+● ●●● ●●● ●●●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+255075100125
+Influence Set 
+Average Size
+(c)
+● ● ●● ●● ● ●●●●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+23002400250026002700
+Influence Set 
+Average Size (d)
+FIG. 10: The Donald. Panel (a): Individual leaning versus neighborhood leaning. Panel (b): Community detection. Panel (c)
+and (d): average leaning ⟨µ(x)⟩ of the inﬂuence sets reached by users with leaning x, for infection probability β = 0.0067⟨k⟩−1
+and β = 0.013⟨k⟩−1, respectively, where ⟨k⟩ is the average degree of the network.
+users with leaning x, for two diﬀerent values of the infection probability, while the recovery rate is ﬁxed ν = 0.2. Size
+and color of each point is related to the average size of the inﬂuence sets.
+
+## PDF page 15
+15
+II. ROBUSTNESS OF THE SIR DYNAMICS
+In this section, we provide additional results for the SIR dynamics run with diﬀerent parameters on the 6 data
+sets considered in the main paper, namely “Abortion” on Twitter, “Politics” and “News” on Reddit, “Vaccines” and
+“News” on Facebook, and Gab.
+The results, reported in ﬁg. 11, are qualitatively identical to the ones in the main paper and are reported here for
+the sake of brevity. Details about the parameters used in the simulations are provided in the caption of Fig. 11.
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+4.04.55.05.56.06.5
+Influence Set 
+Average Size
+(a) Abortion (Twitter)
+●● ●●● ● ●
+●
+● ●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+100200300400
+Influence Set 
+Average Size (b) Politics (Reddit)
+●
+●
+●
+●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+4.04.55.05.56.0
+Influence Set 
+Average Size (c) Vaccines (Facebook)
+●
+● ●
+●● ● ● ●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+5678910
+Influence Set 
+Average Size
+(d) Gab
+●
+●●
+●
+●
+●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+2
+3
+4
+5
+Influence Set 
+Average Size (e) News (Facebook)
+●● ●●● ●● ●● ● ●●
+−1.0
+−0.5
+0.0
+0.5
+1.0
+−1.0 −0.5 0.0 0.5 1.0
+Seed Leaning
+Influence Set Leaning
+2000
+2200
+2400
+Influence Set 
+Average Size (f) News (Reddit)
+FIG. 11: Additional results of the SIR dynamics for the six data sets considered in the main paper. Average leaning ⟨µ(x)⟩ of
+the inﬂuence sets reached by users with leaning x, for infection probability β = 0.05⟨k⟩−1 (Abortion on Twitter, panel (a)),
+β = 0.005⟨k⟩−1 (Politics on Reddit, panel (b)), β = 0.02⟨k⟩−1 (Vaccines on Facebook, panel (c)), β = 0.025⟨k⟩−1 (Gab, panel
+(d)), β = 0.025⟨k⟩−1 (News on Facebook, panel (e)), β = 0.01⟨k⟩−1 (News on Reddit, panel (f)), while the recovery rate is ﬁxed
+ν = 0.2. Size and color of each point is related to the average size of the inﬂuence sets.

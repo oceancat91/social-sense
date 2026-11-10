@@ -1,0 +1,12 @@
+{
+  "input": "docs\\social_scope_20261109\\exports\\social_scope_20261109_20261109_144853.pptx",
+  "output": "docs\\social_scope_20261109\\exports\\social_scope_20261109_20261109_144853_compatible.pptx",
+  "removed_redundant_mime_default": [
+    {
+      "Extension": "JPG",
+      "ContentType": "image/.jpg"
+    }
+  ],
+  "canonical_jpeg_default": "jpg image/jpeg",
+  "unchanged": "All other ZIP members, including slides, notes, images, masters and layouts."
+}

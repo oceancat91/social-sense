@@ -1,0 +1,229 @@
+## PDF page 2
+Published as a conference paper at ICLR 2024
+potential for generalizable forecasting across domains without requiring per-task retraining from
+scratch. In contrast, current forecasting methods are often rigidly specialized by domain. Data
+efficiency. By leveraging pre-trained knowledge, LLMs have shown the ability to perform new
+tasks with only a few examples. This data efficiency could enable forecasting for settings where
+historical data is limited. In contrast, current methods typically require abundant in-domain data.
+Reasoning. LLMs exhibit sophisticated reasoning and pattern recognition capabilities (Mirchandani
+et al., 2023; Wang et al., 2023; Chu et al., 2023). Harnessing these skills could allow making
+highly precise forecasts by leveraging learned higher-level concepts. Existing non-LLM methods are
+largely statistical without much innate reasoning. Multimodal knowledge. As LLM architectures
+and training techniques improve, they gain more diverse knowledge across modalities like vision,
+speech, and text (Ma et al., 2023). Tapping into this knowledge could enable synergistic forecasting
+that fuses different data types. Conventional tools lack ways to jointly leverage multiple knowledge
+bases. Easy optimization. LLMs are trained once on massive computing and then can be applied
+to forecasting tasks without learning from scratch. Optimizing existing forecasting models often
+requires significant architecture search and hyperparameter tuning (Zhou et al., 2023b). In summary,
+LLMs offer a promising path to make time series forecasting more general, efficient, synergistic,
+and accessible compared to current specialized modeling paradigms. Thus, adapting these powerful
+models for time series data can unlock significant untapped potential.
+The realization of the above benefits hinges on the effective alignment of the modalities of time
+series data and natural language. However, this is a challenging task as LLMs operate on discrete
+tokens, while time series data is inherently continuous. Furthermore, the knowledge and reasoning
+capabilities to interpret time series patterns are not naturally present within LLMs’ pre-training.
+Therefore, it remains an open challenge to unlock the knowledge within LLMs in activating their
+ability for general time series forecasting in a way that is accurate, data-efficient, and task-agnostic.
+In this work, we propose TIME -LLM, a reprogramming framework to adapt large language models
+for time series forecasting while keeping the backbone model intact. The core idea is to reprogram
+the input time series into text prototype representations that are more naturally suited to language
+models’ capabilities. To further augment the model’s reasoning about time series concepts, we
+introduce Prompt-as-Prefix (PaP), a novel idea in enriching the input time series with additional
+context and providing task instructions in the modality of natural language. This provides declarative
+guidance about desired transformations to apply to the reprogrammed input. The output of the
+language model is then projected to generate time series forecasts. Our comprehensive evaluation
+demonstrates that large language models can act as effective few-shot and zero-shot time series
+learners when adopted through this reprogramming approach, outperforming specialized forecasting
+models. By leveraging LLMs’ reasoning capability while keeping the models intact, our work points
+the way toward multimodal foundation models that can excel on both language and sequential data
+tasks. Our proposed reprogramming framework offers an extensible paradigm for imbuing large
+models with new capabilities beyond their original pre-training. Our main contributions in this work
+can be summarized as follows:
+• We introduce a novel concept of reprogramming large language models for time series forecast-
+ing without altering the pre-trained backbone model. In doing so, we show that forecasting can
+be cast as yet another “language” task that can be effectively tackled by an off-the-shelf LLM.
+• We propose a new framework, T IME -LLM, which encompasses reprogramming the input time
+series into text prototype representations that are more natural for the LLM, and augmenting the
+input context with declarative prompts (e.g., domain expert knowledge and task instructions) to
+guide LLM reasoning. Our technique points towards multimodal foundation models excelling
+in both language and time series.
+• T IME -LLM consistently exceeds state-of-the-art performance in mainstream forecasting tasks,
+especially in few-shot and zero-shot scenarios. Moreover, this superior performance is achieved
+while maintaining excellent model reprogramming efficiency. Thus, our research is a concrete
+step in unleashing LLMs’ untapped potential for time series and perhaps other sequential data.
+2 R ELATED WORK
+Task-specific Learning. Most time series forecasting models are crafted for specific tasks and
+domains (e.g., traffic prediction), and trained end-to-end on small-scale data. An illustration is in
+2
+
+## PDF page 3
+Published as a conference paper at ICLR 2024
+(a)Ta sk-SpecificLearningSourceModali ty
+Targ etModali ty
+[Summarization][Retrieval][Classification]…
+[Forecasting][Classification][Imputation]…
+(b)ModelFine-Tuning(c)ModelReprogramming
+SourceDataSampleTargetDataSampleSourceTaskTargetTask
+FrozenFine-tune
+Lightweight
+ContextualBootstrappingCross-Modali ty
+HighEffectiveness
+ModelHead
+Pre-trainingAdaptation
+…
+Model
+Reprogram.SpaceLanguageModel
+PromptsHead
+…InputReprogram
+Pre-training
+Figure 1: Schematic illustration of reprogramming large language models (LLMs) in comparison
+of (a) task-specific learning and (b) model fine-tuning. Our proposal investigates and demonstrates
+(c) how to effectively reprogram open-sourced LLMs as powerful time series learners where well-
+developed time series pre-trained models are not readily available.
+Fig. 1(a). For example, ARIMA models are designed for univariate time series forecasting (Box
+et al., 2015), LSTM networks are tailored for sequence modeling (Hochreiter & Schmidhuber,
+1997), and temporal convolutional networks (Bai et al., 2018) and transformers (Wen et al., 2023)
+are developed for handling longer temporal dependencies. While achieving good performance on
+narrow tasks, these models lack versatility and generalizability to diverse time series data.
+In-modality Adaptation. Relevant research in CV and NLP has demonstrated the effectiveness of
+pre-trained models that can be fine-tuned for various downstream tasks without the need for costly
+training from scratch (Devlin et al., 2018; Brown et al., 2020; Touvron et al., 2023). Inspired by
+these successes, recent studies have focused on the development of time series pre-trained models
+(TSPTMs). The first step among them involves time series pre-training using different strategies like
+supervised (Fawaz et al., 2018) or self-supervised learning (Zhang et al., 2022b; Deldari et al., 2022;
+Zhang et al., 2023). This allows the model to learn representing various input time series. Once pre-
+trained, it can be fine-tuned on similar domains to learn how to perform specific tasks (Tang et al.,
+2022). An example is in Fig. 1(b). The development of TSPTMs leverages the success of pre-
+training and fine-tuning in NLP and CV but remains limited on smaller scales due to data sparsity.
+Cross-modality Adaptation. Building on in-modality adaptation, recent work has further explored
+transferring knowledge from powerful pre-trained foundations models in NLP and CV to time se-
+ries modeling, through techniques such as multimodal fine-tuning (Yin et al., 2023) and model
+reprogramming (Chen, 2022). Our approach aligns with this category; however, there is limited
+pertinent research available on time series. An example is V oice2Series (Yang et al., 2021), which
+adapts an acoustic model (AM) from speech recognition to time series classification by editing a
+time series into a format suitable for the AM. Recently, Chang et al. (2023) proposes LLM4TS
+for time series forecasting using LLMs. It designs a two-stage fine-tuning process on the LLM -
+first supervised pre-training on time series, then task-specific fine-tuning. Zhou et al. (2023a) lever-
+ages pre-trained language models without altering their self-attention and feedforward layers. This
+model is fine-tuned and evaluated on various time series analysis tasks and demonstrates comparable
+or state-of-the-art performance by transferring knowledge from natural language pre-training. Dis-
+tinct from these approach, we neither edit the input time series directly nor fine-tune the backbone
+LLM. Instead, as illustrated in Fig. 1(c), we propose reprogramming time series with the source data
+modality along with prompting to unleash the potential of LLMs as effective time series machines.
+3 M ETHODOLOGY
+Our model architecture is depicted in Fig. 2. We focus on reprogramming an embedding-visible
+language foundation model, such as Llama (Touvron et al., 2023) and GPT-2 (Radford et al., 2019),
+for general time series forecasting without requiring any fine-tuning of the backbone model. Specif-
+ically, we consider the following problem: given a sequence of historical observations X ∈ RN ×T
+consisting of N different 1-dimensional variables across T time steps, we aim to reprogram a large
+language model f (·) to understand the input time series and accurately forecast the readings at H
+future time steps, denoted by ˆY ∈ RN ×H, with the overall objective to minimize the mean square
+errors between the ground truths Y and predictions, i.e., 1
+H
+PH
+h=1 || ˆYh − Yh||2
+F .
+Our method encompasses three main components: (1) input transformation, (2) a pre-trained and
+frozen LLM, and (3) output projection. Initially, a multivariate time series is partitioned into N
+3
+
+## PDF page 5
+Published as a conference paper at ICLR 2024
+PatchReprogram
+Pre-trainedLLM(T extEmbedder)thenextvalueis0.6
+thenextvalueis0.6
+Pre-trainedLLM(Body+LMHead)
+Pre-trainedLLM(T extEmbedder)PatchReprogram
+Pre-trainedLLM(Body)
+<instruction><inputcontext>
+Projection0.6
+(a)PatchReprogramming(b)Patch-as-PrefixandPrompt-as-Prefix
+timelateearly
+longshort
+updown
+steady…
+SourceTarg et
+Patch1Patch2…Patch5
+Prototypes
+…!!′
+Vocab. ReprogrammedPatchEmbeddings!
+Latest(camera-ready)
+Figure 3: Illustration of (a) patch reprogramming and (b) Patch-as-Prefix versus Prompt-as-Prefix.
+modalities that are identical or similar. Examples include repurposing a vision model to work with
+cross-domain images (Misra et al., 2023) or reprogramming an acoustic model to handle time series
+data (Yang et al., 2021). In both cases, there are explicit, learnable transformations between the
+source and target data, allowing for the direct editing of input samples. However, time series can
+neither be directly edited nor described losslessly in natural language, posing significant challenges
+to directly bootstrap the LLM for understanding time series without resource-intensive fine-tuning.
+To close this gap, we propose reprogramming ˆX(i)
+P using pre-trained word embeddings E ∈ RV ×D
+in the backbone, where V is the vocabulary size. Nevertheless, there is no prior knowledge indi-
+cating which source tokens are directly relevant. Thus, simply leveraging E will result in large and
+potentially dense reprogramming space. A simple solution is to maintain a small collection of text
+prototypes by linearly probing E, denoted as E′ ∈ RV ′×D, where V ′ ≪ V . An illustration is in
+Fig. 3(a). Text prototypes learn connecting language cues, e.g., “short up” (red lines) and “steady
+down” (blue lines), which are then combined to represent the local patch information (e.g., “short up
+then down steadily” for characterizing patch 5) without leaving the space where the language model
+is pre-trained. This approach is efficient and allows for the adaptive selection of relevant source
+information. To realize this, we employ a multi-head cross-attention layer. Specifically, for each
+head k = {1, · · · , K}, we define query matrices Q(i)
+k = ˆX(i)
+P WQ
+k , key matrices K(i)
+k = E′WK
+k ,
+and value matrices V(i)
+k = E′WV
+k , where WQ
+k ∈ Rdm×d and WK
+k , WV
+k ∈ RD×d. Specifically,
+D is the hidden dimension of the backbone model, and d = ⌊ dm
+K ⌋. Then, we have the operation to
+reprogram time series patches in each attention head defined as:
+Z(i)
+k = ATTENTION (Q(i)
+k , K(i)
+k , V(i)
+k ) = SOFTMAX ( Q(i)
+k K(i)⊤
+k√dk
+)V(i)
+k . (1)
+By aggregating each Z(i)
+k ∈ RP ×d in every head, we obtain Z(i) ∈ RP ×dm. This is then linearly
+projected to align the hidden dimensions with the backbone model, yielding O(i) ∈ RP ×D.
+<BOS>TheElectricityTransformerTemperature(ETT)indicatestheelectricpowerlong-termdeployment.Thedatasetcontainshourlysampleddatafrom…###Taskinstruction:Predictthenext<!>stepsgiventheprevious<">stepsinformationattached###Inputstatistics:Theinputhasaminimumof<minvalue>,amaximumof<maxvalue>,andamedianof<medianvalue>.Theoveralltrendis<upwardordownward>.Thetopfivelagsare<lagvalues>.<EOS>
+<BOS>TheElectricityTransformerTemperature(ETT)indicatestheelectricpowerlong-termdeployment.Each data point consists of the target oil temperature and 6 power load features…
+###Taskinstruction:Predictthenext<!>stepsgiventheprevious<">stepsinformationattached###Inputstatistics:Theinputhasaminimumof<minvalue>,amaximumof<maxvalue>,andamedianof<medianvalue>.Theoveralltrendis<upwardordownward>.Thetopfivelagsare<lagvalues>.<EOS>
+###DomainKnowledge:Weusuallyobservethat electricity consumption usually peaks at noon, with a significant increase in transformer load…
+TheElectricityTransformerTemperature(ETT)indicatestheelectricpowerlong-termdeployment.Each data point consists of the target oil temperature and 6 power load features…
+###Taskinstruction:Predictthenext<!>stepsgiventheprevious<">stepsinformationattached###Inputstatistics:Theinputhasaminimumof<minvalue>,amaximumof<maxvalue>,andamedianof<medianvalue>.Theoveralltrendis<upwardordownward>.Thetopfivelagsare<lagvalues>.
+###DomainKnowledge:Weusuallyobservethat electricity consumption usually peaks at noon, with a significant increase in transformer load…
+Belowistheinformationabouttheinputtimeseries:
+[Domain]:Weusuallyobservethat electricity consumption peaks at noon, with a significant increase in transformer load[Instruction]:Predictthenext<!>stepsgiventheprevious<">stepsinformationattached[Statistics]:Theinputhasaminimumof<min_val>,amaximumof<max_val>,andamedianof<median_val>.Theoveralltrendis<upwardordownward>.Thetopfivelagsare<lag_val>.
+[BEGINDATA]*** *** *** 
+[ENDDATA]
+Latest
+Figure 4: Prompt example. <> and <>
+are task-specific configurations and cal-
+culated input statistics.
+Prompt-as-Prefix. Prompting serves as a straightfor-
+ward yet effective approach task-specific activation of
+LLMs (Yin et al., 2023). However, the direct translation
+of time series into natural language presents considerable
+challenges, hindering both the creation of instruction-
+following datasets and the effective utilization of on-the-
+fly prompting without performance compromise (Xue &
+Salim, 2022). Recent advancements indicate that other
+data modalities, such as images, can be seamlessly in-
+tegrated as the prefixes of prompts, thereby facilitating
+effective reasoning based on these inputs (Tsimpoukelli
+et al., 2021). Motivated by these findings, and to render
+our approach directly applicable to real-world time series,
+we pose an alternative question: can prompts act as pre-
+fixes to enrich the input context and guide the transfor-
+mation of reprogrammed time series patches? We term this concept as Prompt-as-Prefix (PaP) and
+observe that it significantly enhances the LLM’s adaptability to downstream tasks while comple-
+menting patch reprogramming (See Sec. 4.5 later).
+5

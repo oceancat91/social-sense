@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;微软雅黑&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-51" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:51">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="shape-5" data-pptx-object="group" data-pptx-frame="95 16 815 83" data-pptx-source-ref="slide:5">
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="95 16 815 83" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 95 16 L 910 16 L 910 99 L 95 99 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="108.68 31 598.5 50.92" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 108.68 31 L 707.18 31 L 707.18 81.92 L 108.68 81.92 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="108.68" y="63" text-anchor="start" xml:space="preserve" font-size="33.07" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">应用示例：游戏梗传播中的创作与互动</text>
+</g>
+</g>
+<g id="shape-8" data-pptx-object="group" data-pptx-frame="75 108 1130 48" data-pptx-source-ref="slide:8">
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="75 108 1130 48" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 75 108 L 1205 108 L 1205 156 L 75 156 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="79.16 119 783.25 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 79.16 119 L 862.41 119 L 862.41 151.44 L 79.16 151.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.16" y="139" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">作为多类舆情场景之一，说明来源追溯与趋势观察如何支持积极传播和社区交流</text>
+</g>
+</g>
+<g id="shape-12" data-pptx-object="group" data-pptx-frame="70 680 1100 28.12" data-pptx-source-ref="slide:12">
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="70 680 1100 28" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 70 680 L 1170 680 L 1170 708 L 70 708 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="75.48 688 219.45 20.12" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 75.48 688 L 294.93 688 L 294.93 708.12 L 75.48 708.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="75.48" y="700" text-anchor="start" xml:space="preserve" font-size="13.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">SocialSense · 创新训练类中期答辩</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="1108.08 688 47.44 20.12" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 1108.08 688 L 1155.52 688 L 1155.52 708.12 L 1108.08 708.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1155.52" y="700" text-anchor="end" xml:space="preserve" font-size="13.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">11 / 18</text>
+</g>
+</g>
+<g id="shape-17" data-pptx-object="group" data-pptx-frame="70 179 745 154" data-pptx-source-ref="slide:17">
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="70 179 745 154" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 70 179 L 815 179 L 815 333 L 70 333 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="80.92 185.67 259.1 41.58" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 80.92 185.67 L 340.02 185.67 L 340.02 227.25 L 80.92 227.25 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.92" y="211" text-anchor="start" xml:space="preserve" font-size="26.93" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">理解积极传播的价值</text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="81.12 231.67 441.76 99.88" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 81.12 231.67 L 522.88 231.67 L 522.88 331.55 L 81.12 331.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.12" y="257" text-anchor="start" xml:space="preserve" font-size="22" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="33"><tspan><tspan>角色、台词和共同经历成为可复用的表达，</tspan></tspan><tspan data-paragraph-line-break="1">带动二次创作与玩家交流。官方素材分享与</tspan><tspan data-paragraph-line-break="1">公开创作征集，展示了内容参与的实际场景。</tspan></text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="71 186 1 123" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 71 186 L 71 309" data-pptx-part="geometry" fill="none" stroke-width="4" stroke="#4472C4" />
+</g>
+</g>
+<g id="shape-22" data-pptx-object="group" data-pptx-frame="70 335 745 154" data-pptx-source-ref="slide:22">
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="70 335 745 154" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 70 335 L 815 335 L 815 489 L 70 489 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="80.92 341.67 401.85 41.58" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 80.92 341.67 L 482.77 341.67 L 482.77 383.25 L 80.92 383.25 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.92" y="367" text-anchor="start" xml:space="preserve" font-size="26.93" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">把创作来源与传播线索连接起来</text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="81.12 387.67 485.76 99.88" data-pptx-prst="rect" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 81.12 387.67 L 566.88 387.67 L 566.88 487.55 L 81.12 487.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.12" y="413" text-anchor="start" xml:space="preserve" font-size="22" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="33"><tspan><tspan>记录原始表达、改写与转载，核对作者和语境；</tspan></tspan><tspan data-paragraph-line-break="1">结合跨平台声量和立场变化，辅助发现创作贡献、</tspan><tspan data-paragraph-line-break="1">玩家诉求及适合进一步复核的传播节点。</tspan></text>
+</g>
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="71 342 1 123" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 71 342 L 71 465" data-pptx-part="geometry" fill="none" stroke-width="4" stroke="#4472C4" />
+</g>
+</g>
+<g id="shape-27" data-pptx-object="group" data-pptx-frame="70 491 745 154" data-pptx-source-ref="slide:27">
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="70 491 745 154" data-pptx-prst="rect" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 70 491 L 815 491 L 815 645 L 70 645 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="80.92 497.67 316.2 41.58" data-pptx-prst="rect" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 80.92 497.67 L 397.12 497.67 L 397.12 539.25 L 80.92 539.25 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.92" y="523" text-anchor="start" xml:space="preserve" font-size="26.93" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">让应用收益回到研究验证</text>
+</g>
+<g id="shape-25" data-pptx-object="shape" data-pptx-frame="81.12 543.67 463.76 99.88" data-pptx-prst="rect" data-pptx-source-ref="slide:25" data-pptx-semantic-object="shape">
+<path d="M 81.12 543.67 L 544.88 543.67 L 544.88 643.55 L 81.12 643.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.12" y="569" text-anchor="start" xml:space="preserve" font-size="22" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="33"><tspan><tspan>可为创作认可、社区答疑与内容复盘提供依据；</tspan></tspan><tspan data-paragraph-line-break="1">同样的方法也服务公共事件和文化娱乐。</tspan><tspan data-paragraph-line-break="1">当前案例用于说明需求，尚非专门采集的实测。</tspan></text>
+</g>
+<g id="shape-26" data-pptx-object="shape" data-pptx-frame="71 498 1 123" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:26" data-pptx-semantic-object="shape">
+<path d="M 71 498 L 71 621" data-pptx-part="geometry" fill="none" stroke-width="4" stroke="#4472C4" />
+</g>
+</g>
+<g id="shape-32" data-pptx-object="group" data-pptx-frame="841 173 365 501.64" data-pptx-source-ref="slide:32">
+<g id="shape-28" data-pptx-object="shape" data-pptx-frame="841 173 365 501" data-pptx-prst="rect" data-pptx-source-ref="slide:28" data-pptx-semantic-object="shape">
+<path d="M 841 173 L 1206 173 L 1206 674 L 841 674 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-29" data-pptx-object="picture" data-pptx-frame="859 176 330 440" data-pptx-source-ref="slide:29">
+<image data-pptx-object="picture" data-pptx-frame="859 176 330 440" href="../images/image8.jpeg" x="859" y="176" width="330" height="440" preserveAspectRatio="none" />
+</g>
+<g id="shape-30" data-pptx-object="shape" data-pptx-frame="849.36 625 246.4 24.64" data-pptx-prst="rect" data-pptx-source-ref="slide:30" data-pptx-semantic-object="shape">
+<path d="M 849.36 625 L 1095.76 625 L 1095.76 649.64 L 849.36 649.64 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="849.36" y="641" text-anchor="start" xml:space="preserve" font-size="16" fill="#4472C4" text-decoration="underline" data-pptx-text-baseline="metrics-v1"><tspan><a href="https://www.taptap.cn/moment/832223722998859956"><tspan>[W2] TapTap 创作征集活动原图</tspan></a></tspan></text>
+</g>
+<g id="shape-31" data-pptx-object="shape" data-pptx-frame="849.36 650 306.56 24.64" data-pptx-prst="rect" data-pptx-source-ref="slide:31" data-pptx-semantic-object="shape">
+<path d="M 849.36 650 L 1155.92 650 L 1155.92 674.64 L 849.36 674.64 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="849.36" y="666" text-anchor="start" xml:space="preserve" font-size="16" fill="#64748B" data-pptx-text-baseline="metrics-v1">图片权利归原发布方；作为公开案例引用</text>
+</g>
+</g>
+<g id="shape-36" data-pptx-object="group" data-pptx-frame="75 647 750 27.64" data-pptx-source-ref="slide:36">
+<g id="shape-33" data-pptx-object="shape" data-pptx-frame="75 647 750 26" data-pptx-prst="rect" data-pptx-source-ref="slide:33" data-pptx-semantic-object="shape">
+<path d="M 75 647 L 825 647 L 825 673 L 75 673 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-34" data-pptx-object="shape" data-pptx-frame="81.36 650 151.42 24.64" data-pptx-prst="rect" data-pptx-source-ref="slide:34" data-pptx-semantic-object="shape">
+<path d="M 81.36 650 L 232.78 650 L 232.78 674.64 L 81.36 674.64 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.36" y="666" text-anchor="start" xml:space="preserve" font-size="16" fill="#4472C4" text-decoration="underline" data-pptx-text-baseline="metrics-v1"><tspan><a href="https://www.taptap.cn/moment/834126362733185189"><tspan>[W1] 官方素材分享</tspan></a></tspan></text>
+</g>
+<g id="shape-35" data-pptx-object="shape" data-pptx-frame="304.36 650 235.87 24.64" data-pptx-prst="rect" data-pptx-source-ref="slide:35" data-pptx-semantic-object="shape">
+<path d="M 304.36 650 L 540.23 650 L 540.23 674.64 L 304.36 674.64 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="304.36" y="666" text-anchor="start" xml:space="preserve" font-size="16" fill="#4472C4" text-decoration="underline" data-pptx-text-baseline="metrics-v1"><tspan><a href="https://arxiv.org/abs/1805.12512"><tspan>[11] 梗传播研究（IMC 2018）</tspan></a></tspan></text>
+</g>
+</g></svg>

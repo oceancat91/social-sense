@@ -1,0 +1,280 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Microsoft YaHei&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="shape-5" data-pptx-object="group" data-pptx-frame="95 16 815 83" data-pptx-source-ref="slide:5">
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="95 16 815 83" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 95 16 L 910 16 L 910 99 L 95 99 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="110.64 29.67 435.2 52.36" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 110.64 29.67 L 545.84 29.67 L 545.84 82.03 L 110.64 82.03 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="110.64" y="63" text-anchor="start" xml:space="preserve" font-size="34" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">备份｜参考文献与证据入口</text>
+</g>
+</g>
+<g id="shape-8" data-pptx-object="group" data-pptx-frame="75 108 1130 50" data-pptx-source-ref="slide:8">
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="75 108 1130 50" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 75 108 L 1205 108 L 1205 158 L 75 158 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="79.12 118.67 741 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 79.12 118.67 L 820.12 118.67 L 820.12 152.55 L 79.12 152.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.12" y="140" text-anchor="start" xml:space="preserve" font-size="22" fill="#64748B" data-pptx-text-baseline="metrics-v1">已保存 10 篇原文、重点段落阅读记录及代码映射；检索限制见研究日志</text>
+</g>
+</g>
+<g id="shape-12" data-pptx-object="group" data-pptx-frame="70 680 1100 28.12" data-pptx-source-ref="slide:12">
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="70 680 1100 25" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 70 680 L 1170 680 L 1170 705 L 70 705 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="75.48 688 219.45 20.12" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 75.48 688 L 294.93 688 L 294.93 708.12 L 75.48 708.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="75.48" y="700" text-anchor="start" xml:space="preserve" font-size="13.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">SocialSense · 创新训练类中期答辩</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="1076.22 688 79.3 20.12" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 1076.22 688 L 1155.52 688 L 1155.52 708.12 L 1076.22 708.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1155.52" y="700" text-anchor="end" xml:space="preserve" font-size="13.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">18 / 18 备份</text>
+</g>
+</g>
+<g id="shape-16" data-pptx-object="group" data-pptx-frame="75 175 555 82.9" data-pptx-source-ref="slide:16">
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="75 175 555 82" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 75 175 L 630 175 L 630 257 L 75 257 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="79.16 178 389.71 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 79.16 178 L 468.87 178 L 468.87 210.44 L 79.16 210.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.16" y="198" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">[1] Cinelli et al. (2020, preprint)</text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="79.32 208.67 355.49 49.23" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 79.32 208.67 L 434.81 208.67 L 434.81 257.9 L 79.32 257.9 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.32" y="226" text-anchor="start" xml:space="preserve" font-size="17.07" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.946667"><tspan><tspan>Echo Chambers on Social Media:</tspan></tspan><tspan data-paragraph-line-break="1">A comparative analysis · arXiv:2004.09603</tspan></text>
+</g>
+</g>
+<g id="shape-20" data-pptx-object="group" data-pptx-frame="75 265 555 82" data-pptx-source-ref="slide:20">
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="75 265 555 82" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 75 265 L 630 265 L 630 347 L 75 347 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="79.16 268 321.95 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 79.16 268 L 401.11 268 L 401.11 300.44 L 79.16 300.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.16" y="288" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">[2] Zannettou et al. (2017)</text>
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="79.32 300 339.83 26.28" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 79.32 300 L 419.15 300 L 419.15 326.28 L 79.32 326.28 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.32" y="316" text-anchor="start" xml:space="preserve" font-size="17.07" fill="#243446" data-pptx-text-baseline="metrics-v1">The Web Centipede · arXiv:1705.06947</text>
+</g>
+</g>
+<g id="shape-25" data-pptx-object="group" data-pptx-frame="75 355 555 82.9" data-pptx-source-ref="slide:25">
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="75 355 555 82" data-pptx-prst="rect" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 75 355 L 630 355 L 630 437 L 75 437 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="79.16 358 316.08 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 79.16 358 L 395.24 358 L 395.24 390.44 L 79.16 390.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.16" y="378" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">[3] Zeng et al. (AAAI 2023)</text>
+</g>
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="79.32 388.67 368.29 49.23" data-pptx-prst="rect" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 79.32 388.67 L 447.61 388.67 L 447.61 437.9 L 79.32 437.9 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.32" y="406" text-anchor="start" xml:space="preserve" font-size="17.07" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.946667"><tspan><tspan>Are Transformers Effective for Time Series</tspan></tspan><tspan data-paragraph-line-break="1">Forecasting? · arXiv:2205.13504</tspan></text>
+</g>
+</g>
+<g id="shape-29" data-pptx-object="group" data-pptx-frame="75 445 555 82" data-pptx-source-ref="slide:29">
+<g id="shape-26" data-pptx-object="shape" data-pptx-frame="75 445 555 82" data-pptx-prst="rect" data-pptx-source-ref="slide:26" data-pptx-semantic-object="shape">
+<path d="M 75 445 L 630 445 L 630 527 L 75 527 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-27" data-pptx-object="shape" data-pptx-frame="79.16 448 421.4 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:27" data-pptx-semantic-object="shape">
+<path d="M 79.16 448 L 500.56 448 L 500.56 480.44 L 79.16 480.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.16" y="468" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">[4] Stitsyuk &amp; Choi (2024, preprint)</text>
+</g>
+<g id="shape-28" data-pptx-object="shape" data-pptx-frame="79.32 480 238.96 26.28" data-pptx-prst="rect" data-pptx-source-ref="slide:28" data-pptx-semantic-object="shape">
+<path d="M 79.32 480 L 318.28 480 L 318.28 506.28 L 79.32 506.28 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.32" y="496" text-anchor="start" xml:space="preserve" font-size="17.07" fill="#243446" data-pptx-text-baseline="metrics-v1">xPatch · arXiv:2412.17323</text>
+</g>
+</g>
+<g id="shape-33" data-pptx-object="group" data-pptx-frame="75 535 555 82" data-pptx-source-ref="slide:33">
+<g id="shape-30" data-pptx-object="shape" data-pptx-frame="75 535 555 82" data-pptx-prst="rect" data-pptx-source-ref="slide:30" data-pptx-semantic-object="shape">
+<path d="M 75 535 L 630 535 L 630 617 L 75 617 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-31" data-pptx-object="shape" data-pptx-frame="79.16 538 343.44 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:31" data-pptx-semantic-object="shape">
+<path d="M 79.16 538 L 422.6 538 L 422.6 570.44 L 79.16 570.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.16" y="558" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">[5] Gu &amp; Dao (2023, preprint)</text>
+</g>
+<g id="shape-32" data-pptx-object="shape" data-pptx-frame="79.32 570 236.46 26.28" data-pptx-prst="rect" data-pptx-source-ref="slide:32" data-pptx-semantic-object="shape">
+<path d="M 79.32 570 L 315.78 570 L 315.78 596.28 L 79.32 596.28 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.32" y="586" text-anchor="start" xml:space="preserve" font-size="17.07" fill="#243446" data-pptx-text-baseline="metrics-v1">Mamba · arXiv:2312.00752</text>
+</g>
+</g>
+<g id="shape-37" data-pptx-object="group" data-pptx-frame="675 175 555 82.9" data-pptx-source-ref="slide:37">
+<g id="shape-34" data-pptx-object="shape" data-pptx-frame="675 175 555 82" data-pptx-prst="rect" data-pptx-source-ref="slide:34" data-pptx-semantic-object="shape">
+<path d="M 675 175 L 1230 175 L 1230 257 L 675 257 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-35" data-pptx-object="shape" data-pptx-frame="679.16 178 389.71 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:35" data-pptx-semantic-object="shape">
+<path d="M 679.16 178 L 1068.87 178 L 1068.87 210.44 L 679.16 210.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="679.16" y="198" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">[6] Killick et al. (2011, preprint)</text>
+</g>
+<g id="shape-36" data-pptx-object="shape" data-pptx-frame="679.32 208.67 384.51 49.23" data-pptx-prst="rect" data-pptx-source-ref="slide:36" data-pptx-semantic-object="shape">
+<path d="M 679.32 208.67 L 1063.83 208.67 L 1063.83 257.9 L 679.32 257.9 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="679.32" y="226" text-anchor="start" xml:space="preserve" font-size="17.07" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.946667"><tspan><tspan>Optimal detection of changepoints with</tspan></tspan><tspan data-paragraph-line-break="1">a linear computational cost · arXiv:1101.1438</tspan></text>
+</g>
+</g>
+<g id="shape-41" data-pptx-object="group" data-pptx-frame="675 265 555 82.9" data-pptx-source-ref="slide:41">
+<g id="shape-38" data-pptx-object="shape" data-pptx-frame="675 265 555 82" data-pptx-prst="rect" data-pptx-source-ref="slide:38" data-pptx-semantic-object="shape">
+<path d="M 675 265 L 1230 265 L 1230 347 L 675 347 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-39" data-pptx-object="shape" data-pptx-frame="679.16 268 365.57 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:39" data-pptx-semantic-object="shape">
+<path d="M 679.16 268 L 1044.73 268 L 1044.73 300.44 L 679.16 300.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="679.16" y="288" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">[7] Lewis et al. (NeurIPS 2020)</text>
+</g>
+<g id="shape-40" data-pptx-object="shape" data-pptx-frame="679.32 298.67 369.15 49.23" data-pptx-prst="rect" data-pptx-source-ref="slide:40" data-pptx-semantic-object="shape">
+<path d="M 679.32 298.67 L 1048.47 298.67 L 1048.47 347.9 L 679.32 347.9 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="679.32" y="316" text-anchor="start" xml:space="preserve" font-size="17.07" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.946667"><tspan><tspan>Retrieval-Augmented Generation for</tspan></tspan><tspan data-paragraph-line-break="1">Knowledge-Intensive NLP Tasks · 2005.11401</tspan></text>
+</g>
+</g>
+<g id="shape-45" data-pptx-object="group" data-pptx-frame="675 355 555 82" data-pptx-source-ref="slide:45">
+<g id="shape-42" data-pptx-object="shape" data-pptx-frame="675 355 555 82" data-pptx-prst="rect" data-pptx-source-ref="slide:42" data-pptx-semantic-object="shape">
+<path d="M 675 355 L 1230 355 L 1230 437 L 675 437 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-43" data-pptx-object="shape" data-pptx-frame="679.16 358 297.5 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:43" data-pptx-semantic-object="shape">
+<path d="M 679.16 358 L 976.66 358 L 976.66 390.44 L 679.16 390.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="679.16" y="378" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">[8] Jin et al. (ICLR 2024)</text>
+</g>
+<g id="shape-44" data-pptx-object="shape" data-pptx-frame="679.32 390 265.23 26.28" data-pptx-prst="rect" data-pptx-source-ref="slide:44" data-pptx-semantic-object="shape">
+<path d="M 679.32 390 L 944.55 390 L 944.55 416.28 L 679.32 416.28 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="679.32" y="406" text-anchor="start" xml:space="preserve" font-size="17.07" fill="#243446" data-pptx-text-baseline="metrics-v1">Time-LLM · arXiv:2310.01728</text>
+</g>
+</g>
+<g id="shape-49" data-pptx-object="group" data-pptx-frame="675 445 555 82.9" data-pptx-source-ref="slide:49">
+<g id="shape-46" data-pptx-object="shape" data-pptx-frame="675 445 555 82" data-pptx-prst="rect" data-pptx-source-ref="slide:46" data-pptx-semantic-object="shape">
+<path d="M 675 445 L 1230 445 L 1230 527 L 675 527 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-47" data-pptx-object="shape" data-pptx-frame="679.16 448 341.36 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:47" data-pptx-semantic-object="shape">
+<path d="M 679.16 448 L 1020.52 448 L 1020.52 480.44 L 679.16 480.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="679.16" y="468" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">[9] Tan et al. (NeurIPS 2024)</text>
+</g>
+<g id="shape-48" data-pptx-object="shape" data-pptx-frame="679.32 478.67 332.45 49.23" data-pptx-prst="rect" data-pptx-source-ref="slide:48" data-pptx-semantic-object="shape">
+<path d="M 679.32 478.67 L 1011.77 478.67 L 1011.77 527.9 L 679.32 527.9 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="679.32" y="496" text-anchor="start" xml:space="preserve" font-size="17.07" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.946667"><tspan><tspan>Are Language Models Actually Useful for</tspan></tspan><tspan data-paragraph-line-break="1">Time Series Forecasting? · 2406.16964</tspan></text>
+</g>
+</g>
+<g id="shape-53" data-pptx-object="group" data-pptx-frame="675 535 555 82" data-pptx-source-ref="slide:53">
+<g id="shape-50" data-pptx-object="shape" data-pptx-frame="675 535 555 82" data-pptx-prst="rect" data-pptx-source-ref="slide:50" data-pptx-semantic-object="shape">
+<path d="M 675 535 L 1230 535 L 1230 617 L 675 617 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-51" data-pptx-object="shape" data-pptx-frame="679.16 538 316.74 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:51" data-pptx-semantic-object="shape">
+<path d="M 679.16 538 L 995.9 538 L 995.9 570.44 L 679.16 570.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="679.16" y="558" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">[10] Yao et al. (ICLR 2023)</text>
+</g>
+<g id="shape-52" data-pptx-object="shape" data-pptx-frame="679.32 570 230.41 26.28" data-pptx-prst="rect" data-pptx-source-ref="slide:52" data-pptx-semantic-object="shape">
+<path d="M 679.32 570 L 909.73 570 L 909.73 596.28 L 679.32 596.28 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="679.32" y="586" text-anchor="start" xml:space="preserve" font-size="17.07" fill="#243446" data-pptx-text-baseline="metrics-v1">ReAct · arXiv:2210.03629</text>
+</g>
+</g>
+<g id="shape-56" data-pptx-object="group" data-pptx-frame="75 637 1130 33" data-pptx-source-ref="slide:56">
+<g id="shape-54" data-pptx-object="shape" data-pptx-frame="75 637 1130 33" data-pptx-prst="rect" data-pptx-source-ref="slide:54" data-pptx-semantic-object="shape">
+<path d="M 75 637 L 1205 637 L 1205 670 L 75 670 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-55" data-pptx-object="shape" data-pptx-frame="79.36 642 795.86 24.64" data-pptx-prst="rect" data-pptx-source-ref="slide:55" data-pptx-semantic-object="shape">
+<path d="M 79.36 642 L 875.22 642 L 875.22 666.64 L 79.36 666.64 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.36" y="658" text-anchor="start" xml:space="preserve" font-size="16" fill="#64748B" data-pptx-text-baseline="metrics-v1">仓库索引：docs/midterm_20261029/ · 实验依据：retrain_20261019/deployment_verification.json</text>
+</g>
+</g></svg>

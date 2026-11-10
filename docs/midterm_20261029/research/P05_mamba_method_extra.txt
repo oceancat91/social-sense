@@ -1,0 +1,44 @@
+3 Selective State Space Models
+We motivate our selection mechanism using intuition from synthetic tasks (Section 3.1), then explain how to incorporate
+this mechanism into state space models (Section 3.2). The resulting time-varying SSMs cannot use convolutions, presenting
+a technical challenge of how to compute them efficiently. We overcome this with a hardware-aware algorithm that exploits
+the memory hierarchy on modern hardware (Section 3.3). We then describe a simple SSM architecture without attention or
+even MLP blocks (Section 3.4). Finally, we discuss some additional properties of selection mechanisms (Section 3.5).
+3.1 Motivation: Selection as a Means of Compression
+We argue that a fundamental problem of sequence modeling is compressing context into a smaller state . In fact, we can
+view the tradeoffs of popular sequence models from this point of view. For example, attention is both effective and
+inefficient because it explicitly does not compress context at all. This can be seen from the fact that autoregressive inference
+requires explicitly storing the entire context (i.e. the KV cache), which directly causes the slow linear-time inference and
+quadratic-time training of Transformers. On the other hand, recurrent models are efficient because they have a finite state,
+implying constant-time inference and linear-time training. However, their effectiveness is limited by how well this state
+has compressed the context.
+To understand this principle, we focus on two running examples of synthetic tasks (Figure 2).
+• The Selective Copying task modifies the popular Copying task (Arjovsky, Shah, and Bengio 2016) by varying the
+position of the tokens to memorize. It requires content-aware reasoning to be able to memorize the relevant tokens
+(colored) and filter out the irrelevant ones (white).
+• The Induction Heads task is a well-known mechanism hypothesized to explain the majority of in-context learning
+abilities of LLMs (Olsson et al. 2022). It requires context-aware reasoning to know when to produce the correct output in
+the appropriate context (black).
+These tasks reveal the failure mode of LTI models. From the recurrent view, their constant dynamics (e.g. the (𝑨, 𝑩)
+transitions in (2)) cannot let them select the correct information from their context, or affect the hidden state passed
+along the sequence in an input-dependent way. From the convolutional view, it is known that global convolutions can
+solve the vanilla Copying task (Romero et al. 2021) because it only requires time-awareness, but that they have difficulty
+with the Selective Copying task because of lack of content-awareness (Figure 2). More concretely, the spacing between
+inputs-to-outputs is varying and cannot be modeled by static convolution kernels.
+In summary, the efficiency vs. effectiveness tradeoff of sequence models is characterized by how well they compress
+their state: efficient models must have a small state, while effective models must have a state that contains all necessary
+information from the context. In turn, we propose that a fundamental principle for building sequence models isselectivity:
+or the context-aware ability to focus on or filter out inputs into a sequential state. In particular, a selection mechanism
+controls how information propagates or interacts along the sequence dimension (see Section 3.5 for more discussion).
+3.2 Improving SSMs with Selection
+One method of incorporating a selection mechanism into models is by letting their parameters that affect interactions along
+the sequence (e.g. the recurrent dynamics of an RNN or the convolution kernel of a CNN) be input-dependent.
+Algorithms 1 and 2 illustrates the main selection mechanism that we use. The main difference is simply making several
+parameters Δ, 𝑩, 𝑪 functions of the input, along with the associated changes to tensor shapes throughout. In particular, we
+highlight that these parameters now have a length dimension 𝐿, meaning that the model has changed from time-invariant
+to time-varying. (Note that shape annotations were described in Section 2.) This loses the equivalence to convolutions (3)
+with implications for its efficiency, discussed next.
+We specifically choose 𝑠𝐵 (𝑥) = Linear𝑁 (𝑥), 𝑠𝐶 (𝑥) = Linear𝑁 (𝑥), 𝑠Δ (𝑥) = Broadcast𝐷 (Linear1(𝑥)), and 𝜏Δ = softplus,
+where Linear𝑑 is a parameterized projection to dimension 𝑑. The choice of 𝑠Δ and 𝜏Δ is due to a connection to RNN gating
+mechanisms explained in Section 3.5.
+5

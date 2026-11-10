@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;微软雅黑&quot;, sans-serif"><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-36" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:36">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="shape-12" data-pptx-object="group" data-pptx-frame="70 680 1100 28.12" data-pptx-source-ref="slide:12">
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="70 680 1100 28" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 70 680 L 1170 680 L 1170 708 L 70 708 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="75.48 688 219.45 20.12" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 75.48 688 L 294.93 688 L 294.93 708.12 L 75.48 708.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="75.48" y="700" text-anchor="start" xml:space="preserve" font-size="13.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">SocialSense · 创新训练类中期答辩</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="1108.08 688 47.44 20.12" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 1108.08 688 L 1155.52 688 L 1155.52 708.12 L 1108.08 708.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1155.52" y="700" text-anchor="end" xml:space="preserve" font-size="13.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">03 / 18</text>
+</g>
+</g>
+<g id="three-scenario-heading" data-pptx-bounds="95 16 815 83"><rect x="95" y="16" width="815" height="83" fill="none" /><text x="110" y="63" font-family="Microsoft YaHei" font-size="33" font-weight="bold" fill="#44546A">应用场景：三类议题，共用同一技术框架</text></g><g id="three-scenario-subtitle" data-pptx-bounds="75 106 1130 44"><rect x="75" y="106" width="1130" height="44" fill="none" /><text x="80" y="137" font-family="Microsoft YaHei" font-size="21" font-weight="normal" fill="#64748B">从消费争议到综艺走红、游戏社群，研究信息从何而来、如何扩散以及后续怎样变化</text></g><g id="scenario-0" data-pptx-bounds="65 169 370 435"><rect x="65" y="169" width="370" height="435" fill="none" /><rect x="65" y="169" width="370" height="435" rx="6" ry="6" fill="#FFFFFF" stroke="#B7C9E2" stroke-width="1.1" /><rect x="66" y="170" width="368" height="53" fill="#EDF2F8" /><text x="85" y="205" font-family="Microsoft YaHei" font-size="19.5" font-weight="bold" fill="#4472C4">01  社会公共议题</text><text x="85" y="257" font-family="Microsoft YaHei" font-size="26" font-weight="bold" fill="#0D3745">西贝“预制菜”争议</text><text x="85" y="294" font-family="Microsoft YaHei" font-size="21" font-weight="bold" fill="#4472C4">消费者知情权与品牌信任</text><text x="85" y="334" font-family="Microsoft YaHei" font-size="21" font-weight="normal" fill="#243446">个人发声与企业回应交织，<tspan x="85" dy="30.03">争论从菜品扩展至知情权、</tspan><tspan x="85" dy="30.03">定价与品牌信任，呈现多方</tspan><tspan x="85" dy="30.03">立场分歧与反复传播。</tspan></text><line x1="85" y1="439" x2="415" y2="439" stroke="#D6E0EB" stroke-width="1" /><text x="85" y="469" font-family="Microsoft YaHei" font-size="20.5" font-weight="bold" fill="#0D3745">研究切入</text><text x="85" y="503" font-family="Microsoft YaHei" font-size="21" font-weight="normal" fill="#243446">核对原帖、回应和媒体转述；<tspan x="85" dy="29.4">比较平台立场与热度变化，</tspan><tspan x="85" dy="29.4">识别关键节点及再升温线索。</tspan></text><text x="85" y="588" font-family="Microsoft YaHei" font-size="16.5" font-weight="normal" fill="#4472C4"><a href="https://finance.cnr.cn/ycbd/20250915/t20250915_527362854.shtml"><tspan text-decoration="underline">报道：央广网</tspan></a></text><text x="245" y="588" font-family="Microsoft YaHei" font-size="16.5" font-weight="normal" fill="#4472C4"><a href="https://opinion.cctv.com/2026/03/03/ARTI9m58PmwiNfBHSBoNEoHL260303.shtml"><tspan text-decoration="underline">央视网</tspan></a></text></g><g id="scenario-1" data-pptx-bounds="455 169 370 435"><rect x="455" y="169" width="370" height="435" fill="none" /><rect x="455" y="169" width="370" height="435" rx="6" ry="6" fill="#FFFFFF" stroke="#B7C9E2" stroke-width="1.1" /><rect x="456" y="170" width="368" height="53" fill="#EDF2F8" /><text x="475" y="205" font-family="Microsoft YaHei" font-size="19.5" font-weight="bold" fill="#4472C4">02  文化娱乐传播</text><text x="475" y="257" font-family="Microsoft YaHei" font-size="26" font-weight="bold" fill="#0D3745">《后会友期》综艺</text><text x="475" y="294" font-family="Microsoft YaHei" font-size="21" font-weight="bold" fill="#4472C4">内容走红与热度延续</text><text x="475" y="334" font-family="Microsoft YaHei" font-size="21" font-weight="normal" fill="#243446">从节目话题到切片和二创，<tspan x="475" dy="30.03">观察内容如何跨平台扩散；</tspan><tspan x="475" dy="30.03">区分短时爆发、持续关注</tspan><tspan x="475" dy="30.03">与再次传播的不同阶段。</tspan></text><line x1="475" y1="439" x2="805" y2="439" stroke="#D6E0EB" stroke-width="1" /><text x="475" y="469" font-family="Microsoft YaHei" font-size="20.5" font-weight="bold" fill="#0D3745">研究切入</text><text x="475" y="503" font-family="Microsoft YaHei" font-size="21" font-weight="normal" fill="#243446">关联话题出处与扩散顺序；<tspan x="475" dy="29.4">结合历史热度预测后续变化，</tspan><tspan x="475" dy="29.4">辅助内容复盘与受众研究。</tspan></text><text x="475" y="588" font-family="Microsoft YaHei" font-size="16.5" font-weight="normal" fill="#64748B">用户指定案例 · 事件样本待补齐</text></g><g id="scenario-2" data-pptx-bounds="845 169 370 435"><rect x="845" y="169" width="370" height="435" fill="none" /><rect x="845" y="169" width="370" height="435" rx="6" ry="6" fill="#FFFFFF" stroke="#B7C9E2" stroke-width="1.1" /><rect x="846" y="170" width="368" height="53" fill="#EDF2F8" /><text x="865" y="205" font-family="Microsoft YaHei" font-size="19.5" font-weight="bold" fill="#4472C4">03  游戏社群互动</text><text x="865" y="257" font-family="Microsoft YaHei" font-size="26" font-weight="bold" fill="#0D3745">《明日方舟》梗传播</text><text x="865" y="294" font-family="Microsoft YaHei" font-size="21" font-weight="bold" fill="#4472C4">积极传播与创作认可</text><text x="865" y="334" font-family="Microsoft YaHei" font-size="21" font-weight="normal" fill="#243446">以“酸橙”相关二创为例，<tspan x="865" dy="30.03">连接素材分享、玩家改写</tspan><tspan x="865" dy="30.03">和跨圈传播，关注创作来源</tspan><tspan x="865" dy="30.03">与官方、玩家的互动反馈。</tspan></text><line x1="865" y1="439" x2="1195" y2="439" stroke="#D6E0EB" stroke-width="1" /><text x="865" y="469" font-family="Microsoft YaHei" font-size="20.5" font-weight="bold" fill="#0D3745">研究切入</text><text x="865" y="503" font-family="Microsoft YaHei" font-size="21" font-weight="normal" fill="#243446">梳理原始表达、变体与引用；<tspan x="865" dy="29.4">观察传播热度和语境变化，</tspan><tspan x="865" dy="29.4">支持创作认可与社区沟通。</tspan></text><text x="865" y="588" font-family="Microsoft YaHei" font-size="16.5" font-weight="normal" fill="#4472C4"><a href="https://www.taptap.cn/moment/834126362733185189"><tspan text-decoration="underline">素材分享</tspan></a></text><text x="1009" y="588" font-family="Microsoft YaHei" font-size="16.5" font-weight="normal" fill="#4472C4"><a href="https://www.taptap.cn/moment/832223722998859956"><tspan text-decoration="underline">创作征集</tspan></a></text></g><g id="shared-research" data-pptx-bounds="70 619 1135 58"><rect x="70" y="619" width="1135" height="58" fill="none" /><rect x="70" y="619" width="1135" height="58" fill="#EDF2F8" /><text x="88" y="645" font-family="Microsoft YaHei" font-size="23" font-weight="bold" fill="#4472C4">共同研究链路：路径溯源 → 热度走向预测 → 三维等高线与证据联动（规划）</text><text x="88" y="669" font-family="Microsoft YaHei" font-size="18" font-weight="normal" fill="#64748B">案例用于说明应用需求；专项效果需事件样本验证，完整传播关系及三维山峰图仍需补齐。</text></g></svg>

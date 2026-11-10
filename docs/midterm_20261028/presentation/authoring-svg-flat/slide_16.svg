@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;微软雅黑&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="84.27 25.22 348.73 54.8" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 84.27 25.22 L 433 25.22 L 433 80.02 L 84.27 80.02 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="93.87" y="66.01595801" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, &quot;微软雅黑&quot;, sans-serif" font-size="37.33" fill="#3B3B3B" data-pptx-text-baseline="metrics-v1"><tspan>7</tspan><tspan>. 三个研究问题</tspan></text>
+</g>
+<g id="shape-19" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:19">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image3.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="shape-5" data-pptx-object="group" data-pptx-frame="59.08 114.33 804.05 35.42" data-pptx-source-ref="slide:5">
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="59.08 114.33 804.05 35.42" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 59.08 114.33 L 863.13 114.33 L 863.13 149.75 L 59.08 149.75 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="59.08" y="137" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#0D3745" data-pptx-text-baseline="metrics-v1">研究重点：在什么观察条件下，生成结果仍能保持连贯的空间结构与运动？</text>
+</g>
+</g>
+<g id="shape-8" data-pptx-object="group" data-pptx-frame="59.16 167 1045.82 312.44" data-pptx-source-ref="slide:8">
+<g id="shape-6" data-pptx-object="picture" data-pptx-frame="171.02 167 933.96 278" data-pptx-source-ref="slide:6">
+<image data-pptx-object="picture" data-pptx-frame="171.02 167 933.96 278" href="../images/image20.png" x="171.02" y="167" width="933.96" height="278" preserveAspectRatio="none" />
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="59.16 447 850.25 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 59.16 447 L 909.41 447 L 909.41 479.44 L 59.16 479.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="59.16" y="467" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#0D3745" data-pptx-text-baseline="metrics-v1">图示阅读：输入视频提供观测，视角与时间共同展开，生成观测再用于构建动态资产。</text>
+</g>
+</g>
+<g id="shape-12" data-pptx-object="group" data-pptx-frame="59.04 487 366.96 156.11" data-pptx-source-ref="slide:12">
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="60 487 366 1" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 60 487 L 426 487" data-pptx-part="geometry" fill="none" stroke-width="3" stroke="#BE2623" />
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="59.04 495.33 276.04 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 59.04 495.33 L 335.08 495.33 L 335.08 532.29 L 59.04 532.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="59.04" y="518" text-anchor="start" xml:space="preserve" font-size="24" fill="#BE2623" font-weight="bold" data-pptx-text-baseline="metrics-v1">Q1 几何与运动如何协同</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="59.16 526.67 296.61 116.44" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 59.16 526.67 L 355.77 526.67 L 355.77 643.11 L 59.16 643.11 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="59.16" y="548" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#263238" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="28"><tspan><tspan>比较视角约束、时间联系</tspan></tspan><tspan data-paragraph-line-break="1">与动态表示。同一姿态换视角，</tspan><tspan data-paragraph-line-break="1">同一机位看运动，记录身份、</tspan><tspan data-paragraph-line-break="1">部件结构与遮挡异常。</tspan></text>
+</g>
+</g>
+<g id="shape-17" data-pptx-object="group" data-pptx-frame="454.04 487 366.96 156.11" data-pptx-source-ref="slide:17">
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="455 487 366 1" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 455 487 L 821 487" data-pptx-part="geometry" fill="none" stroke-width="3" stroke="#BE2623" />
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="454.04 495.33 301.48 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 454.04 495.33 L 755.52 495.33 L 755.52 532.29 L 454.04 532.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="454.04" y="518" text-anchor="start" xml:space="preserve" font-size="24" fill="#BE2623" font-weight="bold" data-pptx-text-baseline="metrics-v1">Q2 生成画面如何形成资产</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="454.16 526.67 296.61 116.44" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 454.16 526.67 L 750.77 526.67 L 750.77 643.11 L 454.16 643.11 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="454.16" y="548" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#263238" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="28"><tspan><tspan>区分多视角生成与三维构建。</tspan></tspan><tspan data-paragraph-line-break="1">同一 (C, t) 配对生成观测</tspan><tspan data-paragraph-line-break="1">与资产重渲染，检查细节保留，</tspan><tspan data-paragraph-line-break="1">并分段记录构建与渲染耗时。</tspan></text>
+</g>
+</g>
+<g id="shape-22" data-pptx-object="group" data-pptx-frame="849.04 487 366.96 156.11" data-pptx-source-ref="slide:22">
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="850 487 366 1" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 850 487 L 1216 487" data-pptx-part="geometry" fill="none" stroke-width="3" stroke="#BE2623" />
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="849.04 495.33 301.48 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 849.04 495.33 L 1150.52 495.33 L 1150.52 532.29 L 849.04 532.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="849.04" y="518" text-anchor="start" xml:space="preserve" font-size="24" fill="#BE2623" font-weight="bold" data-pptx-text-baseline="metrics-v1">Q3 不同用途需要哪些能力</text>
+</g>
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="849.16 526.67 317.68 116.44" data-pptx-prst="rect" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 849.16 526.67 L 1166.84 526.67 L 1166.84 643.11 L 849.16 643.11 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="849.16" y="548" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#263238" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="28"><tspan><tspan>从单对象到复杂场景，比较画质、</tspan></tspan><tspan data-paragraph-line-break="1">视角与运动控制。区分短片展示、</tspan><tspan data-paragraph-line-break="1">换视角浏览和资产编辑，</tspan><tspan data-paragraph-line-break="1">仅声称已经验证的可操作能力。</tspan></text>
+</g>
+</g>
+<g id="shape-25" data-pptx-object="group" data-pptx-frame="59.4 652 1125.6 34.43" data-pptx-source-ref="slide:25">
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="60 652 1125 1" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 60 652 L 1185 652" data-pptx-part="geometry" fill="none" stroke-width="1" stroke="#D8DDE0" />
+</g>
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="59.4 663.33 712.98 23.1" data-pptx-prst="rect" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 59.4 663.33 L 772.38 663.33 L 772.38 686.43 L 59.4 686.43 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="59.4" y="678" text-anchor="start" xml:space="preserve" font-size="14.93" fill="#59636A" data-pptx-text-baseline="metrics-v1">依据：开题报告 §2.2；图：[R1] Xie et al., SV4D, Fig.1，arXiv:2407.17470v2。作者结果示例。</text>
+</g>
+</g></svg>

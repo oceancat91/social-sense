@@ -1,0 +1,35 @@
+{
+  "created_at": "2026-10-30T12:33:32.358022+08:00",
+  "files": [
+    {
+      "path": "deliverables/2026年度中期汇报表_SocialSense_修订稿.docx",
+      "bytes": 20482,
+      "sha256": "61c372f52cf850c5ed97681b400d28ba4bc0748ea8672bf3a6a186c35a1af68d"
+    },
+    {
+      "path": "deliverables/2026年度中期汇报表_SocialSense_修订稿.pdf",
+      "bytes": 228373,
+      "sha256": "4c2c188cc78b3df431606212de9e4d74134df8fa3cd625a3655b984c1406f59c"
+    },
+    {
+      "path": "deliverables/SocialSense_中期答辩_6分钟主讲_含问答备份.pdf",
+      "bytes": 1194587,
+      "sha256": "5c62be158d7ec1f90e9b003db9d875f83520024b7ae7b8fbabedede045b19bb7"
+    },
+    {
+      "path": "deliverables/SocialSense_中期答辩_6分钟主讲_含问答备份.pptx",
+      "bytes": 3945932,
+      "sha256": "c9dd9635347a8bac364de3c3cf00fd0c3a6ea204344447147dad4873940227d8"
+    },
+    {
+      "path": "deliverables/中期汇报表正文.md",
+      "bytes": 11416,
+      "sha256": "35a9961933e94072b14170a74cd202a9549e41640e0f367383c0eac5870a1c53"
+    },
+    {
+      "path": "deliverables/六分钟讲稿与四分钟问答.md",
+      "bytes": 8744,
+      "sha256": "2a5ed553e2123270439aade9e1394a7c712a26beee86452f88ada1bbeaf88e29"
+    }
+  ]
+}

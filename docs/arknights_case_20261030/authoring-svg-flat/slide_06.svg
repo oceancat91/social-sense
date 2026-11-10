@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Microsoft YaHei&quot;, sans-serif"><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="shape-5" data-pptx-object="group" data-pptx-frame="95 16 815 83" data-pptx-source-ref="slide:5">
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="95 16 815 83" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 95 16 L 910 16 L 910 99 L 95 99 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="110.64 29.67 615.4 52.36" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 110.64 29.67 L 726.04 29.67 L 726.04 82.03 L 110.64 82.03 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="110.64" y="63" text-anchor="start" xml:space="preserve" font-size="34" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">四分量建模，分别学习热度的不同结构</text>
+</g>
+</g>
+<g id="shape-8" data-pptx-object="group" data-pptx-frame="75 108 1130 50" data-pptx-source-ref="slide:8">
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="75 108 1130 50" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 75 108 L 1205 108 L 1205 158 L 75 158 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="79.12 118.67 1120 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 79.12 118.67 L 1199.12 118.67 L 1199.12 152.55 L 79.12 152.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.12" y="140" text-anchor="start" xml:space="preserve" font-size="22" fill="#64748B" data-pptx-text-baseline="metrics-v1">梗热度类比：长期讨论 / 周期活跃 / 突然走红 / 其余波动（示意）</text>
+</g>
+</g>
+<g id="shape-12" data-pptx-object="group" data-pptx-frame="70 680 1100 28.12" data-pptx-source-ref="slide:12">
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="70 680 1100 25" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 70 680 L 1170 680 L 1170 705 L 70 705 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="75.48 688 219.45 20.12" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 75.48 688 L 294.93 688 L 294.93 708.12 L 75.48 708.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="75.48" y="700" text-anchor="start" xml:space="preserve" font-size="13.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">SocialSense · 创新训练类中期答辩</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="1108.08 688 47.44 20.12" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 1108.08 688 L 1155.52 688 L 1155.52 708.12 L 1108.08 708.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1155.52" y="700" text-anchor="end" xml:space="preserve" font-size="13.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">06 / 18</text>
+</g>
+</g>
+<g id="shape-33" data-pptx-object="group" data-pptx-frame="65 185 500 435" data-pptx-source-ref="slide:33">
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="65 185 500 435" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 65 185 L 565 185 L 565 620 L 65 620 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="65 185 500 435" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 65 185 L 565 185 L 565 620 L 65 620 Z" fill="#EDF2F8" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="120 213 390 44.76" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 120 213 L 510 213 L 510 257.76 L 120 257.76 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="315" y="241" text-anchor="middle" xml:space="preserve" font-size="29.07" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">讨论热度 x</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="176.9 267.33 276.19 49.28" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 176.9 267.33 L 453.1 267.33 L 453.1 316.61 L 176.9 316.61 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="315" y="298" text-anchor="middle" xml:space="preserve" font-size="32" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">x = T + S + C + R</text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="88 340 104 92" data-pptx-prst="roundRect" data-pptx-av-adj="val 5435" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 88 345 A 5 5 0 0 1 93 340 L 187 340 A 5 5 0 0 1 192 345 L 192 427 A 5 5 0 0 1 187 432 L 93 432 A 5 5 0 0 1 88 427 Z" fill="#FFFFFF" stroke-width="1.2" stroke="#4472C4" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="104.8 353.67 70.39 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 104.8 353.67 L 175.2 353.67 L 175.2 387.55 L 104.8 387.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="140" y="375" text-anchor="middle" xml:space="preserve" font-size="22" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">T 趋势</text>
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="121.64 393 36.72 26.28" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 121.64 393 L 158.36 393 L 158.36 419.28 L 121.64 419.28 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="140" y="409" text-anchor="middle" xml:space="preserve" font-size="17.07" fill="#243446" data-pptx-text-baseline="metrics-v1">EMA</text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="204 340 104 92" data-pptx-prst="roundRect" data-pptx-av-adj="val 5435" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 204 345 A 5 5 0 0 1 209 340 L 303 340 A 5 5 0 0 1 308 345 L 308 427 A 5 5 0 0 1 303 432 L 209 432 A 5 5 0 0 1 204 427 Z" fill="#FFFFFF" stroke-width="1.2" stroke="#4472C4" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="220.8 353.67 70.39 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 220.8 353.67 L 291.2 353.67 L 291.2 387.55 L 220.8 387.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="256" y="375" text-anchor="middle" xml:space="preserve" font-size="22" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">S 季节</text>
+</g>
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="222.49 393 67.01 26.28" data-pptx-prst="rect" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 222.49 393 L 289.51 393 L 289.51 419.28 L 222.49 419.28 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="256" y="409" text-anchor="middle" xml:space="preserve" font-size="17.07" fill="#243446" data-pptx-text-baseline="metrics-v1">Fourier</text>
+</g>
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="320 340 104 92" data-pptx-prst="roundRect" data-pptx-av-adj="val 5435" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 320 345 A 5 5 0 0 1 325 340 L 419 340 A 5 5 0 0 1 424 345 L 424 427 A 5 5 0 0 1 419 432 L 325 432 A 5 5 0 0 1 320 427 Z" fill="#FFFFFF" stroke-width="1.2" stroke="#4472C4" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-25" data-pptx-object="shape" data-pptx-frame="336.8 353.67 70.39 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:25" data-pptx-semantic-object="shape">
+<path d="M 336.8 353.67 L 407.2 353.67 L 407.2 387.55 L 336.8 387.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="372" y="375" text-anchor="middle" xml:space="preserve" font-size="22" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">C 冲击</text>
+</g>
+<g id="shape-26" data-pptx-object="shape" data-pptx-frame="335.14 393 73.72 26.28" data-pptx-prst="rect" data-pptx-source-ref="slide:26" data-pptx-semantic-object="shape">
+<path d="M 335.14 393 L 408.86 393 L 408.86 419.28 L 335.14 419.28 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="372" y="409" text-anchor="middle" xml:space="preserve" font-size="17.07" fill="#243446" data-pptx-text-baseline="metrics-v1">事件信号</text>
+</g>
+<g id="shape-27" data-pptx-object="shape" data-pptx-frame="436 340 104 92" data-pptx-prst="roundRect" data-pptx-av-adj="val 5435" data-pptx-source-ref="slide:27" data-pptx-semantic-object="shape">
+<path d="M 436 345 A 5 5 0 0 1 441 340 L 535 340 A 5 5 0 0 1 540 345 L 540 427 A 5 5 0 0 1 535 432 L 441 432 A 5 5 0 0 1 436 427 Z" fill="#FFFFFF" stroke-width="1.2" stroke="#4472C4" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-28" data-pptx-object="shape" data-pptx-frame="452.8 353.67 70.39 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:28" data-pptx-semantic-object="shape">
+<path d="M 452.8 353.67 L 523.2 353.67 L 523.2 387.55 L 452.8 387.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="488" y="375" text-anchor="middle" xml:space="preserve" font-size="22" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">R 剩余</text>
+</g>
+<g id="shape-29" data-pptx-object="shape" data-pptx-frame="442.09 393 91.81 26.28" data-pptx-prst="rect" data-pptx-source-ref="slide:29" data-pptx-semantic-object="shape">
+<path d="M 442.09 393 L 533.91 393 L 533.91 419.28 L 442.09 419.28 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="488" y="409" text-anchor="middle" xml:space="preserve" font-size="17.07" fill="#243446" data-pptx-text-baseline="metrics-v1">代数剩余项</text>
+</g>
+<g id="shape-30" data-pptx-object="shape" data-pptx-frame="153.94 466.67 322.13 41.58" data-pptx-prst="rect" data-pptx-source-ref="slide:30" data-pptx-semantic-object="shape">
+<path d="M 153.94 466.67 L 476.06 466.67 L 476.06 508.25 L 153.94 508.25 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="315" y="492" text-anchor="middle" xml:space="preserve" font-size="26.93" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">四路编码 → 稀疏专家融合</text>
+</g>
+<g id="shape-31" data-pptx-object="shape" data-pptx-frame="165.87 519 298.26 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:31" data-pptx-semantic-object="shape">
+<path d="M 165.87 519 L 464.13 519 L 464.13 557.6 L 165.87 557.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="315" y="543" text-anchor="middle" xml:space="preserve" font-size="25.07" fill="#243446" data-pptx-text-baseline="metrics-v1">预测增量 → 累加回水平域</text>
+</g>
+<g id="shape-32" data-pptx-object="shape" data-pptx-frame="85 572.33 460 30.8" data-pptx-prst="rect" data-pptx-source-ref="slide:32" data-pptx-semantic-object="shape">
+<path d="M 85 572.33 L 545 572.33 L 545 603.13 L 85 603.13 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="315" y="591" text-anchor="middle" xml:space="preserve" font-size="20" fill="#64748B" data-pptx-text-baseline="metrics-v1">过去 28 天 → 未来 6 天（当前设定）</text>
+</g>
+</g>
+<g id="shape-38" data-pptx-object="group" data-pptx-frame="600 180 610 101" data-pptx-source-ref="slide:38">
+<g id="shape-34" data-pptx-object="shape" data-pptx-frame="600 180 610 101" data-pptx-prst="rect" data-pptx-source-ref="slide:34" data-pptx-semantic-object="shape">
+<path d="M 600 180 L 1210 180 L 1210 281 L 600 281 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-35" data-pptx-object="shape" data-pptx-frame="608.88 183.33 575 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:35" data-pptx-semantic-object="shape">
+<path d="M 608.88 183.33 L 1183.88 183.33 L 1183.88 226.45 L 608.88 226.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="608.88" y="210" text-anchor="start" xml:space="preserve" font-size="28" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">长期积累与周期活跃</text>
+</g>
+<g id="shape-36" data-pptx-object="shape" data-pptx-frame="609.16 233 575 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:36" data-pptx-semantic-object="shape">
+<path d="M 609.16 233 L 1184.16 233 L 1184.16 265.44 L 609.16 265.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="609.16" y="253" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#243446" data-pptx-text-baseline="metrics-v1">T：EMA 趋势；S：Fourier 周期</text>
+</g>
+<g id="shape-37" data-pptx-object="shape" data-pptx-frame="610 279 590 1" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:37" data-pptx-semantic-object="shape">
+<path d="M 610 279 L 1200 279" data-pptx-part="geometry" fill="none" stroke-width="1" stroke="#D9E1ED" />
+</g>
+</g>
+<g id="shape-43" data-pptx-object="group" data-pptx-frame="600 296 610 101" data-pptx-source-ref="slide:43">
+<g id="shape-39" data-pptx-object="shape" data-pptx-frame="600 296 610 101" data-pptx-prst="rect" data-pptx-source-ref="slide:39" data-pptx-semantic-object="shape">
+<path d="M 600 296 L 1210 296 L 1210 397 L 600 397 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-40" data-pptx-object="shape" data-pptx-frame="608.88 299.33 575 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:40" data-pptx-semantic-object="shape">
+<path d="M 608.88 299.33 L 1183.88 299.33 L 1183.88 342.45 L 608.88 342.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="608.88" y="326" text-anchor="start" xml:space="preserve" font-size="28" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">突然走红与其余波动</text>
+</g>
+<g id="shape-41" data-pptx-object="shape" data-pptx-frame="609.16 349 575 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:41" data-pptx-semantic-object="shape">
+<path d="M 609.16 349 L 1184.16 349 L 1184.16 381.44 L 609.16 381.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="609.16" y="369" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#243446" data-pptx-text-baseline="metrics-v1">C：事件信号；R：代数剩余项</text>
+</g>
+<g id="shape-42" data-pptx-object="shape" data-pptx-frame="610 395 590 1" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:42" data-pptx-semantic-object="shape">
+<path d="M 610 395 L 1200 395" data-pptx-part="geometry" fill="none" stroke-width="1" stroke="#D9E1ED" />
+</g>
+</g>
+<g id="shape-48" data-pptx-object="group" data-pptx-frame="600 412 610 101" data-pptx-source-ref="slide:48">
+<g id="shape-44" data-pptx-object="shape" data-pptx-frame="600 412 610 101" data-pptx-prst="rect" data-pptx-source-ref="slide:44" data-pptx-semantic-object="shape">
+<path d="M 600 412 L 1210 412 L 1210 513 L 600 513 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-45" data-pptx-object="shape" data-pptx-frame="608.88 415.33 575 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:45" data-pptx-semantic-object="shape">
+<path d="M 608.88 415.33 L 1183.88 415.33 L 1183.88 458.45 L 608.88 458.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="608.88" y="442" text-anchor="start" xml:space="preserve" font-size="28" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">分开编码，再融合预测</text>
+</g>
+<g id="shape-46" data-pptx-object="shape" data-pptx-frame="609.16 465 575 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:46" data-pptx-semantic-object="shape">
+<path d="M 609.16 465 L 1184.16 465 L 1184.16 497.44 L 609.16 497.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="609.16" y="485" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#243446" data-pptx-text-baseline="metrics-v1">四路数值表征路由；top-k = 2；文本可选</text>
+</g>
+<g id="shape-47" data-pptx-object="shape" data-pptx-frame="610 511 590 1" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:47" data-pptx-semantic-object="shape">
+<path d="M 610 511 L 1200 511" data-pptx-part="geometry" fill="none" stroke-width="1" stroke="#D9E1ED" />
+</g>
+</g>
+<g id="shape-53" data-pptx-object="group" data-pptx-frame="600 528 610 101" data-pptx-source-ref="slide:53">
+<g id="shape-49" data-pptx-object="shape" data-pptx-frame="600 528 610 101" data-pptx-prst="rect" data-pptx-source-ref="slide:49" data-pptx-semantic-object="shape">
+<path d="M 600 528 L 1210 528 L 1210 629 L 600 629 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-50" data-pptx-object="shape" data-pptx-frame="608.88 531.33 575 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:50" data-pptx-semantic-object="shape">
+<path d="M 608.88 531.33 L 1183.88 531.33 L 1183.88 574.45 L 608.88 574.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="608.88" y="558" text-anchor="start" xml:space="preserve" font-size="28" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">用真实实验检验收益</text>
+</g>
+<g id="shape-51" data-pptx-object="shape" data-pptx-frame="609.16 581 575 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:51" data-pptx-semantic-object="shape">
+<path d="M 609.16 581 L 1184.16 581 L 1184.16 613.44 L 609.16 613.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="609.16" y="601" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#243446" data-pptx-text-baseline="metrics-v1">下页为既有数据结果，不是方舟案例实验</text>
+</g>
+<g id="shape-52" data-pptx-object="shape" data-pptx-frame="610 627 590 1" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:52" data-pptx-semantic-object="shape">
+<path d="M 610 627 L 1200 627" data-pptx-part="geometry" fill="none" stroke-width="1" stroke="#D9E1ED" />
+</g>
+</g></svg>

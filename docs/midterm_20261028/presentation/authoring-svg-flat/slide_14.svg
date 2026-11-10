@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Noto Sans CJK SC&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="26.79 33.6 883.9 64.32" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 26.79 33.6 L 910.69 33.6 L 910.69 97.92 L 26.79 97.92 Z" fill="#BE1F26" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="61.72 46.44 787.2 40.55" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 61.72 46.44 L 848.92 46.44 L 848.92 87 L 61.72 87 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="62.68" y="79.167979" text-anchor="start" xml:space="preserve" font-size="32.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>6</tspan><tspan>. </tspan><tspan>从观测到资产</tspan></text>
+</g>
+<g id="shape-4" data-pptx-object="picture" data-pptx-frame="929.28 34.56 258.24 49.44" data-pptx-source-ref="slide:4">
+<image data-pptx-object="picture" data-pptx-frame="929.28 34.56 258.24 49.44" href="../images/image3.png" x="929.28" y="34.56" width="258.24" height="49.44" preserveAspectRatio="none" />
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="39.36 111.84 689.28 25.53" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 39.36 111.84 L 728.64 111.84 L 728.64 137.37 L 39.36 137.37 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="39.36" y="131.83989501" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">SV4D 2.0 与 L4GM：生成观测如何转成动态三维？</text>
+</g>
+<g id="shape-6" data-pptx-object="picture" data-pptx-frame="136.12 142.08 499.61 225.6" data-pptx-source-ref="slide:6">
+<image data-pptx-object="picture" data-pptx-frame="136.12 142.08 499.61 225.6" href="../images/image18.png" x="136.12" y="142.08" width="499.61" height="225.6" preserveAspectRatio="none" />
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="43.2 369.6 681.6 18.24" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 43.2 369.6 L 724.8 369.6 L 724.8 387.84 L 43.2 387.84 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="43.2" y="381.6" text-anchor="start" xml:space="preserve" font-size="12.67" fill="#686F75" data-pptx-text-baseline="metrics-v1">原图：SV4D 2.0，Figure 1（ICCV 2025）；输入视频、新视角视频与 4D 资产。</text>
+</g>
+<g id="shape-8" data-pptx-object="picture" data-pptx-frame="48.92 403.68 573.25 156.48" data-pptx-source-ref="slide:8">
+<image data-pptx-object="picture" data-pptx-frame="48.92 403.68 573.25 156.48" href="../images/image19.png" x="48.92" y="403.68" width="573.25" height="156.48" preserveAspectRatio="none" />
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="43.2 584.16 681.6 18.24" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 43.2 584.16 L 724.8 584.16 L 724.8 602.4 L 43.2 602.4 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="43.2" y="596.16" text-anchor="start" xml:space="preserve" font-size="12.67" fill="#686F75" data-pptx-text-baseline="metrics-v1">原图：L4GM，Figure 2（2024）；多视角图像、跨视角/跨时间注意力与高斯序列。</text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="51.83 622.56 270.79 41.28" data-pptx-prst="roundRect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 51.83 629.44 A 6.88 6.88 0 0 1 58.71 622.56 L 315.74 622.56 A 6.88 6.88 0 0 1 322.62 629.44 L 322.62 656.96 A 6.88 6.88 0 0 1 315.74 663.84 L 58.71 663.84 A 6.88 6.88 0 0 1 51.83 656.96 Z" fill="#FBEFEF" stroke-width="1.06667" stroke="#BE1F26" data-pptx-part="geometry" />
+
+
+<text x="187.23" y="648.91469816" text-anchor="middle" xml:space="preserve" font-size="15.2" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>SV4D 2.0：生成视频 → </tspan><tspan>两阶段优化</tspan></text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="360.45 622.56 279.55 41.28" data-pptx-prst="roundRect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 360.45 629.44 A 6.88 6.88 0 0 1 367.33 622.56 L 633.12 622.56 A 6.88 6.88 0 0 1 640 629.44 L 640 656.96 A 6.88 6.88 0 0 1 633.12 663.84 L 367.33 663.84 A 6.88 6.88 0 0 1 360.45 656.96 Z" fill="#ECF3F7" stroke-width="1.06667" stroke="#143E4A" data-pptx-part="geometry" />
+
+
+<text x="500.23" y="648.91469816" text-anchor="middle" xml:space="preserve" font-size="15.2" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>L4GM：前馈预测 → </tspan><tspan>逐帧高斯</tspan></text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="709.24 116.4 468.48 38.4" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 709.24 116.4 L 1177.72 116.4 L 1177.72 154.8 L 709.24 154.8 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="709.24" y="139.06351706" text-anchor="start" xml:space="preserve" font-size="23.73" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>生成观测</tspan><tspan> ≠ </tspan><tspan>动态三维资产</tspan></text>
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="715 164.37 462.72 24" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 715 164.37 L 1177.72 164.37 L 1177.72 188.37 L 715 188.37 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="715" y="183.03254593" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="20" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1">SV4D 2.0｜优化式构建</text>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="715 199.92 462.72 84.98" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 715 199.92 L 1177.72 199.92 L 1177.72 284.9 L 715 284.9 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="715.96" y="216.44388451" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="17.33" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="20.8"><tspan><tspan>先生成多个新视角视频，再通过两阶段优化处理视角冲突、</tspan></tspan><tspan data-paragraph-line-break="1">遮挡和大幅运动。论文相较<tspan> SV4D </tspan><tspan>报告：新视角视频合成</tspan><tspan> </tspan></tspan><tspan data-paragraph-line-break="1">LPIPS <tspan>改善</tspan><tspan> 14%、FV4D </tspan><tspan>改善</tspan><tspan> 44%；4D </tspan><tspan>优化阶段分别改善</tspan><tspan> </tspan></tspan><tspan data-paragraph-line-break="1">12% 与 24%。</tspan></text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="715 295.7 462.72 24" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 715 295.7 L 1177.72 295.7 L 1177.72 319.7 L 715 319.7 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="715" y="314.36283465" text-anchor="start" xml:space="preserve" font-size="20" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1">L4GM｜前馈式重建</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="715 335.56 462.72 84.98" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 715 335.56 L 1177.72 335.56 L 1177.72 420.54 L 715 420.54 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="715.96" y="352.08850394" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="17.33" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="20.8"><tspan><tspan>利用首帧多视角补全与单目视频，网络直接预测逐帧</tspan><tspan> 3D </tspan></tspan><tspan data-paragraph-line-break="1">Gaussian；时间自注意力传播帧间信息，并用插值模型生成</tspan><tspan data-paragraph-line-break="1">中间状态。论文报告单次前馈约<tspan> 1 </tspan><tspan>秒，较既有方法快约</tspan><tspan> </tspan></tspan><tspan data-paragraph-line-break="1">100–1000 倍。</tspan></text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="709.67 421.88 462.72 83.52" data-pptx-prst="roundRect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 709.67 435.8 A 13.92 13.92 0 0 1 723.59 421.88 L 1158.47 421.88 A 13.92 13.92 0 0 1 1172.39 435.8 L 1172.39 491.48 A 13.92 13.92 0 0 1 1158.47 505.4 L 723.59 505.4 A 13.92 13.92 0 0 1 709.67 491.48 Z" fill="#F6F7F8" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="732.71 432.93 439.68 22.62" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 732.71 432.93 L 1172.39 432.93 L 1172.39 455.55 L 732.71 455.55 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="732.71" y="450.26393701" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="18.67" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1">资产化后的观察关系</text>
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="635.72 458.35 439.68 30.72" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 635.72 458.35 L 1075.4 458.35 L 1075.4 489.07 L 635.72 489.07 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="855.56" y="474.35254593" text-anchor="middle" xml:space="preserve" font-family="&quot;Cambria Math&quot;, sans-serif" font-size="17.33" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>S(t) = {Gᵢ(t)};   Î(</tspan><tspan>C,t</tspan><tspan>) = R(S(t), C)</tspan></text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="732.71 487.45 439.68 16.32" data-pptx-prst="rect" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 732.71 487.45 L 1172.39 487.45 L 1172.39 503.77 L 732.71 503.77 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="732.71" y="499.44514436" text-anchor="start" xml:space="preserve" font-size="12.53" fill="#686F75" data-pptx-text-baseline="metrics-v1"><tspan>S(t)：</tspan><tspan>时刻</tspan><tspan> t </tspan><tspan>的三维状态；R：指定相机下的渲染</tspan><tspan>。</tspan></text>
+</g>
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="697.7 520.97 474.68 138.25" data-pptx-prst="roundRect" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 697.7 544.01 A 23.04 23.04 0 0 1 720.75 520.97 L 1149.35 520.97 A 23.04 23.04 0 0 1 1172.39 544.01 L 1172.39 636.17 A 23.04 23.04 0 0 1 1149.35 659.22 L 720.75 659.22 A 23.04 23.04 0 0 1 697.7 636.17 Z" fill="#B30D19" stroke-width="1.06667" stroke="#BE1F26" data-pptx-part="geometry" />
+
+
+<text x="704.42" y="544.66425197" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="21.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="25.6"><tspan><tspan>可用性检查：固定相机</tspan><tspan> C </tspan><tspan>和时刻</tspan><tspan> </tspan><tspan>t，对照生成观</tspan></tspan><tspan data-paragraph-line-break="1">测与三维重渲染；再固定<tspan> C </tspan><tspan>检查运动连续性、固</tspan></tspan><tspan data-paragraph-line-break="1">定<tspan> t </tspan><tspan>检查跨视角几何。只看视频清晰度不够，还</tspan></tspan><tspan data-paragraph-line-break="1">应分别记录生成、构建与渲染的质量和耗时<tspan>。</tspan></tspan></text>
+</g></svg>

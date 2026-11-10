@@ -1,0 +1,400 @@
+## PDF page 2
+ries into patches, which are used as input tokens for the
+transformer. However, we assume that the permutation-
+invariance of the attention mechanism in transformers may
+impede the model from attaining the optimal forecast-
+ing performance. Therefore, we are aiming to explore
+channel-independence and patching approaches within a
+non-transformer architecture, proposing the xPatch model.
+In this study, we introduce the utilization of the exponen-
+tial seasonal-trend decomposition technique. Furthermore,
+we propose a robust arctangent loss with weight decay and a
+novel learning rate adjustment strategy that improves train-
+ing adaptability. Additionally, we present the xPatch, a novel
+dual-flow network architecture that integrates Convolutional
+Neural Networks (CNNs), Multi-Layer Perceptrons (MLPs),
+patching, channel-independence, exponential seasonal-trend
+decomposition, and dual stream prediction.
+We summarized our main contributions as follows:
+• We propose a novel method for seasonal-trend decom-
+position that utilizes an Exponential Moving Average
+(EMA).
+• We introduce the dual-flow network and investigate the
+patching and channel-independence approaches within
+the CNN-based backbone.
+• We develop a robust arctangent loss and a novel sigmoid
+learning rate adjustment scheme with a warm-up that re-
+sults in smoother training.
+2 Related Work
+Informer (Zhou et al. 2021) is the first well-known
+transformer-based model designed for the LTSF task. It em-
+ploys ProbSparse self-attention and a generative style de-
+coder for addressing quadratic time and memory complex-
+ity. Notably, this work also contributes to the field by curat-
+ing data and introducing the Electricity Transformer Tem-
+perature (ETT) benchmark dataset that is now commonly
+used for LTSF experiments by most of the models.
+TimesNet (Wu et al. 2023) utilizes Fourier Transform to
+decompose time series into multiple components with vary-
+ing period lengths, enhancing its focus on temporal variation
+modeling. The official repository provides a forecasting pro-
+tocol with standardized hyperparameter settings and fairly
+implemented baselines.
+To address the issue of non-stationarity in time series
+data, several models employ series decomposition to better
+capture complex temporal patterns. Autoformer (Wu et al.
+2021) and FEDformer (Zhou et al. 2022) are two recent
+transformer-based solutions for the LTSF task, leveraging
+auto-correlation mechanism and frequency-enhanced struc-
+ture, respectively. Both models incorporate seasonal-trend
+decomposition within each neural block to enhance the pre-
+dictability of time-series data. Specifically, they apply a
+moving average kernel to the input sequence with padding
+at both ends, extracting the trend component. The difference
+between the original time series and the extracted trend com-
+ponent is identified as the seasonal component.
+DLinear (Zeng et al. 2023) is a recent one-layer lin-
+ear model that uses seasonal-trend decomposition as a pre-
+processing step. Initially, the model decomposes the raw
+data into trend and seasonal components using a moving av-
+erage technique. Two linear layers are then applied indepen-
+dently to each of these components. The resulting features
+are subsequently aggregated to generate the final prediction.
+MICN (Wang et al. 2023) is a recent CNN-based solution
+that employs multi-scale hybrid seasonal-trend decomposi-
+tion. After decomposing the input series into seasonal and
+trend components, the model integrates both global and lo-
+cal contexts to enhance forecasting accuracy.
+TimeMixer (Wang et al. 2024a) is an MLP-based ap-
+proach that employs a decomposable multiscale-mixing
+method. The model uses the same series decomposition
+block from Autoformer (Wu et al. 2021) to break down
+multiscale time series into multiple seasonal and trend com-
+ponents. By leveraging the multiscale past information ob-
+tained after seasonal and trend mixing, the model predicts
+future values.
+ETSformer (Woo et al. 2022) and CARD (Wang et al.
+2024b) are two transformer-based architectures that incor-
+porate the exponential smoothing approach. ETSformer in-
+troduces Exponential Smoothing Attention (ESA), while
+CARD applies exponential smoothing to the query and key
+tokens before the token blending module within one predic-
+tion head of the attention mechanism. In contrast to these
+models, the proposed xPatch architecture employs Exponen-
+tial Moving Average (EMA) decomposition to separate the
+time series into trend and seasonal components, which are
+then processed separately.
+Crossformer (Zhang and Yan 2022) and PatchTST (Nie
+et al. 2023) are transformer-based models that introduce a
+segmentation technique to LTSF. PatchTST divides time se-
+ries data into subseries-level patches that serve as input to-
+kens for the transformer. This approach is motivated by the
+vision transformer (Dosovitskiy et al. 2021) and designed
+for LTSF with channel-independence. Currently, PatchTST
+is recognized as the state-of-the-art solution for multivari-
+ate long-term forecasting. In our proposed xPatch model,
+we also incorporate patching and channel-independence ap-
+proaches. Given that xPatch is a CNN-based approach, we
+investigate whether the superior performance of PatchTST
+can be attributed to its patching and channel-independence
+modules rather than its transformer architecture. To explore
+this, we examine if a CNN-based model can achieve im-
+proved results by leveraging these techniques.
+MobileNet (Howard et al. 2017) and ConvMixer (Trock-
+man and Kolter 2022) are notable models designed for Com-
+puter Vision (CV) tasks that demonstrate the advantages of
+depthwise separable convolutions. In the proposed xPatch
+approach, we incorporate depthwise separable convolution
+as the non-linear stream of the dual-flow network.
+3 Proposed Method
+In multivariate time series forecasting, given the observation
+of the historical L values x = (x1, x2, ..., xL), the task is to
+predict the future T timesteps ˆx = (xL+1, xL+2, ..., xL+T ).
+Each xt value at timestep t is multivariate, representing a
+vector of M variables. Therefore, the multivariate lookback
+series is denoted as x ∈ RM ×L and the multivariate predic-
+tion is represented by ˆx ∈ RM ×T .
+
+## PDF page 3
+3.1 Seasonal-Trend Decomposition
+Seasonal-trend decomposition facilitates the learning of
+complex temporal patterns by separating the time series sig-
+nal into trend and seasonal components. Trend features gen-
+erally represent the long-term direction of the data, which
+can be linear or smoothly varying. In contrast, seasonal com-
+ponents capture repeating patterns or cycles that occur at
+regular intervals and are often non-linear due to the com-
+plexities and variations in periodic behavior. The model first
+learns the features of these components individually and
+then combines them to generate the final forecast.
+Simple Moving Average (SMA)is the decomposition ap-
+proach utilized in Autoformer (Wu et al. 2021), FEDformer
+(Zhou et al. 2022), DLinear (Zeng et al. 2023), MICN (Wang
+et al. 2023), and TimeMixer (Wang et al. 2024a) models.
+SMA is defined as the unweighted mean of the previous k
+data points.
+Moving average mean point st of the k entries with
+t being moving step, n being dataset length, and X =
+x1, x2, ..., xn being data points is calculated as:
+st = xt + xt+1 + ... + xt+k−1
+k = 1
+k
+t+k−1X
+i=t
+xi
+XT = AvgPool(Padding(X))
+XS = X − XT
+(1)
+where AvgPool(·) denotes moving average with the padding
+operation, while XT and XS correspond to trend and sea-
+sonality components. Padding is employed to maintain the
+length of the time series unchanged after performing average
+pooling. Figure 1 illustrates an example of SMA decompo-
+sition.
+0 24 48 72 96
+4
+6
+8
+10
+12
+Data
+Data
+0 24 48 72 96
+0
+5
+10
+Simple Moving Average
+Trend
+Seasonality
+Figure 1: Example of SMA decomposition with kernel k =
+25 on a 96-length sample from the ETTh1 dataset.
+Firstly, we argue that the average pooling operation results
+in the loss of significant trend features (see Appendix B).
+Additionally, alignment requires padding on both ends of the
+series, which can distort the sequence at the head and tail.
+Secondly, the primary goal of decomposition is to en-
+hance the interpretability of both decomposed signals. This
+entails improving the clarity of the trend and seasonality
+components while enriching them with more distinct fea-
+tures for learning. However, SMA produces an overly sim-
+plistic trend signal with limited diverse features and a com-
+plex seasonality pattern. As a result, we investigate an alter-
+native decomposition method to address this issue.
+Exponential Moving Average (EMA)(Gardner Jr 1985)
+is an exponential smoothing method that assigns greater
+weight to more recent data points while smoothing out older
+data. This exponential weighting scheme allows EMA to re-
+spond more promptly to changes in the underlying trends of
+the time series, without the need for padding repeated val-
+ues.
+EMA point st of data xt beginning at time t = 0 is repre-
+sented by:
+s0 = x0
+st = αxt + (1 − α)st−1, t > 0
+XT = EMA(X)
+XS = X − XT
+(2)
+where α is the smoothing factor, 0 < α < 1, EMA(·) de-
+notes exponential moving average, while XT and XS corre-
+spond to trend and seasonality components. Figure 2 shows
+an example of EMA decomposition.
+0 24 48 72 96
+0
+5
+10
+EMA, alpha = 0.1
+0 24 48 72 96
+0
+5
+10
+EMA, alpha = 0.3
+0 24 48 72 96
+0
+5
+10
+EMA, alpha = 0.5
+0 24 48 72 96
+0
+5
+10
+EMA, alpha = 0.7
+0 24 48 72 96
+0
+5
+10
+EMA, alpha = 0.9
+0 24 48 72 96
+0
+5
+10
+EMA, alpha = 1
+Trend Seasonality
+Figure 2: Example of EMA decomposition with α =
+{0.1, 0.3, 0.5, 0.7, 0.9, 1} on a 96-length sample from the
+ETTh1 dataset.
+The exponential method offers greater control over the be-
+havior of both trend and seasonality components. Given that
+data can exhibit diverse patterns, including stationary and
+non-stationary characteristics with varying periods and be-
+haviors, the adaptability of exponential decomposition pro-
+vides advantages in feature extraction (see Appendix B).
+Compared to SMA, EMA presents a more flexible approach
+to decomposition, as it adjusts its weighting scheme based
+on the exponential decay of data points. This adaptability
+allows EMA to capture changing trends more effectively,
+making it particularly suitable for time series with dynamic
+and evolving patterns (see Appendix C).
+3.2 Model Architecture
+Channel-Independence. The multivariate time series x =
+(x1, x2, ..., xL) is divided into M univariate sequences
+x(i) = ( x(i)
+1 , x(i)
+2 , ..., x(i)
+L ), where x(i) ∈ RL and L is
+lookback of recent historical data points. Each of these uni-
+variate series is then individually fed into the backbone
+model, which consequently generates a prediction sequence
+
+## PDF page 5
+Non-linear Stream. The non-linear stream is a CNN-
+based network that introduces non-linearity through activa-
+tion functions. By applying convolutions on top of patch-
+ing, the CNN-based stream captures spatio-temporal pat-
+terns and inter-patch correlations, focusing on the non-linear
+features of the seasonal signal.
+First, the patched data x(i)
+p ∈ RN ×P is embedded for in-
+creasing the number of features with activation function σ
+and batch normalization (Ioffe and Szegedy 2015). Since
+the seasonal variations have many zero values, we employ
+GELU (Hendrycks and Gimpel 2016) as an activation func-
+tion for its smooth transition around zero and non-linearity.
+The resulting embedded shape is denoted as xN ×P 2
+p .
+xN ×P 2
+p = BatchNorm(σ(Embed(x(i)
+p ))) (5)
+Following embedding, the data is processed through depth-
+wise separable convolution. This method splits the compu-
+tation into two steps: depthwise convolution applies a single
+convolutional filter per input channel, and pointwise con-
+volution creates a linear combination of the output of the
+depthwise convolution, with an additional residual stream
+between them.
+Given that the xPatch architecture leverages channel-
+independence, it was determined to employ patching to
+increment the number of dimensions, enabling patches to
+function as channels in the data xN ×P 2
+p . Consequently,
+rather than relying on inter-channel feature representations,
+we utilize channel-independent inter-patch representations.
+This approach aims to capture comprehensive semantic in-
+formation that may not be available at the point level and
+allows to focus on non-linear features.
+For depthwise convolution, we employ grouped convolu-
+tion with the number of groups g equal to the number of
+patches N, a large kernel size k equal to the patch length P ,
+and a convolution stride s equal to the patch length P .
+xN ×P
+p = ConvN →N (xN ×P 2
+p , k = P, s = P, g = N ) (6)
+xN ×P
+p = BatchNorm(σ(xN ×P
+p )) (7)
+Depthwise convolution applies a single convolutional filter
+per input channel, generating N feature maps, each cor-
+responding to a specific patch. This approach enables the
+model to capture temporal features with group convolution
+that is consistent for periodic patches.
+Subsequently, the data is updated with a linear residual
+connection spanning the depthwise convolution. Although
+depthwise convolution captures temporal relations between
+periodic patterns, it may not effectively capture inter-patch
+feature correlations. Therefore, the sequence is further pro-
+cessed through the pointwise convolution layer with the
+number of groups g = 1 , a small kernel size k = 1 , and
+a convolution stride s = 1.
+xN ×P
+p = DepthwiseConv(xN ×P 2
+p ) + xN ×P 2
+p (8)
+xN ×P
+p = ConvN →N (xN ×P
+p , k = 1, s = 1, g = 1) (9)
+xN ×P
+p = BatchNorm(σ(xN ×P
+p )) (10)
+Pointwise convolution creates a linear combination of the
+output and aggregates features across different patches with-
+out skipping elements.
+These predictions are then processed through the MLP
+flatten layer. This layer is designed in a similar style to
+PatchTST: the first linear layer doubles the hidden dimen-
+sion, while the second linear layer projects it back with a
+GELU activation function between them.
+ˆx(i)
+nonlin = Linear(σ(Linear(Flatten(xN ×P
+p )))) (11)
+Finally, linear features (4) and non-linear features (11)
+are concatenated and fed into the final linear layer, which
+merges linear and non-linear features for the output predic-
+tion.
+ˆx(i) = Linear(concat(ˆx(i)
+lin, ˆx(i)
+nonlin)) (12)
+We concatenate the linear and non-linear features from the
+two flows, representing learned representations from the
+MLP and CNN streams. This mechanism enables the model
+to dynamically weigh the significance of both linear and
+non-linear features in the final prediction, providing adapt-
+ability to diverse patterns in time series data.
+3.3 Loss Function
+Mean Squared Error (MSE) loss is a training loss scheme
+commonly used by LTSF models. The MSE loss LMSE be-
+tween the predicted univariate sequenceˆx(i)
+1:T and the ground
+truth observations x(i)
+1:T , where T is future prediction length,
+is denoted as:
+LMSE = 1
+T
+TX
+i=1
+||ˆx(i)
+1:T − x(i)
+1:T ||2
+2 (13)
+The recent transformer-based model CARD (Wang et al.
+2024b) introduced a novel signal decay-based loss function,
+where they scale down the far-future Mean Absolute Error
+(MAE) loss to address the high variance. MAE was chosen
+since it is more resilient to outliers than MSE.
+LCARD = 1
+T
+TX
+i=1
+i− 1
+2 ||ˆx(i)
+1:T − x(i)
+1:T || (14)
+where i corresponds to the prediction point in the future.
+This training scheme was proven by CARD to be efficient
+and to increase the performance of existing models.
+To identify a more effective scaling loss coefficient, we
+extend Equation (14) to a universally applicable MAE scal-
+able loss function:
+L = 1
+T
+TX
+i=1
+ρ(i)||ˆx(i)
+1:T − x(i)
+1:T || (15)
+where ρ(i) represents the scaling coefficient. Thus, the
+LCARD loss defined in Equation (14) emerges as a specific
+instance of the scalable loss function delineated in Equation
+(15), with ρ(i) = i− 1
+2 .
+We find that the scaling coefficient ρCARD (i) = i− 1
+2 ex-
+hibits a too rapid decrease rate for our task. Therefore, we

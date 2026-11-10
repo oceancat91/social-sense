@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Microsoft YaHei&quot;, sans-serif"><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="value-header" data-pptx-bounds="95 16 815 83" data-pptx-role="header"><rect x="95" y="16" width="815" height="83" fill="none" /><text x="110" y="63" font-size="33" fill="#44546A" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">热度预测：区分长期积累与突然走红</text></g><g id="value-subtitle" data-pptx-bounds="75 108 1130 48"><rect x="75" y="108" width="1130" height="48" fill="none" /><text x="80" y="139" font-size="21" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">四分量是建模假设；不把热度上涨直接解释为官方回应的因果效果</text></g><g id="value-footer" data-pptx-bounds="70 680 1100 27" data-pptx-role="footer"><rect x="70" y="680" width="1100" height="27" fill="none" /><text x="76" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">SocialSense  ·  创新训练类中期答辩</text><text x="1155" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="end">06 / 18</text></g><g id="decomposition-model" data-pptx-bounds="65 181 495 469"><rect x="65" y="181" width="495" height="469" fill="none" /><rect x="65" y="181" width="495" height="469" fill="#EDF2F8" /><text x="312" y="226" font-size="29" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">输入热度 x</text><text x="312" y="276" font-size="32" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">x = T + S + C + R</text><g><rect x="84" y="312" width="106" height="91" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="5" ry="5" /><text x="137" y="347" font-size="22" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">T 趋势</text><text x="137" y="382" font-size="17" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="middle">EMA</text></g><g><rect x="201" y="312" width="106" height="91" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="5" ry="5" /><text x="254" y="347" font-size="22" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">S 季节</text><text x="254" y="382" font-size="17" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="middle">Fourier</text></g><g><rect x="318" y="312" width="106" height="91" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="5" ry="5" /><text x="371" y="347" font-size="22" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">C 冲击</text><text x="371" y="382" font-size="17" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="middle">事件信号</text></g><g><rect x="435" y="312" width="106" height="91" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="5" ry="5" /><text x="488" y="347" font-size="22" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">R 剩余</text><text x="488" y="382" font-size="17" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="middle">代数剩余项</text></g><text x="312" y="451" font-size="26" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">四路编码 → 稀疏专家融合</text><text x="312" y="494" font-size="24" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="middle">预测增量 → 累加回水平域</text><text x="312" y="539" font-size="25" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">过去 28 天 → 未来 6 天</text><line x1="87" y1="564" x2="538" y2="564" stroke="#CED9E6" stroke-width="1" /><text x="88" y="597" font-size="21" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">研究用途：辅助观察话题是否持续，<tspan x="88" dy="31.5">为后续复核和社区互动研究安排时间窗。</tspan></text></g><g id="forecast-detail-0" data-pptx-bounds="600 181 610 111"><rect x="600" y="181" width="610" height="111" fill="none" /><text x="610" y="210" font-size="27" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">按结构分别编码</text><text x="610" y="248" font-size="22" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">线性 / PatchCNN / 稀疏事件 / 轻量 SSM；<tspan x="610" dy="31.9">分别处理趋势、周期、冲击和其余波动。</tspan></text><line x1="610" y1="291" x2="1200" y2="291" stroke="#D8E0EB" stroke-width="1" /></g><g id="forecast-detail-1" data-pptx-bounds="600 300 610 111"><rect x="600" y="300" width="610" height="111" fill="none" /><text x="610" y="329" font-size="27" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">四路数值表征参与路由</text><text x="610" y="367" font-size="22" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">默认 top-k = 2 进行专家选择；<tspan x="610" dy="31.9">融合权重是否有效，需要消融实验验证。</tspan></text><line x1="610" y1="410" x2="1200" y2="410" stroke="#D8E0EB" stroke-width="1" /></g><g id="forecast-detail-2" data-pptx-bounds="600 419 610 111"><rect x="600" y="419" width="610" height="111" fill="none" /><text x="610" y="448" font-size="27" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">文本增量是可选路径</text><text x="610" y="486" font-size="22" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">完整模型有门控文本分支；现有部署验证<tspan x="610" dy="31.9">关闭文本，不能推断已读懂游戏梗与图像。</tspan></text><line x1="610" y1="529" x2="1200" y2="529" stroke="#D8E0EB" stroke-width="1" /></g><g id="forecast-detail-3" data-pptx-bounds="600 538 610 111"><rect x="600" y="538" width="610" height="111" fill="none" /><text x="610" y="567" font-size="27" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">预测与传播解释分别评价</text><text x="610" y="605" font-size="22" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">下页为既有数据实测，不是方舟社区实验；<tspan x="610" dy="31.9">跨话题泛化及回应效果仍需独立评估。</tspan></text></g></svg>

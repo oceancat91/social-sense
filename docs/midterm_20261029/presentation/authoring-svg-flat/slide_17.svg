@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Noto Sans SC&quot;, sans-serif"><defs><linearGradient id="mstrokegrad1" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0.34" stop-color="#4472C4" stop-opacity="0" /><stop offset="1" stop-color="#4472C4" /></linearGradient><linearGradient id="ggrad1" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0" stop-color="#E7E6E6" stop-opacity="0" /><stop offset="0.96" stop-color="#E7E6E6" /></linearGradient><linearGradient id="mstrokegrad2" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0" stop-color="#4472C4" stop-opacity="0" /><stop offset="1" stop-color="#4472C4" /></linearGradient><linearGradient id="mstrokegrad3" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0.31" stop-color="#4472C4" stop-opacity="0" /><stop offset="1" stop-color="#4472C4" /></linearGradient><linearGradient id="ggrad2" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="1" stop-color="#4472C4" stop-opacity="0.58" /></linearGradient><linearGradient id="ggrad3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DAE3F3" /><stop offset="1" stop-color="#4472C4" /></linearGradient></defs><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-26" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:26">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g><g id="midterm-header" data-pptx-bounds="95 16 815 83" data-pptx-role="header"><rect x="95" y="16" width="815" height="83" fill="none" /><text x="112" y="63" font-size="34" fill="#44546A" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">五位成员围绕可检查交付物协作</text></g><g id="page-subtitle" data-pptx-bounds="75 108 1130 50"><rect x="75" y="108" width="1130" height="50" fill="none" /><text x="80" y="140" font-size="22" fill="#64748B" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">以接口、实验记录与验收条件连接开发和科研训练</text></g><g id="midterm-footer" data-pptx-bounds="70 680 1100 25" data-pptx-role="footer"><rect x="70" y="680" width="1100" height="25" fill="none" /><text x="76" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">SocialSense  ·  创新训练类中期答辩</text><text x="1155" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" text-anchor="end" font-weight="normal">10 / 18</text></g><g id="team-architecture" data-pptx-bounds="70 190 350 370"><rect x="70" y="190" width="350" height="370" fill="none" /><rect x="70" y="190" width="350" height="370" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="8" ry="8" /><line x1="73" y1="193" x2="73" y2="557" stroke="#4472C4" stroke-width="5" /><text x="94" y="230" font-size="27" fill="#4472C4" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">架构与交付</text><text x="94" y="275" font-size="22" fill="#243446" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">张艺嘉<tspan x="94" dy="34.1">总体架构、模型实现与导出</tspan><tspan x="94" dy="34.1">前后端联调、研究记录</tspan><tspan x="94" dy="34.1" /><tspan x="94" dy="34.1">交付：可运行原型与验证包</tspan></text></g><g id="team-data" data-pptx-bounds="465 190 350 370"><rect x="465" y="190" width="350" height="370" fill="none" /><rect x="465" y="190" width="350" height="370" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="8" ry="8" /><line x1="468" y1="193" x2="468" y2="557" stroke="#4472C4" stroke-width="5" /><text x="489" y="230" font-size="27" fill="#4472C4" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">数据与评估</text><text x="489" y="275" font-size="21" fill="#243446" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">王悦：数据清洗与质量检查<tspan x="489" dy="32.55">郑锦凡：基线、消融与误差分析</tspan><tspan x="489" dy="32.55" /><tspan x="489" dy="32.55">交付：数据说明与统一评估表</tspan></text></g><g id="team-graph-ui" data-pptx-bounds="860 190 350 370"><rect x="860" y="190" width="350" height="370" fill="none" /><rect x="860" y="190" width="350" height="370" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="8" ry="8" /><line x1="863" y1="193" x2="863" y2="557" stroke="#4472C4" stroke-width="5" /><text x="884" y="230" font-size="27" fill="#4472C4" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">传播研究与交互</text><text x="884" y="275" font-size="21" fill="#243446" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">詹江叶煜：传播图与事件对齐<tspan x="884" dy="32.55">吴珂欣：三维档案与交互测试</tspan><tspan x="884" dy="32.55" /><tspan x="884" dy="32.55">交付：关系样本与试用记录</tspan></text></g><g id="training-value" data-pptx-bounds="70 590 1140 60"><rect x="70" y="590" width="1140" height="60" fill="none" /><text x="640" y="625" font-size="26" fill="#0D3745" font-family="Microsoft YaHei" text-anchor="middle" font-weight="bold">科研训练收获：统一口径 · 面对负结果 · 明确证据边界 · 协同复盘</text></g></svg>

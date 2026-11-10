@@ -1,0 +1,57 @@
+{
+  "source_pptx_sha256": "00e19b5a6bff3e579c4ba30a8da0721e5a381e3f97957668f2e4f93ed52a6763",
+  "edited_pages": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    9,
+    10,
+    11,
+    17,
+    18
+  ],
+  "referenced_pages": [
+    1,
+    7,
+    8,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "timing_seconds": [
+    12,
+    38,
+    38,
+    36,
+    34,
+    40,
+    40,
+    28,
+    30,
+    24,
+    26,
+    14
+  ],
+  "total_seconds": 360,
+  "code_sha256": {
+    "multiagent/contract.py": "66d34fd0c4cb24f031c28f032c14606a76101c7fb541f1ec3c0665711af0c045",
+    "multiagent/align.py": "596835e22c4ad025f8e05ff643acac0d4d4e032d1d0495981691b63435de1c2f",
+    "multiagent/fuse.py": "94aaca202c29ca24020a95a062f8cb7b50530b037a5346121d4b05927b6098e9",
+    "multiagent/master.py": "a77c0f87f3e441a1fbc4f39a78ecdf4edc76de15a197947ec8e3adf48797a213",
+    "agent/Conclusion/calib/gates.py": "b1776f2e6a10d9b872721217bba7628f3665e53d04d052b8963e2177251a7476",
+    "agent/MultimodalAnalyzer/text_tower.py": "77392fd4fd5f6408d3a4ea8f6a87561a1101069af2d56dd85e4dd6d0c1bfdd55",
+    "social_forecast/models/rep_moe.py": "ce8e2ace309ea35ea150fbc6f32628e5a0c50e173e91e7ed0c77ab5d00f9d6d1",
+    "social_forecast/layers/rep_fusion.py": "0150ac156337c4b856404ea864b6f45852b5b026d49b559be8554910a3a5e873",
+    "social_forecast/results/retrain_20261019/deployment_verification.json": "4ca5cbaccbd6a1338a851d38724e0f5919950b85ada303b42ab6a5d01cdf969f"
+  },
+  "network_images_used": [
+    "summer_key_visual.jpg",
+    "official_summer_4.jpg",
+    "yuqing_trace.png"
+  ],
+  "game_case_status": "public_illustration_and_future_research_not_measured_project_result"
+}

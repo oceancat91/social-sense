@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Noto Sans CJK SC&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="25.92 33.15 882.67 64.32" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 25.92 33.15 L 908.59 33.15 L 908.59 97.47 L 25.92 97.47 Z" fill="#BE1F26" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="62.4 49.32 787.2 40.55" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 62.4 49.32 L 849.6 49.32 L 849.6 89.88 L 62.4 89.88 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="63.36" y="82.047979" text-anchor="start" xml:space="preserve" font-size="32.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>3</tspan><tspan>. 从 2D 到 3D</tspan></text>
+</g>
+<g id="shape-4" data-pptx-object="picture" data-pptx-frame="929.28 34.56 258.24 49.44" data-pptx-source-ref="slide:4">
+<image data-pptx-object="picture" data-pptx-frame="929.28 34.56 258.24 49.44" href="../images/image3.png" x="929.28" y="34.56" width="258.24" height="49.44" preserveAspectRatio="none" />
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="42.24 107.52 686.4 31.68" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 42.24 107.52 L 728.64 107.52 L 728.64 139.2 L 42.24 139.2 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="42.24" y="128.85333333" text-anchor="start" xml:space="preserve" font-size="22.27" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">Zero-1-to-3：让相机变化成为显式条件</text>
+</g>
+<g id="shape-6" data-pptx-object="picture" data-pptx-frame="129.45 155.7 510.55 216" data-pptx-source-ref="slide:6">
+<image data-pptx-object="picture" data-pptx-frame="129.45 155.7 510.55 216" href="../images/image12.png" x="129.45" y="155.7" width="510.55" height="216" preserveAspectRatio="none" />
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="43.2 376.25 681.6 18.24" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 43.2 376.25 L 724.8 376.25 L 724.8 394.49 L 43.2 394.49 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="43.2" y="388.24997375" text-anchor="start" xml:space="preserve" font-size="12.67" fill="#686F75" data-pptx-text-baseline="metrics-v1">原图：Zero-1-to-3，Figure 1（2023）；给定相对相机变换后生成目标视角。</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="43.2 414.9 681.6 259.2" data-pptx-prst="roundRect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 43.2 458.1 A 43.2 43.2 0 0 1 86.4 414.9 L 681.6 414.9 A 43.2 43.2 0 0 1 724.8 458.1 L 724.8 630.9 A 43.2 43.2 0 0 1 681.6 674.1 L 86.4 674.1 A 43.2 43.2 0 0 1 43.2 630.9 Z" fill="#F6F7F8" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="75.84 435.63 648 23.04" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 75.84 435.63 L 723.84 435.63 L 723.84 458.67 L 75.84 458.67 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="75.84" y="452.96073491" text-anchor="start" xml:space="preserve" font-size="18.4" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>相机条件的几何含义（示意图</tspan><tspan>）</tspan></text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="75.84 480 158.4 52.8" data-pptx-prst="roundRect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 75.84 488.8 A 8.8 8.8 0 0 1 84.64 480 L 225.44 480 A 8.8 8.8 0 0 1 234.24 488.8 L 234.24 524 A 8.8 8.8 0 0 1 225.44 532.8 L 84.64 532.8 A 8.8 8.8 0 0 1 75.84 524 Z" fill="#ECF3F7" stroke-width="1.06667" stroke="#143E4A" data-pptx-part="geometry" />
+
+
+<text x="155.04" y="512.8080315" text-anchor="middle" xml:space="preserve" font-size="16.27" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>输入图像</tspan><tspan> I₀</tspan></text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="239.21 495.54 23.04 21.12" data-pptx-prst="rightArrow" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 239.21 500.82 L 251.69 500.82 L 251.69 495.54 L 262.25 506.1 L 251.69 516.66 L 251.69 511.38 L 239.21 511.38 Z" fill="#BE1F26" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="268.01 480 172.8 52.8" data-pptx-prst="roundRect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 268.01 488.8 A 8.8 8.8 0 0 1 276.81 480 L 432.01 480 A 8.8 8.8 0 0 1 440.81 488.8 L 440.81 524 A 8.8 8.8 0 0 1 432.01 532.8 L 276.81 532.8 A 8.8 8.8 0 0 1 268.01 524 Z" fill="#FFFFFF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="354.41" y="511.87469816" text-anchor="middle" xml:space="preserve" font-size="15.6" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>相对位姿</tspan><tspan> ΔR, ΔT</tspan></text>
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="444.08 495.54 23.04 21.12" data-pptx-prst="rightArrow" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 444.08 500.82 L 456.56 500.82 L 456.56 495.54 L 467.12 506.1 L 456.56 516.66 L 456.56 511.38 L 444.08 511.38 Z" fill="#BE1F26" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="474.58 479.7 170.88 52.8" data-pptx-prst="roundRect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 474.58 488.5 A 8.8 8.8 0 0 1 483.38 479.7 L 636.66 479.7 A 8.8 8.8 0 0 1 645.46 488.5 L 645.46 523.7 A 8.8 8.8 0 0 1 636.66 532.5 L 483.38 532.5 A 8.8 8.8 0 0 1 474.58 523.7 Z" fill="#FBEFEF" stroke-width="1.06667" stroke="#BE1F26" data-pptx-part="geometry" />
+
+
+<text x="560.02" y="512.50629921" text-anchor="middle" xml:space="preserve" font-size="16.27" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>目标视角</tspan><tspan> I₁</tspan></text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="64.44 544.5 645.12 25.85" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 64.44 544.5 L 709.56 544.5 L 709.56 570.35 L 64.44 570.35 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="387" y="564.49826772" text-anchor="middle" xml:space="preserve" font-family="&quot;Cambria Math&quot;, sans-serif" font-size="21.33" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>I₁ = </tspan><tspan>fφ</tspan><tspan>(I₀, ΔR, ΔT)</tspan><tspan> </tspan><tspan fill="#252525">ΔR</tspan><tspan fill="#252525">：相对旋转；</tspan><tspan fill="#252525">ΔT</tspan><tspan fill="#252525">：相对平移</tspan></text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="59.52 598.34 645.12 67.2" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 59.52 598.34 L 704.64 598.34 L 704.64 665.54 L 59.52 665.54 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="59.52" y="615.67013123" text-anchor="start" xml:space="preserve" font-size="17.47" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="20.96"><tspan><tspan>ΔR </tspan><tspan>指定相对旋转，ΔT</tspan><tspan> </tspan><tspan>指定相对平移。它们把“从哪里看”变成明确输入，但模型仍</tspan></tspan><tspan data-paragraph-line-break="1">然是在生成新图像，而不是直接输出一个封闭、可编辑的三维几何体<tspan>。</tspan></tspan></text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="724.8 114.03 468.48 38.4" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 724.8 114.03 L 1193.28 114.03 L 1193.28 152.43 L 724.8 152.43 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="724.8" y="136.6928084" text-anchor="start" xml:space="preserve" font-size="23.73" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>从“像一张图”到“指定角度生成</tspan><tspan>”</tspan></text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="716.96 155.27 462.72 68.73" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 716.96 155.27 L 1179.68 155.27 L 1179.68 224 L 716.96 224 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="717.92" y="173.08115486" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="18.67" fill="#B91F25" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.4"><tspan><tspan>① </tspan><tspan fill="#252525">Zero-1-to-3 </tspan><tspan fill="#252525">将参考 </tspan><tspan fill="#252525">RGB </tspan><tspan fill="#252525">图像与相对相机变换作为</tspan></tspan><tspan fill="#252525" data-paragraph-line-break="1">条件，生成指定角度的新视图。 相对位姿明确指定目标</tspan><tspan fill="#252525" data-paragraph-line-break="1">相机相对于输入相机的变化。</tspan></text>
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="723.84 232.19 462.72 68.73" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 723.84 232.19 L 1186.56 232.19 L 1186.56 300.92 L 723.84 300.92 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="724.8" y="250.00724409" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="18.67" fill="#B91F25" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.4"><tspan><tspan>② </tspan><tspan fill="#252525">相机条件把观察方向变成显式输入，而不是让模型自</tspan></tspan><tspan fill="#252525" data-paragraph-line-break="1">行猜测视角。 这把视角变化从隐含因素变成显式条件，</tspan><tspan fill="#252525" data-paragraph-line-break="1">提高了生成的可控性。</tspan></text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="716.96 310.27 462.72 67.76" data-pptx-prst="rect" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 716.96 310.27 L 1179.68 310.27 L 1179.68 378.03 L 716.96 378.03 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="717.92" y="328.08146982" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="18.4" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.08"><tspan><tspan>③  </tspan><tspan fill="#1F2326">MVDream</tspan><tspan fill="#1F2326"> </tspan><tspan fill="#1F2326">进一步在共同去噪过程中联合处理多个视角</tspan></tspan><tspan fill="#1F2326" data-paragraph-line-break="1">，并通过跨视角注意力交换信息，减少单视角先验造成的</tspan><tspan fill="#1F2326" data-paragraph-line-break="1"> Janus <tspan>问题</tspan><tspan>。</tspan></tspan></text>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="803.86 395.52 369.89 168.96" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="803.86 395.52 369.89 168.96" href="../images/image13.png" x="803.86" y="395.52" width="369.89" height="168.96" preserveAspectRatio="none" />
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="763.2 566.4 453.12 18.24" data-pptx-prst="rect" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 763.2 566.4 L 1216.32 566.4 L 1216.32 584.64 L 763.2 584.64 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="763.2" y="578.4" text-anchor="start" xml:space="preserve" font-size="12.67" fill="#686F75" data-pptx-text-baseline="metrics-v1">原图：4Diffusion，Figure 2；不同扩散先验的去噪结果存在差异。</text>
+</g>
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="736.01 598.34 474.56 78.27" data-pptx-prst="roundRect" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 736.01 611.38 A 13.05 13.05 0 0 1 749.06 598.34 L 1197.52 598.34 A 13.05 13.05 0 0 1 1210.57 611.38 L 1210.57 663.56 A 13.05 13.05 0 0 1 1197.52 676.61 L 749.06 676.61 A 13.05 13.05 0 0 1 736.01 663.56 Z" fill="#FBEFEF" stroke-width="1.06667" stroke="#BE1F26" data-pptx-part="geometry" />
+
+
+<text x="741.77" y="617.5047769" text-anchor="start" xml:space="preserve" font-size="16.8" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="20.16"><tspan><tspan>演进意义：相机条件解决“看哪里”，多视角联合先验尝试解决</tspan></tspan><tspan data-paragraph-line-break="1">“不同角度是否仍是同一个对象”。但一致性仍是学习到的先验</tspan><tspan data-paragraph-line-break="1">约束，而非硬性的几何保证。</tspan></text>
+</g></svg>

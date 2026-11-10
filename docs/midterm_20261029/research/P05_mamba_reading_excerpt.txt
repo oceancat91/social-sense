@@ -1,0 +1,139 @@
+## PDF page 2
+Arena (Tay, Dehghani, Abnar, et al. 2021). Many flavors of SSMs (Gu, Goel, and Ré 2022; Gu, Gupta, et al. 2022; Gupta, Gu,
+and Berant 2022; Y. Li et al. 2023; Ma et al. 2023; Orvieto et al. 2023; Smith, Warrington, and Linderman 2023) have been
+successful in domains involving continuous signal data such as audio and vision (Goel et al. 2022; Nguyen, Goel, et al. 2022;
+Saon, Gupta, and Cui 2023). However, they have been less effective at modeling discrete and information-dense data such
+as text.
+We propose a new class of selective state space models , that improves on prior work on several axes to achieve the
+modeling power of Transformers while scaling linearly in sequence length.
+Selection Mechanism. First, we identify a key limitation of prior models: the ability to efficiently select data in an
+input-dependent manner (i.e. focus on or ignore particular inputs). Building on intuition based on important synthetic
+tasks such as selective copy and induction heads, we design a simple selection mechanism by parameterizing the SSM
+parameters based on the input. This allows the model to filter out irrelevant information and remember relevant information
+indefinitely.
+Hardware-aware Algorithm. This simple change poses a technical challenge for the computation of the model; in
+fact, all prior SSMs models must be time- and input-invariant in order to be computationally efficient. We overcome this
+with a hardware-aware algorithm that computes the model recurrently with a scan instead of convolution, but does not
+materialize the expanded state in order to avoid IO access between different levels of the GPU memory hierarchy. The
+resulting implementation is faster than previous methods both in theory (scaling linearly in sequence length, compared to
+pseudo-linear for all convolution-based SSMs) and on modern hardware (up to 3× faster on A100 GPUs).
+Architecture. We simplify prior deep sequence model architectures by combining the design of prior SSM architectures
+(Dao, Fu, Saab, et al. 2023) with the MLP block of Transformers into a single block, leading to a simple and homogenous
+architecture design (Mamba) incorporating selective state spaces.
+Selective SSMs, and by extension the Mamba architecture, are fully recurrent models with key properties that make them
+suitable as the backbone of general foundation models operating on sequences. (i) High quality: selectivity brings strong
+performance on dense modalities such as language and genomics. (ii) Fast training and inference: computation and memory
+scales linearly in sequence length during training, and unrolling the model autoregressively during inference requires only
+constant time per step since it does not require a cache of previous elements. (iii) Long context: the quality and efficiency
+together yield performance improvements on real data up to sequence length 1M.
+We empirically validate Mamba’s potential as a general sequence FM backbone, in both pretraining quality and domain-
+specific task performance, on several types of modalities and settings:
+• Synthetics. On important synthetic tasks such as copying and induction heads that have been proposed as being key to
+large language models, Mamba not only solves them easily but can extrapolate solutions indefinitely long (>1M tokens).
+• Audio and Genomics. Mamba out-performs prior state-of-the-art models such as SaShiMi, Hyena, and Transformers
+on modeling audio waveforms and DNA sequences, both in pretraining quality and downstream metrics (e.g. reducing
+FID on a challenging speech generation dataset by more than half). In both settings, its performance improves with longer
+context up to million-length sequences .
+• Language Modeling. Mamba is the first linear-time sequence model that truly achieves Transformer-quality performance ,
+both in pretraining perplexity and downstream evaluations. With scaling laws up to 1B parameters, we show that Mamba
+exceeds the performance of a large range of baselines, including very strong modern Transformer training recipes based
+on LLaMa (Touvron et al. 2023). Our Mamba language model has 5× generation throughput compared to Transformers
+of similar size, and Mamba-3B’s quality matches that of Transformers twice its size (e.g. 4 points higher avg. on common
+sense reasoning compared to Pythia-3B and even exceeding Pythia-7B).
+Model code and pre-trained checkpoints are open-sourced at https://github.com/state-spaces/mamba.
+2 State Space Models
+Structured state space sequence models (S4) are a recent class of sequence models for deep learning that are broadly related
+to RNNs, and CNNs, and classical state space models. They are inspired by a particular continuous system (1) that maps a
+2
+
+## PDF page 3
+Project Discretize
+𝑥!
+ℎ!"# ℎ!𝑦!
+𝐴
+𝐶!𝐵!
+Selection Mechanism
+GPU SRAMGPU HBM∆!
+Selective State Space ModelwithHardware-aware State Expansion
+Figure 1: ( Overview.) Structured SSMs independently map each channel (e.g. 𝐷 = 5) of an input 𝑥 to output 𝑦 through a higher
+dimensional latent state ℎ (e.g. 𝑁 = 4). Prior SSMs avoid materializing this large effective state (𝐷𝑁 , times batch size 𝐵 and sequence
+length 𝐿) through clever alternate computation paths requiring time-invariance: the(Δ, 𝑨, 𝑩, 𝑪) parameters are constant across time. Our
+selection mechanism adds back input-dependent dynamics, which also requires a careful hardware-aware algorithm to only materialize
+the expanded states in more efficient levels of the GPU memory hierarchy.
+1-dimensional function or sequence 𝑥 (𝑡) ∈ R ↦→ 𝑦 (𝑡) ∈ R through an implicit latent state ℎ(𝑡) ∈ R𝑁 .
+Concretely, S4 models are defined with four parameters (Δ, 𝑨, 𝑩, 𝑪), which define a sequence-to-sequence transformation
+in two stages.
+ℎ′ (𝑡) = 𝑨ℎ(𝑡) + 𝑩𝑥 (𝑡) (1a)
+𝑦 (𝑡) = 𝑪ℎ(𝑡) (1b)
+ℎ𝑡 = 𝑨ℎ𝑡 −1 + 𝑩𝑥𝑡 (2a)
+𝑦𝑡 = 𝑪ℎ𝑡 (2b)
+𝑲 = (𝑪𝑩, 𝑪𝑨𝑩, . . . , 𝑪𝑨
+𝑘
+𝑩, . . . ) (3a)
+𝑦 = 𝑥 ∗ 𝑲 (3b)
+Discretization. The first stage transforms the “continuous parameters”(Δ, 𝑨, 𝑩) to “discrete parameters”(𝑨, 𝑩) through
+fixed formulas 𝑨 = 𝑓𝐴 (Δ, 𝑨) and 𝑩 = 𝑓𝐵 (Δ, 𝑨, 𝑩), where the pair (𝑓𝐴, 𝑓𝐵) is called a discretization rule. Various rules can
+be used such as the zero-order hold (ZOH) defined in equation (4).
+𝑨 = exp(Δ𝑨) 𝑩 = (Δ𝑨) −1(exp(Δ𝑨) − 𝑰 ) · Δ𝑩 (4)
+Discretization has deep connections to continuous-time systems which can endow them with additional properties such
+as resolution invariance (Nguyen, Goel, et al. 2022) and automatically ensuring that the model is properly normalized
+(Gu, Johnson, Timalsina, et al. 2023; Orvieto et al. 2023). It also has connections to gating mechanisms of RNNs (Gu,
+Gulcehre, et al. 2020; Tallec and Ollivier 2018) which we will revisit in Section 3.5. However, from a mechanical point
+of view discretization can simply be viewed as the first step of the computation graph in the forward pass of an SSM.
+Alternate flavors of SSMs can bypass the discretization step and parameterize (𝑨, 𝑩) directly instead (Zhang et al. 2023),
+which may be easier to reason about.
+Computation. After the parameters have been transformed from (Δ, 𝑨, 𝑩, 𝑪) ↦→ ( 𝑨, 𝑩, 𝑪), the model can be computed
+in two ways, either as a linear recurrence (2) or a global convolution (3).
+Commonly, the model uses the convolutional mode (3) for efficient parallelizable training (where the whole input sequence
+is seen ahead of time), and switched into recurrent mode (2) for efficient autoregressive inference (where the inputs are
+seen one timestep at a time).
+Linear Time Invariance (LTI). An important property of equations (1) to (3) is that the model’s dynamics are constant
+through time. In other words (Δ, 𝑨, 𝑩, 𝑪), and consequently (𝑨, 𝑩) as well, are fixed for all time-steps. This property is
+3
+
+## PDF page 4
+called linear time invariance (LTI) , which is deeply connected to recurrence and convolutions. Informally, we think of
+LTI SSMs as being equivalent to any linear recurrence (2a) or convolution (3b), and use LTI as an umbrella term for these
+classes of models.
+Thus far, all structured SSMs have been LTI (e.g. computed as convolutions) because of fundamental efficiency constraints,
+discussed in Section 3.3. However, a core insight of this work is that LTI models have fundamental limitations in modeling
+certain types of data, and our technical contributions involve removing the LTI constraint while overcoming the efficiency
+bottlenecks.
+Structure and Dimensions. Finally, we note that structured SSMs are so named because computing them efficiently
+also requires imposing structure on the 𝑨 matrix. The most popular form of structure is diagonal (Gu, Gupta, et al. 2022;
+Gupta, Gu, and Berant 2022; Smith, Warrington, and Linderman 2023), which we also use.
+In this case, the 𝑨 ∈ R𝑁 ×𝑁 , 𝑩 ∈ R𝑁 ×1, 𝑪 ∈ R1×𝑁 matrices can all be represented by 𝑁 numbers. To operate over an input
+sequence 𝑥 of batch size 𝐵 and length 𝐿 with 𝐷 channels, the SSM is applied independently to each channel. Note that in
+this case, the total hidden state has dimension𝐷𝑁 per input, and computing it over the sequence length requires𝑂 (𝐵𝐿𝐷𝑁 )
+time and memory; this is the root of the fundamental efficiency bottleneck addressed in Section 3.3.
+General State Space Models. We note that the termstate space model has a very broad meaning which simply represents
+the notion of any recurrent process with a latent state. It has been used to refer to many disparate concepts in different
+disciplines, including Markov decision processes (MDP) (reinforcement learning (Hafner et al. 2020)), dynamic causal
+modeling (DCM) (computational neuroscience (Friston, Harrison, and Penny 2003)), Kalman filters (controls (Kalman 1960)),
+hidden Markov models (HMM) and linear dynamical systems (LDS) (machine learning), and recurrent (and sometimes
+convolutional) models at large (deep learning).
+Throughout this entire paper we use the term “SSM” to refer exclusively to the class of structured SSMs or S4 models (Gu,
+Goel, and Ré 2022; Gu, Gupta, et al. 2022; Gupta, Gu, and Berant 2022; Hasani et al. 2023; Ma et al. 2023; Smith, Warrington,
+and Linderman 2023) and use these terms interchangeably. For convenience we may also include derivatives of such
+models, such as those focusing on either the linear-recurrence or global-convolution viewpoints (Y. Li et al. 2023; Orvieto
+et al. 2023; Poli et al. 2023), and clarify nuances when necessary.
+SSM Architectures. SSMs are standalone sequence transformations that can be incorporated into end-to-end neural
+network architectures. (We also sometimes call SSM architectures SSNNs, which are to SSM layers as CNNs are to linear
+convolution layers.) We discuss some of the most well-known SSM architectures, many of which will also serve as our
+primary baselines.
+• Linear attention (Katharopoulos et al. 2020) is an approximation of self-attention involving a recurrence which can be
+viewed as a degenerate linear SSM.
+• H3 (Dao, Fu, Saab, et al. 2023) generalized this recurrence to use S4; it can be viewed as an architecture with an SSM
+sandwiched by two gated connections (Figure 3). H3 also inserts a standard local convolution, which they frame as a
+shift-SSM, before the main SSM layer.
+• Hyena (Poli et al. 2023) uses the same architecture as H3 but replaces the S4 layer with an MLP-parameterized global
+convolution (Romero et al. 2021).
+• RetNet (Y. Sun et al. 2023) adds an additional gate to the architecture and uses a simpler SSM, allowing an alternative
+parallelizable computation path, using a variant of multi-head attention (MHA) instead of convolutions.
+• RWKV (B. Peng et al. 2023) is a recent RNN designed for language modeling based on another linear attention approxi-
+mation, the attention-free Transformer (S. Zhai et al. 2021). Its main “WKV” mechanism involves LTI recurrences and
+can be viewed as the ratio of two SSMs.
+Other closely related SSMs and architectures are discussed further in an extended related work (Appendix B). We highlight
+in particular S5 (Smith, Warrington, and Linderman 2023), QRNN (Bradbury et al. 2016), and SRU (Lei et al. 2017), which
+we view as the most closely related methods to our core selective SSM.
+4

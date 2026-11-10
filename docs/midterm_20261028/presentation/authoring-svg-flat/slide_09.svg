@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Noto Sans CJK SC&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="21.13 33.12 922.09 64.32" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 21.13 33.12 L 943.21 33.12 L 943.21 97.44 L 21.13 97.44 Z" fill="#BE1F26" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="74.04 48.84 787.2 40.55" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 74.04 48.84 L 861.24 48.84 L 861.24 89.4 L 74.04 89.4 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="75" y="81.567979" text-anchor="start" xml:space="preserve" font-size="32.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>3</tspan><tspan>. 从 2D 到 3D</tspan></text>
+</g>
+<g id="shape-4" data-pptx-object="picture" data-pptx-frame="962.88 33.84 258.24 49.44" data-pptx-source-ref="slide:4">
+<image data-pptx-object="picture" data-pptx-frame="962.88 33.84 258.24 49.44" href="../images/image3.png" x="962.88" y="33.84" width="258.24" height="49.44" preserveAspectRatio="none" />
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="42.24 107.52 497.28 33.6" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 42.24 107.52 L 539.52 107.52 L 539.52 141.12 L 42.24 141.12 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="42.24" y="128.85333333" text-anchor="start" xml:space="preserve" font-size="22.4" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">DreamFusion：SDS 反馈如何更新三维参数？</text>
+</g>
+<g id="shape-6" data-pptx-object="picture" data-pptx-frame="48.47 145.92 482.9 504" data-pptx-source-ref="slide:6">
+<image data-pptx-object="picture" data-pptx-frame="48.47 145.92 482.9 504" href="../images/image11.png" x="48.47" y="145.92" width="482.9" height="504" preserveAspectRatio="none" />
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="42.24 652.8 495.36 18.24" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 42.24 652.8 L 537.6 652.8 L 537.6 671.04 L 42.24 671.04 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="42.24" y="664.8" text-anchor="start" xml:space="preserve" font-size="12.67" fill="#686F75" data-pptx-text-baseline="metrics-v1">原图：DreamFusion，Figure 1（2022）；同一生成对象的多视角渲染结果。</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="560.64 108.48 667.2 35.52" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 560.64 108.48 L 1227.84 108.48 L 1227.84 144 L 560.64 144 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="560.64" y="131.14656168" text-anchor="start" xml:space="preserve" font-size="24.27" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">关键机制：冻结二维先验，更新三维表示</text>
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="562.56 151.68 660.48 46.11" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 562.56 151.68 L 1223.04 151.68 L 1223.04 197.79 L 562.56 197.79 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="563.52" y="169.49333333" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="18.67" fill="#B91F25" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.4"><tspan><tspan>① </tspan><tspan fill="#252525">NeRF</tspan><tspan fill="#252525"> 参数 </tspan><tspan fill="#252525">θ </tspan><tspan fill="#252525">在随机相机 </tspan><tspan fill="#252525">C </tspan><tspan fill="#252525">下渲染当前图像：</tspan><tspan fill="#252525">x</tspan><tspan fill="#252525"> </tspan><tspan fill="#252525">= R(θ, C)</tspan><tspan fill="#252525">。 随机采样相机使</tspan></tspan><tspan fill="#252525" data-paragraph-line-break="1">同一组 <tspan>NeRF</tspan><tspan> 参数反复接受不同方向的渲染检验。</tspan></tspan></text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="562.56 213.12 660.48 46.11" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 562.56 213.12 L 1223.04 213.12 L 1223.04 259.23 L 562.56 259.23 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="563.52" y="230.93333333" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="18.67" fill="#B91F25" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.4"><tspan><tspan>② </tspan><tspan fill="#252525">对渲染图加噪得到 </tspan><tspan fill="#252525">zₜ</tspan><tspan fill="#252525">，再由冻结的 </tspan><tspan fill="#252525">U-Net </tspan><tspan fill="#252525">预测噪声 </tspan><tspan fill="#252525">ε̂φ</tspan><tspan fill="#252525">。 </tspan><tspan fill="#252525">U-Net </tspan><tspan fill="#252525">提供图像</tspan></tspan><tspan fill="#252525" data-paragraph-line-break="1">先验反馈，不直接输出最终网格或高斯。</tspan></text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="562.56 279.36 660.48 46.11" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 562.56 279.36 L 1223.04 279.36 L 1223.04 325.47 L 562.56 325.47 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="563.52" y="297.17333333" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="18.67" fill="#B91F25" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.4"><tspan><tspan>③ </tspan><tspan fill="#252525">噪声残差形成更新信号，经渲染链反传到 </tspan><tspan fill="#252525">θ</tspan><tspan fill="#252525">；扩散模型本身不更新。 因而监督</tspan></tspan><tspan fill="#252525" data-paragraph-line-break="1">是间接的：误差信号必须经过可微渲染链回到三维参数。</tspan></text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="562.56 353.28 662.4 88.32" data-pptx-prst="roundRect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 562.56 368 A 14.72 14.72 0 0 1 577.28 353.28 L 1210.24 353.28 A 14.72 14.72 0 0 1 1224.96 368 L 1224.96 426.88 A 14.72 14.72 0 0 1 1210.24 441.6 L 577.28 441.6 A 14.72 14.72 0 0 1 562.56 426.88 Z" fill="#F6F7F8" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="574.08 359.04 639.36 21.12" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 574.08 359.04 L 1213.44 359.04 L 1213.44 380.16 L 574.08 380.16 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="574.08" y="373.70666667" text-anchor="start" xml:space="preserve" font-size="15.73" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1">SDS 梯度示意（按论文机制简写）</text>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="560.64 383.04 652.8 21" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 560.64 383.04 L 1213.44 383.04 L 1213.44 404.04 L 560.64 404.04 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="887.04" y="399.04" text-anchor="middle" xml:space="preserve" font-family="&quot;Cambria Math&quot;, sans-serif" font-size="17.33" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>∇θ L_SDS ≈ E[w(t)(</tspan><tspan>ε̂φ</tspan><tspan>(zₜ,</tspan><tspan>y,t</tspan><tspan>) − ε) · ∂x/∂θ]</tspan></text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="574.08 419.52 639.36 16.32" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 574.08 419.52 L 1213.44 419.52 L 1213.44 435.84 L 574.08 435.84 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="574.08" y="431.52" text-anchor="start" xml:space="preserve" font-size="12.53" fill="#686F75" data-pptx-text-baseline="metrics-v1"><tspan>残差提供反馈方向；渲染器的导数将图像反馈传回三维参数</tspan><tspan>。</tspan></text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="564.48 453.12 658.56 23.04" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 564.48 453.12 L 1223.04 453.12 L 1223.04 476.16 L 564.48 476.16 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="564.48" y="470.45333333" text-anchor="start" xml:space="preserve" font-size="17.73" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1">把公式画成闭环：反馈改的是 NeRF，不是 U-Net</text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="568.32 489.6 136.32 58.56" data-pptx-prst="roundRect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 568.32 499.36 A 9.76 9.76 0 0 1 578.08 489.6 L 694.88 489.6 A 9.76 9.76 0 0 1 704.64 499.36 L 704.64 538.4 A 9.76 9.76 0 0 1 694.88 548.16 L 578.08 548.16 A 9.76 9.76 0 0 1 568.32 538.4 Z" fill="#ECF3F7" stroke-width="1.06667" stroke="#143E4A" data-pptx-part="geometry" />
+
+
+<text x="636.48" y="524.67469816" text-anchor="middle" xml:space="preserve" font-size="15.07" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">三维表示 θ</text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="709.44 507.84 19.2 21.12" data-pptx-prst="rightArrow" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 709.44 513.12 L 719.04 513.12 L 719.04 507.84 L 728.64 518.4 L 719.04 528.96 L 719.04 523.68 L 709.44 523.68 Z" fill="#BE1F26" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="733.44 489.6 136.32 58.56" data-pptx-prst="roundRect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 733.44 499.36 A 9.76 9.76 0 0 1 743.2 489.6 L 860 489.6 A 9.76 9.76 0 0 1 869.76 499.36 L 869.76 538.4 A 9.76 9.76 0 0 1 860 548.16 L 743.2 548.16 A 9.76 9.76 0 0 1 733.44 538.4 Z" fill="#FFFFFF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="801.6" y="524.67469816" text-anchor="middle" xml:space="preserve" font-size="15.07" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">渲染 x=R(θ,C)</text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="874.56 507.84 19.2 21.12" data-pptx-prst="rightArrow" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 874.56 513.12 L 884.16 513.12 L 884.16 507.84 L 893.76 518.4 L 884.16 528.96 L 884.16 523.68 L 874.56 523.68 Z" fill="#BE1F26" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="898.56 489.6 136.32 58.56" data-pptx-prst="roundRect" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 898.56 499.36 A 9.76 9.76 0 0 1 908.32 489.6 L 1025.12 489.6 A 9.76 9.76 0 0 1 1034.88 499.36 L 1034.88 538.4 A 9.76 9.76 0 0 1 1025.12 548.16 L 908.32 548.16 A 9.76 9.76 0 0 1 898.56 538.4 Z" fill="#FFFFFF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="966.72" y="524.67469816" text-anchor="middle" xml:space="preserve" font-size="15.07" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">加噪 zₜ</text>
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="1039.68 507.84 19.2 21.12" data-pptx-prst="rightArrow" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 1039.68 513.12 L 1049.28 513.12 L 1049.28 507.84 L 1058.88 518.4 L 1049.28 528.96 L 1049.28 523.68 L 1039.68 523.68 Z" fill="#BE1F26" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="1063.68 489.6 136.32 58.56" data-pptx-prst="roundRect" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 1063.68 499.36 A 9.76 9.76 0 0 1 1073.44 489.6 L 1190.24 489.6 A 9.76 9.76 0 0 1 1200 499.36 L 1200 538.4 A 9.76 9.76 0 0 1 1190.24 548.16 L 1073.44 548.16 A 9.76 9.76 0 0 1 1063.68 538.4 Z" fill="#FBEFEF" stroke-width="1.06667" stroke="#BE1F26" data-pptx-part="geometry" />
+
+
+<text x="1131.84" y="524.67469816" text-anchor="middle" xml:space="preserve" font-size="15.07" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">冻结 U-Net</text>
+</g>
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="567.36 563.52 652.8 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 567.36 563.52 L 1220.16 563.52 L 1220.16 592.32 L 567.36 592.32 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="893.76" y="582.18666667" text-anchor="middle" xml:space="preserve" font-size="20" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">噪声残差  →  梯度回传  →  更新 θ</text>
+</g>
+<g id="shape-25" data-pptx-object="shape" data-pptx-frame="566.4 602.88 654.72 55.68" data-pptx-prst="roundRect" data-pptx-source-ref="slide:25" data-pptx-semantic-object="shape">
+<path d="M 566.4 612.16 A 9.28 9.28 0 0 1 575.68 602.88 L 1211.84 602.88 A 9.28 9.28 0 0 1 1221.12 612.16 L 1221.12 649.28 A 9.28 9.28 0 0 1 1211.84 658.56 L 575.68 658.56 A 9.28 9.28 0 0 1 566.4 649.28 Z" fill="#FBEFEF" stroke-width="1.06667" stroke="#BE1F26" data-pptx-part="geometry" />
+
+
+<text x="573.12" y="623.90929134" text-anchor="start" xml:space="preserve" font-size="17.47" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="20.96"><tspan><tspan>局限：每个视角单独看起来合理，并不保证它们共享正确几何。若正面和背面都出</tspan></tspan><tspan data-paragraph-line-break="1">现面部或重复部件，就会产生 Janus 多面问题。</tspan></text>
+</g></svg>

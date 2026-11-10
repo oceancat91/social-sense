@@ -1,0 +1,728 @@
+{
+  "scanned_csv_files": 61,
+  "total_rows": 496010,
+  "selection_definition": "Substring keyword candidates, not a labeled event dataset; no deduplication.",
+  "files": [
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\culture_history__broad.csv",
+      "platform": "bilibili",
+      "rows": 7348,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\culture_history__hot__国潮与传统文化复兴.csv",
+      "platform": "bilibili",
+      "rows": 6183,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\economy_business__broad.csv",
+      "platform": "bilibili",
+      "rows": 7500,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\economy_business__hot__房价下跌与楼市.csv",
+      "platform": "bilibili",
+      "rows": 6138,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\education_science__broad.csv",
+      "platform": "bilibili",
+      "rows": 6496,
+      "counts": {
+        "wuhan_library": 4,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {
+        "wuhan_library": [
+          "2025-07-29",
+          "2025-09-20"
+        ]
+      }
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\education_science__hot__学历贬值与就业难.csv",
+      "platform": "bilibili",
+      "rows": 6077,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\entertainment__broad.csv",
+      "platform": "bilibili",
+      "rows": 7294,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\entertainment__hot__AI艺人与活人感之争.csv",
+      "platform": "bilibili",
+      "rows": 5809,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\games_anime__broad.csv",
+      "platform": "bilibili",
+      "rows": 6525,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\games_anime__hot__AI漫剧爆发.csv",
+      "platform": "bilibili",
+      "rows": 5038,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\health_psychology__broad.csv",
+      "platform": "bilibili",
+      "rows": 7564,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\health_psychology__hot__青少年心理健康.csv",
+      "platform": "bilibili",
+      "rows": 6024,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\life_consumption__broad.csv",
+      "platform": "bilibili",
+      "rows": 7591,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\life_consumption__hot__消费降级与反向消费.csv",
+      "platform": "bilibili",
+      "rows": 5917,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\nature_rural__broad.csv",
+      "platform": "bilibili",
+      "rows": 7003,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\nature_rural__hot__极端天气与气候.csv",
+      "platform": "bilibili",
+      "rows": 5986,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\public_affairs__broad.csv",
+      "platform": "bilibili",
+      "rows": 13513,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\public_affairs__hot__中美关税战.csv",
+      "platform": "bilibili",
+      "rows": 6212,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\society_law__broad.csv",
+      "platform": "bilibili",
+      "rows": 5167,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\society_law__hot__戒网瘾双胞胎事件.csv",
+      "platform": "bilibili",
+      "rows": 4107,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\sports_fitness__broad.csv",
+      "platform": "bilibili",
+      "rows": 7330,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\sports_fitness__hot__2026美加墨世界杯.csv",
+      "platform": "bilibili",
+      "rows": 5588,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\technology_industry__broad.csv",
+      "platform": "bilibili",
+      "rows": 4846,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\bilibili\\technology_industry__hot__人形机器人商业化.csv",
+      "platform": "bilibili",
+      "rows": 5381,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\douyin\\all_comments_cleaned.csv",
+      "platform": "douyin",
+      "rows": 104823,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\culture_history__broad.csv",
+      "platform": "weibo",
+      "rows": 10191,
+      "counts": {
+        "wuhan_library": 2,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {
+        "wuhan_library": [
+          "2026-04-24",
+          "2026-08-12"
+        ]
+      }
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\culture_history__hot__国潮与传统文化复兴.csv",
+      "platform": "weibo",
+      "rows": 6391,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\economy_business__broad.csv",
+      "platform": "weibo",
+      "rows": 5849,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\economy_business__hot__房价下跌与楼市.csv",
+      "platform": "weibo",
+      "rows": 6227,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\education_science__broad.csv",
+      "platform": "weibo",
+      "rows": 6213,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\education_science__hot__学历贬值与就业难.csv",
+      "platform": "weibo",
+      "rows": 7583,
+      "counts": {
+        "wuhan_library": 1,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {
+        "wuhan_library": [
+          "2025-07-30",
+          "2025-07-30"
+        ]
+      }
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\entertainment__broad.csv",
+      "platform": "weibo",
+      "rows": 9062,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 1,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {
+        "houhui_you_friend": [
+          "2026-08-13",
+          "2026-08-13"
+        ]
+      }
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\entertainment__hot__AI艺人与活人感之争.csv",
+      "platform": "weibo",
+      "rows": 8655,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\games_anime__broad.csv",
+      "platform": "weibo",
+      "rows": 11310,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\games_anime__hot__AI漫剧爆发.csv",
+      "platform": "weibo",
+      "rows": 8158,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\health_psychology__broad.csv",
+      "platform": "weibo",
+      "rows": 8158,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\health_psychology__hot__青少年心理健康.csv",
+      "platform": "weibo",
+      "rows": 7239,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\life_consumption__broad.csv",
+      "platform": "weibo",
+      "rows": 10000,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\life_consumption__hot__消费降级与反向消费.csv",
+      "platform": "weibo",
+      "rows": 7014,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\nature_rural__broad.csv",
+      "platform": "weibo",
+      "rows": 8118,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\nature_rural__hot__极端天气与气候.csv",
+      "platform": "weibo",
+      "rows": 6834,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\public_affairs__broad.csv",
+      "platform": "weibo",
+      "rows": 10533,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\public_affairs__hot__中美关税战.csv",
+      "platform": "weibo",
+      "rows": 7968,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\society_law__broad.csv",
+      "platform": "weibo",
+      "rows": 12450,
+      "counts": {
+        "wuhan_library": 2,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {
+        "wuhan_library": [
+          "2026-08-11",
+          "2026-08-12"
+        ]
+      }
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\society_law__hot__戒网瘾双胞胎事件.csv",
+      "platform": "weibo",
+      "rows": 4010,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\sports_fitness__broad.csv",
+      "platform": "weibo",
+      "rows": 9991,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\sports_fitness__hot__2026美加墨世界杯.csv",
+      "platform": "weibo",
+      "rows": 6714,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\technology_industry__broad.csv",
+      "platform": "weibo",
+      "rows": 11539,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\technology_industry__hot__人形机器人商业化.csv",
+      "platform": "weibo",
+      "rows": 8038,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\xiaohongshu\\culture_history__hot__国潮与传统文化复兴.csv",
+      "platform": "xiaohongshu",
+      "rows": 2503,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\xiaohongshu\\economy_business__hot__房价下跌与楼市.csv",
+      "platform": "xiaohongshu",
+      "rows": 5551,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\xiaohongshu\\education_science__hot__学历贬值与就业难.csv",
+      "platform": "xiaohongshu",
+      "rows": 5805,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\xiaohongshu\\entertainment__hot__AI艺人与活人感之争.csv",
+      "platform": "xiaohongshu",
+      "rows": 2456,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\xiaohongshu\\games_anime__hot__AI漫剧爆发.csv",
+      "platform": "xiaohongshu",
+      "rows": 3175,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\xiaohongshu\\health_psychology__hot__青少年心理健康.csv",
+      "platform": "xiaohongshu",
+      "rows": 2339,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\xiaohongshu\\life_consumption__hot__消费降级与反向消费.csv",
+      "platform": "xiaohongshu",
+      "rows": 2397,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\xiaohongshu\\nature_rural__hot__极端天气与气候.csv",
+      "platform": "xiaohongshu",
+      "rows": 2381,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\xiaohongshu\\public_affairs__hot__中美关税战.csv",
+      "platform": "xiaohongshu",
+      "rows": 1826,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\xiaohongshu\\society_law__hot__戒网瘾双胞胎事件.csv",
+      "platform": "xiaohongshu",
+      "rows": 3099,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\xiaohongshu\\sports_fitness__hot__2026美加墨世界杯.csv",
+      "platform": "xiaohongshu",
+      "rows": 2157,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    },
+    {
+      "path": "agent\\dataset\\real_multiplatform\\raw\\xiaohongshu\\technology_industry__hot__人形机器人商业化.csv",
+      "platform": "xiaohongshu",
+      "rows": 2616,
+      "counts": {
+        "wuhan_library": 0,
+        "houhui_you_friend": 0,
+        "houhui_you_have": 0
+      },
+      "matched_date_range": {}
+    }
+  ],
+  "title_disambiguation_examples": {
+    "houhui_you_friend": [
+      {
+        "path": "agent\\dataset\\real_multiplatform\\raw\\weibo\\entertainment__broad.csv",
+        "text_context": "聚焦过期友谊的综艺，原先叫《再见朋友》，现在改名《后会友期》，定档2026第三季度上线。 节目脑洞绝了，专门找那些曾经要好，后来渐行渐远、闹过隔阂的旧朋友凑一块录综艺。 不过讲句实在的，稍微有点脑子的明星大概率都不会接这个活。镜头三百六十"
+      }
+    ]
+  },
+  "code_hashes": {
+    "backend/app/routes/analysis.py": "af7f281c60d30274fc5801dbb8df3809d6747295d99cbe06ddc16fabea2c9349",
+    "backend/app/routes/forecast.py": "c7855984e943edd89d775facbb9e96541dd7cb32e839793bf254a8616b6c4b0a",
+    "backend/app/services/forecast_service.py": "c5c3c8596a46b11641b5da3fcd918855a195984c8e90713006dd145418f0c653",
+    "frontend/src/forecast-chart.ts": "7d3e0984fedf0f0f326f9eb445e9efbdf108a5a2955259268e6e7b0051fd1b7d",
+    "frontend/src/forecast-api.ts": "5e1cf5892fad952bc1fb8bbefe2abfc40d4216f83f92b321d512daac3e06e28a",
+    "frontend/src/scene.ts": "454ffdcea6f57f13e46fcf708982016973ae9e85fe2edd53d7e359d29a208a15",
+    "frontend/src/main.ts": "4f349861a408744df329f053a9891d11e2bc0be230db097c5c93ead41badaf2a",
+    "multiagent/contract.py": "66d34fd0c4cb24f031c28f032c14606a76101c7fb541f1ec3c0665711af0c045",
+    "multiagent/align.py": "596835e22c4ad025f8e05ff643acac0d4d4e032d1d0495981691b63435de1c2f",
+    "multiagent/fuse.py": "94aaca202c29ca24020a95a062f8cb7b50530b037a5346121d4b05927b6098e9",
+    "multiagent/master.py": "a77c0f87f3e441a1fbc4f39a78ecdf4edc76de15a197947ec8e3adf48797a213",
+    "agent/Conclusion/calib/gates.py": "b1776f2e6a10d9b872721217bba7628f3665e53d04d052b8963e2177251a7476",
+    "social_forecast/models/rep_moe.py": "ce8e2ace309ea35ea150fbc6f32628e5a0c50e173e91e7ed0c77ab5d00f9d6d1",
+    "social_forecast/layers/rep_fusion.py": "0150ac156337c4b856404ea864b6f45852b5b026d49b559be8554910a3a5e873",
+    "social_forecast/results/retrain_20261019/deployment_verification.json": "4ca5cbaccbd6a1338a851d38724e0f5919950b85ada303b42ab6a5d01cdf969f"
+  }
+}

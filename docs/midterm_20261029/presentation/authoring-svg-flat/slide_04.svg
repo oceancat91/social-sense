@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Noto Sans SC&quot;, sans-serif"><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="49.33 294.8 405.6 210" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 49.33 294.8 L 454.93 294.8 L 454.93 504.8 L 49.33 504.8 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="252.13" y="330.26666667" text-anchor="middle" xml:space="preserve" font-size="24" fill="#000000" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="40.32"><tspan><tspan>"</tspan><tspan fill="#C00000" font-weight="bold">十五五</tspan><tspan>"规划强调文旅产业质量提升</tspan></tspan><tspan data-paragraph-line-break="1">与结构优化，明确<tspan fill="#C00000" font-weight="bold">文旅融合数字化</tspan><tspan>转</tspan></tspan><tspan data-paragraph-line-break="1">型目标，以技术创新赋能旅游服务，</tspan><tspan data-paragraph-line-break="1">满足个性化需求，提升公共服务效率</tspan><tspan data-paragraph-line-break="1">并延伸产业价值链。</tspan></text>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="40.27 183.2 403.73 72.53" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 40.27 183.2 L 444 183.2 L 444 255.73 L 40.27 255.73 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="242.13" y="232.58666667" text-anchor="middle" xml:space="preserve" font-size="37.33" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">政策引导旅游智能化</text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="847.4 291.8 401.2 170.4" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 847.4 291.8 L 1248.6 291.8 L 1248.6 462.2 L 847.4 462.2 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="1048" y="327.26666667" text-anchor="middle" xml:space="preserve" font-size="24" fill="#000000" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="40.32"><tspan><tspan>全球旅游业正经历AI驱动的深度变革</tspan></tspan><tspan data-paragraph-line-break="1">，<tspan>根据</tspan><tspan fill="#C00000" font-weight="bold">艾瑞咨询、</tspan><tspan fill="#C00000" font-weight="bold">AdobeAnalytics</tspan><tspan fill="#C00000"> </tspan></tspan><tspan data-paragraph-line-break="1">等机构的调研数据，<tspan fill="#C00000" font-weight="bold">32%</tspan><tspan>旅行者已</tspan></tspan><tspan data-paragraph-line-break="1">用AI代理，预计2025年<tspan fill="#C00000" font-weight="bold">68%</tspan><tspan>旅行者</tspan></tspan><tspan data-paragraph-line-break="1">愿意使用AI代理来规划行程，AI代理</tspan><tspan data-paragraph-line-break="1">已实现假期规划等基础功能，旅游</tspan><tspan data-paragraph-line-break="1">业正转型。</tspan></text>
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="854.66 194.37 389.29 58.88" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 854.66 194.37 L 1243.95 194.37 L 1243.95 253.25 L 854.66 253.25 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="1049.31" y="236.92603675" text-anchor="middle" xml:space="preserve" font-size="37.33" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">AI驱动旅游变革</text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="85.51 0.26 1180 96" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 85.51 0.26 L 1265.51 0.26 L 1265.51 96.26 L 85.51 96.26 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="98.51" y="65.32262467" text-anchor="start" xml:space="preserve" font-size="40" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">核心战略目标</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="564.77 325.91 167.72 167.72" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 564.77 409.77 L 648.63 325.91 L 732.49 409.77 L 648.63 493.63 L 564.77 409.77" data-pptx-part="geometry" fill="#4472C4" />
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="474.13 235.27 167.72 167.72" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 474.13 319.13 L 557.99 235.27 L 641.84 319.13 L 557.99 402.99 L 474.13 319.13" data-pptx-part="geometry" fill="#ED7D31" />
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="655.22 235.27 167.72 167.72" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 655.22 319.13 L 739.08 235.27 L 822.94 319.13 L 739.08 402.99 L 655.22 319.13" data-pptx-part="geometry" fill="#4472C4" />
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="513.39 294.96 89.2 48.33" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 513.39 294.96 L 602.59 294.96 L 602.59 343.3 L 513.39 343.3 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="557.99" y="330.59501312" text-anchor="middle" xml:space="preserve" font-size="32" fill="#FFFFFF" data-pptx-text-baseline="metrics-v1">01</text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="694.48 294.96 89.2 48.33" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 694.48 294.96 L 783.68 294.96 L 783.68 343.3 L 694.48 343.3 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="739.08" y="330.59501312" text-anchor="middle" xml:space="preserve" font-size="32" fill="#FFFFFF" data-pptx-text-baseline="metrics-v1">02</text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="618.63 386.37 60 60" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 676.95 400.63 C 676.02 398.48 674.7 396.57 673.03 394.92 C 671.35 393.28 669.41 392 667.24 391.1 C 665 390.17 662.63 389.7 660.18 389.7 C 656.79 389.7 653.47 390.63 650.59 392.39 C 649.9 392.81 649.25 393.27 648.63 393.77 C 648.01 393.27 647.35 392.81 646.66 392.39 C 643.78 390.63 640.47 389.7 637.07 389.7 C 634.63 389.7 632.26 390.17 630.02 391.1 C 627.85 391.99 625.9 393.28 624.23 394.92 C 622.55 396.57 621.23 398.48 620.31 400.63 C 619.35 402.85 618.86 405.22 618.86 407.65 C 618.86 409.94 619.33 412.33 620.26 414.77 C 621.04 416.8 622.15 418.91 623.58 421.04 C 625.84 424.41 628.95 427.92 632.81 431.48 C 639.2 437.39 645.53 441.47 645.8 441.63 L 647.44 442.68 C 648.16 443.14 649.09 443.14 649.81 442.68 L 651.45 441.63 C 651.71 441.46 658.04 437.39 664.44 431.48 C 668.3 427.92 671.41 424.41 673.67 421.04 C 675.09 418.91 676.22 416.8 676.99 414.77 C 677.92 412.33 678.39 409.94 678.39 407.65 C 678.4 405.22 677.91 402.85 676.95 400.63" data-pptx-part="geometry" fill="#FFFFFE" />
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="938.37 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="938.37 24.04 258.3 49.46" href="../images/image5.png" x="938.37" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g></svg>

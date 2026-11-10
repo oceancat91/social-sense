@@ -1,0 +1,7 @@
+[
+  {
+    "name": "socialsense_home",
+    "url": "https://socialsense.cn/",
+    "error": "page.goto: net::ERR_CONNECTION_CLOSED at https://socialsense.cn/\nCall log:\n\u001b[2m  - navigating to \"https://socialsense.cn/\", waiting until \"networkidle\"\u001b[22m\n"
+  }
+]

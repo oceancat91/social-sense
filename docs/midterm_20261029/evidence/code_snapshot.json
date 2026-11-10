@@ -1,0 +1,104 @@
+{
+  "captured_at": "2026-10-30T12:33:32.358022+08:00",
+  "git_head": "3c865b7009f7addb21a25822f038234d1be25f1d",
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "tracked_diff_bytes": 0,
+  "files": [
+    {
+      "path": "agent/agent/orchestrator.py",
+      "bytes": 15412,
+      "sha256": "a19a64c8d70e4a9836f17f0b15feb01a45db292705cf1f1fdc794cd35330a5e6"
+    },
+    {
+      "path": "agent/MultimodalAnalyzer/text_tower.py",
+      "bytes": 4513,
+      "sha256": "77392fd4fd5f6408d3a4ea8f6a87561a1101069af2d56dd85e4dd6d0c1bfdd55"
+    },
+    {
+      "path": "agent/Conclusion/calib/gates.py",
+      "bytes": 7452,
+      "sha256": "b1776f2e6a10d9b872721217bba7628f3665e53d04d052b8963e2177251a7476"
+    },
+    {
+      "path": "agent/KnowledgeAugmentor/store.py",
+      "bytes": 17474,
+      "sha256": "4e906d907d252773d92fe82c173cc03810407bd57f945759237dcafba07ba344"
+    },
+    {
+      "path": "multiagent/contract.py",
+      "bytes": 5484,
+      "sha256": "66d34fd0c4cb24f031c28f032c14606a76101c7fb541f1ec3c0665711af0c045"
+    },
+    {
+      "path": "multiagent/align.py",
+      "bytes": 2697,
+      "sha256": "596835e22c4ad025f8e05ff643acac0d4d4e032d1d0495981691b63435de1c2f"
+    },
+    {
+      "path": "multiagent/fuse.py",
+      "bytes": 6980,
+      "sha256": "94aaca202c29ca24020a95a062f8cb7b50530b037a5346121d4b05927b6098e9"
+    },
+    {
+      "path": "multiagent/master.py",
+      "bytes": 10831,
+      "sha256": "a77c0f87f3e441a1fbc4f39a78ecdf4edc76de15a197947ec8e3adf48797a213"
+    },
+    {
+      "path": "social_forecast/models/rep_moe.py",
+      "bytes": 32386,
+      "sha256": "ce8e2ace309ea35ea150fbc6f32628e5a0c50e173e91e7ed0c77ab5d00f9d6d1"
+    },
+    {
+      "path": "social_forecast/layers/rep_fusion.py",
+      "bytes": 13385,
+      "sha256": "0150ac156337c4b856404ea864b6f45852b5b026d49b559be8554910a3a5e873"
+    },
+    {
+      "path": "social_forecast/layers/Mamba_block.py",
+      "bytes": 6952,
+      "sha256": "b3297d9a54a26a3fb5963683b4ce8d69265faaf8d2fab89587dae3406e537868"
+    },
+    {
+      "path": "social_forecast/layers/jump_pelt.py",
+      "bytes": 5056,
+      "sha256": "2c6c9c66b2a30e1f90eff1bfb84184f9e22f6da5529cd2a2876d8660714f1d49"
+    },
+    {
+      "path": "social_forecast/scripts/verify_forecast_checkpoint.py",
+      "bytes": 13916,
+      "sha256": "178c7665122461ff64df40c7d5680675acce7048f2c585584d37497c46fc9c78"
+    },
+    {
+      "path": "social_forecast/scripts/export_numeric_checkpoint.py",
+      "bytes": 3994,
+      "sha256": "649660d0c8934b0d84d91650084a99421a4d05abab5f637b645af1645713f972"
+    },
+    {
+      "path": "social_forecast/results/retrain_20261019/deployment_verification.json",
+      "bytes": 3348,
+      "sha256": "4ca5cbaccbd6a1338a851d38724e0f5919950b85ada303b42ab6a5d01cdf969f"
+    },
+    {
+      "path": "frontend/src/archives-api.ts",
+      "bytes": 4848,
+      "sha256": "ebe3c5af5901ced319624a957352b96d6e8178e3533e5b00d38fb5d101bfb9df"
+    },
+    {
+      "path": "frontend/src/archive-loop.ts",
+      "bytes": 2536,
+      "sha256": "aeb45324bbb642e83caa11edd6cffe6396a73b2da3c220b382da8c48b529e216"
+    },
+    {
+      "path": "backend/app/routes/archives.py",
+      "bytes": 2882,
+      "sha256": "d5c3a59087cff94f5a8aae629af7b8db801d6dab1b8d0b18aa0fbcacf8d1edb8"
+    },
+    {
+      "path": "backend/data/archives.snapshot.json",
+      "bytes": 25207,
+      "sha256": "2bc1ab82e34ab83a88d5bce1f4bc11150ff0c9588093d8417e3b28c04f66be1c"
+    }
+  ],
+  "note": "Snapshot of reviewed files; this artifact task did not edit these application files."
+}

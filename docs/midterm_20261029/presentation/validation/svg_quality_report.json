@@ -1,0 +1,681 @@
+{
+  "schema": "ppt-master.svg-quality-report.v1",
+  "stage": "final",
+  "target": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation",
+  "source_fingerprint": {
+    "algorithm": "sha256",
+    "digest": "10ea3c2e95c8df31daa7a7a2aff7d22906ee32166e3f78ef152e84437111f09b",
+    "file_count": 29,
+    "files": [
+      {
+        "file": "authoring-svg-flat/evaluation_protocol.svg",
+        "sha256": "44ff0b1f4aafd6b1667ddb1dbc30db29f78040337c8a3d81276abb510f217e84"
+      },
+      {
+        "file": "authoring-svg-flat/slide_01.svg",
+        "sha256": "3e828644c536003b1312ccb76223878e90e68e3f3254a01f93da0aa339c70267"
+      },
+      {
+        "file": "authoring-svg-flat/slide_02.svg",
+        "sha256": "8db0817559515533653243a93dc082046c919f75e0d5e376fdf198e6983bbdff"
+      },
+      {
+        "file": "authoring-svg-flat/slide_03.svg",
+        "sha256": "aad550bc2b924291b9209a8e4300844915723e20181bebf45ff84177880f753d"
+      },
+      {
+        "file": "authoring-svg-flat/slide_04.svg",
+        "sha256": "b4ea0fff06a1cf330da8a101930f7bbae93702dfc94d7e0529f07f85407cb577"
+      },
+      {
+        "file": "authoring-svg-flat/slide_05.svg",
+        "sha256": "e2f6c4a7f998d098f2e0e8ac29378da3ad31e0a9f33035d0c33dafd0870ce71f"
+      },
+      {
+        "file": "authoring-svg-flat/slide_06.svg",
+        "sha256": "9fb0ca88a6a1ed217eb1fc0a0227ff692dc103ce37bc976e2a74519747b3b5f6"
+      },
+      {
+        "file": "authoring-svg-flat/slide_07.svg",
+        "sha256": "6ca51c2751a638f3a78f0dedf9f6f39d4cd761c87d03cc520c35c4026949a98a"
+      },
+      {
+        "file": "authoring-svg-flat/slide_08.svg",
+        "sha256": "f48430481fabef92eff3feaa962d18a504eb4f2e612845e52d7dd808f5ec1b1c"
+      },
+      {
+        "file": "authoring-svg-flat/slide_09.svg",
+        "sha256": "bffa86f200066e2b1562fcced6a2e2818362ca680547cb28c84f7f2e5d8a49f5"
+      },
+      {
+        "file": "authoring-svg-flat/slide_10.svg",
+        "sha256": "9c8076921e568f20e7dc8d33ba70665822f8c60a94d9160ede14bfcb95589eda"
+      },
+      {
+        "file": "authoring-svg-flat/slide_11.svg",
+        "sha256": "9270a74fb66654c2301a1d969b76f965452b058e3ebdc0236abd520115713249"
+      },
+      {
+        "file": "authoring-svg-flat/slide_12.svg",
+        "sha256": "76a548f1020c17e96f08b71bd7215d40f12c1098fc4f0ec0073c11f2f3ffdb90"
+      },
+      {
+        "file": "authoring-svg-flat/slide_13.svg",
+        "sha256": "2b12dd7a4b7cd3ddc5666dbd1d7f2a8d9995bb34677891b657d064d1b2695408"
+      },
+      {
+        "file": "authoring-svg-flat/slide_14.svg",
+        "sha256": "8b06c28b8608f173f26809bc883fd383cd030299681c1e4301f4a55065a37f76"
+      },
+      {
+        "file": "authoring-svg-flat/slide_15.svg",
+        "sha256": "d219bf5464b8432270288f61ba2e7dd7d780552d8d868f0cfed7759b5a3d9bd6"
+      },
+      {
+        "file": "authoring-svg-flat/slide_16.svg",
+        "sha256": "7d00b0ef59f8eb994b0e5b08e62db7127bdd36bfe3446d3162b50b8a950eb177"
+      },
+      {
+        "file": "authoring-svg-flat/slide_17.svg",
+        "sha256": "ef2a2e92a55d252f398db15c35cad3aa06a9b38d53fe6dd65c487b093e0683da"
+      },
+      {
+        "file": "authoring-svg-flat/slide_18.svg",
+        "sha256": "36b821d0ff4fe5032278c8b5d1b8acb8959bb7d9eb22862cca287a6a3a61bef0"
+      },
+      {
+        "file": "authoring-svg-flat/slide_19.svg",
+        "sha256": "7b3f45c5e0d8643851291a217358d3ab20c3565614d63f59863a9722ddbef256"
+      },
+      {
+        "file": "authoring-svg-flat/slide_20.svg",
+        "sha256": "510a8dfe87a8e94c529f1ad40bd510bbda4d88ab96931ba25abe62456d49f2d9"
+      },
+      {
+        "file": "authoring-svg-flat/slide_21.svg",
+        "sha256": "e508c56cfa27c07b43d371f7a5bb2a9da853a99b1ba6b9bfce14de5aabfd8d76"
+      },
+      {
+        "file": "authoring-svg-flat/slide_22.svg",
+        "sha256": "fb660b2f746313c1631d0ea3004c37ae0a3462f0c731dc3e94e2256494eb0ae1"
+      },
+      {
+        "file": "authoring-svg-flat/slide_23.svg",
+        "sha256": "ff81cfd35ea31efe6e8958713cc217ea86a20218718b5e5c1a55bbe03b0241dd"
+      },
+      {
+        "file": "authoring-svg-flat/slide_24.svg",
+        "sha256": "15b344300bfa7500f7654841eeaac59351f0057ed192b0ca7150dd12c428edc4"
+      },
+      {
+        "file": "authoring-svg-flat/slide_25.svg",
+        "sha256": "039ad77cbca2d1b4daf64bb13445c79fe6f8c146b1a5e05831cb64f4e8860f94"
+      },
+      {
+        "file": "authoring-svg-flat/slide_26.svg",
+        "sha256": "5164b71b9541b718e75693d98e66b9cd408cfd45285dd60d03a1930a9d357a1b"
+      },
+      {
+        "file": "authoring-svg-flat/slide_27.svg",
+        "sha256": "e72aeca110806b53af6d2809ea59605f1da7e87809130bb41c19a50c49fda264"
+      },
+      {
+        "file": "page_plan.json",
+        "sha256": "dce4e15c872bc59094a12fb3051c7914690fd806ba36972ef9cf52b8d15d6693"
+      }
+    ]
+  },
+  "summary": {
+    "total": 18,
+    "passed": 16,
+    "warnings": 2,
+    "errors": 0
+  },
+  "issue_types": {},
+  "categories": {
+    "blocking": {
+      "count": 0,
+      "issues": []
+    },
+    "introduced": {
+      "count": 12,
+      "issues": [
+        {
+          "file": "slide_10.svg",
+          "message": "<text> (x=315, y=298; text='x = T + S + C + R') exceeds owning frame <rect> on the horizontal axis: estimated text (178.2, 270.8)-(451.8, 309.2), frame (88.0, 340.0)-(192.0, 432.0), overflow horizontal 249.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+        },
+        {
+          "file": "slide_10.svg",
+          "message": "<text> (x=140, y=409; text='EMA') exceeds owning frame <rect> on the horizontal axis: estimated text (122.3, 394.6)-(157.7, 414.9), frame (204.0, 340.0)-(308.0, 432.0), overflow horizontal 78.5%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+        },
+        {
+          "file": "slide_10.svg",
+          "message": "<text> (x=256, y=409; text='Fourier') exceeds owning frame <rect> on the horizontal axis: estimated text (223.2, 394.6)-(288.8, 414.9), frame (320.0, 340.0)-(424.0, 432.0), overflow horizontal 93.1%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+        },
+        {
+          "file": "slide_10.svg",
+          "message": "<text> (x=372, y=409; text='事件信号') exceeds owning frame <rect> on the horizontal axis: estimated text (335.8, 394.6)-(408.2, 414.9), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 96.3%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+        },
+        {
+          "file": "slide_10.svg",
+          "message": "<text> (x=315, y=492; text='四路编码 → 稀疏专家融合') exceeds owning frame <rect> on the horizontal axis: estimated text (155.0, 469.1)-(475.0, 501.4), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 270.2%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+        },
+        {
+          "file": "slide_10.svg",
+          "message": "<text> (x=315, y=543; text='预测增量 → 累加回水平域') exceeds owning frame <rect> on the horizontal axis: estimated text (166.9, 521.8)-(463.1, 551.8), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 258.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+        },
+        {
+          "file": "slide_10.svg",
+          "message": "<text> (x=315, y=591; text='EMA 含可学习平滑参数') exceeds owning frame <rect> on the horizontal axis: estimated text (206.1, 574.0)-(423.9, 598.0), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 221.0%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+        },
+        {
+          "file": "slide_18.svg",
+          "message": "<text> (x=133, y=401.0; text='1.0') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 386.6)-(133.0, 406.9), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+        },
+        {
+          "file": "slide_18.svg",
+          "message": "<text> (x=133, y=343.5; text='1.5') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 329.1)-(133.0, 349.4), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+        },
+        {
+          "file": "slide_18.svg",
+          "message": "<text> (x=133, y=286.0; text='2.0') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 271.6)-(133.0, 291.9), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+        },
+        {
+          "file": "slide_18.svg",
+          "message": "<text> (x=246.25, y=545; text='持续值') exceeds owning frame <rect> on the horizontal axis: estimated text (212.8, 527.1)-(279.7, 552.4), frame (405.8, 292.8)-(491.8, 510.0), overflow horizontal 224.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+        },
+        {
+          "file": "slide_18.svg",
+          "message": "<text> (x=448.75, y=545; text='数值路径') exceeds owning frame <rect> on the horizontal axis: estimated text (404.1, 527.1)-(493.4, 552.4), frame (405.8, 292.8)-(491.8, 510.0), overflow horizontal 1.9%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+        }
+      ]
+    },
+    "inherited": {
+      "count": 0,
+      "issues": []
+    },
+    "source-import": {
+      "count": 0,
+      "summary": {
+        "warning_count": 0,
+        "by_code": {}
+      }
+    }
+  },
+  "drift": {
+    "colors": {},
+    "fonts": {},
+    "sizes": {}
+  },
+  "carrier_receipt": {
+    "scope": "informational-not-a-quota",
+    "pages": 0,
+    "totals": {
+      "text_elements": 0,
+      "image_placements": 0,
+      "icons": 0,
+      "svg_geometry_elements": 0,
+      "preset_shapes": 0,
+      "page_frame_elements": 0,
+      "marker_uses": 0,
+      "inline_emphasis_runs": 0,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "pages_with": {
+      "images": 0,
+      "icons": 0,
+      "presets": 0,
+      "charts": 0,
+      "tables": 0,
+      "formulas": 0,
+      "inline_emphasis_runs": 0,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "relationship_pages": null,
+    "geometry_elements": {},
+    "preset_names": {},
+    "native_objects": {},
+    "image_page_max_frame_share_range": []
+  },
+  "project_issues": {
+    "template": [],
+    "animation": [],
+    "illustration": [],
+    "communication_trace": [],
+    "pptx_structure": []
+  },
+  "files": [
+    {
+      "file": "slide_01.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_01.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 1,
+        "source_slide": 1,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 6,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "3e828644c536003b1312ccb76223878e90e68e3f3254a01f93da0aa339c70267"
+    },
+    {
+      "file": "slide_06.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_06.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 2,
+        "source_slide": 6,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 21,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "9fb0ca88a6a1ed217eb1fc0a0227ff692dc103ce37bc976e2a74519747b3b5f6"
+    },
+    {
+      "file": "slide_05.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_05.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 3,
+        "source_slide": 5,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 16,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "e2f6c4a7f998d098f2e0e8ac29378da3ad31e0a9f33035d0c33dafd0870ce71f"
+    },
+    {
+      "file": "slide_09.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_09.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 4,
+        "source_slide": 9,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 15,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "bffa86f200066e2b1562fcced6a2e2818362ca680547cb28c84f7f2e5d8a49f5"
+    },
+    {
+      "file": "slide_12.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_12.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 5,
+        "source_slide": 12,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 12,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "76a548f1020c17e96f08b71bd7215d40f12c1098fc4f0ec0073c11f2f3ffdb90"
+    },
+    {
+      "file": "slide_10.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_10.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "<text> (x=315, y=298; text='x = T + S + C + R') exceeds owning frame <rect> on the horizontal axis: estimated text (178.2, 270.8)-(451.8, 309.2), frame (88.0, 340.0)-(192.0, 432.0), overflow horizontal 249.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking",
+        "<text> (x=140, y=409; text='EMA') exceeds owning frame <rect> on the horizontal axis: estimated text (122.3, 394.6)-(157.7, 414.9), frame (204.0, 340.0)-(308.0, 432.0), overflow horizontal 78.5%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking",
+        "<text> (x=256, y=409; text='Fourier') exceeds owning frame <rect> on the horizontal axis: estimated text (223.2, 394.6)-(288.8, 414.9), frame (320.0, 340.0)-(424.0, 432.0), overflow horizontal 93.1%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking",
+        "<text> (x=372, y=409; text='事件信号') exceeds owning frame <rect> on the horizontal axis: estimated text (335.8, 394.6)-(408.2, 414.9), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 96.3%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking",
+        "<text> (x=315, y=492; text='四路编码 → 稀疏专家融合') exceeds owning frame <rect> on the horizontal axis: estimated text (155.0, 469.1)-(475.0, 501.4), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 270.2%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking",
+        "<text> (x=315, y=543; text='预测增量 → 累加回水平域') exceeds owning frame <rect> on the horizontal axis: estimated text (166.9, 521.8)-(463.1, 551.8), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 258.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking",
+        "<text> (x=315, y=591; text='EMA 含可学习平滑参数') exceeds owning frame <rect> on the horizontal axis: estimated text (206.1, 574.0)-(423.9, 598.0), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 221.0%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+      ],
+      "info": {
+        "output_page": 6,
+        "source_slide": 10,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 25,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "9c8076921e568f20e7dc8d33ba70665822f8c60a94d9160ede14bfcb95589eda"
+    },
+    {
+      "file": "slide_18.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_18.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "<text> (x=133, y=401.0; text='1.0') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 386.6)-(133.0, 406.9), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking",
+        "<text> (x=133, y=343.5; text='1.5') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 329.1)-(133.0, 349.4), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking",
+        "<text> (x=133, y=286.0; text='2.0') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 271.6)-(133.0, 291.9), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking",
+        "<text> (x=246.25, y=545; text='持续值') exceeds owning frame <rect> on the horizontal axis: estimated text (212.8, 527.1)-(279.7, 552.4), frame (405.8, 292.8)-(491.8, 510.0), overflow horizontal 224.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking",
+        "<text> (x=448.75, y=545; text='数值路径') exceeds owning frame <rect> on the horizontal axis: estimated text (404.1, 527.1)-(493.4, 552.4), frame (405.8, 292.8)-(491.8, 510.0), overflow horizontal 1.9%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+      ],
+      "info": {
+        "output_page": 7,
+        "source_slide": 18,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 25,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "36b821d0ff4fe5032278c8b5d1b8acb8959bb7d9eb22862cca287a6a3a61bef0"
+    },
+    {
+      "file": "slide_20.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_20.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 8,
+        "source_slide": 20,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 7,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "510a8dfe87a8e94c529f1ad40bd510bbda4d88ab96931ba25abe62456d49f2d9"
+    },
+    {
+      "file": "slide_16.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_16.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 9,
+        "source_slide": 16,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 15,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "7d00b0ef59f8eb994b0e5b08e62db7127bdd36bfe3446d3162b50b8a950eb177"
+    },
+    {
+      "file": "slide_17.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_17.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 10,
+        "source_slide": 17,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 11,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "ef2a2e92a55d252f398db15c35cad3aa06a9b38d53fe6dd65c487b093e0683da"
+    },
+    {
+      "file": "slide_26.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_26.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 11,
+        "source_slide": 26,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 15,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "5164b71b9541b718e75693d98e66b9cd408cfd45285dd60d03a1930a9d357a1b"
+    },
+    {
+      "file": "slide_27.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_27.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 12,
+        "source_slide": 27,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 4,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "e72aeca110806b53af6d2809ea59605f1da7e87809130bb41c19a50c49fda264"
+    },
+    {
+      "file": "evaluation_protocol.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\evaluation_protocol.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 13,
+        "source_slide": 18,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 18,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "44ff0b1f4aafd6b1667ddb1dbc30db29f78040337c8a3d81276abb510f217e84"
+    },
+    {
+      "file": "slide_15.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_15.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 14,
+        "source_slide": 15,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 16,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "d219bf5464b8432270288f61ba2e7dd7d780552d8d868f0cfed7759b5a3d9bd6"
+    },
+    {
+      "file": "slide_21.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_21.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 15,
+        "source_slide": 21,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 6,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "e508c56cfa27c07b43d371f7a5bb2a9da853a99b1ba6b9bfce14de5aabfd8d76"
+    },
+    {
+      "file": "slide_13.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_13.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 16,
+        "source_slide": 13,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 22,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "2b12dd7a4b7cd3ddc5666dbd1d7f2a8d9995bb34677891b657d064d1b2695408"
+    },
+    {
+      "file": "slide_25.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_25.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 17,
+        "source_slide": 25,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 16,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "039ad77cbca2d1b4daf64bb13445c79fe6f8c146b1a5e05831cb64f4e8860f94"
+    },
+    {
+      "file": "slide_23.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat\\slide_23.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 18,
+        "source_slide": 23,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 25,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "ff81cfd35ea31efe6e8958713cc217ea86a20218718b5e5c1a55bbe03b0241dd"
+    }
+  ]
+}

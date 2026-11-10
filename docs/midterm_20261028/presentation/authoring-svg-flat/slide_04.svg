@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;微软雅黑&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="84.27 25.22 314.41 54.93" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 84.27 25.22 L 398.68 25.22 L 398.68 80.15 L 84.27 80.15 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="93.87" y="66.01595801" text-anchor="start" xml:space="preserve" font-family="&quot;Noto Sans CJK SC&quot;, &quot;微软雅黑&quot;, sans-serif" font-size="37.33" fill="#3B3B3B" data-pptx-text-baseline="metrics-v1">1. 背景与问题</text>
+</g>
+<g id="shape-6" data-pptx-object="group" data-pptx-frame="69.86 132.38 686.4 536.91" data-pptx-source-ref="slide:6">
+<g id="shape-15" data-pptx-object="group" data-pptx-frame="69.86 247.61 686.4 421.68" data-pptx-source-ref="slide:15">
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="69.86 247.61 686.4 386.68" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 69.86 247.61 L 756.26 247.61 L 756.26 634.29 L 69.86 634.29 Z" data-pptx-part="geometry" fill="none" stroke="none" />
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="84.27 250.9 561.5 418.39" data-pptx-prst="rect" data-pptx-source-ref="slide:8">
+
+<path d="M 84.27 250.9 L 645.77 250.9 L 645.77 669.29 L 84.27 669.29 Z" fill="none" stroke="none" />
+
+
+<text x="132.27" y="274.90194226" text-anchor="start" xml:space="preserve" font-size="22" fill="#262626" data-pptx-text-baseline="metrics-v1"><tspan>近年来，影视、游戏产业已经与年轻群体的生活密不可分</tspan><tspan x="132.27" dy="32">，同时人们也对电影和游戏里的画面质量的要求也越来越</tspan><tspan x="132.27" dy="32">高。传统的</tspan><tspan>2D</tspan><tspan>动画和过去几年的</tspan><tspan>3D</tspan><tspan>动画呈现出来的表达效</tspan><tspan x="132.27" dy="32">果仍缺乏表现力，渐渐不再能满足用户的需求。</tspan><tspan x="132.27" dy="32" /></text>
+<text x="132.27" y="434.90194226" text-anchor="start" xml:space="preserve" font-size="22" fill="#262626" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>4D</tspan><tspan>内容生成技术</tspan><tspan>的出现使得人们既可以播放物体的动态效</tspan><tspan x="132.27" dy="32">果，也可以观察某一时刻下该物体的全方位姿态，极大丰</tspan><tspan x="132.27" dy="32">富了影视与游戏画面的表达效果；</tspan></text>
+<text x="132.27" y="530.90194226" text-anchor="start" xml:space="preserve" font-size="22" fill="#262626" data-pptx-text-baseline="metrics-v1"><tspan>同时，这项技术也能为虚拟现实（</tspan><tspan>VR</tspan><tspan>）、增强现实（</tspan><tspan>AR</tspan><tspan>）</tspan><tspan x="132.27" dy="32">等沉浸式体验提供具有连续空间与时间变化的交互式动态</tspan><tspan x="132.27" dy="32">三维场景，进而为文旅、医疗健康、智能制造等行业进行</tspan><tspan x="132.27" dy="32">技术赋能。</tspan></text>
+</g>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="69.86 132.38 434.06 54.93" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 69.86 132.38 L 503.92 132.38 L 503.92 187.31 L 69.86 187.31 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.46" y="159.8464042" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#3B3B3B" data-pptx-text-baseline="metrics-v1"><tspan>4D</tspan><tspan>内容生成的现实应用</tspan></text>
+</g>
+</g>
+<g id="shape-19" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:19">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image3.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="57.24 187.31 416.67 5.37" data-pptx-prst="roundRect" data-pptx-av-adj="val 50000" transform="translate(265.57 190) scale(1 -1) translate(-265.57 -190)" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 57.24 190 A 2.69 2.69 0 0 1 59.92 187.31 L 471.22 187.31 A 2.69 2.69 0 0 1 473.9 190 L 473.9 190 A 2.69 2.69 0 0 1 471.22 192.68 L 59.92 192.68 A 2.69 2.69 0 0 1 57.24 190 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-5" data-pptx-object="picture" data-pptx-frame="884.76 103.36 376.21 227.29" data-pptx-source-ref="slide:5">
+<image data-pptx-object="picture" data-pptx-frame="884.76 103.36 376.21 227.29" href="../images/image4.png" x="884.76" y="103.36" width="376.21" height="227.29" preserveAspectRatio="none" />
+</g>
+<g id="shape-17" data-pptx-object="picture" data-pptx-frame="896.62 460.13 370.04 235.84" data-pptx-source-ref="slide:17">
+<svg data-pptx-object="picture" data-pptx-frame="896.62 460.13 370.04 235.84" x="896.62" y="460.13" width="370.04" height="235.84" viewBox="0.0861 0.05383 0.83766 0.82169" preserveAspectRatio="none" overflow="hidden"><image href="../images/image5.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none" /></svg>
+</g>
+<g id="shape-13" data-pptx-object="picture" data-pptx-frame="651.48 280.61 376.21 251.43" data-pptx-source-ref="slide:13">
+<image data-pptx-object="picture" data-pptx-frame="651.48 280.61 376.21 251.43" href="../images/image6.png" x="651.48" y="280.61" width="376.21" height="251.43" preserveAspectRatio="none" />
+</g></svg>

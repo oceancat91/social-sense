@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "source": "SocialSense_中期答辩修订版.pptx",
+  "mode": "tolerant",
+  "summary": {
+    "slides": 18,
+    "warnings": 23
+  },
+  "artifacts": {
+    "animationConfig": "animations.json",
+    "animationMedia": [],
+    "resources": [
+      "native-payloads/embeddings/Workbook1.xlsx",
+      "images/image1.jpeg",
+      "images/image10.png",
+      "images/image2.png",
+      "images/image3.jpeg",
+      "images/image4.png",
+      "images/image5.png",
+      "images/image6.jpeg",
+      "images/image7.png",
+      "images/image8.png",
+      "images/image9.png"
+    ],
+    "notes": [
+      "notes/slide_01.md",
+      "notes/slide_02.md",
+      "notes/slide_03.md",
+      "notes/slide_04.md",
+      "notes/slide_05.md",
+      "notes/slide_06.md",
+      "notes/slide_07.md",
+      "notes/slide_08.md",
+      "notes/slide_09.md",
+      "notes/slide_10.md",
+      "notes/slide_11.md",
+      "notes/slide_12.md",
+      "notes/slide_13.md",
+      "notes/slide_14.md",
+      "notes/slide_15.md",
+      "notes/slide_16.md",
+      "notes/slide_17.md",
+      "notes/slide_18.md"
+    ],
+    "sourceTemplate": "sources/source.pptx",
+    "nativeStructure": "analysis/native_structure.json",
+    "roundtripManifest": "analysis/roundtrip_manifest.json"
+  },
+  "sourceDocument": {
+    "canvasPx": {
+      "width": 1280.0,
+      "height": 720.0
+    },
+    "theme": {
+      "colors": {
+        "dk1": "#000000",
+        "lt1": "#FFFFFF",
+        "dk2": "#44546A",
+        "lt2": "#E7E6E6",
+        "accent1": "#4472C4",
+        "accent2": "#ED7D31",
+        "accent3": "#A5A5A5",
+        "accent4": "#FFC000",
+        "accent5": "#5B9BD5",
+        "accent6": "#70AD47",
+        "hlink": "#0563C1",
+        "folHlink": "#954F72"
+      },
+      "fonts": {
+        "majorLatin": "等线 Light",
+        "majorScriptJpan": "游ゴシック Light",
+        "majorScriptHang": "맑은 고딕",
+        "majorScriptHans": "等线 Light",
+        "majorScriptHant": "新細明體",
+        "minorLatin": "等线",
+        "minorScriptJpan": "游ゴシック",
+        "minorScriptHang": "맑은 고딕",
+        "minorScriptHans": "等线",
+        "minorScriptHant": "新細明體"
+      },
+      "ooxml": {
+        "encoding": "base64",
+        "sha256": "e4cae1a905d216c2242e8d62032954adc97518e82b5d3017520e76e3f7af823d",
+        "payload": "PGE6dGhlbWUgeG1sbnM6YT0iaHR0cDovL3NjaGVtYXMub3BlbnhtbGZvcm1hdHMub3JnL2RyYXdpbmdtbC8yMDA2L21haW4iIHhtbG5zOm5zMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9vZmZpY2UvdGhlbWVtbC8yMDEyL21haW4iIG5hbWU9IjFfT2ZmaWNlIOS4u+mimOKAi+KAiyI+PGE6dGhlbWVFbGVtZW50cz48YTpjbHJTY2hlbWUgbmFtZT0iT2ZmaWNlIj48YTpkazE+PGE6c3lzQ2xyIHZhbD0id2luZG93VGV4dCIgbGFzdENscj0iMDAwMDAwIiAvPjwvYTpkazE+PGE6bHQxPjxhOnN5c0NsciB2YWw9IndpbmRvdyIgbGFzdENscj0iRkZGRkZGIiAvPjwvYTpsdDE+PGE6ZGsyPjxhOnNyZ2JDbHIgdmFsPSI0NDU0NkEiIC8+PC9hOmRrMj48YTpsdDI+PGE6c3JnYkNsciB2YWw9IkU3RTZFNiIgLz48L2E6bHQyPjxhOmFjY2VudDE+PGE6c3JnYkNsciB2YWw9IjQ0NzJDNCIgLz48L2E6YWNjZW50MT48YTphY2NlbnQyPjxhOnNyZ2JDbHIgdmFsPSJFRDdEMzEiIC8+PC9hOmFjY2VudDI+PGE6YWNjZW50Mz48YTpzcmdiQ2xyIHZhbD0iQTVBNUE1IiAvPjwvYTphY2NlbnQzPjxhOmFjY2VudDQ+PGE6c3JnYkNsciB2YWw9IkZGQzAwMCIgLz48L2E6YWNjZW50ND48YTphY2NlbnQ1PjxhOnNyZ2JDbHIgdmFsPSI1QjlCRDUiIC8+PC9hOmFjY2VudDU+PGE6YWNjZW50Nj48YTpzcmdiQ2xyIHZhbD0iNzBBRDQ3IiAvPjwvYTphY2NlbnQ2PjxhOmhsaW5rPjxhOnNyZ2JDbHIgdmFsPSIwNTYzQzEiIC8+PC9hOmhsaW5rPjxhOmZvbEhsaW5rPjxhOnNyZ2JDbHIgdmFsPSI5NTRGNzIiIC8+PC9hOmZvbEhsaW5rPjwvYTpjbHJTY2hlbWU+PGE6Zm9udFNjaGVtZSBuYW1lPSJPZmZpY2UiPjxhOm1ham9yRm9udD48YTpsYXRpbiB0eXBlZmFjZT0i562J57q/IExpZ2h0IiAvPjxhOmVhIHR5cGVmYWNlPSIiIC8+PGE6Y3MgdHlwZWZhY2U9IiIgLz48YTpmb250IHNjcmlwdD0iSnBhbiIgdHlwZWZhY2U9Iua4uOOCtOOCt+ODg+OCryBMaWdodCIgLz48YTpmb250IHNjcmlwdD0iSGFuZyIgdHlwZWZhY2U9IuunkeydgCDqs6DrlJUiIC8+PGE6Zm9udCBzY3JpcHQ9IkhhbnMiIHR5cGVmYWNlPSLnrYnnur8gTGlnaHQiIC8+PGE6Zm9udCBzY3JpcHQ9IkhhbnQiIHR5cGVmYWNlPSLmlrDntLDmmI7pq5QiIC8+PGE6Zm9udCBzY3JpcHQ9IkFyYWIiIHR5cGVmYWNlPSJUaW1lcyBOZXcgUm9tYW4iIC8+PGE6Zm9udCBzY3JpcHQ9IkhlYnIiIHR5cGVmYWNlPSJUaW1lcyBOZXcgUm9tYW4iIC8+PGE6Zm9udCBzY3JpcHQ9IlRoYWkiIHR5cGVmYWNlPSJBbmdzYW5hIE5ldyIgLz48YTpmb250IHNjcmlwdD0iRXRoaSIgdHlwZWZhY2U9Ik55YWxhIiAvPjxhOmZvbnQgc2NyaXB0PSJCZW5nIiB0eXBlZmFjZT0iVnJpbmRhIiAvPjxhOmZvbnQgc2NyaXB0PSJHdWpyIiB0eXBlZmFjZT0iU2hydXRpIiAvPjxhOmZvbnQgc2NyaXB0PSJLaG1yIiB0eXBlZmFjZT0iTW9vbEJvcmFuIiAvPjxhOmZvbnQgc2NyaXB0PSJLbmRhIiB0eXBlZmFjZT0iVHVuZ2EiIC8+PGE6Zm9udCBzY3JpcHQ9Ikd1cnUiIHR5cGVmYWNlPSJSYWF2aSIgLz48YTpmb250IHNjcmlwdD0iQ2FucyIgdHlwZWZhY2U9IkV1cGhlbWlhIiAvPjxhOmZvbnQgc2NyaXB0PSJDaGVyIiB0eXBlZmFjZT0iUGxhbnRhZ2VuZXQgQ2hlcm9rZWUiIC8+PGE6Zm9udCBzY3JpcHQ9IllpaWkiIHR5cGVmYWNlPSJNaWNyb3NvZnQgWWkgQmFpdGkiIC8+PGE6Zm9udCBzY3JpcHQ9IlRpYnQiIHR5cGVmYWNlPSJNaWNyb3NvZnQgSGltYWxheWEiIC8+PGE6Zm9udCBzY3JpcHQ9IlRoYWEiIHR5cGVmYWNlPSJNViBCb2xpIiAvPjxhOmZvbnQgc2NyaXB0PSJEZXZhIiB0eXBlZmFjZT0iTWFuZ2FsIiAvPjxhOmZvbnQgc2NyaXB0PSJUZWx1IiB0eXBlZmFjZT0iR2F1dGFtaSIgLz48YTpmb250IHNjcmlwdD0iVGFtbCIgdHlwZWZhY2U9IkxhdGhhIiAvPjxhOmZvbnQgc2NyaXB0PSJTeXJjIiB0eXBlZmFjZT0iRXN0cmFuZ2VsbyBFZGVzc2EiIC8+PGE6Zm9udCBzY3JpcHQ9Ik9yeWEiIHR5cGVmYWNlPSJLYWxpbmdhIiAvPjxhOmZvbnQgc2NyaXB0PSJNbHltIiB0eXBlZmFjZT0iS2FydGlrYSIgLz48YTpmb250IHNjcmlwdD0iTGFvbyIgdHlwZWZhY2U9IkRva0NoYW1wYSIgLz48YTpmb250IHNjcmlwdD0iU2luaCIgdHlwZWZhY2U9Iklza29vbGEgUG90YSIgLz48YTpmb250IHNjcmlwdD0iTW9uZyIgdHlwZWZhY2U9Ik1vbmdvbGlhbiBCYWl0aSIgLz48YTpmb250IHNjcmlwdD0iVmlldCIgdHlwZWZhY2U9IlRpbWVzIE5ldyBSb21hbiIgLz48YTpmb250IHNjcmlwdD0iVWlnaCIgdHlwZWZhY2U9Ik1pY3Jvc29mdCBVaWdodXIiIC8+PGE6Zm9udCBzY3JpcHQ9Ikdlb3IiIHR5cGVmYWNlPSJTeWxmYWVuIiAvPjwvYTptYWpvckZvbnQ+PGE6bWlub3JGb250PjxhOmxhdGluIHR5cGVmYWNlPSLnrYnnur8iIC8+PGE6ZWEgdHlwZWZhY2U9IiIgLz48YTpjcyB0eXBlZmFjZT0iIiAvPjxhOmZvbnQgc2NyaXB0PSJKcGFuIiB0eXBlZmFjZT0i5ri444K044K344OD44KvIiAvPjxhOmZvbnQgc2NyaXB0PSJIYW5nIiB0eXBlZmFjZT0i66eR7J2AIOqzoOuUlSIgLz48YTpmb250IHNjcmlwdD0iSGFucyIgdHlwZWZhY2U9Iuetiee6vyIgLz48YTpmb250IHNjcmlwdD0iSGFudCIgdHlwZWZhY2U9IuaWsOe0sOaYjumrlCIgLz48YTpmb250IHNjcmlwdD0iQXJhYiIgdHlwZWZhY2U9IkFyaWFsIiAvPjxhOmZvbnQgc2NyaXB0PSJIZWJyIiB0eXBlZmFjZT0iQXJpYWwiIC8+PGE6Zm9udCBzY3JpcHQ9IlRoYWkiIHR5cGVmYWNlPSJDb3JkaWEgTmV3IiAvPjxhOmZvbnQgc2NyaXB0PSJFdGhpIiB0eXBlZmFjZT0iTnlhbGEiIC8+PGE6Zm9udCBzY3JpcHQ9IkJlbmciIHR5cGVmYWNlPSJWcmluZGEiIC8+PGE6Zm9udCBzY3JpcHQ9Ikd1anIiIHR5cGVmYWNlPSJTaHJ1dGkiIC8+PGE6Zm9udCBzY3JpcHQ9IktobXIiIHR5cGVmYWNlPSJEYXVuUGVuaCIgLz48YTpmb250IHNjcmlwdD0iS25kYSIgdHlwZWZhY2U9IlR1bmdhIiAvPjxhOmZvbnQgc2NyaXB0PSJHdXJ1IiB0eXBlZmFjZT0iUmFhdmkiIC8+PGE6Zm9udCBzY3JpcHQ9IkNhbnMiIHR5cGVmYWNlPSJFdXBoZW1pYSIgLz48YTpmb250IHNjcmlwdD0iQ2hlciIgdHlwZWZhY2U9IlBsYW50YWdlbmV0IENoZXJva2VlIiAvPjxhOmZvbnQgc2NyaXB0PSJZaWlpIiB0eXBlZmFjZT0iTWljcm9zb2Z0IFlpIEJhaXRpIiAvPjxhOmZvbnQgc2NyaXB0PSJUaWJ0IiB0eXBlZmFjZT0iTWljcm9zb2Z0IEhpbWFsYXlhIiAvPjxhOmZvbnQgc2NyaXB0PSJUaGFhIiB0eXBlZmFjZT0iTVYgQm9saSIgLz48YTpmb250IHNjcmlwdD0iRGV2YSIgdHlwZWZhY2U9Ik1hbmdhbCIgLz48YTpmb250IHNjcmlwdD0iVGVsdSIgdHlwZWZhY2U9IkdhdXRhbWkiIC8+PGE6Zm9udCBzY3JpcHQ9IlRhbWwiIHR5cGVmYWNlPSJMYXRoYSIgLz48YTpmb250IHNjcmlwdD0iU3lyYyIgdHlwZWZhY2U9IkVzdHJhbmdlbG8gRWRlc3NhIiAvPjxhOmZvbnQgc2NyaXB0PSJPcnlhIiB0eXBlZmFjZT0iS2FsaW5nYSIgLz48YTpmb250IHNjcmlwdD0iTWx5bSIgdHlwZWZhY2U9IkthcnRpa2EiIC8+PGE6Zm9udCBzY3JpcHQ9Ikxhb28iIHR5cGVmYWNlPSJEb2tDaGFtcGEiIC8+PGE6Zm9udCBzY3JpcHQ9IlNpbmgiIHR5cGVmYWNlPSJJc2tvb2xhIFBvdGEiIC8+PGE6Zm9udCBzY3JpcHQ9Ik1vbmciIHR5cGVmYWNlPSJNb25nb2xpYW4gQmFpdGkiIC8+PGE6Zm9udCBzY3JpcHQ9IlZpZXQiIHR5cGVmYWNlPSJBcmlhbCIgLz48YTpmb250IHNjcmlwdD0iVWlnaCIgdHlwZWZhY2U9Ik1pY3Jvc29mdCBVaWdodXIiIC8+PGE6Zm9udCBzY3JpcHQ9Ikdlb3IiIHR5cGVmYWNlPSJTeWxmYWVuIiAvPjwvYTptaW5vckZvbnQ+PC9hOmZvbnRTY2hlbWU+PGE6Zm10U2NoZW1lIG5hbWU9Ik9mZmljZSI+PGE6ZmlsbFN0eWxlTHN0PjxhOnNvbGlkRmlsbD48YTpzY2hlbWVDbHIgdmFsPSJwaENsciIgLz48L2E6c29saWRGaWxsPjxhOmdyYWRGaWxsIHJvdFdpdGhTaGFwZT0iMSI+PGE6Z3NMc3Q+PGE6Z3MgcG9zPSIwIj48YTpzY2hlbWVDbHIgdmFsPSJwaENsciI+PGE6bHVtTW9kIHZhbD0iMTEwMDAwIiAvPjxhOnNhdE1vZCB2YWw9IjEwNTAwMCIgLz48YTp0aW50IHZhbD0iNjcwMDAiIC8+PC9hOnNjaGVtZUNscj48L2E6Z3M+PGE6Z3MgcG9zPSI1MDAwMCI+PGE6c2NoZW1lQ2xyIHZhbD0icGhDbHIiPjxhOmx1bU1vZCB2YWw9IjEwNTAwMCIgLz48YTpzYXRNb2QgdmFsPSIxMDMwMDAiIC8+PGE6dGludCB2YWw9IjczMDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOmdzPjxhOmdzIHBvcz0iMTAwMDAwIj48YTpzY2hlbWVDbHIgdmFsPSJwaENsciI+PGE6bHVtTW9kIHZhbD0iMTA1MDAwIiAvPjxhOnNhdE1vZCB2YWw9IjEwOTAwMCIgLz48YTp0aW50IHZhbD0iODEwMDAiIC8+PC9hOnNjaGVtZUNscj48L2E6Z3M+PC9hOmdzTHN0PjxhOmxpbiBhbmc9IjU0MDAwMDAiIHNjYWxlZD0iMCIgLz48L2E6Z3JhZEZpbGw+PGE6Z3JhZEZpbGwgcm90V2l0aFNoYXBlPSIxIj48YTpnc0xzdD48YTpncyBwb3M9IjAiPjxhOnNjaGVtZUNsciB2YWw9InBoQ2xyIj48YTpzYXRNb2QgdmFsPSIxMDMwMDAiIC8+PGE6bHVtTW9kIHZhbD0iMTAyMDAwIiAvPjxhOnRpbnQgdmFsPSI5NDAwMCIgLz48L2E6c2NoZW1lQ2xyPjwvYTpncz48YTpncyBwb3M9IjUwMDAwIj48YTpzY2hlbWVDbHIgdmFsPSJwaENsciI+PGE6c2F0TW9kIHZhbD0iMTEwMDAwIiAvPjxhOmx1bU1vZCB2YWw9IjEwMDAwMCIgLz48YTpzaGFkZSB2YWw9IjEwMDAwMCIgLz48L2E6c2NoZW1lQ2xyPjwvYTpncz48YTpncyBwb3M9IjEwMDAwMCI+PGE6c2NoZW1lQ2xyIHZhbD0icGhDbHIiPjxhOmx1bU1vZCB2YWw9Ijk5MDAwIiAvPjxhOnNhdE1vZCB2YWw9IjEyMDAwMCIgLz48YTpzaGFkZSB2YWw9Ijc4MDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOmdzPjwvYTpnc0xzdD48YTpsaW4gYW5nPSI1NDAwMDAwIiBzY2FsZWQ9IjAiIC8+PC9hOmdyYWRGaWxsPjwvYTpmaWxsU3R5bGVMc3Q+PGE6bG5TdHlsZUxzdD48YTpsbiB3PSI2MzUwIiBjYXA9ImZsYXQiIGNtcGQ9InNuZyIgYWxnbj0iY3RyIj48YTpzb2xpZEZpbGw+PGE6c2NoZW1lQ2xyIHZhbD0icGhDbHIiIC8+PC9hOnNvbGlkRmlsbD48YTpwcnN0RGFzaCB2YWw9InNvbGlkIiAvPjxhOm1pdGVyIGxpbT0iODAwMDAwIiAvPjwvYTpsbj48YTpsbiB3PSIxMjcwMCIgY2FwPSJmbGF0IiBjbXBkPSJzbmciIGFsZ249ImN0ciI+PGE6c29saWRGaWxsPjxhOnNjaGVtZUNsciB2YWw9InBoQ2xyIiAvPjwvYTpzb2xpZEZpbGw+PGE6cHJzdERhc2ggdmFsPSJzb2xpZCIgLz48YTptaXRlciBsaW09IjgwMDAwMCIgLz48L2E6bG4+PGE6bG4gdz0iMTkwNTAiIGNhcD0iZmxhdCIgY21wZD0ic25nIiBhbGduPSJjdHIiPjxhOnNvbGlkRmlsbD48YTpzY2hlbWVDbHIgdmFsPSJwaENsciIgLz48L2E6c29saWRGaWxsPjxhOnByc3REYXNoIHZhbD0ic29saWQiIC8+PGE6bWl0ZXIgbGltPSI4MDAwMDAiIC8+PC9hOmxuPjwvYTpsblN0eWxlTHN0PjxhOmVmZmVjdFN0eWxlTHN0PjxhOmVmZmVjdFN0eWxlPjxhOmVmZmVjdExzdCAvPjwvYTplZmZlY3RTdHlsZT48YTplZmZlY3RTdHlsZT48YTplZmZlY3RMc3QgLz48L2E6ZWZmZWN0U3R5bGU+PGE6ZWZmZWN0U3R5bGU+PGE6ZWZmZWN0THN0PjxhOm91dGVyU2hkdyBibHVyUmFkPSI1NzE1MCIgZGlzdD0iMTkwNTAiIGRpcj0iNTQwMDAwMCIgYWxnbj0iY3RyIiByb3RXaXRoU2hhcGU9IjAiPjxhOnNyZ2JDbHIgdmFsPSIwMDAwMDAiPjxhOmFscGhhIHZhbD0iNjMwMDAiIC8+PC9hOnNyZ2JDbHI+PC9hOm91dGVyU2hkdz48L2E6ZWZmZWN0THN0PjwvYTplZmZlY3RTdHlsZT48L2E6ZWZmZWN0U3R5bGVMc3Q+PGE6YmdGaWxsU3R5bGVMc3Q+PGE6c29saWRGaWxsPjxhOnNjaGVtZUNsciB2YWw9InBoQ2xyIiAvPjwvYTpzb2xpZEZpbGw+PGE6c29saWRGaWxsPjxhOnNjaGVtZUNsciB2YWw9InBoQ2xyIj48YTp0aW50IHZhbD0iOTUwMDAiIC8+PGE6c2F0TW9kIHZhbD0iMTcwMDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOnNvbGlkRmlsbD48YTpncmFkRmlsbCByb3RXaXRoU2hhcGU9IjEiPjxhOmdzTHN0PjxhOmdzIHBvcz0iMCI+PGE6c2NoZW1lQ2xyIHZhbD0icGhDbHIiPjxhOnRpbnQgdmFsPSI5MzAwMCIgLz48YTpzYXRNb2QgdmFsPSIxNTAwMDAiIC8+PGE6c2hhZGUgdmFsPSI5ODAwMCIgLz48YTpsdW1Nb2QgdmFsPSIxMDIwMDAiIC8+PC9hOnNjaGVtZUNscj48L2E6Z3M+PGE6Z3MgcG9zPSI1MDAwMCI+PGE6c2NoZW1lQ2xyIHZhbD0icGhDbHIiPjxhOnRpbnQgdmFsPSI5ODAwMCIgLz48YTpzYXRNb2QgdmFsPSIxMzAwMDAiIC8+PGE6c2hhZGUgdmFsPSI5MDAwMCIgLz48YTpsdW1Nb2QgdmFsPSIxMDMwMDAiIC8+PC9hOnNjaGVtZUNscj48L2E6Z3M+PGE6Z3MgcG9zPSIxMDAwMDAiPjxhOnNjaGVtZUNsciB2YWw9InBoQ2xyIj48YTpzaGFkZSB2YWw9IjYzMDAwIiAvPjxhOnNhdE1vZCB2YWw9IjEyMDAwMCIgLz48L2E6c2NoZW1lQ2xyPjwvYTpncz48L2E6Z3NMc3Q+PGE6bGluIGFuZz0iNTQwMDAwMCIgc2NhbGVkPSIwIiAvPjwvYTpncmFkRmlsbD48L2E6YmdGaWxsU3R5bGVMc3Q+PC9hOmZtdFNjaGVtZT48L2E6dGhlbWVFbGVtZW50cz48YTpleHRMc3Q+PGE6ZXh0IHVyaT0iezA1QTRDMjVDLTA4NUUtNDM0MC04NUEzLUE1NTMxRTUxMERCMn0iPjxuczE6dGhlbWVGYW1pbHkgbmFtZT0iT2ZmaWNlIFRoZW1lIiBpZD0iezYyRjkzOUI2LTkzQUYtNERCOC05QzZCLUQ2QzdERkRDNTg5Rn0iIHZpZD0iezRBM0M0NkU4LTYxQ0MtNDYwMy1BNTg5LTc0MjJBNDdBOEU0QX0iIC8+PC9hOmV4dD48L2E6ZXh0THN0PjwvYTp0aGVtZT4="
+      }
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide1.xml",
+      "slide_index": 1,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide2.xml",
+      "slide_index": 2,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide3.xml",
+      "slide_index": 3,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide4.xml",
+      "slide_index": 4,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide5.xml",
+      "slide_index": 5,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide6.xml",
+      "slide_index": 6,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide7.xml",
+      "slide_index": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide8.xml",
+      "slide_index": 8,
+      "severity": "warning"
+    },
+    {
+      "code": "chart-series-style-normalized",
+      "message": "Chart series styling uses DrawingML features outside the native flat-color chart contract",
+      "fallback": "preserve chart data and use representative flat series colors",
+      "part_path": "ppt/slides/slide8.xml",
+      "slide_index": 8,
+      "shape_id": "16",
+      "shape_name": "mse-comparison",
+      "shape_kind": "graphicFrame",
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide9.xml",
+      "slide_index": 9,
+      "severity": "warning"
+    },
+    {
+      "code": "gradient-scaling-normalized",
+      "message": "Unscaled non-cardinal DrawingML linear gradients are not representable by the normalized SVG mapping",
+      "fallback": "map the angle to the normalized SVG unit box while preserving its stops",
+      "part_path": "ppt/slides/slide9.xml",
+      "slide_index": 9,
+      "shape_id": "19",
+      "shape_name": "圆角矩形 18",
+      "shape_kind": "sp",
+      "severity": "warning"
+    },
+    {
+      "code": "gradient-scaling-normalized",
+      "message": "Unscaled non-cardinal DrawingML linear gradients are not representable by the normalized SVG mapping",
+      "fallback": "map the angle to the normalized SVG unit box while preserving its stops",
+      "part_path": "ppt/slides/slide9.xml",
+      "slide_index": 9,
+      "shape_id": "20",
+      "shape_name": "圆角矩形 19",
+      "shape_kind": "sp",
+      "severity": "warning"
+    },
+    {
+      "code": "hyperlink-omitted",
+      "message": "unsupported PowerPoint click action 'ppaction://hlinkfile'",
+      "fallback": "retain the object and omit only its unsupported click link",
+      "part_path": "ppt/slides/slide9.xml",
+      "slide_index": 9,
+      "shape_id": "2",
+      "shape_name": "文本框 1",
+      "shape_kind": "sp",
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide10.xml",
+      "slide_index": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide11.xml",
+      "slide_index": 11,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide12.xml",
+      "slide_index": 12,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide13.xml",
+      "slide_index": 13,
+      "severity": "warning"
+    },
+    {
+      "code": "animation-not-reconstructed",
+      "message": "Object animation timing was not reconstructed: p:bldP shape id 13 must reference a text-bearing p:sp; found sp; p:bldP shape id 14 must reference a text-bearing p:sp; found sp",
+      "fallback": "keep this timing in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide13.xml",
+      "slide_index": 13,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide14.xml",
+      "slide_index": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide15.xml",
+      "slide_index": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide16.xml",
+      "slide_index": 16,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide17.xml",
+      "slide_index": 17,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: legacy p:transition@spd cannot be represented exactly by animations.json duration",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide18.xml",
+      "slide_index": 18,
+      "severity": "warning"
+    }
+  ]
+}

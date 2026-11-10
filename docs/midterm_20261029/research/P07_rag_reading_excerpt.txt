@@ -1,0 +1,204 @@
+## PDF page 2
+The	Divine
+Comedy	(x) q
+Query
+Encoder
+q(x)
+MIPS pθ
+Generator pθ
+(Parametric)
+Margin-
+alize
+This	14th	century	work
+is	divided	into	3
+sections:	"Inferno",
+"Purgatorio"	&
+"Paradiso"									(y)
+End-to-End Backprop through q and pθ
+Barack	Obama	was
+born	in	Hawaii.(x)
+Fact Veriﬁcation: Fact Query
+supports	(y)
+Question Generation
+Fact Veriﬁcation:
+Label Generation
+Document
+Index
+Define	"middle	ear"(x)
+Question Answering:
+Question Query
+The	middle	ear	includes
+the	tympanic	cavity	and
+the	three	ossicles.		(y)
+Question Answering:
+Answer GenerationRetriever pη
+(Non-Parametric)
+z4
+z3
+z2
+z1
+d(z)
+Jeopardy Question
+Generation:
+Answer Query
+Figure 1: Overview of our approach. We combine a pre-trained retriever (Query Encoder + Document
+Index) with a pre-trained seq2seq model (Generator) and ﬁne-tune end-to-end. For queryx, we use
+Maximum Inner Product Search (MIPS) to ﬁnd the top-K documentszi. For ﬁnal predictiony, we
+treatz as a latent variable and marginalize over seq2seq predictions given different documents.
+but have only explored open-domain extractive question answering. Here, we bring hybrid parametric
+and non-parametric memory to the “workhorse of NLP,” i.e. sequence-to-sequence (seq2seq) models.
+We endow pre-trained, parametric-memory generation models with a non-parametric memory through
+a general-purpose ﬁne-tuning approach which we refer to as retrieval-augmented generation (RAG).
+We build RAG models where the parametric memory is a pre-trained seq2seq transformer, and the
+non-parametric memory is a dense vector index of Wikipedia, accessed with a pre-trained neural
+retriever. We combine these components in a probabilistic model trained end-to-end (Fig. 1). The
+retriever (Dense Passage Retriever [26], henceforth DPR) provides latent documents conditioned on
+the input, and the seq2seq model (BART [32]) then conditions on these latent documents together with
+the input to generate the output. We marginalize the latent documents with a top-K approximation,
+either on a per-output basis (assuming the same document is responsible for all tokens) or a per-token
+basis (where different documents are responsible for different tokens). Like T5 [51] or BART, RAG
+can be ﬁne-tuned on any seq2seq task, whereby both the generator and retriever are jointly learned.
+There has been extensive previous work proposing architectures to enrich systems with non-parametric
+memory which are trained from scratch for speciﬁc tasks, e.g. memory networks [ 64, 55], stack-
+augmented networks [25] and memory layers [ 30]. In contrast, we explore a setting where both
+parametric and non-parametric memory components are pre-trained and pre-loaded with extensive
+knowledge. Crucially, by using pre-trained access mechanisms, the ability to access knowledge is
+present without additional training.
+Our results highlight the beneﬁts of combining parametric and non-parametric memory with genera-
+tion for knowledge-intensive tasks—tasks that humans could not reasonably be expected to perform
+without access to an external knowledge source. Our RAG models achieve state-of-the-art results
+on open Natural Questions [29], WebQuestions [3] and CuratedTrec [2] and strongly outperform
+recent approaches that use specialised pre-training objectives on TriviaQA [24]. Despite these being
+extractive tasks, we ﬁnd that unconstrained generation outperforms previous extractive approaches.
+For knowledge-intensive generation, we experiment with MS-MARCO [1] and Jeopardy question
+generation, and we ﬁnd that our models generate responses that are more factual, speciﬁc, and
+diverse than a BART baseline. For FEVER [56] fact veriﬁcation, we achieve results within 4.3% of
+state-of-the-art pipeline models which use strong retrieval supervision. Finally, we demonstrate that
+the non-parametric memory can be replaced to update the models’ knowledge as the world changes.1
+2 Methods
+We explore RAG models, which use the input sequencex to retrieve text documentsz and use them
+as additional context when generating the target sequence y. As shown in Figure 1, our models
+leverage two components: (i) a retriever pη(z|x) with parametersη that returns (top-K truncated)
+distributions over text passages given a queryx and (ii) a generatorpθ(yi|x,z,y 1:i−1) parametrized
+1Code to run experiments with RAG has been open-sourced as part of the HuggingFace Transform-
+ers Library [66] and can be found at https://github.com/huggingface/transformers/blob/master/
+examples/rag/. An interactive demo of RAG models can be found at https://huggingface.co/rag/
+2
+
+## PDF page 3
+byθ that generates a current token based on a context of the previousi− 1 tokensy1:i−1, the original
+inputx and a retrieved passagez.
+To train the retriever and generator end-to-end, we treat the retrieved document as a latent variable.
+We propose two models that marginalize over the latent documents in different ways to produce a
+distribution over generated text. In one approach, RAG-Sequence, the model uses the same document
+to predict each target token. The second approach, RAG-Token, can predict each target token based
+on a different document. In the following, we formally introduce both models and then describe the
+pη andpθ components, as well as the training and decoding procedure.
+2.1 Models
+RAG-Sequence Model The RAG-Sequence model uses the same retrieved document to generate
+the complete sequence. Technically, it treats the retrieved document as a single latent variable that
+is marginalized to get the seq2seq probability p(y|x) via a top-K approximation. Concretely, the
+top K documents are retrieved using the retriever, and the generator produces the output sequence
+probability for each document, which are then marginalized,
+pRAG-Sequence(y|x) ≈
+∑
+z∈top-k(p(·|x))
+pη(z|x)pθ(y|x,z ) =
+∑
+z∈top-k(p(·|x))
+pη(z|x)
+N∏
+i
+pθ(yi|x,z,y 1:i−1)
+RAG-Token Model In the RAG-Token model we can draw a different latent document for each
+target token and marginalize accordingly. This allows the generator to choose content from several
+documents when producing an answer. Concretely, the top K documents are retrieved using the
+retriever, and then the generator produces a distribution for the next output token for each document,
+before marginalizing, and repeating the process with the following output token, Formally, we deﬁne:
+pRAG-Token(y|x) ≈
+N∏
+i
+∑
+z∈top-k(p(·|x))
+pη(z|x)pθ(yi|x,z,y 1:i−1)
+Finally, we note that RAG can be used for sequence classiﬁcation tasks by considering the target class
+as a target sequence of length one, in which case RAG-Sequence and RAG-Token are equivalent.
+2.2 Retriever: DPR
+The retrieval componentpη(z|x) is based on DPR [26]. DPR follows a bi-encoder architecture:
+pη(z|x)∝ exp
+(
+d(z)⊤q(x)
+)
+d(z) = BERTd(z), q(x) = BERTq(x)
+where d(z) is a dense representation of a document produced by a BERTBASE document encoder [8],
+and q(x) a query representation produced by a query encoder, also based on BERTBASE. Calculating
+top-k(pη(·|x)), the list ofk documentsz with highest prior probabilitypη(z|x), is a Maximum Inner
+Product Search (MIPS) problem, which can be approximately solved in sub-linear time [23]. We use
+a pre-trained bi-encoder from DPR to initialize our retriever and to build the document index. This
+retriever was trained to retrieve documents which contain answers to TriviaQA [24] questions and
+Natural Questions [29]. We refer to the document index as the non-parametric memory.
+2.3 Generator: BART
+The generator componentpθ(yi|x,z,y 1:i−1) could be modelled using any encoder-decoder. We use
+BART-large [32], a pre-trained seq2seq transformer [58] with 400M parameters. To combine the input
+x with the retrieved contentz when generating from BART, we simply concatenate them. BART was
+pre-trained using a denoising objective and a variety of different noising functions. It has obtained
+state-of-the-art results on a diverse set of generation tasks and outperforms comparably-sized T5
+models [32]. We refer to the BART generator parametersθ as the parametric memory henceforth.
+2.4 Training
+We jointly train the retriever and generator components without any direct supervision on what
+document should be retrieved. Given a ﬁne-tuning training corpus of input/output pairs(xj,yj), we
+3
+
+## PDF page 5
+MSMARCO as an open-domain abstractive QA task. MSMARCO has some questions that cannot be
+answered in a way that matches the reference answer without access to the gold passages, such as
+“What is the weather in V olcano, CA?” so performance will be lower without using gold passages.
+We also note that some MSMARCO questions cannot be answered using Wikipedia alone. Here,
+RAG can rely on parametric knowledge to generate reasonable responses.
+3.3 Jeopardy Question Generation
+To evaluate RAG’s generation abilities in a non-QA setting, we study open-domain question gen-
+eration. Rather than use questions from standard open-domain QA tasks, which typically consist
+of short, simple questions, we propose the more demanding task of generating Jeopardy questions.
+Jeopardy is an unusual format that consists of trying to guess an entity from a fact about that entity.
+For example, “The World Cup” is the answer to the question “In 1986 Mexico scored as the ﬁrst
+country to host this international sports competition twice.” As Jeopardy questions are precise,
+factual statements, generating Jeopardy questions conditioned on their answer entities constitutes a
+challenging knowledge-intensive generation task.
+We use the splits from SearchQA [ 10], with 100K train, 14K dev, and 27K test examples. As
+this is a new task, we train a BART model for comparison. Following [67], we evaluate using the
+SQuAD-tuned Q-BLEU-1 metric [ 42]. Q-BLEU is a variant of BLEU with a higher weight for
+matching entities and has higher correlation with human judgment for question generation than
+standard metrics. We also perform two human evaluations, one to assess generation factuality, and
+one for speciﬁcity. We deﬁne factuality as whether a statement can be corroborated by trusted external
+sources, and speciﬁcity as high mutual dependence between the input and output [33]. We follow
+best practice and use pairwise comparative evaluation [34]. Evaluators are shown an answer and two
+generated questions, one from BART and one from RAG. They are then asked to pick one of four
+options—quuestion A is better, question B is better, both are good, or neither is good.
+3.4 Fact Veriﬁcation
+FEVER [ 56] requires classifying whether a natural language claim is supported or refuted by
+Wikipedia, or whether there is not enough information to decide. The task requires retrieving
+evidence from Wikipedia relating to the claim and then reasoning over this evidence to classify
+whether the claim is true, false, or unveriﬁable from Wikipedia alone. FEVER is a retrieval problem
+coupled with an challenging entailment reasoning task. It also provides an appropriate testbed for
+exploring the RAG models’ ability to handle classiﬁcation rather than generation. We map FEVER
+class labels (supports, refutes, or not enough info) to single output tokens and directly train with
+claim-class pairs. Crucially, unlike most other approaches to FEVER, we do not use supervision on
+retrieved evidence. In many real-world applications, retrieval supervision signals aren’t available, and
+models that do not require such supervision will be applicable to a wider range of tasks. We explore
+two variants: the standard 3-way classiﬁcation task (supports/refutes/not enough info) and the 2-way
+(supports/refutes) task studied in Thorne and Vlachos [57]. In both cases we report label accuracy.
+4 Results
+4.1 Open-domain Question Answering
+Table 1 shows results for RAG along with state-of-the-art models. On all four open-domain QA
+tasks, RAG sets a new state of the art (only on the T5-comparable split for TQA). RAG combines
+the generation ﬂexibility of the “closed-book” (parametric only) approaches and the performance of
+"open-book" retrieval-based approaches. Unlike REALM and T5+SSM, RAG enjoys strong results
+without expensive, specialized “salient span masking” pre-training [ 20]. It is worth noting that RAG’s
+retriever is initialized using DPR’s retriever, which uses retrieval supervision on Natural Questions
+and TriviaQA. RAG compares favourably to the DPR QA system, which uses a BERT-based “cross-
+encoder” to re-rank documents, along with an extractive reader. RAG demonstrates that neither a
+re-ranker nor extractive reader is necessary for state-of-the-art performance.
+There are several advantages to generating answers even when it is possible to extract them. Docu-
+ments with clues about the answer but do not contain the answer verbatim can still contribute towards
+a correct answer being generated, which is not possible with standard extractive approaches, leading
+5

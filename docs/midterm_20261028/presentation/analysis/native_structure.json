@@ -1,0 +1,475 @@
+{
+  "schema": "ppt-master.native-structure.v1",
+  "source": {
+    "name": "Proposal(1)(3).pptx",
+    "templateFile": "sources/source.pptx",
+    "sha256": "ceaa3e1ffdc6cb57f7a66b5db3857f08dfe517a5ffbef694957e38c819ad041d"
+  },
+  "slideSize": {
+    "width_emu": 12192000,
+    "height_emu": 6858000,
+    "width_px": 1280.0,
+    "height_px": 720.0
+  },
+  "strategy": {
+    "preservationEligible": true,
+    "reusableStructureDetected": true,
+    "recommendedMode": "preserve",
+    "recommendationScope": "source-structure-assessment",
+    "templateOutputMode": "template",
+    "downstreamTemplateAdherence": "strategist-confirmed-explicit-structure",
+    "hasMultipleMasters": false,
+    "reasonCodes": [
+      "source-master-layout-contract-is-reusable"
+    ]
+  },
+  "masters": [
+    {
+      "key": "master_01",
+      "name": "slideMaster1",
+      "packagePart": "ppt/slideMasters/slideMaster1.xml",
+      "themePart": null,
+      "theme": {
+        "colors": {},
+        "fonts": {}
+      },
+      "backgroundAsset": null,
+      "imageAssets": [],
+      "shapeImageAssets": [],
+      "drawableShapeCount": 1,
+      "placeholders": [],
+      "layoutKeys": [
+        "layout_01",
+        "layout_02",
+        "layout_03",
+        "layout_04"
+      ]
+    }
+  ],
+  "layouts": [
+    {
+      "key": "layout_01",
+      "name": "标题幻灯片",
+      "type": null,
+      "packagePart": "ppt/slideLayouts/slideLayout1.xml",
+      "masterKey": "master_01",
+      "showMasterShapes": true,
+      "backgroundAsset": null,
+      "imageAssets": [],
+      "shapeImageAssets": [],
+      "drawableShapeCount": 6,
+      "placeholders": [],
+      "usedBySlides": [
+        1,
+        27
+      ],
+      "svgFile": null
+    },
+    {
+      "key": "layout_02",
+      "name": "1_标题幻灯片",
+      "type": null,
+      "packagePart": "ppt/slideLayouts/slideLayout2.xml",
+      "masterKey": "master_01",
+      "showMasterShapes": true,
+      "backgroundAsset": null,
+      "imageAssets": [],
+      "shapeImageAssets": [],
+      "drawableShapeCount": 6,
+      "placeholders": [],
+      "usedBySlides": [
+        2,
+        3,
+        8,
+        15,
+        22
+      ],
+      "svgFile": null
+    },
+    {
+      "key": "layout_03",
+      "name": "2_标题幻灯片",
+      "type": null,
+      "packagePart": "ppt/slideLayouts/slideLayout3.xml",
+      "masterKey": "master_01",
+      "showMasterShapes": true,
+      "backgroundAsset": null,
+      "imageAssets": [],
+      "shapeImageAssets": [],
+      "drawableShapeCount": 4,
+      "placeholders": [],
+      "usedBySlides": [
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        19,
+        20,
+        23,
+        24,
+        25,
+        26
+      ],
+      "svgFile": null
+    },
+    {
+      "key": "layout_04",
+      "name": "空白",
+      "type": null,
+      "packagePart": "ppt/slideLayouts/slideLayout4.xml",
+      "masterKey": "master_01",
+      "showMasterShapes": true,
+      "backgroundAsset": null,
+      "imageAssets": [],
+      "shapeImageAssets": [],
+      "drawableShapeCount": 0,
+      "placeholders": [
+        {
+          "type": "dt",
+          "idx": "10",
+          "size": "half",
+          "orient": null,
+          "semanticRole": "date",
+          "shapeId": "2",
+          "shapeName": "日期占位符 1",
+          "geometry": null,
+          "textSamples": []
+        },
+        {
+          "type": "ftr",
+          "idx": "11",
+          "size": "quarter",
+          "orient": null,
+          "semanticRole": "footer",
+          "shapeId": "3",
+          "shapeName": "页脚占位符 2",
+          "geometry": null,
+          "textSamples": []
+        },
+        {
+          "type": "sldNum",
+          "idx": "12",
+          "size": "quarter",
+          "orient": null,
+          "semanticRole": "slide-number",
+          "shapeId": "4",
+          "shapeName": "灯片编号占位符 3",
+          "geometry": null,
+          "textSamples": []
+        }
+      ],
+      "usedBySlides": [
+        21
+      ],
+      "svgFile": null
+    }
+  ],
+  "slides": [
+    {
+      "index": 1,
+      "packagePart": "ppt/slides/slide1.xml",
+      "pageType": null,
+      "layoutKey": "layout_01",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_01.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 2,
+      "packagePart": "ppt/slides/slide2.xml",
+      "pageType": null,
+      "layoutKey": "layout_02",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_02.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 3,
+      "packagePart": "ppt/slides/slide3.xml",
+      "pageType": null,
+      "layoutKey": "layout_02",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_03.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 4,
+      "packagePart": "ppt/slides/slide4.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_04.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 5,
+      "packagePart": "ppt/slides/slide5.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_05.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 6,
+      "packagePart": "ppt/slides/slide6.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_06.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 7,
+      "packagePart": "ppt/slides/slide7.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_07.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 8,
+      "packagePart": "ppt/slides/slide8.xml",
+      "pageType": null,
+      "layoutKey": "layout_02",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_08.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 9,
+      "packagePart": "ppt/slides/slide9.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_09.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 10,
+      "packagePart": "ppt/slides/slide10.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_10.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 11,
+      "packagePart": "ppt/slides/slide11.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_11.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 12,
+      "packagePart": "ppt/slides/slide12.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_12.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 13,
+      "packagePart": "ppt/slides/slide13.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_13.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 14,
+      "packagePart": "ppt/slides/slide14.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_14.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 15,
+      "packagePart": "ppt/slides/slide15.xml",
+      "pageType": null,
+      "layoutKey": "layout_02",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_15.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 16,
+      "packagePart": "ppt/slides/slide16.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_16.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 17,
+      "packagePart": "ppt/slides/slide17.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_17.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 18,
+      "packagePart": "ppt/slides/slide18.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_18.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 19,
+      "packagePart": "ppt/slides/slide19.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_19.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 20,
+      "packagePart": "ppt/slides/slide20.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_20.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 21,
+      "packagePart": "ppt/slides/slide21.xml",
+      "pageType": null,
+      "layoutKey": "layout_04",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_21.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 22,
+      "packagePart": "ppt/slides/slide22.xml",
+      "pageType": null,
+      "layoutKey": "layout_02",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_22.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 23,
+      "packagePart": "ppt/slides/slide23.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_23.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 24,
+      "packagePart": "ppt/slides/slide24.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_24.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 25,
+      "packagePart": "ppt/slides/slide25.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_25.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 26,
+      "packagePart": "ppt/slides/slide26.xml",
+      "pageType": null,
+      "layoutKey": "layout_03",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_26.svg",
+      "flatSvgFile": null
+    },
+    {
+      "index": 27,
+      "packagePart": "ppt/slides/slide27.xml",
+      "pageType": null,
+      "layoutKey": "layout_01",
+      "masterKey": "master_01",
+      "showInheritedShapes": true,
+      "placeholders": [],
+      "layeredSvgFile": "slide_27.svg",
+      "flatSvgFile": null
+    }
+  ]
+}

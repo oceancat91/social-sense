@@ -1,0 +1,42 @@
+[
+  {
+    "file": "research\\sina_product.html",
+    "url": "https://yuqing.sina.com/undefined/about",
+    "resolved_url": "https://yuqing.sina.com/undefined/about",
+    "bytes": 151916,
+    "sha256": "50cd294611bf33f1e5e8ceec960a036bda8f36af86e8d43d8257c5f4b2a4e7ed",
+    "status": "downloaded"
+  },
+  {
+    "file": "research\\yuqing_manual.html",
+    "url": "https://files.yqt365.com/fileOnline/instruction.html",
+    "resolved_url": "https://files.yqt365.com/fileOnline/instruction.html",
+    "bytes": 314709,
+    "sha256": "1f89a20132cf2b9cc308e2a530abec52b28a0e1c4c0bf70e99f8fe1f726bfb4d",
+    "status": "downloaded"
+  },
+  {
+    "file": "research\\official_material_post.html",
+    "url": "https://www.taptap.cn/moment/834126362733185189",
+    "resolved_url": "https://www.taptap.cn/moment/834126362733185189",
+    "bytes": 272479,
+    "sha256": "f9b2654bbe8d1c0234e621ab9bf21b6ec7d78a0f259e5d741c6fe875004a0feb",
+    "status": "downloaded"
+  },
+  {
+    "file": "research\\fan_generator.html",
+    "url": "https://github.com/Minecrash98/zhe-pian-da-di-font-pack",
+    "resolved_url": "https://github.com/Minecrash98/zhe-pian-da-di-font-pack",
+    "bytes": 248301,
+    "sha256": "407f334a33a6fba5143d24285c9b93716110133bbace80a15361b659f6144060",
+    "status": "downloaded"
+  },
+  {
+    "file": "research\\meme_diffusion_2018.pdf",
+    "url": "https://seclab.bu.edu/papers/memes-IMC2018.pdf",
+    "resolved_url": "https://seclab.bu.edu/papers/memes-IMC2018.pdf",
+    "bytes": 4463229,
+    "sha256": "2c6156501132a5fed7e4c1e55d410905cc7980bcd533793c77699812c9c3a568",
+    "status": "downloaded"
+  }
+]

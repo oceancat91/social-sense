@@ -1,0 +1,135 @@
+{
+  "tool": "ppt-master.pptx_transitions",
+  "policy": "enter=preserve; advance=click; useTimings=false",
+  "input": "docs\\midterm_20261029\\presentation\\exports\\presentation_20261030_015340_native_charts_tables.pptx",
+  "output": "docs\\midterm_20261029\\presentation\\exports\\presentation_20261030_015340_native_charts_tables_manual.pptx",
+  "slides": [
+    {
+      "part": "ppt/slides/slide1.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide10.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide11.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide12.xml",
+      "effect": "random",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide13.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide14.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide15.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide16.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide17.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide18.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide2.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide3.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide4.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide5.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide6.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide7.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide8.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    },
+    {
+      "part": "ppt/slides/slide9.xml",
+      "effect": "fade",
+      "before_advance_ms": 3000,
+      "after_advance_ms": null,
+      "advance_on_click": true
+    }
+  ],
+  "shape_and_object_timing_unchanged": true
+}

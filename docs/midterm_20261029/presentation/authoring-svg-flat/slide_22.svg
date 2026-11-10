@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;等线&quot;, sans-serif"><defs><radialGradient id="ggrad1" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#8FAADC" stop-opacity="0.4" /><stop offset="0.8" stop-color="#4472C4" stop-opacity="0.6" /></radialGradient><radialGradient id="ggrad2" cx="0.5" cy="0.5" r="0.5"><stop offset="0.2" stop-color="#8FAADC" /><stop offset="0.65" stop-color="#4472C4" /></radialGradient><clipPath id="clip1" clipPathUnits="userSpaceOnUse"><path d="M 0.14383 0.06292 C 0.14383 0.02817 0.15892 0 0.17752 0 L 0.82248 0 C 0.83141 0 0.83998 0.00663 0.8463 0.01843 C 0.85262 0.03023 0.85617 0.04623 0.85617 0.06292 L 0.85617 0.93708 C 0.85617 0.97183 0.84108 1 0.82248 1 L 0.17752 1 C 0.15892 1 0.14383 0.97183 0.14383 0.93708 Z" /></clipPath></defs><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="223.13 304.53 466.67 372.07" data-pptx-geometry-kind="custom" transform="translate(456.47 490.57) scale(-1 -1) translate(-456.47 -490.57)" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 273.45 304.53 L 312.64 334.15 L 659.91 334.15 C 673.72 334.15 685.19 343.07 688.41 355.1 L 688.5 355.59 L 688.84 356.74 C 689.45 359.03 689.8 361.4 689.8 363.94 L 689.8 648.04 C 689.8 663.84 676.24 676.6 659.47 676.6 L 253.46 676.6 C 245.55 676.6 238.43 673.82 233.04 669.15 L 233.04 669.15 L 232.78 668.91 C 226.87 663.92 223.13 656.55 223.13 648.45 L 223.13 648.04 L 223.13 363.94 L 223.13 361.81 C 223.13 346.51 236.26 334.15 252.51 334.15 L 273.54 334.15 L 273.45 304.53 Z" data-pptx-part="geometry" fill="url(#ggrad1)" stroke="none" stroke-width="1" />
+
+</g>
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="64.13 182.8 635.93 495.2" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 106.63 182.8 L 657.57 182.8 C 681.03 182.8 700.07 200.72 700.07 222.81 L 700.07 602.89 C 700.07 624.98 681.03 642.9 657.57 642.9 L 171.38 642.9 L 124.88 678 L 124.97 642.9 L 106.63 642.9 C 83.17 642.9 64.13 624.98 64.13 602.89 L 64.13 222.81 C 64.13 200.72 83.17 182.8 106.63 182.8 Z" data-pptx-part="geometry" fill="url(#ggrad2)" stroke="none" stroke-width="1" />
+
+</g>
+<g id="shape-14" data-pptx-object="picture" data-pptx-frame="78.4 198.2 596.2 448.2" data-pptx-source-ref="slide:14">
+<svg data-pptx-object="picture" data-pptx-frame="78.4 198.2 596.2 448.2" data-pptx-crop="1" x="78.4" y="198.2" width="596.2" height="448.2" viewBox="0.14383 0 0.71234 1" preserveAspectRatio="none" overflow="hidden"><image clip-path="url(#clip1)" href="../images/image26.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none" /></svg>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="100.47 26.47 1142.27 58.13" data-ph-type="title" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 100.47 26.47 L 1242.73 26.47 L 1242.73 84.6 L 100.47 84.6 Z" fill="none" data-ph-type="title" data-pptx-part="geometry" />
+
+
+<text x="110.07" y="64.6" text-anchor="start" xml:space="preserve" font-family="&quot;Noto Sans SC&quot;, sans-serif" font-size="40" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>项目</tspan><tspan>成果展示</tspan></text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="748.57 234.44 479.32 119.48" data-pptx-prst="rect" data-pptx-source-ref="slide:4">
+
+<path d="M 748.57 234.44 L 1227.9 234.44 L 1227.9 353.92 L 748.57 353.92 Z" fill="none" />
+
+
+<text x="748.57" y="266.44388451" text-anchor="start" xml:space="preserve" font-size="24" fill="#262626" data-pptx-text-baseline="metrics-v1"><tspan>解决单人出游的孤独感</tspan><tspan>,</tspan><tspan>以及多人出行时“偏</tspan><tspan x="748.57" dy="43.2">好冲突、组队困难”的痛点。</tspan></text>
+<text x="748.57" y="352.84388451" text-anchor="start" xml:space="preserve" font-size="24" fill="#262626" data-pptx-text-baseline="metrics-v1"><tspan>从</tspan><tspan>“</tspan><tspan>工具</tspan><tspan>”</tspan><tspan>升级为</tspan><tspan>“</tspan><tspan>平台</tspan><tspan>”</tspan><tspan>，构建旅行社交生态</tspan><tspan x="748.57" dy="43.2">，增强用户粘性。</tspan></text>
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="748.57 163.23 479.32 43.86" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 748.57 163.23 L 1227.9 163.23 L 1227.9 207.08 L 748.57 207.08 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="748.57" y="199.35086614" text-anchor="start" xml:space="preserve" font-size="32" fill="#262626" font-weight="bold" data-pptx-text-baseline="metrics-v1">社交搭子匹配</text>
+</g>
+<g id="shape-7" data-pptx-object="connector" data-pptx-frame="751.39 223.58 42.2 0" data-pptx-prst="line" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 751.39 223.58 L 793.59 223.58" stroke-width="4.66667" stroke-linecap="round" stroke="#4472C4" fill="none" data-pptx-part="geometry" />
+
+</g></svg>

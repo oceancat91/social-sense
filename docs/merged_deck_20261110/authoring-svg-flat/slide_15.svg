@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;微软雅黑&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="938.3 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="938.3 24.04 258.3 49.46" href="../images/image5.png" x="938.3" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="shape-5" data-pptx-object="group" data-pptx-frame="95 16 815 83" data-pptx-source-ref="slide:5">
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="95 16 815 83" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 95 16 L 910 16 L 910 99 L 95 99 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="110.64 29.67 543.32 52.36" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 110.64 29.67 L 653.96 29.67 L 653.96 82.03 L 110.64 82.03 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="110.64" y="61.66666667" text-anchor="start" xml:space="preserve" font-size="34" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">备份｜文献启发与当前实现的边界</text>
+</g>
+</g>
+<g id="shape-8" data-pptx-object="group" data-pptx-frame="75 108 1130 50" data-pptx-source-ref="slide:8">
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="75 108 1130 50" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 75 108 L 1205 108 L 1205 158 L 75 158 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="79.12 118.67 514.8 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 79.12 118.67 L 593.92 118.67 L 593.92 152.55 L 79.12 152.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.12" y="140" text-anchor="start" xml:space="preserve" font-size="22" fill="#64748B" data-pptx-text-baseline="metrics-v1">文献支持研究设计，不自动构成本项目的性能证据</text>
+</g>
+</g>
+<g id="shape-12" data-pptx-object="group" data-pptx-frame="70 680 1100 28.12" data-pptx-source-ref="slide:12">
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="70 680 1100 25" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 70 680 L 1170 680 L 1170 705 L 70 705 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="75.48 688 219.45 20.12" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 75.48 688 L 294.93 688 L 294.93 708.12 L 75.48 708.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="75.48" y="700" text-anchor="start" xml:space="preserve" font-size="13.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">SocialSense · 创新训练类中期答辩</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="1076.22 688 79.3 20.12" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 1076.22 688 L 1155.52 688 L 1155.52 708.12 L 1076.22 708.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1155.52" y="700" text-anchor="end" xml:space="preserve" font-size="13.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">15 / 18 备份</text>
+</g>
+</g>
+<g id="shape-17" data-pptx-object="group" data-pptx-frame="70 180 715 98" data-pptx-source-ref="slide:17">
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="70 180 715 98" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 70 180 L 785 180 L 785 278 L 70 278 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="70 180 715 98" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 70 180 L 785 180 L 785 278 L 70 278 Z" fill="#EDF2F8" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="89 190 315.73 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 89 190 L 404.73 190 L 404.73 228.6 L 89 228.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="89" y="214" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">DLinear / xPatch [3,4]</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="89.2 237.33 506.86 30.8" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 89.2 237.33 L 596.06 237.33 L 596.06 268.13 L 89.2 268.13 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="89.2" y="256" text-anchor="start" xml:space="preserve" font-size="20" fill="#243446" data-pptx-text-baseline="metrics-v1">分解、线性基线与 PatchCNN；项目扩展四分量路径。</text>
+</g>
+</g>
+<g id="shape-23" data-pptx-object="group" data-pptx-frame="70 292 715 98" data-pptx-source-ref="slide:23">
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="70 292 715 98" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 70 292 L 785 292 L 785 390 L 70 390 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="70 292 715 98" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 70 292 L 785 292 L 785 390 L 70 390 Z" fill="#EDF2F8" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="89 302 276.82 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 89 302 L 365.82 302 L 365.82 340.6 L 89 340.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="89" y="326" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">Mamba / PELT [5,6]</text>
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="89.2 349.33 531.6 30.8" data-pptx-prst="rect" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 89.2 349.33 L 620.8 349.33 L 620.8 380.13 L 89.2 380.13 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="89.2" y="368" text-anchor="start" xml:space="preserve" font-size="20" fill="#243446" data-pptx-text-baseline="metrics-v1">选择性状态与变点建模；项目采用轻量实现与事件信号。</text>
+</g>
+</g>
+<g id="shape-28" data-pptx-object="group" data-pptx-frame="70 404 715 98" data-pptx-source-ref="slide:28">
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="70 404 715 98" data-pptx-prst="rect" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 70 404 L 785 404 L 785 502 L 70 502 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-25" data-pptx-object="shape" data-pptx-frame="70 404 715 98" data-pptx-prst="rect" data-pptx-source-ref="slide:25" data-pptx-semantic-object="shape">
+<path d="M 70 404 L 785 404 L 785 502 L 70 502 Z" fill="#EDF2F8" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-26" data-pptx-object="shape" data-pptx-frame="89 414 266.31 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:26" data-pptx-semantic-object="shape">
+<path d="M 89 414 L 355.31 414 L 355.31 452.6 L 89 452.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="89" y="438" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">RAG / ReAct [7,10]</text>
+</g>
+<g id="shape-27" data-pptx-object="shape" data-pptx-frame="89.2 461.33 489.2 30.8" data-pptx-prst="rect" data-pptx-source-ref="slide:27" data-pptx-semantic-object="shape">
+<path d="M 89.2 461.33 L 578.4 461.33 L 578.4 492.13 L 89.2 492.13 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="89.2" y="480" text-anchor="start" xml:space="preserve" font-size="20" fill="#243446" data-pptx-text-baseline="metrics-v1">外部证据与行动反馈；项目以契约和规则约束生成。</text>
+</g>
+</g>
+<g id="shape-33" data-pptx-object="group" data-pptx-frame="70 516 715 98" data-pptx-source-ref="slide:33">
+<g id="shape-29" data-pptx-object="shape" data-pptx-frame="70 516 715 98" data-pptx-prst="rect" data-pptx-source-ref="slide:29" data-pptx-semantic-object="shape">
+<path d="M 70 516 L 785 516 L 785 614 L 70 614 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-30" data-pptx-object="shape" data-pptx-frame="70 516 715 98" data-pptx-prst="rect" data-pptx-source-ref="slide:30" data-pptx-semantic-object="shape">
+<path d="M 70 516 L 785 516 L 785 614 L 70 614 Z" fill="#EDF2F8" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-31" data-pptx-object="shape" data-pptx-frame="89 526 359.63 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:31" data-pptx-semantic-object="shape">
+<path d="M 89 526 L 448.63 526 L 448.63 564.6 L 89 564.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="89" y="550" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">Time-LLM 与消融研究 [8,9]</text>
+</g>
+<g id="shape-32" data-pptx-object="shape" data-pptx-frame="89.2 573.33 489.2 30.8" data-pptx-prst="rect" data-pptx-source-ref="slide:32" data-pptx-semantic-object="shape">
+<path d="M 89.2 573.33 L 578.4 573.33 L 578.4 604.13 L 89.2 604.13 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="89.2" y="592" text-anchor="start" xml:space="preserve" font-size="20" fill="#243446" data-pptx-text-baseline="metrics-v1">文本或大模型的价值必须独立消融，不能先验假定。</text>
+</g>
+</g>
+<g id="shape-39" data-pptx-object="group" data-pptx-frame="825 180 385 206" data-pptx-source-ref="slide:39">
+<g id="shape-34" data-pptx-object="shape" data-pptx-frame="825 180 385 206" data-pptx-prst="rect" data-pptx-source-ref="slide:34" data-pptx-semantic-object="shape">
+<path d="M 825 180 L 1210 180 L 1210 386 L 825 386 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-35" data-pptx-object="shape" data-pptx-frame="825 180 385 206" data-pptx-prst="roundRect" data-pptx-av-adj="val 3883" data-pptx-source-ref="slide:35" data-pptx-semantic-object="shape">
+<path d="M 825 188 A 8 8 0 0 1 833 180 L 1202 180 A 8 8 0 0 1 1210 188 L 1210 378 A 8 8 0 0 1 1202 386 L 833 386 A 8 8 0 0 1 825 378 Z" fill="#FFFFFF" stroke-width="1.2" stroke="#4472C4" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-36" data-pptx-object="shape" data-pptx-frame="828 183 1 200" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:36" data-pptx-semantic-object="shape">
+<path d="M 828 183 L 828 383" data-pptx-part="geometry" fill="none" stroke-width="5" stroke="#4472C4" />
+</g>
+<g id="shape-37" data-pptx-object="shape" data-pptx-frame="847.92 194.67 207.93 41.58" data-pptx-prst="rect" data-pptx-source-ref="slide:37" data-pptx-semantic-object="shape">
+<path d="M 847.92 194.67 L 1055.85 194.67 L 1055.85 236.25 L 847.92 236.25 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="847.92" y="220" text-anchor="start" xml:space="preserve" font-size="26.93" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">已实现 ≠ 已证明</text>
+</g>
+<g id="shape-38" data-pptx-object="shape" data-pptx-frame="848.12 238.33 264.66 102.08" data-pptx-prst="rect" data-pptx-source-ref="slide:38" data-pptx-semantic-object="shape">
+<path d="M 848.12 238.33 L 1112.78 238.33 L 1112.78 340.41 L 848.12 340.41 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="848.12" y="265" text-anchor="start" xml:space="preserve" font-size="22" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="34.133333"><tspan><tspan>框架与代码可检查</tspan></tspan><tspan data-paragraph-line-break="1">相对性能仍需统一基线</tspan><tspan data-paragraph-line-break="1">回音室需互动网络证据 [1]</tspan></text>
+</g>
+</g>
+<g id="shape-45" data-pptx-object="group" data-pptx-frame="825 415 385 206" data-pptx-source-ref="slide:45">
+<g id="shape-40" data-pptx-object="shape" data-pptx-frame="825 415 385 206" data-pptx-prst="rect" data-pptx-source-ref="slide:40" data-pptx-semantic-object="shape">
+<path d="M 825 415 L 1210 415 L 1210 621 L 825 621 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-41" data-pptx-object="shape" data-pptx-frame="825 415 385 206" data-pptx-prst="roundRect" data-pptx-av-adj="val 3883" data-pptx-source-ref="slide:41" data-pptx-semantic-object="shape">
+<path d="M 825 423 A 8 8 0 0 1 833 415 L 1202 415 A 8 8 0 0 1 1210 423 L 1210 613 A 8 8 0 0 1 1202 621 L 833 621 A 8 8 0 0 1 825 613 Z" fill="#FFFFFF" stroke-width="1.2" stroke="#0D3745" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-42" data-pptx-object="shape" data-pptx-frame="828 418 1 200" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:42" data-pptx-semantic-object="shape">
+<path d="M 828 418 L 828 618" data-pptx-part="geometry" fill="none" stroke-width="5" stroke="#0D3745" />
+</g>
+<g id="shape-43" data-pptx-object="shape" data-pptx-frame="847.92 429.67 173.46 41.58" data-pptx-prst="rect" data-pptx-source-ref="slide:43" data-pptx-semantic-object="shape">
+<path d="M 847.92 429.67 L 1021.38 429.67 L 1021.38 471.25 L 847.92 471.25 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="847.92" y="455" text-anchor="start" xml:space="preserve" font-size="26.93" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">待完成的验证</text>
+</g>
+<g id="shape-44" data-pptx-object="shape" data-pptx-frame="848.12 473.33 242.66 102.08" data-pptx-prst="rect" data-pptx-source-ref="slide:44" data-pptx-semantic-object="shape">
+<path d="M 848.12 473.33 L 1090.78 473.33 L 1090.78 575.41 L 848.12 575.41 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="848.12" y="500" text-anchor="start" xml:space="preserve" font-size="22" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="34.133333"><tspan><tspan>分量 / 文本 / 路由消融</tspan></tspan><tspan data-paragraph-line-break="1">跨话题与滚动时间评估</tspan><tspan data-paragraph-line-break="1">传播关系与标注样本 [2]</tspan></text>
+</g>
+</g></svg>

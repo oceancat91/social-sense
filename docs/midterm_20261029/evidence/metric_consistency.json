@@ -1,0 +1,111 @@
+{
+  "checked_at": "2026-10-30T12:33:32.358022+08:00",
+  "kind": "stored-result arithmetic and synthetic diagnostic, not model retraining",
+  "confusion_total": 262,
+  "metric_arithmetic": "passed",
+  "mse_relative_increase_percent": 23.871090825571507,
+  "numeric_kib": 242.1689453125,
+  "full_mib": 477.387451171875,
+  "fusion_synthetic_input": {
+    "aligned": {
+      "platforms": [
+        "diagnostic_a",
+        "diagnostic_b"
+      ],
+      "time_axis": [
+        "t1",
+        "t2"
+      ],
+      "aligned_ts": {},
+      "z_series": {
+        "diagnostic_a": {
+          "volume": [
+            -1.0,
+            1.0
+          ]
+        },
+        "diagnostic_b": {
+          "volume": [
+            1.0,
+            -1.0
+          ]
+        }
+      }
+    },
+    "reports": [
+      {
+        "platform": "diagnostic_a",
+        "stance_dist": {
+          "support": 1.0
+        },
+        "meta": {
+          "sentiment_global_mean": 1.0
+        }
+      },
+      {
+        "platform": "diagnostic_b",
+        "stance_dist": {
+          "oppose": 1.0
+        },
+        "meta": {
+          "sentiment_global_mean": -1.0
+        }
+      }
+    ]
+  },
+  "fusion_synthetic_output": {
+    "platforms": [
+      "diagnostic_a",
+      "diagnostic_b"
+    ],
+    "stance_dist": {
+      "diagnostic_a": {
+        "support": 1.0
+      },
+      "diagnostic_b": {
+        "oppose": 1.0
+      }
+    },
+    "dominant_stance": {
+      "diagnostic_a": "support",
+      "diagnostic_b": "oppose"
+    },
+    "stance_divergence": 0.6931,
+    "stance_pair_divergences": [
+      {
+        "pair": [
+          "diagnostic_a",
+          "diagnostic_b"
+        ],
+        "stance_js": 0.6931
+      }
+    ],
+    "sentiment_divergence": 2.0,
+    "sentiment_means": {
+      "diagnostic_a": 1.0,
+      "diagnostic_b": -1.0
+    },
+    "bias_scores": {
+      "diagnostic_a": 0.0,
+      "diagnostic_b": 0.0
+    },
+    "temporal_corr": [
+      {
+        "pair": [
+          "diagnostic_a",
+          "diagnostic_b"
+        ],
+        "volume_corr": -1.0
+      }
+    ],
+    "mean_volume_corr": -1.0,
+    "echo_chamber_score": 1.3,
+    "echo_chamber_components": {
+      "stance": 1.0,
+      "sentiment": 1.0,
+      "corr": 2.0
+    },
+    "per_bucket_divergence": []
+  },
+  "interpretation": "A reproducible negative-correlation counterexample to the [0,1] comment, not a real social-media measurement."
+}

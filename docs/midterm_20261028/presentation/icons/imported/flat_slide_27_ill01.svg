@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" data-icon-style="preserve-color" data-pptx-asset-role="decoration" viewBox="0 0 1280 720" width="1280" height="720"><defs><clipPath id="flat_slide_27_ill01_layout-clip1" clipPathUnits="userSpaceOnUse"><path d="M 607.94 83.5 L 1280 83.5 L 1280 632.5 L 344 632.5 Z" /></clipPath></defs><g id="flat_slide_27_ill01_layout-shape-27" data-pptx-object="shape" data-pptx-frame="344 83.5 936 549" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:27">
+<image clip-path="url(#flat_slide_27_ill01_layout-clip1)" href="../../images/image1.jpeg" x="344" y="83.5" width="936" height="549" preserveAspectRatio="none" />
+<path d="M 607.94 83.5 L 1280 83.5 L 1280 632.5 L 344 632.5 Z" data-pptx-part="geometry" data-pptx-geometry-kind="custom" data-pptx-object="shape" data-pptx-frame="344 83.5 936 549" fill="none" stroke="none" stroke-width="1" />
+
+</g>
+</svg>

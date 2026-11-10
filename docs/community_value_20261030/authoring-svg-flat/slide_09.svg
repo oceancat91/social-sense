@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Microsoft YaHei&quot;, sans-serif"><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="value-header" data-pptx-bounds="95 16 815 83" data-pptx-role="header"><rect x="95" y="16" width="815" height="83" fill="none" /><text x="110" y="63" font-size="33" fill="#44546A" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">差异化定位：面向游戏社区的来源与互动研究</text></g><g id="value-subtitle" data-pptx-bounds="75 108 1130 48"><rect x="75" y="108" width="1130" height="48" fill="none" /><text x="80" y="139" font-size="21" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">比较的是研究切入点；优势需要同口径评价，不预设功能或性能全面领先</text></g><g id="value-footer" data-pptx-bounds="70 680 1100 27" data-pptx-role="footer"><rect x="70" y="680" width="1100" height="27" fill="none" /><text x="76" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">SocialSense  ·  创新训练类中期答辩</text><text x="1155" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="end">09 / 18</text></g><g id="market-capabilities" data-pptx-bounds="65 180 550 372"><rect x="65" y="180" width="550" height="372" fill="none" /><rect x="65" y="180" width="550" height="372" fill="#EDF2F8" /><text x="90" y="223" font-size="28" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">成熟产品的公开能力</text><text x="90" y="275" font-size="24" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">新浪舆情通提供监测和预警，已覆盖<tspan x="90" dy="37.2">微博 / 新闻溯源、传播效果与品牌洞察。</tspan><tspan x="90" dy="37.2">其公开产品也已使用多智能体分析。</tspan></text><text x="90" y="407" font-size="23" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">差异化需要落实到具体任务的评价：<tspan x="90" dy="34.5">围绕来源证据、同源变体与复核效率，</tspan><tspan x="90" dy="34.5">检验游戏社区这一垂直场景的研究收益。</tspan></text><text x="90" y="535" font-size="17" fill="#4472C4" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start"><a href="https://yuqing.sina.com/undefined/about"><tspan text-decoration="underline">[W3] 官方产品介绍</tspan></a></text><text x="295" y="535" font-size="17" fill="#4472C4" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start"><a href="https://files.yqt365.com/fileOnline/instruction.html"><tspan text-decoration="underline">[W4] 信息溯源说明</tspan></a></text></g><g id="research-difference" data-pptx-bounds="650 180 560 372"><rect x="650" y="180" width="560" height="372" fill="none" /><text x="670" y="223" font-size="28" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">本项目拟突出的研究切入点</text><text x="672" y="266" font-size="24" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">来源与创作认可</text><text x="672" y="302" font-size="20.5" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">追踪同源梗的改写和引用，保留创作者与语境。</text><text x="672" y="360" font-size="24" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">立场与互动时机</text><text x="672" y="396" font-size="20.5" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">结合平台分歧和热度，辅助发现参与与误读线索。</text><text x="672" y="454" font-size="24" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">回应与反馈评价</text><text x="672" y="490" font-size="20.5" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">关联官方回应和后续互动，检验是否改善交流。</text></g><g id="light-application-outlook" data-pptx-bounds="70 576 1135 87"><rect x="70" y="576" width="1135" height="87" fill="none" /><rect x="70" y="576" width="1135" height="87" fill="#EDF2F8" /><text x="92" y="610" font-size="23" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">应用展望（后续）</text><text x="305" y="610" font-size="23" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">可面向游戏社区团队提供试点工具或专题报告。</text><text x="92" y="646" font-size="21" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">先验证溯源质量、语境判断和人工复核效率，再评估服务方式；当前以创新训练和技术验证为主。</text></g></svg>

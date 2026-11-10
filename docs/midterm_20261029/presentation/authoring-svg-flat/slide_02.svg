@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Noto Sans SC&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="layout-shape-22" data-pptx-object="shape" data-pptx-frame="-0.47 592.38 427.17 95.77" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:22" data-pptx-semantic-object="shape">
+<path d="M -0.47 592.38 L 426.69 592.38 L 380.65 688.15 L -0.47 688.15 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-25" data-pptx-object="shape" data-pptx-frame="111.31 83.87 1168.69 549" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:25" data-pptx-semantic-object="shape">
+<path d="M 375.25 83.87 L 1280 83.87 L 1280 632.87 L 111.31 632.87 Z" data-pptx-part="geometry" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1082.06 60.8 68.78 66.8" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1082.06 127.6 L 1114.17 60.8 L 1150.84 60.8 L 1118.73 127.6 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1134.86 60.8 68.78 66.8" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1134.86 127.6 L 1166.97 60.8 L 1203.64 60.8 L 1171.53 127.6 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-13" data-pptx-object="shape" data-pptx-frame="966.13 614.48 207.13 34.39" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:13" data-pptx-semantic-object="shape">
+<path d="M 966.13 648.86 L 982.66 614.48 L 1173.26 614.48 L 1156.72 648.86 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-19" data-pptx-object="shape" data-pptx-frame="-0.49 127.6 628.35 539.07" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:19" data-pptx-semantic-object="shape">
+<path d="M -0.49 127.6 L 627.86 127.6 L 368.69 666.67 L -0.49 666.67 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+<g id="shape-31" data-pptx-object="group" data-pptx-frame="60.98 233.14 408.13 160.69" data-pptx-source-ref="slide:31">
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="60.98 233.14 408.13 96.94" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 60.98 233.14 L 469.11 233.14 L 469.11 330.08 L 60.98 330.08 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="70.58" y="307.27296588" text-anchor="start" xml:space="preserve" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="72" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">CONTENTS</text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="64.98 319.51 234.8 74.32" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 64.98 319.51 L 299.79 319.51 L 299.79 393.83 L 64.98 393.83 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="74.58" y="374.97396325" text-anchor="start" xml:space="preserve" font-family="&quot;思源黑体 CN&quot;, &quot;思源黑体 CN Bold&quot;, sans-serif" font-size="53.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">介绍目录</text>
+</g>
+</g>
+<g id="shape-27" data-pptx-object="group" data-pptx-frame="797.21 128.7 269.59 78.67" data-pptx-source-ref="slide:27">
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="797.21 128.7 77.73 78.67" data-pptx-prst="ellipse" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 797.21 168.03 A 38.87 39.33 0 0 1 836.08 128.7 A 38.87 39.33 0 0 1 874.95 168.03 A 38.87 39.33 0 0 1 836.08 207.36 A 38.87 39.33 0 0 1 797.21 168.03 Z" fill="#C00000" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+<text x="836.08" y="188.83076115" text-anchor="middle" xml:space="preserve" font-family="&quot;思源黑体 CN&quot;, &quot;思源黑体 CN Bold&quot;, &quot;等线&quot;, sans-serif" font-size="58.67" fill="#FFFFFF" data-pptx-text-baseline="metrics-v1">1</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="898.27 137.58 168.53 54.8" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 898.27 137.58 L 1066.81 137.58 L 1066.81 192.38 L 898.27 192.38 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="907.87" y="178.37595801" text-anchor="start" xml:space="preserve" font-size="37.33" fill="#232323" data-pptx-text-baseline="metrics-v1">项目概述</text>
+</g>
+</g>
+<g id="shape-28" data-pptx-object="group" data-pptx-frame="747.34 233.57 343.33 79.53" data-pptx-source-ref="slide:28">
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="747.34 233.57 80.4 79.53" data-pptx-prst="ellipse" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 747.34 273.33 A 40.2 39.77 0 0 1 787.54 233.57 A 40.2 39.77 0 0 1 827.74 273.33 A 40.2 39.77 0 0 1 787.54 313.1 A 40.2 39.77 0 0 1 747.34 273.33 Z" fill="#C00000" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+<text x="787.54" y="294.13349081" text-anchor="middle" xml:space="preserve" font-family="&quot;思源黑体 CN&quot;, &quot;思源黑体 CN Bold&quot;, &quot;等线&quot;, sans-serif" font-size="58.67" fill="#FFFFFF" data-pptx-text-baseline="metrics-v1">2</text>
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="847.47 247.78 243.2 54.8" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 847.47 247.78 L 1090.67 247.78 L 1090.67 302.58 L 847.47 302.58 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="857.07" y="288.57868766" text-anchor="start" xml:space="preserve" font-size="37.33" fill="#232323" data-pptx-text-baseline="metrics-v1">项目总体框架</text>
+</g>
+</g>
+<g id="shape-29" data-pptx-object="group" data-pptx-frame="708.72 341.97 346.93 76.93" data-pptx-source-ref="slide:29">
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="708.72 341.97 79.53 76.93" data-pptx-prst="ellipse" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 708.72 380.44 A 39.77 38.47 0 0 1 748.49 341.97 A 39.77 38.47 0 0 1 788.25 380.44 A 39.77 38.47 0 0 1 748.49 418.9 A 39.77 38.47 0 0 1 708.72 380.44 Z" fill="#C00000" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+<text x="748.49" y="401.23622047" text-anchor="middle" xml:space="preserve" font-family="&quot;思源黑体 CN&quot;, &quot;思源黑体 CN Bold&quot;, &quot;等线&quot;, sans-serif" font-size="58.67" fill="#FFFFFF" data-pptx-text-baseline="metrics-v1">3</text>
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="812.45 357.05 243.2 54.8" data-pptx-prst="rect" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 812.45 357.05 L 1055.65 357.05 L 1055.65 411.85 L 812.45 411.85 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="822.05" y="397.84808399" text-anchor="start" xml:space="preserve" font-size="37.33" fill="#232323" data-pptx-text-baseline="metrics-v1"><tspan>功能及</tspan><tspan>创新点</tspan></text>
+</g>
+</g>
+<g id="shape-33" data-pptx-object="picture" data-pptx-frame="40.69 26.04 368.06 70.48" data-pptx-source-ref="slide:33">
+<image data-pptx-object="picture" data-pptx-frame="40.69 26.04 368.06 70.48" href="../images/image2.png" x="40.69" y="26.04" width="368.06" height="70.48" preserveAspectRatio="none" />
+</g>
+<g id="shape-3" data-pptx-object="group" data-pptx-frame="660.72 446.77 346.06 79.53" data-pptx-source-ref="slide:3">
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="660.72 446.77 78.67 79.53" data-pptx-prst="ellipse" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 660.72 486.54 A 39.33 39.77 0 0 1 700.05 446.77 A 39.33 39.77 0 0 1 739.39 486.54 A 39.33 39.77 0 0 1 700.05 526.3 A 39.33 39.77 0 0 1 660.72 486.54 Z" fill="#C00000" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+<text x="700.05" y="507.33622047" text-anchor="middle" xml:space="preserve" font-family="&quot;思源黑体 CN&quot;, &quot;思源黑体 CN Bold&quot;, &quot;等线&quot;, sans-serif" font-size="58.67" fill="#FFFFFF" data-pptx-text-baseline="metrics-v1">4</text>
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="763.58 461.85 243.2 54.8" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 763.58 461.85 L 1006.78 461.85 L 1006.78 516.65 L 763.58 516.65 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="773.18" y="502.64808399" text-anchor="start" xml:space="preserve" font-size="37.33" fill="#232323" data-pptx-text-baseline="metrics-v1">项目成果展示</text>
+</g>
+</g>
+<g id="shape-6" data-pptx-object="group" data-pptx-frame="622.45 552.57 378.99 76.93" data-pptx-source-ref="slide:6">
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="622.45 552.57 74.27 76.93" data-pptx-prst="ellipse" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 622.45 591.04 A 37.13 38.47 0 0 1 659.59 552.57 A 37.13 38.47 0 0 1 696.72 591.04 A 37.13 38.47 0 0 1 659.59 629.5 A 37.13 38.47 0 0 1 622.45 591.04 Z" fill="#C00000" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+<text x="659.59" y="611.83622047" text-anchor="middle" xml:space="preserve" font-family="&quot;思源黑体 CN&quot;, &quot;思源黑体 CN Bold&quot;, &quot;等线&quot;, sans-serif" font-size="58.67" fill="#FFFFFF" data-pptx-text-baseline="metrics-v1">5</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="720.91 567.65 280.53 54.8" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 720.91 567.65 L 1001.45 567.65 L 1001.45 622.45 L 720.91 622.45 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="730.51" y="608.44808399" text-anchor="start" xml:space="preserve" font-size="37.33" fill="#232323" data-pptx-text-baseline="metrics-v1">项目计划及期望</text>
+</g>
+</g></svg>

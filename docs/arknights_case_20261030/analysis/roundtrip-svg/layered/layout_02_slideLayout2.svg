@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><g id="layout-shape-2" data-pptx-object="shape" data-pptx-shape-id="2" data-pptx-shape-scope="layout" data-pptx-frame="0 0 0 0" data-pptx-shape-name="标题 1" data-ph-type="title" data-name="标题 1">
+<text x="9.6" y="27.46666667" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;等线&quot;, sans-serif" font-size="24">单击此处编辑母版标题样式</tspan></text>
+</g>
+<g id="layout-shape-3" data-pptx-object="shape" data-pptx-shape-id="3" data-pptx-shape-scope="layout" data-pptx-frame="0 0 0 0" data-pptx-shape-name="内容占位符 2" data-pptx-placeholder-index="1" data-name="内容占位符 2">
+<text x="9.6" y="27.46666667" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;等线&quot;, sans-serif" font-size="24">单击此处编辑母版文本样式</tspan></text>
+<text x="9.6" y="56.26666667" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;等线&quot;, sans-serif" font-size="24">二级</tspan></text>
+<text x="9.6" y="85.06666667" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;等线&quot;, sans-serif" font-size="24">三级</tspan></text>
+<text x="9.6" y="113.86666667" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;等线&quot;, sans-serif" font-size="24">四级</tspan></text>
+<text x="9.6" y="142.66666667" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;等线&quot;, sans-serif" font-size="24">五级</tspan></text>
+</g>
+<g id="layout-shape-4" data-pptx-object="shape" data-pptx-shape-id="4" data-pptx-shape-scope="layout" data-pptx-frame="0 0 0 0" data-pptx-shape-name="日期占位符 3" data-ph-type="dt" data-pptx-placeholder-index="10" data-pptx-placeholder-size="half" data-name="日期占位符 3">
+<text x="9.6" y="27.46666667" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;等线&quot;, sans-serif" font-size="24">2025/11/18</tspan></text>
+</g>
+<g id="layout-shape-6" data-pptx-object="shape" data-pptx-shape-id="6" data-pptx-shape-scope="layout" data-pptx-frame="0 0 0 0" data-pptx-shape-name="灯片编号占位符 5" data-ph-type="sldNum" data-pptx-placeholder-index="12" data-pptx-placeholder-size="quarter" data-name="灯片编号占位符 5">
+<text x="9.6" y="27.46666667" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan fill="#000000" font-family="&quot;等线&quot;, sans-serif" font-size="24">‹#›</tspan></text>
+</g></svg>

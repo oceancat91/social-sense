@@ -1,0 +1,126 @@
+{
+  "edited_pages": [
+    2,
+    5,
+    6
+  ],
+  "source_unchanged": true,
+  "source_material_unchanged": true,
+  "reviewed_code_unchanged": true,
+  "slides": 18,
+  "notes": 18,
+  "unchanged_slide_xml_pages": [
+    1,
+    3,
+    4,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "master_layout_bytes_identical": true,
+  "native_charts_unchanged": 1,
+  "native_tables": 2,
+  "automatic_advance_slides": 0,
+  "use_timings": false,
+  "pdf_pages": 18,
+  "unchanged_page_render_pixels_identical": [
+    1,
+    3,
+    4,
+    9,
+    10,
+    12,
+    13,
+    14,
+    16,
+    17,
+    18
+  ],
+  "minor_raster_differences": {
+    "7": {
+      "bbox": [
+        861,
+        478,
+        1312,
+        707
+      ],
+      "max_channel_difference_255": 14,
+      "mean_channel_difference_255": [
+        0.03240138888888889,
+        0.03031388888888889,
+        0.027339583333333334
+      ],
+      "manual_visual_review": "accepted_no_layout_or_content_change"
+    },
+    "8": {
+      "bbox": [
+        408,
+        150,
+        683,
+        178
+      ],
+      "max_channel_difference_255": 11,
+      "mean_channel_difference_255": [
+        0.007875694444444444,
+        0.0070708333333333335,
+        0.005720138888888889
+      ],
+      "manual_visual_review": "accepted_no_layout_or_content_change"
+    },
+    "11": {
+      "bbox": [
+        94,
+        150,
+        1421,
+        876
+      ],
+      "max_channel_difference_255": 15,
+      "mean_channel_difference_255": [
+        0.11025486111111112,
+        0.10183611111111111,
+        0.09195972222222222
+      ],
+      "manual_visual_review": "accepted_no_layout_or_content_change"
+    },
+    "15": {
+      "bbox": [
+        1135,
+        341,
+        1318,
+        447
+      ],
+      "max_channel_difference_255": 15,
+      "mean_channel_difference_255": [
+        0.020693055555555555,
+        0.019293055555555556,
+        0.017847222222222223
+      ],
+      "manual_visual_review": "accepted_no_layout_or_content_change"
+    }
+  },
+  "rehearsal_seconds": [
+    15,
+    25,
+    35,
+    35,
+    35,
+    40,
+    40,
+    35,
+    25,
+    25,
+    35,
+    15
+  ],
+  "total_rehearsal_seconds": 360,
+  "status": "passed"
+}

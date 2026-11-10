@@ -1,0 +1,234 @@
+{
+  "masters": [
+    {
+      "file": "master_01_slideMaster1.svg",
+      "partPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    }
+  ],
+  "layouts": [
+    {
+      "file": "layout_01_slideLayout1.svg",
+      "partPath": "ppt/slideLayouts/slideLayout1.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml",
+      "showMasterShapes": true
+    },
+    {
+      "file": "layout_02_slideLayout2.svg",
+      "partPath": "ppt/slideLayouts/slideLayout2.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml",
+      "showMasterShapes": true
+    },
+    {
+      "file": "layout_03_slideLayout3.svg",
+      "partPath": "ppt/slideLayouts/slideLayout3.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml",
+      "showMasterShapes": true
+    },
+    {
+      "file": "layout_04_slideLayout4.svg",
+      "partPath": "ppt/slideLayouts/slideLayout4.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml",
+      "showMasterShapes": true
+    }
+  ],
+  "slides": [
+    {
+      "file": "slide_01.svg",
+      "index": 1,
+      "layout": "layout_01_slideLayout1.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_02.svg",
+      "index": 2,
+      "layout": "layout_02_slideLayout2.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_03.svg",
+      "index": 3,
+      "layout": "layout_02_slideLayout2.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_04.svg",
+      "index": 4,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_05.svg",
+      "index": 5,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_06.svg",
+      "index": 6,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_07.svg",
+      "index": 7,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_08.svg",
+      "index": 8,
+      "layout": "layout_02_slideLayout2.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_09.svg",
+      "index": 9,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_10.svg",
+      "index": 10,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_11.svg",
+      "index": 11,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_12.svg",
+      "index": 12,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_13.svg",
+      "index": 13,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_14.svg",
+      "index": 14,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_15.svg",
+      "index": 15,
+      "layout": "layout_02_slideLayout2.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_16.svg",
+      "index": 16,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_17.svg",
+      "index": 17,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_18.svg",
+      "index": 18,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_19.svg",
+      "index": 19,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_20.svg",
+      "index": 20,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_21.svg",
+      "index": 21,
+      "layout": "layout_04_slideLayout4.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_22.svg",
+      "index": 22,
+      "layout": "layout_02_slideLayout2.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_23.svg",
+      "index": 23,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_24.svg",
+      "index": 24,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_25.svg",
+      "index": 25,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_26.svg",
+      "index": 26,
+      "layout": "layout_03_slideLayout3.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    },
+    {
+      "file": "slide_27.svg",
+      "index": 27,
+      "layout": "layout_01_slideLayout1.svg",
+      "master": "master_01_slideMaster1.svg",
+      "showInheritedShapes": true
+    }
+  ]
+}

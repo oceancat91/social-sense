@@ -1,0 +1,21 @@
+{
+  "source_sha256": "ff60e7afcd0158c1401cc651eb3013552efecd2d3cae7ce444dd6d44c35a66d8",
+  "source_unchanged_since_import": true,
+  "changed_slide_xml": [
+    3
+  ],
+  "other_slide_relationships_identical": true,
+  "changed_note_parts": [
+    "ppt/notesSlides/notesSlide3.xml"
+  ],
+  "master_layout_parts_preserved": true,
+  "native_chart_parts_preserved": true,
+  "notes_count": 18,
+  "pdf_pages": 18,
+  "three_scenarios_present": true,
+  "old_case_removed_from_slide3": true,
+  "planned_status_retained": true,
+  "source_links_embedded": true,
+  "visual_review": "PowerPoint渲染第三页，确认三栏对齐、正文完整、页脚和来源可见，无裁切、重叠或遮挡。",
+  "pptx_sha256": "ddf2bdb76d9ddf63533ecabfbe91c2a33043bd95c71ddbc81b18770c1c0a64a3"
+}

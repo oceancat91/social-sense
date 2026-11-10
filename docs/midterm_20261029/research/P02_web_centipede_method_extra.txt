@@ -1,0 +1,98 @@
+102 103 104 105 106 107
+Mean interarrival time (seconds)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+6 selected subreddits /pol/ Twitter
+(a)
+10 2
+ 100 102 104 106
+Mean interarrival time (seconds)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+6 selected subreddits /pol/ Twitter (b)
+10 2
+ 100 102 104 106
+Mean interarrival time (seconds)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+6 selected subreddits /pol/ Twitter
+(c)
+10 3
+ 10 1
+ 101 103 105 107
+Mean interarrival time (seconds)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+6 selected subreddits /pol/ Twitter (d)
+Figure 6: CDF for mean inter-arrival time for the URLs that occur more than once for (a) common alternative news URLs; (b) common main-
+stream news URLs; (c) all alternative news URLs, and (d) all mainstream news URLs.
+100 101 102 103 104 105 106 107 108
+Time difference (seconds)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+Twitter - 6 selected subreddits (Alt.)
+ 6 selected subreddits - Twitter (Alt.)
+Twitter - 6 selected subreddits (Main.) 
+6 selected subreddits - Twitter (Main.)
+(a)
+100 101 102 103 104 105 106 107 108
+Time difference (seconds)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+Twitter - /pol/ (Alt.) 
+/pol/ - Twitter (Alt.)
+Twitter - /pol/ (Main.) 
+/pol/ - Twitter (Main.) (b)
+100 101 102 103 104 105 106 107 108
+Time difference (seconds)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+/pol/ - 6 selected subreddits (Alt.) 
+6 selected subreddits - /pol/ (Alt.)
+/pol/ - 6 selected subreddits (Main.)
+6 selected subreddits - /pol/ (Main.) (c)
+Figure 7: CDF of the difference between the first occurrence of a URL between (a) six selected subreddits and Twitter, (b) /pol/ and Twitter, and
+(c) /pol/ and six selected subreddits.
+add weights on these edges based on the number of such unique
+URLs. By examining the paths we can discern which domains’ URLs
+tend to appear first on each of the platforms. Figure 8 shows the
+graphs built for alternative and mainstream domains. Comparing
+the thickness of the outgoing edges, one can see that breitbart.com
+URLs appear first in the six selected subreddits more often than
+on Twitter and more frequently than on /pol/. However, for other
+popular alternative domains, such as infowars.com, rt.com, and
+sputniknews.com, URLs appear first on Twitter more often than the
+six selected subreddits and /pol/. Also, /pol/ is rarely the platform
+where a URL first shows up. For the mainstream news domains, we
+note that URLs from nytimes.com and cnn.com tend to appear first
+more often on the selected subreddits than Twitter and /pol/, how-
+ever, URLs from other domains like bbc.com and theguardian.com
+8

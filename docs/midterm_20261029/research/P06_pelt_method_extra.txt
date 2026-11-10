@@ -1,0 +1,35 @@
+Optimal Partitioning
+Input: A set of data of the form, ( y1,y 2,...,y n) where yi∈ R.
+A measure of ﬁt C(·) dependent on the data.
+A penalty constant β which does not depend on the number or location of changepoints.
+Initialise: Let n = length of data and set F (0) =−β, cp(0) =NULL .
+Iterate for τ∗ = 1,...,n
+1. Calculate F (τ∗) = min0≤τ<τ ∗
+[
+F (τ) +C(y(τ +1):τ ∗) +β
+]
+.
+2. Let τ′ = arg
+{
+min0≤τ<τ ∗
+[
+F (τ) +C(y(τ +1):τ ∗) +β
+]}
+.
+3. Set cp(τ∗) = (cp(τ′),τ′).
+Output the change points recorded in cp(n).
+Algorithm 1: Optimal Partitioning.
+Whilst OP improves on the computational eﬃciency of the SN method, it is still far
+from being competitive computationally with the BS method. Section 3 introduces a
+modiﬁcation of the optimal partitioning method denoted PELT which results in an
+approach whose computational cost can be linear in n whilst retaining an exact min-
+imisation of (3). This exact and eﬃcient computation is achieved via a combination
+of optimal partitioning and pruning.
+3. A PRUNED EXACT LINEAR TIME METHOD
+We now consider how pruning can be used to increase the computational eﬃciency of
+the OP method whilst still ensuring that the method ﬁnds a global minimum of the
+cost function (3). The essence of pruning in this context is to remove those values of
+τ which can never be minima from the minimisation performed at each iteration in
+(1) of Algorithm 1.
+The following theorem gives a simple condition under which we can do such pruning.
+8

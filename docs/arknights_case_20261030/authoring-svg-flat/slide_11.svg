@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Microsoft YaHei&quot;, sans-serif"><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="shape-5" data-pptx-object="group" data-pptx-frame="95 16 815 83" data-pptx-source-ref="slide:5">
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="95 16 815 83" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 95 16 L 910 16 L 910 99 L 95 99 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="110.64 29.67 615.4 52.36" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 110.64 29.67 L 726.04 29.67 L 726.04 82.03 L 110.64 82.03 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="110.64" y="63" text-anchor="start" xml:space="preserve" font-size="34" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">下一阶段以验证和补齐关键证据为重点</text>
+</g>
+</g>
+<g id="shape-8" data-pptx-object="group" data-pptx-frame="75 108 1130 50" data-pptx-source-ref="slide:8">
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="75 108 1130 50" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 75 108 L 1205 108 L 1205 158 L 75 158 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="79.12 118.67 560.27 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 79.12 118.67 L 639.39 118.67 L 639.39 152.55 L 79.12 152.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.12" y="140" text-anchor="start" xml:space="preserve" font-size="22" fill="#64748B" data-pptx-text-baseline="metrics-v1">项目周期延续至 2027 年 6 月；以下为计划与验收条件</text>
+</g>
+</g>
+<g id="shape-12" data-pptx-object="group" data-pptx-frame="70 680 1100 28.12" data-pptx-source-ref="slide:12">
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="70 680 1100 25" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 70 680 L 1170 680 L 1170 705 L 70 705 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="75.48 688 219.45 20.12" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 75.48 688 L 294.93 688 L 294.93 708.12 L 75.48 708.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="75.48" y="700" text-anchor="start" xml:space="preserve" font-size="13.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">SocialSense · 创新训练类中期答辩</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="1108.08 688 47.44 20.12" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 1108.08 688 L 1155.52 688 L 1155.52 708.12 L 1108.08 708.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1155.52" y="700" text-anchor="end" xml:space="preserve" font-size="13.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">11 / 18</text>
+</g>
+</g>
+<g id="shape-28" data-pptx-object="group" data-pptx-frame="75 191.67 1135 368.33" data-pptx-source-ref="slide:28">
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="75 195 1135 365" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 75 195 L 1210 195 L 1210 560 L 75 560 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="148 250 987 1" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 148 250 L 1135 250" data-pptx-part="geometry" fill="none" stroke-width="4" stroke="#4472C4" />
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="117 236 28 28" data-pptx-prst="ellipse" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 117 250 A 14 14 0 0 1 131 236 A 14 14 0 0 1 145 250 A 14 14 0 0 1 131 264 A 14 14 0 0 1 117 250 Z" fill="#4472C4" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="93.96 191.67 161.24 40.04" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 93.96 191.67 L 255.2 191.67 L 255.2 231.71 L 93.96 231.71 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="93.96" y="217" text-anchor="start" xml:space="preserve" font-size="26" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">2026.11—12</text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="93.84 284 187.18 44.76" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 93.84 284 L 281.02 284 L 281.02 328.76 L 93.84 328.76 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="93.84" y="312" text-anchor="start" xml:space="preserve" font-size="29.07" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">补齐基础证据</text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="94.08 335 254.11 111.32" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 94.08 335 L 348.19 335 L 348.19 446.32 L 94.08 446.32 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="94.08" y="363" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="37.946667"><tspan><tspan>固化数据与评估协议</tspan></tspan><tspan data-paragraph-line-break="1">建立简单基线及事件样本</tspan><tspan data-paragraph-line-break="1">验收：评估表、标注说明</tspan></text>
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="500 236 28 28" data-pptx-prst="ellipse" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 500 250 A 14 14 0 0 1 514 236 A 14 14 0 0 1 528 250 A 14 14 0 0 1 514 264 A 14 14 0 0 1 500 250 Z" fill="#4472C4" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="476.96 191.67 161.24 40.04" data-pptx-prst="rect" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 476.96 191.67 L 638.2 191.67 L 638.2 231.71 L 476.96 231.71 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="476.96" y="217" text-anchor="start" xml:space="preserve" font-size="26" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">2027.01—03</text>
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="476.84 284 187.18 44.76" data-pptx-prst="rect" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 476.84 284 L 664.02 284 L 664.02 328.76 L 476.84 328.76 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="476.84" y="312" text-anchor="start" xml:space="preserve" font-size="29.07" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">验证核心研究</text>
+</g>
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="477.08 335 277.04 111.32" data-pptx-prst="rect" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 477.08 335 L 754.12 335 L 754.12 446.32 L 477.08 446.32 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="477.08" y="363" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="37.946667"><tspan><tspan>消融、跨话题、传播图比较</tspan></tspan><tspan data-paragraph-line-break="1">线上联调与小规模试用</tspan><tspan data-paragraph-line-break="1">验收：误差分析、试用记录</tspan></text>
+</g>
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="883 236 28 28" data-pptx-prst="ellipse" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 883 250 A 14 14 0 0 1 897 236 A 14 14 0 0 1 911 250 A 14 14 0 0 1 897 264 A 14 14 0 0 1 883 250 Z" fill="#4472C4" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-25" data-pptx-object="shape" data-pptx-frame="859.96 191.67 161.24 40.04" data-pptx-prst="rect" data-pptx-source-ref="slide:25" data-pptx-semantic-object="shape">
+<path d="M 859.96 191.67 L 1021.2 191.67 L 1021.2 231.71 L 859.96 231.71 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="859.96" y="217" text-anchor="start" xml:space="preserve" font-size="26" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">2027.04—06</text>
+</g>
+<g id="shape-26" data-pptx-object="shape" data-pptx-frame="859.84 284 217.99 44.76" data-pptx-prst="rect" data-pptx-source-ref="slide:26" data-pptx-semantic-object="shape">
+<path d="M 859.84 284 L 1077.83 284 L 1077.83 328.76 L 859.84 328.76 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="859.84" y="312" text-anchor="start" xml:space="preserve" font-size="29.07" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">成果整理与结题</text>
+</g>
+<g id="shape-27" data-pptx-object="shape" data-pptx-frame="860.08 335 277.04 111.32" data-pptx-prst="rect" data-pptx-source-ref="slide:27" data-pptx-semantic-object="shape">
+<path d="M 860.08 335 L 1137.12 335 L 1137.12 446.32 L 860.08 446.32 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="860.08" y="363" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="37.946667"><tspan><tspan>收敛已验证模块与文档</tspan></tspan><tspan data-paragraph-line-break="1">完善软著及论文材料</tspan><tspan data-paragraph-line-break="1">验收：结题材料与实际回执</tspan></text>
+</g>
+</g>
+<g id="shape-33" data-pptx-object="group" data-pptx-frame="80 566 1115 88" data-pptx-source-ref="slide:33">
+<g id="shape-29" data-pptx-object="shape" data-pptx-frame="80 566 1115 88" data-pptx-prst="rect" data-pptx-source-ref="slide:29" data-pptx-semantic-object="shape">
+<path d="M 80 566 L 1195 566 L 1195 654 L 80 654 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-30" data-pptx-object="shape" data-pptx-frame="80 566 1115 88" data-pptx-prst="rect" data-pptx-source-ref="slide:30" data-pptx-semantic-object="shape">
+<path d="M 80 566 L 1195 566 L 1195 654 L 80 654 Z" fill="#EDF2F8" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-31" data-pptx-object="shape" data-pptx-frame="103.04 577.33 829.17 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:31" data-pptx-semantic-object="shape">
+<path d="M 103.04 577.33 L 932.21 577.33 L 932.21 614.29 L 103.04 614.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="103.04" y="600" text-anchor="start" xml:space="preserve" font-size="24" fill="#243446" font-weight="bold" data-pptx-text-baseline="metrics-v1">申请书预算 7,500 元；实际获批额度、支出和调剂审批待财务记录核对。</text>
+</g>
+<g id="shape-32" data-pptx-object="shape" data-pptx-frame="103.16 614 515.29 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:32" data-pptx-semantic-object="shape">
+<path d="M 103.16 614 L 618.45 614 L 618.45 646.44 L 103.16 646.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="103.16" y="634" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">优先投入：数据验证、必要算力、研究与成果整理。</text>
+</g>
+</g></svg>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Microsoft YaHei&quot;, sans-serif"><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="value-header" data-pptx-bounds="95 16 815 83" data-pptx-role="header"><rect x="95" y="16" width="815" height="83" fill="none" /><text x="110" y="63" font-size="33" fill="#44546A" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">支持正向互动，先让结论经得起复核</text></g><g id="value-subtitle" data-pptx-bounds="75 108 1130 48"><rect x="75" y="108" width="1130" height="48" fill="none" /><text x="80" y="139" font-size="21" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">“笑飞了”可能是赞赏，也可能是反讽；识别表达对象和语境，才能减少回应误判</text></g><g id="value-footer" data-pptx-bounds="70 680 1100 27" data-pptx-role="footer"><rect x="70" y="680" width="1100" height="27" fill="none" /><text x="76" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">SocialSense  ·  创新训练类中期答辩</text><text x="1155" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="end">05 / 18</text></g><g id="review-flow" data-pptx-bounds="65 180 340 472"><rect x="65" y="180" width="340" height="472" fill="none" /><rect x="76" y="184" width="318" height="74" fill="#EDF2F8" stroke="#4472C4" stroke-width="1.2" rx="6" ry="6" /><text x="235" y="231" font-size="24" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">原句、上下文与来源</text><line x1="235" y1="258" x2="235" y2="294" stroke="#4472C4" stroke-width="2" /><rect x="76" y="294" width="318" height="74" fill="#EDF2F8" stroke="#4472C4" stroke-width="1.2" rx="6" ry="6" /><text x="235" y="341" font-size="24" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">形成候选态度判断</text><line x1="235" y1="368" x2="235" y2="404" stroke="#4472C4" stroke-width="2" /><rect x="76" y="404" width="318" height="74" fill="#EDF2F8" stroke="#4472C4" stroke-width="1.2" rx="6" ry="6" /><text x="235" y="451" font-size="24" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">规则核验与受限改写</text><line x1="235" y1="478" x2="235" y2="514" stroke="#4472C4" stroke-width="2" /><rect x="76" y="514" width="318" height="74" fill="#EDF2F8" stroke="#4472C4" stroke-width="1.2" rx="6" ry="6" /><text x="235" y="561" font-size="24" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">保留依据与不确定性</text><text x="83" y="631" font-size="21" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">目的：减少脱离语境的强判断</text></g><g id="gates-single" data-pptx-bounds="440 180 770 211"><rect x="440" y="180" width="770" height="211" fill="none" /><rect x="440" y="180" width="770" height="211" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="6" ry="6" /><text x="464" y="220" font-size="27" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">G1—G7：单平台结论与观测一致</text><text x="464" y="267" font-size="23" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">核对趋势、情绪、立场、引用标识、数值边界，<tspan x="464" dy="34.04">检查空窗表述以及风险判断是否有观测依据。</tspan><tspan x="464" dy="34.04">它能暴露结构性矛盾，不等于理解全部梗义与反讽。</tspan></text></g><g id="gates-cross" data-pptx-bounds="440 411 770 211"><rect x="440" y="411" width="770" height="211" fill="none" /><rect x="440" y="411" width="770" height="211" fill="#FFFFFF" stroke="#0D3745" stroke-width="1.2" rx="6" ry="6" /><text x="464" y="451" font-size="27" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">CX1—CX5：跨平台汇总不掩盖分歧</text><text x="464" y="498" font-size="23" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">核对平台覆盖、分歧表述和引用平台的有效性，<tspan x="464" dy="34.04">每条断言绑定平台；全空数据不生成强结论。</tspan><tspan x="464" dy="34.04">引用存在不代表内容支持结论，仍须回看原文。</tspan></text></g><g id="response-use" data-pptx-bounds="440 636 768 29"><rect x="440" y="636" width="768" height="29" fill="none" /><text x="452" y="657" font-size="21" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">应用意义：让社区团队看见不同声音，保留可复核的回应依据。</text></g></svg>

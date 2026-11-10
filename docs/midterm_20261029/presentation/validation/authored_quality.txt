@@ -1,0 +1,92 @@
+
+[SCAN] Checking 18 round-trip output SVG page(s) for edited-text horizontal capacity (single-line width per positioned line; vertical wrapping is not modeled)...
+
+[OK] slide_01.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] slide_06.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] slide_05.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] slide_09.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] slide_12.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[WARN] slide_10.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] <text> (x=315, y=298; text='x = T + S + C + R') exceeds owning frame <rect> on the horizontal axis: estimated text (178.2, 270.8)-(451.8, 309.2), frame (88.0, 340.0)-(192.0, 432.0), overflow horizontal 249.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=140, y=409; text='EMA') exceeds owning frame <rect> on the horizontal axis: estimated text (122.3, 394.6)-(157.7, 414.9), frame (204.0, 340.0)-(308.0, 432.0), overflow horizontal 78.5%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=256, y=409; text='Fourier') exceeds owning frame <rect> on the horizontal axis: estimated text (223.2, 394.6)-(288.8, 414.9), frame (320.0, 340.0)-(424.0, 432.0), overflow horizontal 93.1%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=372, y=409; text='事件信号') exceeds owning frame <rect> on the horizontal axis: estimated text (335.8, 394.6)-(408.2, 414.9), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 96.3%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=315, y=492; text='四路编码 → 稀疏专家融合') exceeds owning frame <rect> on the horizontal axis: estimated text (155.0, 469.1)-(475.0, 501.4), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 270.2%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=315, y=543; text='预测增量 → 累加回水平域') exceeds owning frame <rect> on the horizontal axis: estimated text (166.9, 521.8)-(463.1, 551.8), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 258.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=315, y=591; text='EMA 含可学习平滑参数') exceeds owning frame <rect> on the horizontal axis: estimated text (206.1, 574.0)-(423.9, 598.0), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 221.0%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+
+[WARN] slide_18.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] <text> (x=133, y=401.0; text='1.0') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 386.6)-(133.0, 406.9), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=133, y=343.5; text='1.5') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 329.1)-(133.0, 349.4), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=133, y=286.0; text='2.0') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 271.6)-(133.0, 291.9), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=246.25, y=545; text='持续值') exceeds owning frame <rect> on the horizontal axis: estimated text (212.8, 527.1)-(279.7, 552.4), frame (405.8, 292.8)-(491.8, 510.0), overflow horizontal 224.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=448.75, y=545; text='数值路径') exceeds owning frame <rect> on the horizontal axis: estimated text (404.1, 527.1)-(493.4, 552.4), frame (405.8, 292.8)-(491.8, 510.0), overflow horizontal 1.9%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+
+[OK] slide_20.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] slide_16.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] slide_17.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] slide_26.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] slide_27.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] evaluation_protocol.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] slide_15.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] slide_21.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] slide_13.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] slide_25.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[OK] slide_23.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+================================================================================
+[SUMMARY] Check Summary
+================================================================================
+
+Total files: 18
+  [OK] Fully passed: 16 (88%)
+  [WARN] With warnings: 2 (11%)
+  [ERROR] With errors: 0 (0%)
+
+Provenance categories:
+  blocking: 0          hard findings; gate also requires exit 0
+  introduced: 12       advisory; new or changed
+  inherited: 0         informational; prototype-identical
+  source-import: 0     informational; source-conversion loss
+
+[TIP] Common fixes:
+  1. XML well-formedness: write typography as raw Unicode (—, ©, →, NBSP); escape XML reserved chars as &amp; &lt; &gt; &quot; &apos; — never use HTML named entities like &nbsp; &mdash; &copy;
+  2. viewBox issues: root viewBox is the canvas authority (see references/canvas-formats.md)
+  3. Paint recommendation: generated SVG prefers uppercase #RRGGBB plus channel-specific opacity; compatible alternatives remain non-blocking
+  4. foreignObject: Use <text> + <tspan> for manual line breaks
+  5. Font issues: use PPT-safe exported typefaces (e.g. Arial / Consolas, with the CJK face of the deck language)
+
+[REPORT] JSON quality report exported: docs\midterm_20261029\presentation\validation\svg_quality_report.json

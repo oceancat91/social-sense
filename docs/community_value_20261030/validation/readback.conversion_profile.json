@@ -1,0 +1,28 @@
+{
+  "schema": "ppt-master.source_to_md.profile.v1",
+  "converter": "ppt_to_md.py",
+  "conversion_type": "pptx",
+  "source": {
+    "path": "D:/HuaweiMoveData/Users/32002/Desktop/social-sense/docs/community_value_20261030/exports/community_value_20261030_20261030_184037.pptx",
+    "name": "community_value_20261030_20261030_184037.pptx",
+    "suffix": ".pptx",
+    "kind": "file",
+    "exists": true,
+    "size_bytes": 4986331
+  },
+  "outputs": {
+    "markdown": "readback.md",
+    "asset_dir": "readback_files",
+    "image_manifest": "readback_files/image_manifest.json",
+    "image_count": 10
+  },
+  "markdown": {
+    "line_count": 790,
+    "char_count": 11851,
+    "heading_count": 37,
+    "table_count": 3,
+    "image_ref_count": 25,
+    "link_count": 6
+  },
+  "warnings": []
+}

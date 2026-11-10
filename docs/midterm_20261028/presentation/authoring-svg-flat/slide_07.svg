@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;微软雅黑&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="58.96 151.34 376.67 54.8" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 58.96 151.34 L 435.63 151.34 L 435.63 206.14 L 58.96 206.14 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="68.56" y="178.80283465" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#3B3B3B" data-pptx-text-baseline="metrics-v1">问题定义：</text>
+</g>
+<g id="shape-19" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:19">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image3.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="84.27 25.22 770 54.8" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 84.27 25.22 L 854.27 25.22 L 854.27 80.02 L 84.27 80.02 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="93.87" y="66.01595801" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, &quot;微软雅黑&quot;, sans-serif" font-size="37.33" fill="#3B3B3B" data-pptx-text-baseline="metrics-v1"><tspan>2</tspan><tspan>. 问题定义</tspan></text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="46.12 232.83 350.53 8" data-pptx-prst="roundRect" data-pptx-av-adj="val 50000" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 46.12 236.83 A 4 4 0 0 1 50.12 232.83 L 392.66 232.83 A 4 4 0 0 1 396.66 236.83 L 396.66 236.83 A 4 4 0 0 1 392.66 240.83 L 50.12 240.83 A 4 4 0 0 1 46.12 236.83 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-4" data-pptx-object="picture" data-pptx-frame="311.3 130.57 298.7 94.84" data-pptx-source-ref="slide:4">
+<image data-pptx-object="picture" data-pptx-frame="311.3 130.57 298.7 94.84" href="../images/image10.png" x="311.3" y="130.57" width="298.7" height="94.84" preserveAspectRatio="none" />
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="67.27 307.69 594.27 201.26" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 67.27 307.69 L 661.54 307.69 L 661.54 508.95 L 67.27 508.95 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="124.87" y="336.49228346" text-anchor="start" xml:space="preserve" font-size="22" fill="#000000" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="32"><tspan><tspan>其中，</tspan><tspan font-weight="bold">c</tspan><tspan>表示给定的文字、图像、单视角视频或三维模型等</tspan></tspan><tspan data-paragraph-line-break="1">输入条件，<tspan> </tspan><tspan font-weight="bold">G</tspan><tspan>表示从输入到动态三维内容的完整流程的映射</tspan></tspan><tspan data-paragraph-line-break="1">，<tspan font-weight="bold">ξ</tspan><tspan>表示生成过程中的随机性，</tspan><tspan font-weight="bold">S</tspan><tspan>为动态三维结果，</tspan><tspan font-weight="bold">S(t)</tspan><tspan> </tspan><tspan>为</tspan></tspan><tspan data-paragraph-line-break="1">其在选定时刻<tspan>t</tspan><tspan>的状态。</tspan><tspan font-weight="bold">C</tspan><tspan> </tspan><tspan>包含观察相机的位置、朝向与成</tspan></tspan><tspan data-paragraph-line-break="1">像参数，<tspan font-weight="bold">R</tspan><tspan>将该时刻的三维状态渲染为画面</tspan><tspan font-weight="bold">I(</tspan><tspan font-weight="bold">C,t</tspan><tspan font-weight="bold">)</tspan><tspan>。</tspan></tspan></text>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="67.27 553.06 612.31 100.17" data-pptx-prst="rect" data-pptx-source-ref="slide:14">
+
+<path d="M 67.27 553.06 L 679.58 553.06 L 679.58 653.23 L 67.27 653.23 Z" fill="none" />
+
+
+<text x="124.87" y="579.19622047" text-anchor="start" xml:space="preserve" font-size="22" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>两个公式分别描述内容生成与内容观察。固定</tspan><tspan>t</tspan><tspan>、改</tspan></text>
+<text x="76.87" y="608.26288714" text-anchor="start" xml:space="preserve" font-size="22" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>变</tspan><tspan>C</tspan><tspan>，可以从不同角度观察同一姿态；固定</tspan><tspan>C</tspan><tspan>、改变</tspan></text>
+<text x="76.87" y="637.59622047" text-anchor="start" xml:space="preserve" font-size="22" fill="#000000" data-pptx-text-baseline="metrics-v1"><tspan>t</tspan><tspan>，可以观看同一视角下的连续动作。</tspan></text>
+</g>
+<image id="shape-23" data-pptx-object="graphic-frame" data-pptx-frame="725.54 122.77 637.35 530.46" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" href="../images/source-object-previews/source-object-a533466fe2fa5342e6cc166fd32f622607193589b4f1c2496a62e136f7ae87ae.svg" data-pptx-source-ref="slide:23" data-pptx-source-proxy="native-restore" /></svg>

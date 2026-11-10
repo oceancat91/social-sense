@@ -1,0 +1,28 @@
+{
+  "schema": "ppt-master.source_to_md.profile.v1",
+  "converter": "ppt_to_md.py",
+  "conversion_type": "pptx",
+  "source": {
+    "path": "D:/HuaweiMoveData/Users/32002/Desktop/social-sense/docs/scenarios_delivery_20261110/SocialSense_中期答辩_第三页三栏修订版.pptx",
+    "name": "SocialSense_中期答辩_第三页三栏修订版.pptx",
+    "suffix": ".pptx",
+    "kind": "file",
+    "exists": true,
+    "size_bytes": 4596523
+  },
+  "outputs": {
+    "markdown": "readback.md",
+    "asset_dir": "readback_files",
+    "image_manifest": "readback_files/image_manifest.json",
+    "image_count": 8
+  },
+  "markdown": {
+    "line_count": 807,
+    "char_count": 11569,
+    "heading_count": 37,
+    "table_count": 3,
+    "image_ref_count": 23,
+    "link_count": 6
+  },
+  "warnings": []
+}

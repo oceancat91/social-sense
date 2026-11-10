@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Microsoft YaHei&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-51" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:51">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="value-header" data-pptx-bounds="95 16 815 83" data-pptx-role="header"><rect x="95" y="16" width="815" height="83" fill="none" /><text x="110" y="63" font-size="33" fill="#44546A" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">备份｜竞品公开能力与差异化验证</text></g><g id="value-subtitle" data-pptx-bounds="75 108 1130 48"><rect x="75" y="108" width="1130" height="48" fill="none" /><text x="80" y="139" font-size="21" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">溯源已是成熟产品能力；本项目聚焦游戏社区语境，并用样本和实验检验特色</text></g><g id="value-footer" data-pptx-bounds="70 680 1100 27" data-pptx-role="footer"><rect x="70" y="680" width="1100" height="27" fill="none" /><text x="76" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">SocialSense  ·  创新训练类中期答辩</text><text x="1155" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="end">17 / 18  备份</text></g><g id="competitor-source-image" data-pptx-bounds="65 178 590 494"><rect x="65" y="178" width="590" height="494" fill="none" /><image href="../images/yuqing_trace.png" x="65" y="186" width="590" height="425.39" preserveAspectRatio="xMidYMid meet" /><text x="77" y="638" font-size="18" fill="#4472C4" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start"><a href="https://files.yqt365.com/fileOnline/instruction.html"><tspan text-decoration="underline">[W4] 舆情通官方说明中的溯源截图</tspan></a></text><text x="77" y="662" font-size="17" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">历史功能示例（图内为2021年数据），非本项目界面</text></g><g id="competitive-boundary" data-pptx-bounds="693 180 517 155"><rect x="693" y="180" width="517" height="155" fill="none" /><text x="710" y="216" font-size="27" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">比较边界</text><text x="710" y="259" font-size="22" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">公开说明包含首发、参与者和传播路径。<tspan x="710" dy="31.9">本项目以这些已有能力为参照，重点研究</tspan><tspan x="710" dy="31.9">游戏梗的版本、语境与回应反馈的关联。</tspan></text></g><g id="differentiation-tests" data-pptx-bounds="693 348 517 157"><rect x="693" y="348" width="517" height="157" fill="none" /><text x="710" y="385" font-size="27" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">差异化如何验证</text><text x="710" y="429" font-size="22" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">同源版本：准确率、召回率与误链接率。<tspan x="710" dy="31.9">来源复核：错误归因、可核查比例与耗时。</tspan><tspan x="710" dy="31.9">回应研究：有效参与、反馈质量与误读例。</tspan></text></g><g id="paper-translation" data-pptx-bounds="693 523 517 148"><rect x="693" y="523" width="517" height="148" fill="none" /><text x="710" y="555" font-size="25" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">文献启发 [11 / W5]</text><text x="710" y="592" font-size="20.5" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">感知哈希、聚类与跨社区传播建模可作基线；<tspan x="710" dy="30.75">中文游戏梗需单独标注，不能照搬原文效果。</tspan></text><text x="710" y="661" font-size="16" fill="#4472C4" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start"><a href="https://arxiv.org/abs/1805.12512"><tspan text-decoration="underline">IMC 2018 · On the Origins of Memes</tspan></a></text></g></svg>

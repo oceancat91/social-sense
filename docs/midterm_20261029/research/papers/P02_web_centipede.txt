@@ -1,0 +1,1941 @@
+## PDF page 1
+
+The Web Centipede: Understanding How Web Communities
+Influence Each Other Through the Lens of Mainstream and
+Alternative News Sources
+Savvas Zannettou⋆, Tristan Caulfield†, Emiliano De Cristofaro†, Nicolas Kourtellis‡,
+Ilias Leontiadis‡, Michael Sirivianos⋆, Gianluca Stringhini†, and Jeremy Blackburn+
+⋆Cyprus University of Technology, †University College London, ‡Telefonica Research,
++University of Alabama at Birmingham
+sa.zannettou@edu.cut.ac.cy, {t.caulfield,e.decristofaro,g.stringhini}@ucl.ac.uk,
+{nicolas.kourtellis,ilias.leontiadis}@telefonica.com, michael.sirivianos@cut.ac.cy, blackburn@uab.edu
+ABSTRACT
+As the number and the diversity of news outlets on the Web grow,
+so does the opportunity for “alternative” sources of information
+to emerge. Using large social networks like Twitter and Facebook,
+misleading, false, or agenda-driven information can quickly and
+seamlessly spread online, deceiving people or influencing their
+opinions. Also, the increased engagement of tightly knit commu-
+nities, such as Reddit and 4chan, further compounds the problem,
+as their users initiate and propagate alternative information, not
+only within their own communities, but also to different ones as
+well as various social media. In fact, these platforms have become
+an important piece of the modern information ecosystem, which,
+thus far, has not been studied as a whole.
+In this paper, we begin to fill this gap by studying mainstream and
+alternative news shared on Twitter, Reddit, and 4chan. By analyzing
+millions of posts around several axes, we measure how mainstream
+and alternative news flows between these platforms. Our results
+indicate that alt-right communities within 4chan and Reddit can
+have a surprising level of influence on Twitter, providing evidence
+that “fringe” communities often succeed in spreading alternative
+news to mainstream social networks and the greater Web.
+1 INTRODUCTION
+Over the past few years, a number of high-profile conspiracy theo-
+ries and false stories have originated and spread on the Web. After
+the Boston Marathon bombings in 2013, a large number of tweets
+started to claim that the bombings were a “false flag” perpetrated
+by the United States government [30]. Also, the GamerGate con-
+troversy started as a blogpost by a jaded ex-boyfriend that turned
+into a pseudo-political campaign of targeted online harassment [6].
+More recently, the Pizzagate conspiracy [35] – a debunked theory
+connecting a restaurant and members of the US Democratic Party
+to a child sex ring – led to a shooting in a Washinghton DC restau-
+rant [15]. These stories were all propagated, in no small part, via
+the use of “alternative” news sites like Infowars and “fringe” Web
+communities like 4chan. Overall, the barrier of entry for such alter-
+native news sources has been greatly reduced by the Web and large
+social networks. Due to the negligible cost of distributing informa-
+tion over social media, fringe sites can quickly gain traction with
+large audiences. At the same time, the explosion of information
+sources also hinders the effective regulation of the sector, while
+further muddying the water when it comes to the evaluation of
+news information by readers.
+While there are many plausible motives for the rise in alterna-
+tive narratives [29], ranging from libelous (e.g., to harm the image
+of a particular person or group), political (e.g,. to influence vot-
+ers), profit (e.g., to make money from advertising), or trolling [1],
+the manner in which they proliferate throughout the Web is still
+unknown. Although previous work has examined information cas-
+cades, rumors, and hoaxes [12, 18, 27], to the best of our knowledge,
+very little work provides a holistic view of the modern information
+ecosystem. This knowledge, however, is crucial for understanding
+the alternative news world and for designing appropriate detec-
+tion/mitigation strategies. Anecdotal evidence and press coverage
+suggest that alternative news dissemination might start on fringe
+sites, eventually reaching mainstream online social networks and
+news outlets [23, 34]. Nevertheless, this phenomenon has not been
+measured and no thorough analysis has focused on how news
+moves from one online service to another.
+In this paper, we address this gap by providing the first large-
+scale measurement of how mainstream and alternative news flows
+through multiple social media platforms. We focus on the relation-
+ship between three fundamentally different social media platforms,
+Reddit, Twitter, and 4chan, which we choose because of: 1) their fun-
+damental differences as well as their generally accepted “driving” of
+substantial portions of the online world; 2) anecdotal evidence that
+suggests that specific sub-communities within Reddit and 4chan
+act as generators [34] and incubators [17] of fake news stories; and
+3) the substantial impact they have in forming and manipulating
+peoples’ opinions (and therefore actions), when they constantly
+disseminate false information [15].
+Contributions. First, we undertake a large-scale measurement
+and comparison of the occurrence of mainstream and alternative
+news sources across three social media platforms (4chan, Reddit,
+and Twitter). Then, we provide an understanding of the temporal
+dynamics of how URLs from news sites are posted on the different
+social networks. Finally, we present a measurement of theinfluence
+between the platforms that provides insight into how information
+spreads throughout the greater Web.
+Overall, our findings indicate that Twitter, Reddit, and 4chan
+are used quite extensively for the dissemination of both alternative
+1
+arXiv:1705.06947v2  [cs.SI]  30 Sep 2017
+
+## PDF page 2
+
+and mainstream news. Using a statistical model for influence –
+namely, Hawkes processes – we show that each of the platforms
+(and, in the case of Reddit, sub-communities) have varying degrees
+of influence on each other, and this influence differs with respect to
+mainstream and alternative news sources. Naturally, our approach
+is not without limitations, which we discuss in details in Section 7.
+Paper Organization. The rest of the paper is organized as follows.
+The next section discusses the social networks and information
+sources studied in this paper. Section 3 presents a general charac-
+terization of each platform, while Section 4 discusses our tempo-
+ral findings. Section 5 reports our measurements of the influence
+between the platforms. Finally, after reviewing related work in
+Section 6, the paper concludes in Section 7.
+2 BACKGROUND AND DATA COLLECTION
+In this section, we provide some background information on the
+three social media platforms we study, the selection of news sources,
+and details on the data we collect.
+2.1 Platforms and News Sources
+Twitter.Twitter is a micro-blogging, directed social network where
+users broadcast 140-character “tweets” to their followers. Some of
+its features include the hashtag (a keyword preceded by #), which
+makes it easier for users to find and weigh in on tweets around a
+theme, as well as retweeting, i.e., rebroadcasting a tweet.
+Reddit. The so-called “front page of the Internet” is a social news
+aggregator where users post URLs to content along with a title,
+and other users can upvote or downvote the post. Votes determine
+the ranking of the posts, i.e., the order in which they are displayed.
+There is also a threaded comments section for users to discuss a
+post, and comments are also subject to the voting system. Although
+users can mark each other as friends, the community structure is not
+defined by the friendship relation. Rather, communities on Reddit
+are formed via the “subreddit” concept. Users can create their own
+subreddits, choosing the topic as well as the moderation policy. This
+has led to a plethora of communities, ranging from video games
+to news and politics, pornography, and even meta-communities
+focusing on interactions people have in other subreddits.
+4chan. 4chan is a type of discussion forum known as animageboard:
+users create a new thread by making a post with a single image
+attached, and perhaps some text, in one of several boards (70 as of
+September 2017) for different topics of interest. Other users can add
+posts to the thread, with or without an image, and quote or reply
+to posts. Users are not required to provide a username to access
+or post to 4chan, and the default “Anonymous” is the preferred
+and overwhelmingly used identity. Another key characteristic of
+4chan is ephemerality: there are a finite number of threads that
+can be active at a given time on a given board. When a new thread
+is created, an old one is purged based on their ranking within the
+“bump” system [16]. Although several boards have a temporary
+archive for purged posts, all threads are permanently deleted after 7
+days. 4chan is known for its extremely lax moderation: while boards
+are divided into safe and not safe for work categories, volunteer
+“janitors” and paid employees generally are not concerned with the
+language used or the tone of discussion, as long as the discussion
+Platform Total Posts % Alt. % Main.
+Twitter 587M 0.022% 0.070%
+Reddit (posts + comments) 332M 0.023% 0.181%
+4chan 42M 0.050% 0.197%
+Table 1: Total number of posts crawled and percentage of posts that
+contain URLs to our list of alternative and mainstream news sites.
+Platform Posts/Comments Alt. URLs Main. URLs
+Twitter 486,700 42,550 236,480
+Reddit (six selected subreddits) 620,530 40,046 301,840
+Reddit (all other subreddits) 1,228,105 24,027 726,948
+4chan (/pol/) 90,537 8,963 40,164
+4chan (/int/, /sci/, /sp/) 7,131 615 5,513
+Table 2: Number of posts/comments that contain a URL to one of our
+information sources, as well as the number of unique URLs linking
+to alternative and mainstream news sites in our list.
+Tweets Retrieved (%) Avg. Retweets Avg. Likes
+Alternative 110,629 92,104 (83.2%) 341 ± 1,228 0.82 ± 15.6
+Mainstream 376,071 329,950 (87.7%) 404 ± 2,146 0.96 ± 55.6
+Table 3: Statistics of alternative and mainstream news URLs in the
+tweets in our dataset.
+falls within the general topic of the board. Since 4chan’s primary
+mode of operation is “anonymous, ” it inherently lacks many of the
+“social” features of other social media platforms, and there is no
+concept of friends/followers.
+In this work, we are primarily interested in the Politically In-
+correct board, or /pol/, which focuses on the discussion of politics
+and world events, and has often been linked to the alt-right [ 4],
+exhibiting a high degree of racist and hate speech content [ 16].
+We also use 4chan’s Sports (/sp/), International (/int/), and Science
+(/sci/) boards as a baseline.
+News sites. Our analysis uses a set of news websites that can
+confidently be labeled as either “mainstream” or “alternative” news.
+More specifically, we create a list of 99 news sites including 45
+mainstream and 54 alternative ones.1 For the former, we select 45
+from the Alexa top 100 news sites, leaving out those based on user-
+generated content, those serving specialized content (e.g., finance
+news), as well as non-English sites. For the latter, we use Wikipedia2
+and FakeNewsWatch.3 We also add two state-sponsored alternative
+news domains: sputniknews.com and rt.com, as they have recently
+attracted public attention due to their posting of controversial, and
+seemingly agenda-pushing stories [8].
+2.2 Datasets
+We gather information from posts, threads, and comments on Twit-
+ter, Reddit, and 4chan that contain URLs from the 99 news sites.
+With a few gaps (see below), our datasets cover activity on the
+three platforms between June 30, 2016 and February 28, 2017. Ta-
+ble 1 shows the total number of posts/comments crawled and the
+percentage of posts that contains links to URLs from the aforemen-
+tioned news domains. We observe that mainstream news URLs are
+1The complete list of the 99 sites is available at https://drive.google.com/
+open?id=0ByP5a__khV0dM1ZSY3YxQWF2N2c
+2https://en.wikipedia.org/wiki/List_of_fake_news_websites
+3http://fakenewswatch.com/
+2
+
+## PDF page 3
+
+Subreddit (Alt.) (%) Subreddit (Main.) (%)
+The_Donald 35.37 % politics 12.9 %
+politics 8.21 % worldnews 6.24 %
+news 3.85 % The_Donald 4.53 %
+conspiracy 3.84 % news 4.23 %
+Uncensored 2.66 % TheColorIsBlue 3.06 %
+Health 2.10 % TheColorIsRed 2.48 %
+PoliticsAll 1.54 % willis7737_news 2.27 %
+Conservative 1.45 % news_etc 1.94 %
+worldnews 1.41 % AskReddit 1.37 %
+WhiteRights 1.21 % canada 1.31 %
+KotakuInAction 1.04 % EnoughTrumpSpam 1.20 %
+HillaryForPrison 0.94 % NoFilterNews 1.16 %
+TheOnion 0.94 % BreakingNews24hr 1.07 %
+AskTrumpSupporters 0.84 % conspiracy 0.89 %
+POLITIC 0.81 % todayilearned 0.83 %
+rss_theonion 0.67 % thenewsrightnow 0.78 %
+the_Europe 0.67 % europe 0.77 %
+new_right 0.60 % ReddLineNews 0.75 %
+AskReddit 0.59 % hillaryclinton 0.73 %
+AnythingGoesNews 0.51 % nottheonion 0.73 %
+Table 4: Top 20 subreddits w.r.t. mainstream and alternative news
+URLs occurrence, and their percentage, in Reddit.
+present in a greater percentage of posts on 4chan and Reddit than
+on Twitter, while alternative ones are about twice as likely to ap-
+pear in posts on 4chan than on Twitter or Reddit. Table 2 provides
+a summary of our datasets, which we present in more detail below.
+Note that we break Reddit and 4chan datasets into two different
+instances, as further discussed in Section 3.
+Twitter. We collect the 1% of all publicly available tweets with
+URLs from the aforementioned news domains between June 30,
+2016 and February 28, 2017 using the Twitter Streaming API.4 In
+total, we gather 487k tweets containing 279k unique URLs pointing
+to mainstream or alternative news sites. Since tweets are retrieved
+at the time they are posted, we do not get information such as the
+number of times they are re-tweeted or liked. Therefore, between
+March and May 2017, we re-crawled each tweet to retrieve this
+data. Basic statistics are summarized in Table 3. Due to a failure
+in our collection infrastructure, we have some gaps in the Twitter
+dataset, specifically between Oct 28–Nov 2 and Nov 5–16, 2016, as
+well as Nov 22, 2016 – Jan 13, 2017, and Feb 24–28, 2017.
+Reddit. We obtain all posts and comments on Reddit between
+June 30, 2016 and February 28, 2017, using data made available on
+Pushshift.5 We collect approximately 42M posts, 390M comments,
+and 300k subreddits. Once again, we filter posts and comments that
+contain URLs from one of the 99 news sites, which yields a dataset
+of 1.8M posts/comments and approximately 1.1M URLs.
+4chan. For 4chan, we use all threads and posts made on the Po-
+litically Incorrect (/pol/) board, as well as /sp/ (Sports), /int/ (In-
+ternational), and /sci/ (Science) boards for comparison, using the
+same methodology as [16]. We opt to select both not safe for work
+boards (i.e., /pol/) and safe for work boards (i.e.,/sp/, /int/, and /sci/)
+to observe how these compare to each other with respect to the
+dissemination of news. The resulting dataset includes 97k posts
+4https://dev.twitter.com/streaming/overview
+5http://files.pushshift.io/
+Domain (Alt.) (%) Domain (Main.) (%)
+breitbart.com 55.58 % nytimes.com 14.07 %
+rt.com 19.18 % cnn.com 11.23 %
+infowars.com 8.99 % theguardian.com 8.86 %
+sputniknews.com 3.95 % reuters.com 6.67 %
+beforeitsnews.com 2.34 % huffingtonpost.com 5.67 %
+lifezette.com 2.28 % thehill.com 5.15 %
+naturalnews.com 1.54 % foxnews.com 4.89 %
+activistpost.com 1.45 % bbc.com 4.76 %
+veteranstoday.com 1.11 % abcnews.go.com 2.94 %
+redflagnews.com 0.63 % usatoday.com 2.87 %
+prntly.com 0.49 % nbcnews.com 2.86 %
+dccclothesline.com 0.4 % time.com 2.57 %
+worldnewsdailyreport.com 0.36 % washinghtontimes.com 2.52 %
+therealstrategy.com 0.3 % bloomberg.com 2.5 %
+disclose.tv 0.23 % wsj.com 2.31 %
+clickhole.com 0.2 % cbsnews.com 2.26 %
+libertywritersnews.com 0.2 % thedailybeast.com 2.05 %
+worldtruth.tv 0.14 % forbes.com 1.87 %
+thelastlineofdefence.org 0.07 % nypost.com 1.85 %
+nodisinfo.com 0.05 % cncb.com 1.54 %
+Table 5: Top 20 mainstream and alternative news sites and their per-
+centage (six selected subreddits).
+and replies, including 56k alternative and mainstream news URLs,
+between June 30, 2016 and February 28, 2017. We have some small
+gaps due to our crawler failing, specifically, Oct 15–16 and Dec
+16–25, 2016 as well as Jan 10–13, 2017.
+3 GENERAL CHARACTERIZATION
+In this section, we present a general characterization of the main-
+stream and alternative news URLs found on the three platforms.
+Reddit. We start by identifying news and politics communities.
+In Table 4, we report the top 20 subreddits with the most URLs,
+along with their percentage. Note that we omit automated ones (e.g.,
+/r/AutoNewspaper/) where news articles are posted without user
+intervention. Many of the subreddits are indeed related to news
+and politics – e.g., ‘The_Donald’ is mostly a community of Donald
+Trump supporters, while ‘worldnews’ is focused around globally
+relevant events. We also find the presence of the ‘conspiracy’ subred-
+dit, which has been involved in disinformation campaigns including
+Pizzagate, as well as ‘AskReddit, ’ where both mainstream and al-
+ternative news sources are used to answer questions submitted by
+users. Although the latter is intended for open-ended questions that
+spark discussion, it is evident that commenters often try to push
+their agenda even in non-political threads. In the end, based on
+their propensity to include news URLs of both types, we single out
+the follow top six subreddits for further exploration: The_Donald,
+politics, conspiracy, news, worldnews, and AskReddit.
+In order to get a better view of the popularity of news sites on the
+six subreddits, we study the occurrence of each news outlet. Specif-
+ically, we find 76k URLs (40k unique) from alternative news and
+600k (301k unique) from mainstream news domains. Table 5 reports
+the top 20 mainstream/alternative news sites and their percentage
+in the six subreddits. The top 20 domains for mainstream news
+account for 89% of all mainstream news URLs in our data, while
+for alternative domains the percentage is 99%. Known alt-right
+3
+
+## PDF page 4
+
+Domain (Alt.) (%) Domain (Main.) (%)
+breitbart.com 46.04 % theguardian.com 19.04 %
+rt.com 17.56 % nytimes.com 10.07 %
+infowars.com 17.25 % bbc.com 8.99 %
+therealstrategy.com 5.63 % forbes.com 6.24 %
+sputniknews.com 4.11 % thehill.com 4.95 %
+beforeitsnews.com 2.26 % cbc.ca 4.82 %
+redflagnews.com 2.04 % foxnews.com 4.79 %
+dccclothesline.com 1.37 % wsj.com 4.04 %
+naturalnews.com 1.29 % bloomberg.com 3.48 %
+clickhole.com 0.53 % reuters.com 2.85 %
+activistpost.com 0.41 % usatoday.com 2.02 %
+disclose.tv 0.39 % thedailybeast.com 2.02 %
+prntly.com 0.26 % nbcnews.com 1.96 %
+worldtruth.tv 0.25 % nypost.com 1.95 %
+libertywritersnews.com 0.15 % cbsnews.com 1.89 %
+worldnewsdailyreport.com 0.06 % abcnews.go.com 1.78 %
+mediamass.net 0.04 % time.com 1.71 %
+newsbiscuit.com 0.03 % cnbc.com 1.40 %
+react365.com 0.02 % washingtontimes.com 1.34 %
+the-daily.buzz 0.02 % washingtonexaminer.com 1.33 %
+Table 6: Top 20 mainstream and alternative news sites, and their
+percentage, in the Twitter dataset.
+news outlets, such as breitbart.com and infowars.com, are predomi-
+nantly present, as well as state-sponsored alternative domains like
+sputniknews.com and rt.com, which have recently been in the spot-
+light for disseminating false information and propaganda [8]. The
+fact that many such URLs appear in our dataset may indeed be an
+indication that the six subreddits significantly contribute to the
+dissemination of controversial stories.
+Twitter. In our Twitter dataset, we find 129k (42k unique) URLs of
+alternative news domains and 413k (236k unique) URLs of main-
+stream ones. Recall that we re-crawl tweets to get the number of
+retweets and likes, and a small percentage of them are no longer
+available as they were either deleted or the associated account was
+suspended. This percentage is slightly higher for tweets with URLs
+from alternative news, possibly due to the fact that some users tend
+to remove controversial content when a particular false story is
+debunked [12]. Also, alternative and mainstream news tend to get a
+significant number of retweets, at about the same rate (on average,
+404 and 341 retweets per tweet, respectively). A similar pattern is
+observed for likes (see Table 3).
+In Table 6, we report the top 20 mainstream and alternative news
+domains, and their percentage, in our Twitter dataset. These cover,
+respectively, 86% and 99% of all URLs. Similar to Reddit, there are
+many popular alt-right and state-sponsored news outlets.
+4chan. In our /pol/ dataset, we find 21k (9k unique) URLs to alterna-
+tive news outlets and 82k (40k unique) to mainstream news. Table 7
+reports the percentage of URLs of the top 20 domains for each
+type of news. These cover 87% and 99% of mainstream and alter-
+native news URLs, respectively. Again, we observe that, by far, the
+most popular alternative news domains are breitbart.com, rt.com,
+infowars.com, and sputniknews.com. For the mainstream news,
+we observe that theguardian.com is the most frequently posted,
+followed by nytimes.com, cnn.com, and bbc.com. We also obtained
+similar statistics for domain popularity in the other boards of 4chan,
+but we omit them for brevity.
+Domain (Alt.) (%) Domain (Main.) (%)
+breitbart.com 53.00 % theguardian.com 14.10 %
+rt.com 28.22 % nytimes.com 10.07 %
+infowars.com 9.12 % cnn.com 9.90 %
+sputniknews.com 3.36 % bbc.com 5.45 %
+veteranstoday.com 1.07 % foxnews.com 5.35 %
+beforeitsnews.com 0.91 % reuters.com 5.10 %
+lifezette.com 0.86 % time.com 3.42 %
+naturalnews.com 0.61 % abcnews.go.com 3.40 %
+worldnewsdailyreport.com 0.46 % huffingtonpost.com 3.29 %
+prntly.com 0.41 % thehill.com 3.04 %
+activistpost.com 0.38 % wsj.com 2.82 %
+dccclothesline.com 0.29 % washinghtontimes.com 2.77 %
+redflagnews.com 0.20 % bloomberg.com 2.75 %
+libertywritersnews.com 0.16 % cbc.ca 2.66 %
+therealstrategy.com 0.16 % nypost.com 2.65 %
+clickhole.com 0.11 % cbsnews.com 2.44 %
+disclose.tv 0.10 % nbcnews.com 2.32 %
+now8news.com 0.06 % usatoday.com 2.25 %
+firebrandleft.com 0.05 % cnbc.com 2.13 %
+nodisinfo.com 0.05 % forbes.com 1.68 %
+Table 7: Top 20 mainstream and alternative news sites, and their
+percentage, in the /pol/ dataset.
+100 101 102
+Count of URL appearance within a platform
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+Reddit (6 selected subreddits) /pol/ Twitter
+(a)
+100 101 102 103
+Count of URL appearance within a platform
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+Reddit (6 selected subreddits) /pol/ Twitter
+(b)
+Figure 1: CDF of URL appearance counts within a platform: (a) al-
+ternative news and (b) mainstream news.
+To get a better view of the platforms’ URL posting behavior,
+Figure 1 plots the CDF of URL appearances (i.e., how many times
+a specific URL appears) within a particular platform. We observe
+4
+
+## PDF page 5
+
+breitbart
+rt
+infowars
+sputniknews
+therealstrategybeforeitsnewsredflagnewsnaturalnewsdcclothesline
+lifezette
+activistpost
+veteranstoday
+clickhole
+prntlydisclose
+worldnewsdailyreport
+worldtruth
+libertywritersnews
+mediamass
+thelastlineofdefense
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0Fraction
+/pol/ Reddit (6 selected subreddits) Twitter
+(a)
+theguardian
+nytimes
+cnnbbc
+reutersthehillfoxnewsforbes
+wsj
+bloomberg
+cbc
+abcnewsusatodaynbcnews
+time
+cbsnews
+washingtontimes
+thedailybeast
+nypostcnbc
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0Fraction
+/pol/ Reddit (6 selected subreddits) Twitter (b)
+Figure 2: Top 20 domains and each platform’s fraction for (a) alternative and (b) mainstream news.
+that a substantial portion of the URLs appear only once for both
+alternative and mainstream news, and that, on Twitter, alternative
+news tends to appear more times than mainstream news. For /pol/
+and the six subreddits, we observe a similar behavior for both
+mainstream and alternative news.
+Next, in Figure 2, we compare how popular domains, in both
+categories, appear on the three platforms (i.e., Twitter, the six sub-
+reddits, and /pol/). We find that the top 4 alternative domains
+– breitbart.com, rt.com, infowars.com, sputniknews.com – influ-
+ence the three platforms more or less in the same way. However,
+some outlets appear predominantly in some platforms but not in
+others; e.g., therealstrategy.com is popular only on Twitter, while
+lifezette.com and veteranstoday.com are popular on the 6 subreddits
+and /pol/, but not on Twitter.
+We believe the primary reason for this has to do with Twitter
+bots. We cannot exclude with certainty that bots do not exist on
+4chan, while bots are actually acceptable on Reddit (as long as they
+follow the rules of Reddit’s API [33]), however, they are certainly
+more prevalent on Twitter. Thus, if a particular domain is popular
+on Twitter because of the influence of bots, then it might not be
+popular on Reddit and 4chan. We have also considered ways to
+factor out posting behavior from bots, especially for Twitter, such
+as the one proposed in [ 7]. However, we have not removed this
+activity due to: 1) posting behavior from bots can affect real users’
+posting behavior, hence this activity is part of the overall news
+dissemination ecosystem and needs to be accounted for; and 2) the
+satisfactory performance of such approaches is yet to be proven.
+We also measure the fraction of news URLs that are alternative,
+per user, in Figure 3. We report this fraction only for Reddit and
+Twitter users, since on 4chan posts are anonymous. We find that 80%
+of the users of both platforms share only URLs from mainstream
+news, while, 13% of Twitter users – which are likely bots [ 31] –
+exclusively post URLs to alternative news. We observe from Fig-
+ure 3(b), which shows the ratio for users sharing URLs from both
+categories, that there is a wide distribution, especially on the six
+selected subreddits, between people that rarely share alternative
+news (fraction close to 0) and those who share them almost all the
+0.0 0.2 0.4 0.6 0.8 1.0
+Alternative News Fraction
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+Reddit (6 selected subreddits) Twitter
+(a)
+0.0 0.2 0.4 0.6 0.8 1.0
+Alternative News Fraction
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+Reddit (6 selected subreddits) Twitter
+(b)
+Figure 3: CDF of the fraction of URLs from alternative news and
+overall news URLs for (a) all users in our Twitter and Reddit
+datasets, and (b) users that shared URLs from both mainstream and
+alternative news.
+time (fraction close to 1). Moreover, we find that Twitter users share
+more alternative news: just 5% of these users have a fraction below
+0.2, which might be also attributed to the presence of bots.
+5
+
+## PDF page 6
+
+Jul 16 Aug 16Sep 16Oct 16 Nov 16Dec 16 Jan 17 Feb 17Mar 17
+0.000
+0.005
+0.010
+0.015
+0.020
+0.025
+0.030Occurrence of alternative news
+4chan (/pol/)
+4chan (other boards)
+Reddit (6 selected subreddits)
+Reddit (other subreddits)
+Twitter
+(a)
+Jul 16 Aug 16Sep 16Oct 16 Nov 16Dec 16 Jan 17 Feb 17Mar 17
+0.00
+0.05
+0.10
+0.15
+0.20Occurrence of mainstream news
+4chan (/pol/)
+4chan (other boards)
+Reddit (6 selected subreddits)
+Reddit (other subreddits)
+Twitter (b)
+Jul 16 Aug 16Sep 16Oct 16 Nov 16Dec 16 Jan 17 Feb 17Mar 17
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0Alternative news fraction
+4chan (/pol/)
+4chan (other boards)
+Reddit (6 selected subreddits)
+Reddit (other subreddits)
+Twitter (c)
+Figure 4: Normalized daily occurrence of URLs for (a) alternative news, (b) mainstream news, and (c) fraction of alternative news over all news.
+Take-Aways.In summary, our general characterization yields the
+following findings: 1) Specific sub-communities within Reddit drive
+the dissemination of both alternative and mainstream news (Ta-
+ble 4); 2) news domain popularity is similar for both alternative
+and mainstream domains in the three platforms with some excep-
+tions, such as lifezette.com and veteranstoday.com (Tables 5, 6, 7
+and Figure 2); 3) Twitter users are more aggressively promoting
+alternative news, compared to mainstream news (Figure 1); and 4)
+Twitter users also have a greater alternative to mainstream news ra-
+tio when compared to users that post in the six selected subreddits
+(Figure 3).
+4 TEMPORAL DYNAMICS
+In this section, we present the results of a cross-platform temporal
+analysis of the way news are posted on Twitter, Reddit, and 4chan.
+4.1 URL Occurrence
+In Figure 4, we measure the daily occurrence of news URLs over the
+three platforms normalized by the average daily number of URLs
+shared in each community.6 We find that /pol/ and the six selected
+subreddits exhibit a much higher percentage of occurrences of al-
+ternative news compared to the other communities (Figure 4(a)),
+whereas, for mainstream news, the sharing behavior is more simi-
+lar across platforms (Figure 4(b)). There are also some interesting
+spikes, likely related to the 2016 US elections, on the date of the
+first presidential debate and election day itself. These findings in-
+dicate that the selected sub-communities are heavily utilized for
+the dissemination of alternative news. We also study the fraction
+of alternative news URLs with respect to overall news URLs (Fig-
+ure 4(c)), highlighting that mainstream news URLs are overall more
+“popular” than the alternative news URLs. Note that the Twitter
+spike in Figure 4(c) appears to be an artifact of a failure in our
+collection infrastructure.
+As some users repost the same URL many times within the same
+platform, we next study such reposting behavior and extract in-
+sights while comparing platforms. In Figure 5, we plot the CDF of
+the time difference between the first occurrence of a URL and its
+6Gaps in the plot correspond to gaps in our dataset due to crawler failure.
+10 2
+ 10 1
+ 100 101 102 103 104
+Time from initial post of link and consecutive appearances later on (hours)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+6 selected subreddits /pol/ Twitter
+(a)
+10 2
+ 10 1
+ 100 101 102 103 104
+Time from initial post of link and consecutive appearances later on (hours)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+6 selected subreddits /pol/ Twitter
+(b)
+Figure 5: CDF of time difference (in hours) between the first occur-
+rence of a URL and its next occurrences on each platform for (a)
+alternative and (b) mainstream news.
+next occurrences on the same platform. Both alternative and main-
+stream news URLs are recycled over time within the platform (even
+after several months), but Twitter exhibits a smaller lag between
+the first occurrence and later ones compared to the other two plat-
+forms. In all three platforms, there is an inflection point at the 24h
+period, which probably signifies the day-to-day behavior of news
+propagation within a platform, and this is true for both alternative
+and mainstream news. Finally, mainstream news seem to propagate
+6
+
+## PDF page 7
+
+Comparison Type of News #URLs where #URLs where
+(1st vs 2nd) 1st is faster 2nd is faster
+Reddit vs Twitter Mainstream 18,762 11,416
+Alternative 5,232 4,301
+/pol/ vs Twitter Mainstream 2,938 4,700
+Alternative 778 2,099
+/pol/ vs Reddit Mainstream 5,382 14,662
+Alternative 1,455 3,695
+Table 8: Statistics of URLs for the comparisons of time difference
+between platforms. Reddit refers to the six selected subreddits.
+faster in these platforms than alternative news, especially on the
+six subreddits; for Twitter and /pol/ the difference is not evident.
+We also study the inter-arrival time of reposted URLs. Figure 6
+shows the CDF of the mean inter-arrival time of URLs that appear
+more than one time in each platform. Each platform exhibits unique
+behavior, confirmed by a two sample Kolmogorov-Smirnov test
+showing significant differences between the distributions ( p <
+0.01 for each pairwise comparison). However, /pol/ and the six
+subreddits exhibit similar time-related sharing behavior for both
+mainstream and alternative news URLs, and Twitter has smaller
+mean inter-arrival time overall. Interestingly, the six subreddits
+appear to have a duality in reposting behavior: for URLs with small
+inter-arrival time, it follows the faster pace of Twitter, whereas, for
+URLs with longer inter-arrival times, it follows /pol/.
+4.2 Cross Platform Analysis
+We now look at URLs that appear on more than one platform and
+study the time at which they are shared. Figure 7 plots the CDF
+of the time difference (in seconds) between the first occurrence
+of a URL on pairs of platforms, while Table 8 reports the num-
+bers of URLs involved in each comparison. We make the follow-
+ing observations: first, when comparing pairs of distributions for
+a given category of URLs, they are statistically different (a two
+sample Kolmogorov-Smirnov test rejects the null hypothesis with
+p < 10−4). Second, alternative news appear on multiple platforms
+faster than mainstream news. This is consistent regardless of the
+pair of platforms we consider, and the sequence of appearances
+(i.e., first in platform A and then B, vs. first in B and then in A).
+Third, we notice the presence of a “turning point” with respect
+to the delay between URL appearance on each platform, which
+seems to be consistent across all pairs of platforms and types of
+news, and matches the 24h period observed earlier. Finally, there is
+a cross point when comparing URLs first posted on platform A and
+then on B, and URLs which were posted first in B and then on A
+(i.e., when the lines for the same type of URLs cross). Such a point
+represents which portion of URLs appear faster in one platform
+than the other. For the Twitter-six selected subreddits comparison,
+alternative (mainstream) news appear faster on Twitter than the six
+subreddits 80% of the time (50%), with these URLs exhibiting slower
+propagation, since the turning point is at ∼1 hour (5 hours). Sim-
+ilarly, for the Twitter-/pol/ comparison, alternative (mainstream)
+news appear faster on Twitter than /pol/ 70% (5%) of the time, with
+the turning point at 1 day (2 days). Finally, for the six selected
+subreddits-/pol/ comparison, alternative (mainstream) news appear
+faster on the six subreddits than /pol/ for 65% (40%) of the time,
+with the turning point around 18 hours (12 hours).
+Sequence Alternative (%) Mainstream (%)
+4 only 3,236 (4.4%) 18,654 (3.7%)
+4→R 1,118 (1.5%) 4,606 (0.9%)
+4→T 315 (0.5%) 861 (0.17%)
+R only 24,292 (33.3%) 230,602 (46.1%)
+R→4 2,181 (3.0%) 11,307 (2.3%)
+R→T 4,769 (6.5%) 16,685 (3.35%)
+T only 32,443 (44.5%) 204,836 (41%)
+T→4 585 (0.8%) 1,345 (0.26%)
+T→R 3,964 (5.5%) 10,640 (2.12%)
+Table 9: Distribution of URLs according to the sequence of first ap-
+pearance within platforms for all URLs, considering only the first
+hop. “4” stands for /pol/ (4chan), “R” for the six selected subreddits
+(Reddit), and “T” for Twitter.
+Sequence Alternative (%) Mainstream (%)
+4→R→T 128 (5.5%) 552 (8.9%)
+4→T→R 145 (6.2%) 290 (4.7%)
+R→4→T 335 (14.4%) 1,525 (24.5%)
+R→T→4 841 (36.3%) 2,189 (35.3%)
+T→4→R 192 (8.2%) 486 (7.8%)
+T→R→4 673 (29%) 1,166 (18.8%)
+Table 10: Distribution of URLs according to the sequence of first ap-
+pearance within a platform for URLs common to all platforms. “4”
+stands for /pol/ (4chan), “R” for the six selected subreddits (Reddit),
+and “T” for Twitter.
+Next, given the set of unique URLs across all platforms and the
+time they appear for the first time, we analyze their appearance in
+one, two, or three platforms, and the order in which this happens.
+For each URL, we find the first occurrence on each platform and
+build corresponding “sequences, ” e.g., if a URL first appears on
+the six subreddits (Reddit) and subsequently on /pol/ (4chan), the
+sequence is Reddit→ 4chan (R→4). Table 9 reports the distribution
+of the sequences of appearances considering only the first hop, i.e.,
+up to the first two platforms in the sequence. The majority of URLs
+only appear on one platform: 82% of alternative URLs and 89% of
+mainstream news URLs. Also, both alternative and mainstream
+news URLs tend to appear on the six subreddits first and later
+appear on either Twitter or /pol/, and on Twitter before /pol/.
+We also study the temporal dynamics of URLs that appear on
+all three platforms, with triplets of sequences. Table 10 reports the
+distribution of these sequences. The most common sequences are
+similar for both alternative and mainstream news URLs: R→T→4,
+R→4→T, and T→R→4 are the top three sequences. As already
+mentioned, the six selected subreddits “outperform” both other
+platforms in terms of the speed of sharing mainstream and alter-
+native news URLs, as evidenced by the fact that it is at the head of
+the sequence for 51% and 59% of alternative and mainstream news
+URLs, respectively.
+Finally, we analyze the source of the URLs for each of the three
+platforms, as follows. We create two directed graphs, one for each
+type of news, G = (V , E), where V represents alternative or main-
+stream domains, as well as the three platforms, and E the set of
+sequences that consider only the first-hop of the platforms. For
+example, if a breitbart.com URL appears first on Twitter and later
+on the six selected subreddits, we add an edge from breitbart.com
+to Twitter, and from Twitter to the six selected subreddits. We also
+7
+
+## PDF page 8
+
+102 103 104 105 106 107
+Mean interarrival time (seconds)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+6 selected subreddits /pol/ Twitter
+(a)
+10 2
+ 100 102 104 106
+Mean interarrival time (seconds)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+6 selected subreddits /pol/ Twitter (b)
+10 2
+ 100 102 104 106
+Mean interarrival time (seconds)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+6 selected subreddits /pol/ Twitter
+(c)
+10 3
+ 10 1
+ 101 103 105 107
+Mean interarrival time (seconds)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+6 selected subreddits /pol/ Twitter (d)
+Figure 6: CDF for mean inter-arrival time for the URLs that occur more than once for (a) common alternative news URLs; (b) common main-
+stream news URLs; (c) all alternative news URLs, and (d) all mainstream news URLs.
+100 101 102 103 104 105 106 107 108
+Time difference (seconds)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+Twitter - 6 selected subreddits (Alt.)
+ 6 selected subreddits - Twitter (Alt.)
+Twitter - 6 selected subreddits (Main.) 
+6 selected subreddits - Twitter (Main.)
+(a)
+100 101 102 103 104 105 106 107 108
+Time difference (seconds)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+Twitter - /pol/ (Alt.) 
+/pol/ - Twitter (Alt.)
+Twitter - /pol/ (Main.) 
+/pol/ - Twitter (Main.) (b)
+100 101 102 103 104 105 106 107 108
+Time difference (seconds)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+/pol/ - 6 selected subreddits (Alt.) 
+6 selected subreddits - /pol/ (Alt.)
+/pol/ - 6 selected subreddits (Main.)
+6 selected subreddits - /pol/ (Main.) (c)
+Figure 7: CDF of the difference between the first occurrence of a URL between (a) six selected subreddits and Twitter, (b) /pol/ and Twitter, and
+(c) /pol/ and six selected subreddits.
+add weights on these edges based on the number of such unique
+URLs. By examining the paths we can discern which domains’ URLs
+tend to appear first on each of the platforms. Figure 8 shows the
+graphs built for alternative and mainstream domains. Comparing
+the thickness of the outgoing edges, one can see that breitbart.com
+URLs appear first in the six selected subreddits more often than
+on Twitter and more frequently than on /pol/. However, for other
+popular alternative domains, such as infowars.com, rt.com, and
+sputniknews.com, URLs appear first on Twitter more often than the
+six selected subreddits and /pol/. Also, /pol/ is rarely the platform
+where a URL first shows up. For the mainstream news domains, we
+note that URLs from nytimes.com and cnn.com tend to appear first
+more often on the selected subreddits than Twitter and /pol/, how-
+ever, URLs from other domains like bbc.com and theguardian.com
+8
+
+## PDF page 9
+
+firebrandleft
+newsexaminer
+huzlerswitscience
+Twitter
+redflagnews
+6 subreddits
+realnewsrightnowlibertywritersnews
+worldnewsdailyreport
+thedcgazette
+newsbreakshere
+private-eye
+thenewsnerd
+naturalnews
+veteranstoday
+thelastlineofdefense
+beforeitsnews
+react365
+nodisinfo
+newsbiscuit
+creambmp
+empirenews
+rt
+christwiretimes
+infowars
+lifezetteclickholedisclosedailybuzzlivenewshounds
+politicalears
+linkbeef
+politicops
+mediamass
+therealstrategy
+derfmagazinesputniknews
+stuppid
+activistpost
+theuspatriot
+the-daily.buzz
+usapoliticszone
+worldtruth
+prntly
+/pol/
+duhprogressivenow8newsdcclothesline
+breitbart
+(a)
+nbcnews
+washingtontimes
+foxnewsnypostchicagotribune
+Twitter
+wsj
+chron
+azcentral
+thedailybeast
+forbescnbc
+voanews
+nationalpost
+thehill
+bloomberg
+huffingtonpost
+usnews
+theglobeandmail
+thestar
+startribunereuters
+bostonglobe
+cbsnews
+6 subredditswashingtonexaminer
+theguardian
+euronews
+mercurynewsdallasnews
+denverpost
+time
+cnn
+miamiherald
+abcnews
+theage
+nytimes
+seattletimes
+usatoday
+ctvnews
+/pol/
+dw
+cbc
+news
+bbc
+aljazeeraeconomistthetimes (b)
+Figure 8: Graph representation of news ecosystem (a) alternative news domains and (b) mainstream news domains. Edges are colored the same
+as their source node.
+tend to appear first more often on Twitter than the selected subred-
+dits. Similar to the alternative domains graph, there is no domain
+where /pol/ dominates in terms of first URL appearance.
+4.3 Take-Aways
+In summary, our temporal dynamics analysis shows that: 1) Spe-
+cific sub-communities are heavily utilized for the dissemination
+of alternative news (Figure 4); 2) Twitter URL posting behavior is
+more aggressive for both alternative and mainstream news when
+compared to the other two platforms (Figure 5 and 6); 3) Both al-
+ternative and mainstream URLs tend to appear on the six selected
+subreddits before appearing on Twitter and/or /pol/ (Table 8 and
+Figure 7). This may be due the nature of the Reddit platform, where
+URL posting is the prevalent way to disseminate information; 4)
+URLs from specific domains tend to appear first on a particular
+platform. For example, for alternative news breitbart.com, URLs
+appear first on the six selected subreddits, while on Twitter the
+same applies for infowars.com, rt.com, and sputniknews.com. The
+/pol/ does not dominate for any of the domains (Figure 8).
+Note that our analysis does not factor out the gaps in our Twitter
+dataset. Consequently, some of the results may be affected by the
+fact that some URLs from Twitter might be missing. To address this
+issue, in Section 5, we omit a subset of the URLs impacted by the
+gaps in our datasets. Furthermore, the use of a rigorous statistical
+model (Hawkes processes) helps to mitigate this potential issue.
+5 INFLUENCE ESTIMATION
+Thus far, our measurements have shown relative differences in
+how news media is shared on Reddit, Twitter, and 4chan. In this
+section, we provide meaningful evidence of how the individual
+platforms influence the media shared on other platforms. We do so
+by using a mathematical technique known as Hawkes processes.
+The_Donald
+1 
+Twitter
+/pol/
+2
+3
+4
+5.1 5.2
+5.3
+Figure 9: A depiction of a Hawkes model showing how the interac-
+tion between events on 3 processes might look like. Note: this ex-
+ample is inspired by [20].
+These statistical models can be used for modeling the dissemination
+of information in Web communities [10] as well as measuring social
+influence [13].
+5.1 Hawkes Processes
+Note that the three platforms we measure do not obviously exist
+in a vacuum, rather, they exist within the greater ecosystem of the
+Web. Imagine, however, that each of the platforms were entirely self-
+contained, with a completely disjoint set of users. In such a scenario,
+there would be a natural rate at which URLs will be posted, and it
+would be possible to model this using standard Poisson processes.
+However, our platforms are clearly not independent. While they
+do exhibit their own background URL posting rates and internal
+influence, they are also affected by each other, as well as by the
+greater Web.
+A Hawkes model consists of a number, K, of point processes,
+each with a “background rate” of events λ0,k . An event on one
+process can cause an impulse response on other processes, which
+increases the probability of an event occurring above the processes’
+background rates. Figure 9 depicts an example of what a sequence of
+9
+
+## PDF page 10
+
+events on a Hawkes model with three processes might look like, us-
+ing The_Donald, Twitter, and /pol/ communities for representative
+purposes.
+First, an event 1 (a URL being posted) occurs on Twitter; this is
+caused by the background rate of the process, meaning that the URL
+was posted not because it was seen on any of the platforms in the
+model, but because it was seen elsewhere (including a user finding
+it organically). This initial event causes an impulse response on the
+rates of the other processes, The_Donald and /pol/, meaning that
+the URL is more likely to be posted on those platforms after having
+been seen on Twitter. Eventually, this causes another event on
+The_Donald (2), which in turn causes an event on /pol/. A process
+can cause an additional impulse response to itself, as seen with
+event 3, and multiple events can be caused in response to a single
+event, as seen with event 4 causing events 5.1, 5.2, and 5.3. Naturally,
+the data we collect does not explicitly state which events are caused
+by other events, or which are caused by the background rate.
+For our purposes, fitting a Hawkes model to a series of events
+on the different platforms gives us values for the background rates
+for each platform along with the probability of an event on one
+platform causing events on other platforms. We emphasize that
+the background rates of the Hawkes processes allows us to also
+account for the probability of an event caused by external sources
+of information. For example, it includes the probabilities of events
+caused by Facebook as well as other platforms. Thus, while we are
+only able to model the specific influences of the three platforms we
+study, the resulting probabilities are affirmatively attributable to
+each of them; the influence of the greater Web is captured by the
+background rates.
+For a discrete-time Hawkes model, time is divided into a series
+of bins of duration ∆t, and events occurring within the same time
+bin do not interact with each other. The rate of each k-th process,
+λt,k is given by:
+λt,k = λ0,k +
+KÕ
+k ′=1
+t −1Õ
+t ′=1
+st ′,k ′ · hk ′→k [t − t ′]
+where s ∈ NT ×K is the matrix of event counts (how many events oc-
+cur for process k at time t) and hk ′→k [t −t ′] is an impulse response
+function that describes the amplitude of influence that events on
+process k ′ have on the rate of process k.
+Following [20], the impulse response function hk →k ′[t − t ′]
+can be decomposed into a scalar weight Wk →k ′ and a probability
+mass function Gk →k ′[d]. The weight specifies the strength of the
+interaction from process k to process k ′ and the probability mass
+function specifies how the interaction changes over time:
+hk→k ′[d] = Wk →k ′Gk→k ′[d]
+The weight valueWk→k ′ can be interpreted as the expected number
+of child events that will be caused on process k ′ after an event
+on process k. The probability mass function Gk →k ′ specifies the
+probability that a child event will occur at each specific time lagd∆t,
+up to a maximum lag∆tmax . This interpretation ofWk →k ′ is useful
+because it allows us to compare how much influence platforms have
+on each other. For instance, we can examine whether a URL posted
+on Twitter or on Reddit is more likely to cause the same URL to be
+posted on 4chan, or if there is a difference in influence from one
+platform to another between URLs for mainstream and alternative
+news sites.
+5.2 Methodology
+We now provide more details about our experiments, once again,
+considering 4chan (/pol/), Twitter, and the six subreddits. We study
+Hawkes processes at the subreddit granularity to get a better un-
+derstanding of the various platforms and particular subreddits.
+We aim to examine how these platforms and subreddits influence
+each other, so we model the arrival of URLs, in posts or tweets, with
+a Hawkes model with K = 8 point processes—one for Twitter, one
+for /pol/, and one for each of the subreddits. The model is fully
+connected, i.e., it is possible for each process to influence all the
+others, as well as itself, which describes behavior where participants
+on a platform see a URL and re-post it on the same platform. For
+example, with Twitter, this value (WTwitter→Twitter) would likely be
+quite high, given that tweets are commonly re-tweeted a number of
+times: the initial tweet containing a URL is likely to cause a number
+of re-tweets, also containing the URL, on the same platform.
+We select URLs that have at least one event in Twitter,/pol/, and
+at least one of the subreddits, and we model each URL individually.
+The missing Twitter data (due to our dataset gaps; see Section 2.2)
+affects 3,177 (37%) of the URLs. One way to mitigate the impact
+of this missing data is to remove events for which it has a larger
+impact. E.g., if an event spans 100 days, the missing Twitter data
+has less of an effect than if the event only spanned two days. Thus,
+we examine URLs from other platforms that overlap with any of the
+missing days and remove the 10% of URLs (895) with the shortest
+total duration from the first event recorded until the last event
+recorded. This results in the missing data making up a smaller
+portion of the overall duration of the events.
+The number of remaining URLs and events included for each
+platform are shown in Table 11. For each URL, we create a matrix
+s ∈ NT ×8 containing the number of events (URL posts) per minute
+for each of the platforms/subreddits. Here, T is the number of
+minutes from the first recorded post of the URL on any platform, to
+the last recorded post of a URL on any platform (NB: this value can
+be different for each URL). We select∆t = 1 minute as a reasonable
+compromise between accuracy and computational cost. Using this
+bin size, 92% of events are in a bin by themselves, and another 5.4%
+share a bin, but only with other events from the same platform or
+subreddit, meaning that timing interactions between the platforms
+are not lost.
+Next, we fit a Hawkes model for each URL using the approach
+described in [20, 21], which uses Gibbs sampling to infer the param-
+eters of the model from the data, including the weights, background
+rates, and shape of the impulse response functions between the
+different processes. By setting ∆tmax = 60 · 12 = 720 minutes, we
+say that a given event can cause other events within a 12-hour time
+window. Experiments with other values (6, 12, 24, and 48 hours)
+gave similar results. After fitting the models, we have the values
+for the W matrix – i.e., the weights of the interactions between
+events on different processes for each URL. These weights can
+then be interpreted as the expected number of events. For example,
+WT wit t er →/pol / = 0.1 would mean that an event on Twitter will
+10
+
+## PDF page 11
+
+The_Donald worldnews politics news conspiracy AskReddit /pol/ Twitter
+URLs Mainstream 3,097 2,523 3,578 2,584 907 841 5,589 5,589
+Alternative 2,008 252 813 362 321 100 2,136 2,136
+Total 5,105 2,775 4,391 2,946 1,228 941 7,725 7,725
+Events Mainstream 12,312 7,517 26,160 5,794 1,995 2,302 19,746 36,250
+Alternative 7,797 458 2,484 586 497 176 7,322 23,172
+Total 20,109 7,975 28,644 6,380 2,492 2,478 27,068 59,422
+Mean λ0 Mainstream 0.001502 0.001382 0.001265 0.001392 0.000501 0.000107 0.001564 0.002330
+Alternative 0.001627 0.000619 0.000696 0.000553 0.000423 0.000034 0.001525 0.002803
+Table 11: Total URLs with at least one event in Twitter, /pol/, and at least one of the subreddits; total events for mainstream and alternative
+URLs, and the mean background rate ( λ0) for each platform/subreddit. Note that the numbers reported on this table are lower than the ones
+reported by Tables 2 and 3 due to the fact that we only select URLs that appear in multiple sub-communities within the three platforms and
+we drop a number of URLs that overlap the time period where data is missing.
+The_Donald worldnews politics news conspiracy AskReddit /pol/ Twitter
+Destination
+The_Donald
+worldnews
+politics
+news
+conspiracy
+AskReddit
+/pol/
+Twitter
+Source
+A: 0.0797
+M: 0.0700
+13.8% **
+A: 0.0652
+M: 0.0621
+5.1%
+A: 0.0526
+M: 0.0551
+-4.6%
+A: 0.0549
+M: 0.0561
+-2.2%
+A: 0.0562
+M: 0.0556
+1.2%
+A: 0.0592
+M: 0.0622
+-4.8% **
+A: 0.0549
+M: 0.0563
+-2.5%
+A: 0.0741
+M: 0.0720
+2.8%
+A: 0.0647
+M: 0.0667
+-3.0%
+A: 0.0570
+M: 0.0580
+-1.8%
+A: 0.0606
+M: 0.0551
+10.0%
+A: 0.0596
+M: 0.0555
+7.3%
+A: 0.0531
+M: 0.0615
+-13.5%
+A: 0.0551
+M: 0.0593
+-7.0%
+A: 0.0665
+M: 0.0694
+-4.2%
+A: 0.0624
+M: 0.0569
+9.7%
+A: 0.0677
+M: 0.0655
+3.4%
+A: 0.0635
+M: 0.0581
+9.4%
+A: 0.0549
+M: 0.0505
+8.8%
+A: 0.0540
+M: 0.0507
+6.4%
+A: 0.0584
+M: 0.0521
+12.1% **
+A: 0.0715
+M: 0.0758
+-5.7%
+A: 0.0539
+M: 0.0522
+3.3%
+A: 0.0614
+M: 0.0596
+2.9%
+A: 0.0664
+M: 0.0673
+-1.2%
+A: 0.0629
+M: 0.0610
+3.2%
+A: 0.0547
+M: 0.0559
+-2.1%
+A: 0.0579
+M: 0.0571
+1.4%
+A: 0.0672
+M: 0.0617
+9.0%
+A: 0.0557
+M: 0.0594
+-6.2%
+A: 0.0549
+M: 0.0607
+-9.6%
+A: 0.0652
+M: 0.0640
+1.8%
+A: 0.0675
+M: 0.0625
+8.1%
+A: 0.0589
+M: 0.0587
+0.4%
+A: 0.0578
+M: 0.0591
+-2.3%
+A: 0.0623
+M: 0.0626
+-0.4%
+A: 0.0558
+M: 0.0555
+0.7%
+A: 0.0566
+M: 0.0600
+-5.7%
+A: 0.0570
+M: 0.0588
+-3.0%
+A: 0.0634
+M: 0.0603
+5.2%
+A: 0.0494
+M: 0.0598
+-17.4%
+A: 0.0623
+M: 0.0573
+8.8%
+A: 0.0534
+M: 0.0637
+-16.2%
+A: 0.0546
+M: 0.0563
+-3.1%
+A: 0.0607
+M: 0.0521
+16.7%
+A: 0.0624
+M: 0.0585
+6.7%
+A: 0.0644
+M: 0.0558
+15.5%
+A: 0.0680
+M: 0.0550
+23.5%
+A: 0.0639
+M: 0.0634
+0.6%
+A: 0.0761
+M: 0.0734
+3.7%
+A: 0.0540
+M: 0.0549
+-1.6%
+A: 0.0532
+M: 0.0561
+-5.2%
+A: 0.0551
+M: 0.0569
+-3.2%
+A: 0.0577
+M: 0.0580
+-0.6%
+A: 0.0554
+M: 0.0576
+-3.9% *
+A: 0.0598
+M: 0.0588
+1.7%
+A: 0.1554
+M: 0.1096
+41.9% **
+A: 0.0579
+M: 0.0606
+-4.6%
+A: 0.0440
+M: 0.0506
+-12.9% **
+A: 0.0454
+M: 0.0501
+-9.4% **
+A: 0.0459
+M: 0.0533
+-13.8% **
+A: 0.0471
+M: 0.0575
+-18.1% **
+A: 0.0443
+M: 0.0536
+-17.5% **
+A: 0.0583
+M: 0.0558
+4.4% *
+Mean Weights - Pct. Increase/Decrease of Alternative over Mainstream URLs
+Figure 10: Mean weights for alternative URLs (A), mainstream URLs
+(M), and the percent increase/decrease between mainstream and al-
+ternative (also indicated by the coloration). Stars indicate the level
+of statistical significance (p-value) between the weight distributions:
+no stars indicate no statistical significance, while * and ** indicate,
+resp., statistical significance with p < 0.05 and p < 0.01.
+cause n events on /pol/, where n is drawn from a Poisson distribu-
+tion with rate parameter 0.1. Finally, for each URL, we also get the
+λ0,k values for each process, which are the background rates for
+event arrivals that are not caused by other events in the system we
+model. Again, these background rates capture events due to some
+other platform, e.g., someone posting the URL after reading it on
+the original site or seeing the URL on another site not included in
+the model, like Facebook.
+5.3 Results
+Looking at the number of URLs in Table 11, we note that there are
+substantially more events for mainstream than alternative news
+URLs. However, for Twitter,/pol/, and The_Donald, the ratios of
+events to URLs for alternative news URLs are similar to or greater
+than the ratios for mainstream ones. These high ratios explain the
+high background rates (cf. Table 11) for alternative news URLs for
+these platforms despite the lower number of events.
+From the Hawkes models for each URL, we obtain the weight
+matrix W which specifies the strength of the connections between
+the different platforms and subreddits. The mean weight values
+over all URLs for alternative and mainstream news URLs, as well
+as the percentage difference between them are presented in Fig-
+ure 10. First, we look at Twitter. Background rates are high for both
+mainstream and alternative news URLs, which is not surprising
+given the large number of users on the platform. The values for
+WTwitter→Twitter are also substantially higher than all other weights:
+0.1096 for mainstream news URLs and 0.1554 for alternative news
+URLs. This reflects the ease and common practice of re-tweeting: a
+URL in a tweet is likely to generate other events as users re-tweet
+it. There are different possible explanations for why the Twitter to
+Twitter rate for alternative news URLs is much greater than the rate
+for mainstream news URLs. The first is bot activity—if automated
+Twitter bots are used to spread alternative news URLs, it could
+result in a much higher rate of tweeting and re-tweeting. Another
+possible explanation is the behavior of users who read news stories
+from alternative sources; they might be more inclined to re-tweet
+the URL [14].
+Looking at the weights for Twitter to the other platforms, except
+The_Donald, they are all greater for mainstream news URLs, mean-
+ing that the average tweet containing a mainstream URL is more
+likely to cause a subsequent post on the other platforms than the
+average tweet containing an alternative URL. The next communi-
+ties most likely to cause events on others are The_Donald and/pol/.
+It is worth noting that The_Donald is the only platform/subreddit
+that has greater alternative URL weights for all of its inputs. As-
+suming that the population of The_Donald users that also read,
+say, worldnews is the same for both alternative and mainstream
+news URLs—which is reasonable—then the difference in weights
+implies that the users have a stronger preference for re-posting
+alternative news URLs back to The_Donald than for mainstream
+news URLs. The opposite can be seen for worldnews and politics,
+where most of the input weights are stronger for mainstream news.
+However, despite the higher weights for alternative news URLs,
+The_Donald is also, interestingly, influenced more strongly by main-
+stream news URLs than alternative news URLs on all platforms,
+with the exception of Twitter. This is in part because of the greater
+number of mainstream URL events, but The_Donald also has a
+higher background rate for alternative news URLs than mainstream
+news URLs, which implies that a lot of the alternative news URLs
+on the platform are coming from other sources.
+11
+
+## PDF page 12
+
+The_Donald worldnews politics news conspiracy AskReddit /pol/ Twitter
+Destination
+The_Donald
+worldnews
+politics
+news
+conspiracy
+AskReddit
+/pol/
+Twitter
+Source
+A: 2.72%
+M: 2.97%
+-0.25
+A: 8.00%
+M: 6.13%
+1.87
+A: 20.27%
+M: 8.01%
+12.25
+A: 20.68%
+M: 14.32%
+6.36
+A: 18.01%
+M: 7.69%
+10.32
+A: 11.25%
+M: 3.52%
+7.74
+A: 16.77%
+M: 5.68%
+11.09
+A: 0.60%
+M: 2.74%
+-2.14
+A: 1.63%
+M: 4.07%
+-2.43
+A: 6.16%
+M: 7.44%
+-1.28
+A: 5.96%
+M: 8.34%
+-2.39
+A: 4.52%
+M: 7.86%
+-3.34
+A: 1.37%
+M: 1.67%
+-0.30
+A: 1.09%
+M: 3.75%
+-2.66
+A: 1.10%
+M: 4.29%
+-3.19
+A: 3.50%
+M: 6.95%
+-3.45
+A: 17.35%
+M: 17.17%
+0.18
+A: 12.12%
+M: 19.03%
+-6.91
+A: 13.79%
+M: 12.57%
+1.22
+A: 11.13%
+M: 9.83%
+1.30
+A: 2.75%
+M: 9.16%
+-6.41
+A: 0.50%
+M: 1.81%
+-1.31
+A: 1.65%
+M: 3.14%
+-1.49
+A: 4.99%
+M: 5.80%
+-0.81
+A: 6.30%
+M: 6.30%
+-0.00
+A: 1.86%
+M: 1.33%
+0.54
+A: 6.21%
+M: 4.21%
+2.00
+A: 1.30%
+M: 3.33%
+-2.04
+A: 0.46%
+M: 1.04%
+-0.57
+A: 1.62%
+M: 1.73%
+-0.10
+A: 5.00%
+M: 3.81%
+1.19
+A: 3.79%
+M: 3.17%
+0.61
+A: 1.72%
+M: 0.80%
+0.92
+A: 5.86%
+M: 2.74%
+3.13
+A: 1.12%
+M: 1.58%
+-0.45
+A: 0.55%
+M: 1.34%
+-0.79
+A: 1.15%
+M: 2.00%
+-0.85
+A: 4.24%
+M: 4.80%
+-0.56
+A: 3.21%
+M: 3.30%
+-0.09
+A: 0.92%
+M: 0.74%
+0.19
+A: 6.09%
+M: 2.94%
+3.15
+A: 0.66%
+M: 1.61%
+-0.95
+A: 1.96%
+M: 3.01%
+-1.05
+A: 14.41%
+M: 9.02%
+5.39
+A: 15.42%
+M: 11.16%
+4.26
+A: 12.25%
+M: 8.31%
+3.94
+A: 7.80%
+M: 3.24%
+4.56
+A: 12.86%
+M: 6.31%
+6.55
+A: 5.70%
+M: 8.61%
+-2.91
+A: 16.54%
+M: 9.79%
+6.75
+A: 20.76%
+M: 11.63%
+9.13
+A: 37.07%
+M: 15.64%
+21.43
+A: 34.28%
+M: 15.15%
+19.13
+A: 18.95%
+M: 6.00%
+12.94
+A: 27.67%
+M: 9.28%
+18.39
+A: 14.32%
+M: 10.79%
+3.53
+Pct. of Alternative URLs - Pct. of Mainstream URLs
+Figure 11: Mean estimated percentage of alternative URL events
+caused by alternative news URL events (A), mean estimated percent-
+age of mainstream news URL events caused by mainstream news
+URL events (M), and the difference between alternative and main-
+stream news (also indicated by the coloration).
+To assess the statistical significance of the results, we perform
+two sample Kolmogorov-Smirnov tests on the weight distribu-
+tions of mainstream and alternative news URLs for each source-
+destination pair (depicted as stars in Figure 10). Rejecting the null
+hypothesis here implies a difference in the way mainstream and al-
+ternative news URLs propagate from the source to the destination—
+either mainstream news URLs tend to cause more events on other
+platforms than alternative news URLs, or the opposite. Unsurpris-
+ingly, many of the source-destination pairs have no significant
+difference. However, in most cases where Twitter is the source
+community there is a significant statistical difference withp < 0.01.
+I.e., for some communities, Twitter is used not just to disseminate
+news, but to disseminate news from a specific type of source.
+Figure 11 illustrates the estimated total impact of the different
+platforms on each other, for both mainstream and alternative news
+URLs. The impact is estimated using the weight values that are
+shown in Figure 10. Since the weight values can be interpreted as the
+expected number of additional events caused as a consequence of
+an event, we can estimate the percentage of events on each platform
+that were caused by each of the other platforms by multiplying the
+weight by the actual number of events that occurred on the source
+platform and dividing by the number of events that occurred on
+the destination platform:
+PctA→B =
+Í
+u ∈urls
+
+WA→B · ÍT
+t =1 st,A
+
+Í
+u ∈urls
+ÍT
+t =1 st, B
+The percentages for mainstream and alternative news URLs as well
+as the difference between them are presented in Figure 11.
+Twitter contributes heavily to both types of events on the other
+platforms—and is in fact the most influential single source for most
+of the other platforms. Despite Twitter’s lower weights for alterna-
+tive news URLs, it actually has a greater influence on alternative
+than mainstream news URLs, in terms of percentage of events
+caused, on all the other platforms/subreddits. This is due to the fact
+that, even though it has lower weights, the largest proportion of
+alternative URL events are on Twitter. After Twitter, The_Donald
+and /pol/ also have a strong influence on the alternative news URLs
+that get posted on other platforms. The_Donald has a stronger
+effect for alternative news URLs on all platforms except Twitter—
+although it still has the largest alternative influence on Twitter,
+causing an estimated 2.72% of alternative news URLs tweeted. In-
+terestingly, The_Donald causes 8% of/pol/’s alternative news URLs,
+while /pol/’s influence on The_Donald is less, at 5.7%. For the main-
+stream news URLs the strength of influence is reversed. Specifically,
+/pol/’s influence on The_Donald is 8.61% whereas The_Donald’s
+influence on /pol/ is 6.13%.
+In descending order, the influences on Twitter for mainstream
+news URLs are politics (4.29%), /pol/ (3.01%), The_Donald (2.97%),
+worldnews (2.74%), news (1.81%), AskReddit (1.34%), and conspiracy
+(1.04%). The strongest influences for alternative news URLs are,
+unsurprisingly, The_Donald (2.72%) and /pol/ (1.96%), followed
+by politics (1.10%), worldnews (0.60%), AskReddit (0.55%), news
+(0.50%), and conspiracy (0.46%). Twitter influences the alternative
+news URLs on other platforms to a large degree—but the largest
+alternative URL inputs to Twitter are The_Donald and /pol/. While
+we are only looking at a closed system of 8 different platforms
+and subreddits, we note that Twitter is undoubtedly effective at
+propagating information. Thus the influence these two communities
+have on Twitter is likely to have a disproportional impact on the
+greater Web compared to their relatively minuscule userbase.
+5.4 Take-Aways
+In summary, the main take-aways from our influence analysis in-
+clude: 1) Hawkes processes allow us to obtain a quantifiable influ-
+ence between Web communities while taking into account influence
+from external sources of information; and 2) Twitter is influenced
+by smaller fringe Web communities, e.g., The_Donald and /pol/ are
+responsible for around 6% of mainstream news URLs and over 4.5%
+of alternative news URLs posted to Twitter that appear on all three
+platforms. Considering Twitter’s relative size, the impact of these
+fringe communities cannot be overstated.
+6 RELATED WORK
+We now review prior work on disinformation propagation dynamics
+in social networks and on detecting false information sources.
+Disinformation dynamics. Kwon et al. [19] study the character-
+istics of rumor propagation on Twitter. They analyze a corpus of
+1.7B tweets, covering three and a half years of Twitter data, and
+extract 104 viral events, which are then annotated by human coders.
+They study debunked stories from false information busting sites
+such as Snopes and compare temporal, linguistics, and structural
+characteristics to legitimate information. Friggeri et al. [12] also use
+stories that Snopes determined as false to study the propagation
+and the evolution of false information on Facebook, finding it to be
+quite bursty, and that posts containing a comment with a link to
+Snopes are more likely to get deleted. Kumar et al. [18] study the
+presence of hoaxes in Wikipedia articles. They report that while
+most are detected quickly and have little impact, some end up cited
+widely on the Web.
+12
+
+## PDF page 13
+
+Shao et al. [ 27] introduce Hoaxy, a platform providing infor-
+mation about the dynamics of false information propagation on
+Twitter. They also study a sample of 1.4M tweets, finding that the
+diffusion of fact-checking content lags that of false information by
+10-20 hours and that the top 1% users with the most tweets share
+a much higher ratio of false information. Finn et al. [ 11] present
+TwitterTrails, a website allowing users to study propagation of
+false information on Twitter, i.e., to visualize indications of bursty
+activity, community skepticism, temporal characteristics of propa-
+gation, as well as re-tweets networks. Also, Del Vicario et al. [9]
+analyze how Facebook users perceive and react to conspiracy theo-
+ries vs. scientific stories, finding two polarized and homogeneous
+communities that have similar content consumption patterns but
+exhibit different cascade dynamics.
+Situngkir [28] empirically studies an Indonesian hoax on Twitter,
+finding that it spread broadly and quickly (within two hours), and
+that it would have spread more if a conventional media outlet did
+not publicly deny it. He also argues that hoaxes can propagate easily
+if there is collaboration between the recipients of the hoax. Arif
+et al. [3] present a case study based on a hostage crisis in Sydney,
+analyzing 5.4M tweets from three main perspectives: 1) volume (i.e.,
+number of rumor-related messages per time interval), 2) exposure
+(i.e., number of individuals exposed to the rumor), and 3) content
+production (i.e., whether the content is written by the user or is
+re-shared). Andrews et al. [2] study two crisis-related incidents on
+Twitter aiming to determine the effect of “official” accounts with
+respect to the containment of rumors. Authors show that official
+account can significantly contribute to stopping the propagation
+of the rumor by actively engaging in conversations related to the
+incidents. Finally, Mendoza et al. [22] study the dissemination of
+false rumors vs. confirmed news on Twitter the days following the
+2010 earthquake in Chile, concluding that an aggregate analysis on
+the flow of tweets can distinguish the former from the latter.
+Detecting false information sources. Shah et al. [26] formulate
+the problem of finding the source of false information as a maxi-
+mum likelihood estimation problem, using a metric called rumor
+centrality. They evaluate it for all nodes in the network using a
+simple linear time message-passing algorithm, and the node with
+the highest rumor centrality is deemed to be the most likely source.
+Authors show, experimentally, that the model can distinguish the
+source of false information with a maximum error of 7 hops for
+general networks and 4 for tree networks. Wang et al. [32] study
+the problem from a statistical point of view, proposing a source de-
+tection framework, also based on rumor centrality, which supports
+multiple snapshots of the network during the false information
+spread. They show that using two network snapshots instead of
+one can significantly improve detection.
+Budak et al. [5] study the notion of competing campaigns in a
+social network and address the problem of influence limitation to
+counteract the effect of misinformation. Nguyen et al. [ 24] look
+for the k users that are most suspected to have originated false
+information, using a reverse diffusion process along with a ranking
+process. Seo et al. [25] aim to identify the source of rumors in online
+social networks by injecting monitoring nodes across the social
+graph. They propose an algorithm that observes the information
+received by the monitoring nodes in order to identify the source.
+They indicate that with sufficient number of monitoring sources
+they can recognize the source with high accuracy.
+Finally, Starbird [29] performs a qualitative analysis on tweets
+pertaining to shooting events and conspiracy theories, using graph
+analysis on the domains linked from the tweets, and provides insight
+on how various websites work to promote conspiracy theories and
+push political agendas.
+Remarks. In contrast to prior work, this paper provides insights
+on disinformation dynamics on social networks from a compre-
+hensive (i.e., multi-service) point of view. In other words, we study
+major online social networks and various news sites that actively
+contribute to information diffusion across the Web, specifically, ana-
+lyzing the dynamics and information flow of Reddit, 4chan, Twitter,
+and several news sites. Furthermore, we measure the influence
+that each platform has to each other using a rigorous statistical
+model—namely, Hawkes processes.
+7 DISCUSSION & CONCLUSION
+This paper explored how mainstream and fringe Web communities
+share mainstream and alternative news sources with a particular
+focus on how communities influence each other. We collected mil-
+lions of posts from Twitter, Reddit, and 4chan, and analyzed the
+occurrence and temporal dynamics of news shared from 45 main-
+stream and 54 alternative news sites. We found that users on the
+different platforms prefer different news sources, especially when
+it comes to alternative ones. We also explored complex temporal
+dynamics and we discovered, for example, that Twitter and Reddit
+users tend to post the same stories within a relatively short period
+of time, with 4chan posts lagging behind both of them. However,
+when a story becomes popular after a day or two, it is usually the
+case it was posted on 4chan first, lending some credence to 4chan’s
+supposed influence on the Web.
+Using Hawkes processes, we also modeled the influence the indi-
+vidual platforms have on each other, while also taking into account
+influence that comes from external sources of information. We
+found that the interplay between platforms manifests in subtle, yet
+meaningful ways. For example, of all the platforms and subreddits,
+Twitter by far has the most influence in terms of the number of
+URLs it causes to be posted to other platforms, and contributes
+to the share of alternative news URLs on the other platforms to a
+much greater degree than to the share of mainstream news URLs.
+After Twitter, The_Donald subreddit and /pol/ are the next most
+influential when it comes to alternative news URLs. For such URLs,
+The_Donald is less influenced by the other platforms than /pol/,
+and has a higher background rate, i.e., more of the URLs posted
+there come from other sources.
+To the best of our knowledge, our analysis constitutes the first
+attempt to characterize the dissemination of mainstream and alter-
+native news across multiple social media platforms, and to estimate
+a quantifiable influence between them. Overall, our findings shed
+light on how Web communities influence each other and can be
+extremely useful to better understand and detect false information
+as well as informing the design of systems that aim to trace the
+origins of fake stories and mitigate their dissemination.
+Limitations. This work presented an initial attempt to measure
+the influence among popular Web communities. To this end, we
+13
+
+## PDF page 14
+
+considered news propagation on Web communities as dictated by
+the posting of URLs from mainstream and alternative news sources.
+Naturally, this approach is not without limitations, as we did not
+account for the content of the information, which can exist and
+propagate in various forms, such as textual claims, images, and
+videos. For example, there may be a lot of direct information trans-
+ferred from 4chan occurring via screenshots, due to its ephemeral
+nature and orientation towards images. In fact, this highlights the
+complexity of the problem, as, e.g., distinguishing if an image deliv-
+ers the same information as a textual claim in an article, is far from
+a straightforward task. Moreover, we did not examine the content
+of the news stories shared.
+Future Work. As part of future work, we plan to explore advanced
+image recognition techniques to look for screenshots shared among
+the different platforms, as well as Natural Language Processing
+methods to determine whether stories become a part of the plat-
+form’s narrative of events – i.e., whether users continue to talk
+about stories without actually posting a relevant URL itself. We
+believe efforts into understanding how the growing phenomenon of
+alternative and fake information sources affects multiple platforms
+can help inform detection and mitigation techniques against misin-
+formation and disinformation campaigns, and our work constitutes
+a first step in that direction.
+Acknowledgments. This project has received funding from the
+European Union’s Horizon 2020 Research and Innovation program
+under the Marie Skłodowska-Curie ENCASE project (Grant Agree-
+ment No. 691025). This work reflects only the authors’ views and
+the Agency and the Commission are not responsible for any use
+that may be made of the information it contains.
+REFERENCES
+[1] H. Allcott and M. Gentzkow. Social media and fake news in the 2016
+election. Journal of Economic Perspectives , 31, 2017.
+[2] C. Andrews, E. Fichet, Y. Ding, E. Spiro, and K. Starbird. Keeping up
+with the tweet-dashians: The impact of’official’accounts on online
+rumoring. In CSCW, 2016.
+[3] A. Arif, K. Shanahan, F.-J. Chou, Y. Dosouto, K. Starbird, and E. S. Spiro.
+How information snowballs: Exploring the role of exposure in online
+rumor propagation. In CSCW, 2016.
+[4] D. Beran. 4chan: The Skeleton Key to the
+Rise of Trump. https://medium.com/@DaleBeran/
+4chan-the-skeleton-key-to-the-rise-of-trump-624e7cb798cb,
+2017.
+[5] C. Budak, D. Agrawal, and A. El Abbadi. Limiting the spread of misin-
+formation in social networks. In WWW, 2011.
+[6] D. Chatzakou, N. Kourtellis, J. Blackburn, E. De Cristofaro, G. Stringh-
+ini, and A. Vakali. Hate is not binary: Studying abusive behavior of
+#gamergate on twitter. In WebSci, 2017.
+[7] C. A. Davis, O. Varol, E. Ferrara, A. Flammini, and F. Menczer. Botornot:
+A system to evaluate social bots. In WWW Companion, 2016.
+[8] L. Dearden. Nato accuses Sputnik News of distributing misinformation
+as part of ’Kremlin propaganda machine’. http://ind.pn/2luLjs0, 2016.
+[9] M. Del Vicario, A. Bessi, F. Zollo, F. Petroni, A. Scala, G. Caldarelli,
+H. E. Stanley, and W. Quattrociocchi. The spreading of misinformation
+online. Proceedings of the National Academy of Sciences , 113(3), 2016.
+[10] M. Farajtabar, J. Yang, X. Ye, H. Xu, R. Trivedi, E. Khalil, S. Li, L. Song,
+and H. Zha. Fake news mitigation via point process based intervention.
+In PMLR, 2017.
+[11] S. Finn, P. T. Metaxas, and E. Mustafaraj. Investigating rumor propa-
+gation with TwitterTrails. arXiv 1411.3550, 2014.
+[12] A. Friggeri, L. A. Adamic, D. Eckles, and J. Cheng. Rumor cascades. In
+ICWSM, 2014.
+[13] F. Guo, C. Blundell, H. Wallach, and K. Heller. The Bayesian Echo
+Chamber: Modeling social influence via linguistic accommodation. In
+Artificial Intelligence and Statistics, 2015.
+[14] A. Gupta, H. Lamba, P. Kumaraguru, and A. Joshi. Faking Sandy: Char-
+acterizing and identifying fake images on Twitter during Hurricane
+Sandy. In WWW, 2013.
+[15] M. Haag and M. Salam. Gunman in pizzagate shooting is sen-
+tenced to 4 years in prison. https://www.nytimes.com/2017/06/22/
+us/pizzagate-attack-sentence.html, 2017.
+[16] G. E. Hine, J. Onaolapo, E. De Cristofaro, N. Kourtellis, I. Leontiadis,
+R. Samaras, G. Stringhini, and J. Blackburn. Kek, Cucks, and God
+Emperor Trump: A Measurement Study of 4chan’s Politically Incorrect
+Forum and Its Effects on the Web. In ICWSM, 2017.
+[17] J. Jackson. Moderators of pro-Trump Reddit group linked to fake news
+crackdown on posts. https://www.theguardian.com/technology/2016/
+nov/22/moderators-trump-reddit-group-fake-news-crackdown, 2016.
+[18] S. Kumar, R. West, and J. Leskovec. Disinformation on the Web: Impact,
+Characteristics, and Detection of Wikipedia Hoaxes. In WWW, 2016.
+[19] S. Kwon, M. Cha, K. Jung, W. Chen, and Y. Wang. Prominent features
+of rumor propagation in online social media. In ICDM, 2013.
+[20] S. W. Linderman and R. P. Adams. Discovering Latent Network Struc-
+ture in Point Process Data. In ICML, 2014.
+[21] S. W. Linderman and R. P. Adams. Scalable Bayesian Inference for
+Excitatory Point Process Networks. ArXiv 1507.03228, 2015.
+[22] M. Mendoza, B. Poblete, and C. Castillo. Twitter Under Crisis: Can we
+trust what we RT? In SOMA, 2010.
+[23] M. Mohan. Macron Leaks: The anatomy of a hack. http://www.bbc.co.
+uk/news/blogs-trending-39845105, 2017.
+[24] D. T. Nguyen, N. P. Nguyen, and M. T. Thai. Sources of misinformation
+in online social networks: Who to suspect? In MILCOM, 2012.
+[25] E. Seo, P. Mohapatra, and T. Abdelzaher. Identifying rumors and their
+sources in social networks. In SPIE, 2012.
+[26] D. Shah and T. Zaman. Rumors in a network: Who’s the culprit? IEEE
+Transactions on information theory , 57(8), 2011.
+[27] C. Shao, G. L. Ciampaglia, A. Flammini, and F. Menczer. Hoaxy: A
+Platform for Tracking Online Misinformation. In WWW Companion,
+2016.
+[28] H. Situngkir. Spread of Hoax in Social Media. BFI Working Paper No.
+WP-4-2011, 2011.
+[29] K. Starbird. Examining the alternative media ecosystem through the
+production of alternative narratives of mass shooting events on twitter.
+In ICWSM, 2017.
+[30] K. Starbird, J. Maddock, M. Orand, P. Achterman, and R. M. Mason.
+Rumors, False Flags, and Digital Vigilantes: Misinformation on Twitter
+After the 2013 Boston Marathon Bombing. In iConference, 2014.
+[31] O. Varol, E. Ferrara, C. A. Davis, F. Menczer, and A. Flammini. Online
+human-bot interactions: Detection, estimation, and characterization.
+In ICWSM, 2017.
+[32] Z. Wang, W. Dong, W. Zhang, and C. W. Tan. Rumor source detection
+with multiple observations: Fundamental limits and algorithms. ACM
+SIGMETRICS Performance Evaluation Review , 42(1), 2014.
+[33] J. Wardle. Reddit API rules. https://github.com/reddit/reddit/wiki/API,
+2015.
+[34] M. Wendling. The saga of ’Pizzagate’: The fake story that
+shows how conspiracy theories spread. http://www.bbc.com/news/
+blogs-trending-38156985, 2016.
+[35] Wikipedia. Pizzagate conspiracy theory. https://en.wikipedia.org/
+wiki/Pizzagate_conspiracy_theory, 2017.
+14

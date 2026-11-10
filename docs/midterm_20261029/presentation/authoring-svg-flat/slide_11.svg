@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Noto Sans SC&quot;, sans-serif"><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-2" data-pptx-object="picture" data-pptx-frame="727.73 175.87 517.4 466.8" data-pptx-source-ref="slide:2">
+<svg data-pptx-object="picture" data-pptx-frame="727.73 175.87 517.4 466.8" x="727.73" y="175.87" width="517.4" height="466.8" viewBox="0.1081 0 0.7838 1" preserveAspectRatio="none" overflow="hidden"><image href="../images/image15.jpeg" x="0" y="0" width="1" height="1" preserveAspectRatio="none" /></svg>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="99.78 1.19 1180 93.8" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 99.78 1.19 L 1279.78 1.19 L 1279.78 94.99 L 99.78 94.99 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="112.78" y="64.85595801" text-anchor="start" xml:space="preserve" font-size="40" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">LLM2Trip流水线</text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="389 178.73 327.67 457" data-pptx-prst="roundRect" data-pptx-av-adj="val 0" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 389 178.73 L 716.67 178.73 L 716.67 635.73 L 389 635.73 Z" fill="#E7E6E6" fill-opacity="0.8" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="409.6 212.67 285.87 69.33" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 409.6 212.67 L 695.47 212.67 L 695.47 282 L 409.6 282 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="552.53" y="260.45333333" text-anchor="middle" xml:space="preserve" font-size="37.33" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">多元需求与体验</text>
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="409.6 284.67 285.87 311.93" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 409.6 284.67 L 695.47 284.67 L 695.47 596.6 L 409.6 596.6 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="416.53" y="316.13669291" text-anchor="start" xml:space="preserve" font-size="22.67" fill="#000000" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="38.08"><tspan><tspan>在满足多元需求的同时平衡</tspan></tspan><tspan data-paragraph-line-break="1">群体体验，确保行程规划既</tspan><tspan data-paragraph-line-break="1">能满足个人偏好，又能兼顾</tspan><tspan data-paragraph-line-break="1">整体满意度，填补传统平台</tspan><tspan data-paragraph-line-break="1">功能空白。</tspan></text>
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="55.8 178.2 327.67 457" data-pptx-prst="roundRect" data-pptx-av-adj="val 0" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 55.8 178.2 L 383.47 178.2 L 383.47 635.2 L 55.8 635.2 Z" fill="#E7E6E6" fill-opacity="0.8" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="76.47 212.67 285.87 69.33" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 76.47 212.67 L 362.33 212.67 L 362.33 282 L 76.47 282 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="219.4" y="260.45333333" text-anchor="middle" xml:space="preserve" font-size="37.33" fill="#000000" font-weight="bold" data-pptx-text-baseline="metrics-v1">智能组队与协同</text>
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="76.47 284.13 285.87 311.93" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 76.47 284.13 L 362.33 284.13 L 362.33 596.07 L 76.47 596.07 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="83.4" y="315.60335958" text-anchor="start" xml:space="preserve" font-size="22.67" fill="#000000" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="38.08"><tspan><tspan>智能组队匹配与多Agent协</tspan></tspan><tspan data-paragraph-line-break="1">同，结合群体偏好融合推荐</tspan><tspan data-paragraph-line-break="1">算法，聚合多人偏好并量化</tspan><tspan data-paragraph-line-break="1">优先级，实现行程协同规划</tspan><tspan data-paragraph-line-break="1">与调整。</tspan></text>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g></svg>

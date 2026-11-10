@@ -1,0 +1,175 @@
+{
+  "status": "passed",
+  "slides": 18,
+  "edited_pages": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    9,
+    10,
+    11,
+    17,
+    18
+  ],
+  "source_package_unchanged": true,
+  "reviewed_code_unchanged": true,
+  "quality_errors": 0,
+  "quality_warnings": 0,
+  "delivery_errors": [],
+  "delivery_advisories": [
+    {
+      "code": "font_portability",
+      "message": "Some fonts declared or referenced by the presentation are outside the common Office/OS portability set; target-system availability was not verified.",
+      "faces": [
+        "Calibri Light",
+        "字魂105号-简雅黑",
+        "游ゴシック",
+        "游ゴシック Light"
+      ]
+    }
+  ],
+  "advisory_disposition": "Inherited theme fonts preserved; Windows PowerPoint renders reviewed and fixed-layout PDF supplied.",
+  "unchanged_visible_slide_xml": [
+    1,
+    7,
+    8,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "master_layout_bytes_identical": true,
+  "native_chart_unchanged": 1,
+  "native_tables": 2,
+  "speaker_notes": 18,
+  "automatic_slide_advances": 0,
+  "use_timings": false,
+  "new_images_original_bytes_embedded": [
+    "images\\official_summer_4.jpg",
+    "images\\yuqing_trace.png",
+    "images/summer_key_visual.jpg"
+  ],
+  "source_hyperlinks_verified": [
+    "https://arxiv.org/abs/1805.12512",
+    "https://files.yqt365.com/fileOnline/instruction.html",
+    "https://www.taptap.cn/moment/832223722998859956",
+    "https://www.taptap.cn/moment/834126362733185189",
+    "https://yuqing.sina.com/undefined/about"
+  ],
+  "pdf_pages": 18,
+  "office_rendered_pages": 18,
+  "manual_visual_review_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "visual_review": "No text clipping, unintended overlap, cropped attribution, or obscured native chart/table found.",
+  "reference_render_comparison": {
+    "1": {
+      "pixels_identical": true,
+      "maximum_channel_difference_255": 0,
+      "mean_channel_difference_255": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "7": {
+      "pixels_identical": false,
+      "maximum_channel_difference_255": 14,
+      "mean_channel_difference_255": [
+        0.03240138888888889,
+        0.03031388888888889,
+        0.027339583333333334
+      ]
+    },
+    "8": {
+      "pixels_identical": false,
+      "maximum_channel_difference_255": 11,
+      "mean_channel_difference_255": [
+        0.007875694444444444,
+        0.0070708333333333335,
+        0.005720138888888889
+      ]
+    },
+    "12": {
+      "pixels_identical": true,
+      "maximum_channel_difference_255": 0,
+      "mean_channel_difference_255": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "13": {
+      "pixels_identical": true,
+      "maximum_channel_difference_255": 0,
+      "mean_channel_difference_255": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "14": {
+      "pixels_identical": true,
+      "maximum_channel_difference_255": 0,
+      "mean_channel_difference_255": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "15": {
+      "pixels_identical": false,
+      "maximum_channel_difference_255": 15,
+      "mean_channel_difference_255": [
+        0.020693055555555555,
+        0.019293055555555556,
+        0.017847222222222223
+      ]
+    },
+    "16": {
+      "pixels_identical": true,
+      "maximum_channel_difference_255": 0,
+      "mean_channel_difference_255": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "main_page_seconds": [
+    12,
+    38,
+    38,
+    36,
+    34,
+    40,
+    40,
+    28,
+    30,
+    24,
+    26,
+    14
+  ],
+  "main_total_seconds": 360,
+  "timing_basis": "rehearsal_budget_not_recorded_speech"
+}

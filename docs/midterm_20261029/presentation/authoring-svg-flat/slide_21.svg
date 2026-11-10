@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="Calibri, sans-serif"><defs><clipPath id="clip1" clipPathUnits="userSpaceOnUse"><path d="M 0.11624 0 L 0.88375 0 C 0.89578 0 0.90558 0.01832 0.90558 0.04079 L 0.90558 0.95921 C 0.90558 0.9817 0.89578 1 0.88375 1 L 0.11624 1 C 0.10421 1 0.09441 0.9817 0.09441 0.95921 L 0.09441 0.04079 C 0.09441 0.01832 0.10421 0 0.11624 0 Z" /></clipPath><linearGradient id="ggrad1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4472C4" stop-opacity="0.25" /><stop offset="0.52" stop-color="#4472C4" stop-opacity="0" /><stop offset="1" stop-color="#4472C4" stop-opacity="0.25" /></linearGradient><radialGradient id="mstrokegrad1" cx="0.5" cy="0.5" r="0.5"><stop offset="0.24" stop-color="#4472C4" stop-opacity="0" /><stop offset="0.94" stop-color="#4472C4" stop-opacity="0.7" /></radialGradient><linearGradient id="ggrad2" x1="0" y1="0.5" x2="1" y2="0.5"><stop offset="0" stop-color="#4472C4" stop-opacity="0.1" /><stop offset="0.5" stop-color="#FFFFFF" /><stop offset="1" stop-color="#4472C4" stop-opacity="0.1" /></linearGradient></defs><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="midterm-header" data-pptx-bounds="95 16 815 83" data-pptx-role="header"><rect x="95" y="16" width="815" height="83" fill="none" /><text x="112" y="63" font-size="34" fill="#44546A" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">备份｜详情界面保留来源与观测范围</text></g><g id="page-subtitle" data-pptx-bounds="75 108 1130 50"><rect x="75" y="108" width="1130" height="50" fill="none" /><text x="80" y="140" font-size="22" fill="#64748B" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">本地运行实拍 · 仓库内置档案数据 · 非线上实时抓取证明</text></g><g id="midterm-footer" data-pptx-bounds="70 680 1100 25" data-pptx-role="footer"><rect x="70" y="680" width="1100" height="25" fill="none" /><text x="76" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">SocialSense  ·  创新训练类中期答辩</text><text x="1155" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" text-anchor="end" font-weight="normal">15 / 18  备份</text></g><g id="detail-screenshot" data-pptx-bounds="55 182 795 475"><rect x="55" y="182" width="795" height="475" fill="none" /><image href="../images/local_detail.png" x="55" y="182" width="795" height="475" preserveAspectRatio="xMidYMid meet" /></g><g id="detail-fields" data-pptx-bounds="885 205 325 395"><rect x="885" y="205" width="325" height="395" fill="none" /><rect x="885" y="205" width="325" height="395" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="8" ry="8" /><line x1="888" y1="208" x2="888" y2="597" stroke="#4472C4" stroke-width="5" /><text x="909" y="245" font-size="27" fill="#4472C4" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">可检查的入口</text><text x="909" y="290" font-size="21" fill="#243446" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">平台 / 来源<tspan x="909" dy="32.55">观测时间范围</tspan><tspan x="909" dy="32.55">摘要与主导立场</tspan><tspan x="909" dy="32.55">研究记录与访问日志</tspan><tspan x="909" dy="32.55" /><tspan x="909" dy="32.55">截图内条数属于该档案，</tspan><tspan x="909" dy="32.55">不等于预测实验样本量。</tspan></text></g></svg>

@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "source": "Proposal(1)(3).pptx",
+  "mode": "tolerant",
+  "summary": {
+    "slides": 27,
+    "warnings": 31
+  },
+  "artifacts": {
+    "animationConfig": "animations.json",
+    "animationMedia": [],
+    "resources": [
+      "images/image1.jpeg",
+      "images/image10.png",
+      "images/image11.png",
+      "images/image12.png",
+      "images/image13.png",
+      "images/image14.png",
+      "images/image15.png",
+      "images/image16.png",
+      "images/image17.png",
+      "images/image18.png",
+      "images/image19.png",
+      "images/image2.png",
+      "images/image20.png",
+      "images/image21.png",
+      "images/image22.png",
+      "images/image23.png",
+      "images/image24.png",
+      "images/image25.png",
+      "images/image3.png",
+      "images/image4.png",
+      "images/image5.png",
+      "images/image6.png",
+      "images/image7.png",
+      "images/image8.png",
+      "images/image9.png"
+    ],
+    "notes": [],
+    "sourceTemplate": "sources/source.pptx",
+    "nativeStructure": "analysis/native_structure.json",
+    "roundtripManifest": "analysis/roundtrip_manifest.json"
+  },
+  "sourceDocument": {
+    "canvasPx": {
+      "width": 1280.0,
+      "height": 720.0
+    },
+    "theme": {
+      "colors": {
+        "dk1": "#000000",
+        "lt1": "#FFFFFF",
+        "dk2": "#44546A",
+        "lt2": "#E7E6E6",
+        "accent1": "#4472C4",
+        "accent2": "#ED7D31",
+        "accent3": "#A5A5A5",
+        "accent4": "#FFC000",
+        "accent5": "#5B9BD5",
+        "accent6": "#70AD47",
+        "hlink": "#0563C1",
+        "folHlink": "#954F72"
+      },
+      "fonts": {
+        "majorLatin": "等线 Light",
+        "majorScriptJpan": "游ゴシック Light",
+        "majorScriptHang": "맑은 고딕",
+        "majorScriptHans": "等线 Light",
+        "majorScriptHant": "新細明體",
+        "minorLatin": "等线",
+        "minorScriptJpan": "游ゴシック",
+        "minorScriptHang": "맑은 고딕",
+        "minorScriptHans": "等线",
+        "minorScriptHant": "新細明體"
+      },
+      "ooxml": {
+        "encoding": "base64",
+        "sha256": "98ea9166be52a6a553a05c42fcf7898c0e182f74ca902baeb5b65af89d4c4bcc",
+        "payload": "PGE6dGhlbWUgeG1sbnM6YT0iaHR0cDovL3NjaGVtYXMub3BlbnhtbGZvcm1hdHMub3JnL2RyYXdpbmdtbC8yMDA2L21haW4iIHhtbG5zOm5zMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9vZmZpY2UvdGhlbWVtbC8yMDEyL21haW4iIG5hbWU9Ik9mZmljZSDkuLvpopjigIvigIsiPjxhOnRoZW1lRWxlbWVudHM+PGE6Y2xyU2NoZW1lIG5hbWU9Ik9mZmljZSI+PGE6ZGsxPjxhOnN5c0NsciB2YWw9IndpbmRvd1RleHQiIGxhc3RDbHI9IjAwMDAwMCIgLz48L2E6ZGsxPjxhOmx0MT48YTpzeXNDbHIgdmFsPSJ3aW5kb3ciIGxhc3RDbHI9IkZGRkZGRiIgLz48L2E6bHQxPjxhOmRrMj48YTpzcmdiQ2xyIHZhbD0iNDQ1NDZBIiAvPjwvYTpkazI+PGE6bHQyPjxhOnNyZ2JDbHIgdmFsPSJFN0U2RTYiIC8+PC9hOmx0Mj48YTphY2NlbnQxPjxhOnNyZ2JDbHIgdmFsPSI0NDcyQzQiIC8+PC9hOmFjY2VudDE+PGE6YWNjZW50Mj48YTpzcmdiQ2xyIHZhbD0iRUQ3RDMxIiAvPjwvYTphY2NlbnQyPjxhOmFjY2VudDM+PGE6c3JnYkNsciB2YWw9IkE1QTVBNSIgLz48L2E6YWNjZW50Mz48YTphY2NlbnQ0PjxhOnNyZ2JDbHIgdmFsPSJGRkMwMDAiIC8+PC9hOmFjY2VudDQ+PGE6YWNjZW50NT48YTpzcmdiQ2xyIHZhbD0iNUI5QkQ1IiAvPjwvYTphY2NlbnQ1PjxhOmFjY2VudDY+PGE6c3JnYkNsciB2YWw9IjcwQUQ0NyIgLz48L2E6YWNjZW50Nj48YTpobGluaz48YTpzcmdiQ2xyIHZhbD0iMDU2M0MxIiAvPjwvYTpobGluaz48YTpmb2xIbGluaz48YTpzcmdiQ2xyIHZhbD0iOTU0RjcyIiAvPjwvYTpmb2xIbGluaz48L2E6Y2xyU2NoZW1lPjxhOmZvbnRTY2hlbWUgbmFtZT0iT2ZmaWNlIj48YTptYWpvckZvbnQ+PGE6bGF0aW4gdHlwZWZhY2U9Iuetiee6vyBMaWdodCIgLz48YTplYSB0eXBlZmFjZT0iIiAvPjxhOmNzIHR5cGVmYWNlPSIiIC8+PGE6Zm9udCBzY3JpcHQ9IkpwYW4iIHR5cGVmYWNlPSLmuLjjgrTjgrfjg4Pjgq8gTGlnaHQiIC8+PGE6Zm9udCBzY3JpcHQ9IkhhbmciIHR5cGVmYWNlPSLrp5HsnYAg6rOg65SVIiAvPjxhOmZvbnQgc2NyaXB0PSJIYW5zIiB0eXBlZmFjZT0i562J57q/IExpZ2h0IiAvPjxhOmZvbnQgc2NyaXB0PSJIYW50IiB0eXBlZmFjZT0i5paw57Sw5piO6auUIiAvPjxhOmZvbnQgc2NyaXB0PSJBcmFiIiB0eXBlZmFjZT0iVGltZXMgTmV3IFJvbWFuIiAvPjxhOmZvbnQgc2NyaXB0PSJIZWJyIiB0eXBlZmFjZT0iVGltZXMgTmV3IFJvbWFuIiAvPjxhOmZvbnQgc2NyaXB0PSJUaGFpIiB0eXBlZmFjZT0iQW5nc2FuYSBOZXciIC8+PGE6Zm9udCBzY3JpcHQ9IkV0aGkiIHR5cGVmYWNlPSJOeWFsYSIgLz48YTpmb250IHNjcmlwdD0iQmVuZyIgdHlwZWZhY2U9IlZyaW5kYSIgLz48YTpmb250IHNjcmlwdD0iR3VqciIgdHlwZWZhY2U9IlNocnV0aSIgLz48YTpmb250IHNjcmlwdD0iS2htciIgdHlwZWZhY2U9Ik1vb2xCb3JhbiIgLz48YTpmb250IHNjcmlwdD0iS25kYSIgdHlwZWZhY2U9IlR1bmdhIiAvPjxhOmZvbnQgc2NyaXB0PSJHdXJ1IiB0eXBlZmFjZT0iUmFhdmkiIC8+PGE6Zm9udCBzY3JpcHQ9IkNhbnMiIHR5cGVmYWNlPSJFdXBoZW1pYSIgLz48YTpmb250IHNjcmlwdD0iQ2hlciIgdHlwZWZhY2U9IlBsYW50YWdlbmV0IENoZXJva2VlIiAvPjxhOmZvbnQgc2NyaXB0PSJZaWlpIiB0eXBlZmFjZT0iTWljcm9zb2Z0IFlpIEJhaXRpIiAvPjxhOmZvbnQgc2NyaXB0PSJUaWJ0IiB0eXBlZmFjZT0iTWljcm9zb2Z0IEhpbWFsYXlhIiAvPjxhOmZvbnQgc2NyaXB0PSJUaGFhIiB0eXBlZmFjZT0iTVYgQm9saSIgLz48YTpmb250IHNjcmlwdD0iRGV2YSIgdHlwZWZhY2U9Ik1hbmdhbCIgLz48YTpmb250IHNjcmlwdD0iVGVsdSIgdHlwZWZhY2U9IkdhdXRhbWkiIC8+PGE6Zm9udCBzY3JpcHQ9IlRhbWwiIHR5cGVmYWNlPSJMYXRoYSIgLz48YTpmb250IHNjcmlwdD0iU3lyYyIgdHlwZWZhY2U9IkVzdHJhbmdlbG8gRWRlc3NhIiAvPjxhOmZvbnQgc2NyaXB0PSJPcnlhIiB0eXBlZmFjZT0iS2FsaW5nYSIgLz48YTpmb250IHNjcmlwdD0iTWx5bSIgdHlwZWZhY2U9IkthcnRpa2EiIC8+PGE6Zm9udCBzY3JpcHQ9Ikxhb28iIHR5cGVmYWNlPSJEb2tDaGFtcGEiIC8+PGE6Zm9udCBzY3JpcHQ9IlNpbmgiIHR5cGVmYWNlPSJJc2tvb2xhIFBvdGEiIC8+PGE6Zm9udCBzY3JpcHQ9Ik1vbmciIHR5cGVmYWNlPSJNb25nb2xpYW4gQmFpdGkiIC8+PGE6Zm9udCBzY3JpcHQ9IlZpZXQiIHR5cGVmYWNlPSJUaW1lcyBOZXcgUm9tYW4iIC8+PGE6Zm9udCBzY3JpcHQ9IlVpZ2giIHR5cGVmYWNlPSJNaWNyb3NvZnQgVWlnaHVyIiAvPjxhOmZvbnQgc2NyaXB0PSJHZW9yIiB0eXBlZmFjZT0iU3lsZmFlbiIgLz48L2E6bWFqb3JGb250PjxhOm1pbm9yRm9udD48YTpsYXRpbiB0eXBlZmFjZT0i562J57q/IiAvPjxhOmVhIHR5cGVmYWNlPSIiIC8+PGE6Y3MgdHlwZWZhY2U9IiIgLz48YTpmb250IHNjcmlwdD0iSnBhbiIgdHlwZWZhY2U9Iua4uOOCtOOCt+ODg+OCryIgLz48YTpmb250IHNjcmlwdD0iSGFuZyIgdHlwZWZhY2U9IuunkeydgCDqs6DrlJUiIC8+PGE6Zm9udCBzY3JpcHQ9IkhhbnMiIHR5cGVmYWNlPSLnrYnnur8iIC8+PGE6Zm9udCBzY3JpcHQ9IkhhbnQiIHR5cGVmYWNlPSLmlrDntLDmmI7pq5QiIC8+PGE6Zm9udCBzY3JpcHQ9IkFyYWIiIHR5cGVmYWNlPSJBcmlhbCIgLz48YTpmb250IHNjcmlwdD0iSGViciIgdHlwZWZhY2U9IkFyaWFsIiAvPjxhOmZvbnQgc2NyaXB0PSJUaGFpIiB0eXBlZmFjZT0iQ29yZGlhIE5ldyIgLz48YTpmb250IHNjcmlwdD0iRXRoaSIgdHlwZWZhY2U9Ik55YWxhIiAvPjxhOmZvbnQgc2NyaXB0PSJCZW5nIiB0eXBlZmFjZT0iVnJpbmRhIiAvPjxhOmZvbnQgc2NyaXB0PSJHdWpyIiB0eXBlZmFjZT0iU2hydXRpIiAvPjxhOmZvbnQgc2NyaXB0PSJLaG1yIiB0eXBlZmFjZT0iRGF1blBlbmgiIC8+PGE6Zm9udCBzY3JpcHQ9IktuZGEiIHR5cGVmYWNlPSJUdW5nYSIgLz48YTpmb250IHNjcmlwdD0iR3VydSIgdHlwZWZhY2U9IlJhYXZpIiAvPjxhOmZvbnQgc2NyaXB0PSJDYW5zIiB0eXBlZmFjZT0iRXVwaGVtaWEiIC8+PGE6Zm9udCBzY3JpcHQ9IkNoZXIiIHR5cGVmYWNlPSJQbGFudGFnZW5ldCBDaGVyb2tlZSIgLz48YTpmb250IHNjcmlwdD0iWWlpaSIgdHlwZWZhY2U9Ik1pY3Jvc29mdCBZaSBCYWl0aSIgLz48YTpmb250IHNjcmlwdD0iVGlidCIgdHlwZWZhY2U9Ik1pY3Jvc29mdCBIaW1hbGF5YSIgLz48YTpmb250IHNjcmlwdD0iVGhhYSIgdHlwZWZhY2U9Ik1WIEJvbGkiIC8+PGE6Zm9udCBzY3JpcHQ9IkRldmEiIHR5cGVmYWNlPSJNYW5nYWwiIC8+PGE6Zm9udCBzY3JpcHQ9IlRlbHUiIHR5cGVmYWNlPSJHYXV0YW1pIiAvPjxhOmZvbnQgc2NyaXB0PSJUYW1sIiB0eXBlZmFjZT0iTGF0aGEiIC8+PGE6Zm9udCBzY3JpcHQ9IlN5cmMiIHR5cGVmYWNlPSJFc3RyYW5nZWxvIEVkZXNzYSIgLz48YTpmb250IHNjcmlwdD0iT3J5YSIgdHlwZWZhY2U9IkthbGluZ2EiIC8+PGE6Zm9udCBzY3JpcHQ9Ik1seW0iIHR5cGVmYWNlPSJLYXJ0aWthIiAvPjxhOmZvbnQgc2NyaXB0PSJMYW9vIiB0eXBlZmFjZT0iRG9rQ2hhbXBhIiAvPjxhOmZvbnQgc2NyaXB0PSJTaW5oIiB0eXBlZmFjZT0iSXNrb29sYSBQb3RhIiAvPjxhOmZvbnQgc2NyaXB0PSJNb25nIiB0eXBlZmFjZT0iTW9uZ29saWFuIEJhaXRpIiAvPjxhOmZvbnQgc2NyaXB0PSJWaWV0IiB0eXBlZmFjZT0iQXJpYWwiIC8+PGE6Zm9udCBzY3JpcHQ9IlVpZ2giIHR5cGVmYWNlPSJNaWNyb3NvZnQgVWlnaHVyIiAvPjxhOmZvbnQgc2NyaXB0PSJHZW9yIiB0eXBlZmFjZT0iU3lsZmFlbiIgLz48L2E6bWlub3JGb250PjwvYTpmb250U2NoZW1lPjxhOmZtdFNjaGVtZSBuYW1lPSJPZmZpY2UiPjxhOmZpbGxTdHlsZUxzdD48YTpzb2xpZEZpbGw+PGE6c2NoZW1lQ2xyIHZhbD0icGhDbHIiIC8+PC9hOnNvbGlkRmlsbD48YTpncmFkRmlsbCByb3RXaXRoU2hhcGU9IjEiPjxhOmdzTHN0PjxhOmdzIHBvcz0iMCI+PGE6c2NoZW1lQ2xyIHZhbD0icGhDbHIiPjxhOmx1bU1vZCB2YWw9IjExMDAwMCIgLz48YTpzYXRNb2QgdmFsPSIxMDUwMDAiIC8+PGE6dGludCB2YWw9IjY3MDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOmdzPjxhOmdzIHBvcz0iNTAwMDAiPjxhOnNjaGVtZUNsciB2YWw9InBoQ2xyIj48YTpsdW1Nb2QgdmFsPSIxMDUwMDAiIC8+PGE6c2F0TW9kIHZhbD0iMTAzMDAwIiAvPjxhOnRpbnQgdmFsPSI3MzAwMCIgLz48L2E6c2NoZW1lQ2xyPjwvYTpncz48YTpncyBwb3M9IjEwMDAwMCI+PGE6c2NoZW1lQ2xyIHZhbD0icGhDbHIiPjxhOmx1bU1vZCB2YWw9IjEwNTAwMCIgLz48YTpzYXRNb2QgdmFsPSIxMDkwMDAiIC8+PGE6dGludCB2YWw9IjgxMDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOmdzPjwvYTpnc0xzdD48YTpsaW4gYW5nPSI1NDAwMDAwIiBzY2FsZWQ9IjAiIC8+PC9hOmdyYWRGaWxsPjxhOmdyYWRGaWxsIHJvdFdpdGhTaGFwZT0iMSI+PGE6Z3NMc3Q+PGE6Z3MgcG9zPSIwIj48YTpzY2hlbWVDbHIgdmFsPSJwaENsciI+PGE6c2F0TW9kIHZhbD0iMTAzMDAwIiAvPjxhOmx1bU1vZCB2YWw9IjEwMjAwMCIgLz48YTp0aW50IHZhbD0iOTQwMDAiIC8+PC9hOnNjaGVtZUNscj48L2E6Z3M+PGE6Z3MgcG9zPSI1MDAwMCI+PGE6c2NoZW1lQ2xyIHZhbD0icGhDbHIiPjxhOnNhdE1vZCB2YWw9IjExMDAwMCIgLz48YTpsdW1Nb2QgdmFsPSIxMDAwMDAiIC8+PGE6c2hhZGUgdmFsPSIxMDAwMDAiIC8+PC9hOnNjaGVtZUNscj48L2E6Z3M+PGE6Z3MgcG9zPSIxMDAwMDAiPjxhOnNjaGVtZUNsciB2YWw9InBoQ2xyIj48YTpsdW1Nb2QgdmFsPSI5OTAwMCIgLz48YTpzYXRNb2QgdmFsPSIxMjAwMDAiIC8+PGE6c2hhZGUgdmFsPSI3ODAwMCIgLz48L2E6c2NoZW1lQ2xyPjwvYTpncz48L2E6Z3NMc3Q+PGE6bGluIGFuZz0iNTQwMDAwMCIgc2NhbGVkPSIwIiAvPjwvYTpncmFkRmlsbD48L2E6ZmlsbFN0eWxlTHN0PjxhOmxuU3R5bGVMc3Q+PGE6bG4gdz0iNjM1MCIgY2FwPSJmbGF0IiBjbXBkPSJzbmciIGFsZ249ImN0ciI+PGE6c29saWRGaWxsPjxhOnNjaGVtZUNsciB2YWw9InBoQ2xyIiAvPjwvYTpzb2xpZEZpbGw+PGE6cHJzdERhc2ggdmFsPSJzb2xpZCIgLz48YTptaXRlciBsaW09IjgwMDAwMCIgLz48L2E6bG4+PGE6bG4gdz0iMTI3MDAiIGNhcD0iZmxhdCIgY21wZD0ic25nIiBhbGduPSJjdHIiPjxhOnNvbGlkRmlsbD48YTpzY2hlbWVDbHIgdmFsPSJwaENsciIgLz48L2E6c29saWRGaWxsPjxhOnByc3REYXNoIHZhbD0ic29saWQiIC8+PGE6bWl0ZXIgbGltPSI4MDAwMDAiIC8+PC9hOmxuPjxhOmxuIHc9IjE5MDUwIiBjYXA9ImZsYXQiIGNtcGQ9InNuZyIgYWxnbj0iY3RyIj48YTpzb2xpZEZpbGw+PGE6c2NoZW1lQ2xyIHZhbD0icGhDbHIiIC8+PC9hOnNvbGlkRmlsbD48YTpwcnN0RGFzaCB2YWw9InNvbGlkIiAvPjxhOm1pdGVyIGxpbT0iODAwMDAwIiAvPjwvYTpsbj48L2E6bG5TdHlsZUxzdD48YTplZmZlY3RTdHlsZUxzdD48YTplZmZlY3RTdHlsZT48YTplZmZlY3RMc3QgLz48L2E6ZWZmZWN0U3R5bGU+PGE6ZWZmZWN0U3R5bGU+PGE6ZWZmZWN0THN0IC8+PC9hOmVmZmVjdFN0eWxlPjxhOmVmZmVjdFN0eWxlPjxhOmVmZmVjdExzdD48YTpvdXRlclNoZHcgYmx1clJhZD0iNTcxNTAiIGRpc3Q9IjE5MDUwIiBkaXI9IjU0MDAwMDAiIGFsZ249ImN0ciIgcm90V2l0aFNoYXBlPSIwIj48YTpzcmdiQ2xyIHZhbD0iMDAwMDAwIj48YTphbHBoYSB2YWw9IjYzMDAwIiAvPjwvYTpzcmdiQ2xyPjwvYTpvdXRlclNoZHc+PC9hOmVmZmVjdExzdD48L2E6ZWZmZWN0U3R5bGU+PC9hOmVmZmVjdFN0eWxlTHN0PjxhOmJnRmlsbFN0eWxlTHN0PjxhOnNvbGlkRmlsbD48YTpzY2hlbWVDbHIgdmFsPSJwaENsciIgLz48L2E6c29saWRGaWxsPjxhOnNvbGlkRmlsbD48YTpzY2hlbWVDbHIgdmFsPSJwaENsciI+PGE6dGludCB2YWw9Ijk1MDAwIiAvPjxhOnNhdE1vZCB2YWw9IjE3MDAwMCIgLz48L2E6c2NoZW1lQ2xyPjwvYTpzb2xpZEZpbGw+PGE6Z3JhZEZpbGwgcm90V2l0aFNoYXBlPSIxIj48YTpnc0xzdD48YTpncyBwb3M9IjAiPjxhOnNjaGVtZUNsciB2YWw9InBoQ2xyIj48YTp0aW50IHZhbD0iOTMwMDAiIC8+PGE6c2F0TW9kIHZhbD0iMTUwMDAwIiAvPjxhOnNoYWRlIHZhbD0iOTgwMDAiIC8+PGE6bHVtTW9kIHZhbD0iMTAyMDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOmdzPjxhOmdzIHBvcz0iNTAwMDAiPjxhOnNjaGVtZUNsciB2YWw9InBoQ2xyIj48YTp0aW50IHZhbD0iOTgwMDAiIC8+PGE6c2F0TW9kIHZhbD0iMTMwMDAwIiAvPjxhOnNoYWRlIHZhbD0iOTAwMDAiIC8+PGE6bHVtTW9kIHZhbD0iMTAzMDAwIiAvPjwvYTpzY2hlbWVDbHI+PC9hOmdzPjxhOmdzIHBvcz0iMTAwMDAwIj48YTpzY2hlbWVDbHIgdmFsPSJwaENsciI+PGE6c2hhZGUgdmFsPSI2MzAwMCIgLz48YTpzYXRNb2QgdmFsPSIxMjAwMDAiIC8+PC9hOnNjaGVtZUNscj48L2E6Z3M+PC9hOmdzTHN0PjxhOmxpbiBhbmc9IjU0MDAwMDAiIHNjYWxlZD0iMCIgLz48L2E6Z3JhZEZpbGw+PC9hOmJnRmlsbFN0eWxlTHN0PjwvYTpmbXRTY2hlbWU+PC9hOnRoZW1lRWxlbWVudHM+PGE6ZXh0THN0PjxhOmV4dCB1cmk9InswNUE0QzI1Qy0wODVFLTQzNDAtODVBMy1BNTUzMUU1MTBEQjJ9Ij48bnMxOnRoZW1lRmFtaWx5IG5hbWU9Ik9mZmljZSBUaGVtZSIgaWQ9Ins2MkY5MzlCNi05M0FGLTREQjgtOUM2Qi1ENkM3REZEQzU4OUZ9IiB2aWQ9Ins0QTNDNDZFOC02MUNDLTQ2MDMtQTU4OS03NDIyQTQ3QThFNEF9IiAvPjwvYTpleHQ+PC9hOmV4dExzdD48L2E6dGhlbWU+"
+      }
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide1.xml",
+      "slide_index": 1,
+      "severity": "warning"
+    },
+    {
+      "code": "image-effect-omitted",
+      "message": "unsupported direct a:blip effect(s): a:biLevel",
+      "fallback": "retain the source image and omit only this image effect",
+      "part_path": "ppt/slides/slide1.xml",
+      "slide_index": 1,
+      "shape_id": "2",
+      "shape_name": "图片 1",
+      "shape_kind": "pic",
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide2.xml",
+      "slide_index": 2,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide3.xml",
+      "slide_index": 3,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide4.xml",
+      "slide_index": 4,
+      "severity": "warning"
+    },
+    {
+      "code": "effect-unsupported",
+      "message": "unsupported-effect:softEdge",
+      "fallback": "retain the base object and record blocking effect metadata",
+      "part_path": "ppt/slides/slide4.xml",
+      "slide_index": 4,
+      "shape_id": "5",
+      "shape_name": "图片 4",
+      "shape_kind": "pic",
+      "severity": "warning"
+    },
+    {
+      "code": "effect-unsupported",
+      "message": "unsupported-effect:softEdge",
+      "fallback": "retain the base object and record blocking effect metadata",
+      "part_path": "ppt/slides/slide4.xml",
+      "slide_index": 4,
+      "shape_id": "17",
+      "shape_name": "图片 16",
+      "shape_kind": "pic",
+      "severity": "warning"
+    },
+    {
+      "code": "effect-unsupported",
+      "message": "unsupported-effect:softEdge",
+      "fallback": "retain the base object and record blocking effect metadata",
+      "part_path": "ppt/slides/slide4.xml",
+      "slide_index": 4,
+      "shape_id": "13",
+      "shape_name": "图片 12",
+      "shape_kind": "pic",
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide5.xml",
+      "slide_index": 5,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide6.xml",
+      "slide_index": 6,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide7.xml",
+      "slide_index": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide8.xml",
+      "slide_index": 8,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide9.xml",
+      "slide_index": 9,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide10.xml",
+      "slide_index": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide11.xml",
+      "slide_index": 11,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide12.xml",
+      "slide_index": 12,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide13.xml",
+      "slide_index": 13,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide14.xml",
+      "slide_index": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide15.xml",
+      "slide_index": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide16.xml",
+      "slide_index": 16,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide17.xml",
+      "slide_index": 17,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide18.xml",
+      "slide_index": 18,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide19.xml",
+      "slide_index": 19,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide20.xml",
+      "slide_index": 20,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide21.xml",
+      "slide_index": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide22.xml",
+      "slide_index": 22,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide23.xml",
+      "slide_index": 23,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide24.xml",
+      "slide_index": 24,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide25.xml",
+      "slide_index": 25,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide26.xml",
+      "slide_index": 26,
+      "severity": "warning"
+    },
+    {
+      "code": "transition-not-reconstructed",
+      "message": "Slide transition was not reconstructed: generated transition read-back does not match its settings",
+      "fallback": "keep this transition in the source PPTX through direct native preservation",
+      "part_path": "ppt/slides/slide27.xml",
+      "slide_index": 27,
+      "severity": "warning"
+    }
+  ]
+}

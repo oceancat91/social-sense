@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;微软雅黑&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="84.27 25.22 348.73 54.8" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 84.27 25.22 L 433 25.22 L 433 80.02 L 84.27 80.02 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="93.87" y="66.01595801" text-anchor="start" xml:space="preserve" font-family="&quot;等线&quot;, &quot;微软雅黑&quot;, sans-serif" font-size="37.33" fill="#3B3B3B" data-pptx-text-baseline="metrics-v1"><tspan>1</tspan><tspan>0</tspan><tspan>. 评分协议</tspan></text>
+</g>
+<g id="shape-19" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:19">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image3.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="shape-5" data-pptx-object="group" data-pptx-frame="59.08 114.33 949.9 35.42" data-pptx-source-ref="slide:5">
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="59.08 114.33 949.9 35.42" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 59.08 114.33 L 1008.98 114.33 L 1008.98 149.75 L 59.08 149.75 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="59.08" y="137" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#0D3745" data-pptx-text-baseline="metrics-v1">拟以问题驱动选例、双人独立观察与证据评分，优先完成两个完整案例及一个构建案例。</text>
+</g>
+</g>
+<g id="shape-15" data-pptx-object="group" data-pptx-frame="59 187 557 460.59" data-pptx-source-ref="slide:15">
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="59 187 413.75 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 59 187 L 472.75 187 L 472.75 225.6 L 59 225.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="59" y="211" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">证据示例：同一动作的 RGB 与法线</text>
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="84.2 228.33 86.4 30.8" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 84.2 228.33 L 170.6 228.33 L 170.6 259.13 L 84.2 259.13 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="84.2" y="247" text-anchor="start" xml:space="preserve" font-size="20" fill="#59636A" data-pptx-text-baseline="metrics-v1">输入视频</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="269.2 228.33 50.88 30.8" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 269.2 228.33 L 320.08 228.33 L 320.08 259.13 L 269.2 259.13 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="269.2" y="247" text-anchor="start" xml:space="preserve" font-size="20" fill="#59636A" data-pptx-text-baseline="metrics-v1">SV4D</text>
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="389.2 228.33 94.56 30.8" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 389.2 228.33 L 483.76 228.33 L 483.76 259.13 L 389.2 259.13 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="389.2" y="247" text-anchor="start" xml:space="preserve" font-size="20" fill="#59636A" data-pptx-text-baseline="metrics-v1">SV4D 2.0</text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="535.2 228.33 44 30.8" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 535.2 228.33 L 579.2 228.33 L 579.2 259.13 L 535.2 259.13 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="535.2" y="247" text-anchor="start" xml:space="preserve" font-size="20" fill="#59636A" data-pptx-text-baseline="metrics-v1">法线</text>
+</g>
+<g id="shape-11" data-pptx-object="picture" data-pptx-frame="60 261 556 234.63" data-pptx-source-ref="slide:11">
+<svg data-pptx-object="picture" data-pptx-frame="60 261 556 234.63" x="60" y="261" width="556" height="234.63" viewBox="0.50107 0 0.49893 0.30341" preserveAspectRatio="none" overflow="hidden"><image href="../images/image23.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none" /></svg>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="59.12 500.33 406.56 64.88" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 59.12 500.33 L 465.68 500.33 L 465.68 565.21 L 59.12 565.21 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="59.12" y="523" text-anchor="start" xml:space="preserve" font-size="22" fill="#263238" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="31"><tspan><tspan>先定位部件、视角与时刻，再记录缺陷。</tspan></tspan><tspan data-paragraph-line-break="1">法线提供补充线索，不替代独立几何 GT。</tspan></text>
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="59.24 568.33 401.96 79.26" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 59.24 568.33 L 461.2 568.33 L 461.2 647.59 L 59.24 647.59 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="59.24" y="587" text-anchor="start" xml:space="preserve" font-size="18.93" fill="#59636A" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="25"><tspan><tspan>C1：DreamGaussian4D / L4GM 的侧背面与姿态</tspan></tspan><tspan data-paragraph-line-break="1">C2：SV4D 2.0 的动作转折与遮挡重现</tspan><tspan data-paragraph-line-break="1">C3：取得成对生成观测与资产后再做构建对照</tspan></text>
+</g>
+</g>
+<g id="shape-31" data-pptx-object="group" data-pptx-frame="659 187 557 462.28" data-pptx-source-ref="slide:31">
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="659 187 373.99 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 659 187 L 1032.99 187 L 1032.99 225.6 L 659 225.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="659" y="211" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">五维记录，每项评分均定位证据</text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="659.12 234.67 95.04 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 659.12 234.67 L 754.16 234.67 L 754.16 268.55 L 659.12 268.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="659.12" y="256" text-anchor="start" xml:space="preserve" font-size="22" fill="#BE2623" font-weight="bold" data-pptx-text-baseline="metrics-v1">身份保持</text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="794.24 237.33 242.35 29.26" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 794.24 237.33 L 1036.59 237.33 L 1036.59 266.59 L 794.24 266.59 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="794.24" y="256" text-anchor="start" xml:space="preserve" font-size="18.93" fill="#263238" data-pptx-text-baseline="metrics-v1">颜色、部件和外观是否漂移</text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="659.12 285.67 95.04 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 659.12 285.67 L 754.16 285.67 L 754.16 319.55 L 659.12 319.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="659.12" y="307" text-anchor="start" xml:space="preserve" font-size="22" fill="#BE2623" font-weight="bold" data-pptx-text-baseline="metrics-v1">结构合理</text>
+</g>
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="794.24 288.33 322.63 29.26" data-pptx-prst="rect" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 794.24 288.33 L 1116.87 288.33 L 1116.87 317.59 L 794.24 317.59 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="794.24" y="307" text-anchor="start" xml:space="preserve" font-size="18.93" fill="#263238" data-pptx-text-baseline="metrics-v1">数量、连接关系和局部比例是否异常</text>
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="659.12 336.67 95.04 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 659.12 336.67 L 754.16 336.67 L 754.16 370.55 L 659.12 370.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="659.12" y="358" text-anchor="start" xml:space="preserve" font-size="22" fill="#BE2623" font-weight="bold" data-pptx-text-baseline="metrics-v1">运动连贯</text>
+</g>
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="794.24 339.33 342.7 29.26" data-pptx-prst="rect" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 794.24 339.33 L 1136.94 339.33 L 1136.94 368.59 L 794.24 368.59 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="794.24" y="358" text-anchor="start" xml:space="preserve" font-size="18.93" fill="#263238" data-pptx-text-baseline="metrics-v1">动作是否连续，有无抖动、滑步或冻结</text>
+</g>
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="659.12 387.67 118.36 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 659.12 387.67 L 777.48 387.67 L 777.48 421.55 L 659.12 421.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="659.12" y="409" text-anchor="start" xml:space="preserve" font-size="22" fill="#BE2623" font-weight="bold" data-pptx-text-baseline="metrics-v1">遮挡与补全</text>
+</g>
+<g id="shape-25" data-pptx-object="shape" data-pptx-frame="794.24 390.33 262.42 29.26" data-pptx-prst="rect" data-pptx-source-ref="slide:25" data-pptx-semantic-object="shape">
+<path d="M 794.24 390.33 L 1056.66 390.33 L 1056.66 419.59 L 794.24 419.59 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="794.24" y="409" text-anchor="start" xml:space="preserve" font-size="18.93" fill="#263238" data-pptx-text-baseline="metrics-v1">重现位置与未见区域是否合理</text>
+</g>
+<g id="shape-26" data-pptx-object="shape" data-pptx-frame="659.12 438.67 118.36 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:26" data-pptx-semantic-object="shape">
+<path d="M 659.12 438.67 L 777.48 438.67 L 777.48 472.55 L 659.12 472.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="659.12" y="460" text-anchor="start" xml:space="preserve" font-size="22" fill="#BE2623" font-weight="bold" data-pptx-text-baseline="metrics-v1">任务适用性</text>
+</g>
+<g id="shape-27" data-pptx-object="shape" data-pptx-frame="794.24 441.33 342.7 29.26" data-pptx-prst="rect" data-pptx-source-ref="slide:27" data-pptx-semantic-object="shape">
+<path d="M 794.24 441.33 L 1136.94 441.33 L 1136.94 470.59 L 794.24 470.59 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="794.24" y="460" text-anchor="start" xml:space="preserve" font-size="18.93" fill="#263238" data-pptx-text-baseline="metrics-v1">只评价已验证的展示、浏览或编辑能力</text>
+</g>
+<g id="shape-28" data-pptx-object="shape" data-pptx-frame="660 482 556 1" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:28" data-pptx-semantic-object="shape">
+<path d="M 660 482 L 1216 482" data-pptx-part="geometry" fill="none" stroke-width="1" stroke="#D8DDE0" />
+</g>
+<g id="shape-29" data-pptx-object="shape" data-pptx-frame="659.16 493.33 392.47 125.44" data-pptx-prst="rect" data-pptx-source-ref="slide:29" data-pptx-semantic-object="shape">
+<path d="M 659.16 493.33 L 1051.63 493.33 L 1051.63 618.77 L 659.16 618.77 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="659.16" y="516" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#263238" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="31"><tspan><tspan>1 分：明显失败；3 分：局部缺陷；</tspan></tspan><tspan data-paragraph-line-break="1">5 分：在当前观察范围内表现良好。</tspan><tspan data-paragraph-line-break="1">不可观察填 NA，不确定写明理由。</tspan><tspan data-paragraph-line-break="1">先 pilot，再独立评分，保留分歧与仲裁。</tspan></text>
+</g>
+<g id="shape-30" data-pptx-object="shape" data-pptx-frame="659.32 623 453.63 26.28" data-pptx-prst="rect" data-pptx-source-ref="slide:30" data-pptx-semantic-object="shape">
+<path d="M 659.32 623 L 1112.95 623 L 1112.95 649.28 L 659.32 649.28 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="659.32" y="639" text-anchor="start" xml:space="preserve" font-size="17.07" fill="#59636A" data-pptx-text-baseline="metrics-v1">图片为作者示例；五维评分与双人方案为项目拟议设计。</text>
+</g>
+</g>
+<g id="shape-34" data-pptx-object="group" data-pptx-frame="59.4 652 1125.6 34.43" data-pptx-source-ref="slide:34">
+<g id="shape-32" data-pptx-object="shape" data-pptx-frame="60 652 1125 1" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:32" data-pptx-semantic-object="shape">
+<path d="M 60 652 L 1185 652" data-pptx-part="geometry" fill="none" stroke-width="1" stroke="#D8DDE0" />
+</g>
+<g id="shape-33" data-pptx-object="shape" data-pptx-frame="59.4 663.33 709.24 23.1" data-pptx-prst="rect" data-pptx-source-ref="slide:33" data-pptx-semantic-object="shape">
+<path d="M 59.4 663.33 L 768.64 663.33 L 768.64 686.43 L 59.4 686.43 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="59.4" y="678" text-anchor="start" xml:space="preserve" font-size="14.93" fill="#59636A" data-pptx-text-baseline="metrics-v1">依据：开题报告 §4.2、§4.4；图：[R2] SV4D 2.0, Fig.12 骑车案例裁切，arXiv:2503.16396v2。</text>
+</g>
+</g></svg>

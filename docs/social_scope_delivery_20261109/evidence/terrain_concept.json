@@ -1,0 +1,14 @@
+{
+  "type": "synthetic_design_illustration",
+  "implemented_in_frontend": false,
+  "event_data": false,
+  "axes": [
+    "relative_day",
+    "topic_category_layout",
+    "synthetic_normalized_heat"
+  ],
+  "history_forecast_boundary_day": 21,
+  "relation": "hypothetical_unverified_links",
+  "purpose": "Explain planned trace, forecast, contour and evidence-navigation integration",
+  "source_script": "plot_terrain.py"
+}

@@ -1,0 +1,89 @@
+## PDF page 3
+At the time of writing Binary Segmentation proposed by Scott and Knott (1974)
+is arguably the most widely used changepoint search method. It is approximate in
+nature with anO(n logn) computational cost, where n is the number of data points.
+While exact search algorithms exist for the most common forms of changepoint mod-
+els, these have a much greater computational cost. Several exact search methods are
+based on dynamic programming. For example the Segment Neighbourhood method
+proposed by Auger and Lawrence (1989) isO(Qn2), whereQ is the maximum number
+of changepoints you wish to search for. Note that in scenarios where the number of
+changepoints increases linearly with n, this can correspond to a computational cost
+that is cubic in the length of the data. An alternative dynamic programming algo-
+rithm is provided by the Optimal Partitioning approach of Jackson et al. (2005). As
+we describe in Section 2.2 this can be applied to a slightly smaller class of problems
+and is an exact approach whose computational cost is O(n2).
+We present a new approach to search for changepoints, which is exact and under mild
+conditions has a computational cost that is linear in the number of data points: the
+Pruned Exact Linear Time (PELT) method. This approach is based on the algorithm
+of Jackson et al. (2005), but involves a pruning step within the dynamic program.
+This pruning reduces the computational cost of the method, but does not aﬀect the
+exactness of the resulting segmentation. It can be applied to ﬁnd changepoints under
+a range of statistical criteria such as penalised likelihood, quasi-likelihood (Braun
+et al., 2000) and cumulative sum of squares (Inclan and Tiao, 1994; Picard et al.,
+2011). In simulations we compare PELT with both Binary Segmentation and Optimal
+Partitioning. We show that PELT can be calculated orders of magnitude faster
+than Optimal Partitioning, particularly for long data sets. Whilst asymptotically
+PELT can be quicker, we ﬁnd that in practice Binary Segmentation is quicker on the
+examples we consider, and we believe this would be the case in almost all applications.
+3
+
+## PDF page 4
+However, we show that PELT leads to a substantially more accurate segmentation
+than Binary Segmentation.
+The paper is organised as follows. We begin in Section 2 by reviewing some basic
+changepoint notation and summarizing existing work in the area of search methods.
+The PELT method is introduced in Section 3 and the computational cost of this
+approach is considered in Section 3.1. The eﬃciency and accuracy of the PELT
+method are demonstrated in Section 4. In particular we demonstrate the methods’
+performance on large data sets coming from oceanographic (Section 4.2) and ﬁnancial
+(supplementary material) applications. Results show the speed gains over other exact
+search methods and the increased accuracy relative to approximate search methods
+such as Binary Segmentation. The paper concludes with a discussion.
+2. BACKGROUND
+Changepoint analysis can, loosely speaking, be considered to be the identiﬁcation of
+points within a data set where the statistical properties change. More formally, let
+us assume we have an ordered sequence of data, y1:n = (y1,...,y n). Our model will
+have a number of changepoints, m, together with their positions, τ1:m = (τ1,...,τ m).
+Each changepoint position is an integer between 1 and n− 1 inclusive. We deﬁne
+τ0 = 0 and τm+1 =n and assume that the changepoints are ordered such that τi <τ j
+if, and only if, i<j . Consequently the m changepoints will split the data into m + 1
+segments, with the ith segment containing y(τi−1+1):τi.
+One commonly used approach to identify multiple changepoints is to minimise:
+m+1∑
+i=1
+[
+C(y(τi−1+1):τi)
+]
++βf (m). (1)
+HereC is a cost function for a segment and βf (m) is a penalty to guard against
+over ﬁtting. Twice the negative log likelihood is a commonly used cost function in
+the changepoint literature (see for example Horvath, 1993; Chen and Gupta, 2000),
+4
+
+## PDF page 5
+although other cost functions such as quadratic loss and cumulative sums are also
+used (e.g. Rigaill, 2010; Inclan and Tiao, 1994), or those based on both the segment
+log-likelihood and the length of the segment (Zhang and Siegmund, 2007). Turning
+to choice of penalty, in practice by far the most common choice is one which is linear
+in the number of changepoints, i.e. βf (m) =βm. Examples of such penalties include
+Akaike’s Information Criterion (AIC, Akaike (1974)) (β = 2p) and Schwarz Informa-
+tion Criterion (SIC, also known as BIC; Schwarz, 1978) ( β =p logn), where p is the
+number of additional parameters introduced by adding a changepoint. The PELT
+method which we introduce in Section 3 is designed for such linear cost functions.
+Although linear cost functions are commonplace within the changepoint literature
+Guyon and Yao (1999), Picard et al. (2005) and Birge and Massart (2007) oﬀer ex-
+amples and discussion of alternative penalty choices. In Section 3.2 we show how
+PELT can be applied to some of these alternative choices.
+The remainder of this section describes two commonly used methods for multiple
+changepoint detection; Binary Segmentation (Scott and Knott, 1974) and Segment
+Neighbourhoods (Auger and Lawrence, 1989). A third method proposed by Jackson
+et al. (2005) is also described as it forms the basis for the PELT method which we
+propose. For notational simplicity we describe all the algorithms (including PELT)
+assuming that the minimum segment length is a single observation, i.e. τi−1−τi≥ 1.
+A larger minimum segment length is easily implemented when appropriate, see for
+example Section 4.
+2.1 Binary Segmentation
+Binary Segmentation (BS) is arguably the most established search method used within
+the changepoint literature. Early applications include Scott and Knott (1974) and Sen
+and Srivastava (1975). In essence the method extends any single changepoint method
+5

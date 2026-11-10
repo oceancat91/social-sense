@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><g id="shape-13" data-pptx-object="graphic-frame" data-pptx-frame="70 180 640 432" data-pptx-import-source="pptx" data-pptx-replace-with="table" data-pptx-native-authority="json" data-pptx-semantic-object="table">
+<rect x="70" y="180" width="483.9" height="54" fill="#4472C4" />
+<rect x="553.9" y="180" width="156.1" height="54" fill="#4472C4" />
+<rect x="70" y="234" width="483.9" height="54" fill="#FFFFFF" />
+<rect x="553.9" y="234" width="156.1" height="54" fill="#FFFFFF" />
+<rect x="70" y="288" width="483.9" height="54" fill="#F3F6FA" />
+<rect x="553.9" y="288" width="156.1" height="54" fill="#F3F6FA" />
+<rect x="70" y="342" width="483.9" height="54" fill="#FFFFFF" />
+<rect x="553.9" y="342" width="156.1" height="54" fill="#FFFFFF" />
+<rect x="70" y="396" width="483.9" height="54" fill="#F3F6FA" />
+<rect x="553.9" y="396" width="156.1" height="54" fill="#F3F6FA" />
+<rect x="70" y="450" width="483.9" height="54" fill="#FFFFFF" />
+<rect x="553.9" y="450" width="156.1" height="54" fill="#FFFFFF" />
+<rect x="70" y="504" width="483.9" height="54" fill="#F3F6FA" />
+<rect x="553.9" y="504" width="156.1" height="54" fill="#F3F6FA" />
+<rect x="70" y="558" width="483.9" height="54" fill="#FFFFFF" />
+<rect x="553.9" y="558" width="156.1" height="54" fill="#FFFFFF" />
+<text x="84" y="207.66666667" text-anchor="start" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">原预算科目</text>
+<text x="567.9" y="207.66666667" text-anchor="start" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">金额 / 元</text>
+<text x="84" y="261.66666667" text-anchor="start" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1">云服务器</text>
+<text x="696" y="261.66666667" text-anchor="end" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1">1,800</text>
+<text x="84" y="315.66666667" text-anchor="start" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1">数据采集与接口</text>
+<text x="696" y="315.66666667" text-anchor="end" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1">1,200</text>
+<text x="84" y="369.66666667" text-anchor="start" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1">软件开发与模型训练</text>
+<text x="696" y="369.66666667" text-anchor="end" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1">2,000</text>
+<text x="84" y="423.66666667" text-anchor="start" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1">大模型调用</text>
+<text x="696" y="423.66666667" text-anchor="end" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1">1,000</text>
+<text x="84" y="477.66666667" text-anchor="start" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1">调研差旅</text>
+<text x="696" y="477.66666667" text-anchor="end" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1">800</text>
+<text x="84" y="531.66666667" text-anchor="start" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1">知识产权及论文</text>
+<text x="696" y="531.66666667" text-anchor="end" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1">700</text>
+<text x="84" y="585.66666667" text-anchor="start" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1">合计</text>
+<text x="696" y="585.66666667" text-anchor="end" xml:space="preserve" font-family="&quot;Microsoft YaHei&quot;, sans-serif" font-size="22.93" fill="#243446" data-pptx-text-baseline="metrics-v1">7,500</text>
+<line x1="70" y1="180" x2="553.9" y2="180" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="180" x2="553.9" y2="234" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="234" x2="553.9" y2="234" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="180" x2="70" y2="234" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="180" x2="710" y2="180" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="710" y1="180" x2="710" y2="234" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="234" x2="710" y2="234" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="180" x2="553.9" y2="234" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="234" x2="553.9" y2="234" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="234" x2="553.9" y2="288" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="288" x2="553.9" y2="288" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="234" x2="70" y2="288" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="234" x2="710" y2="234" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="710" y1="234" x2="710" y2="288" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="288" x2="710" y2="288" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="234" x2="553.9" y2="288" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="288" x2="553.9" y2="288" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="288" x2="553.9" y2="342" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="342" x2="553.9" y2="342" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="288" x2="70" y2="342" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="288" x2="710" y2="288" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="710" y1="288" x2="710" y2="342" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="342" x2="710" y2="342" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="288" x2="553.9" y2="342" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="342" x2="553.9" y2="342" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="342" x2="553.9" y2="396" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="396" x2="553.9" y2="396" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="342" x2="70" y2="396" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="342" x2="710" y2="342" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="710" y1="342" x2="710" y2="396" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="396" x2="710" y2="396" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="342" x2="553.9" y2="396" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="396" x2="553.9" y2="396" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="396" x2="553.9" y2="450" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="450" x2="553.9" y2="450" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="396" x2="70" y2="450" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="396" x2="710" y2="396" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="710" y1="396" x2="710" y2="450" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="450" x2="710" y2="450" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="396" x2="553.9" y2="450" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="450" x2="553.9" y2="450" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="450" x2="553.9" y2="504" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="504" x2="553.9" y2="504" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="450" x2="70" y2="504" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="450" x2="710" y2="450" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="710" y1="450" x2="710" y2="504" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="504" x2="710" y2="504" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="450" x2="553.9" y2="504" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="504" x2="553.9" y2="504" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="504" x2="553.9" y2="558" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="558" x2="553.9" y2="558" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="504" x2="70" y2="558" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="504" x2="710" y2="504" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="710" y1="504" x2="710" y2="558" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="558" x2="710" y2="558" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="504" x2="553.9" y2="558" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="558" x2="553.9" y2="558" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="558" x2="553.9" y2="612" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="612" x2="553.9" y2="612" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="70" y1="558" x2="70" y2="612" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="558" x2="710" y2="558" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="710" y1="558" x2="710" y2="612" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="612" x2="710" y2="612" stroke-width="1.2" stroke="#D8E0EB" />
+<line x1="553.9" y1="558" x2="553.9" y2="612" stroke-width="1.2" stroke="#D8E0EB" />
+</g>
+</svg>

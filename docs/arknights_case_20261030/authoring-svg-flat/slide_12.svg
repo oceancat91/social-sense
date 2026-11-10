@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Microsoft YaHei&quot;, sans-serif"><defs><linearGradient id="mstrokegrad1" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#DAE3F3" /><stop offset="1" stop-color="#003E77" /></linearGradient><linearGradient id="mstrokegrad2" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#003E77" /><stop offset="1" stop-color="#FFFFFF" /></linearGradient></defs><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="-1.13 0 559.8 720" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 198.67 0 L 558.67 360 L 198.67 720 L -1.13 720 C -0.75 653.86 -0.38 587.72 0 521.58 L 336.12 357.09 L 0 0 Z" data-pptx-part="geometry" fill="#003E77" stroke="none" stroke-width="1" />
+
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="386.84 -120.14 253.73 494.01" data-pptx-geometry-kind="custom" transform="rotate(90 513.7 126.86)" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 386.84 373.87 L 386.84 -120.14 L 640.57 126.86 Z" data-pptx-part="geometry" fill="#BA0000" stroke="none" stroke-width="1" />
+
+</g>
+<g id="shape-15" data-pptx-object="connector" data-pptx-frame="567.63 1.22 297.02 297.02" data-pptx-prst="line" transform="translate(716.14 149.73) scale(1 -1) translate(-716.14 -149.73)" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 567.63 1.22 L 864.65 298.24" stroke-width="2.66667" stroke="url(#mstrokegrad1)" fill="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-16" data-pptx-object="connector" data-pptx-frame="284.39 423 297.02 297.02" data-pptx-prst="line" transform="translate(432.9 571.51) scale(1 -1) translate(-432.9 -571.51)" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 284.39 423 L 581.41 720.02" stroke-width="2.66667" stroke="url(#mstrokegrad2)" fill="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="590.37 286.65 661.51 93.71" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 590.37 286.65 L 1251.88 286.65 L 1251.88 380.36 L 590.37 380.36 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="611" y="357.61669291" text-anchor="start" xml:space="preserve" font-size="53.07" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">请各位老师指正</text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="546 451.93 668.4 128.73" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 546 451.93 L 1214.4 451.93 L 1214.4 580.66 L 546 580.66 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="568" y="506.29994751" text-anchor="start" xml:space="preserve" font-size="22" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="37.4"><tspan><tspan>汇报人：张艺嘉 · 指导教师：树杨</tspan></tspan><tspan data-paragraph-line-break="1">成员：詹江叶煜 郑锦凡 王悦 吴珂欣</tspan></text>
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="714.07 616.27 449 48.33" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 714.07 616.27 L 1163.07 616.27 L 1163.07 664.6 L 714.07 664.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="729" y="653.63338583" text-anchor="start" xml:space="preserve" font-size="22" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">2026 年 11 月 · 进入问答</text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="594.71 369.27 644.14 35.54" data-pptx-prst="rect" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 594.71 369.27 L 1238.85 369.27 L 1238.85 404.81 L 594.71 404.81 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="612" y="402.11674541" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">已形成研究原型，下一步补齐验证与溯源</text>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="769.67 149.41 473.45 90.67" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="769.67 149.41 473.45 90.67" href="../images/image29.png" x="769.67" y="149.41" width="473.45" height="90.67" preserveAspectRatio="none" />
+</g></svg>

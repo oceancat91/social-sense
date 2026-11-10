@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><g id="layout-shape-2" data-pptx-object="shape" data-pptx-shape-id="2" data-pptx-shape-scope="layout" data-pptx-frame="916 38.33333333 276 610.16671916" data-pptx-shape-name="竖排标题 1" data-ph-type="title" data-pptx-placeholder-orientation="vert" data-name="竖排标题 1" data-pptx-prst="rect" data-pptx-preview-sha256="90539292fafdf604b10b2a5f318a57f067f749378e24cde4bf19f0bc9568bc77">
+<path d="M 916 38.33 L 1192 38.33 L 1192 648.5 L 916 648.5 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="2" data-pptx-shape-scope="layout" data-pptx-frame="916 38.33333333 276 610.16671916" data-pptx-shape-name="竖排标题 1" data-ph-type="title" data-pptx-placeholder-orientation="vert" data-pptx-preview-sha256="90539292fafdf604b10b2a5f318a57f067f749378e24cde4bf19f0bc9568bc77" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 916 38.33 L 1192 38.33 L 1192 648.5 L 916 648.5 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+</g>
+<g id="layout-shape-2-text" data-name="竖排标题 1 text">
+<text x="1054" y="63.53333333" text-anchor="middle" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#000000">单<tspan x="1054" dy="25.2">击</tspan><tspan x="1054" dy="25.2">此</tspan><tspan x="1054" dy="25.2">处</tspan><tspan x="1054" dy="25.2">编</tspan><tspan x="1054" dy="25.2">辑</tspan><tspan x="1054" dy="25.2">母</tspan><tspan x="1054" dy="25.2">版</tspan><tspan x="1054" dy="25.2">标</tspan><tspan x="1054" dy="25.2">题</tspan><tspan x="1054" dy="25.2">样</tspan><tspan x="1054" dy="25.2">式</tspan></text>
+</g>
+<g id="layout-shape-3" data-pptx-object="shape" data-pptx-shape-id="3" data-pptx-shape-scope="layout" data-pptx-frame="88 38.33333333 812 610.16671916" data-pptx-shape-name="竖排文字占位符 2" data-ph-type="body" data-pptx-placeholder-index="1" data-pptx-placeholder-orientation="vert" data-name="竖排文字占位符 2" data-pptx-prst="rect" data-pptx-preview-sha256="c625a3a4858779eab6d3677fdde006b5833c472785102c280ee020d5a543c551">
+<path d="M 88 38.33 L 900 38.33 L 900 648.5 L 88 648.5 Z" fill="none" data-pptx-prst="rect" data-pptx-object="shape" data-pptx-shape-id="3" data-pptx-shape-scope="layout" data-pptx-frame="88 38.33333333 812 610.16671916" data-pptx-shape-name="竖排文字占位符 2" data-ph-type="body" data-pptx-placeholder-index="1" data-pptx-placeholder-orientation="vert" data-pptx-preview-sha256="c625a3a4858779eab6d3677fdde006b5833c472785102c280ee020d5a543c551" data-pptx-part="geometry" visibility="hidden" pointer-events="none"/>
+<g data-pptx-part="geometry-preview">
+<path d="M 88 38.33 L 900 38.33 L 900 648.5 L 88 648.5 Z" fill="none" data-pptx-part="geometry-detail"/>
+</g>
+</g>
+<g id="layout-shape-3-text" data-name="竖排文字占位符 2 text">
+<text x="544.4" y="63.53333333" text-anchor="middle" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#000000">单<tspan x="544.4" dy="25.2">击</tspan><tspan x="544.4" dy="25.2">此</tspan><tspan x="544.4" dy="25.2">处</tspan><tspan x="544.4" dy="25.2">编</tspan><tspan x="544.4" dy="25.2">辑</tspan><tspan x="544.4" dy="25.2">母</tspan><tspan x="544.4" dy="25.2">版</tspan><tspan x="544.4" dy="25.2">文</tspan><tspan x="544.4" dy="25.2">本</tspan><tspan x="544.4" dy="25.2">样</tspan><tspan x="544.4" dy="25.2">式</tspan></text>
+<text x="519.2" y="63.53333333" text-anchor="middle" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#000000">二<tspan x="519.2" dy="25.2">级</tspan></text>
+<text x="494" y="63.53333333" text-anchor="middle" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#000000">三<tspan x="494" dy="25.2">级</tspan></text>
+<text x="468.8" y="63.53333333" text-anchor="middle" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#000000">四<tspan x="468.8" dy="25.2">级</tspan></text>
+<text x="443.6" y="63.53333333" text-anchor="middle" xml:space="preserve" font-family="&quot;等线&quot;, sans-serif" font-size="24" fill="#000000">五<tspan x="443.6" dy="25.2">级</tspan></text>
+</g></svg>

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-24" data-pptx-object="shape" data-pptx-frame="0 591.67 577.5 95.77" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:24" data-pptx-semantic-object="shape">
+<path d="M 0 591.67 L 577.5 591.67 L 531.45 687.43 L 0 687.43 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1082.06 60.8 68.78 66.8" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1082.06 127.6 L 1114.17 60.8 L 1150.84 60.8 L 1118.73 127.6 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1134.86 60.8 68.78 66.8" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1134.86 127.6 L 1166.97 60.8 L 1203.64 60.8 L 1171.53 127.6 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<use data-icon="imported/flat_slide_27_ill01" data-pptx-asset-role="decoration" /><g id="layout-shape-28" data-pptx-object="shape" data-pptx-frame="720.31 594.6 402.38 66.8" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:28" data-pptx-semantic-object="shape">
+<path d="M 720.31 661.4 L 752.42 594.6 L 1122.68 594.6 L 1090.57 661.4 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-29" data-pptx-object="shape" data-pptx-frame="0 126.27 773.02 539.07" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:29" data-pptx-semantic-object="shape">
+<path d="M 0 126.27 L 773.02 126.27 L 513.85 665.34 L 0 665.34 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+<g id="shape-2" data-pptx-object="picture" data-pptx-frame="57.49 27.11 368.06 70.48" data-pptx-source-ref="slide:2">
+<image data-pptx-object="picture" data-pptx-frame="57.49 27.11 368.06 70.48" href="../images/image2.png" x="57.49" y="27.11" width="368.06" height="70.48" preserveAspectRatio="none" />
+</g>
+<g id="shape-39" data-pptx-object="shape" data-pptx-frame="748.51 613.01 339.49 35.54" data-pptx-prst="rect" data-pptx-source-ref="slide:39" data-pptx-semantic-object="shape">
+<path d="M 748.51 613.01 L 1088 613.01 L 1088 648.55 L 748.51 648.55 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="758.11" y="637.81028871" text-anchor="start" xml:space="preserve" font-size="21.33" fill="#FFFFFF" fill-opacity="0.9" font-weight="bold" font-style="italic" data-pptx-text-baseline="metrics-v1">East China Normal University</text>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="147.01 284.81 310.2 96.94" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 147.01 284.81 L 457.21 284.81 L 457.21 381.75 L 147.01 381.75 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="156.61" y="358.94488189" text-anchor="start" xml:space="preserve" font-size="72" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">感谢倾听</text>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="147.01 415.52 407.14 67.86" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 147.01 415.52 L 554.15 415.52 L 554.15 483.38 L 147.01 483.38 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="156.61" y="466.98624672" text-anchor="start" xml:space="preserve" font-size="48" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">恳请老师批评指正</text>
+</g></svg>

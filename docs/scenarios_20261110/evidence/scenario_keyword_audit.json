@@ -1,0 +1,753 @@
+{
+  "retrieved_at": "2026-11-10",
+  "definition": "Substring candidates in text_structured_clean; no deduplication or event relevance labels. Counts are NOT popularity statistics.",
+  "totals": {
+    "arknights": 127,
+    "wuhan": 9,
+    "xibei": 14,
+    "houhui": 1,
+    "xibei_prepared": 3
+  },
+  "platforms": {
+    "bilibili": {
+      "arknights": 39,
+      "wuhan": 4,
+      "xibei": 1
+    },
+    "douyin": {
+      "xibei": 1
+    },
+    "weibo": {
+      "wuhan": 5,
+      "xibei": 12,
+      "arknights": 70,
+      "houhui": 1,
+      "xibei_prepared": 3
+    },
+    "xiaohongshu": {
+      "arknights": 18
+    }
+  },
+  "files": [
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/culture_history__broad.csv",
+      "counts": {
+        "arknights": 2
+      },
+      "dates": {
+        "arknights": [
+          "2025-11-01",
+          "2025-11-02"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          486,
+          498
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/culture_history__hot__国潮与传统文化复兴.csv",
+      "counts": {
+        "arknights": 1
+      },
+      "dates": {
+        "arknights": [
+          "2019-08-12",
+          "2019-08-12"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          511
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/economy_business__broad.csv",
+      "counts": {
+        "arknights": 2
+      },
+      "dates": {
+        "arknights": [
+          "2020-06-27",
+          "2026-08-11"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          771,
+          3792
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/education_science__broad.csv",
+      "counts": {
+        "arknights": 3,
+        "wuhan": 4
+      },
+      "dates": {
+        "arknights": [
+          "2019-09-30",
+          "2025-06-22"
+        ],
+        "wuhan": [
+          "2025-07-29",
+          "2025-09-20"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          1709,
+          2932,
+          3380
+        ],
+        "wuhan": [
+          2725,
+          2748,
+          2774,
+          3486
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/entertainment__hot__AI艺人与活人感之争.csv",
+      "counts": {
+        "xibei": 1,
+        "arknights": 2
+      },
+      "dates": {
+        "xibei": [
+          "2026-04-26",
+          "2026-04-26"
+        ],
+        "arknights": [
+          "2024-07-22",
+          "2025-11-23"
+        ]
+      },
+      "csv_row_indices": {
+        "xibei": [
+          11
+        ],
+        "arknights": [
+          3365,
+          3924
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/games_anime__broad.csv",
+      "counts": {
+        "arknights": 14
+      },
+      "dates": {
+        "arknights": [
+          "2020-09-19",
+          "2024-08-08"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          238,
+          276,
+          4043,
+          4378,
+          4381,
+          4445,
+          5175,
+          5188,
+          5227,
+          5585,
+          5665,
+          5820,
+          5823,
+          6390
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/health_psychology__broad.csv",
+      "counts": {
+        "arknights": 1
+      },
+      "dates": {
+        "arknights": [
+          "2026-07-17",
+          "2026-07-17"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          5461
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/health_psychology__hot__青少年心理健康.csv",
+      "counts": {
+        "arknights": 2
+      },
+      "dates": {
+        "arknights": [
+          "2025-06-05",
+          "2026-07-17"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          1051,
+          2053
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/life_consumption__hot__消费降级与反向消费.csv",
+      "counts": {
+        "arknights": 1
+      },
+      "dates": {
+        "arknights": [
+          "2025-07-14",
+          "2025-07-14"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          299
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/nature_rural__broad.csv",
+      "counts": {
+        "arknights": 1
+      },
+      "dates": {
+        "arknights": [
+          "2023-04-08",
+          "2023-04-08"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          3446
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/public_affairs__broad.csv",
+      "counts": {
+        "arknights": 5
+      },
+      "dates": {
+        "arknights": [
+          "2026-01-01",
+          "2026-08-11"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          1217,
+          2544,
+          2682,
+          9426,
+          10600
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/society_law__broad.csv",
+      "counts": {
+        "arknights": 2
+      },
+      "dates": {
+        "arknights": [
+          "2025-08-04",
+          "2026-08-08"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          2309,
+          2334
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/society_law__hot__戒网瘾双胞胎事件.csv",
+      "counts": {
+        "arknights": 1
+      },
+      "dates": {
+        "arknights": [
+          "2025-11-17",
+          "2025-11-17"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          822
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/technology_industry__broad.csv",
+      "counts": {
+        "arknights": 1
+      },
+      "dates": {
+        "arknights": [
+          "2026-08-10",
+          "2026-08-10"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          3260
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/bilibili/technology_industry__hot__人形机器人商业化.csv",
+      "counts": {
+        "arknights": 1
+      },
+      "dates": {
+        "arknights": [
+          "2024-11-12",
+          "2024-11-12"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          4764
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/douyin/all_comments_cleaned.csv",
+      "counts": {
+        "xibei": 1
+      },
+      "dates": {
+        "xibei": [
+          "2026-08-11",
+          "2026-08-11"
+        ]
+      },
+      "csv_row_indices": {
+        "xibei": [
+          43249
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/weibo/culture_history__broad.csv",
+      "counts": {
+        "wuhan": 2,
+        "xibei": 1
+      },
+      "dates": {
+        "wuhan": [
+          "2026-04-24",
+          "2026-08-12"
+        ],
+        "xibei": [
+          "2026-08-10",
+          "2026-08-10"
+        ]
+      },
+      "csv_row_indices": {
+        "wuhan": [
+          1964,
+          4243
+        ],
+        "xibei": [
+          9761
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/weibo/education_science__broad.csv",
+      "counts": {
+        "xibei": 1,
+        "arknights": 1
+      },
+      "dates": {
+        "xibei": [
+          "2026-08-09",
+          "2026-08-09"
+        ],
+        "arknights": [
+          "2026-08-13",
+          "2026-08-13"
+        ]
+      },
+      "csv_row_indices": {
+        "xibei": [
+          2482
+        ],
+        "arknights": [
+          3469
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/weibo/education_science__hot__学历贬值与就业难.csv",
+      "counts": {
+        "wuhan": 1
+      },
+      "dates": {
+        "wuhan": [
+          "2025-07-30",
+          "2025-07-30"
+        ]
+      },
+      "csv_row_indices": {
+        "wuhan": [
+          3395
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/weibo/entertainment__broad.csv",
+      "counts": {
+        "houhui": 1,
+        "arknights": 1
+      },
+      "dates": {
+        "houhui": [
+          "2026-08-13",
+          "2026-08-13"
+        ],
+        "arknights": [
+          "2026-07-28",
+          "2026-07-28"
+        ]
+      },
+      "csv_row_indices": {
+        "houhui": [
+          4895
+        ],
+        "arknights": [
+          5156
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/weibo/games_anime__broad.csv",
+      "counts": {
+        "arknights": 52,
+        "xibei": 2
+      },
+      "dates": {
+        "arknights": [
+          "2026-07-03",
+          "2026-08-17"
+        ],
+        "xibei": [
+          "2026-08-01",
+          "2026-08-15"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          3520,
+          3575,
+          3585,
+          3603,
+          3636,
+          3644,
+          3679,
+          3707,
+          3712,
+          3728,
+          3745,
+          4039,
+          4128,
+          4356,
+          4462,
+          4941,
+          5208,
+          5262,
+          5336,
+          6381,
+          6382,
+          6406,
+          6411,
+          6423,
+          6448,
+          6455,
+          6457,
+          6512,
+          6544,
+          6567,
+          6577,
+          6583,
+          6595,
+          6606,
+          6612,
+          6616,
+          6617,
+          6620,
+          6626,
+          6690,
+          6726,
+          8937,
+          9440,
+          9452,
+          9464,
+          9576,
+          9619,
+          10111,
+          10215,
+          10339,
+          10998,
+          11016
+        ],
+        "xibei": [
+          5470,
+          8790
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/weibo/health_psychology__broad.csv",
+      "counts": {
+        "xibei": 1
+      },
+      "dates": {
+        "xibei": [
+          "2026-08-09",
+          "2026-08-09"
+        ]
+      },
+      "csv_row_indices": {
+        "xibei": [
+          250
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/weibo/life_consumption__broad.csv",
+      "counts": {
+        "arknights": 9,
+        "xibei": 1
+      },
+      "dates": {
+        "arknights": [
+          "2026-07-06",
+          "2026-08-16"
+        ],
+        "xibei": [
+          "2026-08-09",
+          "2026-08-09"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          76,
+          1146,
+          1199,
+          1272,
+          1293,
+          1379,
+          1450,
+          1466,
+          1515
+        ],
+        "xibei": [
+          7270
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/weibo/life_consumption__hot__消费降级与反向消费.csv",
+      "counts": {
+        "xibei": 1
+      },
+      "dates": {
+        "xibei": [
+          "2026-08-13",
+          "2026-08-13"
+        ]
+      },
+      "csv_row_indices": {
+        "xibei": [
+          359
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/weibo/nature_rural__broad.csv",
+      "counts": {
+        "arknights": 6
+      },
+      "dates": {
+        "arknights": [
+          "2026-07-30",
+          "2026-08-15"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          1270,
+          1295,
+          1424,
+          1531,
+          1625,
+          3161
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/weibo/society_law__broad.csv",
+      "counts": {
+        "wuhan": 2,
+        "xibei": 4,
+        "xibei_prepared": 3
+      },
+      "dates": {
+        "wuhan": [
+          "2026-08-11",
+          "2026-08-12"
+        ],
+        "xibei": [
+          "2026-08-06",
+          "2026-08-06"
+        ],
+        "xibei_prepared": [
+          "2026-08-06",
+          "2026-08-06"
+        ]
+      },
+      "csv_row_indices": {
+        "wuhan": [
+          563,
+          8452
+        ],
+        "xibei": [
+          8208,
+          9033,
+          9044,
+          9048
+        ],
+        "xibei_prepared": [
+          8208,
+          9033,
+          9048
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/weibo/sports_fitness__broad.csv",
+      "counts": {
+        "arknights": 1,
+        "xibei": 1
+      },
+      "dates": {
+        "arknights": [
+          "2026-08-15",
+          "2026-08-15"
+        ],
+        "xibei": [
+          "2026-08-15",
+          "2026-08-15"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          874
+        ],
+        "xibei": [
+          4126
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/xiaohongshu/games_anime__hot__AI漫剧爆发.csv",
+      "counts": {
+        "arknights": 13
+      },
+      "dates": {
+        "arknights": [
+          "2024-08-14",
+          "2026-07-31"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          221,
+          340,
+          1163,
+          1181,
+          1187,
+          1212,
+          1233,
+          1266,
+          1292,
+          1354,
+          1495,
+          1526,
+          1557
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/xiaohongshu/life_consumption__hot__消费降级与反向消费.csv",
+      "counts": {
+        "arknights": 3
+      },
+      "dates": {
+        "arknights": [
+          "2025-12-06",
+          "2026-06-22"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          623,
+          633,
+          2380
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/xiaohongshu/nature_rural__hot__极端天气与气候.csv",
+      "counts": {
+        "arknights": 1
+      },
+      "dates": {
+        "arknights": [
+          "2026-02-13",
+          "2026-02-13"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          267
+        ]
+      }
+    },
+    {
+      "path": "agent/dataset/real_multiplatform/raw/xiaohongshu/public_affairs__hot__中美关税战.csv",
+      "counts": {
+        "arknights": 1
+      },
+      "dates": {
+        "arknights": [
+          "2025-06-16",
+          "2025-06-16"
+        ]
+      },
+      "csv_row_indices": {
+        "arknights": [
+          375
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+## PDF page 1
+Echo Chambers on Social Media: A comparative analysis
+Matteo Cinelli, 1,∗ Gianmarco De Francisci Morales, 2,† Alessandro
+Galeazzi,3,‡ Walter Quattrociocchi, 4,§ and Michele Starnini 2,¶
+1Applico Lab – ISC CNR, Via dei Taurini 19, 00185 Roma, Italy
+2ISI Foundation, via Chisola 5, 10126 Torino, Italy
+3University of Brescia, Via Branze, 59, 25123 Brescia , Italy
+4Ca’Foscari Univerity of Venice, via Torino 155, 30172 Venezia, Italy
+Recent studies have shown that online users tend to select information adhering to their system
+of beliefs, ignore information that does not, and join groups – i.e., echo chambers – around a
+shared narrative. Although a quantitative methodology for their identiﬁcation is still missing, the
+phenomenon of echo chambers is widely debated both at scientiﬁc and political level. To shed
+light on this issue, we introduce an operational deﬁnition of echo chambers and perform a massive
+comparative analysis on more than 1B pieces of contents produced by 1M users on four social media
+platforms: Facebook, Twitter, Reddit, and Gab. We infer the leaning of users about controversial
+topics – ranging from vaccines to abortion – and reconstruct their interaction networks by analyzing
+diﬀerent features, such as shared links domain, followed pages, follower relationship and commented
+posts. Our method quantiﬁes the existence of echo-chambers along two main dimensions: homophily
+in the interaction networks and bias in the information diﬀusion toward likely-minded peers. We
+ﬁnd peculiar diﬀerences across social media. Indeed, while Facebook and Twitter present clear-cut
+echo chambers in all the observed dataset, Reddit and Gab do not. Finally, we test the role of the
+social media platform on news consumption by comparing Reddit and Facebook. Again, we ﬁnd
+support for the hypothesis that platforms implementing news feed algorithms like Facebook may
+elicit the emergence of echo-chambers.
+INTRODUCTION
+Social media allow users to access and share an unprece-
+dented amount of information, thus changing the way we
+interact, debate and form our opinions [ 1, 2]. The wide
+availability of content sparked the enthusiastic idea that
+users might be better informed and exposed to diversiﬁed
+point of views [ 3–5]. However, the human attention span
+remains limited [6, 7] and news feed algorithms might in-
+ﬂuence the selection process by promoting content similar
+to the ones already seen, thus reducing content diver-
+sity [8, 9] and eventually leading to polarization [ 10–13].
+On top of opinion polarization, users show the tendency
+to select information that adheres to their beliefs and join
+polarized groups formed around a shared narrative, called
+echo chambers [14–18]. Inside these closed communities
+formed by users having similar preferences and content
+consumption patterns, the information spreading is often
+biased [14, 19–23]. Such a conﬁguration might hamper
+the democratic deliberative process by altering the way
+facts are perceived [24].
+Nowadays, echo chambers are one of the most debated
+issues in relation to the social media environment [ 15, 25],
+given their potential role in fostering actions of political
+manipulation and inﬂuence on voting behavior [ 26–28].
+Some studies point out echo chambers as an emerging
+∗ matteo.cinelli@uniroma2.it
+† gdfm@acm.org
+‡ a.galeazzi002@unibs.it
+§ w.quattrociocchi@unive.it
+¶ michele.starnini@gmail.com
+eﬀect of human tendencies, such as selective exposure
+and contagion [29–31]. Moreover, group polarization the-
+ory [32] has been proposed as a mechanism to model the
+dynamics leaning to the emergence of echo-chambers in
+online social networks [ 33]. It is remarkable that ma-
+jor social media and former U.S. Presidents alike have
+voiced such concerns [34]. Recently, however, the eﬀects
+and the very existence of echo chambers have been ques-
+tioned [3, 35–37]. This heated debate calls for a quantita-
+tive analysis able to gauge the presence of echo chambers
+across topics and social media. In this work, we provide
+a formal assessment of echo chambers by introducing an
+operational deﬁnition independent of the social media
+platform considered.
+We propose a deﬁnition of echo chambers based on
+the coexistence of two main ingredients: ( i) opinion po-
+larization with respect to a controversial topic, and ( ii)
+homophilic interactions between users, i.e., the preference
+to interact with like-minded peers. We operationalize
+these two abstract concepts into observables that can be
+quantiﬁed empirically, thus providing a common method-
+ological ground to obtain consistent results and compare
+them across diﬀerent social media. We perform a com-
+parative analysis on four major social media platforms:
+Facebook, Twitter, Reddit, and Gab. These media share
+some common features and functionalities (e.g., they all
+allow social feedback actions such as likes or upvotes) and
+design (e.g., Gab is similar to Twitter) but also distinc-
+tive features (e.g., Reddit is organized in communities of
+interest called subreddits).
+While the environment and the main features behind
+mainstream social media have been widely investigated,
+other social media such as Reddit and especially Gab have
+arXiv:2004.09603v1  [physics.soc-ph]  20 Apr 2020
+
+## PDF page 2
+2
+been somewhat overlooked. Reddit is one of the most
+visited websites worldwide [38] and is organized as a fo-
+rum to collect discussions about a wide amount of topics,
+ranging from politics to emotional support. Gab is rela-
+tively diﬀerent, as it claims to be a social platform aimed
+at protecting free speech. Such a claim, together with the
+political leaning of its developers, made Gab the “safe
+haven” for the alt-right movement. However, low modera-
+tion and regulation on content has resulted in widespread
+hate speech. For these reasons, it has been repeatedly
+suspended by its service provider, and its mobile app was
+banned from both App and Play stores [ 39]. All these fea-
+tures make the comparison of the aforementioned social
+media particularly interesting for investigation. Overall,
+we take into account the interactions of more than 1M
+active users on the four platforms, for a total of more
+than 1B unique pieces of content, including posts and
+social interactions. Our ﬁndings suggest that platforms
+organized around social networks and with algorithms
+accounting for social feedback may increase polarization
+and favor the emergence of echo chambers.
+CHARACTERIZING ECHO CHAMBERS IN
+SOCIAL MEDIA
+At an abstract level, the echo chamber phenomenon
+can be understood in the context of selective exposure
+theory [40]. Humans have a tendency to seek informa-
+tion adhering to their pre-existing opinion, a phenomenon
+sometimes referred to as conﬁrmation bias [41]. Such
+a tendency has been proven to be dominant in content
+consumption on online social media [ 14, 19, 20, 42]. In
+a social context, this tendency may foster the emergence
+of homophilic clusters of individuals. This, in turn, cre-
+ates an environment where individuals are surrounded
+by people whose opinion agrees with their own: an echo
+chamber.
+A fundamental mechanism to explain the origin of the
+tendency to selective exposure can be found in cognitive
+dissonance theory [43]. The theory posits that individuals
+strive towards internal consistency of thoughts and beliefs,
+by virtue of the fact that inconsistency, or dissonance, is
+psychologically uncomfortable. An individual will thus
+try to avoid information and situations that are likely to
+increase their dissonance, and seek instead consonant ones.
+Cognitive dissonance is thus possibly the primum movens,
+or innate root cause, of the ultimate formation of echo
+chambers. According to group polarization theory [ 32],
+an echo chamber can act as a mechanism to reinforce an
+existing opinion within a group, and as a result move the
+entire group towards more extreme opinions. The lack
+of exposure to alternative opinions also creates a false
+perception of unanimity, and thus a diﬀerent perception
+of reality across groups, which may hinder the democratic
+debate given the lack of a shared common ground on
+which to operate.
+Operational deﬁnitions
+An echo-chamber can be deﬁned as an environment
+in which the opinion, political leaning, or belief of an
+individual about a certain topic are reinforced due to
+repeated interactions with peers who share similar points
+of view. Two key elements are needed for this scenario
+to take place. First, a group of individuals that share
+a common opinion in opposition to other individuals or
+groups characterized by diﬀerent attitudes regarding the
+same topic. Second, social interactions that convey a
+ﬂow of information between these individuals about the
+topic under consideration, that can thus inﬂuence their
+beliefs on the subject. Such interactions are more likely
+to be established between individuals characterized by
+similar opinions, that is, there is a certain degree of ho-
+mophily in social interactions. Therefore, echo-chambers
+are characterized by the coexistence of two elements: ( i)
+opinion polarization with respect to a controversial topic,
+and (ii) homophily in interactions, i.e. the preference
+to interact with like-minded peers. These two abstract
+concepts need to be operationalized in order to be gauged
+on empirical social systems, and in particular within the
+speciﬁc context of online social media.
+In order to quantify the degree of polarization in social
+systems, one needs ﬁrst to identify the attitude of users,
+at a micro level. On online social media, the individual
+leaning of a user i toward a speciﬁc topic, xi, can be
+inferred in diﬀerent ways, via the content produced, or the
+endorsement network among users [ 44, 45]. With respect
+to the content, its leaning can be deﬁned as the attitude
+expressed by a piece of content towards a speciﬁc topic.
+This leaning can be explicit (e.g., arguments supporting a
+narrative) or implicit (e.g., framing and agenda setting).
+Let us consider a useri producing a numberai of contents,
+Ci ={c1,c 2,...,c ai}, whereai is the activity of useri and
+each content leaning is assigned a numeric value. Then
+the individual leaning of user i can be deﬁned as the
+average of the leanings of contents produced,
+xi≡
+∑ai
+j=1cj
+ai
+. (1)
+Once individual leanings are inferred, polarization can
+be deﬁned as a state of the system such that the distribu-
+tion of leanings, P (x), is heterogeneous. If opinions are
+assumed to be embedded in a one-dimensional space, as
+usual in case of topics characterized by positive versus
+negative stances, polarization can be quantiﬁed by a bi-
+modal distribution. That is, if opinions are represented
+on an axis, x∈ [−1, +1], without loss of generality, polar-
+ization is then characterized by two well-separated peaks
+in P (x), for positive and negative opinions, while neutral
+ones are absent or underrepresented in the population.
+Note that polarization can happen independently from
+the structure or the very presence of social interactions.
+Homophily in social interactions can be quantiﬁed by
+representing interactions as a social network, and then
+analyzing its structure with respect to the opinions of
+
+## PDF page 3
+3
+the agents [21, 46–48]. From online social media, social
+networks can be reconstructed in diﬀerent ways, where
+links represent social relationships or interactions. Since
+we are interested in capturing the possible exchange of
+opinion between users, we assume directed links to repre-
+sent the substrate over which information may ﬂow. For
+instance, if user i follows user j on Twitter, user i can
+see tweets produced by user j, thus there is a ﬂow of
+information from node j to node i in the network. That
+is, when the reconstructed network is directed, we assume
+the link direction points to possible inﬂuencers (opposite
+of information ﬂow). Actions such as mentions or retweets
+may convey similar ﬂows. In some cases, direct relations
+between users are not available in the data, so one needs
+to assume some proxy for social connections, e.g., a link
+between two users if they comment the same post on
+Facebook. Crucially, the two elements characterizing the
+presence of echo-chambers, polarization and homophilic
+interactions, should be quantiﬁed independently.
+Implementation on social media
+This section explains how we implement the operational
+deﬁnitions deﬁned above on diﬀerent social media. For
+each medium, we detail (i) how we quantify the individual
+leaning of users, and ( ii) how we reconstruct the inter-
+action network on top of which the information spread.
+Further details are provided in the Materials and Methods
+Section.
+Twitter. We consider the set of tweets posted by user
+i that contain links to news organizations of known po-
+litical leaning. To each news organization is associated a
+political leaning score [ 49] ranging from extreme left to
+extreme right in accordance to the classiﬁcation reported
+in Materials and Methods. We infer the individual leaning
+of a user i, xi∈ [−1, +1] by averaging the scores of the
+news organizations linked by user i according to Eq. (1).
+We analyze three diﬀerent data sets collected on Twitter
+related to controversial topics: gun control, Obamacare,
+and abortion. For each data set, the social interaction
+network is reconstructed by using the following relation,
+so that there exists a direct link from node i to node j if
+user i follows user j. Henceforth we focus on the data set
+about abortion, others are shown in the Supplementary
+Material (SM).
+F acebook. The individual leaning of users is quantiﬁed
+by considering endorsements in the form of likes to posts.
+While other actions such as comments or shares could be
+taken into account, the written text may radically change
+the inferred leaning. Additionally, while a like is usually
+a positive feedback on a news item, comments and share
+can be associated to diﬀerent purposes [ 8]. A comment
+can have multiple features and meanings and can generate
+collective debate, while a share indicates a desire to spread
+a news item to friends. Posts are produced by pages that
+are labeled in a certain number of categories, and to
+each category we assign a numerical value (e.g., Anti-Vax
+(+1) or Pro-Vax (-1)). Each like to a post (only one like
+per post is allowed) represents an endorsement for that
+content, which is assumed to be aligned with the labeling
+of the page. Thus, the individual leaning of a user is
+deﬁned as the average of the content leanings of the posts
+liked by the user, according to Eq. (1).
+We analyze three diﬀerent data sets collected on Face-
+book regarding a speciﬁc topic of discussion: vaccines,
+science versus conspiracy, and news. The interaction net-
+work is deﬁned by considering comments. In such an
+interaction network two users are connected if they co-
+commented at least one post. Henceforth we focus on the
+data set about vaccines and news, others are shown in
+the SM.
+Reddit. Here, the individual leaning of users is quan-
+tiﬁed similarly to Twitter, by considering the links to
+news organizations in the content produced by the users,
+submissions and comments. The interaction network is
+deﬁned by considering comments and submissions, by
+reconstructing the information ﬂow. There exists a direct
+link from node i to node j if user i comments on a sub-
+mission or comment by userj (we assume thati reads the
+comment they are replying to, which is written by j). We
+analyze three data sets collected on diﬀerent subreddits:
+the donald, politics, and news. In the following we focus
+on the data set collected on the Politics and on the News
+subreddit, others are shown in the SM.
+Gab. The political leaning xi of user i is computed
+by considering the set of contents posted by user i that
+contain a link to news organizations of known political
+leaning, similarly to Twitter and Reddit. To obtain the
+leaning xi of user i, we averaged the scores of each link
+posted by user i according to Eq. (1). The interaction
+network is reconstructed by exploiting the co-commenting
+relationships under posts in the same way as for Facebook.
+Given two users i and j, an undirected edge between i
+and j exists if and only if they comment under the same
+post.
+COMPARATIVE ANALYSIS
+In the following we compare the presence or absence of
+echo-chambers across social media. We select one data set
+for each social media: Abortion (Twitter), Vaccines (Face-
+book), Politics (Reddit), and Gab as a whole. Results
+for other data sets for the same medium are qualitatively
+similar, as shown in the SM. We ﬁrst characterize echo-
+chambers in the topology of the networks, then look at
+their eﬀects on information diﬀusion. Finally, we directly
+compare Facebook and Reddit on a common topic, news
+consumption, to highlight the diﬀerences in the behavior
+of users.

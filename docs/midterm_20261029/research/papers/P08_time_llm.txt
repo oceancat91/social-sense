@@ -1,0 +1,1316 @@
+## PDF page 1
+
+Published as a conference paper at ICLR 2024
+TIME -LLM: T IME SERIES FORECASTING
+BY REPROGRAMMING LARGE LANGUAGE MODELS
+Ming Jin1∗, Shiyu Wang 2∗, Lintao Ma 2, Zhixuan Chu 2, James Y. Zhang 2, Xiaoming Shi 2,
+Pin-Yu Chen3, Yuxuan Liang 6, Yuan-Fang Li 1, Shirui Pan 4†, Qingsong Wen 5†
+1Monash University 2Ant Group 3IBM Research 4Griffith University 5Alibaba Group
+6The Hong Kong University of Science and Technology (Guangzhou)
+{ming.jin, yuanfang.li }@monash.edu, pin-yu.chen@ibm.com
+yuxliang@outlook.com, s.pan@griffith.edu.au, qingsongedu@gmail.com
+{weiming.wsy,lintao.mlt,chuzhixuan.czx,james.z,peter.sxm}@antgroup.com
+ABSTRACT
+Time series forecasting holds significant importance in many real-world dynamic
+systems and has been extensively studied. Unlike natural language process (NLP)
+and computer vision (CV), where a single large model can tackle multiple tasks,
+models for time series forecasting are often specialized, necessitating distinct de-
+signs for different tasks and applications. While pre-trained foundation models
+have made impressive strides in NLP and CV , their development in time series
+domains has been constrained by data sparsity. Recent studies have revealed that
+large language models (LLMs) possess robust pattern recognition and reasoning
+abilities over complex sequences of tokens. However, the challenge remains in
+effectively aligning the modalities of time series data and natural language to
+leverage these capabilities. In this work, we present T IME -LLM, a reprogram-
+ming framework to repurpose LLMs for general time series forecasting with the
+backbone language models kept intact. We begin by reprogramming the input
+time series with text prototypes before feeding it into the frozen LLM to align the
+two modalities. To augment the LLM’s ability to reason with time series data,
+we propose Prompt-as-Prefix (PaP), which enriches the input context and directs
+the transformation of reprogrammed input patches. The transformed time series
+patches from the LLM are finally projected to obtain the forecasts. Our com-
+prehensive evaluations demonstrate that T IME -LLM is a powerful time series
+learner that outperforms state-of-the-art, specialized forecasting models. More-
+over, TIME -LLM excels in both few-shot and zero-shot learning scenarios. The
+code is made available at https://github.com/KimMeen/Time-LLM
+1 I NTRODUCTION
+Time series forecasting is a critical capability across many real-world dynamic systems (Jin et al.,
+2023a), with applications ranging from demand planning (Leonard, 2001) and inventory optimiza-
+tion (Li et al., 2022) to energy load forecasting (Liu et al., 2023a) and climate modeling (Schneider
+& Dickinson, 1974). Each time series forecasting task typically requires extensive domain expertise
+and task-specific model designs. This stands in stark contrast to foundation language models like
+GPT-3 (Brown et al., 2020), GPT-4 (OpenAI, 2023), Llama (Touvron et al., 2023),inter alia, which
+can perform well on a diverse range of NLP tasks in a few-shot or even zero-shot setting.
+Pre-trained foundation models, such as large language models (LLMs), have driven rapid progress
+in computer vision (CV) and natural language processing (NLP). While time series modeling has
+not benefited from the same significant breakthroughs, LLMs’ impressive capabilities have inspired
+their application to time series forecasting (Jin et al., 2023b). Several desiderata exist for leveraging
+LLMs to advance forecasting techniques: Generalizability. LLMs have demonstrated a remarkable
+capability for few-shot and zero-shot transfer learning (Brown et al., 2020). This suggests their
+∗Equal Contribution
+†Corresponding Authors
+1
+arXiv:2310.01728v2  [cs.LG]  29 Jan 2024
+
+## PDF page 2
+
+Published as a conference paper at ICLR 2024
+potential for generalizable forecasting across domains without requiring per-task retraining from
+scratch. In contrast, current forecasting methods are often rigidly specialized by domain. Data
+efficiency. By leveraging pre-trained knowledge, LLMs have shown the ability to perform new
+tasks with only a few examples. This data efficiency could enable forecasting for settings where
+historical data is limited. In contrast, current methods typically require abundant in-domain data.
+Reasoning. LLMs exhibit sophisticated reasoning and pattern recognition capabilities (Mirchandani
+et al., 2023; Wang et al., 2023; Chu et al., 2023). Harnessing these skills could allow making
+highly precise forecasts by leveraging learned higher-level concepts. Existing non-LLM methods are
+largely statistical without much innate reasoning. Multimodal knowledge. As LLM architectures
+and training techniques improve, they gain more diverse knowledge across modalities like vision,
+speech, and text (Ma et al., 2023). Tapping into this knowledge could enable synergistic forecasting
+that fuses different data types. Conventional tools lack ways to jointly leverage multiple knowledge
+bases. Easy optimization. LLMs are trained once on massive computing and then can be applied
+to forecasting tasks without learning from scratch. Optimizing existing forecasting models often
+requires significant architecture search and hyperparameter tuning (Zhou et al., 2023b). In summary,
+LLMs offer a promising path to make time series forecasting more general, efficient, synergistic,
+and accessible compared to current specialized modeling paradigms. Thus, adapting these powerful
+models for time series data can unlock significant untapped potential.
+The realization of the above benefits hinges on the effective alignment of the modalities of time
+series data and natural language. However, this is a challenging task as LLMs operate on discrete
+tokens, while time series data is inherently continuous. Furthermore, the knowledge and reasoning
+capabilities to interpret time series patterns are not naturally present within LLMs’ pre-training.
+Therefore, it remains an open challenge to unlock the knowledge within LLMs in activating their
+ability for general time series forecasting in a way that is accurate, data-efficient, and task-agnostic.
+In this work, we propose TIME -LLM, a reprogramming framework to adapt large language models
+for time series forecasting while keeping the backbone model intact. The core idea is to reprogram
+the input time series into text prototype representations that are more naturally suited to language
+models’ capabilities. To further augment the model’s reasoning about time series concepts, we
+introduce Prompt-as-Prefix (PaP), a novel idea in enriching the input time series with additional
+context and providing task instructions in the modality of natural language. This provides declarative
+guidance about desired transformations to apply to the reprogrammed input. The output of the
+language model is then projected to generate time series forecasts. Our comprehensive evaluation
+demonstrates that large language models can act as effective few-shot and zero-shot time series
+learners when adopted through this reprogramming approach, outperforming specialized forecasting
+models. By leveraging LLMs’ reasoning capability while keeping the models intact, our work points
+the way toward multimodal foundation models that can excel on both language and sequential data
+tasks. Our proposed reprogramming framework offers an extensible paradigm for imbuing large
+models with new capabilities beyond their original pre-training. Our main contributions in this work
+can be summarized as follows:
+• We introduce a novel concept of reprogramming large language models for time series forecast-
+ing without altering the pre-trained backbone model. In doing so, we show that forecasting can
+be cast as yet another “language” task that can be effectively tackled by an off-the-shelf LLM.
+• We propose a new framework, T IME -LLM, which encompasses reprogramming the input time
+series into text prototype representations that are more natural for the LLM, and augmenting the
+input context with declarative prompts (e.g., domain expert knowledge and task instructions) to
+guide LLM reasoning. Our technique points towards multimodal foundation models excelling
+in both language and time series.
+• T IME -LLM consistently exceeds state-of-the-art performance in mainstream forecasting tasks,
+especially in few-shot and zero-shot scenarios. Moreover, this superior performance is achieved
+while maintaining excellent model reprogramming efficiency. Thus, our research is a concrete
+step in unleashing LLMs’ untapped potential for time series and perhaps other sequential data.
+2 R ELATED WORK
+Task-specific Learning. Most time series forecasting models are crafted for specific tasks and
+domains (e.g., traffic prediction), and trained end-to-end on small-scale data. An illustration is in
+2
+
+## PDF page 3
+
+Published as a conference paper at ICLR 2024
+(a)Ta sk-SpecificLearningSourceModali ty
+Targ etModali ty
+[Summarization][Retrieval][Classification]…
+[Forecasting][Classification][Imputation]…
+(b)ModelFine-Tuning(c)ModelReprogramming
+SourceDataSampleTargetDataSampleSourceTaskTargetTask
+FrozenFine-tune
+Lightweight
+ContextualBootstrappingCross-Modali ty
+HighEffectiveness
+ModelHead
+Pre-trainingAdaptation
+…
+Model
+Reprogram.SpaceLanguageModel
+PromptsHead
+…InputReprogram
+Pre-training
+Figure 1: Schematic illustration of reprogramming large language models (LLMs) in comparison
+of (a) task-specific learning and (b) model fine-tuning. Our proposal investigates and demonstrates
+(c) how to effectively reprogram open-sourced LLMs as powerful time series learners where well-
+developed time series pre-trained models are not readily available.
+Fig. 1(a). For example, ARIMA models are designed for univariate time series forecasting (Box
+et al., 2015), LSTM networks are tailored for sequence modeling (Hochreiter & Schmidhuber,
+1997), and temporal convolutional networks (Bai et al., 2018) and transformers (Wen et al., 2023)
+are developed for handling longer temporal dependencies. While achieving good performance on
+narrow tasks, these models lack versatility and generalizability to diverse time series data.
+In-modality Adaptation. Relevant research in CV and NLP has demonstrated the effectiveness of
+pre-trained models that can be fine-tuned for various downstream tasks without the need for costly
+training from scratch (Devlin et al., 2018; Brown et al., 2020; Touvron et al., 2023). Inspired by
+these successes, recent studies have focused on the development of time series pre-trained models
+(TSPTMs). The first step among them involves time series pre-training using different strategies like
+supervised (Fawaz et al., 2018) or self-supervised learning (Zhang et al., 2022b; Deldari et al., 2022;
+Zhang et al., 2023). This allows the model to learn representing various input time series. Once pre-
+trained, it can be fine-tuned on similar domains to learn how to perform specific tasks (Tang et al.,
+2022). An example is in Fig. 1(b). The development of TSPTMs leverages the success of pre-
+training and fine-tuning in NLP and CV but remains limited on smaller scales due to data sparsity.
+Cross-modality Adaptation. Building on in-modality adaptation, recent work has further explored
+transferring knowledge from powerful pre-trained foundations models in NLP and CV to time se-
+ries modeling, through techniques such as multimodal fine-tuning (Yin et al., 2023) and model
+reprogramming (Chen, 2022). Our approach aligns with this category; however, there is limited
+pertinent research available on time series. An example is V oice2Series (Yang et al., 2021), which
+adapts an acoustic model (AM) from speech recognition to time series classification by editing a
+time series into a format suitable for the AM. Recently, Chang et al. (2023) proposes LLM4TS
+for time series forecasting using LLMs. It designs a two-stage fine-tuning process on the LLM -
+first supervised pre-training on time series, then task-specific fine-tuning. Zhou et al. (2023a) lever-
+ages pre-trained language models without altering their self-attention and feedforward layers. This
+model is fine-tuned and evaluated on various time series analysis tasks and demonstrates comparable
+or state-of-the-art performance by transferring knowledge from natural language pre-training. Dis-
+tinct from these approach, we neither edit the input time series directly nor fine-tune the backbone
+LLM. Instead, as illustrated in Fig. 1(c), we propose reprogramming time series with the source data
+modality along with prompting to unleash the potential of LLMs as effective time series machines.
+3 M ETHODOLOGY
+Our model architecture is depicted in Fig. 2. We focus on reprogramming an embedding-visible
+language foundation model, such as Llama (Touvron et al., 2023) and GPT-2 (Radford et al., 2019),
+for general time series forecasting without requiring any fine-tuning of the backbone model. Specif-
+ically, we consider the following problem: given a sequence of historical observations X ∈ RN ×T
+consisting of N different 1-dimensional variables across T time steps, we aim to reprogram a large
+language model f (·) to understand the input time series and accurately forecast the readings at H
+future time steps, denoted by ˆY ∈ RN ×H, with the overall objective to minimize the mean square
+errors between the ground truths Y and predictions, i.e., 1
+H
+PH
+h=1 || ˆYh − Yh||2
+F .
+Our method encompasses three main components: (1) input transformation, (2) a pre-trained and
+frozen LLM, and (3) output projection. Initially, a multivariate time series is partitioned into N
+3
+
+## PDF page 4
+
+Published as a conference paper at ICLR 2024
+PatchEmbedderInstanceNorm
+PatchReprogram
+Pre-trainedLLM(Body)
+Pre-trainedLLM(Embedder)
+Patching
+OutputProjection
+Multi-HeadAttentionInputEmbeddings
+Add&LayerNormFeedForwardAdd&LayerNormOutputEmbeddings
+To kenizatio nInputTe x t
+To kenEmbedder
+OutputTo ke nEmbeddings
+Flatten&LinearOutputPatchEmbeddings
+Forecasts
+TimeSeriesPatchesPre-trainedWordEmbeddingsLinear
+Multi-HeadAttentionTe x tPrototypes
+ReprogrammedPatchEmbeddings
+PromptEmbeddingsPatchEmbeddings
+Frozen
+Training ForwardBackward
+###Instruction:<timeseriesstatistic1>
+<datasetdescription><taskinformation>###Inputstatistics:<timeseriesstatistic2>…###Domain:<domainknowledge>
+Latest(rebuttal)
+Linear
+Figure 2: The model framework of T IME -LLM. Given an input time series, we first tokenize and
+embed it via 1 patching along with a 2 customized embedding layer. 3 These patch embeddings
+are then reprogrammed with condensed text prototypes to align two modalities. To augment the
+LLM’s reasoning ability, 4 additional prompt prefixes are added to the input to direct the transfor-
+mation of input patches. 5 The output patches from the LLM are projected to generate the forecasts.
+univariate time series, which are subsequently processed independently (Nie et al., 2023). The i-th
+series is denoted as X(i) ∈ R1×T , which undergoes normalization, patching, and embedding prior
+to being reprogrammed with learned text prototypes to align the source and target modalities. Then,
+we augment the LLM’s time series reasoning ability by prompting it together with reprogrammed
+patches to generate output representations, which are projected to the final forecasts ˆY(i) ∈ R1×H.
+We note that only the parameters of the lightweight input transformation and output projection are
+updated, while the backbone language model is frozen. In contrast to vision-language and other
+multimodal language models, which usually fine-tune with paired cross-modality data, TIME -LLM
+is directly optimized and becomes readily available with only a small set of time series and a few
+training epochs, maintaining high efficiency and imposing fewer resource constraints compared to
+building large domain-specific models from scratch or fine-tuning them. To further reduce mem-
+ory footprints, various off-the-shelf techniques (e.g., quantization) can be seamlessly integrated for
+slimming TIME -LLM.
+3.1 M ODEL STRUCTURE
+Input Embedding. Each input channel X(i) is first individually normalized to have zero mean and
+unit standard deviation via reversible instance normalization (RevIN) in mitigating the time series
+distribution shift (Kim et al., 2021). Then, we divide X(i) into several consecutive overlapped or
+non-overlapped patches (Nie et al., 2023) with length Lp; thus the total number of input patches
+is P = ⌊ (T −Lp)
+S ⌋ + 2, where S denotes the horizontal sliding stride. The underlying motivations
+are two-fold: (1) better preserving local semantic information by aggregating local information into
+each patch and (2) serving as tokenization to form a compact sequence of input tokens, reducing
+computational burdens. Given these patches X(i)
+P ∈ RP ×Lp, we embed them as ˆX(i)
+P ∈ RP ×dm,
+adopting a simple linear layer as the patch embedder to create dimensions dm.
+Patch Reprogramming. Here we reprogram patch embeddings into the source data representation
+space to align the modalities of time series and natural language to activate the backbone’s time
+series understanding and reasoning capabilities. A common practice is learning a form of “noise”
+that, when applied to target input samples, allows the pre-trained source model to produce the desired
+target outputs without requiring parameter updates. This is technically feasible for bridging data
+4
+
+## PDF page 5
+
+Published as a conference paper at ICLR 2024
+PatchReprogram
+Pre-trainedLLM(T extEmbedder)thenextvalueis0.6
+thenextvalueis0.6
+Pre-trainedLLM(Body+LMHead)
+Pre-trainedLLM(T extEmbedder)PatchReprogram
+Pre-trainedLLM(Body)
+<instruction><inputcontext>
+Projection0.6
+(a)PatchReprogramming(b)Patch-as-PrefixandPrompt-as-Prefix
+timelateearly
+longshort
+updown
+steady…
+SourceTarg et
+Patch1Patch2…Patch5
+Prototypes
+…!!′
+Vocab. ReprogrammedPatchEmbeddings!
+Latest(camera-ready)
+Figure 3: Illustration of (a) patch reprogramming and (b) Patch-as-Prefix versus Prompt-as-Prefix.
+modalities that are identical or similar. Examples include repurposing a vision model to work with
+cross-domain images (Misra et al., 2023) or reprogramming an acoustic model to handle time series
+data (Yang et al., 2021). In both cases, there are explicit, learnable transformations between the
+source and target data, allowing for the direct editing of input samples. However, time series can
+neither be directly edited nor described losslessly in natural language, posing significant challenges
+to directly bootstrap the LLM for understanding time series without resource-intensive fine-tuning.
+To close this gap, we propose reprogramming ˆX(i)
+P using pre-trained word embeddings E ∈ RV ×D
+in the backbone, where V is the vocabulary size. Nevertheless, there is no prior knowledge indi-
+cating which source tokens are directly relevant. Thus, simply leveraging E will result in large and
+potentially dense reprogramming space. A simple solution is to maintain a small collection of text
+prototypes by linearly probing E, denoted as E′ ∈ RV ′×D, where V ′ ≪ V . An illustration is in
+Fig. 3(a). Text prototypes learn connecting language cues, e.g., “short up” (red lines) and “steady
+down” (blue lines), which are then combined to represent the local patch information (e.g., “short up
+then down steadily” for characterizing patch 5) without leaving the space where the language model
+is pre-trained. This approach is efficient and allows for the adaptive selection of relevant source
+information. To realize this, we employ a multi-head cross-attention layer. Specifically, for each
+head k = {1, · · · , K}, we define query matrices Q(i)
+k = ˆX(i)
+P WQ
+k , key matrices K(i)
+k = E′WK
+k ,
+and value matrices V(i)
+k = E′WV
+k , where WQ
+k ∈ Rdm×d and WK
+k , WV
+k ∈ RD×d. Specifically,
+D is the hidden dimension of the backbone model, and d = ⌊ dm
+K ⌋. Then, we have the operation to
+reprogram time series patches in each attention head defined as:
+Z(i)
+k = ATTENTION (Q(i)
+k , K(i)
+k , V(i)
+k ) = SOFTMAX ( Q(i)
+k K(i)⊤
+k√dk
+)V(i)
+k . (1)
+By aggregating each Z(i)
+k ∈ RP ×d in every head, we obtain Z(i) ∈ RP ×dm. This is then linearly
+projected to align the hidden dimensions with the backbone model, yielding O(i) ∈ RP ×D.
+<BOS>TheElectricityTransformerTemperature(ETT)indicatestheelectricpowerlong-termdeployment.Thedatasetcontainshourlysampleddatafrom…###Taskinstruction:Predictthenext<!>stepsgiventheprevious<">stepsinformationattached###Inputstatistics:Theinputhasaminimumof<minvalue>,amaximumof<maxvalue>,andamedianof<medianvalue>.Theoveralltrendis<upwardordownward>.Thetopfivelagsare<lagvalues>.<EOS>
+<BOS>TheElectricityTransformerTemperature(ETT)indicatestheelectricpowerlong-termdeployment.Each data point consists of the target oil temperature and 6 power load features…
+###Taskinstruction:Predictthenext<!>stepsgiventheprevious<">stepsinformationattached###Inputstatistics:Theinputhasaminimumof<minvalue>,amaximumof<maxvalue>,andamedianof<medianvalue>.Theoveralltrendis<upwardordownward>.Thetopfivelagsare<lagvalues>.<EOS>
+###DomainKnowledge:Weusuallyobservethat electricity consumption usually peaks at noon, with a significant increase in transformer load…
+TheElectricityTransformerTemperature(ETT)indicatestheelectricpowerlong-termdeployment.Each data point consists of the target oil temperature and 6 power load features…
+###Taskinstruction:Predictthenext<!>stepsgiventheprevious<">stepsinformationattached###Inputstatistics:Theinputhasaminimumof<minvalue>,amaximumof<maxvalue>,andamedianof<medianvalue>.Theoveralltrendis<upwardordownward>.Thetopfivelagsare<lagvalues>.
+###DomainKnowledge:Weusuallyobservethat electricity consumption usually peaks at noon, with a significant increase in transformer load…
+Belowistheinformationabouttheinputtimeseries:
+[Domain]:Weusuallyobservethat electricity consumption peaks at noon, with a significant increase in transformer load[Instruction]:Predictthenext<!>stepsgiventheprevious<">stepsinformationattached[Statistics]:Theinputhasaminimumof<min_val>,amaximumof<max_val>,andamedianof<median_val>.Theoveralltrendis<upwardordownward>.Thetopfivelagsare<lag_val>.
+[BEGINDATA]*** *** *** 
+[ENDDATA]
+Latest
+Figure 4: Prompt example. <> and <>
+are task-specific configurations and cal-
+culated input statistics.
+Prompt-as-Prefix. Prompting serves as a straightfor-
+ward yet effective approach task-specific activation of
+LLMs (Yin et al., 2023). However, the direct translation
+of time series into natural language presents considerable
+challenges, hindering both the creation of instruction-
+following datasets and the effective utilization of on-the-
+fly prompting without performance compromise (Xue &
+Salim, 2022). Recent advancements indicate that other
+data modalities, such as images, can be seamlessly in-
+tegrated as the prefixes of prompts, thereby facilitating
+effective reasoning based on these inputs (Tsimpoukelli
+et al., 2021). Motivated by these findings, and to render
+our approach directly applicable to real-world time series,
+we pose an alternative question: can prompts act as pre-
+fixes to enrich the input context and guide the transfor-
+mation of reprogrammed time series patches? We term this concept as Prompt-as-Prefix (PaP) and
+observe that it significantly enhances the LLM’s adaptability to downstream tasks while comple-
+menting patch reprogramming (See Sec. 4.5 later).
+5
+
+## PDF page 6
+
+Published as a conference paper at ICLR 2024
+An illustration of the two prompting approaches is in Fig. 3(b). InPatch-as-Prefix, a language model
+is prompted to predict subsequent values in a time series, articulated in natural language. This ap-
+proach encounters certain constraints: (1) language models typically exhibit reduced sensitivity in
+processing high-precision numerals without the aid of external tools, thereby presenting substantial
+challenges in accurately addressing practical forecasting tasks over long horizons; (2) intricate, cus-
+tomized post-processing is required for different language models, given that they are pre-trained
+on diverse corpora and may employ different tokenization types in generating high-precision nu-
+merals with precision and efficiency. This results in forecasts being represented in disparate natural
+language formats, such as [‘0’, ‘.’, ‘6’, ‘1’] and [‘0’, ‘.’, ‘61’], to denote the decimal 0.61.
+Prompt-as-Prefix, on the other hand, tactfully avoids these constraints. In practice, we identify three
+pivotal components for constructing effective prompts: (1) dataset context, (2) task instruction, and
+(3) input statistics. A prompt example is in Fig. 4. The dataset context furnishes the LLM with
+essential background information concerning the input time series, which often exhibits distinct
+characteristics across various domains. Task instruction serves as a crucial guide for the LLM in
+the transformation of patch embeddings for specific tasks. We also enrich the input time series with
+additional crucial statistics, such as trends and lags, to facilitate pattern recognition and reasoning.
+Output Projection. Upon packing and feedforwarding the prompt and patch embeddings O(i)
+through the frozen LLM as shown in Fig. 2, we discard the prefixal part and obtain the output
+representations. Following this, we flatten and linear project them to derive the final forecastsˆY(i).
+4 M AIN RESULTS
+TIME -LLM consistently outperforms state-of-the-art forecasting methods by large margins across
+multiple benchmarks and settings, especially in few-shot and zero-shot scenarios. We compared our
+approach against a broad collection of up-to-date models, including a recent study that fine-tunes
+language model for time series analysis (Zhou et al., 2023a). To ensure a fair comparison, we adhere
+to the experimental configurations in (Wu et al., 2023) across all baselines with a unified evaluation
+pipeline1. We use Llama-7B (Touvron et al., 2023) as the default backbone unless stated otherwise.
+Baselines. We compare with the SOTA time series models, and we cite their performance from
+(Zhou et al., 2023a) if applicable. Our baselines include a series of Transformer-based methods:
+PatchTST (2023), ESTformer (2022), Non-Stationary Transformer (2022), FEDformer (2022), Aut-
+oformer (2021), Informer (2021), and Reformer (2020). We also select a set of recent competi-
+tive models, including GPT4TS (2023a), LLMTime (2023), DLinear (2023), TimesNet (2023), and
+LightTS (2022a). In short-term forecasting, we further compare our model with N-HiTS (2023b)
+and N-BEATS (2020). More details are in Appendix A.
+4.1 L ONG -TERM FORECASTING
+Setups. We evaluate on ETTh1, ETTh2, ETTm1, ETTm2, Weather, Electricity (ECL), Traffic,
+and ILI, which have been extensively adopted for benchmarking long-term forecasting models (Wu
+et al., 2023). Details of the implementation and datasets can be found in Appendix B. The input time
+series length T is set as 512, and we use four different prediction horizonsH ∈ {96, 192, 336, 720}.
+The evaluation metrics include mean square error (MSE) and mean absolute error (MAE).
+Results. Our brief results are shown in Tab. 1, where TIME -LLM outperforms all baselines in most
+cases and significantly so to the majority of them. The comparison with GPT4TS (Zhou et al.,
+2023a) is particularly noteworthy. GPT4TS is a very recent work that involves fine-tuning on the
+backbone language model. We note average performance gains of12% and 20% over GPT4TS and
+TimesNet, respectively. When compared with the SOTA task-specific Transformer model PatchTST,
+by reprogramming the smallest Llama, T IME -LLM realizes an average MSE reduction of 1.4%.
+Relative to the other models, e.g., DLinear, our improvements are also pronounced, exceeding12%.
+4.2 S HORT-TERM FORECASTING
+Setups. We choose the M4 benchmark (Makridakis et al., 2018) as the testbed, which contains a
+collection of marketing data in different sampling frequencies. More details are provided in Ap-
+pendix B. The prediction horizons in this case are relatively small and in [6, 48]. The input lengths
+1https://github.com/thuml/Time-Series-Library
+6
+
+## PDF page 7
+
+Published as a conference paper at ICLR 2024
+Table 1: Long-term forecasting results. All results are averaged from four different forecasting horizons: H ∈
+{24, 36, 48, 60} for ILI and {96, 192, 336, 720} for the others. A lower value indicates better performance.
+Red: the best, Blue: the second best. Our full results are in Appendix D.
+MethodsTIME-LLMGPT4TSDLinearPatchTSTTimesNetFEDformerAutoformerStationaryETSformerLightTSInformerReformer(Ours) (2023a) (2023) (2023) (2023) (2022) (2021) (2022) (2022) (2022a) (2021) (2020)
+MetricMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAE
+ET T h1 0.408 0.4230.465 0.4550.422 0.4370.4130.4300.458 0.4500.440 0.4600.496 0.4870.570 0.5370.542 0.5100.491 0.4791.040 0.7951.029 0.805
+ET T h2 0.3340.3830.381 0.4120.431 0.4460.330 0.3790.414 0.4270.437 0.4490.450 0.4590.526 0.5160.439 0.4520.602 0.5434.431 1.7296.736 2.191
+ET T m1 0.329 0.3720.388 0.4030.357 0.3780.3510.3800.400 0.4060.448 0.4520.588 0.5170.481 0.4560.429 0.4250.435 0.4370.961 0.7340.799 0.671
+ET T m2 0.251 0.3130.284 0.3390.267 0.3330.2550.3150.291 0.3330.305 0.3490.327 0.3710.306 0.3470.293 0.3420.409 0.4361.410 0.8101.479 0.915
+W eather0.225 0.2570.237 0.2700.248 0.3000.2250.2640.259 0.2870.309 0.3600.338 0.3820.288 0.3140.271 0.3340.261 0.3120.634 0.5480.803 0.656
+ECL 0.158 0.2520.167 0.2630.166 0.2630.1610.2520.192 0.2950.214 0.3270.227 0.3380.193 0.2960.208 0.3230.229 0.3290.311 0.3970.338 0.422
+T raf f ic0.3880.2640.414 0.2940.433 0.2950.3900.2630.620 0.3360.610 0.3760.628 0.3790.624 0.3400.621 0.3960.622 0.3920.764 0.4160.741 0.422
+ILI 1.4350.8011.925 0.9032.169 1.0411.4430.7972.139 0.9312.847 1.1443.006 1.1612.077 0.9142.497 1.0047.382 2.0035.137 1.5444.724 1.445
+1stCount 7 0 0 5 0 0 0 0 0 0 0 0
+Table 2: Short-term time series forecasting results on M4. The forecasting horizons are in [6, 48] and the
+three rows provided are weighted averaged from all datasets under different sampling intervals. A lower value
+indicates better performance. Red: the best, Blue: the second best. More results are in Appendix D.
+MethodsTIME-LLMGPT4TSTimesNetPatchTSTN-HiTSN-BEATSETSformerLightTSDLinearFEDformerStationaryAutoformerInformerReformer
+(Ours) (2023a)(2023) (2023)(2023b)(2020) (2022)(2022a)(2023) (2022) (2022) (2021) (2021)(2020)
+Average
+SMAPE11.983 12.69 12.88 12.059 12.035 12.25 14.718 13.525 13.639 13.16 12.780 12.909 14.086 18.200
+MASE 1.595 1.808 1.836 1.623 1.625 1.698 2.408 2.111 2.095 1.775 1.756 1.771 2.718 4.223
+OW A 0.859 0.94 0.955 0.869 0.869 0.896 1.172 1.051 1.051 0.949 0.930 0.939 1.230 1.775
+are twice as prediction horizons. The evaluation metrics are symmetric mean absolute percentage
+error (SMAPE), mean absolute scaled error (MSAE), and overall weighted average (OW A).
+Results. Our brief results with unified seeds across all methods are in Tab. 2. T IME -LLM consis-
+tently surpasses all baselines, outperforming GPT4TS by 8.7%. T IME -LLM remains competitive
+even when compared with the SOTA model, N-HiTS (Challu et al., 2023b) , w.r.t. MASE and OW A.
+4.3 F EW-SHOT FORECASTING
+Setups. LLMs have recently demonstrated remarkable few-shot learning capabilities (Liu et al.,
+2023b). In this section, we assess whether our reprogrammed LLM retains this ability in forecasting
+tasks. We adhere to the setups in (Zhou et al., 2023a) for fair comparisons, and we evaluate on
+scenarios with limited training data (i.e., ≤ first 10% training time steps).
+Results. Our brief 10% and 5% few-shot learning results are in Tab. 3 and Tab. 4 respectively. TIME -
+LLM remarkably excels over all baseline methods, and we attribute this to the successful knowledge
+activation in our reprogrammed LLM. Interestingly, both our approach and GPT4TS consistently
+surpass other competitive baselines, further underscoring the potential prowess of language models
+as proficient time series machines.
+In the realm of 10% few-shot learning, our methodology realizes a5% MSE reduction in comparison
+to GPT4TS, without necessitating any fine-tuning on the LLM. In relation to recent SOTA models
+Table 3: Few-shot learning on 10% training data. We use the same protocol in Tab. 1. All results are averaged
+from four different forecasting horizons: H ∈ {96, 192, 336, 720}. Our full results are in Appendix E.
+MethodsTIME-LLMGPT4TSDLinearPatchTSTTimesNetFEDformerAutoformerStationaryETSformerLightTSInformerReformer
+(Ours) (2023a) (2023) (2023) (2023) (2022) (2021) (2022) (2022) (2022a) (2021) (2020)
+MetricMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAE
+ET T h1 0.556 0.5220.5900.5250.691 0.6000.633 0.5420.869 0.6280.639 0.5610.702 0.5960.915 0.6391.180 0.8341.375 0.8771.199 0.8091.249 0.833
+ET T h2 0.370 0.3940.3970.4210.605 0.5380.415 0.4310.479 0.4650.466 0.4750.488 0.4990.462 0.4550.894 0.7132.655 1.1603.872 1.5133.485 1.486
+ET T m1 0.404 0.4270.464 0.4410.4110.4290.501 0.4660.677 0.5370.722 0.6050.802 0.6280.797 0.5780.980 0.7140.971 0.7051.192 0.8211.426 0.856
+ET T m2 0.277 0.3230.2930.3350.316 0.3680.296 0.3430.320 0.3530.463 0.4881.342 0.9300.332 0.3660.447 0.4870.987 0.7563.370 1.4403.978 1.587
+W eather0.234 0.2730.2380.2750.241 0.2830.242 0.2790.279 0.3010.284 0.3240.300 0.3420.318 0.3230.318 0.3600.289 0.3220.597 0.4950.546 0.469
+ECL 0.1750.2700.1760.2690.180 0.2800.180 0.2730.323 0.3920.346 0.4270.431 0.4780.444 0.4800.660 0.6170.441 0.4891.195 0.8910.965 0.768
+T raf f ic0.4290.3060.440 0.3100.447 0.3130.4300.3050.951 0.5350.663 0.4250.749 0.4461.453 0.8151.914 0.9361.248 0.6841.534 0.8111.551 0.821
+1stCount 7 1 0 1 0 0 0 0 0 0 0 0
+7
+
+## PDF page 8
+
+Published as a conference paper at ICLR 2024
+Table 4: Few-shot learning on 5% training data. We use the same protocol in Tab. 1. All results are averaged
+from four different forecasting horizons: H ∈ {96, 192, 336, 720}. Our full results are in Appendix E.
+MethodsTIME-LLMGPT4TSDLinearPatchTSTTimesNetFEDformerAutoformerStationaryETSformerLightTSInformerReformer
+(Ours) (2023a) (2023) (2023) (2023) (2022) (2021) (2022) (2022) (2022a) (2021) (2020)
+MetricMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAE
+ET T h1 0.627 0.5430.681 0.5600.750 0.6110.694 0.5690.925 0.6470.6580.5620.722 0.5980.943 0.6461.189 0.8391.451 0.9031.225 0.8171.241 0.835
+ET T h2 0.382 0.4180.4000.4330.694 0.5770.827 0.6150.439 0.4480.463 0.4540.441 0.4570.470 0.4890.809 0.6813.206 1.2683.922 1.6533.527 1.472
+ET T m1 0.4250.4340.472 0.4500.400 0.4170.526 0.4760.717 0.5610.730 0.5920.796 0.6200.857 0.5981.125 0.7821.123 0.7651.163 0.7911.264 0.826
+ET T m2 0.274 0.3230.3080.3460.399 0.4260.314 0.3520.344 0.3720.381 0.4040.388 0.4330.341 0.3720.534 0.5471.415 0.8713.658 1.4893.581 1.487
+W eather0.2600.3090.2630.3010.263 0.3080.269 0.3030.298 0.3180.309 0.3530.310 0.3530.327 0.3280.333 0.3710.305 0.3450.584 0.5270.447 0.453
+ECL 0.1790.2680.1780.2730.176 0.2750.181 0.2770.402 0.4530.266 0.3530.346 0.4040.627 0.6030.800 0.6850.878 0.7251.281 0.9291.289 0.904
+T raf f ic0.4230.2980.434 0.3050.450 0.3170.418 0.2960.867 0.4930.676 0.4230.833 0.5021.526 0.8391.859 0.9271.557 0.7951.591 0.8321.618 0.851
+1stCount 5 2 1 1 0 0 0 0 0 0 0 0
+such as PatchTST, DLinear, and TimesNet, our average enhancements surpass8%, 12%, and 33%
+w.r.t. MSE. Analogous trends are discernible in the 5% few-shot learning scenarios, where our
+average advancement over GPT4TS exceeds 5%. When compared with PatchTST, DLinear, and
+TimesNet, TIME -LLM manifests a striking average improvement of over 20%.
+4.4 Z ERO-SHOT FORECASTING Table 5: Zero-shot learning results. Red: the best, Blue : the sec-
+ond best. Appendix E shows our detailed results.
+Methods TIME-LLMGPT4TSLLMTimeDLinearPatchTSTTimesNet
+(Ours) (2023a) (2023) (2023) (2023) (2023)
+Metric MSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAE
+ET T h1→ET T h2 0.353 0.3870.406 0.4220.992 0.7080.493 0.4880.3800.4050.421 0.431
+ET T h1→ET T m2 0.273 0.3400.325 0.3631.867 0.8690.415 0.4520.3140.3600.327 0.361
+ET T h2→ET T h1 0.479 0.4740.757 0.5781.961 0.9810.703 0.5740.5650.5130.865 0.621
+ET T h2→ET T m2 0.272 0.3410.335 0.3701.867 0.8690.328 0.3860.3250.3650.342 0.376
+ET T m1→ET T h2 0.381 0.4120.4330.4390.992 0.7080.464 0.4750.439 0.4380.457 0.454
+ET T m1→ET T m2 0.268 0.3200.313 0.3481.867 0.8690.335 0.3890.2960.3340.322 0.354
+ET T m2→ET T h2 0.354 0.4000.435 0.4430.992 0.7080.455 0.4710.4090.4250.435 0.443
+ET T m2→ET T m1 0.414 0.4380.769 0.5671.933 0.9840.649 0.5370.5680.4920.769 0.567
+Setups. Beyond few-shot learning,
+LLMs hold potential as effective
+zero-shot reasoners (Kojima et al.,
+2022). In this section, we evaluate
+the zero-shot learning capabilities of
+the reprogrammed LLM within the
+framework of cross-domain adapta-
+tion. Specifically, we examine how
+well a model performs on a dataset
+♣ when it is optimized on another
+dataset ♠, where the model has not
+encountered any data samples from the dataset ♣. Similar to few-shot learning, we use long-term
+forecasting protocol and evaluate on various cross-domain scenarios utilizing the ETT datasets.
+Results. Our brief results are in Tab. 5. TIME -LLM consistently outperforms the most competitive
+baselines by a large margin, over 14.2% w.r.t. the second-best in MSE reduction. Considering the
+few-shot results, we observe that reprogramming an LLM tends to yield significantly better results
+in data scarcity scenarios. For example, our overall error reductions w.r.t. GPT4TS in 10% few-shot
+forecasting, 5% few-shot forecasting, and zero-shot forecasting are increasing gradually: 7.7%,
+8.4%, and 22%. Even when benchmarked against LLMTime, the most recent approach in this field,
+with the backbone LLM of comparable size (7B), T IME -LLM shows a substantial improvement
+exceeding 75%. We attribute this to our approach being better at activating the LLM’s knowledge
+transfer and reasoning capabilities in a resource-efficient manner when performing time series tasks.
+4.5 M ODEL ANALYSIS
+Language Model Variants. We compare two representative backbones with varying capacities
+(A.1-4 in Tab. 6). Our results indicate that the scaling law retain after the LLM reprogramming. We
+adopt Llama-7B by default in its full capacity, which manifestly outperforms its 1/4 capacity variant
+(A.2; inclusive of the first 8 Transformer layers) by14.5%. An average MSE reduction of 14.7% is
+observed over GPT-2 (A.3), which slightly outperforms its variant GPT-2 (6) (A.4) by 2.7%.
+Cross-modality Alignment. Our results in Tab. 6 indicate that ablating either patch reprogramming
+or Prompt-as-Prefix hurts knowledge transfer in reprogramming the LLM for effective time series
+forecasting. In the absence of representation alignment ( B.1), we observe a notable average perfor-
+mance degradation of 9.2%, which becomes more pronounced (exceeding 17%) in few-shot tasks.
+In T IME -LLM, the act of prompting stands as a pivotal element in harnessing the LLM’s capacity
+for understanding the inputs and tasks. Ablation of this component ( B.2) results in over 8% and
+19% degradation in standard and few-shot forecasting tasks, respectively. We find that removing
+the input statistics (C.1) hurts the most, resulting in an average increase of 10.2% MSE. This is an-
+8
+
+## PDF page 9
+
+Published as a conference paper at ICLR 2024
+Table 6: Ablations on ETTh1 and ETTm1 in predicting 96 and 192 steps ahead (MSE reported).Red: the best.
+Variant Long-term Forecasting Few-shot Forecasting
+ETTh1-96 ETTh1-192 ETTm1-96 ETThm1-192ETTh1-96 ETTh1-192 ETTm1-96 ETThm1-192
+A.1Llama (Default; 32) 0.362 0.398 0.272 0.310 0.448 0.484 0.346 0.373A.2Llama (8) 0.389 0.412 0.297 0.329 0.567 0.632 0.451 0.490A.3GPT-2 (12) 0.385 0.419 0.306 0.332 0.548 0.617 0.447 0.509A.4GPT-2 (6) 0.394 0.427 0.311 0.342 0.571 0.640 0.468 0.512
+B.1w/o Patch Reprogramming0.410 0.412 0.310 0.342 0.498 0.570 0.445 0.487B.2w/o Prompt-as-Prefix0.398 0.423 0.298 0.339 0.521 0.617 0.432 0.481
+C.1w/o Dataset Context 0.402 0.417 0.298 0.331 0.491 0.538 0.392 0.447C.2w/o Task Instruction0.388 0.420 0.285 0.327 0.476 0.529 0.387 0.439C.3w/o Statistical Context0.391 0.419 0.279 0.347 0.483 0.547 0.421 0.461
+Table 7: Efficiency analysis of TIME -LLM on ETTh1 in forecasting different steps ahead.
+Length ETTh1-96 ETTh1-192 ETTh1-336 ETTh1-512
+Metric Param. (M) Mem. (MiB) Speed(s/iter)Param. (M) Mem. (MiB) Speed(s/iter)Param. (M) Mem. (MiB) Speed(s/iter)Param. (M) Mem.(MiB) Speed(s/iter)
+D.1LLama (32)3404.53 32136 0.517 3404.57 33762 0.582 3404.62 37988 0.632 3404.69 39004 0.697D.2LLama (8)975.83 11370 0.184 975.87 12392 0.192 975.92 13188 0.203 976.11 13616 0.217D.3w/o LLM6.39 3678 0.046 6.42 3812 0.087 6.48 3960 0.093 6.55 4176 0.129
+ticipated as external knowledge can be naturally incorporated via prompting to facilitate the learning
+and inference. Additionally, providing the LLM with clear task instructions and input context (e.g.,
+dataset captioning) is also beneficial (i.e.,C.2 and C.1; eliciting over 7.7% and 9.6%, respectively).
+(a)Epoch0
+PatchTextPrototypeTextPrototypeTextPrototypeTextPrototype
+(b)Epoch1(c)Epoch5(d)Epoch10
+…
+(e)IllustrationofaWell-optimizedReprogrammingSpacein(d)
+(f)Visualizationof10differentlearnedtextprototypes
+PrototypeWordSet1
+PrototypeWordSet2PrototypeWordSet3
+WordSet1:{‘periodic’,‘seasonal’,…}WordSet2:{‘quantile’,‘average’,…}WordSet3:{‘outspoken’,‘galiee’,…}
+Figure 5: A showcase of patch reprogramming.
+Reprogramming Interpretation. We pro-
+vide a case study on ETTh1 of reprogram-
+ming 48 time series patches with 100 text
+prototypes in Fig. 5. The top 4 subplots
+visualize the optimization of reprogramming
+space from randomly-initialized (a) to well-
+optimized (d). We find only a small set of pro-
+totypes (columns) participated in reprogram-
+ming the input patches (rows) in subplot (e).
+Also, patches undergo different representations
+through varying combinations of prototypes.
+This indicates: (1) text prototypes learn to sum-
+marize language cues, and a select few are
+highly relevant for representing information in
+local time series patches, which we visualize by
+randomly selecting 10 in subplot (f). Our results suggest a high relevance to the words that describe
+time series properties (i.e., word sets 1 and 2); (2) patches usually have different underlying seman-
+tics, necessitating different prototypes to represent.
+Reprogramming Efficiency. Tab. 7 provides an overall efficiency analysis of T IME -LLM with
+and without the backbone LLM. Our proposed reprogramming network itself ( D.3) is lightweight
+in activating the LLM’s ability for time series forecasting (i.e., fewer than 6.6 million trainable
+parameters; only around 0.2% of the total parameters in Llama-7B), and the overall efficiency of
+TIME -LLM is actually capped by the leveraged backbones (e.g., D.1 and D.2). This is favorable
+even compared to the parameter-efficient fine-tuning methods (e.g., QLoRA (Dettmers et al., 2023))
+in balancing task performance and efficiency.
+5 C ONCLUSION AND FUTURE WORK
+TIME-LLM shows promise in adapting frozen large language models for time series forecasting by
+reprogramming time series data into text prototypes more natural for LLMs and providing natural
+language guidance via Prompt-as-Prefix to augment reasoning. Evaluations demonstrate the adapted
+LLMs can outperform specialized expert models, indicating their potential as effective time series
+machines. Our results also provide a novel insight that time series forecasting can be cast as yet an-
+other “language” task that can be tackled by an off-the-shelf LLM to achieve state-of-the-art perfor-
+mance through our Time-LLM framework. Further research should explore optimal reprogramming
+representations, enrich LLMs with explicit time series knowledge through continued pre-training,
+and build towards multimodal models with joint reasoning across time series, natural language, and
+other modalities. Furthermore, applying the reprogramming framework to equip LLMs with broader
+time series analytical abilities or other new capabilities should also be considered.
+9
+
+## PDF page 10
+
+Published as a conference paper at ICLR 2024
+REFERENCES
+Shaojie Bai, J Zico Kolter, and Vladlen Koltun. An empirical evaluation of generic convolutional
+and recurrent networks for sequence modeling. arXiv preprint arXiv:1803.01271, 2018.
+George EP Box, Gwilym M Jenkins, Gregory C Reinsel, and Greta M Ljung. Time series analysis:
+forecasting and control. John Wiley & Sons, 2015.
+Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal,
+Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. Language models are
+few-shot learners. Advances in Neural Information Processing Systems, 33:1877–1901, 2020.
+Cristian Challu, Kin G Olivares, Boris N Oreshkin, Federico Garza, Max Mergenthaler, and Artur
+Dubrawski. N-hits: Neural hierarchical interpolation for time series forecasting. Proceedings of
+the AAAI Conference on Artificial Intelligence, 2023a.
+Cristian Challu, Kin G Olivares, Boris N Oreshkin, Federico Garza Ramirez, Max Mergenthaler
+Canseco, and Artur Dubrawski. Nhits: neural hierarchical interpolation for time series forecast-
+ing. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 37, pp. 6989–6997,
+2023b.
+Ching Chang, Wen-Chih Peng, and Tien-Fu Chen. Llm4ts: Two-stage fine-tuning for time-series
+forecasting with pre-trained llms. arXiv preprint arXiv:2308.08469, 2023.
+Pin-Yu Chen. Model reprogramming: Resource-efficient cross-domain machine learning. arXiv
+preprint arXiv:2202.10629, 2022.
+Zhixuan Chu, Hongyan Hao, Xin Ouyang, Simeng Wang, Yan Wang, Yue Shen, Jinjie Gu, Qing Cui,
+Longfei Li, Siqiao Xue, et al. Leveraging large language models for pre-trained recommender
+systems. arXiv preprint arXiv:2308.10837, 2023.
+Shohreh Deldari, Hao Xue, Aaqib Saeed, Jiayuan He, Daniel V Smith, and Flora D Salim. Beyond
+just vision: A review on self-supervised representation learning on multimodal and temporal data.
+arXiv preprint arXiv:2206.02353, 2022.
+Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, and Luke Zettlemoyer. Qlora: Efficient finetuning
+of quantized llms. Advances in Neural Information Processing Systems, 2023.
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: Pre-training of deep
+bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of
+the North American Chapter of the Association for Computational Linguistics: Human Language
+Technologies, 2018.
+Hassan Ismail Fawaz, Germain Forestier, Jonathan Weber, Lhassane Idoumghar, and Pierre-Alain
+Muller. Transfer learning for time series classification. In IEEE International Conference on Big
+Data, pp. 1367–1376. IEEE, 2018.
+Nate Gruver, Marc Anton Finzi, Shikai Qiu, and Andrew Gordon Wilson. Large language models
+are zero-shot time series forecasters. Advances in Neural Information Processing Systems, 2023.
+Julien Herzen, Francesco Lassig, Samuele Giuliano Piazzetta, Thomas Neuer, Leo Tafti, Guillaume
+Raille, Tomas Van Pottelbergh, Marek Pasieka, Andrzej Skrodzki, Nicolas Huguenin, et al. Darts:
+User-friendly modern machine learning for time series. The Journal of Machine Learning Re-
+search, 23(1):5442–5447, 2022.
+Sepp Hochreiter and J ¨urgen Schmidhuber. Long short-term memory. Neural computation, 9(8):
+1735–1780, 1997.
+Ming Jin, Huan Yee Koh, Qingsong Wen, Daniele Zambon, Cesare Alippi, Geoffrey I Webb, Irwin
+King, and Shirui Pan. A survey on graph neural networks for time series: Forecasting, classifica-
+tion, imputation, and anomaly detection. arXiv preprint arXiv:2307.03759, 2023a.
+Ming Jin, Qingsong Wen, Yuxuan Liang, Chaoli Zhang, Siqiao Xue, Xue Wang, James Zhang,
+Yi Wang, Haifeng Chen, Xiaoli Li, et al. Large models for time series and spatio-temporal data:
+A survey and outlook. arXiv preprint arXiv:2310.10196, 2023b.
+10
+
+## PDF page 11
+
+Published as a conference paper at ICLR 2024
+Taesung Kim, Jinhee Kim, Yunwon Tae, Cheonbok Park, Jang-Ho Choi, and Jaegul Choo. Re-
+versible instance normalization for accurate time-series forecasting against distribution shift. In
+International Conference on Learning Representations, 2021.
+Diederik P. Kingma and Jimmy Ba. Adam: A method for stochastic optimization. International
+Conference on Learning Representations, 2015.
+Nikita Kitaev, Łukasz Kaiser, and Anselm Levskaya. Reformer: The efficient transformer. In
+International Conference on Learning Representations, 2020.
+Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke Iwasawa. Large
+language models are zero-shot reasoners. Advances in neural information processing systems ,
+35:22199–22213, 2022.
+Michael Leonard. Promotional analysis and forecasting for demand planning: a practical time series
+approach. with exhibits, 1, 2001.
+Na Li, Donald M Arnold, Douglas G Down, Rebecca Barty, John Blake, Fei Chiang, Tom Courtney,
+Marianne Waito, Rick Trifunov, and Nancy M Heddle. From demand forecasting to inventory
+ordering decisions for red blood cells through integrating machine learning, statistical modeling,
+and inventory optimization. Transfusion, 62(1):87–99, 2022.
+Hengbo Liu, Ziqing Ma, Linxiao Yang, Tian Zhou, Rui Xia, Yi Wang, Qingsong Wen, and Liang
+Sun. Sadi: A self-adaptive decomposed interpretable framework for electric load forecasting
+under extreme events. In IEEE International Conference on Acoustics, Speech and Signal Pro-
+cessing, 2023a.
+Xin Liu, Daniel McDuff, Geza Kovacs, Isaac Galatzer-Levy, Jacob Sunshine, Jiening Zhan, Ming-
+Zher Poh, Shun Liao, Paolo Di Achille, and Shwetak Patel. Large language models are few-shot
+health learners. arXiv preprint arXiv:2305.15525, 2023b.
+Yong Liu, Haixu Wu, Jianmin Wang, and Mingsheng Long. Non-stationary transformers: Exploring
+the stationarity in time series forecasting. Advances in Neural Information Processing Systems ,
+35:9881–9893, 2022.
+Ziyang Ma, Wen Wu, Zhisheng Zheng, Yiwei Guo, Qian Chen, Shiliang Zhang, and Xie Chen.
+Leveraging speech ptm, text llm, and emotional tts for speech emotion recognition.arXiv preprint
+arXiv:2309.10294, 2023.
+Spyros Makridakis and Michele Hibon. The m3-competition: results, conclusions and implications.
+International journal of forecasting, 16(4):451–476, 2000.
+Spyros Makridakis, Evangelos Spiliotis, and Vassilios Assimakopoulos. The m4 competition: Re-
+sults, findings, conclusion and way forward.International Journal of Forecasting, 34(4):802–808,
+2018.
+Igor Melnyk, Vijil Chenthamarakshan, Pin-Yu Chen, Payel Das, Amit Dhurandhar, Inkit Padhi, and
+Devleena Das. Reprogramming pretrained language models for antibody sequence infilling. In
+International Conference on Machine Learning, 2023.
+Suvir Mirchandani, Fei Xia, Pete Florence, Danny Driess, Montserrat Gonzalez Arenas, Kanishka
+Rao, Dorsa Sadigh, Andy Zeng, et al. Large language models as general pattern machines. In
+Proceedings of the 7th Annual Conference on Robot Learning, 2023.
+Diganta Misra, Agam Goyal, Bharat Runwal, and Pin Yu Chen. Reprogramming under constraints:
+Revisiting efficient and reliable transferability of lottery tickets.arXiv preprint arXiv:2308.14969,
+2023.
+Yuqi Nie, Nam H Nguyen, Phanwadee Sinthong, and Jayant Kalagnanam. A time series is worth
+64 words: Long-term forecasting with transformers. In International Conference on Learning
+Representations, 2023.
+OpenAI. Gpt-4 technical report, 2023.
+11
+
+## PDF page 12
+
+Published as a conference paper at ICLR 2024
+Boris N Oreshkin, Dmitri Carpov, Nicolas Chapados, and Yoshua Bengio. N-beats: Neural ba-
+sis expansion analysis for interpretable time series forecasting. In International Conference on
+Learning Representations, 2020.
+Adam Paszke, Sam Gross, Francisco Massa, Adam Lerer, James Bradbury, Gregory Chanan, Trevor
+Killeen, Zeming Lin, Natalia Gimelshein, Luca Antiga, et al. Pytorch: An imperative style,
+high-performance deep learning library. Advances in Neural Information Processing Systems, 32,
+2019.
+Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. Language
+models are unsupervised multitask learners. OpenAI blog, 1(8):9, 2019.
+Stephen H Schneider and Robert E Dickinson. Climate modeling. Reviews of Geophysics, 12(3):
+447–493, 1974.
+Yihong Tang, Ao Qu, Andy HF Chow, William HK Lam, SC Wong, and Wei Ma. Domain adver-
+sarial spatial-temporal network: a transferable framework for short-term traffic forecasting across
+cities. In Proceedings of the 31st ACM International Conference on Information & Knowledge
+Management, pp. 1905–1915, 2022.
+Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timoth ´ee
+Lacroix, Baptiste Rozi `ere, Naman Goyal, Eric Hambro, Faisal Azhar, et al. Llama: Open and
+efficient foundation language models. arXiv preprint arXiv:2302.13971, 2023.
+Maria Tsimpoukelli, Jacob L Menick, Serkan Cabi, SM Eslami, Oriol Vinyals, and Felix Hill. Mul-
+timodal few-shot learning with frozen language models. Advances in Neural Information Pro-
+cessing Systems, 34:200–212, 2021.
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez,
+Łukasz Kaiser, and Illia Polosukhin. Attention is all you need. Advances in Neural Informa-
+tion Processing Systems, 30, 2017.
+Ria Vinod, Pin-Yu Chen, and Payel Das. Reprogramming language models for molecular represen-
+tation learning. In Annual Conference on Neural Information Processing Systems, 2020.
+Yan Wang, Zhixuan Chu, Xin Ouyang, Simeng Wang, Hongyan Hao, Yue Shen, Jinjie Gu, Siqiao
+Xue, James Y Zhang, Qing Cui, et al. Enhancing recommender systems with large language
+model reasoning graphs. arXiv preprint arXiv:2308.10835, 2023.
+Qingsong Wen, Tian Zhou, Chaoli Zhang, Weiqi Chen, Ziqing Ma, Junchi Yan, and Liang Sun.
+Transformers in time series: A survey. InInternational Joint Conference on Artificial Intelligence,
+2023.
+Gerald Woo, Chenghao Liu, Doyen Sahoo, Akshat Kumar, and Steven Hoi. Etsformer: Exponential
+smoothing transformers for time-series forecasting. arXiv preprint arXiv:2202.01381, 2022.
+Haixu Wu, Jiehui Xu, Jianmin Wang, and Mingsheng Long. Autoformer: Decomposition trans-
+formers with auto-correlation for long-term series forecasting. Advances in Neural Information
+Processing Systems, 34:22419–22430, 2021.
+Haixu Wu, Tengge Hu, Yong Liu, Hang Zhou, Jianmin Wang, and Mingsheng Long. Timesnet:
+Temporal 2d-variation modeling for general time series analysis. In International Conference on
+Learning Representations, 2023.
+Hao Xue and Flora D Salim. Prompt-based time series forecasting: A new task and dataset. arXiv
+preprint arXiv:2210.08964, 2022.
+Chao-Han Huck Yang, Yun-Yun Tsai, and Pin-Yu Chen. V oice2series: Reprogramming acoustic
+models for time series classification. In International Conference on Machine Learning , pp.
+11808–11819. PMLR, 2021.
+Shukang Yin, Chaoyou Fu, Sirui Zhao, Ke Li, Xing Sun, Tong Xu, and Enhong Chen. A survey on
+multimodal large language models. arXiv preprint arXiv:2306.13549, 2023.
+12
+
+## PDF page 13
+
+Published as a conference paper at ICLR 2024
+Ailing Zeng, Muxi Chen, Lei Zhang, and Qiang Xu. Are transformers effective for time series
+forecasting? In Proceedings of the AAAI conference on artificial intelligence , volume 37, pp.
+11121–11128, 2023.
+Kexin Zhang, Qingsong Wen, Chaoli Zhang, Rongyao Cai, Ming Jin, Yong Liu, James Zhang,
+Yuxuan Liang, Guansong Pang, Dongjin Song, et al. Self-supervised learning for time series
+analysis: Taxonomy, progress, and prospects. arXiv preprint arXiv:2306.10125, 2023.
+Tianping Zhang, Yizhuo Zhang, Wei Cao, Jiang Bian, Xiaohan Yi, Shun Zheng, and Jian Li. Less is
+more: Fast multivariate time series forecasting with light sampling-oriented mlp structures.arXiv
+preprint arXiv:2207.01186, 2022a.
+Xiang Zhang, Ziyuan Zhao, Theodoros Tsiligkaridis, and Marinka Zitnik. Self-supervised con-
+trastive pre-training for time series via time-frequency consistency. Advances in Neural Informa-
+tion Processing Systems, 35:3988–4003, 2022b.
+Haoyi Zhou, Shanghang Zhang, Jieqi Peng, Shuai Zhang, Jianxin Li, Hui Xiong, and Wancai Zhang.
+Informer: Beyond efficient transformer for long sequence time-series forecasting. InProceedings
+of the AAAI Conference on Artificial Intelligence, volume 35, pp. 11106–11115, 2021.
+Tian Zhou, Ziqing Ma, Qingsong Wen, Xue Wang, Liang Sun, and Rong Jin. Fedformer: Frequency
+enhanced decomposed transformer for long-term series forecasting. In International Conference
+on Machine Learning, pp. 27268–27286. PMLR, 2022.
+Tian Zhou, Peisong Niu, Xue Wang, Liang Sun, and Rong Jin. One fits all: Power general time
+series analysis by pretrained lm. Advances in Neural Information Processing Systems, 36, 2023a.
+Yunyi Zhou, Zhixuan Chu, Yijia Ruan, Ge Jin, Yuchen Huang, and Sheng Li. ptse: A multi-
+model ensemble method for probabilistic time series forecasting. In The 32nd International Joint
+Conference on Artificial Intelligence, 2023b.
+13
+
+## PDF page 14
+
+Published as a conference paper at ICLR 2024
+A M ORE RELATED WORK
+Task-specific Learning. We furnish an extension of the related work on task-specific learning,
+focusing particularly on the most related models to which we made comparisons. Recent works
+improve Transformer (Vaswani et al., 2017) for time series forecasting by incorporating signal pro-
+cessing principles like patching, exponential smoothing, decomposition, and frequency analysis.
+For example, PatchTST (Nie et al., 2023) segments time series into patches as input tokens to Trans-
+former. This retains local semantics, reduces computation/memory for attention, and allows longer
+history. It improves long-term forecast accuracy over other Transformer models. It also achieves
+excellent performance on self-supervised pretraining and transfer learning. ETSformer (Woo et al.,
+2022) incorporates exponential smoothing principles into Transformer attention to improve accuracy
+and efficiency. It uses exponential smoothing attention and frequency attention to replace standard
+self-attention. FEDformer (Zhou et al., 2022) combines Transformer with seasonal-trend decompo-
+sition. The decomposition captures the global profile while Transformer captures detailed structures.
+It also uses frequency enhancement for long-term prediction. This provides better performance and
+efficiency than the standard Transformer. Autoformer (Wu et al., 2021) uses a decomposition ar-
+chitecture with auto-correlation to enable progressive decomposition capacities for complex series.
+Auto-correlation is designed based on series periodicity to conduct dependency discovery and rep-
+resentation aggregation. It outperforms self-attention in efficiency and accuracy.
+Although these methods enhance efficiency and accuracy compared to vanilla Transformer, they are
+mostly designed and optimized for narrow prediction tasks within specific domains. These models
+are typically trained end-to-end on small, domain-specific datasets. While achieving strong perfor-
+mance on their target tasks, such specialized models sacrifice versatility and generalizability across
+the diverse range of time series data encountered in the real world. The narrow focus limits their
+applicability to new datasets and tasks. To advance time series forecasting, there is a need for more
+flexible, widely applicable models that can adapt to new data distributions and tasks without exten-
+sive retraining. Ideal models would learn robust time series representations that transfer knowledge
+across domains. Developing such broadly capable forecasting models remains an open challenge.
+According to our discussions of related previous work, recent studies have begun to explore model
+versatility through pre-training and architectural innovations. However, further efforts are needed to
+realize the truly general-purpose forecasting systems that we are advancing in this research.
+Cross-modality Adaptation. We provide an extended overview of related work in cross-modality
+adaptation, with a particular focus on recent advancements in model reprogramming for time se-
+ries and other data modalities. Model reprogramming is a resource-efficient cross-domain learning
+approach that involves adapting a well-developed, pre-trained model from one domain (source) to
+address tasks in a different domain (target) without the need for model fine-tuning, even when these
+domains are significantly distinct, as noted by Chen (2022). In the context of time series data,
+V oice2Series (Yang et al., 2021) adapts an acoustic model from speech recognition for time series
+classification by transforming the time series to fit the model and remapping outputs to new labels.
+Similarly, LLMTime (Gruver et al., 2023) adapts LLMs for zero-shot time series forecasting, focus-
+ing on the effective tokenization of input time series for the backbone LLM, which then generates
+forecasts autoregressively. Diverging from these methods, TIME -LLM does not edit the input time
+series directly. Instead, it proposes reprogramming time series with the source data modality along
+with prompting to unleash the full potential of LLMs as versatile forecasters in standard, few-shot,
+and zero-shot scenarios. Other notable works in this field, mostly in biology, include R2DL (Vinod
+et al., 2020) and ReproBert (Melnyk et al., 2023), which reprogram amino acids using word em-
+beddings. A key distinction with our patch reprogramming approach is that, unlike the complete
+set of amino acids, time series patches do not form a complete set. Thus, we propose optimizing a
+small set of text prototypes and their mapping to time series patches, rather than directly optimizing
+a large transformation matrix between two complete sets, such as vocabulary and amino acids.
+B E XPERIMENTAL DETAILS
+B.1 I MPLEMENTATION
+We mainly follow the experimental configurations in (Wu et al., 2023) across all baselines within a
+unified evaluation pipeline inhttps://github.com/thuml/Time-Series-Library for
+14
+
+## PDF page 15
+
+Published as a conference paper at ICLR 2024
+fair comparisons. We use Llama-7B (Touvron et al., 2023) as the default backbone model unless
+stated otherwise. All our experiments are repeated three times and we report the averaged results.
+Our model implementation is on PyTorch (Paszke et al., 2019) with all experiments conducted on
+NVIDIA A100-80G GPUs. Our detailed model configurations are in Appendix B.4, and our code is
+made available at https://github.com/KimMeen/Time-LLM.
+Technical Details. We provide additional technical details of T IME -LLM in three aspects: (1) the
+learning of text prototypes, (2) the calculation of trends and lags in time series for use in prompts,
+and (3) the implementation of the output projection. To identify a small set of text prototypes
+E′ ∈ RV ′×D from E ∈ RV ×D, we learn a matrix W ∈ RV ′×V as the intermediary. To describe
+the overall time series trend in natural language, we calculate the sum of differences between con-
+secutive time steps. A sum greater than 0 indicates an upward trend, while a lesser sum denotes a
+downward trend. In addition, we calculate the top-5 lags of the time series, identified by comput-
+ing the autocorrelation using fast Fourier transformation and selecting the five lags with the highest
+correlation values. After we pack and feedforward the prompt and patch embeddingsO(i) ∈ RP ×D
+through the frozen LLM, we discard the prefixal part and obtain the output representations, denoted
+as ˜Oi ∈ RP ×D. Subsequently, we follow PatchTST (Nie et al., 2023) and flatten ˜Oi into a 1D
+tensor with the length P × D, which is then linear projected as ˆYi ∈ RH.
+B.2 D ATASET DETAILS
+Dataset statistics are summarized in Tab. 8. We evaluate the long-term forecasting performance on
+the well-established eight different benchmarks, including four ETT datasets (Zhou et al., 2021) (i.e.,
+ETTh1, ETTh2, ETTm1, and ETTm2), Weather, Electricity, Traffic, and ILI from (Wu et al., 2023).
+Furthermore, we evaluate the performance of short-term forecasting on the M4 benchmark (Makri-
+dakis et al., 2018) and the quarterly dataset in the M3 benchmark (Makridakis & Hibon, 2000).
+Table 8: Dataset statistics are from (Wu et al., 2023). The dimension indicates the number of time
+series (i.e., channels), and the dataset size is organized in (training, validation, testing).
+Tasks Dataset Dim. Series Length Dataset Size Frequency Domain
+ETTm1 7 {96, 192, 336, 720} (34465, 11521, 11521) 15 min Temperature
+Long-term ETTm2 7 {96, 192, 336, 720} (34465, 11521, 11521) 15 min Temperature
+Forecasting ETTh1 7 {96, 192, 336, 720} (8545, 2881, 2881) 1 hour Temperature
+ETTh2 7 {96, 192, 336, 720} (8545, 2881, 2881) 1 hour Temperature
+Electricity 321 {96, 192, 336, 720} (18317, 2633, 5261) 1 hour Electricity
+Traffic 862 {96, 192, 336, 720} (12185, 1757, 3509) 1 hour Transportation
+Weather 21 {96, 192, 336, 720} (36792, 5271, 10540) 10 min Weather
+ILI 7 {24, 36, 48, 60} (617, 74, 170) 1 week Illness
+M3-Quarterly 1 8 (756, 0, 756) Quarterly Multiple
+M4-Yearly 1 6 (23000, 0, 23000) Yearly Demographic
+M4-Quarterly 1 8 (24000, 0, 24000) Quarterly Finance
+Short-term M4-Monthly 1 18 (48000, 0, 48000) Monthly Industry
+Forecasting M4-Weakly 1 13 (359, 0, 359) Weakly Macro
+M4-Daily 1 14 (4227, 0, 4227) Daily Micro
+M4-Hourly 1 48 (414, 0, 414) Hourly Other
+The Electricity Transformer Temperature (ETT; An indicator reflective of long-term electric power
+deployment) benchmark is comprised of two years of data, sourced from two counties in China,
+and is subdivided into four distinct datasets, each with varying sampling rates: ETTh1 and ETTh2,
+which are sampled at a 1-hour level, and ETTm1 and ETTm2, which are sampled at a 15-minute
+level. Each entry within the ETT datasets includes six power load features and a target variable,
+termed “oil temperature”. The Electricity dataset comprises records of electricity consumption from
+321 customers, measured at a 1-hour sampling rate. The Weather dataset includes one-year records
+15
+
+## PDF page 16
+
+Published as a conference paper at ICLR 2024
+from 21 meteorological stations located in Germany, with a sampling rate of 10 minutes. The Traffic
+dataset includes data on the occupancy rates of the freeway system, recorded from 862 sensors
+across the State of California, with a sampling rate of 1 hour. The influenza-like illness (ILI) dataset
+contains records of patients experiencing severe influenza with complications.
+The M4 benchmark comprises 100K time series, amassed from various domains commonly present
+in business, financial, and economic forecasting. These time series have been partitioned into six
+distinctive datasets, each with varying sampling frequencies that range from yearly to hourly. The
+M3-Quarterly dataset comprises 756 quarterly sampled time series in the M3 benchmark. These
+series are categorized into five different domains: demographic, micro, macro, industry, and finance.
+B.3 E VALUATION METRICS
+For evaluation metrics, we utilize the mean square error (MSE) and mean absolute error (MAE) for
+long-term forecasting. In terms of the short-term forecasting on M4 benchmark, we adopt the sym-
+metric mean absolute percentage error (SMAPE), mean absolute scaled error (MASE), and overall
+weighted average (OW A) as in N-BEATS (Oreshkin et al., 2020). Note that OW A is a specific metric
+utilized in the M4 competition. The calculations of these metrics are as follows:
+MSE = 1
+H
+TX
+h=1
+(Yh − ˆYh)2, MAE = 1
+H
+HX
+h=1
+|Yh − ˆYh|,
+SMAPE = 200
+H
+HX
+h=1
+|Yh − ˆYh|
+|Yh| + | ˆYh|
+, MAPE = 100
+H
+HX
+h=1
+|Yh − ˆYh|
+|Yh| ,
+MASE = 1
+H
+HX
+h=1
+|Yh − ˆYh|
+1
+H−s
+PH
+j=s+1 |Yj − Yj−s|
+, OW A= 1
+2
+ SMAPE
+SMAPENa¨ıve2
++ MASE
+MASENa¨ıve2
+
+,
+where s is the periodicity of the time series data.H denotes the number of data points (i.e., prediction
+horizon in our cases). Yh and ˆYh are the h-th ground truth and prediction where h ∈ {1, · · · , H}.
+B.4 M ODEL CONFIGURATIONS
+The configurations of our models, relative to varied tasks and datasets, are consolidated in Tab. 9.
+By default, the Adam optimizer (Kingma & Ba, 2015) is employed throughout all experiments.
+Specifically, the quantity of text prototypes V ′ is held constant at 100 and 1000 for short-term and
+long-term forecasting tasks, respectively. We utilize the Llama-7B model at full capacity, maintain-
+ing the backbone model layers at 32 across all tasks as a standard. The term input length T signifies
+the number of time steps present in the original input time series data. Patch dimensions dm rep-
+resent the hidden dimensions of the embedded time series patches prior to reprogramming. Lastly,
+heads K correlate to the multi-head cross-attention utilized for patch reprogramming. In the four
+rightmost columns of Tab. 9, we detail the configurations related to model training.
+Table 9: An overview of the experimental configurations for TIME -LLM. “LTF” and “STF” denote
+long-term and short-term forecasting, respectively.
+Task-Dataset / Configuration Model Hyperparameter Training Process
+Text PrototypeV′ Backbone LayersInput LengthT Patch Dim.dm HeadsK LR∗ Loss Batch SizeEpochs
+LTF - ETTh1 1000 32 512 16 8 10−3 MSE 16 50
+LTF - ETTh2 1000 32 512 16 8 10−3 MSE 16 50
+LTF - ETTm1 1000 32 512 16 8 10−3 MSE 16 100
+LTF - ETTm2 1000 32 512 16 8 10−3 MSE 16 100
+LTF - Weather 1000 32 512 16 8 10−2 MSE 8 100
+LTF - Electricity 1000 32 512 16 8 10−2 MSE 8 100
+LTF - Traffic 1000 32 512 16 8 10−2 MSE 8 100
+LTF - ILI 100 32 96 16 8 10−2 MSE 16 50
+STF - M3-Quarterly 100 32 2×H† 32 8 10−4 SMAPE 32 50
+STF - M4 100 32 2×H† 32 8 10−4 SMAPE 32 50
+†Hrepresents the forecasting horizon of the M4 and M3 datasets.∗LR means the initial learning rate.
+16
+
+## PDF page 17
+
+Published as a conference paper at ICLR 2024
+C H YPERPARAMETER SENSITIVITY
+We conduct a hyperparameter sensitivity analysis focusing on the four important hyperparameters
+within T IME -LLM: namely, the number of backbone model layers, the number of text prototypes
+V ′, the time series input length T , and the number of patch reprogramming cross-attention heads
+K. The correlated results can be found in Fig. 6. From our analysis, we derive the following
+observations: (1) There is a positive correlation between the number of Transformer layers in the
+backbone LLM and the performance of TIME -LLM, affirming that the scaling law is preserved post-
+LLM reprogramming.; (2) Generally, acquiring more text prototypes enhances performance. We
+hypothesize that a limited number of prototypes V ′ might induce noise when aggregating language
+cues, consequently obstructing the efficient learning of highly representative prototypes essential for
+characterizing the input time series patches; (3) The input time length T exhibits a direct relation
+with forecasting accuracy, particularly evident when predicting extended horizons. This observation
+is logical and is in congruence with conventional time series models; (4) Increasing the number of
+attention heads during the reprogramming of input patches proves to be advantageous.
+Figure 6: Analysis of hyperparameter sensitivity on ETTh1 dataset.
+D L ONG -TERM AND SHORT-TERM FORECASTING
+D.1 L ONG -TERM FORECASTING
+By solely reprogramming the smallest Llama model while keeping it intact, T IME -LLM attains
+SOTA performance in36 out of 40 instances across eight time series benchmarks. This underscores
+the considerable potential of LLMs as robust and reliable time series forecasters. Furthermore, we
+benchmark the proposed method against other well-established baselines in Tab. 11. This compar-
+ison includes three notable statistical methods (AutoARIMA, AutoTheta, and AutoETS) (Herzen
+et al., 2022) and two recent time series models, N-HiTS (Challu et al., 2023b) and N-BEATS (Ore-
+shkin et al., 2020). Remarkably, TIME -LLM secures SOTA performance across all cases, surpassing
+the second-best results by significant margins of over 22% and 16% in terms of MSE and MAE.
+17
+
+## PDF page 18
+
+Published as a conference paper at ICLR 2024
+Table 10: Full long-term forecasting results. We set the forecasting horizons H ∈ { 24, 36, 48, 60} for ILI
+and {96, 192, 336, 720} for the others. A lower value indicates better performance. Red: the best, Blue : the
+second best.
+MethodsTIME-LLMGPT4TSDLinearPatchTSTTimesNetFEDformerAutoformerStationaryETSformerLightTSInformerReformer
+MetricMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAE
+ET T h1 96 0.362 0.3920.376 0.3970.375 0.3990.3700.3990.384 0.4020.376 0.4190.449 0.4590.513 0.4910.494 0.4790.424 0.4320.865 0.7130.837 0.7281920.3980.4180.416 0.4180.4050.4160.413 0.4210.436 0.4290.420 0.4480.500 0.4820.534 0.5040.538 0.5040.475 0.4621.008 0.7920.923 0.7663360.4300.4270.442 0.4330.439 0.4430.4220.4360.491 0.4690.459 0.4650.521 0.4960.588 0.5350.574 0.5210.518 0.4881.107 0.8091.097 0.8357200.442 0.4570.477 0.4560.472 0.4900.4470.4660.521 0.5000.506 0.5070.514 0.5120.643 0.6160.562 0.5350.547 0.5331.181 0.8651.257 0.889Avg0.408 0.4230.465 0.4550.422 0.4370.4130.4300.458 0.4500.440 0.4600.496 0.4870.570 0.5370.542 0.5100.491 0.4791.040 0.7951.029 0.805
+ET T h2 96 0.268 0.3280.285 0.3420.289 0.3530.2740.3360.340 0.3740.358 0.3970.346 0.3880.476 0.4580.340 0.3910.397 0.4373.755 1.5252.626 1.3171920.329 0.3750.354 0.3890.383 0.4180.3390.3790.402 0.4140.429 0.4390.456 0.4520.512 0.4930.430 0.4390.520 0.5045.602 1.93111.12 2.9793360.3680.4090.373 0.4070.448 0.4650.329 0.3800.452 0.4520.496 0.4870.482 0.4860.552 0.5510.485 0.4790.626 0.5594.721 1.8359.323 2.7697200.372 0.4200.406 0.4410.605 0.5510.3790.4220.462 0.4680.463 0.4740.515 0.5110.562 0.5600.500 0.4970.863 0.6723.647 1.6253.874 1.697Avg0.3340.3830.381 0.4120.431 0.4460.330 0.3790.414 0.4270.437 0.4490.450 0.4590.526 0.5160.439 0.4520.602 0.5434.431 1.7296.736 2.191
+ET T m1 96 0.272 0.3340.292 0.3460.299 0.3430.2900.3420.338 0.3750.379 0.4190.505 0.4750.386 0.3980.375 0.3980.374 0.4000.672 0.5710.538 0.5281920.310 0.3580.332 0.3720.335 0.3650.3320.3690.374 0.3870.426 0.4410.553 0.4960.459 0.4440.408 0.4100.400 0.4070.795 0.6690.658 0.5923360.352 0.3840.3660.3940.369 0.3860.3660.3920.410 0.4110.445 0.4590.621 0.5370.495 0.4640.435 0.4280.438 0.4381.212 0.8710.898 0.7217200.383 0.4110.417 0.4210.425 0.4210.4160.4200.478 0.4500.543 0.4900.671 0.5610.585 0.5160.499 0.4620.527 0.5021.166 0.8231.102 0.841Avg0.329 0.3720.388 0.4030.357 0.3780.3510.3800.400 0.4060.448 0.4520.588 0.5170.481 0.4560.429 0.4250.435 0.4370.961 0.7340.799 0.671
+ET T m2 96 0.161 0.2530.173 0.2620.167 0.2690.1650.2550.187 0.2670.203 0.2870.255 0.3390.192 0.2740.189 0.2800.209 0.3080.365 0.4530.658 0.6191920.219 0.2930.229 0.3010.2240.3030.220 0.2920.249 0.3090.269 0.3280.281 0.3400.280 0.3390.253 0.3190.311 0.3820.533 0.5631.078 0.8273360.271 0.3290.286 0.3410.281 0.3420.2740.3290.321 0.3510.325 0.3660.339 0.3720.334 0.3610.314 0.3570.442 0.4661.363 0.8871.549 0.9727200.352 0.3790.378 0.4010.397 0.4210.3620.3850.408 0.4030.421 0.4150.433 0.4320.417 0.4130.414 0.4130.675 0.5873.379 1.3382.631 1.242Avg0.251 0.3130.284 0.3390.267 0.3330.2550.3150.291 0.3330.305 0.3490.327 0.3710.306 0.3470.293 0.3420.409 0.4361.410 0.8101.479 0.915
+W eather
+96 0.1470.2010.162 0.2120.176 0.2370.1490.1980.172 0.2200.217 0.2960.266 0.3360.173 0.2230.197 0.2810.182 0.2420.300 0.3840.689 0.5961920.189 0.2340.204 0.2480.220 0.2820.194 0.2410.219 0.2610.276 0.3360.307 0.3670.245 0.2850.237 0.3120.227 0.2870.598 0.5440.752 0.6383360.2620.2790.254 0.2860.265 0.3190.2450.2820.280 0.3060.339 0.3800.359 0.3950.321 0.3380.298 0.3530.282 0.3340.578 0.5230.639 0.5967200.304 0.3160.326 0.3370.333 0.3620.3140.3340.365 0.3590.403 0.4280.419 0.4280.414 0.4100.352 0.2880.352 0.3861.059 0.7411.130 0.792Avg0.225 0.2570.237 0.2700.248 0.3000.2250.2640.259 0.2870.309 0.3600.338 0.3820.288 0.3140.271 0.3340.261 0.3120.634 0.5480.803 0.656
+Electricity
+96 0.1310.2240.139 0.2380.140 0.2370.129 0.2220.168 0.2720.193 0.3080.201 0.3170.169 0.2730.187 0.3040.207 0.3070.274 0.3680.312 0.4021920.1520.2410.153 0.2510.153 0.2490.1570.2400.184 0.2890.201 0.3150.222 0.3340.182 0.2860.199 0.3150.213 0.3160.296 0.3860.348 0.4333360.160 0.2480.169 0.2660.169 0.2670.1630.2590.198 0.3000.214 0.3290.231 0.3380.200 0.3040.212 0.3290.230 0.3330.300 0.3940.350 0.4337200.1920.2980.206 0.2970.203 0.3010.1970.2900.220 0.3200.246 0.3550.254 0.3610.222 0.3210.233 0.3450.265 0.3600.373 0.4390.340 0.420Avg0.158 0.2520.167 0.2630.166 0.2630.1610.2520.192 0.2950.214 0.3270.227 0.3380.193 0.2960.208 0.3230.229 0.3290.311 0.3970.338 0.422
+T raf f ic
+96 0.3620.2480.388 0.2820.410 0.2820.3600.2490.593 0.3210.587 0.3660.613 0.3880.612 0.3380.607 0.3920.615 0.3910.719 0.3910.732 0.4231920.374 0.2470.407 0.2900.423 0.2870.3790.2560.617 0.3360.604 0.3730.616 0.3820.613 0.3400.621 0.3990.601 0.3820.696 0.3790.733 0.4203360.3850.2710.412 0.2940.436 0.2960.3920.2640.629 0.3360.621 0.3830.622 0.3370.618 0.3280.622 0.3960.613 0.3860.777 0.4200.742 0.4207200.430 0.2880.450 0.3120.466 0.3150.4320.2860.640 0.3500.626 0.3820.660 0.4080.653 0.3550.632 0.3960.658 0.4070.864 0.4720.755 0.423Avg0.3880.2640.414 0.2940.433 0.2950.3900.2630.620 0.3360.610 0.3760.628 0.3790.624 0.3400.621 0.3960.622 0.3920.764 0.4160.741 0.422
+ILI
+24 1.285 0.7272.063 0.8812.215 1.0811.3190.7542.317 0.9343.228 1.2603.483 1.2872.294 0.9452.527 1.0208.313 2.1445.764 1.6774.400 1.38236 1.404 0.8141.868 0.8921.963 0.9631.4300.8341.972 0.9202.679 1.0803.103 1.1481.825 0.8482.615 1.0076.631 1.9024.755 1.4674.783 1.44848 1.523 0.8071.790 0.8842.130 1.0241.5530.8152.238 0.9402.622 1.0782.669 1.0852.010 0.9002.359 0.9727.299 1.9824.763 1.4694.832 1.46560 1.5310.8541.979 0.9572.368 1.0961.470 0.7882.027 0.9282.857 1.1572.770 1.1252.178 0.9632.487 1.0167.283 1.9855.264 1.5644.882 1.483Avg1.4350.8011.925 0.9032.169 1.0411.4430.7972.139 0.9312.847 1.1443.006 1.1612.077 0.9142.497 1.0047.382 2.0035.137 1.5444.724 1.445
+1stCount 36 0 1 17 0 0 0 0 0 0 0 0
+D.2 S HORT-TERM FORECASTING
+Our complete results on short-term forecasting are presented in Tab. 12. T IME -LLM consistently
+outperforms the majority of baseline models in most cases. Notably, we surpass GPT4TS by a
+large margin (e.g., 8.7% overall, 13.4% on M4-Yearly, and an average of 21.5% on M4-Hourly,
+M4-Daily, and M4-Weekly), as well as TimesNet (e.g., 10% overall, 14.1% on M4-Yearly, and
+an average of 30.1% on M4-Hourly, M4-Daily, and M4-Weekly). Compared to the recent state-
+of-the-art forecasting models, N-HiTS and PatchTST, T IME -LLM exhibits comparable or superior
+performances without any parameter updates on the backbone LLM.
+In addition, we conduct a comparative analysis between TIME -LLM and the top-performing models
+on the M3-Quarterly dataset, with the findings presented in Tab. 13. We provide additional metrics,
+namely MRAE and MAPE, alongside the default SMAPE used in the M3 competition. On this
+dataset, TIME -LLM attains on-par performance compared to TimesNet and PatchTST, outperform-
+ing GPT4TS by substantial margins, achieving reductions of over23%, 35%, and 26% in SMAPE,
+MRAE, and MAPE, respectively.
+E F EW-SHOT AND ZERO-SHOT FORECASTING
+E.1 F EW-SHOT FORECASTING
+Our full results in few-shot forecasting tasks are detailed in Tab. 14 and Tab. 15. Within the scope
+of 10% few-shot learning, T IME -LLM secures SOTA performance in 32 out of 35 cases, spanning
+seven different time series benchmarks. Our approach’s advantage becomes even more pronounced
+in the context of 5% few-shot scenarios, achieving SOTA results in21 out of 32 cases. We attribute
+this to the successful knowledge activation in our reprogrammed LLM.
+18
+
+## PDF page 19
+
+Published as a conference paper at ICLR 2024
+Table 11: Additional comparison with other baselines in long-term forecasting tasks. We set the forecasting
+horizons H ∈ { 24, 36, 48, 60} for ILI and {96, 192, 336, 720} for the others. A lower value indicates better
+performance. Red: the best, Blue: the second best.
+MethodsTIME-LLMN-BEATSN-HiTSAutoARIMAAutoThetaAutoETS
+MetricMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAE
+ET T h1 96 0.362 0.3920.496 0.4750.3920.4070.933 0.6351.266 0.7581.264 0.7561920.398 0.4180.544 0.5040.4420.4380.868 0.6211.188 0.7491.181 0.7453360.430 0.4270.592 0.5330.4970.4710.964 0.6631.310 0.7991.292 0.7927200.442 0.4570.639 0.5880.5590.5331.043 0.7051.510 0.8821.405 0.842Avg0.408 0.4230.568 0.5250.4730.4620.952 0.6561.319 0.7971.286 0.784
+ET T h2 96 0.268 0.3280.384 0.4310.3210.3680.390 0.4170.461 0.4300.444 0.4031920.329 0.3750.496 0.4930.3980.4210.545 0.4920.754 0.5370.771 0.4613360.368 0.4090.585 0.5420.4530.4590.697 0.5621.355 0.6831.526 0.5227200.372 0.4200.792 0.6510.7750.6090.907 0.6583.971 1.0615.183 0.633Avg0.334 0.3830.564 0.5290.4870.4640.635 0.5321.635 0.6781.981 0.505
+ET T m1 96 0.272 0.3340.393 0.4120.3270.3681.091 0.6611.211 0.7041.519 0.7681920.310 0.3580.425 0.4270.3760.4001.119 0.6821.237 0.7241.535 0.7843360.352 0.3840.464 0.4540.4070.4231.125 0.6981.231 0.7351.472 0.7827200.383 0.4110.521 0.4880.4710.4561.243 0.7451.394 0.8011.591 0.825Avg0.329 0.3720.451 0.4450.3950.4121.145 0.6971.268 0.7411.529 0.790
+ET T m2 96 0.161 0.2530.204 0.3020.1880.2730.435 0.3750.245 0.3160.359 0.3331920.219 0.2930.282 0.3580.2740.3380.995 0.4940.413 0.4010.756 0.3963360.271 0.3290.3780.4250.384 0.4062.324 0.6480.790 0.5281.747 0.4677200.352 0.3790.555 0.5230.5010.4889.064 1.0202.451 0.8476.856 0.639Avg0.251 0.3130.355 0.4020.3370.3763.205 0.6340.975 0.5232.430 0.459
+W eather
+96 0.147 0.2010.185 0.2440.1600.2220.255 0.2730.279 0.2660.331 0.2771920.189 0.2340.225 0.2820.2020.2650.390 0.3530.337 0.3160.498 0.3453360.2620.2790.274 0.3230.2530.3030.775 0.4570.472 0.3850.898 0.4237200.304 0.3160.340 0.3730.3230.3542.898 0.7070.818 0.5262.820 0.580Avg0.225 0.2570.256 0.3060.2350.2861.080 0.4480.477 0.3731.137 0.406
+Electricity
+96 0.131 0.2240.233 0.3270.1840.2750.520 0.4660.653 0.5320.650 0.5261920.152 0.2410.246 0.3400.1900.2820.581 0.4990.713 0.5610.704 0.5493360.160 0.2480.262 0.3550.2050.2980.602 0.5150.797 0.6030.766 0.5777200.192 0.2980.296 0.3830.2390.3300.685 0.5581.023 0.6880.901 0.628Avg0.158 0.2520.259 0.3510.2050.2960.597 0.5100.797 0.5960.755 0.570
+T raf f ic
+96 0.362 0.2480.608 0.4470.4100.3291.068 0.6943.207 1.2193.254 1.2211920.374 0.2470.605 0.4480.4140.3301.380 0.7753.407 1.2623.569 1.2643360.385 0.2710.618 0.4540.4280.3371.448 0.7903.473 1.2743.971 1.2757200.430 0.2880.650 0.4670.4560.3541.481 0.7993.952 1.3826.784 1.379Avg0.388 0.2640.620 0.4540.4270.3381.344 0.7653.510 1.2844.395 1.285
+ILI
+24 1.285 0.7276.809 1.8702.6751.0804.909 1.3295.991 1.5104.869 1.31536 1.404 0.8146.850 1.8903.0811.1945.079 1.4405.922 1.5394.917 1.42248 1.523 0.8076.788 1.8762.9731.1764.276 1.3394.637 1.3293.966 1.30160 1.531 0.8546.908 1.8933.2591.2323.855 1.2764.378 1.3453.540 1.229Avg1.435 0.8016.839 1.8822.9971.1714.530 1.3465.232 1.4314.323 1.317
+1stCount 40 0 1 0 0 0
+Table 12: Full short-term time series forecasting results. The forecasting horizons are in [6, 48] and the last
+three rows are weighted averaged from all datasets under different sampling intervals. A lower value indicates
+better performance. Red: the best, Blue: the second best.
+MethodsTIME-LLM GPT4TS TimesNet PatchTST N-HiTS N-BEATS ETSformer LightTS DLinear FEDformer Stationary Autoformer Informer Reformer
+Yearly
+SMAPE13.419 15.11 15.378 13.477 13.42213.487 18.009 14.247 16.965 14.021 13.717 13.974 14.727 16.169
+MASE 3.005 3.565 3.554 3.019 3.056 3.036 4.487 3.109 4.283 3.036 3.078 3.134 3.418 3.800
+OW A 0.789 0.911 0.918 0.792 0.795 0.795 1.115 0.827 1.058 0.811 0.807 0.822 0.881 0.973
+Quarterly
+SMAPE10.110 10.597 10.465 10.38 10.18510.564 13.376 11.364 12.145 11.1 10.958 11.338 11.360 13.313
+MASE 1.178 1.253 1.227 1.233 1.18 1.252 1.906 1.328 1.520 1.35 1.325 1.365 1.401 1.775
+OW A 0.889 0.938 0.923 0.921 0.893 0.936 1.302 1.000 1.106 0.996 0.981 1.012 1.027 1.252
+Monthly
+SMAPE12.980 13.258 13.51312.95913.059 13.089 14.588 14.014 13.514 14.403 13.917 13.958 14.062 20.128
+MASE 0.963 1.003 1.039 0.97 1.013 0.996 1.368 1.053 1.037 1.147 1.097 1.103 1.141 2.614
+OW A 0.903 0.931 0.957 0.905 0.929 0.922 1.149 0.981 0.956 1.038 0.998 1.002 1.024 1.927
+Others
+SMAPE4.795 6.124 6.913 4.952 4.711 6.599 7.267 15.880 6.709 7.148 6.302 5.485 24.460 32.491
+MASE 3.178 4.116 4.507 3.347 3.054 4.43 5.240 11.434 4.953 4.041 4.064 3.865 20.960 33.355
+OW A 1.006 1.259 1.438 1.049 0.977 1.393 1.591 3.474 1.487 1.389 1.304 1.187 5.879 8.679
+Average
+SMAPE11.983 12.69 12.88 12.059 12.035 12.25 14.718 13.525 13.639 13.16 12.780 12.909 14.086 18.200
+MASE 1.595 1.808 1.836 1.623 1.625 1.698 2.408 2.111 2.095 1.775 1.756 1.771 2.718 4.223
+OW A 0.859 0.94 0.955 0.869 0.869 0.896 1.172 1.051 1.051 0.949 0.930 0.939 1.230 1.775
+E.2 Z ERO-SHOT FORECASTING
+The full results of zero-shot forecasting are summarized in Tab. 16. T IME -LLM remarkably sur-
+passes the six most competitive time series models in zero-shot adaptation. Overall, we observe
+over 23.5% and 12.4% MSE and MAE reductions across all baselines on average. Our improve-
+ments are consistently significant on those typical cross-domain scenarios (e.g., ETTh2 → ETTh1
+and ETTm2 → ETTm1), over 20.8% and 11.3% on average w.r.t. MSE and MAE. Significantly,
+TIME -LLM exhibits superior performance gains in comparison to LLMTime (Gruver et al., 2023),
+which employs a similarly sized backbone LLM (7B) and is the latest effort in leveraging LLMs for
+19
+
+## PDF page 20
+
+Published as a conference paper at ICLR 2024
+Table 13: Additional short-term time series forecasting results on M3 (Quarterly). The forecasting horizon is
+8. A lower value indicates better performance. Red: the best, Blue: the second best.
+MethodsTIME-LLM GPT4TS TimesNet PatchTST N-HiTS N-BEATS DLinear FEDformer
+SMAPE 11.171 14.453 10.410 12.380 12.616 18.640 15.028 12.927
+MRAE 3.282 5.035 3.310 2.401 4.271 4.612 2.793 3.653
+MAPE 0.151 0.203 0.140 0.154 0.168 0.247 0.196 0.174
+zero-shot time series forecasting. We attribute this success to our reprogramming framework being
+better at activating the LLM’s knowledge transfer and reasoning capabilities in a resource-efficient
+manner when performing time series tasks.
+F A BLATION STUDY
+The full ablation results are in Tab. 17. We additionally compare the model performance under
+reprogramming and fine-tuning (with QLoRA Dettmers et al. (2023)) protocols. Our results indicate
+a clear performance gain of our approach compared to the QLoRA variant (A.5) by 19% in average.
+G E FFICIENCY COMPARISON WITH MODEL FINE -TUNING
+Setups. We compare the efficiency of model fine-tuning (with QLoRA Dettmers et al. (2023))
+and our proposed model reprogramming in this section with two different backbones, that is, Llama
+in 1/4 capacity (first 8 Transformer layers) and full capacity. Here, we adhere to the long-term
+forecasting protocol on ETTh1 to forecast two different steps (that is, 96 and 336 in this case)
+ahead. For the evaluation metrics, we report the total number of trainable parameters (in million),
+GPU memory (in mebibyte), and running time (seconds per iteration).
+Results. Our results are given in Tab. 18. We see that model reprogramming remarkably results
+in better efficiency compared to parameter-efficient fine-tuning (PEFT) with QLoRA on long-range
+Table 14: Full few-shot learning results on 10% training data. We use the same protocol as in Tab. 1.
+MethodsTIME-LLM GPT4TSDLinearPatchTSTTimesNetFEDformerAutoformerStationaryETSformerLightTSInformerReformer
+MetricMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAE
+ET T h1 96 0.4480.4600.4580.4560.492 0.4950.516 0.4850.861 0.6280.512 0.4990.613 0.5520.918 0.6391.112 0.8061.298 0.8381.179 0.7921.184 0.7901920.484 0.4830.570 0.5160.5650.5380.598 0.5240.797 0.5930.624 0.5550.722 0.5980.915 0.6291.155 0.8231.322 0.8541.199 0.8061.295 0.8503360.5890.5400.6080.5350.721 0.6220.657 0.5500.941 0.6480.691 0.5740.750 0.6190.939 0.6441.179 0.8321.347 0.8701.202 0.8111.294 0.8547200.700 0.6040.7250.5910.986 0.7430.762 0.6100.877 0.6410.728 0.6140.721 0.6160.887 0.6451.273 0.8741.534 0.9471.217 0.8251.223 0.838Avg0.556 0.5220.5900.5250.691 0.6000.633 0.5420.869 0.6280.639 0.5610.702 0.5960.915 0.6391.180 0.8341.375 0.8771.199 0.8091.249 0.833
+ET T h2 96 0.275 0.3260.3310.3740.357 0.4110.353 0.3890.378 0.4090.382 0.4160.413 0.4510.389 0.4110.678 0.6192.022 1.0063.837 1.5083.788 1.5331920.374 0.3730.4020.4110.569 0.5190.403 0.4140.490 0.4670.478 0.4740.474 0.4770.473 0.4550.785 0.6662.329 1.1043.856 1.5133.552 1.4833360.406 0.4290.4060.4330.671 0.5720.4260.4410.537 0.4940.504 0.5010.547 0.5430.507 0.4800.839 0.6942.453 1.1223.952 1.5263.395 1.5267200.427 0.4490.4490.4640.824 0.6480.477 0.4800.510 0.4910.499 0.5090.516 0.5230.477 0.4721.273 0.8743.816 1.4073.842 1.5033.205 1.401Avg0.370 0.3940.3970.4210.605 0.5380.415 0.4310.479 0.4650.466 0.4750.488 0.4990.462 0.4550.894 0.7132.655 1.1603.872 1.5133.485 1.486
+ET T m1 96 0.346 0.3880.390 0.4040.3520.3920.410 0.4190.583 0.5010.578 0.5180.774 0.6140.761 0.5680.911 0.6880.921 0.6821.162 0.7851.442 0.8471920.3730.4160.429 0.4230.3820.4120.437 0.4340.630 0.5280.617 0.5460.754 0.5920.781 0.5740.955 0.7030.957 0.7011.172 0.7931.444 0.8623360.413 0.4260.469 0.4390.4190.4340.476 0.4540.725 0.5680.998 0.7750.869 0.6770.803 0.5870.991 0.7190.998 0.7161.227 0.9081.450 0.8667200.4850.4760.569 0.4980.4900.4770.681 0.5560.769 0.5490.693 0.5790.810 0.6300.844 0.5811.062 0.7471.007 0.7191.207 0.7971.366 0.850Avg0.404 0.4270.464 0.4410.4110.4290.501 0.4660.677 0.5370.722 0.6050.802 0.6280.797 0.5780.980 0.7140.971 0.7051.192 0.8211.426 0.856
+ET T m2 96 0.177 0.2610.1880.2690.213 0.3030.191 0.2740.212 0.2850.291 0.3990.352 0.4540.229 0.3080.331 0.4300.813 0.6883.203 1.4074.195 1.6281920.241 0.3140.2510.3090.278 0.3450.252 0.3170.270 0.3230.307 0.3790.694 0.6910.291 0.3430.400 0.4641.008 0.7683.112 1.3874.042 1.6013360.274 0.3270.307 0.3460.338 0.3850.3060.3530.323 0.3530.543 0.5592.408 1.4070.348 0.3760.469 0.4981.031 0.7753.255 1.4213.963 1.5857200.417 0.3900.4260.4170.436 0.4400.433 0.4270.474 0.4490.712 0.6141.913 1.1660.461 0.4380.589 0.5571.096 0.7913.909 1.5433.711 1.532Avg0.277 0.3230.2930.3350.316 0.3680.296 0.3430.320 0.3530.463 0.4881.342 0.9300.332 0.3660.447 0.4870.987 0.7563.370 1.4403.978 1.587
+W eather
+96 0.161 0.2100.1630.2150.171 0.2240.165 0.2150.184 0.2300.188 0.2530.221 0.2970.192 0.2340.199 0.2720.217 0.2690.374 0.4010.335 0.3801920.204 0.2480.2100.2540.215 0.2630.210 0.2570.245 0.2830.250 0.3040.270 0.3220.269 0.2950.279 0.3320.259 0.3040.552 0.4780.522 0.4623360.261 0.3020.256 0.2920.2580.2990.259 0.2970.305 0.3210.312 0.3460.320 0.3510.370 0.3570.356 0.3860.303 0.334724 0.5410.715 0.5357200.309 0.3320.321 0.3390.3200.3460.332 0.3460.381 0.3710.387 0.3930.390 0.3960.441 0.4050.437 0.4480.377 0.3820.739 0.5580.611 0.500Avg0.234 0.2730.2380.2750.241 0.2830.242 0.2790.279 0.3010.284 0.3240.300 0.3420.318 0.3230.318 0.3600.289 0.3220.597 0.4950.546 0.469
+Electricity
+96 0.1390.2410.139 0.2370.150 0.2530.1400.2380.299 0.3730.231 0.3230.261 0.3480.420 0.4660.599 0.5870.350 0.4251.259 0.9190.993 0.7841920.151 0.2480.1560.2520.164 0.2640.160 0.2550.305 0.3790.261 0.3560.338 0.4060.411 0.4590.620 0.5980.376 0.4481.160 0.8730.938 0.7533360.169 0.2700.1750.2700.181 0.2820.180 0.2760.319 0.3910.360 0.4450.410 0.4740.434 0.4730.662 0.6190.428 0.4851.157 0.8720.925 0.7457200.240 0.3220.2330.3170.2230.3210.241 0.3230.369 0.4260.530 0.5850.715 0.6850.510 0.5210.757 0.6640.611 0.5971.203 0.8981.004 0.790Avg0.1750.2700.1760.2690.180 0.2800.180 0.2730.323 0.3920.346 0.4270.431 0.4780.444 0.4800.660 0.6170.441 0.4891.195 0.8910.965 0.768
+T raf f ic
+96 0.418 0.2910.4140.2970.419 0.2980.403 0.2890.719 0.4160.639 0.4000.672 0.4051.412 0.8021.643 0.8551.157 0.6361.557 0.8211.527 0.8151920.414 0.2960.426 0.3010.434 0.3050.4150.2960.748 0.4280.637 0.4160.727 0.4241.419 0.8061.641 0.8541.207 0.6611.454 0.7651.538 0.8173360.4210.3110.4340.3030.449 0.3130.426 0.3040.853 0.4710.655 0.4270.749 0.4541.443 0.8151.711 0.8781.334 0.7131.521 0.8121.550 0.8197200.462 0.3270.487 0.3370.484 0.3360.4740.3311.485 0.8250.722 0.4560.847 0.4991.539 0.8372.660 1.1571.292 0.7261.605 0.8461.588 0.833Avg0.4290.3060.440 0.3100.447 0.3130.4300.3050.951 0.5350.663 0.4250.749 0.4461.453 0.8151.914 0.9361.248 0.6841.534 0.8111.551 0.821
+1stCount 32 9 3 3 0 0 0 0 0 0 0 0
+20
+
+## PDF page 21
+
+Published as a conference paper at ICLR 2024
+Table 15: Full few-shot learning results on 5% training data. We use the same protocol as in Tab. 1. ’-’ means
+that 5% time series is not sufficient to constitute a training set.
+MethodsTIME-LLM GPT4TSDLinearPatchTSTTimesNetFEDformerAutoformerStationaryETSformerLightTSInformerReformer
+MetricMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAE
+ET T h1 96 0.483 0.4640.5430.5060.547 0.5030.557 0.5190.892 0.6250.593 0.5290.681 0.5700.952 0.6501.169 0.8321.483 0.911.225 0.8121.198 0.7951920.629 0.5400.748 0.5800.720 0.6040.711 0.5700.940 0.6650.6520.5630.725 0.6020.943 0.6451.221 0.8531.525 0.931.249 0.8281.273 0.8533360.768 0.6260.7540.5950.984 0.7270.816 0.6190.945 0.6530.731 0.5940.761 0.6240.935 0.6441.179 0.8321.347 0.871.202 0.8111.254 0.857720 - - - - - - - - - - - - - - - - - - - - - - - -Avg0.627 0.5430.681 0.5600.750 0.6110.694 0.5690.925 0.6470.6580.5620.722 0.5980.943 0.6461.189 0.8391.451 0.9031.225 0.8171.241 0.835
+ET T h2 96 0.336 0.3970.3760.4210.442 0.4560.401 0.4210.409 0.4200.390 0.4240.428 0.4680.408 0.4230.678 0.6192.022 1.0063.837 1.5083.753 1.5181920.406 0.4250.4180.4410.617 0.5420.452 0.4550.483 0.4640.457 0.4650.496 0.5040.497 0.4680.845 0.6973.534 1.3483.975 1.9333.516 1.4733360.405 0.4320.408 0.4391.424 0.8490.464 0.4690.499 0.4790.477 0.4830.486 0.4960.507 0.4810.905 0.7274.063 1.4513.956 1.5203.312 1.427720 - - - - - - - - - - - - - - - - - - - - - - - -Avg0.382 0.4180.4000.4330.694 0.5770.827 0.6150.439 0.4480.463 0.4540.441 0.4570.470 0.4890.809 0.6813.206 1.2683.922 1.6533.527 1.472
+ET T m1 96 0.3160.3770.386 0.4050.3320.3740.399 0.4140.606 0.5180.628 0.5440.726 0.5780.823 0.5871.031 0.7471.048 0.7331.130 0.7751.234 0.7981920.450 0.4640.4400.4380.358 0.3900.4410.4360.681 0.5390.666 0.5660.750 0.5910.844 0.5911.087 0.7661.097 0.7561.150 0.7881.287 0.8393360.4500.4240.485 0.4590.402 0.4160.499 0.4670.786 0.5970.807 0.6280.851 0.6590.870 0.6031.138 0.7871.147 0.7751.198 0.8091.288 0.8427200.483 0.4710.577 0.4990.5110.4890.767 0.5870.796 0.5930.822 0.6330.857 0.6550.893 0.6111.245 0.8311.200 0.7991.175 0.7941.247 0.828Avg0.4250.4340.472 0.4500.400 0.4170.526 0.4760.717 0.5610.730 0.5920.796 0.6200.857 0.5981.125 0.7821.123 0.7651.163 0.7911.264 0.826
+ET T m2 96 0.174 0.2610.1990.2800.236 0.3260.206 0.2880.220 0.2990.229 0.3200.232 0.3220.238 0.3160.404 0.4851.108 0.7723.599 1.4783.883 1.5451920.215 0.2870.2560.3160.306 0.3730.264 0.3240.311 0.3610.394 0.3610.291 0.3570.298 0.3490.479 0.5211.317 0.8503.578 1.4753.553 1.4843360.273 0.3300.3180.3530.380 0.4230.334 0.3670.338 0.3660.378 0.4270.478 0.5170.353 0.3800.552 0.5551.415 0.8793.561 1.4733.446 1.4607200.433 0.4120.460 0.4360.674 0.5830.4540.4320.509 0.4650.523 0.5100.553 0.5380.475 0.4450.701 0.6271.822 0.9843.896 1.5333.445 1.460Avg0.274 0.3230.3080.3460.399 0.4260.314 0.3520.344 0.3720.381 0.4040.388 0.4330.341 0.3720.534 0.5471.415 0.8713.658 1.4893.581 1.487
+W eather
+96 0.1720.2630.175 0.2300.184 0.2420.171 0.2240.207 0.2530.229 0.3090.227 0.2990.215 0.2520.218 0.2950.230 0.2850.497 0.4970.406 0.4351920.224 0.2710.2270.2760.228 0.2830.230 0.2770.272 0.3070.265 0.3170.278 0.3330.290 0.3070.294 0.3310.274 0.3230.620 0.5450.446 0.4503360.2820.3210.286 0.3220.2790.3220.294 0.3260.313 0.3280.353 0.3920.351 0.3930.353 0.3480.359 0.3980.318 0.3550.649 0.5470.465 0.4597200.3660.3810.3660.3790.3640.3880.384 0.3870.400 0.3850.391 0.3940.387 0.3890.452 0.4070.461 0.4610.401 0.4180.570 0.5220.471 0.468Avg0.2600.3090.2630.3010.2630.3080.269 0.3030.298 0.3180.309 0.3530.310 0.3530.327 0.3280.333 0.3710.305 0.3450.584 0.5270.447 0.453
+Electricity
+96 0.147 0.2420.143 0.2410.150 0.2510.1450.2440.315 0.3890.235 0.3220.297 0.3670.484 0.5180.697 0.6380.639 0.6091.265 0.9191.414 0.8551920.158 0.2410.1590.2550.163 0.2630.163 0.2600.318 0.3960.247 0.3410.308 0.3750.501 0.5310.718 0.6480.772 0.6781.298 0.9391.240 0.9193360.1780.2770.1790.2740.1750.2780.183 0.2810.340 0.4150.267 0.3560.354 0.4110.574 0.5780.758 0.6670.901 0.7451.302 0.9421.253 0.9217200.2240.3120.233 0.3230.219 0.3110.233 0.3230.635 0.6130.318 0.3940.426 0.4660.952 0.7861.028 0.7881.200 0.8711.259 0.9191.249 0.921Avg0.1790.2680.1780.2730.176 0.2750.181 0.2770.402 0.4530.266 0.3530.346 0.4040.627 0.6030.800 0.6850.878 0.7251.281 0.9291.289 0.904
+T raf f ic
+96 0.4140.2910.419 0.2980.427 0.3040.404 0.2860.854 0.4920.670 0.4210.795 0.4811.468 0.8211.643 0.8551.157 0.6361.557 0.8211.586 0.8411920.4190.2910.434 0.3050.447 0.3150.4120.2940.894 0.5170.653 0.4050.837 0.5031.509 0.8381.856 0.9281.688 0.8481.596 0.8341.602 0.8443360.4370.3140.449 0.3130.478 0.3330.4390.3100.853 0.4710.707 0.4450.867 0.5231.602 0.8602.080 0.9991.826 0.9031.621 0.8411.668 0.868720 - - - - - - - - - - - - - - - - - - - - - - - -Avg0.4230.2980.434 0.3050.450 0.3170.418 0.2960.867 0.4930.676 0.4230.833 0.5021.526 0.8391.859 0.9271.557 0.7951.591 0.8321.618 0.851
+1stCount 21 6 7 6 0 1 0 0 0 0 0 0
+forecasting tasks in terms of the total number of trainable parameters, GPU memory overhead, and
+training speed. Quantitatively, there is an 71.2% trainable parameter reduction on average over four
+scenarios, leading to 23.1% smaller memory consumption and 25.3% faster training speed.
+H E RROR BARS
+All experiments have been conducted three times, and we present the standard deviations of our
+model and the runner-up model here. The comparisons between our method and the second-best
+method, PatchTST (Nie et al., 2023), on long-term forecasting tasks, are delineated in Tab. 19.
+In this table, the average MSE and MAE have been reported across four ETT datasets, complete
+with standard deviations. Furthermore, Tab. 20 contrasts the effectiveness of our method with that
+of the second-best method, N-HiTS (Challu et al., 2023a), employing varying M4 datasets for the
+comparison.
+I V ISUALIZATION
+In this part, we visualize the forecasting results of T IME -LLM compared with the state-of-the-
+art and representative methods (e.g., GPT4TS (Zhou et al., 2023a), PatchTST (Nie et al., 2023),
+and Autoformer (Wu et al., 2021)) in various scenarios to demonstrate the superior performance of
+TIME -LLM.
+In Fig. 7 and Fig. 8, the long-term (input-96-predict-96) and short-term (input-36-predict-36) fore-
+casts of various approaches are compared with the ground truth. Here, T IME -LLM showcases
+forecasting accuracy that is notably superior compared to GPT4TS, PatchTST, and a classical
+Transformer-based method, Autoformer.
+We also offer visual comparisons of the forecasting results in both few-shot and zero-shot scenarios,
+as depicted in Fig. 9 and Fig. 10. We adhere to the long-term (input-96-predict-96) forecasting setup
+21
+
+## PDF page 22
+
+Published as a conference paper at ICLR 2024
+Table 16: Full zero-shot learning results on ETT datasets. A lower value indicates better performance. Red:
+the best, Blue: the second best.
+Methods TIME-LLM LLMTime GPT4TS DLinear PatchTST TimesNet Autoformer
+Metric MSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAEMSE MAE
+ET T h1→ET T h2
+96 0.279 0.3370.510 0.5760.335 0.3740.347 0.4000.3040.3500.358 0.3870.469 0.486
+192 0.351 0.3740.523 0.5860.412 0.4170.447 0.4600.3860.4000.427 0.4290.634 0.567
+336 0.388 0.4150.640 0.6370.441 0.4440.515 0.5050.4140.4280.449 0.4510.655 0.588
+720 0.391 0.4202.296 1.0340.438 0.4520.665 0.5890.4190.4430.448 0.4580.570 0.549
+Avg0.353 0.3870.992 0.7080.406 0.4220.493 0.4880.3800.4050.421 0.4310.582 0.548
+ET T h1→ET T m2
+96 0.189 0.2930.646 0.5630.236 0.3150.255 0.3570.2150.3040.239 0.3130.352 0.432
+192 0.237 0.3120.934 0.6540.287 0.3420.338 0.4130.2750.3390.291 0.3420.413 0.460
+336 0.291 0.3651.157 0.7280.341 0.3740.425 0.4650.3340.3730.342 0.3710.465 0.489
+720 0.372 0.3904.730 1.5310.435 0.4220.640 0.5730.4310.4240.434 0.4190.599 0.551
+Avg0.273 0.3401.867 0.8690.325 0.3630.415 0.4520.3140.3600.327 0.3610.457 0.483
+ET T h2→ET T h1
+96 0.450 0.4521.130 0.7770.732 0.5770.689 0.5550.4850.4650.848 0.6010.693 0.569
+192 0.465 0.4611.242 0.8200.758 0.5590.707 0.5680.5650.5090.860 0.6100.760 0.601
+336 0.501 0.4821.328 0.8640.759 0.5780.710 0.5770.5810.5150.867 0.6260.781 0.619
+720 0.501 0.5024.145 1.4610.781 0.5970.704 0.5960.6280.5610.887 0.6480.796 0.644
+Avg0.479 0.4741.961 0.9810.757 0.5780.703 0.5740.5650.5130.865 0.6210.757 0.608
+ET T h2→ET T m2
+96 0.174 0.2760.646 0.5630.253 0.3290.240 0.3360.2260.3090.248 0.3240.263 0.352
+192 0.233 0.3150.934 0.6540.293 0.3460.295 0.3690.2890.3450.296 0.3520.326 0.389
+336 0.291 0.3371.157 0.7280.347 0.3760.3450.3970.348 0.3790.353 0.3830.387 0.426
+720 0.392 0.4174.730 1.5310.446 0.4290.4320.4420.439 0.4270.471 0.4460.487 0.478
+Avg0.272 0.3411.867 0.8690.335 0.3700.328 0.3860.3250.3650.342 0.3760.366 0.411
+ET T m1→ET T h2
+96 0.321 0.3690.510 0.5760.3530.3920.365 0.4150.354 0.3850.377 0.4070.435 0.470
+192 0.389 0.4100.523 0.5860.4430.4370.454 0.4620.447 0.4340.471 0.4530.495 0.489
+336 0.408 0.4330.640 0.6370.4690.4610.496 0.4940.481 0.4630.472 0.4840.470 0.472
+720 0.406 0.4362.296 1.0340.4660.4680.541 0.5290.474 0.4710.495 0.4820.480 0.485
+Avg0.381 0.4120.992 0.7080.4330.4390.464 0.4750.439 0.4380.457 0.4540.470 0.479
+ET T m1→ET T m2
+96 0.169 0.2570.646 0.5630.217 0.2940.221 0.3140.1950.2710.222 0.2950.385 0.457
+192 0.227 0.3180.934 0.6540.277 0.3270.286 0.3590.2580.3110.288 0.3370.433 0.469
+336 0.290 0.3381.157 0.7280.331 0.3600.357 0.4060.3170.3480.341 0.3670.476 0.477
+720 0.375 0.3674.730 1.5310.429 0.4130.476 0.4760.4160.4040.436 0.4180.582 0.535
+Avg0.268 0.3201.867 0.8690.313 0.3480.335 0.3890.2960.3340.322 0.3540.469 0.484
+ET T m2→ET T h2
+96 0.298 0.3560.510 0.5760.360 0.4010.333 0.3910.3270.3670.360 0.4010.353 0.393
+192 0.359 0.3970.523 0.5860.434 0.4370.441 0.4560.4110.4180.434 0.4370.432 0.437
+336 0.367 0.4120.640 0.6370.460 0.4590.505 0.5030.4390.4470.460 0.4590.452 0.459
+720 0.393 0.4342.296 1.0340.485 0.4770.543 0.5340.459 0.4700.485 0.4770.4530.467
+Avg0.354 0.4000.992 0.7080.435 0.4430.455 0.4710.409 0.4250.435 0.4430.423 0.439
+ET T m2→ET T m1
+96 0.359 0.3971.179 0.7810.747 0.5580.570 0.4900.4910.4370.747 0.5580.735 0.576
+192 0.390 0.4201.327 0.8460.781 0.5600.590 0.5060.5300.4700.781 0.5600.753 0.586
+336 0.421 0.4451.478 0.9020.778 0.5780.706 0.5670.5650.4970.778 0.5780.750 0.593
+720 0.487 0.4883.749 1.4080.769 0.5730.731 0.5840.6860.5650.769 0.5730.782 0.609
+Avg0.414 0.4381.933 0.9840.769 0.5670.649 0.5370.5680.4920.769 0.5670.755 0.591
+Table 17: Full ablations on ETTh1 and ETTm1 in predicting 96 and 192 steps ahead (MSE reported).
+Variant Long-term Forecasting Few-shot Forecasting
+ETTh1-96 ETTh1-192 ETTm1-96 ETThm1-192ETTh1-96 ETTh1-192 ETTm1-96 ETThm1-192
+A.1Llama (Default; 32) 0.362 0.398 0.272 0.310 0.448 0.484 0.346 0.373
+A.2Llama (8) 0.389 0.412 0.297 0.329 0.567 0.632 0.451 0.490
+A.3GPT-2 (12) 0.385 0.419 0.306 0.332 0.548 0.617 0.447 0.509
+A.4GPT-2 (6) 0.394 0.427 0.311 0.342 0.571 0.640 0.468 0.512
+A.5Llama (QLoRA; 32) 0.391 0.420 0.310 0.338 0.543 0.611 0.578 0.618
+B.1w/o Patch Reprogramming0.410 0.412 0.310 0.342 0.498 0.570 0.445 0.487
+B.2w/o Prompt-as-Prefix 0.398 0.423 0.298 0.339 0.521 0.617 0.432 0.481
+C.1w/o Dataset Context 0.402 0.417 0.298 0.331 0.491 0.538 0.392 0.447
+C.2w/o Task Instruction 0.388 0.420 0.285 0.327 0.476 0.529 0.387 0.439
+C.3w/o Statistical Context 0.391 0.419 0.279 0.347 0.483 0.547 0.421 0.461
+in both cases. T IME -LLM exhibits remarkable superiority in forecasting with limited data—a fact
+that becomes particularly salient when compared to GPT4TS.
+22
+
+## PDF page 23
+
+Published as a conference paper at ICLR 2024
+Table 18: Efficiency comparison between model reprogramming and parameter-efficient fine-tuning (PEFT)
+with QLoRA (Dettmers et al., 2023) on ETTh1 dataset in forecasting two different steps ahead.
+Length ETTh1-96 ETTh1-336
+Metric Trainable Param. (M) Mem. (MiB) Speed(s/iter)Trainable Param. (M) Mem. (MiB) Speed(s/iter)
+Llama (8) QLoRA 12.60 14767 0.237 12.69 15982 0.335
+Reprogram 5.62 11370 0.184 5.71 13188 0.203
+Llama (32) QLoRA 50.29 45226 0.697 50.37 49374 0.732
+Reprogram 6.39 32136 0.517 6.48 37988 0.632
+Table 19: Standard deviations of our approach and the second-best method (PatchTST) on all time series
+datasets for long-term forecasting.
+Model TIME-LLM PatchTST (2023)
+Dataset MSE MAE MSE MAE
+ETTh1 0.408 ± 0.011 0 .423 ± 0.012 0.413 ± 0.001 0 .430 ± 0.002
+ETTh2 0.334 ± 0.005 0 .383 ± 0.009 0.330 ± 0.002 0 .379 ± 0.007
+ETTm1 0.329 ± 0.006 0 .372 ± 0.007 0.351 ± 0.006 0 .380 ± 0.002
+ETTm2 0.251 ± 0.002 0 .313 ± 0.003 0.255 ± 0.003 0 .315 ± 0.002
+Weather 0.225 ± 0.009 0 .257 ± 0.008 0.225 ± 0.001 0 .264 ± 0.001
+Electricity 0.158 ± 0.004 0 .252 ± 0.007 0.161 ± 0.001 0 .252 ± 0.001
+Traffic 0.388 ± 0.001 0 .264 ± 0.006 0.390 ± 0.003 0 .263 ± 0.003
+ILI 1.435 ± 0.011 0 .801 ± 0.008 1.443 ± 0.012 0 .797 ± 0.002
+Table 20: Standard deviations of our T IME -LLM and the second-best method (N-HiTS) on M4 datasets for
+short-term forecasting.
+Model TIME -LLM N-HiTS (2023a)
+Dataset SMAPE MAPE OW A SMAPE MAPE OW A
+Yearly 13.419± 0.117 3.005± 0.011 0.789± 0.003 13.422± 0.009 3.056± 0.017 0.795± 0.010
+Quarterly 10.110± 0.107 1.178± 0.009 0.889± 0.007 10.185± 0.107 1.180± 0.007 0.893± 0.001
+Monthly 12.980± 0.102 0.963± 0.005 0.903± 0.001 13.059± 0.101 1.013± 0.007 0.929± 0.005
+Others 4.795± 0.117 3.178± 0.012 1.006± 0.009 4.711± 0.117 3.054± 0.011 0.997± 0.012
+Averaged 11.983± 0.011 1.595± 0.021 0.859± 0.002 12.035± 0.111 1.625± 0.012 0.869± 0.005
+23
+
+## PDF page 24
+
+Published as a conference paper at ICLR 2024
+(a)Time-LLM(b)GPT4TS(c)PatchTST(d)Autoformer
+Figure 7: Long-term forecasting cases from ETTh1 by different models under the input-96-predict-
+96 settings. Blue lines are the ground truths and orange lines are the model predictions.
+(a)Time-LLM(b)GPT4TS(c)TimesNet(d)Autoformer
+Figure 8: Short-term forecasting from the M4 dataset by different models under the input-36-predict-
+18 settings.
+(a)Time-LLM(b)GPT4TS(c)PatchTST(d)Autoformer
+Figure 9: Few-shot forecasting cases from ETTm1 by different models under the input-96-predict-
+96 settings. Blue lines are the ground truths and orange lines are the model predictions.
+(a)Time-LLM(b)GPT4TS(c)PatchTST(d)Autoformer
+Figure 10: Zero-shot forecasting cases from ETTh1 →ETTh2 by different models under the input-
+96-predict-96 settings. Blue lines are the ground truths and orange lines are the model predictions.
+24

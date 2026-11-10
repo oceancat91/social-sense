@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Noto Sans SC&quot;, sans-serif"><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g><g id="midterm-header" data-pptx-bounds="95 16 815 83" data-pptx-role="header"><rect x="95" y="16" width="815" height="83" fill="none" /><text x="112" y="63" font-size="34" fill="#44546A" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">系统架构以报告契约连接分析与应用</text></g><g id="page-subtitle" data-pptx-bounds="75 108 1130 50"><rect x="75" y="108" width="1130" height="50" fill="none" /><text x="80" y="140" font-size="22" fill="#64748B" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">实际模块：agent / multiagent / social_forecast / backend / frontend</text></g><g id="midterm-footer" data-pptx-bounds="70 680 1100 25" data-pptx-role="footer"><rect x="70" y="680" width="1100" height="25" fill="none" /><text x="76" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">SocialSense  ·  创新训练类中期答辩</text><text x="1155" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" text-anchor="end" font-weight="normal">04 / 18</text></g><g id="input-layer" data-pptx-bounds="70 190 280 360"><rect x="70" y="190" width="280" height="360" fill="none" /><rect x="70" y="190" width="280" height="360" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="8" ry="8" /><line x1="73" y1="193" x2="73" y2="547" stroke="#4472C4" stroke-width="5" /><text x="94" y="230" font-size="27" fill="#4472C4" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">数据与单平台分析</text><text x="94" y="275" font-size="21" fill="#243446" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">关键词与观测数据<tspan x="94" dy="32.55">采集清洗 → 立场画像</tspan><tspan x="94" dy="32.55">文本与时序分析</tspan><tspan x="94" dy="32.55">检索补充 → 结论校准</tspan></text></g><g id="central-pipeline" data-pptx-bounds="375 180 530 455"><rect x="375" y="180" width="530" height="455" fill="none" /><rect x="395" y="190" width="485" height="102" fill="#EDF2F8" stroke="#4472C4" stroke-width="1.2" rx="7" ry="7" /><text x="637" y="230" font-size="26" fill="#4472C4" font-family="Microsoft YaHei" text-anchor="middle" font-weight="bold">PlatformReport</text><text x="637" y="267" font-size="21" fill="#243446" font-family="Microsoft YaHei" text-anchor="middle" font-weight="normal">文本 · 时序 · 元数据 · 引用</text><line x1="637" y1="292" x2="637" y2="320" stroke="#4472C4" stroke-width="3" /><rect x="395" y="320" width="485" height="102" fill="#EDF2F8" stroke="#4472C4" stroke-width="1.2" rx="7" ry="7" /><text x="637" y="360" font-size="26" fill="#4472C4" font-family="Microsoft YaHei" text-anchor="middle" font-weight="bold">时间对齐 → 差异融合</text><text x="637" y="397" font-size="21" fill="#243446" font-family="Microsoft YaHei" text-anchor="middle" font-weight="normal">平台内标准化 · 保留缺失</text><line x1="637" y1="422" x2="637" y2="450" stroke="#4472C4" stroke-width="3" /><rect x="395" y="450" width="485" height="102" fill="#EDF2F8" stroke="#4472C4" stroke-width="1.2" rx="7" ry="7" /><text x="637" y="490" font-size="26" fill="#4472C4" font-family="Microsoft YaHei" text-anchor="middle" font-weight="bold">跨平台主控与 CX 校准</text><text x="637" y="527" font-size="21" fill="#243446" font-family="Microsoft YaHei" text-anchor="middle" font-weight="normal">受证据约束的汇总结论</text><text x="637" y="605" font-size="24" fill="#0D3745" font-family="Microsoft YaHei" text-anchor="middle" font-weight="bold">旁路：时序预测 → 数值结果</text></g><g id="application-layer" data-pptx-bounds="935 190 280 360"><rect x="935" y="190" width="280" height="360" fill="none" /><rect x="935" y="190" width="280" height="360" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="8" ry="8" /><line x1="938" y1="193" x2="938" y2="547" stroke="#4472C4" stroke-width="5" /><text x="959" y="230" font-size="27" fill="#4472C4" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">服务与交互</text><text x="959" y="275" font-size="22" fill="#243446" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">Flask API<tspan x="959" dy="34.1">三维档案浏览</tspan><tspan x="959" dy="34.1">证据详情与研究记录</tspan><tspan x="959" dy="34.1">预测展示与人工复核</tspan></text></g><g id="arrow-left" data-pptx-bounds="351 355 23 35"><rect x="351" y="355" width="23" height="35" fill="none" /><line x1="351" y1="373" x2="365" y2="373" stroke="#4472C4" stroke-width="2.5" /><polygon points="374,373 364,368 364,378" fill="#4472C4" /></g><g id="arrow-right" data-pptx-bounds="906 355 28 35"><rect x="906" y="355" width="28" height="35" fill="none" /><line x1="906" y1="373" x2="925" y2="373" stroke="#4472C4" stroke-width="2.5" /><polygon points="934,373 924,368 924,378" fill="#4472C4" /></g></svg>

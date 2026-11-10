@@ -1,0 +1,299 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;微软雅黑&quot;, sans-serif"><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-36" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:36">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="shape-12" data-pptx-object="group" data-pptx-frame="70 680 1100 28.12" data-pptx-source-ref="slide:12">
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="70 680 1100 28" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 70 680 L 1170 680 L 1170 708 L 70 708 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="75.48 688 219.45 20.12" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 75.48 688 L 294.93 688 L 294.93 708.12 L 75.48 708.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="75.48" y="700" text-anchor="start" xml:space="preserve" font-size="13.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">SocialSense · 创新训练类中期答辩</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="1108.08 688 47.44 20.12" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 1108.08 688 L 1155.52 688 L 1155.52 708.12 L 1108.08 708.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1155.52" y="700" text-anchor="end" xml:space="preserve" font-size="13.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">03 / 18</text>
+</g>
+</g>
+<g id="shape-6" data-pptx-object="group" data-pptx-frame="95 16 815 83" data-pptx-source-ref="slide:6">
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="95 16 815 83" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 95 16 L 910 16 L 910 99 L 95 99 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="108.68 31 633.55 50.92" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 108.68 31 L 742.23 31 L 742.23 81.92 L 108.68 81.92 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="108.68" y="63" text-anchor="start" xml:space="preserve" font-size="33.07" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">应用场景：三类议题，共用同一技术框架</text>
+</g>
+</g>
+<g id="shape-55" data-pptx-object="group" data-pptx-frame="75 106 1130 44" data-pptx-source-ref="slide:55">
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="75 106 1130 44" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 75 106 L 1205 106 L 1205 150 L 75 150 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="79.16 117 827.91 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 79.16 117 L 907.07 117 L 907.07 149.44 L 79.16 149.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="79.16" y="137" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#64748B" data-pptx-text-baseline="metrics-v1">从消费争议到综艺走红、游戏社群，研究信息从何而来、如何扩散以及后续怎样变化</text>
+</g>
+</g>
+<g id="shape-23" data-pptx-object="group" data-pptx-frame="65 169 370 435" data-pptx-source-ref="slide:23">
+<g id="shape-56" data-pptx-object="shape" data-pptx-frame="65 169 370 435" data-pptx-prst="rect" data-pptx-source-ref="slide:56" data-pptx-semantic-object="shape">
+<path d="M 65 169 L 435 169 L 435 604 L 65 604 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-57" data-pptx-object="shape" data-pptx-frame="65 169 370 435" data-pptx-prst="roundRect" data-pptx-av-adj="val 1622" data-pptx-source-ref="slide:57" data-pptx-semantic-object="shape">
+<path d="M 65 175 A 6 6 0 0 1 71 169 L 429 169 A 6 6 0 0 1 435 175 L 435 598 A 6 6 0 0 1 429 604 L 71 604 A 6 6 0 0 1 65 598 Z" fill="#FFFFFF" stroke-width="1.10005" stroke="#B7C9E2" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="66 170 368 53" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 66 170 L 434 170 L 434 223 L 66 223 Z" fill="#EDF2F8" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="84.22 186.33 155.7 30.03" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 84.22 186.33 L 239.92 186.33 L 239.92 216.36 L 84.22 216.36 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="84.22" y="205" text-anchor="start" xml:space="preserve" font-size="19.47" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">01 社会公共议题</text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="83.96 231.67 226.83 40.04" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 83.96 231.67 L 310.79 231.67 L 310.79 271.71 L 83.96 271.71 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="83.96" y="257" text-anchor="start" xml:space="preserve" font-size="26" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">西贝“预制菜”争议</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="84.16 274 247.32 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 84.16 274 L 331.48 274 L 331.48 306.44 L 84.16 306.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="84.16" y="294" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">消费者知情权与品牌信任</text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="84.16 311.33 254.48 122.53" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 84.16 311.33 L 338.64 311.33 L 338.64 433.86 L 84.16 433.86 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="84.16" y="334" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="30"><tspan><tspan>个人发声与企业回应交织，</tspan></tspan><tspan data-paragraph-line-break="1">争论从菜品扩展至知情权、</tspan><tspan data-paragraph-line-break="1">定价与品牌信任，呈现多方</tspan><tspan data-paragraph-line-break="1">立场分歧与反复传播。</tspan></text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="85 439 330 1" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 85 439 L 415 439" data-pptx-part="geometry" fill="none" stroke-width="1" stroke="#D6E0EB" />
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="84.18 449 88.7 31.62" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 84.18 449 L 172.88 449 L 172.88 480.62 L 84.18 480.62 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="84.18" y="469" text-anchor="start" xml:space="preserve" font-size="20.53" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">研究切入</text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="84.16 480.33 275.55 91.24" data-pptx-prst="rect" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 84.16 480.33 L 359.71 480.33 L 359.71 571.57 L 84.16 571.57 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="84.16" y="503" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="29.4"><tspan><tspan>核对原帖、回应和媒体转述；</tspan></tspan><tspan data-paragraph-line-break="1">比较平台立场与热度变化，</tspan><tspan data-paragraph-line-break="1">识别关键节点及再升温线索。</tspan></text>
+</g>
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="84.34 572 106.47 25.46" data-pptx-prst="rect" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 84.34 572 L 190.81 572 L 190.81 597.46 L 84.34 597.46 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="84.34" y="588" text-anchor="start" xml:space="preserve" font-size="16.53" fill="#4472C4" text-decoration="underline" data-pptx-text-baseline="metrics-v1"><tspan><a href="https://finance.cnr.cn/ycbd/20250915/t20250915_527362854.shtml"><tspan>报道：央广网</tspan></a></tspan></text>
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="244.34 572 53.9 25.46" data-pptx-prst="rect" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 244.34 572 L 298.24 572 L 298.24 597.46 L 244.34 597.46 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="244.34" y="588" text-anchor="start" xml:space="preserve" font-size="16.53" fill="#4472C4" text-decoration="underline" data-pptx-text-baseline="metrics-v1"><tspan><a href="https://opinion.cctv.com/2026/03/03/ARTI9m58PmwiNfBHSBoNEoHL260303.shtml"><tspan>央视网</tspan></a></tspan></text>
+</g>
+</g>
+<g id="shape-35" data-pptx-object="group" data-pptx-frame="455 169 370 435" data-pptx-source-ref="slide:35">
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="455 169 370 435" data-pptx-prst="rect" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 455 169 L 825 169 L 825 604 L 455 604 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-25" data-pptx-object="shape" data-pptx-frame="455 169 370 435" data-pptx-prst="roundRect" data-pptx-av-adj="val 1622" data-pptx-source-ref="slide:25" data-pptx-semantic-object="shape">
+<path d="M 455 175 A 6 6 0 0 1 461 169 L 819 169 A 6 6 0 0 1 825 175 L 825 598 A 6 6 0 0 1 819 604 L 461 604 A 6 6 0 0 1 455 598 Z" fill="#FFFFFF" stroke-width="1.10005" stroke="#B7C9E2" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-26" data-pptx-object="shape" data-pptx-frame="456 170 368 53" data-pptx-prst="rect" data-pptx-source-ref="slide:26" data-pptx-semantic-object="shape">
+<path d="M 456 170 L 824 170 L 824 223 L 456 223 Z" fill="#EDF2F8" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-27" data-pptx-object="shape" data-pptx-frame="474.22 186.33 155.7 30.03" data-pptx-prst="rect" data-pptx-source-ref="slide:27" data-pptx-semantic-object="shape">
+<path d="M 474.22 186.33 L 629.92 186.33 L 629.92 216.36 L 474.22 216.36 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="474.22" y="205" text-anchor="start" xml:space="preserve" font-size="19.47" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">02 文化娱乐传播</text>
+</g>
+<g id="shape-28" data-pptx-object="shape" data-pptx-frame="473.96 231.67 222.56 40.04" data-pptx-prst="rect" data-pptx-source-ref="slide:28" data-pptx-semantic-object="shape">
+<path d="M 473.96 231.67 L 696.52 231.67 L 696.52 271.71 L 473.96 271.71 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="473.96" y="257" text-anchor="start" xml:space="preserve" font-size="26" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">《后会友期》综艺</text>
+</g>
+<g id="shape-29" data-pptx-object="shape" data-pptx-frame="474.16 274 202.66 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:29" data-pptx-semantic-object="shape">
+<path d="M 474.16 274 L 676.82 274 L 676.82 306.44 L 474.16 306.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="474.16" y="294" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">内容走红与热度延续</text>
+</g>
+<g id="shape-30" data-pptx-object="shape" data-pptx-frame="474.16 311.33 254.48 122.53" data-pptx-prst="rect" data-pptx-source-ref="slide:30" data-pptx-semantic-object="shape">
+<path d="M 474.16 311.33 L 728.64 311.33 L 728.64 433.86 L 474.16 433.86 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="474.16" y="334" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="30"><tspan><tspan>从节目话题到切片和二创，</tspan></tspan><tspan data-paragraph-line-break="1">观察内容如何跨平台扩散；</tspan><tspan data-paragraph-line-break="1">区分短时爆发、持续关注</tspan><tspan data-paragraph-line-break="1">与再次传播的不同阶段。</tspan></text>
+</g>
+<g id="shape-31" data-pptx-object="shape" data-pptx-frame="475 439 330 1" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:31" data-pptx-semantic-object="shape">
+<path d="M 475 439 L 805 439" data-pptx-part="geometry" fill="none" stroke-width="1" stroke="#D6E0EB" />
+</g>
+<g id="shape-32" data-pptx-object="shape" data-pptx-frame="474.18 449 88.7 31.62" data-pptx-prst="rect" data-pptx-source-ref="slide:32" data-pptx-semantic-object="shape">
+<path d="M 474.18 449 L 562.88 449 L 562.88 480.62 L 474.18 480.62 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="474.18" y="469" text-anchor="start" xml:space="preserve" font-size="20.53" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">研究切入</text>
+</g>
+<g id="shape-33" data-pptx-object="shape" data-pptx-frame="474.16 480.33 275.55 91.24" data-pptx-prst="rect" data-pptx-source-ref="slide:33" data-pptx-semantic-object="shape">
+<path d="M 474.16 480.33 L 749.71 480.33 L 749.71 571.57 L 474.16 571.57 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="474.16" y="503" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="29.4"><tspan><tspan>关联话题出处与扩散顺序；</tspan></tspan><tspan data-paragraph-line-break="1">结合历史热度预测后续变化，</tspan><tspan data-paragraph-line-break="1">辅助内容复盘与受众研究。</tspan></text>
+</g>
+<g id="shape-34" data-pptx-object="shape" data-pptx-frame="474.34 572 249.3 25.46" data-pptx-prst="rect" data-pptx-source-ref="slide:34" data-pptx-semantic-object="shape">
+<path d="M 474.34 572 L 723.64 572 L 723.64 597.46 L 474.34 597.46 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="474.34" y="588" text-anchor="start" xml:space="preserve" font-size="16.53" fill="#64748B" data-pptx-text-baseline="metrics-v1">用户指定案例 · 事件样本待补齐</text>
+</g>
+</g>
+<g id="shape-49" data-pptx-object="group" data-pptx-frame="845 169 370 435" data-pptx-source-ref="slide:49">
+<g id="shape-37" data-pptx-object="shape" data-pptx-frame="845 169 370 435" data-pptx-prst="rect" data-pptx-source-ref="slide:37" data-pptx-semantic-object="shape">
+<path d="M 845 169 L 1215 169 L 1215 604 L 845 604 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-38" data-pptx-object="shape" data-pptx-frame="845 169 370 435" data-pptx-prst="roundRect" data-pptx-av-adj="val 1622" data-pptx-source-ref="slide:38" data-pptx-semantic-object="shape">
+<path d="M 845 175 A 6 6 0 0 1 851 169 L 1209 169 A 6 6 0 0 1 1215 175 L 1215 598 A 6 6 0 0 1 1209 604 L 851 604 A 6 6 0 0 1 845 598 Z" fill="#FFFFFF" stroke-width="1.10005" stroke="#B7C9E2" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-39" data-pptx-object="shape" data-pptx-frame="846 170 368 53" data-pptx-prst="rect" data-pptx-source-ref="slide:39" data-pptx-semantic-object="shape">
+<path d="M 846 170 L 1214 170 L 1214 223 L 846 223 Z" fill="#EDF2F8" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-40" data-pptx-object="shape" data-pptx-frame="864.22 186.33 155.7 30.03" data-pptx-prst="rect" data-pptx-source-ref="slide:40" data-pptx-semantic-object="shape">
+<path d="M 864.22 186.33 L 1019.92 186.33 L 1019.92 216.36 L 864.22 216.36 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="864.22" y="205" text-anchor="start" xml:space="preserve" font-size="19.47" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">03 游戏社群互动</text>
+</g>
+<g id="shape-41" data-pptx-object="shape" data-pptx-frame="863.96 231.67 250.12 40.04" data-pptx-prst="rect" data-pptx-source-ref="slide:41" data-pptx-semantic-object="shape">
+<path d="M 863.96 231.67 L 1114.08 231.67 L 1114.08 271.71 L 863.96 271.71 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="863.96" y="257" text-anchor="start" xml:space="preserve" font-size="26" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">《明日方舟》梗传播</text>
+</g>
+<g id="shape-42" data-pptx-object="shape" data-pptx-frame="864.16 274 202.66 32.44" data-pptx-prst="rect" data-pptx-source-ref="slide:42" data-pptx-semantic-object="shape">
+<path d="M 864.16 274 L 1066.82 274 L 1066.82 306.44 L 864.16 306.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="864.16" y="294" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">积极传播与创作认可</text>
+</g>
+<g id="shape-43" data-pptx-object="shape" data-pptx-frame="864.16 311.33 254.48 122.53" data-pptx-prst="rect" data-pptx-source-ref="slide:43" data-pptx-semantic-object="shape">
+<path d="M 864.16 311.33 L 1118.64 311.33 L 1118.64 433.86 L 864.16 433.86 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="864.16" y="334" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="30"><tspan><tspan>以“酸橙”相关二创为例，</tspan></tspan><tspan data-paragraph-line-break="1">连接素材分享、玩家改写</tspan><tspan data-paragraph-line-break="1">和跨圈传播，关注创作来源</tspan><tspan data-paragraph-line-break="1">与官方、玩家的互动反馈。</tspan></text>
+</g>
+<g id="shape-44" data-pptx-object="shape" data-pptx-frame="865 439 330 1" data-pptx-geometry-kind="custom" data-pptx-source-ref="slide:44" data-pptx-semantic-object="shape">
+<path d="M 865 439 L 1195 439" data-pptx-part="geometry" fill="none" stroke-width="1" stroke="#D6E0EB" />
+</g>
+<g id="shape-45" data-pptx-object="shape" data-pptx-frame="864.18 449 88.7 31.62" data-pptx-prst="rect" data-pptx-source-ref="slide:45" data-pptx-semantic-object="shape">
+<path d="M 864.18 449 L 952.88 449 L 952.88 480.62 L 864.18 480.62 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="864.18" y="469" text-anchor="start" xml:space="preserve" font-size="20.53" fill="#0D3745" font-weight="bold" data-pptx-text-baseline="metrics-v1">研究切入</text>
+</g>
+<g id="shape-46" data-pptx-object="shape" data-pptx-frame="864.16 480.33 275.55 91.24" data-pptx-prst="rect" data-pptx-source-ref="slide:46" data-pptx-semantic-object="shape">
+<path d="M 864.16 480.33 L 1139.71 480.33 L 1139.71 571.57 L 864.16 571.57 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="864.16" y="503" text-anchor="start" xml:space="preserve" font-size="21.07" fill="#243446" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="29.4"><tspan><tspan>梳理原始表达、变体与引用；</tspan></tspan><tspan data-paragraph-line-break="1">观察传播热度和语境变化，</tspan><tspan data-paragraph-line-break="1">支持创作认可与社区沟通。</tspan></text>
+</g>
+<g id="shape-47" data-pptx-object="shape" data-pptx-frame="864.34 572 71.42 25.46" data-pptx-prst="rect" data-pptx-source-ref="slide:47" data-pptx-semantic-object="shape">
+<path d="M 864.34 572 L 935.76 572 L 935.76 597.46 L 864.34 597.46 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="864.34" y="588" text-anchor="start" xml:space="preserve" font-size="16.53" fill="#4472C4" text-decoration="underline" data-pptx-text-baseline="metrics-v1"><tspan><a href="https://www.taptap.cn/moment/834126362733185189"><tspan>素材分享</tspan></a></tspan></text>
+</g>
+<g id="shape-48" data-pptx-object="shape" data-pptx-frame="1008.34 572 71.42 25.46" data-pptx-prst="rect" data-pptx-source-ref="slide:48" data-pptx-semantic-object="shape">
+<path d="M 1008.34 572 L 1079.76 572 L 1079.76 597.46 L 1008.34 597.46 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1008.34" y="588" text-anchor="start" xml:space="preserve" font-size="16.53" fill="#4472C4" text-decoration="underline" data-pptx-text-baseline="metrics-v1"><tspan><a href="https://www.taptap.cn/moment/832223722998859956"><tspan>创作征集</tspan></a></tspan></text>
+</g>
+</g>
+<g id="shape-54" data-pptx-object="group" data-pptx-frame="70 619 1135 60.39" data-pptx-source-ref="slide:54">
+<g id="shape-50" data-pptx-object="shape" data-pptx-frame="70 619 1135 58" data-pptx-prst="rect" data-pptx-source-ref="slide:50" data-pptx-semantic-object="shape">
+<path d="M 70 619 L 1205 619 L 1205 677 L 70 677 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-51" data-pptx-object="shape" data-pptx-frame="70 619 1135 58" data-pptx-prst="rect" data-pptx-source-ref="slide:51" data-pptx-semantic-object="shape">
+<path d="M 70 619 L 1205 619 L 1205 677 L 70 677 Z" fill="#EDF2F8" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-52" data-pptx-object="shape" data-pptx-frame="87.08 622.33 814.14 35.42" data-pptx-prst="rect" data-pptx-source-ref="slide:52" data-pptx-semantic-object="shape">
+<path d="M 87.08 622.33 L 901.22 622.33 L 901.22 657.75 L 87.08 657.75 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="87.08" y="645" text-anchor="start" xml:space="preserve" font-size="22.93" fill="#4472C4" font-weight="bold" data-pptx-text-baseline="metrics-v1">共同研究链路：路径溯源 → 热度走向预测 → 三维等高线与证据联动（规划）</text>
+</g>
+<g id="shape-53" data-pptx-object="shape" data-pptx-frame="87.28 651.67 764.64 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:53" data-pptx-semantic-object="shape">
+<path d="M 87.28 651.67 L 851.92 651.67 L 851.92 679.39 L 87.28 679.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="87.28" y="669" text-anchor="start" xml:space="preserve" font-size="18" fill="#64748B" data-pptx-text-baseline="metrics-v1">案例用于说明应用需求；专项效果需事件样本验证，完整传播关系及三维山峰图仍需补齐。</text>
+</g>
+</g></svg>

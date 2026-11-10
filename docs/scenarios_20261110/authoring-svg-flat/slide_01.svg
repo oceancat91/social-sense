@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;微软雅黑&quot;, sans-serif"><defs><clipPath id="clip1" clipPathUnits="userSpaceOnUse"><path d="M 754.69 723.37 L 754.69 199.4 L 1279.87 723.37 Z" /></clipPath></defs><rect x="0" y="0" width="1280" height="720" fill="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="252.31 247.98 758.58 207.6" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 252.31 247.98 L 1010.89 247.98 L 1010.89 455.58 L 252.31 455.58 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="632" y="305.63338583" text-anchor="middle" xml:space="preserve" font-size="42" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="60.066667"><tspan><tspan>SocialSense</tspan></tspan><tspan data-paragraph-line-break="1">基于多源社交媒体协同的</tspan><tspan data-paragraph-line-break="1">舆情溯源与辅助预测系统</tspan></text>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="507.87 183.11 247.47 44.01" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 507.87 183.11 L 755.34 183.11 L 755.34 227.12 L 507.87 227.12 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="632" y="215.63338583" text-anchor="middle" xml:space="preserve" font-size="22" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">创新训练类中期答辩</text>
+</g>
+<g id="shape-4" data-pptx-object="group" data-pptx-frame="357.74 484.99 420.21 177.73" data-pptx-source-ref="slide:4">
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="357.74 484.99 215.91 45.57" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 357.74 484.99 L 573.65 484.99 L 573.65 530.56 L 357.74 530.56 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="365" y="523.63338583" text-anchor="start" xml:space="preserve" font-size="22" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">汇报人：张艺嘉</text>
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="466.48 618.72 311.47 44" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 466.48 618.72 L 777.95 618.72 L 777.95 662.72 L 466.48 662.72 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="480" y="651.63328084" text-anchor="start" xml:space="preserve" font-size="22" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">2026 年 11 月</text>
+</g>
+</g>
+<g id="shape-7" data-pptx-object="group" data-pptx-frame="411.1 198.11 441 11.64" data-pptx-source-ref="slide:7">
+<g id="shape-8" data-pptx-object="connector" data-pptx-frame="742.7 205.11 109.4 0" data-pptx-prst="line" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 742.7 205.11 L 852.1 205.11" stroke-width="2" stroke="#4C678E" fill="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="742.7 198.11 11.64 11.64" data-pptx-prst="ellipse" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 742.7 203.93 A 5.82 5.82 0 0 1 748.52 198.11 A 5.82 5.82 0 0 1 754.33 203.93 A 5.82 5.82 0 0 1 748.52 209.75 A 5.82 5.82 0 0 1 742.7 203.93 Z" fill="#4C678E" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-10" data-pptx-object="connector" data-pptx-frame="411.1 205.11 109.4 0" data-pptx-prst="line" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 411.1 205.11 L 520.5 205.11" stroke-width="2" stroke="#4C678E" fill="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="520.5 198.11 11.64 11.64" data-pptx-prst="ellipse" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 520.5 203.93 A 5.82 5.82 0 0 1 526.32 198.11 A 5.82 5.82 0 0 1 532.14 203.93 A 5.82 5.82 0 0 1 526.32 209.75 A 5.82 5.82 0 0 1 520.5 203.93 Z" fill="#4C678E" data-pptx-part="geometry" />
+
+</g>
+</g>
+<g id="shape-33" data-pptx-object="picture" data-pptx-frame="77.09 26.04 368.06 70.48" data-pptx-source-ref="slide:33">
+<image data-pptx-object="picture" data-pptx-frame="77.09 26.04 368.06 70.48" href="../images/image2.png" x="77.09" y="26.04" width="368.06" height="70.48" preserveAspectRatio="none" />
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="754.69 199.4 525.18 523.97" data-pptx-prst="rtTriangle" transform="translate(1017.28 461.38) scale(-1 1) translate(-1017.28 -461.38)" data-pptx-source-ref="slide:12">
+<image clip-path="url(#clip1)" href="../images/image3.jpeg" x="754.69" y="199.4" width="525.18" height="523.97" preserveAspectRatio="none" />
+
+<path d="M 754.69 723.37 L 754.69 199.4 L 1279.87 723.37 Z" fill="none" stroke="none" stroke-width="1" />
+
+
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="402.87 545.8 438.47 45.6" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 402.87 545.8 L 841.34 545.8 L 841.34 591.4 L 402.87 591.4 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="407" y="576.66666667" text-anchor="start" xml:space="preserve" font-size="20" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1">成员：詹江叶煜 郑锦凡 王悦 吴珂欣</text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="-1.29 478.07 258.09 258.3" data-pptx-geometry-kind="custom" transform="rotate(90 127.75 607.22)" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M -1.29 735.88 L 255.82 478.07 C 255.85 489.04 255.89 500.01 255.92 510.98 L 256.8 736.37 L 31.21 735.88 L -1.29 735.88 Z" data-pptx-part="geometry" fill="#BA0000" stroke="none" stroke-width="1" />
+
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="547.2 487.8 438.47 45.6" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 547.2 487.8 L 985.67 487.8 L 985.67 533.4 L 547.2 533.4 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="623" y="523.63328084" text-anchor="start" xml:space="preserve" font-size="22" fill="#44546A" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>指导教师：树</tspan><tspan>扬</tspan></text>
+</g></svg>

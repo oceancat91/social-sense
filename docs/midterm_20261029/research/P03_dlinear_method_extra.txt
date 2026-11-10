@@ -1,0 +1,103 @@
+baselines are IMS forecasting techniques, which are known
+to suffer from signiﬁcant error accumulation effects. We
+hypothesize that the performance improvements in these
+works are largely due to the DMS strategy used in them.
+Linear 𝑊�
+Linear 𝑊�
+Look-back Window
+Remainder
+Trend
+Forecasting Output
+𝑋� ∈ ℝ�×�
+𝑋� ∈ ℝ�×� 𝐻� ∈ ℝ�×�
+𝐻� ∈ ℝ�×�
+𝑋� ∈ ℝ�×�𝑋 ∈ ℝ �×�
+History 𝐿timesteps
+Future 𝑇timesteps
+(a) The whole structure of DLinear (b) One Linear Layer
+Figure 2. Illustration of the basic linear model.
+To validate this hypothesis, we present the simplest DMS
+model via a temporal linear layer, namedLTSF-Linear, as a
+baseline for comparison. The basic formulation of LTSF-
+Linear directly regresses historical time series for future
+prediction via a weighted sum operation (as illustrated in
+Figure 2). The mathematical expression is ˆXi = W Xi,
+where W∈ RT ×L is a linear layer along the temporal axis.
+ˆXi and Xi are the prediction and input for each ith vari-
+ate. Note that LTSF-Linear shares weights across different
+variates and does not model any spatial correlations.
+LTSF-Linear is a set of linear models. Vanilla Linear is
+a one-layer linear model. To handle time series across dif-
+ferent domains (e.g., ﬁnance, trafﬁc, and energy domains),
+we further introduce two variants with two preprocessing
+methods, named DLinear and NLinear.
+• Speciﬁcally, DLinear is a combination of a Decom-
+position scheme used in Autoformer and FEDformer
+with linear layers. It ﬁrst decomposes a raw data in-
+put into a trend component by a moving average ker-
+nel and a remainder (seasonal) component. Then, two
+one-layer linear layers are applied to each component,
+and we sum up the two features to get the ﬁnal predic-
+tion. By explicitly handling trend, DLinear enhances
+the performance of a vanilla linear when there is a clear
+trend in the data.
+• Meanwhile, to boost the performance of LTSF-Linear
+when there is a distribution shift in the dataset, NLin-
+ear ﬁrst subtracts the input by the last value of the se-
+quence. Then, the input goes through a linear layer,
+and the subtracted part is added back before making
+the ﬁnal prediction. The subtraction and addition in
+NLinear are a simple normalization for the input se-
+quence.
+5. Experiments
+5.1. Experimental Settings
+Dataset. We conduct extensive experiments on nine
+widely-used real-world datasets, including ETT (Electricity
+Transformer Temperature) [30] (ETTh1, ETTh2, ETTm1,
+ETTm2), Trafﬁc, Electricity, Weather, ILI, Exchange-
+Rate [15]. All of them are multivariate time series. We
+leave data descriptions in the Appendix.
+Evaluation metric. Following previous works [28, 30,
+31], we use Mean Squared Error (MSE) and Mean Absolute
+Error (MAE) as the core metrics to compare performance.
+Compared methods. We include ﬁve recent
+Transformer-based methods: FEDformer [31], Aut-
+oformer [28], Informer [30], Pyraformer [18], and
+LogTrans [16]. Besides, we include a naive DMS method:
+Closest Repeat (Repeat), which repeats the last value in the
+look-back window, as another simple baseline. Since there
+are two variants of FEDformer, we compare the one with
+better accuracy (FEDformer-f via Fourier transform).
+5.2. Comparison with Transformers
+Quantitative results. In Table 2, we extensively eval-
+uate all mentioned Transformers on nine benchmarks, fol-
+lowing the experimental setting of previous work [28, 30,
+31]. Surprisingly, the performance of LTSF-Linear sur-
+passes the SOTA FEDformer in most cases by 20%∼ 50%
+improvements on themultivariate forecasting, where LTSF-
+Linear even does not model correlations among variates.
+For different time series benchmarks, NLinear and DLin-
+ear show the superiority to handle the distribution shift and
+trend-seasonality features. We also provide results for uni-
+variate forecasting of ETT datasets in the Appendix, where
+LTSF-Linear still consistently outperforms Transformer-
+based LTSF solutions by a large margin.
+FEDformer achieves competitive forecasting accuracy
+on ETTh1. This because FEDformer employs classical time
+series analysis techniques such as frequency processing,
+which brings in time series inductive bias and beneﬁts the
+ability of temporal feature extraction. In summary, these re-
+sults reveal that existing complex Transformer-based LTSF
+solutions are not seemingly effective on the existing nine
+benchmarks while LTSF-Linear can be a powerful baseline.
+Another interesting observation is that even though the
+naive Repeat method shows worse results when predict-
+ing long-term seasonal data (e.g., Electricity and Trafﬁc), it
+surprisingly outperforms all Transformer-based methods on
+Exchange-Rate (around 45%). This is mainly caused by the
+wrong prediction of trends in Transformer-based solutions,
+which may overﬁt toward sudden change noises in the train-
+ing data, resulting in signiﬁcant accuracy degradation (see
+Figure 3(b)). Instead, Repeat does not have the bias.
+Qualitative results. As shown in Figure 3, we plot
+4

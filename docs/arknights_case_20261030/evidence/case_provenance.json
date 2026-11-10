@@ -1,0 +1,199 @@
+{
+  "source": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\方舟七年梗文化观察-文字整理.md",
+  "sha256": "649fd4e455e7735783d25888ea3157942a748efab29e23c2acde168502d6e6c4",
+  "edited_pages": [
+    2,
+    5,
+    6
+  ],
+  "unchanged_visible_pages": [
+    1,
+    3,
+    4,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "case_status": "illustrative_only_not_empirical",
+  "source_sections_used": [
+    "开场",
+    "二、梗的分类与传播判断",
+    "四、官方该怎么做：记录（仅观察维度）"
+  ],
+  "interpretation": "开心或反讽及四类热度结构为教学类比，不是从原文得到的已标注数据或因果解释。",
+  "excluded": [
+    "游戏发展史",
+    "玩法清单",
+    "厂商与人物评价",
+    "官方接梗渠道",
+    "资源助推推测",
+    "品牌策略"
+  ],
+  "code": {
+    "multiagent/contract.py": "66d34fd0c4cb24f031c28f032c14606a76101c7fb541f1ec3c0665711af0c045",
+    "multiagent/align.py": "596835e22c4ad025f8e05ff643acac0d4d4e032d1d0495981691b63435de1c2f",
+    "multiagent/fuse.py": "94aaca202c29ca24020a95a062f8cb7b50530b037a5346121d4b05927b6098e9",
+    "multiagent/master.py": "a77c0f87f3e441a1fbc4f39a78ecdf4edc76de15a197947ec8e3adf48797a213",
+    "agent/Conclusion/calib/gates.py": "b1776f2e6a10d9b872721217bba7628f3665e53d04d052b8963e2177251a7476",
+    "agent/MultimodalAnalyzer/text_tower.py": "77392fd4fd5f6408d3a4ea8f6a87561a1101069af2d56dd85e4dd6d0c1bfdd55",
+    "social_forecast/models/rep_moe.py": "ce8e2ace309ea35ea150fbc6f32628e5a0c50e173e91e7ed0c77ab5d00f9d6d1",
+    "social_forecast/layers/rep_fusion.py": "0150ac156337c4b856404ea864b6f45852b5b026d49b559be8554910a3a5e873"
+  },
+  "page_edits": {
+    "2": [
+      {
+        "shape": "shape-4",
+        "before": "用一个热梗，理解多平台分析的难点",
+        "after": "用一个热梗，理解多平台分析的难点"
+      },
+      {
+        "shape": "shape-7",
+        "before": "文案例：“笑飞了”——理解语境、比较平台、观察热度（非实测数据）",
+        "after": "情境示例：“笑飞了”——理解语境、比较平台、观察热度（非实测数据）"
+      },
+      {
+        "shape": "shape-17",
+        "before": "同一个梗，平台口径不同先统一时间、字段与缺失标记",
+        "after": "同一个梗，平台口径不同\n先统一时间、字段与缺失标记"
+      },
+      {
+        "shape": "shape-22",
+        "before": "词面情绪不等于真实态度",
+        "after": "词面情绪不等于真实态度"
+      },
+      {
+        "shape": "shape-24",
+        "before": "“笑飞了”可能是开心或反讽结合对象、上下文与引用复核",
+        "after": "“笑飞了”可能是开心或反讽\n结合对象、上下文与引用复核"
+      },
+      {
+        "shape": "shape-30",
+        "before": "热度上升之后是否持续？用误差、方向和尖峰指标检验",
+        "after": "热度上升之后是否持续？\n用误差、方向和尖峰指标检验"
+      },
+      {
+        "shape": "shape-36",
+        "before": "同一话题可能出现立场分歧先比较差异，再核查具体证据",
+        "after": "同一话题可能出现立场分歧\n先比较差异，再核查具体证据"
+      },
+      {
+        "shape": "shape-42",
+        "before": "最早采到，不等于真正首发溯源仍需引用与传播关系样本",
+        "after": "最早采到，不等于真正首发\n溯源仍需引用与传播关系样本"
+      },
+      {
+        "shape": "shape-46",
+        "before": "技术价值",
+        "after": "技术价值"
+      },
+      {
+        "shape": "shape-47",
+        "before": "把热度与判断连接到证据",
+        "after": "把热度与判断连接到证据"
+      }
+    ],
+    "5": [
+      {
+        "shape": "shape-4",
+        "before": "“笑飞了”是好评吗？让判断回到证据",
+        "after": "“笑飞了”是好评吗？让判断回到证据"
+      },
+      {
+        "shape": "shape-7",
+        "before": "示例强调上下文复核；G/CX 规则核查一致性，不能代替反讽识别",
+        "after": "示例强调上下文复核；G/CX 规则核查一致性，不能代替反讽识别"
+      },
+      {
+        "shape": "shape-15",
+        "before": "原句、上下文与来源",
+        "after": "原句、上下文与来源"
+      },
+      {
+        "shape": "shape-18",
+        "before": "形成候选态度判断",
+        "after": "形成候选态度判断"
+      },
+      {
+        "shape": "shape-25",
+        "before": "保留依据与不确定性",
+        "after": "保留依据与不确定性"
+      },
+      {
+        "shape": "shape-31",
+        "before": "趋势、情绪、立场与观测是否一致引用标识 · 数值边界 · 空窗 · 风险依据",
+        "after": "趋势、情绪、立场与观测是否一致\n引用标识 · 数值边界 · 空窗 · 风险依据"
+      },
+      {
+        "shape": "shape-37",
+        "before": "平台覆盖 · 分歧诚实 · 引用平台有效断言绑定平台；引用内容仍须人工核对",
+        "after": "平台覆盖 · 分歧诚实 · 引用平台有效\n断言绑定平台；引用内容仍须人工核对"
+      }
+    ],
+    "6": [
+      {
+        "shape": "shape-7",
+        "before": "梗热度类比：长期讨论 / 周期活跃 / 突然走红 / 其余波动（示意）",
+        "after": "梗热度类比：长期讨论 / 周期活跃 / 突然走红 / 其余波动（示意）"
+      },
+      {
+        "shape": "shape-15",
+        "before": "讨论热度 x",
+        "after": "讨论热度 x"
+      },
+      {
+        "shape": "shape-32",
+        "before": "过去 28 天 → 未来 6 天（当前设定）",
+        "after": "过去 28 天 → 未来 6 天（当前设定）"
+      },
+      {
+        "shape": "shape-35",
+        "before": "长期积累与周期活跃",
+        "after": "长期积累与周期活跃"
+      },
+      {
+        "shape": "shape-36",
+        "before": "T：EMA 趋势；S：Fourier 周期",
+        "after": "T：EMA 趋势；S：Fourier 周期"
+      },
+      {
+        "shape": "shape-40",
+        "before": "突然走红与其余波动",
+        "after": "突然走红与其余波动"
+      },
+      {
+        "shape": "shape-41",
+        "before": "C：事件信号；R：代数剩余项",
+        "after": "C：事件信号；R：代数剩余项"
+      },
+      {
+        "shape": "shape-45",
+        "before": "分开编码，再融合预测",
+        "after": "分开编码，再融合预测"
+      },
+      {
+        "shape": "shape-46",
+        "before": "四路数值表征路由；top-k = 2；文本可选",
+        "after": "四路数值表征路由；top-k = 2；文本可选"
+      },
+      {
+        "shape": "shape-50",
+        "before": "用真实实验检验收益",
+        "after": "用真实实验检验收益"
+      },
+      {
+        "shape": "shape-51",
+        "before": "下页为既有数据结果，不是方舟案例实验",
+        "after": "下页为既有数据结果，不是方舟案例实验"
+      }
+    ]
+  }
+}

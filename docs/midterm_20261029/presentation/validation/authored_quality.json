@@ -1,0 +1,231 @@
+
+[SCAN] Checking 18 round-trip output SVG page(s) for edited-text horizontal capacity (single-line width per positioned line; vertical wrapping is not modeled)...
+
+[OK] slide_01.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/2 unchanged source texts)
+
+[WARN] slide_06.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=63; text='从多平台信息到可核查的辅助判断'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=80, y=140; text='面向公共议题观察与传播研究，先解决证据和…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=76, y=700; text='SocialSense · 创新训练类中…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=1155, y=700; text='02 / 18'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=218; text='01'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=162, y=213; text='平台数据难直接比较'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=162, y=258; text='统一字段、时间和缺失标记保留各平台的观测…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=378; text='02'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=162, y=373; text='生成结论缺少核验'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=162, y=418; text='让趋势、情绪和风险判断回到可引用的观测证…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=538; text='03'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=162, y=533; text='预测价值需要实测'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=162, y=578; text='同时报告数值误差、方向尖峰检出与误报'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=722, y=218; text='04'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=772, y=213; text='平台分歧难以解释'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=772, y=258; text='对齐时间，再比较立场与声量统计差异仍需事…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=722, y=378; text='05'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=772, y=373; text='传播关系尚待补齐'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=772, y=418; text='现有相关性不等于因果传播以可追溯关系样本…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+
+[WARN] slide_05.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=63; text='对照立项目标，四条主线已形成原型'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=80, y=140; text='中期状态按代码与记录判断；原型完成不等于…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=76, y=700; text='SocialSense · 创新训练类中…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=1155, y=700; text='03 / 18'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] <text> (x=94, y=220; text='01 数据接入与标准化') exceeds owning frame <rect> on the horizontal axis: estimated text (94.0, 197.1)-(364.4, 229.4), frame (70.0, 180.0)-(76.0, 380.0), overflow horizontal 4806.0%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=94, y=265; text='已有适配接口、清洗与数据契约仍需逐平台稳…') exceeds owning frame <rect> on the horizontal axis: estimated text (94.0, 248.8)-(375.0, 301.1), frame (70.0, 180.0)-(76.0, 380.0), overflow horizontal 4982.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=94, y=450; text='02 跨平台分析') exceeds owning frame <rect> on the horizontal axis: estimated text (94.0, 427.1)-(278.7, 459.4), frame (70.0, 410.0)-(76.0, 610.0), overflow horizontal 3378.6%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=94, y=495; text='已实现时间对齐与差异汇总语义级同事件对齐…') exceeds owning frame <rect> on the horizontal axis: estimated text (94.0, 478.9)-(334.8, 531.1), frame (70.0, 410.0)-(76.0, 610.0), overflow horizontal 4313.9%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=434, y=220; text='03 辅助预测') exceeds owning frame <rect> on the horizontal axis: estimated text (434.0, 197.1)-(590.2, 229.4), frame (410.0, 180.0)-(416.0, 380.0), overflow horizontal 2902.7%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=434, y=265; text='已训练四分量模型并验证数值包误差、泛化与…') exceeds owning frame <rect> on the horizontal axis: estimated text (434.0, 248.8)-(715.0, 301.1), frame (410.0, 180.0)-(416.0, 380.0), overflow horizontal 4982.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=434, y=450; text='04 可视化与报告') exceeds owning frame <rect> on the horizontal axis: estimated text (434.0, 427.1)-(647.3, 459.4), frame (410.0, 410.0)-(416.0, 610.0), overflow horizontal 3854.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=434, y=495; text='已有档案浏览、详情及规则校准线上联调与用…') exceeds owning frame <rect> on the horizontal axis: estimated text (434.0, 478.9)-(715.0, 531.1), frame (410.0, 410.0)-(416.0, 610.0), overflow horizontal 4982.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+
+[WARN] slide_09.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=63; text='系统架构以报告契约连接分析与应用'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=80, y=140; text='实际模块：agent / multiag…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=76, y=700; text='SocialSense · 创新训练类中…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=1155, y=700; text='04 / 18'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] <text> (x=94, y=230; text='数据与单平台分析') exceeds owning frame <rect> on the horizontal axis: estimated text (94.0, 207.1)-(322.4, 239.4), frame (70.0, 190.0)-(76.0, 550.0), overflow horizontal 4106.6%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=94, y=275; text='关键词与观测数据采集清洗 → 立场画像文…') exceeds owning frame <rect> on the horizontal axis: estimated text (94.0, 257.1)-(298.3, 380.0), frame (70.0, 190.0)-(76.0, 550.0), overflow horizontal 3705.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=959, y=230; text='服务与交互') exceeds owning frame <rect> on the horizontal axis: estimated text (959.0, 207.1)-(1101.7, 239.4), frame (935.0, 190.0)-(941.0, 550.0), overflow horizontal 2679.1%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=959, y=275; text='Flask API三维档案浏览证据详情与…') exceeds owning frame <rect> on the horizontal axis: estimated text (959.0, 256.3)-(1168.9, 385.0), frame (935.0, 190.0)-(941.0, 550.0), overflow horizontal 3798.0%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+
+[WARN] slide_12.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=63; text='让结论回到证据：两层规则校准'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=80, y=140; text='规则负责发现不一致；关键结论仍需人工复核'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=76, y=700; text='SocialSense · 创新训练类中…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=1155, y=700; text='05 / 18'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] <text> (x=469, y=225; text='G1—G7 单平台核验') exceeds owning frame <rect> on the horizontal axis: estimated text (469.0, 202.1)-(708.4, 234.4), frame (445.0, 185.0)-(451.0, 393.0), overflow horizontal 4289.2%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=469, y=270; text='趋势 · 情绪 · 立场 · 引用标识数…') exceeds owning frame <rect> on the horizontal axis: estimated text (469.0, 248.8)-(955.2, 317.5), frame (445.0, 185.0)-(451.0, 393.0), overflow horizontal 8404.1%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=469, y=460; text='CX1—CX5 跨平台核验') exceeds owning frame <rect> on the horizontal axis: estimated text (469.0, 437.1)-(743.2, 469.4), frame (445.0, 420.0)-(451.0, 620.0), overflow horizontal 4869.9%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=469, y=505; text='平台覆盖 · 分歧诚实 · 引用平台有效…') exceeds owning frame <rect> on the horizontal axis: estimated text (469.0, 483.8)-(951.3, 552.5), frame (445.0, 420.0)-(451.0, 620.0), overflow horizontal 8337.6%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+
+[WARN] slide_10.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=63; text='四分量建模，分别学习热度的不同结构'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=80, y=140; text='输入过去 28 天，直接预测未来 6 天…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=76, y=700; text='SocialSense · 创新训练类中…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=1155, y=700; text='06 / 18'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] <text> (x=315, y=298; text='x = T + S + C + R') exceeds owning frame <rect> on the horizontal axis: estimated text (178.2, 270.8)-(451.8, 309.2), frame (88.0, 340.0)-(192.0, 432.0), overflow horizontal 249.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=140, y=409; text='EMA') exceeds owning frame <rect> on the horizontal axis: estimated text (122.3, 394.6)-(157.7, 414.9), frame (204.0, 340.0)-(308.0, 432.0), overflow horizontal 78.5%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=256, y=409; text='Fourier') exceeds owning frame <rect> on the horizontal axis: estimated text (223.2, 394.6)-(288.8, 414.9), frame (320.0, 340.0)-(424.0, 432.0), overflow horizontal 93.1%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=372, y=409; text='事件信号') exceeds owning frame <rect> on the horizontal axis: estimated text (335.8, 394.6)-(408.2, 414.9), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 96.3%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=315, y=492; text='四路编码 → 稀疏专家融合') exceeds owning frame <rect> on the horizontal axis: estimated text (155.0, 469.1)-(475.0, 501.4), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 270.2%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=315, y=543; text='预测增量 → 累加回水平域') exceeds owning frame <rect> on the horizontal axis: estimated text (166.9, 521.8)-(463.1, 551.8), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 258.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=315, y=591; text='EMA 含可学习平滑参数') exceeds owning frame <rect> on the horizontal axis: estimated text (206.1, 574.0)-(423.9, 598.0), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 221.0%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] Cannot verify owning frame for edited <text> (x=610, y=210; text='分量专属编码'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=610, y=253; text='线性 / PatchCNN / 稀疏事件…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=610, y=326; text='四路数值路由'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=610, y=369; text='路由输入包含 T、S、C、R；默认 to…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=610, y=442; text='文本是可选路径'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=610, y=485; text='完整模型含门控文本增量；数值验证关闭文本'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=610, y=558; text='部署验证有明确边界'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=610, y=601; text='只验证 CPU 数值路径，不等于完整文本…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+
+[WARN] slide_18.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=63; text='实测结果：数值拟合与预警仍有提升空间'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=80, y=140; text='2026-10-19 CPU 数值路径验…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=76, y=700; text='SocialSense · 创新训练类中…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=1155, y=700; text='07 / 18'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] <text> (x=133, y=516.0; text='0.0') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 501.6)-(133.0, 522.0), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=133, y=458.5; text='0.5') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 444.1)-(133.0, 464.4), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=133, y=401.0; text='1.0') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 386.6)-(133.0, 406.9), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=133, y=343.5; text='1.5') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 329.1)-(133.0, 349.4), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=133, y=286.0; text='2.0') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 271.6)-(133.0, 291.9), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=246.25, y=545; text='持续值') exceeds owning frame <rect> on the horizontal axis: estimated text (212.8, 527.1)-(279.7, 552.4), frame (405.8, 292.8)-(491.8, 510.0), overflow horizontal 224.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=448.75, y=545; text='数值路径') exceeds owning frame <rect> on the horizontal axis: estimated text (404.1, 527.1)-(493.4, 552.4), frame (405.8, 292.8)-(491.8, 510.0), overflow horizontal 1.9%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] Cannot verify owning frame for edited <text> (x=95, y=620; text='较持续值基线高 23.87% · 误差尚…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+
+[OK] slide_20.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[WARN] slide_16.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=63; text='项目特色在于证据约束与可验证的系统组合'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=80, y=140; text='借鉴基础方法，明确工程贡献；算法优势由实…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=76, y=700; text='SocialSense · 创新训练类中…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=1155, y=700; text='09 / 18'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=514, y=215; text='证据校准贯穿分析链'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=514, y=259; text='受 ReAct / RAG 启发，以数据…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=514, y=328; text='分量编码面向突发热度'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=514, y=372; text='借鉴 DLinear / xPatch …'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=514, y=441; text='轻量交付接受行为验证'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=514, y=485; text='数值包等价性与文本收益分开评价，保留负结…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=514, y=554; text='交互界面支持人工复核'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=514, y=598; text='将来源、范围和研究记录组织到档案视图'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+
+[WARN] slide_17.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=63; text='五位成员围绕可检查交付物协作'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=80, y=140; text='以接口、实验记录与验收条件连接开发和科研…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=76, y=700; text='SocialSense · 创新训练类中…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=1155, y=700; text='10 / 18'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] <text> (x=94, y=230; text='架构与交付') exceeds owning frame <rect> on the horizontal axis: estimated text (94.0, 207.1)-(236.7, 239.4), frame (70.0, 190.0)-(76.0, 560.0), overflow horizontal 2679.1%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=94, y=275; text='张艺嘉总体架构、模型实现与导出前后端联调…') exceeds owning frame <rect> on the horizontal axis: estimated text (94.0, 256.3)-(373.8, 419.1), frame (70.0, 190.0)-(76.0, 560.0), overflow horizontal 4964.0%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=489, y=230; text='数据与评估') exceeds owning frame <rect> on the horizontal axis: estimated text (489.0, 207.1)-(631.7, 239.4), frame (465.0, 190.0)-(471.0, 560.0), overflow horizontal 2679.1%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=489, y=275; text='王悦：数据清洗与质量检查郑锦凡：基线、消…') exceeds owning frame <rect> on the horizontal axis: estimated text (489.0, 257.1)-(801.6, 380.0), frame (465.0, 190.0)-(471.0, 560.0), overflow horizontal 5510.5%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=884, y=230; text='传播研究与交互') exceeds owning frame <rect> on the horizontal axis: estimated text (884.0, 207.1)-(1083.8, 239.4), frame (860.0, 190.0)-(866.0, 560.0), overflow horizontal 3630.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=884, y=275; text='詹江叶煜：传播图与事件对齐吴珂欣：三维档…') exceeds owning frame <rect> on the horizontal axis: estimated text (884.0, 257.1)-(1174.3, 380.0), frame (860.0, 190.0)-(866.0, 560.0), overflow horizontal 5138.3%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] Cannot verify owning frame for edited <text> (x=640, y=625; text='科研训练收获：统一口径 · 面对负结果 …'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+
+[WARN] slide_26.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=63; text='下一阶段以验证和补齐关键证据为重点'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=80, y=140; text='项目周期延续至 2027 年 6 月；以…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=76, y=700; text='SocialSense · 创新训练类中…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=1155, y=700; text='11 / 18'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=95, y=217; text='2026.11—12'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=95, y=312; text='补齐基础证据'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=95, y=363; text='固化数据与评估协议建立简单基线及事件样本…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=478, y=217; text='2027.01—03'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=478, y=312; text='验证核心研究'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=478, y=363; text='消融、跨话题、传播图比较线上联调与小规模…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=861, y=217; text='2027.04—06'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=861, y=312; text='成果整理与结题'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=861, y=363; text='收敛已验证模块与文档完善软著及论文材料验…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+
+[OK] slide_27.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+[WARN] evaluation_protocol.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=63; text='备份｜评价协议与误报漏报明细'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=80, y=140; text='数值路径：CPU / with_text…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=76, y=700; text='SocialSense · 创新训练类中…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=1155, y=700; text='13 / 18 备份'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] <text> (x=89, y=220; text='数据与时间切分') exceeds owning frame <rect> on the horizontal axis: estimated text (89.0, 197.1)-(288.8, 229.4), frame (65.0, 180.0)-(71.0, 630.0), overflow horizontal 3630.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=89, y=265; text='1339 天：2023.01.01—20…') exceeds owning frame <rect> on the horizontal axis: estimated text (89.0, 248.0)-(467.4, 458.0), frame (65.0, 180.0)-(71.0, 630.0), overflow horizontal 6607.0%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] Cannot verify owning frame for edited <text> (x=682, y=217; text='标签阈值与报警阈值分别定义'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=682, y=260; text='报警：预测增量 > 验证集阈值 0.46…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=681, y=598; text='标签用于回溯评价，不是预先已知的尖峰标准…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+
+[WARN] slide_15.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] <text> (x=849, y=220; text='已实现 ≠ 已证明') exceeds owning frame <rect> on the horizontal axis: estimated text (849.0, 197.1)-(1054.8, 229.4), frame (825.0, 180.0)-(831.0, 386.0), overflow horizontal 3729.5%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=849, y=265; text='框架与代码可检查相对性能仍需统一基线回音…') exceeds owning frame <rect> on the horizontal axis: estimated text (849.0, 246.3)-(1127.7, 340.9), frame (825.0, 180.0)-(831.0, 386.0), overflow horizontal 4944.6%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=849, y=455; text='待完成的验证') exceeds owning frame <rect> on the horizontal axis: estimated text (849.0, 432.1)-(1020.3, 464.4), frame (825.0, 415.0)-(831.0, 621.0), overflow horizontal 3154.9%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=849, y=500; text='分量 / 文本 / 路由消融跨话题与滚动…') exceeds owning frame <rect> on the horizontal axis: estimated text (849.0, 481.3)-(1104.4, 575.9), frame (825.0, 415.0)-(831.0, 621.0), overflow horizontal 4555.9%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+
+[WARN] slide_21.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=63; text='备份｜详情界面保留来源与观测范围'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=80, y=140; text='本地运行实拍 · 仓库内置档案数据 · …'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=76, y=700; text='SocialSense · 创新训练类中…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=1155, y=700; text='15 / 18 备份'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] <text> (x=909, y=245; text='可检查的入口') exceeds owning frame <rect> on the horizontal axis: estimated text (909.0, 222.1)-(1080.3, 254.4), frame (885.0, 205.0)-(891.0, 600.0), overflow horizontal 3154.9%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=909, y=290; text='平台 / 来源观测时间范围摘要与主导立场…') exceeds owning frame <rect> on the horizontal axis: estimated text (909.0, 272.1)-(1154.6, 492.7), frame (885.0, 205.0)-(891.0, 600.0), overflow horizontal 4394.0%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+
+[WARN] slide_13.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] Cannot verify owning frame for edited <text> (x=112, y=63; text='备份｜经费按申请预算列示，实支待核账'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=80, y=140; text='材料依据：立项申请书预算；原草稿调整建议…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=76, y=700; text='SocialSense · 创新训练类中…'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] Cannot verify owning frame for edited <text> (x=1155, y=700; text='16 / 18 备份'); keep data-pptx-frame on the logical object or place a rect frame beside the text
+   [WARN] <text> (x=779, y=220; text='下一步核对') exceeds owning frame <rect> on the horizontal axis: estimated text (779.0, 197.1)-(921.7, 229.4), frame (755.0, 180.0)-(761.0, 612.0), overflow horizontal 2679.1%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=779, y=265; text='获批额度与实际到账逐笔支出、账单和凭证编…') exceeds owning frame <rect> on the horizontal axis: estimated text (779.0, 246.3)-(1124.1, 477.3), frame (755.0, 180.0)-(761.0, 612.0), overflow horizontal 6052.3%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+
+[WARN] slide_25.svg - Passed (with warnings)
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+   [WARN] <text> (x=94, y=220; text='01 事件对齐') exceeds owning frame <rect> on the horizontal axis: estimated text (94.0, 197.1)-(250.2, 229.4), frame (70.0, 180.0)-(76.0, 390.0), overflow horizontal 2902.7%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=94, y=265; text='先建立人工标注样本报告同事件识别准确率与…') exceeds owning frame <rect> on the horizontal axis: estimated text (94.0, 247.2)-(384.3, 304.9), frame (70.0, 180.0)-(76.0, 390.0), overflow horizontal 5138.3%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=484, y=220; text='02 传播关系') exceeds owning frame <rect> on the horizontal axis: estimated text (484.0, 197.1)-(640.2, 229.4), frame (460.0, 180.0)-(466.0, 390.0), overflow horizontal 2902.7%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=484, y=265; text='核查来源、时间戳和引用边区分首发线索与因…') exceeds owning frame <rect> on the horizontal axis: estimated text (484.0, 247.2)-(752.0, 304.9), frame (460.0, 180.0)-(466.0, 390.0), overflow horizontal 4766.1%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=874, y=220; text='03 预测泛化') exceeds owning frame <rect> on the horizontal axis: estimated text (874.0, 197.1)-(1030.2, 229.4), frame (850.0, 180.0)-(856.0, 390.0), overflow horizontal 2902.7%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=874, y=265; text='统一基线与消融协议滚动切分、跨话题再评估') exceeds owning frame <rect> on the horizontal axis: estimated text (874.0, 247.2)-(1119.6, 304.9), frame (850.0, 180.0)-(856.0, 390.0), overflow horizontal 4394.0%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=94, y=460; text='04 规则覆盖') exceeds owning frame <rect> on the horizontal axis: estimated text (94.0, 437.1)-(250.2, 469.4), frame (70.0, 420.0)-(76.0, 630.0), overflow horizontal 2902.7%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=94, y=505; text='整理误判与漏检案例人工抽查通过和驳回结论') exceeds owning frame <rect> on the horizontal axis: estimated text (94.0, 487.1)-(339.6, 544.9), frame (70.0, 420.0)-(76.0, 630.0), overflow horizontal 4394.0%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=484, y=460; text='05 部署可靠性') exceeds owning frame <rect> on the horizontal axis: estimated text (484.0, 437.1)-(668.7, 469.4), frame (460.0, 420.0)-(466.0, 630.0), overflow horizontal 3378.6%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=484, y=505; text='测量目标环境内存与延迟记录弱网、缺依赖和…') exceeds owning frame <rect> on the horizontal axis: estimated text (484.0, 487.1)-(729.6, 544.9), frame (460.0, 420.0)-(466.0, 630.0), overflow horizontal 4394.0%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=874, y=460; text='06 成果与经费') exceeds owning frame <rect> on the horizontal axis: estimated text (874.0, 437.1)-(1058.7, 469.4), frame (850.0, 420.0)-(856.0, 630.0), overflow horizontal 3378.6%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+   [WARN] <text> (x=874, y=505; text='整理申请材料和财务台账状态以正式回执或凭…') exceeds owning frame <rect> on the horizontal axis: estimated text (874.0, 487.1)-(1142.0, 544.9), frame (850.0, 420.0)-(856.0, 630.0), overflow horizontal 4766.1%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking
+
+[OK] slide_23.svg - Passed
+   viewBox: 0 0 1280 720 | text calibration: 0.0% (0/0 unchanged source texts)
+
+================================================================================
+[SUMMARY] Check Summary
+================================================================================
+
+Total files: 18
+  [OK] Fully passed: 4 (22%)
+  [WARN] With warnings: 14 (77%)
+  [ERROR] With errors: 0 (0%)
+
+Provenance categories:
+  blocking: 0          hard findings; gate also requires exit 0
+  introduced: 151      advisory; new or changed
+  inherited: 0         informational; prototype-identical
+  source-import: 0     informational; source-conversion loss
+
+[TIP] Common fixes:
+  1. XML well-formedness: write typography as raw Unicode (—, ©, →, NBSP); escape XML reserved chars as &amp; &lt; &gt; &quot; &apos; — never use HTML named entities like &nbsp; &mdash; &copy;
+  2. viewBox issues: root viewBox is the canvas authority (see references/canvas-formats.md)
+  3. Paint recommendation: generated SVG prefers uppercase #RRGGBB plus channel-specific opacity; compatible alternatives remain non-blocking
+  4. foreignObject: Use <text> + <tspan> for manual line breaks
+  5. Font issues: use PPT-safe exported typefaces (e.g. Arial / Consolas, with the CJK face of the deck language)
+
+[REPORT] JSON quality report exported: docs\midterm_20261029\presentation\validation\svg_quality_report.json

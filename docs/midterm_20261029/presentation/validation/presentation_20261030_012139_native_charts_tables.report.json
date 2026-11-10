@@ -1,0 +1,1840 @@
+{
+  "schema": "ppt-master.pptx-postflight-report.v1",
+  "status": "passed-with-warnings",
+  "output": {
+    "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\exports\\presentation_20261030_012139_native_charts_tables.pptx",
+    "bytes": 3946845
+  },
+  "source": {
+    "svg_slide_count": 18,
+    "layout_definition_count": 0,
+    "fingerprint": {
+      "algorithm": "sha256",
+      "digest": "79b0ba2ebbfb11b19abded83b1a9d492db28a06872017f50899e8d22a5c766d5",
+      "file_count": 29,
+      "files": [
+        {
+          "file": "authoring-svg-flat/evaluation_protocol.svg",
+          "sha256": "44ff0b1f4aafd6b1667ddb1dbc30db29f78040337c8a3d81276abb510f217e84"
+        },
+        {
+          "file": "authoring-svg-flat/slide_01.svg",
+          "sha256": "3f9b357195ef681556866f0209f4fa281bc9478a6dd3a2ffaf7430c7c98c1000"
+        },
+        {
+          "file": "authoring-svg-flat/slide_02.svg",
+          "sha256": "8db0817559515533653243a93dc082046c919f75e0d5e376fdf198e6983bbdff"
+        },
+        {
+          "file": "authoring-svg-flat/slide_03.svg",
+          "sha256": "aad550bc2b924291b9209a8e4300844915723e20181bebf45ff84177880f753d"
+        },
+        {
+          "file": "authoring-svg-flat/slide_04.svg",
+          "sha256": "b4ea0fff06a1cf330da8a101930f7bbae93702dfc94d7e0529f07f85407cb577"
+        },
+        {
+          "file": "authoring-svg-flat/slide_05.svg",
+          "sha256": "e2f6c4a7f998d098f2e0e8ac29378da3ad31e0a9f33035d0c33dafd0870ce71f"
+        },
+        {
+          "file": "authoring-svg-flat/slide_06.svg",
+          "sha256": "9fb0ca88a6a1ed217eb1fc0a0227ff692dc103ce37bc976e2a74519747b3b5f6"
+        },
+        {
+          "file": "authoring-svg-flat/slide_07.svg",
+          "sha256": "6ca51c2751a638f3a78f0dedf9f6f39d4cd761c87d03cc520c35c4026949a98a"
+        },
+        {
+          "file": "authoring-svg-flat/slide_08.svg",
+          "sha256": "f48430481fabef92eff3feaa962d18a504eb4f2e612845e52d7dd808f5ec1b1c"
+        },
+        {
+          "file": "authoring-svg-flat/slide_09.svg",
+          "sha256": "bffa86f200066e2b1562fcced6a2e2818362ca680547cb28c84f7f2e5d8a49f5"
+        },
+        {
+          "file": "authoring-svg-flat/slide_10.svg",
+          "sha256": "9c8076921e568f20e7dc8d33ba70665822f8c60a94d9160ede14bfcb95589eda"
+        },
+        {
+          "file": "authoring-svg-flat/slide_11.svg",
+          "sha256": "9270a74fb66654c2301a1d969b76f965452b058e3ebdc0236abd520115713249"
+        },
+        {
+          "file": "authoring-svg-flat/slide_12.svg",
+          "sha256": "76a548f1020c17e96f08b71bd7215d40f12c1098fc4f0ec0073c11f2f3ffdb90"
+        },
+        {
+          "file": "authoring-svg-flat/slide_13.svg",
+          "sha256": "2b12dd7a4b7cd3ddc5666dbd1d7f2a8d9995bb34677891b657d064d1b2695408"
+        },
+        {
+          "file": "authoring-svg-flat/slide_14.svg",
+          "sha256": "8b06c28b8608f173f26809bc883fd383cd030299681c1e4301f4a55065a37f76"
+        },
+        {
+          "file": "authoring-svg-flat/slide_15.svg",
+          "sha256": "d219bf5464b8432270288f61ba2e7dd7d780552d8d868f0cfed7759b5a3d9bd6"
+        },
+        {
+          "file": "authoring-svg-flat/slide_16.svg",
+          "sha256": "7d00b0ef59f8eb994b0e5b08e62db7127bdd36bfe3446d3162b50b8a950eb177"
+        },
+        {
+          "file": "authoring-svg-flat/slide_17.svg",
+          "sha256": "ef2a2e92a55d252f398db15c35cad3aa06a9b38d53fe6dd65c487b093e0683da"
+        },
+        {
+          "file": "authoring-svg-flat/slide_18.svg",
+          "sha256": "36b821d0ff4fe5032278c8b5d1b8acb8959bb7d9eb22862cca287a6a3a61bef0"
+        },
+        {
+          "file": "authoring-svg-flat/slide_19.svg",
+          "sha256": "7b3f45c5e0d8643851291a217358d3ab20c3565614d63f59863a9722ddbef256"
+        },
+        {
+          "file": "authoring-svg-flat/slide_20.svg",
+          "sha256": "3d457c76292d07ceee164cb95d5729d0f1959ac5a6e83fd0d34c49767bb41ebb"
+        },
+        {
+          "file": "authoring-svg-flat/slide_21.svg",
+          "sha256": "e508c56cfa27c07b43d371f7a5bb2a9da853a99b1ba6b9bfce14de5aabfd8d76"
+        },
+        {
+          "file": "authoring-svg-flat/slide_22.svg",
+          "sha256": "fb660b2f746313c1631d0ea3004c37ae0a3462f0c731dc3e94e2256494eb0ae1"
+        },
+        {
+          "file": "authoring-svg-flat/slide_23.svg",
+          "sha256": "ff81cfd35ea31efe6e8958713cc217ea86a20218718b5e5c1a55bbe03b0241dd"
+        },
+        {
+          "file": "authoring-svg-flat/slide_24.svg",
+          "sha256": "15b344300bfa7500f7654841eeaac59351f0057ed192b0ca7150dd12c428edc4"
+        },
+        {
+          "file": "authoring-svg-flat/slide_25.svg",
+          "sha256": "039ad77cbca2d1b4daf64bb13445c79fe6f8c146b1a5e05831cb64f4e8860f94"
+        },
+        {
+          "file": "authoring-svg-flat/slide_26.svg",
+          "sha256": "5164b71b9541b718e75693d98e66b9cd408cfd45285dd60d03a1930a9d357a1b"
+        },
+        {
+          "file": "authoring-svg-flat/slide_27.svg",
+          "sha256": "e72aeca110806b53af6d2809ea59605f1da7e87809130bb41c19a50c49fda264"
+        },
+        {
+          "file": "page_plan.json",
+          "sha256": "dce4e15c872bc59094a12fb3051c7914690fd806ba36972ef9cf52b8d15d6693"
+        }
+      ]
+    },
+    "authoring_roundtrip": {
+      "schema": "ppt-master.authoring-roundtrip-materialization.v1",
+      "authoring_root": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\midterm_20261029\\presentation\\authoring-svg-flat",
+      "manifest_schema": "ppt-master.svg-authoring-ir.v1",
+      "projection_kind": "flat",
+      "materialized_slide_count": 18,
+      "page_plan": {
+        "schema": "ppt-master.roundtrip-page-plan.v1",
+        "output_pages": 18,
+        "pages": [
+          {
+            "output_index": 1,
+            "source_slide": 1,
+            "svg": "slide_01.svg"
+          },
+          {
+            "output_index": 2,
+            "source_slide": 6,
+            "svg": "slide_06.svg"
+          },
+          {
+            "output_index": 3,
+            "source_slide": 5,
+            "svg": "slide_05.svg"
+          },
+          {
+            "output_index": 4,
+            "source_slide": 9,
+            "svg": "slide_09.svg"
+          },
+          {
+            "output_index": 5,
+            "source_slide": 12,
+            "svg": "slide_12.svg"
+          },
+          {
+            "output_index": 6,
+            "source_slide": 10,
+            "svg": "slide_10.svg"
+          },
+          {
+            "output_index": 7,
+            "source_slide": 18,
+            "svg": "slide_18.svg"
+          },
+          {
+            "output_index": 8,
+            "source_slide": 20,
+            "svg": "slide_20.svg"
+          },
+          {
+            "output_index": 9,
+            "source_slide": 16,
+            "svg": "slide_16.svg"
+          },
+          {
+            "output_index": 10,
+            "source_slide": 17,
+            "svg": "slide_17.svg"
+          },
+          {
+            "output_index": 11,
+            "source_slide": 26,
+            "svg": "slide_26.svg"
+          },
+          {
+            "output_index": 12,
+            "source_slide": 27,
+            "svg": "slide_27.svg"
+          },
+          {
+            "output_index": 13,
+            "source_slide": 18,
+            "svg": "evaluation_protocol.svg"
+          },
+          {
+            "output_index": 14,
+            "source_slide": 15,
+            "svg": "slide_15.svg"
+          },
+          {
+            "output_index": 15,
+            "source_slide": 21,
+            "svg": "slide_21.svg"
+          },
+          {
+            "output_index": 16,
+            "source_slide": 13,
+            "svg": "slide_13.svg"
+          },
+          {
+            "output_index": 17,
+            "source_slide": 25,
+            "svg": "slide_25.svg"
+          },
+          {
+            "output_index": 18,
+            "source_slide": 23,
+            "svg": "slide_23.svg"
+          }
+        ]
+      },
+      "totals": {
+        "source_ref_count": 454,
+        "unchanged_refs": 223,
+        "edited_refs": 10,
+        "deleted_refs": 221,
+        "authored_unreferenced": 117,
+        "expanded_vector_uses": 0
+      },
+      "documents": [
+        {
+          "file": "slide_01.svg",
+          "source_file": "slide_01.svg",
+          "source_slide": 1,
+          "document_unchanged": false,
+          "source_ref_count": 26,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:14",
+            "slide:15",
+            "slide:16",
+            "slide:2",
+            "slide:3",
+            "slide:33",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "unchanged_refs": 21,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:15",
+            "slide:33",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "edited_refs": 5,
+          "edited_ref_ids": [
+            "slide:14",
+            "slide:16",
+            "slide:2",
+            "slide:3",
+            "slide:4"
+          ],
+          "deleted_refs": 0,
+          "deleted_ref_ids": [],
+          "authored_unreferenced": 0,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_06.svg",
+          "source_file": "slide_06.svg",
+          "source_slide": 6,
+          "document_unchanged": false,
+          "source_ref_count": 33,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:13",
+            "slide:14",
+            "slide:15",
+            "slide:16",
+            "slide:17",
+            "slide:18",
+            "slide:19",
+            "slide:2",
+            "slide:20",
+            "slide:21",
+            "slide:22",
+            "slide:23",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:23"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 21,
+          "deleted_ref_ids": [
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:13",
+            "slide:14",
+            "slide:15",
+            "slide:16",
+            "slide:17",
+            "slide:18",
+            "slide:19",
+            "slide:2",
+            "slide:20",
+            "slide:21",
+            "slide:22",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "authored_unreferenced": 9,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_05.svg",
+          "source_file": "slide_05.svg",
+          "source_slide": 5,
+          "document_unchanged": false,
+          "source_ref_count": 46,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:13",
+            "slide:14",
+            "slide:15",
+            "slide:16",
+            "slide:17",
+            "slide:18",
+            "slide:19",
+            "slide:2",
+            "slide:20",
+            "slide:21",
+            "slide:22",
+            "slide:23",
+            "slide:24",
+            "slide:25",
+            "slide:26",
+            "slide:27",
+            "slide:28",
+            "slide:29",
+            "slide:3",
+            "slide:30",
+            "slide:31",
+            "slide:32",
+            "slide:33",
+            "slide:34",
+            "slide:35",
+            "slide:36",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:36"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 34,
+          "deleted_ref_ids": [
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:13",
+            "slide:14",
+            "slide:15",
+            "slide:16",
+            "slide:17",
+            "slide:18",
+            "slide:19",
+            "slide:2",
+            "slide:20",
+            "slide:21",
+            "slide:22",
+            "slide:23",
+            "slide:24",
+            "slide:25",
+            "slide:26",
+            "slide:27",
+            "slide:28",
+            "slide:29",
+            "slide:3",
+            "slide:30",
+            "slide:31",
+            "slide:32",
+            "slide:33",
+            "slide:34",
+            "slide:35",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "authored_unreferenced": 8,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_09.svg",
+          "source_file": "slide_09.svg",
+          "source_slide": 9,
+          "document_unchanged": false,
+          "source_ref_count": 26,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:13",
+            "slide:14",
+            "slide:15",
+            "slide:17",
+            "slide:2",
+            "slide:21",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:21"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 14,
+          "deleted_ref_ids": [
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:13",
+            "slide:14",
+            "slide:15",
+            "slide:17",
+            "slide:2",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "authored_unreferenced": 8,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_12.svg",
+          "source_file": "slide_12.svg",
+          "source_slide": 12,
+          "document_unchanged": false,
+          "source_ref_count": 19,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:2",
+            "slide:21",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:21"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 7,
+          "deleted_ref_ids": [
+            "slide:2",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8"
+          ],
+          "authored_unreferenced": 6,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_10.svg",
+          "source_file": "slide_10.svg",
+          "source_slide": 10,
+          "document_unchanged": false,
+          "source_ref_count": 27,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:13",
+            "slide:14",
+            "slide:15",
+            "slide:16",
+            "slide:2",
+            "slide:21",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:21"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 15,
+          "deleted_ref_ids": [
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:13",
+            "slide:14",
+            "slide:15",
+            "slide:16",
+            "slide:2",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "authored_unreferenced": 8,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_18.svg",
+          "source_file": "slide_18.svg",
+          "source_slide": 18,
+          "document_unchanged": false,
+          "source_ref_count": 23,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:2",
+            "slide:21",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:21"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 11,
+          "deleted_ref_ids": [
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:2",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "authored_unreferenced": 5,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_20.svg",
+          "source_file": "slide_20.svg",
+          "source_slide": 20,
+          "document_unchanged": false,
+          "source_ref_count": 20,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:15",
+            "slide:16",
+            "slide:19",
+            "slide:2",
+            "slide:20",
+            "slide:21",
+            "slide:279",
+            "slide:4",
+            "slide:6"
+          ],
+          "unchanged_refs": 16,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:15",
+            "slide:19",
+            "slide:20",
+            "slide:21",
+            "slide:279"
+          ],
+          "edited_refs": 1,
+          "edited_ref_ids": [
+            "slide:16"
+          ],
+          "deleted_refs": 3,
+          "deleted_ref_ids": [
+            "slide:2",
+            "slide:4",
+            "slide:6"
+          ],
+          "authored_unreferenced": 4,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_16.svg",
+          "source_file": "slide_16.svg",
+          "source_slide": 16,
+          "document_unchanged": false,
+          "source_ref_count": 30,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:13",
+            "slide:18",
+            "slide:19",
+            "slide:2",
+            "slide:20",
+            "slide:21",
+            "slide:23",
+            "slide:24",
+            "slide:25",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:21"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 18,
+          "deleted_ref_ids": [
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:13",
+            "slide:18",
+            "slide:19",
+            "slide:2",
+            "slide:20",
+            "slide:23",
+            "slide:24",
+            "slide:25",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "authored_unreferenced": 8,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_17.svg",
+          "source_file": "slide_17.svg",
+          "source_slide": 17,
+          "document_unchanged": false,
+          "source_ref_count": 36,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:13",
+            "slide:14",
+            "slide:15",
+            "slide:16",
+            "slide:17",
+            "slide:18",
+            "slide:19",
+            "slide:2",
+            "slide:20",
+            "slide:21",
+            "slide:22",
+            "slide:23",
+            "slide:24",
+            "slide:25",
+            "slide:26",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:26"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 24,
+          "deleted_ref_ids": [
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:13",
+            "slide:14",
+            "slide:15",
+            "slide:16",
+            "slide:17",
+            "slide:18",
+            "slide:19",
+            "slide:2",
+            "slide:20",
+            "slide:21",
+            "slide:22",
+            "slide:23",
+            "slide:24",
+            "slide:25",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "authored_unreferenced": 7,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_26.svg",
+          "source_file": "slide_26.svg",
+          "source_slide": 26,
+          "document_unchanged": false,
+          "source_ref_count": 14,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:2",
+            "slide:20",
+            "slide:21"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:21"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 2,
+          "deleted_ref_ids": [
+            "slide:2",
+            "slide:20"
+          ],
+          "authored_unreferenced": 5,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_27.svg",
+          "source_file": "slide_27.svg",
+          "source_slide": 27,
+          "document_unchanged": false,
+          "source_ref_count": 10,
+          "source_ref_ids": [
+            "master:7",
+            "slide:13",
+            "slide:14",
+            "slide:15",
+            "slide:16",
+            "slide:17",
+            "slide:18",
+            "slide:19",
+            "slide:20",
+            "slide:21"
+          ],
+          "unchanged_refs": 6,
+          "unchanged_ref_ids": [
+            "master:7",
+            "slide:13",
+            "slide:14",
+            "slide:15",
+            "slide:16",
+            "slide:21"
+          ],
+          "edited_refs": 4,
+          "edited_ref_ids": [
+            "slide:17",
+            "slide:18",
+            "slide:19",
+            "slide:20"
+          ],
+          "deleted_refs": 0,
+          "deleted_ref_ids": [],
+          "authored_unreferenced": 0,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "evaluation_protocol.svg",
+          "source_file": "slide_18.svg",
+          "source_slide": 18,
+          "document_unchanged": false,
+          "source_ref_count": 23,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:2",
+            "slide:21",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:21"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 11,
+          "deleted_ref_ids": [
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:2",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "authored_unreferenced": 7,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_15.svg",
+          "source_file": "slide_15.svg",
+          "source_slide": 15,
+          "document_unchanged": false,
+          "source_ref_count": 21,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:10",
+            "slide:13",
+            "slide:136",
+            "slide:14",
+            "slide:15",
+            "slide:16",
+            "slide:17",
+            "slide:2",
+            "slide:21",
+            "slide:7"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:21"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 9,
+          "deleted_ref_ids": [
+            "slide:10",
+            "slide:13",
+            "slide:136",
+            "slide:14",
+            "slide:15",
+            "slide:16",
+            "slide:17",
+            "slide:2",
+            "slide:7"
+          ],
+          "authored_unreferenced": 9,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_21.svg",
+          "source_file": "slide_21.svg",
+          "source_slide": 21,
+          "document_unchanged": false,
+          "source_ref_count": 28,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:12",
+            "slide:2",
+            "slide:21",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:53",
+            "slide:54",
+            "slide:69",
+            "slide:70",
+            "slide:76",
+            "slide:77",
+            "slide:8",
+            "slide:84",
+            "slide:93",
+            "slide:94",
+            "slide:95"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:21"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 16,
+          "deleted_ref_ids": [
+            "slide:12",
+            "slide:2",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:53",
+            "slide:54",
+            "slide:69",
+            "slide:70",
+            "slide:76",
+            "slide:77",
+            "slide:8",
+            "slide:84",
+            "slide:93",
+            "slide:94",
+            "slide:95"
+          ],
+          "authored_unreferenced": 5,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_13.svg",
+          "source_file": "slide_13.svg",
+          "source_slide": 13,
+          "document_unchanged": false,
+          "source_ref_count": 22,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:21",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:21"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 10,
+          "deleted_ref_ids": [
+            "slide:10",
+            "slide:11",
+            "slide:12",
+            "slide:3",
+            "slide:4",
+            "slide:5",
+            "slide:6",
+            "slide:7",
+            "slide:8",
+            "slide:9"
+          ],
+          "authored_unreferenced": 5,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_25.svg",
+          "source_file": "slide_25.svg",
+          "source_slide": 25,
+          "document_unchanged": false,
+          "source_ref_count": 37,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:11",
+            "slide:13",
+            "slide:19",
+            "slide:20",
+            "slide:21",
+            "slide:24",
+            "slide:31",
+            "slide:32",
+            "slide:33",
+            "slide:34",
+            "slide:35",
+            "slide:36",
+            "slide:37",
+            "slide:38",
+            "slide:39",
+            "slide:41",
+            "slide:42",
+            "slide:43",
+            "slide:44",
+            "slide:46",
+            "slide:47",
+            "slide:48",
+            "slide:49",
+            "slide:51",
+            "slide:6",
+            "slide:7"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:51"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 25,
+          "deleted_ref_ids": [
+            "slide:11",
+            "slide:13",
+            "slide:19",
+            "slide:20",
+            "slide:21",
+            "slide:24",
+            "slide:31",
+            "slide:32",
+            "slide:33",
+            "slide:34",
+            "slide:35",
+            "slide:36",
+            "slide:37",
+            "slide:38",
+            "slide:39",
+            "slide:41",
+            "slide:42",
+            "slide:43",
+            "slide:44",
+            "slide:46",
+            "slide:47",
+            "slide:48",
+            "slide:49",
+            "slide:6",
+            "slide:7"
+          ],
+          "authored_unreferenced": 9,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        },
+        {
+          "file": "slide_23.svg",
+          "source_file": "slide_23.svg",
+          "source_slide": 23,
+          "document_unchanged": false,
+          "source_ref_count": 13,
+          "source_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:21",
+            "slide:3"
+          ],
+          "unchanged_refs": 12,
+          "unchanged_ref_ids": [
+            "layout:11",
+            "layout:12",
+            "layout:3",
+            "layout:30",
+            "layout:31",
+            "layout:32",
+            "layout:33",
+            "layout:34",
+            "layout:4",
+            "layout:8",
+            "master:7",
+            "slide:21"
+          ],
+          "edited_refs": 0,
+          "edited_ref_ids": [],
+          "deleted_refs": 1,
+          "deleted_ref_ids": [
+            "slide:3"
+          ],
+          "authored_unreferenced": 14,
+          "expanded_vector_uses": 0,
+          "defs_changed": false,
+          "warnings": []
+        }
+      ],
+      "source_slide_passthrough": {
+        "count": 0,
+        "slides": []
+      },
+      "export_summary": {
+        "output_pages": 18,
+        "passthrough": 0,
+        "cloned_passthrough": 0,
+        "patched": 0,
+        "rebuilt": 18
+      }
+    }
+  },
+  "package": {
+    "zip_integrity": "passed",
+    "corrupt_member": null,
+    "slides": 18,
+    "notes": 18,
+    "masters": 2,
+    "layouts": 16
+  },
+  "checks": {
+    "zip_integrity": "passed",
+    "slide_count": "passed",
+    "internal_relationships": "enforced-at-build",
+    "structured_package": "not-applicable",
+    "transitions": "enforced-at-build",
+    "animations": "enforced-at-build",
+    "project_svg_contract": "enforced-at-build",
+    "compatibility_normalization": "not-applicable",
+    "authoring_roundtrip": "materialized-from-flat-authoring",
+    "quality_gate": "passed",
+    "quality_warnings": "warning",
+    "template_tokens": "passed",
+    "external_images": "passed",
+    "font_portability": "warning"
+  },
+  "quality": {
+    "status": "loaded",
+    "path": "docs\\midterm_20261029\\presentation\\validation\\svg_quality_report.json",
+    "schema": "ppt-master.svg-quality-report.v1",
+    "stage": "final",
+    "source_match": "passed",
+    "source_fingerprint": {
+      "algorithm": "sha256",
+      "digest": "79b0ba2ebbfb11b19abded83b1a9d492db28a06872017f50899e8d22a5c766d5",
+      "file_count": 29,
+      "files": [
+        {
+          "file": "authoring-svg-flat/evaluation_protocol.svg",
+          "sha256": "44ff0b1f4aafd6b1667ddb1dbc30db29f78040337c8a3d81276abb510f217e84"
+        },
+        {
+          "file": "authoring-svg-flat/slide_01.svg",
+          "sha256": "3f9b357195ef681556866f0209f4fa281bc9478a6dd3a2ffaf7430c7c98c1000"
+        },
+        {
+          "file": "authoring-svg-flat/slide_02.svg",
+          "sha256": "8db0817559515533653243a93dc082046c919f75e0d5e376fdf198e6983bbdff"
+        },
+        {
+          "file": "authoring-svg-flat/slide_03.svg",
+          "sha256": "aad550bc2b924291b9209a8e4300844915723e20181bebf45ff84177880f753d"
+        },
+        {
+          "file": "authoring-svg-flat/slide_04.svg",
+          "sha256": "b4ea0fff06a1cf330da8a101930f7bbae93702dfc94d7e0529f07f85407cb577"
+        },
+        {
+          "file": "authoring-svg-flat/slide_05.svg",
+          "sha256": "e2f6c4a7f998d098f2e0e8ac29378da3ad31e0a9f33035d0c33dafd0870ce71f"
+        },
+        {
+          "file": "authoring-svg-flat/slide_06.svg",
+          "sha256": "9fb0ca88a6a1ed217eb1fc0a0227ff692dc103ce37bc976e2a74519747b3b5f6"
+        },
+        {
+          "file": "authoring-svg-flat/slide_07.svg",
+          "sha256": "6ca51c2751a638f3a78f0dedf9f6f39d4cd761c87d03cc520c35c4026949a98a"
+        },
+        {
+          "file": "authoring-svg-flat/slide_08.svg",
+          "sha256": "f48430481fabef92eff3feaa962d18a504eb4f2e612845e52d7dd808f5ec1b1c"
+        },
+        {
+          "file": "authoring-svg-flat/slide_09.svg",
+          "sha256": "bffa86f200066e2b1562fcced6a2e2818362ca680547cb28c84f7f2e5d8a49f5"
+        },
+        {
+          "file": "authoring-svg-flat/slide_10.svg",
+          "sha256": "9c8076921e568f20e7dc8d33ba70665822f8c60a94d9160ede14bfcb95589eda"
+        },
+        {
+          "file": "authoring-svg-flat/slide_11.svg",
+          "sha256": "9270a74fb66654c2301a1d969b76f965452b058e3ebdc0236abd520115713249"
+        },
+        {
+          "file": "authoring-svg-flat/slide_12.svg",
+          "sha256": "76a548f1020c17e96f08b71bd7215d40f12c1098fc4f0ec0073c11f2f3ffdb90"
+        },
+        {
+          "file": "authoring-svg-flat/slide_13.svg",
+          "sha256": "2b12dd7a4b7cd3ddc5666dbd1d7f2a8d9995bb34677891b657d064d1b2695408"
+        },
+        {
+          "file": "authoring-svg-flat/slide_14.svg",
+          "sha256": "8b06c28b8608f173f26809bc883fd383cd030299681c1e4301f4a55065a37f76"
+        },
+        {
+          "file": "authoring-svg-flat/slide_15.svg",
+          "sha256": "d219bf5464b8432270288f61ba2e7dd7d780552d8d868f0cfed7759b5a3d9bd6"
+        },
+        {
+          "file": "authoring-svg-flat/slide_16.svg",
+          "sha256": "7d00b0ef59f8eb994b0e5b08e62db7127bdd36bfe3446d3162b50b8a950eb177"
+        },
+        {
+          "file": "authoring-svg-flat/slide_17.svg",
+          "sha256": "ef2a2e92a55d252f398db15c35cad3aa06a9b38d53fe6dd65c487b093e0683da"
+        },
+        {
+          "file": "authoring-svg-flat/slide_18.svg",
+          "sha256": "36b821d0ff4fe5032278c8b5d1b8acb8959bb7d9eb22862cca287a6a3a61bef0"
+        },
+        {
+          "file": "authoring-svg-flat/slide_19.svg",
+          "sha256": "7b3f45c5e0d8643851291a217358d3ab20c3565614d63f59863a9722ddbef256"
+        },
+        {
+          "file": "authoring-svg-flat/slide_20.svg",
+          "sha256": "3d457c76292d07ceee164cb95d5729d0f1959ac5a6e83fd0d34c49767bb41ebb"
+        },
+        {
+          "file": "authoring-svg-flat/slide_21.svg",
+          "sha256": "e508c56cfa27c07b43d371f7a5bb2a9da853a99b1ba6b9bfce14de5aabfd8d76"
+        },
+        {
+          "file": "authoring-svg-flat/slide_22.svg",
+          "sha256": "fb660b2f746313c1631d0ea3004c37ae0a3462f0c731dc3e94e2256494eb0ae1"
+        },
+        {
+          "file": "authoring-svg-flat/slide_23.svg",
+          "sha256": "ff81cfd35ea31efe6e8958713cc217ea86a20218718b5e5c1a55bbe03b0241dd"
+        },
+        {
+          "file": "authoring-svg-flat/slide_24.svg",
+          "sha256": "15b344300bfa7500f7654841eeaac59351f0057ed192b0ca7150dd12c428edc4"
+        },
+        {
+          "file": "authoring-svg-flat/slide_25.svg",
+          "sha256": "039ad77cbca2d1b4daf64bb13445c79fe6f8c146b1a5e05831cb64f4e8860f94"
+        },
+        {
+          "file": "authoring-svg-flat/slide_26.svg",
+          "sha256": "5164b71b9541b718e75693d98e66b9cd408cfd45285dd60d03a1930a9d357a1b"
+        },
+        {
+          "file": "authoring-svg-flat/slide_27.svg",
+          "sha256": "e72aeca110806b53af6d2809ea59605f1da7e87809130bb41c19a50c49fda264"
+        },
+        {
+          "file": "page_plan.json",
+          "sha256": "dce4e15c872bc59094a12fb3051c7914690fd806ba36972ef9cf52b8d15d6693"
+        }
+      ]
+    },
+    "summary": {
+      "total": 18,
+      "passed": 16,
+      "warnings": 2,
+      "errors": 0
+    },
+    "categories": {
+      "blocking": {
+        "count": 0,
+        "issues": []
+      },
+      "introduced": {
+        "count": 12,
+        "issues": [
+          {
+            "file": "slide_10.svg",
+            "message": "<text> (x=315, y=298; text='x = T + S + C + R') exceeds owning frame <rect> on the horizontal axis: estimated text (178.2, 270.8)-(451.8, 309.2), frame (88.0, 340.0)-(192.0, 432.0), overflow horizontal 249.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+          },
+          {
+            "file": "slide_10.svg",
+            "message": "<text> (x=140, y=409; text='EMA') exceeds owning frame <rect> on the horizontal axis: estimated text (122.3, 394.6)-(157.7, 414.9), frame (204.0, 340.0)-(308.0, 432.0), overflow horizontal 78.5%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+          },
+          {
+            "file": "slide_10.svg",
+            "message": "<text> (x=256, y=409; text='Fourier') exceeds owning frame <rect> on the horizontal axis: estimated text (223.2, 394.6)-(288.8, 414.9), frame (320.0, 340.0)-(424.0, 432.0), overflow horizontal 93.1%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+          },
+          {
+            "file": "slide_10.svg",
+            "message": "<text> (x=372, y=409; text='事件信号') exceeds owning frame <rect> on the horizontal axis: estimated text (335.8, 394.6)-(408.2, 414.9), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 96.3%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+          },
+          {
+            "file": "slide_10.svg",
+            "message": "<text> (x=315, y=492; text='四路编码 → 稀疏专家融合') exceeds owning frame <rect> on the horizontal axis: estimated text (155.0, 469.1)-(475.0, 501.4), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 270.2%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+          },
+          {
+            "file": "slide_10.svg",
+            "message": "<text> (x=315, y=543; text='预测增量 → 累加回水平域') exceeds owning frame <rect> on the horizontal axis: estimated text (166.9, 521.8)-(463.1, 551.8), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 258.8%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+          },
+          {
+            "file": "slide_10.svg",
+            "message": "<text> (x=315, y=591; text='EMA 含可学习平滑参数') exceeds owning frame <rect> on the horizontal axis: estimated text (206.1, 574.0)-(423.9, 598.0), frame (436.0, 340.0)-(540.0, 432.0), overflow horizontal 221.0%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+          },
+          {
+            "file": "slide_18.svg",
+            "message": "<text> (x=133, y=401.0; text='1.0') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 386.6)-(133.0, 406.9), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+          },
+          {
+            "file": "slide_18.svg",
+            "message": "<text> (x=133, y=343.5; text='1.5') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 329.1)-(133.0, 349.4), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+          },
+          {
+            "file": "slide_18.svg",
+            "message": "<text> (x=133, y=286.0; text='2.0') exceeds owning frame <rect> on the horizontal axis: estimated text (103.2, 271.6)-(133.0, 291.9), frame (203.2, 334.7)-(289.2, 510.0), overflow horizontal 116.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+          },
+          {
+            "file": "slide_18.svg",
+            "message": "<text> (x=246.25, y=545; text='持续值') exceeds owning frame <rect> on the horizontal axis: estimated text (212.8, 527.1)-(279.7, 552.4), frame (405.8, 292.8)-(491.8, 510.0), overflow horizontal 224.4%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+          },
+          {
+            "file": "slide_18.svg",
+            "message": "<text> (x=448.75, y=545; text='数值路径') exceeds owning frame <rect> on the horizontal axis: estimated text (404.1, 527.1)-(493.4, 552.4), frame (405.8, 292.8)-(491.8, 510.0), overflow horizontal 1.9%; shorten or reflow the edited text, or enlarge its owning frame; frame inferred from nearest rect sibling; add data-pptx-frame to make this blocking"
+          }
+        ]
+      },
+      "inherited": {
+        "count": 0,
+        "issues": []
+      },
+      "source-import": {
+        "count": 0,
+        "summary": {
+          "warning_count": 0,
+          "by_code": {}
+        }
+      }
+    }
+  },
+  "resources": {
+    "unresolved_template_tokens": [],
+    "fonts": {
+      "stacks": [
+        "\"Noto Sans SC\", sans-serif",
+        "\"字魂105号-简雅黑\", \"等线\", sans-serif",
+        "\"等线\", sans-serif",
+        "Calibri, sans-serif",
+        "Microsoft YaHei"
+      ],
+      "generic_only_stacks": [],
+      "unsafe_exported_faces": [
+        {
+          "stack": "\"字魂105号-简雅黑\", \"等线\", sans-serif",
+          "role": "latin",
+          "typeface": "字魂105号-简雅黑"
+        },
+        {
+          "stack": "\"等线\", sans-serif",
+          "role": "latin",
+          "typeface": "等线"
+        }
+      ]
+    },
+    "images": {
+      "data_uri": 0,
+      "local": 2,
+      "external": 0,
+      "external_references": []
+    }
+  },
+  "export_policy": {
+    "project_svg_contract": "strict",
+    "dangerous_normalization_count": 0
+  },
+  "deck_motion": {
+    "transition": {
+      "effect": null,
+      "effect_options": {},
+      "duration": 0.0,
+      "auto_advance": null,
+      "sound": null
+    },
+    "animation": {
+      "effect": "none",
+      "effect_request": null,
+      "duration": 0.4,
+      "stagger": 0.5,
+      "trigger": "after-previous"
+    },
+    "cli_overrides": {
+      "transition": false,
+      "transition_duration": false,
+      "auto_advance": false,
+      "transition_sound": false,
+      "animation": false,
+      "animation_duration": false,
+      "animation_stagger": false,
+      "animation_trigger": false
+    },
+    "narration_timings": false
+  },
+  "backup_path": null,
+  "conversion_trace_path": null
+}

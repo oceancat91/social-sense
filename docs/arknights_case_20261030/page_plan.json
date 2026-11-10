@@ -1,0 +1,59 @@
+{
+  "schema": "ppt-master.roundtrip-page-plan.v1",
+  "pages": [
+    {
+      "source_slide": 1
+    },
+    {
+      "source_slide": 2
+    },
+    {
+      "source_slide": 3
+    },
+    {
+      "source_slide": 4
+    },
+    {
+      "source_slide": 5
+    },
+    {
+      "source_slide": 6
+    },
+    {
+      "source_slide": 7
+    },
+    {
+      "source_slide": 8
+    },
+    {
+      "source_slide": 9
+    },
+    {
+      "source_slide": 10
+    },
+    {
+      "source_slide": 11
+    },
+    {
+      "source_slide": 12
+    },
+    {
+      "source_slide": 13
+    },
+    {
+      "source_slide": 14
+    },
+    {
+      "source_slide": 15
+    },
+    {
+      "source_slide": 16
+    },
+    {
+      "source_slide": 17
+    },
+    {
+      "source_slide": 18
+    }
+  ]
+}

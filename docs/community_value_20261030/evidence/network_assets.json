@@ -1,0 +1,102 @@
+[
+  {
+    "file": "images\\official_summer_1.jpg",
+    "source_page": "https://www.taptap.cn/moment/834126362733185189",
+    "asset_url": "https://img2-tc.tapimg.com/moment/etag/FoWkEMraPRQSh9dH0v5LBSnQ_SKX_20260805175534.png/_tap_ugc.jpg",
+    "resolved_url": "https://img2-tc.tapimg.com/moment/etag/FoWkEMraPRQSh9dH0v5LBSnQ_SKX_20260805175534.png/_tap_ugc.jpg",
+    "title": "明日方舟素材分享帖：图片1",
+    "rights": "游戏美术权利归鹰角网络；教学案例引用",
+    "bytes": 173839,
+    "sha256": "9f5b35e4ac0488f446cfe253cfbff8a5cab1441b9b30ef9c92427d1a6ebcb46d",
+    "dimensions": [
+      1080,
+      1823
+    ],
+    "format": "JPEG",
+    "download_date": "2026-10-30",
+    "status": "downloaded"
+  },
+  {
+    "file": "images\\official_summer_2.jpg",
+    "source_page": "https://www.taptap.cn/moment/834126362733185189",
+    "asset_url": "https://img2-tc.tapimg.com/moment/etag/Fstb99T-eJkgMMvFAs3bd98wVAXX_20260805175536.png/_tap_ugc.jpg",
+    "resolved_url": "https://img2-tc.tapimg.com/moment/etag/Fstb99T-eJkgMMvFAs3bd98wVAXX_20260805175536.png/_tap_ugc.jpg",
+    "title": "明日方舟素材分享帖：图片2",
+    "rights": "游戏美术权利归鹰角网络；教学案例引用",
+    "bytes": 170862,
+    "sha256": "70b15b98e2c164e39755cc46ede238dc6fccca94a43408e716dfdab6441f6a5c",
+    "dimensions": [
+      1080,
+      1823
+    ],
+    "format": "JPEG",
+    "download_date": "2026-10-30",
+    "status": "downloaded"
+  },
+  {
+    "file": "images\\official_summer_3.jpg",
+    "source_page": "https://www.taptap.cn/moment/834126362733185189",
+    "asset_url": "https://img2-tc.tapimg.com/moment/etag/Fk8qmLylTBijnnHQBH0_bNRSOBdS_20260805175540.png/_tap_ugc.jpg",
+    "resolved_url": "https://img2-tc.tapimg.com/moment/etag/Fk8qmLylTBijnnHQBH0_bNRSOBdS_20260805175540.png/_tap_ugc.jpg",
+    "title": "明日方舟素材分享帖：图片3",
+    "rights": "游戏美术权利归鹰角网络；教学案例引用",
+    "bytes": 88809,
+    "sha256": "dcd2ce02c3544c53ddb32c1d8bd04463e515fc10d780a313e9e1797141fa2a87",
+    "dimensions": [
+      1080,
+      1823
+    ],
+    "format": "JPEG",
+    "download_date": "2026-10-30",
+    "status": "downloaded"
+  },
+  {
+    "file": "images\\official_summer_4.jpg",
+    "source_page": "https://www.taptap.cn/moment/834126362733185189",
+    "asset_url": "https://img2-tc.tapimg.com/moment/etag/FgNw6QClOTrvTBMXgaHWn8ScZQtC_20260805175542.png/_tap_ugc.jpg",
+    "resolved_url": "https://img2-tc.tapimg.com/moment/etag/FgNw6QClOTrvTBMXgaHWn8ScZQtC_20260805175542.png/_tap_ugc.jpg",
+    "title": "明日方舟素材分享帖：图片4",
+    "rights": "游戏美术权利归鹰角网络；教学案例引用",
+    "bytes": 95478,
+    "sha256": "33206aa626e942e889f0eab96971d6b6895172c54a0d9c63b92dc76b2c7057b3",
+    "dimensions": [
+      1080,
+      1823
+    ],
+    "format": "JPEG",
+    "download_date": "2026-10-30",
+    "status": "downloaded"
+  },
+  {
+    "file": "images\\yuqing_trace.png",
+    "source_page": "https://files.yqt365.com/fileOnline/instruction.html",
+    "asset_url": "https://files.yqt365.com/fileOnline/20210704/c85f2ab77c5a40eaab5c169d2cf70ddc.png",
+    "resolved_url": "https://files.yqt365.com/fileOnline/20210704/c85f2ab77c5a40eaab5c169d2cf70ddc.png",
+    "title": "舆情通官方使用说明：微博溯源截图",
+    "rights": "产品图片权利归原发布方；用于功能比较，不代表本项目界面",
+    "bytes": 822257,
+    "sha256": "eb2920d493d066236782e2c154e5d9337c48f4c4875e6737df46ec7839349a09",
+    "dimensions": [
+      1914,
+      1380
+    ],
+    "format": "PNG",
+    "download_date": "2026-10-30",
+    "status": "downloaded"
+  },
+  {
+    "file": "images/summer_key_visual.jpg",
+    "asset_url": "https://img2-tc.tapimg.com/moment/etag/FjgzhoQbwaJnGq6AAlmOb4bVsA-S_20260731115453.png/_tap_ugc.jpg",
+    "source_page": "https://www.taptap.cn/moment/832223722998859956",
+    "title": "明日方舟夏日创作征集活动配图",
+    "rights": "游戏美术权利归鹰角网络；教学案例引用",
+    "status": "downloaded",
+    "dimensions": [
+      750,
+      1000
+    ],
+    "bytes": 161307,
+    "sha256": "34415070f30a8294125ce5227a34b72000a8f65d3a540968de24ac7fd2af0096",
+    "download_date": "2026-10-30"
+  }
+]

@@ -1,0 +1,336 @@
+## PDF page 5
+breitbart
+rt
+infowars
+sputniknews
+therealstrategybeforeitsnewsredflagnewsnaturalnewsdcclothesline
+lifezette
+activistpost
+veteranstoday
+clickhole
+prntlydisclose
+worldnewsdailyreport
+worldtruth
+libertywritersnews
+mediamass
+thelastlineofdefense
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0Fraction
+/pol/ Reddit (6 selected subreddits) Twitter
+(a)
+theguardian
+nytimes
+cnnbbc
+reutersthehillfoxnewsforbes
+wsj
+bloomberg
+cbc
+abcnewsusatodaynbcnews
+time
+cbsnews
+washingtontimes
+thedailybeast
+nypostcnbc
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0Fraction
+/pol/ Reddit (6 selected subreddits) Twitter (b)
+Figure 2: Top 20 domains and each platform’s fraction for (a) alternative and (b) mainstream news.
+that a substantial portion of the URLs appear only once for both
+alternative and mainstream news, and that, on Twitter, alternative
+news tends to appear more times than mainstream news. For /pol/
+and the six subreddits, we observe a similar behavior for both
+mainstream and alternative news.
+Next, in Figure 2, we compare how popular domains, in both
+categories, appear on the three platforms (i.e., Twitter, the six sub-
+reddits, and /pol/). We find that the top 4 alternative domains
+– breitbart.com, rt.com, infowars.com, sputniknews.com – influ-
+ence the three platforms more or less in the same way. However,
+some outlets appear predominantly in some platforms but not in
+others; e.g., therealstrategy.com is popular only on Twitter, while
+lifezette.com and veteranstoday.com are popular on the 6 subreddits
+and /pol/, but not on Twitter.
+We believe the primary reason for this has to do with Twitter
+bots. We cannot exclude with certainty that bots do not exist on
+4chan, while bots are actually acceptable on Reddit (as long as they
+follow the rules of Reddit’s API [33]), however, they are certainly
+more prevalent on Twitter. Thus, if a particular domain is popular
+on Twitter because of the influence of bots, then it might not be
+popular on Reddit and 4chan. We have also considered ways to
+factor out posting behavior from bots, especially for Twitter, such
+as the one proposed in [ 7]. However, we have not removed this
+activity due to: 1) posting behavior from bots can affect real users’
+posting behavior, hence this activity is part of the overall news
+dissemination ecosystem and needs to be accounted for; and 2) the
+satisfactory performance of such approaches is yet to be proven.
+We also measure the fraction of news URLs that are alternative,
+per user, in Figure 3. We report this fraction only for Reddit and
+Twitter users, since on 4chan posts are anonymous. We find that 80%
+of the users of both platforms share only URLs from mainstream
+news, while, 13% of Twitter users – which are likely bots [ 31] –
+exclusively post URLs to alternative news. We observe from Fig-
+ure 3(b), which shows the ratio for users sharing URLs from both
+categories, that there is a wide distribution, especially on the six
+selected subreddits, between people that rarely share alternative
+news (fraction close to 0) and those who share them almost all the
+0.0 0.2 0.4 0.6 0.8 1.0
+Alternative News Fraction
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+Reddit (6 selected subreddits) Twitter
+(a)
+0.0 0.2 0.4 0.6 0.8 1.0
+Alternative News Fraction
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+Reddit (6 selected subreddits) Twitter
+(b)
+Figure 3: CDF of the fraction of URLs from alternative news and
+overall news URLs for (a) all users in our Twitter and Reddit
+datasets, and (b) users that shared URLs from both mainstream and
+alternative news.
+time (fraction close to 1). Moreover, we find that Twitter users share
+more alternative news: just 5% of these users have a fraction below
+0.2, which might be also attributed to the presence of bots.
+5
+
+## PDF page 6
+Jul 16 Aug 16Sep 16Oct 16 Nov 16Dec 16 Jan 17 Feb 17Mar 17
+0.000
+0.005
+0.010
+0.015
+0.020
+0.025
+0.030Occurrence of alternative news
+4chan (/pol/)
+4chan (other boards)
+Reddit (6 selected subreddits)
+Reddit (other subreddits)
+Twitter
+(a)
+Jul 16 Aug 16Sep 16Oct 16 Nov 16Dec 16 Jan 17 Feb 17Mar 17
+0.00
+0.05
+0.10
+0.15
+0.20Occurrence of mainstream news
+4chan (/pol/)
+4chan (other boards)
+Reddit (6 selected subreddits)
+Reddit (other subreddits)
+Twitter (b)
+Jul 16 Aug 16Sep 16Oct 16 Nov 16Dec 16 Jan 17 Feb 17Mar 17
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0Alternative news fraction
+4chan (/pol/)
+4chan (other boards)
+Reddit (6 selected subreddits)
+Reddit (other subreddits)
+Twitter (c)
+Figure 4: Normalized daily occurrence of URLs for (a) alternative news, (b) mainstream news, and (c) fraction of alternative news over all news.
+Take-Aways.In summary, our general characterization yields the
+following findings: 1) Specific sub-communities within Reddit drive
+the dissemination of both alternative and mainstream news (Ta-
+ble 4); 2) news domain popularity is similar for both alternative
+and mainstream domains in the three platforms with some excep-
+tions, such as lifezette.com and veteranstoday.com (Tables 5, 6, 7
+and Figure 2); 3) Twitter users are more aggressively promoting
+alternative news, compared to mainstream news (Figure 1); and 4)
+Twitter users also have a greater alternative to mainstream news ra-
+tio when compared to users that post in the six selected subreddits
+(Figure 3).
+4 TEMPORAL DYNAMICS
+In this section, we present the results of a cross-platform temporal
+analysis of the way news are posted on Twitter, Reddit, and 4chan.
+4.1 URL Occurrence
+In Figure 4, we measure the daily occurrence of news URLs over the
+three platforms normalized by the average daily number of URLs
+shared in each community.6 We find that /pol/ and the six selected
+subreddits exhibit a much higher percentage of occurrences of al-
+ternative news compared to the other communities (Figure 4(a)),
+whereas, for mainstream news, the sharing behavior is more simi-
+lar across platforms (Figure 4(b)). There are also some interesting
+spikes, likely related to the 2016 US elections, on the date of the
+first presidential debate and election day itself. These findings in-
+dicate that the selected sub-communities are heavily utilized for
+the dissemination of alternative news. We also study the fraction
+of alternative news URLs with respect to overall news URLs (Fig-
+ure 4(c)), highlighting that mainstream news URLs are overall more
+“popular” than the alternative news URLs. Note that the Twitter
+spike in Figure 4(c) appears to be an artifact of a failure in our
+collection infrastructure.
+As some users repost the same URL many times within the same
+platform, we next study such reposting behavior and extract in-
+sights while comparing platforms. In Figure 5, we plot the CDF of
+the time difference between the first occurrence of a URL and its
+6Gaps in the plot correspond to gaps in our dataset due to crawler failure.
+10 2
+ 10 1
+ 100 101 102 103 104
+Time from initial post of link and consecutive appearances later on (hours)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+6 selected subreddits /pol/ Twitter
+(a)
+10 2
+ 10 1
+ 100 101 102 103 104
+Time from initial post of link and consecutive appearances later on (hours)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0CDF
+6 selected subreddits /pol/ Twitter
+(b)
+Figure 5: CDF of time difference (in hours) between the first occur-
+rence of a URL and its next occurrences on each platform for (a)
+alternative and (b) mainstream news.
+next occurrences on the same platform. Both alternative and main-
+stream news URLs are recycled over time within the platform (even
+after several months), but Twitter exhibits a smaller lag between
+the first occurrence and later ones compared to the other two plat-
+forms. In all three platforms, there is an inflection point at the 24h
+period, which probably signifies the day-to-day behavior of news
+propagation within a platform, and this is true for both alternative
+and mainstream news. Finally, mainstream news seem to propagate
+6
+
+## PDF page 7
+Comparison Type of News #URLs where #URLs where
+(1st vs 2nd) 1st is faster 2nd is faster
+Reddit vs Twitter Mainstream 18,762 11,416
+Alternative 5,232 4,301
+/pol/ vs Twitter Mainstream 2,938 4,700
+Alternative 778 2,099
+/pol/ vs Reddit Mainstream 5,382 14,662
+Alternative 1,455 3,695
+Table 8: Statistics of URLs for the comparisons of time difference
+between platforms. Reddit refers to the six selected subreddits.
+faster in these platforms than alternative news, especially on the
+six subreddits; for Twitter and /pol/ the difference is not evident.
+We also study the inter-arrival time of reposted URLs. Figure 6
+shows the CDF of the mean inter-arrival time of URLs that appear
+more than one time in each platform. Each platform exhibits unique
+behavior, confirmed by a two sample Kolmogorov-Smirnov test
+showing significant differences between the distributions ( p <
+0.01 for each pairwise comparison). However, /pol/ and the six
+subreddits exhibit similar time-related sharing behavior for both
+mainstream and alternative news URLs, and Twitter has smaller
+mean inter-arrival time overall. Interestingly, the six subreddits
+appear to have a duality in reposting behavior: for URLs with small
+inter-arrival time, it follows the faster pace of Twitter, whereas, for
+URLs with longer inter-arrival times, it follows /pol/.
+4.2 Cross Platform Analysis
+We now look at URLs that appear on more than one platform and
+study the time at which they are shared. Figure 7 plots the CDF
+of the time difference (in seconds) between the first occurrence
+of a URL on pairs of platforms, while Table 8 reports the num-
+bers of URLs involved in each comparison. We make the follow-
+ing observations: first, when comparing pairs of distributions for
+a given category of URLs, they are statistically different (a two
+sample Kolmogorov-Smirnov test rejects the null hypothesis with
+p < 10−4). Second, alternative news appear on multiple platforms
+faster than mainstream news. This is consistent regardless of the
+pair of platforms we consider, and the sequence of appearances
+(i.e., first in platform A and then B, vs. first in B and then in A).
+Third, we notice the presence of a “turning point” with respect
+to the delay between URL appearance on each platform, which
+seems to be consistent across all pairs of platforms and types of
+news, and matches the 24h period observed earlier. Finally, there is
+a cross point when comparing URLs first posted on platform A and
+then on B, and URLs which were posted first in B and then on A
+(i.e., when the lines for the same type of URLs cross). Such a point
+represents which portion of URLs appear faster in one platform
+than the other. For the Twitter-six selected subreddits comparison,
+alternative (mainstream) news appear faster on Twitter than the six
+subreddits 80% of the time (50%), with these URLs exhibiting slower
+propagation, since the turning point is at ∼1 hour (5 hours). Sim-
+ilarly, for the Twitter-/pol/ comparison, alternative (mainstream)
+news appear faster on Twitter than /pol/ 70% (5%) of the time, with
+the turning point at 1 day (2 days). Finally, for the six selected
+subreddits-/pol/ comparison, alternative (mainstream) news appear
+faster on the six subreddits than /pol/ for 65% (40%) of the time,
+with the turning point around 18 hours (12 hours).
+Sequence Alternative (%) Mainstream (%)
+4 only 3,236 (4.4%) 18,654 (3.7%)
+4→R 1,118 (1.5%) 4,606 (0.9%)
+4→T 315 (0.5%) 861 (0.17%)
+R only 24,292 (33.3%) 230,602 (46.1%)
+R→4 2,181 (3.0%) 11,307 (2.3%)
+R→T 4,769 (6.5%) 16,685 (3.35%)
+T only 32,443 (44.5%) 204,836 (41%)
+T→4 585 (0.8%) 1,345 (0.26%)
+T→R 3,964 (5.5%) 10,640 (2.12%)
+Table 9: Distribution of URLs according to the sequence of first ap-
+pearance within platforms for all URLs, considering only the first
+hop. “4” stands for /pol/ (4chan), “R” for the six selected subreddits
+(Reddit), and “T” for Twitter.
+Sequence Alternative (%) Mainstream (%)
+4→R→T 128 (5.5%) 552 (8.9%)
+4→T→R 145 (6.2%) 290 (4.7%)
+R→4→T 335 (14.4%) 1,525 (24.5%)
+R→T→4 841 (36.3%) 2,189 (35.3%)
+T→4→R 192 (8.2%) 486 (7.8%)
+T→R→4 673 (29%) 1,166 (18.8%)
+Table 10: Distribution of URLs according to the sequence of first ap-
+pearance within a platform for URLs common to all platforms. “4”
+stands for /pol/ (4chan), “R” for the six selected subreddits (Reddit),
+and “T” for Twitter.
+Next, given the set of unique URLs across all platforms and the
+time they appear for the first time, we analyze their appearance in
+one, two, or three platforms, and the order in which this happens.
+For each URL, we find the first occurrence on each platform and
+build corresponding “sequences, ” e.g., if a URL first appears on
+the six subreddits (Reddit) and subsequently on /pol/ (4chan), the
+sequence is Reddit→ 4chan (R→4). Table 9 reports the distribution
+of the sequences of appearances considering only the first hop, i.e.,
+up to the first two platforms in the sequence. The majority of URLs
+only appear on one platform: 82% of alternative URLs and 89% of
+mainstream news URLs. Also, both alternative and mainstream
+news URLs tend to appear on the six subreddits first and later
+appear on either Twitter or /pol/, and on Twitter before /pol/.
+We also study the temporal dynamics of URLs that appear on
+all three platforms, with triplets of sequences. Table 10 reports the
+distribution of these sequences. The most common sequences are
+similar for both alternative and mainstream news URLs: R→T→4,
+R→4→T, and T→R→4 are the top three sequences. As already
+mentioned, the six selected subreddits “outperform” both other
+platforms in terms of the speed of sharing mainstream and alter-
+native news URLs, as evidenced by the fact that it is at the head of
+the sequence for 51% and 59% of alternative and mainstream news
+URLs, respectively.
+Finally, we analyze the source of the URLs for each of the three
+platforms, as follows. We create two directed graphs, one for each
+type of news, G = (V , E), where V represents alternative or main-
+stream domains, as well as the three platforms, and E the set of
+sequences that consider only the first-hop of the platforms. For
+example, if a breitbart.com URL appears first on Twitter and later
+on the six selected subreddits, we add an edge from breitbart.com
+to Twitter, and from Twitter to the six selected subreddits. We also
+7

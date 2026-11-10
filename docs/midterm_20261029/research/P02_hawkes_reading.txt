@@ -1,0 +1,262 @@
+PDF page 9
+firebrandleft
+newsexaminer
+huzlerswitscience
+Twitter
+redflagnews
+6 subreddits
+realnewsrightnowlibertywritersnews
+worldnewsdailyreport
+thedcgazette
+newsbreakshere
+private-eye
+thenewsnerd
+naturalnews
+veteranstoday
+thelastlineofdefense
+beforeitsnews
+react365
+nodisinfo
+newsbiscuit
+creambmp
+empirenews
+rt
+christwiretimes
+infowars
+lifezetteclickholedisclosedailybuzzlivenewshounds
+politicalears
+linkbeef
+politicops
+mediamass
+therealstrategy
+derfmagazinesputniknews
+stuppid
+activistpost
+theuspatriot
+the-daily.buzz
+usapoliticszone
+worldtruth
+prntly
+/pol/
+duhprogressivenow8newsdcclothesline
+breitbart
+(a)
+nbcnews
+washingtontimes
+foxnewsnypostchicagotribune
+Twitter
+wsj
+chron
+azcentral
+thedailybeast
+forbescnbc
+voanews
+nationalpost
+thehill
+bloomberg
+huffingtonpost
+usnews
+theglobeandmail
+thestar
+startribunereuters
+bostonglobe
+cbsnews
+6 subredditswashingtonexaminer
+theguardian
+euronews
+mercurynewsdallasnews
+denverpost
+time
+cnn
+miamiherald
+abcnews
+theage
+nytimes
+seattletimes
+usatoday
+ctvnews
+/pol/
+dw
+cbc
+news
+bbc
+aljazeeraeconomistthetimes (b)
+Figure 8: Graph representation of news ecosystem (a) alternative news domains and (b) mainstream news domains. Edges are colored the same
+as their source node.
+tend to appear first more often on Twitter than the selected subred-
+dits. Similar to the alternative domains graph, there is no domain
+where /pol/ dominates in terms of first URL appearance.
+4.3 Take-Aways
+In summary, our temporal dynamics analysis shows that: 1) Spe-
+cific sub-communities are heavily utilized for the dissemination
+of alternative news (Figure 4); 2) Twitter URL posting behavior is
+more aggressive for both alternative and mainstream news when
+compared to the other two platforms (Figure 5 and 6); 3) Both al-
+ternative and mainstream URLs tend to appear on the six selected
+subreddits before appearing on Twitter and/or /pol/ (Table 8 and
+Figure 7). This may be due the nature of the Reddit platform, where
+URL posting is the prevalent way to disseminate information; 4)
+URLs from specific domains tend to appear first on a particular
+platform. For example, for alternative news breitbart.com, URLs
+appear first on the six selected subreddits, while on Twitter the
+same applies for infowars.com, rt.com, and sputniknews.com. The
+/pol/ does not dominate for any of the domains (Figure 8).
+Note that our analysis does not factor out the gaps in our Twitter
+dataset. Consequently, some of the results may be affected by the
+fact that some URLs from Twitter might be missing. To address this
+issue, in Section 5, we omit a subset of the URLs impacted by the
+gaps in our datasets. Furthermore, the use of a rigorous statistical
+model (Hawkes processes) helps to mitigate this potential issue.
+5 INFLUENCE ESTIMATION
+Thus far, our measurements have shown relative differences in
+how news media is shared on Reddit, Twitter, and 4chan. In this
+section, we provide meaningful evidence of how the individual
+platforms influence the media shared on other platforms. We do so
+by using a mathematical technique known as Hawkes processes.
+The_Donald
+1 
+Twitter
+/pol/
+2
+3
+4
+5.1 5.2
+5.3
+Figure 9: A depiction of a Hawkes model showing how the interac-
+tion between events on 3 processes might look like. Note: this ex-
+ample is inspired by [20].
+These statistical models can be used for modeling the dissemination
+of information in Web communities [10] as well as measuring social
+influence [13].
+5.1 Hawkes Processes
+Note that the three platforms we measure do not obviously exist
+in a vacuum, rather, they exist within the greater ecosystem of the
+Web. Imagine, however, that each of the platforms were entirely self-
+contained, with a completely disjoint set of users. In such a scenario,
+there would be a natural rate at which URLs will be posted, and it
+would be possible to model this using standard Poisson processes.
+However, our platforms are clearly not independent. While they
+do exhibit their own background URL posting rates and internal
+influence, they are also affected by each other, as well as by the
+greater Web.
+A Hawkes model consists of a number, K, of point processes,
+each with a “background rate” of events λ0,k . An event on one
+process can cause an impulse response on other processes, which
+increases the probability of an event occurring above the processes’
+background rates. Figure 9 depicts an example of what a sequence of
+9
+
+PDF page 10
+events on a Hawkes model with three processes might look like, us-
+ing The_Donald, Twitter, and /pol/ communities for representative
+purposes.
+First, an event 1 (a URL being posted) occurs on Twitter; this is
+caused by the background rate of the process, meaning that the URL
+was posted not because it was seen on any of the platforms in the
+model, but because it was seen elsewhere (including a user finding
+it organically). This initial event causes an impulse response on the
+rates of the other processes, The_Donald and /pol/, meaning that
+the URL is more likely to be posted on those platforms after having
+been seen on Twitter. Eventually, this causes another event on
+The_Donald (2), which in turn causes an event on /pol/. A process
+can cause an additional impulse response to itself, as seen with
+event 3, and multiple events can be caused in response to a single
+event, as seen with event 4 causing events 5.1, 5.2, and 5.3. Naturally,
+the data we collect does not explicitly state which events are caused
+by other events, or which are caused by the background rate.
+For our purposes, fitting a Hawkes model to a series of events
+on the different platforms gives us values for the background rates
+for each platform along with the probability of an event on one
+platform causing events on other platforms. We emphasize that
+the background rates of the Hawkes processes allows us to also
+account for the probability of an event caused by external sources
+of information. For example, it includes the probabilities of events
+caused by Facebook as well as other platforms. Thus, while we are
+only able to model the specific influences of the three platforms we
+study, the resulting probabilities are affirmatively attributable to
+each of them; the influence of the greater Web is captured by the
+background rates.
+For a discrete-time Hawkes model, time is divided into a series
+of bins of duration ∆t, and events occurring within the same time
+bin do not interact with each other. The rate of each k-th process,
+λt,k is given by:
+λt,k = λ0,k +
+KÕ
+k ′=1
+t −1Õ
+t ′=1
+st ′,k ′ · hk ′→k [t − t ′]
+where s ∈ NT ×K is the matrix of event counts (how many events oc-
+cur for process k at time t) and hk ′→k [t −t ′] is an impulse response
+function that describes the amplitude of influence that events on
+process k ′ have on the rate of process k.
+Following [20], the impulse response function hk →k ′[t − t ′]
+can be decomposed into a scalar weight Wk →k ′ and a probability
+mass function Gk →k ′[d]. The weight specifies the strength of the
+interaction from process k to process k ′ and the probability mass
+function specifies how the interaction changes over time:
+hk→k ′[d] = Wk →k ′Gk→k ′[d]
+The weight valueWk→k ′ can be interpreted as the expected number
+of child events that will be caused on process k ′ after an event
+on process k. The probability mass function Gk →k ′ specifies the
+probability that a child event will occur at each specific time lagd∆t,
+up to a maximum lag∆tmax . This interpretation ofWk →k ′ is useful
+because it allows us to compare how much influence platforms have
+on each other. For instance, we can examine whether a URL posted
+on Twitter or on Reddit is more likely to cause the same URL to be
+posted on 4chan, or if there is a difference in influence from one
+platform to another between URLs for mainstream and alternative
+news sites.
+5.2 Methodology
+We now provide more details about our experiments, once again,
+considering 4chan (/pol/), Twitter, and the six subreddits. We study
+Hawkes processes at the subreddit granularity to get a better un-
+derstanding of the various platforms and particular subreddits.
+We aim to examine how these platforms and subreddits influence
+each other, so we model the arrival of URLs, in posts or tweets, with
+a Hawkes model with K = 8 point processes—one for Twitter, one
+for /pol/, and one for each of the subreddits. The model is fully
+connected, i.e., it is possible for each process to influence all the
+others, as well as itself, which describes behavior where participants
+on a platform see a URL and re-post it on the same platform. For
+example, with Twitter, this value (WTwitter→Twitter) would likely be
+quite high, given that tweets are commonly re-tweeted a number of
+times: the initial tweet containing a URL is likely to cause a number
+of re-tweets, also containing the URL, on the same platform.
+We select URLs that have at least one event in Twitter,/pol/, and
+at least one of the subreddits, and we model each URL individually.
+The missing Twitter data (due to our dataset gaps; see Section 2.2)
+affects 3,177 (37%) of the URLs. One way to mitigate the impact
+of this missing data is to remove events for which it has a larger
+impact. E.g., if an event spans 100 days, the missing Twitter data
+has less of an effect than if the event only spanned two days. Thus,
+we examine URLs from other platforms that overlap with any of the
+missing days and remove the 10% of URLs (895) with the shortest
+total duration from the first event recorded until the last event
+recorded. This results in the missing data making up a smaller
+portion of the overall duration of the events.
+The number of remaining URLs and events included for each
+platform are shown in Table 11. For each URL, we create a matrix
+s ∈ NT ×8 containing the number of events (URL posts) per minute
+for each of the platforms/subreddits. Here, T is the number of
+minutes from the first recorded post of the URL on any platform, to
+the last recorded post of a URL on any platform (NB: this value can
+be different for each URL). We select∆t = 1 minute as a reasonable
+compromise between accuracy and computational cost. Using this
+bin size, 92% of events are in a bin by themselves, and another 5.4%
+share a bin, but only with other events from the same platform or
+subreddit, meaning that timing interactions between the platforms
+are not lost.
+Next, we fit a Hawkes model for each URL using the approach
+described in [20, 21], which uses Gibbs sampling to infer the param-
+eters of the model from the data, including the weights, background
+rates, and shape of the impulse response functions between the
+different processes. By setting ∆tmax = 60 · 12 = 720 minutes, we
+say that a given event can cause other events within a 12-hour time
+window. Experiments with other values (6, 12, 24, and 48 hours)
+gave similar results. After fitting the models, we have the values
+for the W matrix – i.e., the weights of the interactions between
+events on different processes for each URL. These weights can
+then be interpreted as the expected number of events. For example,
+WT wit t er →/pol / = 0.1 would mean that an event on Twitter will
+10

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Microsoft YaHei&quot;, sans-serif"><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="value-header" data-pptx-bounds="95 16 815 83" data-pptx-role="header"><rect x="95" y="16" width="815" height="83" fill="none" /><text x="110" y="63" font-size="33" fill="#44546A" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">技术如何承接：统一证据，再关联传播</text></g><g id="value-subtitle" data-pptx-bounds="75 108 1130 48"><rect x="75" y="108" width="1130" height="48" fill="none" /><text x="80" y="139" font-size="21" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">当前代码以 PlatformReport 连接单平台分析、跨平台比较与交互展示</text></g><g id="value-footer" data-pptx-bounds="70 680 1100 27" data-pptx-role="footer"><rect x="70" y="680" width="1100" height="27" fill="none" /><text x="76" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">SocialSense  ·  创新训练类中期答辩</text><text x="1155" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="end">04 / 18</text></g><g id="input-analysis" data-pptx-bounds="65 181 285 338"><rect x="65" y="181" width="285" height="338" fill="none" /><rect x="65" y="181" width="285" height="338" fill="#EDF2F8" /><text x="85" y="222" font-size="27" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">① 单平台观测</text><text x="85" y="272" font-size="23" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">采集清洗与立场画像<tspan x="85" dy="36.8">文本、时序及检索补充</tspan><tspan x="85" dy="36.8">保留来源标识和元数据</tspan></text><line x1="85" y1="382" x2="328" y2="382" stroke="#CED9E6" stroke-width="1" /><text x="85" y="421" font-size="22" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">已有价值</text><text x="85" y="460" font-size="20.5" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">将零散观测变为统一报告，<tspan x="85" dy="30.75">为后续证据核查提供接口。</tspan></text></g><g id="report-fusion" data-pptx-bounds="380 181 515 338"><rect x="380" y="181" width="515" height="338" fill="none" /><rect x="380" y="181" width="515" height="102" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="6" ry="6" /><text x="637" y="219" font-size="25" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">② PlatformReport 数据契约</text><text x="637" y="257" font-size="21" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="middle">结论 · 时序 · 元数据 · 引用</text><line x1="637" y1="283" x2="637" y2="299" stroke="#4472C4" stroke-width="2" /><rect x="380" y="299" width="515" height="102" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="6" ry="6" /><text x="637" y="337" font-size="25" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">③ 时间对齐与差异融合</text><text x="637" y="375" font-size="21" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="middle">保留缺失；比较立场、情绪和声量</text><line x1="637" y1="401" x2="637" y2="417" stroke="#4472C4" stroke-width="2" /><rect x="380" y="417" width="515" height="102" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="6" ry="6" /><text x="637" y="455" font-size="25" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">④ 跨平台主控与 CX 校准</text><text x="637" y="493" font-size="21" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="middle">把汇总结论绑定到具体平台证据</text></g><g id="archive-application" data-pptx-bounds="925 181 285 338"><rect x="925" y="181" width="285" height="338" fill="none" /><rect x="925" y="181" width="285" height="338" fill="#EDF2F8" /><text x="945" y="222" font-size="27" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">⑤ 服务与交互</text><text x="945" y="272" font-size="22.5" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">Flask API 与三维档案<tspan x="945" dy="36.0">组织范围、摘要和记录</tspan><tspan x="945" dy="36.0">旁路接入数值预测结果</tspan></text><line x1="945" y1="382" x2="1188" y2="382" stroke="#CED9E6" stroke-width="1" /><text x="945" y="421" font-size="22" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">面向人工复核</text><text x="945" y="460" font-size="20.5" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">帮助研究者回看观测依据，<tspan x="945" dy="30.75">再判断是否适合官方回应。</tspan></text></g><g id="trace-extension" data-pptx-bounds="70 546 1135 113"><rect x="70" y="546" width="1135" height="113" fill="none" /><rect x="70" y="546" width="1135" height="113" fill="#EDF2F8" /><text x="92" y="580" font-size="24" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">面向梗溯源的后续衔接</text><text x="92" y="616" font-size="21" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">增加内容变体标注、原始链接与引用关系，再验证首发候选和传播链；现有时间对齐不等于语义同源识别。</text><text x="92" y="646" font-size="18" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">代码定位：multiagent/contract.py · align.py · fuse.py；完整图传播溯源尚待验证。</text></g></svg>

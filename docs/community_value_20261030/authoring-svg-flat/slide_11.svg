@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Microsoft YaHei&quot;, sans-serif"><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="value-header" data-pptx-bounds="95 16 815 83" data-pptx-role="header"><rect x="95" y="16" width="815" height="83" fill="none" /><text x="110" y="63" font-size="33" fill="#44546A" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">下一阶段：把应用价值转化为验证任务</text></g><g id="value-subtitle" data-pptx-bounds="75 108 1130 48"><rect x="75" y="108" width="1130" height="48" fill="none" /><text x="80" y="139" font-size="21" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">项目周期至 2027 年 6 月；先建立可复核样本，再评价技术收益和使用价值</text></g><g id="value-footer" data-pptx-bounds="70 680 1100 27" data-pptx-role="footer"><rect x="70" y="680" width="1100" height="27" fill="none" /><text x="76" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">SocialSense  ·  创新训练类中期答辩</text><text x="1155" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="end">11 / 18</text></g><g id="validation-timeline" data-pptx-bounds="70 180 1140 362"><rect x="70" y="180" width="1140" height="362" fill="none" /><line x1="101" y1="242" x2="1150" y2="242" stroke="#4472C4" stroke-width="3" /><text x="83" y="215" font-size="26" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">2026.11—12</text><circle cx="105" cy="242" r="10" fill="#4472C4" /><text x="83" y="293" font-size="28" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">来源与关系样本</text><text x="83" y="341" font-size="22" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">标注素材、原创、改写与搬运<tspan x="83" dy="36.3">记录原链接、时点和直接引用</tspan><tspan x="83" dy="36.3">区分首发候选与已核实来源</tspan><tspan x="83" dy="36.3">验收：标注说明、分歧样本集</tspan></text><text x="468" y="215" font-size="26" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">2027.01—03</text><circle cx="490" cy="242" r="10" fill="#4472C4" /><text x="468" y="293" font-size="28" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">统一实验与试用</text><text x="468" y="341" font-size="22" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">同源识别、传播关系基线比较<tspan x="468" dy="36.3">滚动切分、跨话题与分量消融</tspan><tspan x="468" dy="36.3">小规模测量误链接和复核耗时</tspan><tspan x="468" dy="36.3">验收：评估表、误差与试用记录</tspan></text><text x="853" y="215" font-size="26" fill="#4472C4" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">2027.04—06</text><circle cx="875" cy="242" r="10" fill="#4472C4" /><text x="853" y="293" font-size="28" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">互动研究与结题</text><text x="853" y="341" font-size="22" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">固定窗口观察二创与反馈质量<tspan x="853" dy="36.3">记录版本、活动等混杂因素</tspan><tspan x="853" dy="36.3">收敛已验证功能并整理成果</tspan><tspan x="853" dy="36.3">验收：研究报告与正式回执</tspan></text><text x="85" y="527" font-size="21" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">关键问题：出处是否更准、误读是否减少、人工复核是否更高效；未有可信对照时只报告关联。</text></g><g id="budget-status" data-pptx-bounds="80 566 1115 89"><rect x="80" y="566" width="1115" height="89" fill="none" /><rect x="80" y="566" width="1115" height="89" fill="#EDF2F8" /><text x="102" y="602" font-size="23" fill="#243446" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">申请书预算 7,500 元；实际获批额度、支出和调剂审批待财务记录核对。</text><text x="102" y="635" font-size="21" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">优先投入数据验证、必要算力与成果整理，形成科研训练过程和可检查的验收材料。</text></g></svg>

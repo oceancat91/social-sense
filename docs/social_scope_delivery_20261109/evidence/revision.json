@@ -1,0 +1,46 @@
+{
+  "major_edits": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    9,
+    10,
+    11,
+    12,
+    18
+  ],
+  "minor_edits": [
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "reference_pages": [
+    1,
+    7,
+    8
+  ],
+  "game_example_page": 11,
+  "terrain_concept_page": 9,
+  "main_pages": 13,
+  "backup_pages": 5,
+  "timing_seconds": [
+    10,
+    30,
+    30,
+    35,
+    30,
+    35,
+    35,
+    25,
+    40,
+    25,
+    25,
+    30,
+    10
+  ],
+  "source_sha256": "512c8045c52ef27eba6267257b913bcf240a1245e4af70d8ef6798ce1a20ac0f"
+}

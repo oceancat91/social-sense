@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-22" data-pptx-object="shape" data-pptx-frame="-0.47 592.38 427.17 95.77" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:22" data-pptx-semantic-object="shape">
+<path d="M -0.47 592.38 L 426.69 592.38 L 380.65 688.15 L -0.47 688.15 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-25" data-pptx-object="shape" data-pptx-frame="111.31 83.87 1168.69 549" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:25" data-pptx-semantic-object="shape">
+<path d="M 375.25 83.87 L 1280 83.87 L 1280 632.87 L 111.31 632.87 Z" data-pptx-part="geometry" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1082.06 60.8 68.78 66.8" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1082.06 127.6 L 1114.17 60.8 L 1150.84 60.8 L 1118.73 127.6 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1134.86 60.8 68.78 66.8" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1134.86 127.6 L 1166.97 60.8 L 1203.64 60.8 L 1171.53 127.6 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-13" data-pptx-object="shape" data-pptx-frame="966.13 614.48 207.13 34.39" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:13" data-pptx-semantic-object="shape">
+<path d="M 966.13 648.86 L 982.66 614.48 L 1173.26 614.48 L 1156.72 648.86 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-19" data-pptx-object="shape" data-pptx-frame="-0.49 127.6 628.35 539.07" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:19" data-pptx-semantic-object="shape">
+<path d="M -0.49 127.6 L 627.86 127.6 L 368.69 666.67 L -0.49 666.67 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="722.7 330.77 374.82 151.87" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 722.7 330.77 L 1097.52 330.77 L 1097.52 482.64 L 722.7 482.64 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="732.3" y="391.5703937" text-anchor="start" xml:space="preserve" font-family="&quot;思源黑体 CN Bold&quot;, &quot;微软雅黑&quot;, sans-serif" font-size="58.67" fill="#3B3B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">技术演进</text>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="40.69 26.04 368.06 70.48" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="40.69 26.04 368.06 70.48" href="../images/image2.png" x="40.69" y="26.04" width="368.06" height="70.48" preserveAspectRatio="none" />
+</g>
+<g id="shape-5" data-pptx-object="group" data-pptx-frame="34.32 263.27 394.61 148.17" data-pptx-source-ref="slide:5">
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="34.32 263.27 368.43 96.94" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 34.32 263.27 L 402.75 263.27 L 402.75 360.21 L 34.32 360.21 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="218.53" y="337.40629921" text-anchor="middle" xml:space="preserve" font-size="72" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">CHAPTER</text>
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="373.53 330.77 55.4 80.67" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 373.53 330.77 L 428.93 330.77 L 428.93 411.44 L 373.53 411.44 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="401.23" y="404.89994751" text-anchor="middle" xml:space="preserve" font-size="72" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">2</text>
+</g>
+</g></svg>

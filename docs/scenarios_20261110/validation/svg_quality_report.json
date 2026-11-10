@@ -1,0 +1,523 @@
+{
+  "schema": "ppt-master.svg-quality-report.v1",
+  "stage": "final",
+  "target": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110",
+  "source_fingerprint": {
+    "algorithm": "sha256",
+    "digest": "e900b47683e741671a5d6902613e2f01d93f1abe70d7702e241e94296b46ed50",
+    "file_count": 18,
+    "files": [
+      {
+        "file": "authoring-svg-flat/slide_01.svg",
+        "sha256": "e75dcd2b823d703d4bc145e4844253fc4ef16815452a928f4f756f4ecd15ca76"
+      },
+      {
+        "file": "authoring-svg-flat/slide_02.svg",
+        "sha256": "78ce8ef660003a84b127ace89d6e1dc467b02b786929a1c43ac5b1e1066641c0"
+      },
+      {
+        "file": "authoring-svg-flat/slide_03.svg",
+        "sha256": "ff70c3683ca666edf8b192d498fa7d4376d0b3ef8ddbd4923a7b7702f9a64fce"
+      },
+      {
+        "file": "authoring-svg-flat/slide_04.svg",
+        "sha256": "f2d4e6747f0bba72c1dcb32b4f5d1e76811e96567a78564860c3cdf53410d36d"
+      },
+      {
+        "file": "authoring-svg-flat/slide_05.svg",
+        "sha256": "5e2332e6af0dfa447f1ff13229f2cc335c8a24a2ed82349a8407311fa6bbb8cb"
+      },
+      {
+        "file": "authoring-svg-flat/slide_06.svg",
+        "sha256": "2bae6c481555e8a59a4f6cc049b2f375879a75bcb5981f94bc955aa2fa65f2b2"
+      },
+      {
+        "file": "authoring-svg-flat/slide_07.svg",
+        "sha256": "03c2be7f7f23a219df106facf311aebf6ea56fb1d87d44c497ac055326f47e7c"
+      },
+      {
+        "file": "authoring-svg-flat/slide_08.svg",
+        "sha256": "f209b7ebb1fc4304af83151f0e28d7c0013e8406f0e21f4e6badfbf0261da943"
+      },
+      {
+        "file": "authoring-svg-flat/slide_09.svg",
+        "sha256": "6117bc5e2c80cb589af4311d82518275cc01350c6a6f331695b1d32267844d41"
+      },
+      {
+        "file": "authoring-svg-flat/slide_10.svg",
+        "sha256": "4af30149fe5e129cca246aa44ba7d476ea70bb8123fb9bb991f4e8593274bb5d"
+      },
+      {
+        "file": "authoring-svg-flat/slide_11.svg",
+        "sha256": "403533a21f3df7053a55b398554ce23a293339b9f17205c0f25ec20dc2b3a1e2"
+      },
+      {
+        "file": "authoring-svg-flat/slide_12.svg",
+        "sha256": "2494ebbcec96014c621ff784278e5a4122b0819618a71766aa3ac1e4f223e578"
+      },
+      {
+        "file": "authoring-svg-flat/slide_13.svg",
+        "sha256": "13df8daa122a8c8352ba564afe3c60375d39e583a313714292ae91a1ae753070"
+      },
+      {
+        "file": "authoring-svg-flat/slide_14.svg",
+        "sha256": "c5684479f58fbfd9760cc178ee10944e9aa031b8ba8b3e275d511c3169130232"
+      },
+      {
+        "file": "authoring-svg-flat/slide_15.svg",
+        "sha256": "545d9c6393b6ef572d6eca840495bca3c8d4ba7d9d42f6e694c49d87c88b8cea"
+      },
+      {
+        "file": "authoring-svg-flat/slide_16.svg",
+        "sha256": "f070e9f09e698a45cd9e7673fc54398260c298e2a0bb228bb9afeb73b455e114"
+      },
+      {
+        "file": "authoring-svg-flat/slide_17.svg",
+        "sha256": "3bac557b5fb208a49f961f551b556edd45299a3cfd199ea6cffdd6bf72759648"
+      },
+      {
+        "file": "authoring-svg-flat/slide_18.svg",
+        "sha256": "e606a6f8882cfbbd9288e76c9b5f8af55dfb7bc6636042ea65fbd2f8c85dab87"
+      }
+    ]
+  },
+  "summary": {
+    "total": 18,
+    "passed": 18,
+    "warnings": 0,
+    "errors": 0
+  },
+  "issue_types": {},
+  "categories": {
+    "blocking": {
+      "count": 0,
+      "issues": []
+    },
+    "introduced": {
+      "count": 0,
+      "issues": []
+    },
+    "inherited": {
+      "count": 0,
+      "issues": []
+    },
+    "source-import": {
+      "count": 0,
+      "summary": {
+        "warning_count": 0,
+        "by_code": {}
+      }
+    }
+  },
+  "drift": {
+    "colors": {},
+    "fonts": {},
+    "sizes": {}
+  },
+  "carrier_receipt": {
+    "scope": "informational-not-a-quota",
+    "pages": 0,
+    "totals": {
+      "text_elements": 0,
+      "image_placements": 0,
+      "icons": 0,
+      "svg_geometry_elements": 0,
+      "preset_shapes": 0,
+      "page_frame_elements": 0,
+      "marker_uses": 0,
+      "inline_emphasis_runs": 0,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "pages_with": {
+      "images": 0,
+      "icons": 0,
+      "presets": 0,
+      "charts": 0,
+      "tables": 0,
+      "formulas": 0,
+      "inline_emphasis_runs": 0,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "relationship_pages": null,
+    "geometry_elements": {},
+    "preset_names": {},
+    "native_objects": {},
+    "image_page_max_frame_share_range": []
+  },
+  "project_issues": {
+    "template": [],
+    "animation": [],
+    "illustration": [],
+    "communication_trace": [],
+    "pptx_structure": []
+  },
+  "files": [
+    {
+      "file": "slide_01.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_01.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 1,
+        "source_slide": 1,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 6,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "e75dcd2b823d703d4bc145e4844253fc4ef16815452a928f4f756f4ecd15ca76"
+    },
+    {
+      "file": "slide_02.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_02.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 2,
+        "source_slide": 2,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.05632446914197435,
+          "measured_unchanged": 19,
+          "positive_unchanged": 4
+        }
+      },
+      "passed": true,
+      "source_sha256": "78ce8ef660003a84b127ace89d6e1dc467b02b786929a1c43ac5b1e1066641c0"
+    },
+    {
+      "file": "slide_03.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_03.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 3,
+        "source_slide": 3,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 27,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 2,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "ff70c3683ca666edf8b192d498fa7d4376d0b3ef8ddbd4923a7b7702f9a64fce"
+    },
+    {
+      "file": "slide_04.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_04.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 4,
+        "source_slide": 4,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.05848983292319667,
+          "measured_unchanged": 20,
+          "positive_unchanged": 4
+        }
+      },
+      "passed": true,
+      "source_sha256": "f2d4e6747f0bba72c1dcb32b4f5d1e76811e96567a78564860c3cdf53410d36d"
+    },
+    {
+      "file": "slide_05.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_05.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 5,
+        "source_slide": 5,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.056155248796993,
+          "measured_unchanged": 14,
+          "positive_unchanged": 2
+        }
+      },
+      "passed": true,
+      "source_sha256": "5e2332e6af0dfa447f1ff13229f2cc335c8a24a2ed82349a8407311fa6bbb8cb"
+    },
+    {
+      "file": "slide_06.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_06.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 6,
+        "source_slide": 6,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0728511530398321,
+          "measured_unchanged": 26,
+          "positive_unchanged": 5
+        }
+      },
+      "passed": true,
+      "source_sha256": "2bae6c481555e8a59a4f6cc049b2f375879a75bcb5981f94bc955aa2fa65f2b2"
+    },
+    {
+      "file": "slide_07.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_07.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 7,
+        "source_slide": 7,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 25,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "03c2be7f7f23a219df106facf311aebf6ea56fb1d87d44c497ac055326f47e7c"
+    },
+    {
+      "file": "slide_08.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_08.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 8,
+        "source_slide": 8,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.053943008614976876,
+          "measured_unchanged": 7,
+          "positive_unchanged": 2
+        }
+      },
+      "passed": true,
+      "source_sha256": "f209b7ebb1fc4304af83151f0e28d7c0013e8406f0e21f4e6badfbf0261da943"
+    },
+    {
+      "file": "slide_09.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_09.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 9,
+        "source_slide": 9,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.05437665782493321,
+          "measured_unchanged": 12,
+          "positive_unchanged": 3
+        }
+      },
+      "passed": true,
+      "source_sha256": "6117bc5e2c80cb589af4311d82518275cc01350c6a6f331695b1d32267844d41"
+    },
+    {
+      "file": "slide_10.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_10.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 10,
+        "source_slide": 10,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.05598991172761671,
+          "measured_unchanged": 16,
+          "positive_unchanged": 4
+        }
+      },
+      "passed": true,
+      "source_sha256": "4af30149fe5e129cca246aa44ba7d476ea70bb8123fb9bb991f4e8593274bb5d"
+    },
+    {
+      "file": "slide_11.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_11.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 11,
+        "source_slide": 11,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.05615942028985525,
+          "measured_unchanged": 14,
+          "positive_unchanged": 3
+        }
+      },
+      "passed": true,
+      "source_sha256": "403533a21f3df7053a55b398554ce23a293339b9f17205c0f25ec20dc2b3a1e2"
+    },
+    {
+      "file": "slide_12.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_12.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 12,
+        "source_slide": 12,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.05436797232175924,
+          "measured_unchanged": 16,
+          "positive_unchanged": 3
+        }
+      },
+      "passed": true,
+      "source_sha256": "2494ebbcec96014c621ff784278e5a4122b0819618a71766aa3ac1e4f223e578"
+    },
+    {
+      "file": "slide_13.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_13.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 13,
+        "source_slide": 13,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 3,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "13df8daa122a8c8352ba564afe3c60375d39e583a313714292ae91a1ae753070"
+    },
+    {
+      "file": "slide_14.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_14.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 14,
+        "source_slide": 14,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.055963118861494736,
+          "measured_unchanged": 9,
+          "positive_unchanged": 3
+        }
+      },
+      "passed": true,
+      "source_sha256": "c5684479f58fbfd9760cc178ee10944e9aa031b8ba8b3e275d511c3169130232"
+    },
+    {
+      "file": "slide_15.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_15.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 15,
+        "source_slide": 15,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.05295095594347512,
+          "measured_unchanged": 16,
+          "positive_unchanged": 2
+        }
+      },
+      "passed": true,
+      "source_sha256": "545d9c6393b6ef572d6eca840495bca3c8d4ba7d9d42f6e694c49d87c88b8cea"
+    },
+    {
+      "file": "slide_16.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_16.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 16,
+        "source_slide": 16,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.05238564471673661,
+          "measured_unchanged": 6,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "f070e9f09e698a45cd9e7673fc54398260c298e2a0bb228bb9afeb73b455e114"
+    },
+    {
+      "file": "slide_17.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_17.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 17,
+        "source_slide": 17,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.05430107526881741,
+          "measured_unchanged": 6,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "3bac557b5fb208a49f961f551b556edd45299a3cfd199ea6cffdd6bf72759648"
+    },
+    {
+      "file": "slide_18.svg",
+      "path": "D:\\HuaweiMoveData\\Users\\32002\\Desktop\\social-sense\\docs\\scenarios_20261110\\authoring-svg-flat\\slide_18.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 18,
+        "source_slide": 18,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.06989241251929658,
+          "measured_unchanged": 30,
+          "positive_unchanged": 6
+        }
+      },
+      "passed": true,
+      "source_sha256": "e606a6f8882cfbbd9288e76c9b5f8af55dfb7bc6636042ea65fbd2f8c85dab87"
+    }
+  ]
+}

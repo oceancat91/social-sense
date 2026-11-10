@@ -1,0 +1,296 @@
+## PDF page 2
+lutions have demonstrated considerable prediction accu-
+racy improvements over traditional methods, in their exper-
+iments, all the compared (non-Transformer) baselines per-
+form autoregressive or iterated multi-step (IMS) forecast-
+ing [1,2,22,24], which are known to suffer from signiﬁcant
+error accumulation effects for the LTSF problem. There-
+fore, in this work, we challenge Transformer-based LTSF
+solutions with direct multi-step (DMS) forecasting strate-
+gies to validate their real performance.
+Not all time series are predictable, let alone long-term
+forecasting (e.g., for chaotic systems). We hypothesize that
+long-term forecasting is only feasible for those time series
+with a relatively clear trend and periodicity. As linear mod-
+els can already extract such information, we introduce a set
+of embarrassingly simple models named LTSF-Linear as a
+new baseline for comparison.LTSF-Linear regresses histor-
+ical time series with a one-layer linear model to forecast fu-
+ture time series directly. We conduct extensive experiments
+on nine widely-used benchmark datasets that cover various
+real-life applications: trafﬁc, energy, economics, weather,
+and disease predictions. Surprisingly, our results show that
+LTSF-Linear outperforms existing complex Transformer-
+based models in all cases, and often by a large margin (20%
+∼ 50%). Moreover, we ﬁnd that, in contrast to the claims in
+existing Transformers, most of them fail to extract temporal
+relations from long sequences, i.e., the forecasting errors are
+not reduced (sometimes even increased) with the increase of
+look-back window sizes. Finally, we conduct various abla-
+tion studies on existing Transformer-based TSF solutions to
+study the impact of various design elements in them.
+To sum up, the contributions of this work include:
+• To the best of our knowledge, this is the ﬁrst work to
+challenge the effectiveness of the booming Transform-
+ers for the long-term time series forecasting task.
+• To validate our claims, we introduce a set of em-
+barrassingly simple one-layer linear models, named
+LTSF-Linear, and compare them with existing
+Transformer-based LTSF solutions on nine bench-
+marks. LTSF-Linear can be a new baseline for the
+LTSF problem.
+• We conduct comprehensive empirical studies on var-
+ious aspects of existing Transformer-based solutions,
+including the capability of modeling long inputs, the
+sensitivity to time series order, the impact of posi-
+tional encoding and sub-series embedding, and efﬁ-
+ciency comparisons. Our ﬁndings would beneﬁt future
+research in this area.
+With the above, we conclude that the temporal model-
+ing capabilities of Transformers for time series are exag-
+gerated, at least for the existing LTSF benchmarks . At the
+same time, while LTSF-Linear achieves a better prediction
+accuracy compared to existing works, it merely serves as a
+simple baseline for future research on the challenging long-
+term TSF problem. With our ﬁndings, we also advocate
+revisiting the validity of Transformer-based solutions for
+other time series analysis tasks in the future.
+2. Preliminaries: TSF Problem Formulation
+For time series containing C variates, given historical
+dataX = {X t
+1, ..., Xt
+C}L
+t=1, wherein L is the look-back
+window size and X t
+i is the value of the ith variate at the tth
+time step. The time series forecasting task is to predict the
+values ˆX ={ ˆX t
+1, ..., ˆX t
+C}L+T
+t=L+1 at the T future time steps.
+When T > 1, iterated multi-step (IMS) forecasting [23]
+learns a single-step forecaster and iteratively applies it to
+obtain multi-step predictions. Alternatively, direct multi-
+step (DMS) forecasting [4] directly optimizes the multi-step
+forecasting objective at once.
+Compared to DMS forecasting results, IMS predictions
+have smaller variance thanks to the autoregressive estima-
+tion procedure, but they inevitably suffer from error accu-
+mulation effects. Consequently, IMS forecasting is prefer-
+able when there is a highly-accurate single-step forecaster,
+and T is relatively small. In contrast, DMS forecasting gen-
+erates more accurate predictions when it is hard to obtain an
+unbiased single-step forecasting model, or T is large.
+3. Transformer-Based LTSF Solutions
+Transformer-based models [26] have achieved unparal-
+leled performances in many long-standing AI tasks in natu-
+ral language processing and computer vision ﬁelds, thanks
+to the effectiveness of the multi-head self-attention mech-
+anism. This has also triggered lots of research interest
+in Transformer-based time series modeling techniques [20,
+27]. In particular, a large amount of research works are ded-
+icated to the LTSF task (e.g., [16, 18, 28, 30, 31]). Con-
+sidering the ability to capture long-range dependencies
+with Transformer models, most of them focus on the less-
+explored long-term forecasting problem (T≫ 1)1.
+When applying the vanilla Transformer model to the
+LTSF problem, it has some limitations, including the
+quadratic time/memory complexity with the original self-
+attention scheme and error accumulation caused by the au-
+toregressive decoder design. Informer [30] addresses these
+issues and proposes a novel Transformer architecture with
+reduced complexity and a DMS forecasting strategy. Later,
+more Transformer variants introduce various time series
+features into their models for performance or efﬁciency im-
+provements [18,28,31]. We summarize the design elements
+of existing Transformer-based LTSF solutions as follows
+(see Figure 1).
+1Due to page limit, we leave the discussion of non-Transformer fore-
+casting solutions in the Appendix.
+2
+
+## PDF page 3
+(d) Decoder(c) Encoder(b) Embedding(a) Preprocessing
+Forecasting Output
+(d) Decoder(c) Encoder(b) Embedding(a) Preprocessing
+Output
+InputSeasonal-trend decompositionNormalizationTimestamppreparationChannel projectionFixed positionLocal timestampGlobal timestampProbSparse and distilling self-attention @InformerSeries auto-correlation with decomposition @AutoformerMulti-resolution pyramidal     attention @PyraformerFrequency enhanced block with decomposition @FEDformerLogSparse and convolutional self-attention @LogTransDirect Multi-Step (DMS) @InformerDMS with auto-correlation and decomposition @AutoformerDMS along spatio-temporal dimension @PyraformerDMS with frequency attention and decomposition@FEDformerIterated Multi-Step (IMS) @LogTrans
+Figure 1. The pipeline of existing Transformer-based TSF solutions. In (a) and (b), the solid boxes are essential operations, and the dotted
+boxes are applied optionally. (c) and (d) are distinct for different methods [16, 18, 28, 30, 31].
+Time series decomposition: For data preprocessing, nor-
+malization with zero-mean is common in TSF. Besides,
+Autoformer [28] ﬁrst applies seasonal-trend decomposition
+behind each neural block, which is a standard method in
+time series analysis to make raw data more predictable [6,
+13]. Speciﬁcally, they use a moving average kernel on the
+input sequence to extract the trend-cyclical component of
+the time series. The difference between the original se-
+quence and the trend component is regarded as theseasonal
+component. On top of the decomposition scheme of Aut-
+oformer, FEDformer [31] further proposes the mixture of
+experts’ strategies to mix the trend components extracted
+by moving average kernels with various kernel sizes.
+Input embedding strategies: The self-attention layer in
+the Transformer architecture cannot preserve the positional
+information of the time series. However, local positional
+information, i.e. the ordering of time series, is important.
+Besides, global temporal information, such as hierarchical
+timestamps (week, month, year) and agnostic timestamps
+(holidays and events), is also informative [30]. To enhance
+the temporal context of time-series inputs, a practical design
+in the SOTA Transformer-based methods is injecting sev-
+eral embeddings, like a ﬁxed positional encoding, a channel
+projection embedding, and learnable temporal embeddings
+into the input sequence. Moreover, temporal embeddings
+with a temporal convolution layer [16] or learnable times-
+tamps [28] are introduced.
+Self-attention schemes: Transformers rely on the self-
+attention mechanism to extract the semantic dependen-
+cies between paired elements. Motivated by reducing
+the O
+(
+L2)
+time and memory complexity of the vanilla
+Transformer, recent works propose two strategies for ef-
+ﬁciency. On the one hand, LogTrans and Pyraformer
+explicitly introduce a sparsity bias into the self-attention
+scheme. Speciﬁcally, LogTrans uses a Logsparse mask to
+reduce the computational complexity to O (LlogL) while
+Pyraformer adopts pyramidal attention that captures hierar-
+chically multi-scale temporal dependencies with an O (L)
+time and memory complexity. On the other hand, In-
+former and FEDformer use the low-rank property in the
+self-attention matrix. Informer proposes a ProbSparse self-
+attention mechanism and a self-attention distilling operation
+to decrease the complexity to O (LlogL), and FEDformer
+designs a Fourier enhanced block and a wavelet enhanced
+block with random selection to obtain O (L) complexity.
+Lastly, Autoformer designs a series-wise auto-correlation
+mechanism to replace the original self-attention layer.
+Decoders: The vanilla Transformer decoder outputs se-
+quences in an autoregressive manner, resulting in a slow in-
+ference speed and error accumulation effects, especially for
+long-term predictions. Informer designs a generative-style
+decoder for DMS forecasting. Other Transformer variants
+employ similar DMS strategies. For instance, Pyraformer
+uses a fully-connected layer concatenating Spatio-temporal
+axes as the decoder. Autoformer sums up two reﬁned de-
+composed features from trend-cyclical components and the
+stacked auto-correlation mechanism for seasonal compo-
+nents to get the ﬁnal prediction. FEDformer also uses a
+decomposition scheme with the proposed frequency atten-
+tion block to decode the ﬁnal results.
+The premise of Transformer models is the semantic cor-
+relations between paired elements, while the self-attention
+mechanism itself is permutation-invariant, and its capabil-
+ity of modeling temporal relations largely depends on posi-
+tional encodings associated with input tokens. Considering
+the raw numerical data in time series (e.g., stock prices or
+electricity values), there are hardly any point-wise semantic
+correlations between them. In time series modeling, we are
+mainly interested in the temporal relations among a contin-
+uous set of points, and the order of these elements instead
+of the paired relationship plays the most crucial role. While
+employing positional encoding and using tokens to embed
+sub-series facilitate preserving some ordering information,
+the nature of the permutation-invariant self-attention mech-
+anism inevitably results in temporal information loss. Due
+to the above observations, we are interested in revisiting the
+effectiveness of Transformer-based LTSF solutions.
+4. An Embarrassingly Simple Baseline
+In the experiments of existing Transformer-based LTSF
+solutions ( T ≫ 1), all the compared (non-Transformer)
+3
+
+## PDF page 5
+Datasets ETTh1&ETTh2 ETTm1&ETTm2 Trafﬁc Electricity Exchange-Rate Weather ILI
+Variates 7 7 862 321 8 21 7
+Timesteps 17,420 69,680 17,544 26,304 7,588 52,696 966
+Granularity 1hour 5min 1hour 1hour 1day 10min 1week
+Table 1. The statistics of the nine popular datasets for the LTSF problem.
+Methods IMP. Linear* NLinear* DLinear* FEDformer Autoformer Informer Pyraformer* LogTrans Repeat*
+Metric MSE MSE MAE MSE MAE MSE MAE MSE MAE MSE MAE MSE MAE MSE MAE MSE MAE MSE MAE
+Electricity
+96 27.40%0.140 0.237 0.141 0.237 0.140 0.237 0.193 0.308 0.201 0.317 0.274 0.368 0.386 0.449 0.258 0.3571.588 0.946
+192 23.88%0.153 0.250 0.154 0.248 0.153 0.249 0.201 0.315 0.222 0.334 0.296 0.386 0.386 0.443 0.266 0.3681.595 0.950
+336 21.02%0.169 0.268 0.171 0.265 0.169 0.267 0.214 0.329 0.231 0.338 0.300 0.394 0.378 0.443 0.280 0.3801.617 0.961
+720 17.47%0.203 0.301 0.210 0.297 0.203 0.301 0.246 0.355 0.254 0.361 0.373 0.439 0.376 0.445 0.283 0.3761.647 0.975
+Exchange
+96 45.27%0.082 0.207 0.089 0.208 0.081 0.203 0.148 0.278 0.197 0.323 0.847 0.752 0.376 1.105 0.968 0.8120.081 0.196
+192 42.06%0.167 0.304 0.180 0.300 0.157 0.293 0.271 0.380 0.300 0.369 1.204 0.895 1.748 1.151 1.040 0.8510.167 0.289
+336 33.69%0.328 0.432 0.331 0.415 0.305 0.414 0.460 0.500 0.509 0.524 1.672 1.036 1.874 1.172 1.659 1.0810.305 0.396
+720 46.19%0.964 0.750 1.033 0.780 0.643 0.601 1.195 0.841 1.447 0.941 2.478 1.310 1.943 1.206 1.941 1.1270.823 0.681
+Trafﬁc
+96 30.15%0.410 0.282 0.410 0.279 0.410 0.282 0.587 0.366 0.613 0.388 0.719 0.391 2.085 0.468 0.684 0.3842.723 1.079
+192 29.96%0.423 0.287 0.423 0.284 0.423 0.287 0.604 0.373 0.616 0.382 0.696 0.379 0.867 0.467 0.685 0.3902.756 1.087
+336 29.95%0.436 0.295 0.435 0.290 0.436 0.296 0.621 0.383 0.622 0.337 0.777 0.420 0.869 0.469 0.734 0.4082.791 1.095
+720 25.87%0.466 0.315 0.464 0.307 0.466 0.315 0.626 0.382 0.660 0.408 0.864 0.472 0.881 0.473 0.717 0.3962.811 1.097
+Weather
+96 18.89%0.176 0.236 0.182 0.232 0.176 0.237 0.217 0.296 0.266 0.336 0.300 0.384 0.896 0.556 0.458 0.4900.259 0.254
+192 21.01%0.218 0.276 0.225 0.269 0.220 0.282 0.276 0.336 0.307 0.367 0.598 0.544 0.622 0.624 0.658 0.5890.309 0.292
+336 22.71%0.262 0.312 0.271 0.301 0.265 0.319 0.339 0.380 0.359 0.395 0.578 0.523 0.739 0.753 0.797 0.6520.377 0.338
+720 19.85%0.326 0.365 0.338 0.348 0.323 0.362 0.403 0.428 0.419 0.428 1.059 0.741 1.004 0.934 0.869 0.6750.465 0.394
+ILI
+24 47.86%1.947 0.985 1.683 0.858 2.215 1.081 3.228 1.260 3.483 1.287 5.764 1.677 1.420 2.012 4.480 1.4446.587 1.701
+36 36.43%2.182 1.036 1.703 0.859 1.963 0.963 2.679 1.080 3.103 1.148 4.755 1.467 7.394 2.031 4.799 1.4677.130 1.884
+48 34.43%2.256 1.060 1.719 0.884 2.130 1.024 2.622 1.078 2.669 1.085 4.763 1.469 7.551 2.057 4.800 1.4686.575 1.798
+60 34.33%2.390 1.104 1.819 0.917 2.368 1.096 2.857 1.157 2.770 1.125 5.264 1.564 7.662 2.100 5.278 1.5605.893 1.677
+ETTh1
+96 0.80% 0.375 0.397 0.374 0.394 0.375 0.399 0.376 0.419 0.449 0.459 0.865 0.713 0.664 0.612 0.878 0.7401.295 0.713
+192 3.57% 0.418 0.429 0.408 0.415 0.405 0.416 0.420 0.448 0.500 0.482 1.008 0.792 0.790 0.681 1.037 0.8241.325 0.733
+336 6.54% 0.479 0.476 0.429 0.427 0.439 0.443 0.459 0.465 0.521 0.496 1.107 0.809 0.891 0.738 1.238 0.9321.323 0.744
+720 13.04%0.624 0.592 0.440 0.453 0.472 0.490 0.506 0.507 0.514 0.512 1.181 0.865 0.963 0.782 1.135 0.8521.339 0.756
+ETTh2
+96 19.94%0.288 0.352 0.277 0.338 0.289 0.353 0.346 0.388 0.358 0.397 3.755 1.525 0.645 0.597 2.116 1.1970.432 0.422
+192 19.81%0.377 0.413 0.344 0.381 0.383 0.418 0.429 0.439 0.456 0.452 5.602 1.931 0.788 0.683 4.315 1.6350.534 0.473
+336 25.93%0.452 0.461 0.357 0.400 0.448 0.465 0.496 0.487 0.482 0.486 4.721 1.835 0.907 0.747 1.124 1.6040.591 0.508
+720 14.25%0.698 0.595 0.394 0.436 0.605 0.551 0.463 0.474 0.515 0.511 3.647 1.625 0.963 0.783 3.188 1.5400.588 0.517
+ETTm1
+96 21.10%0.308 0.352 0.306 0.348 0.299 0.343 0.379 0.419 0.505 0.475 0.672 0.571 0.543 0.510 0.600 0.5461.214 0.665
+192 21.36%0.340 0.369 0.349 0.375 0.335 0.365 0.426 0.441 0.553 0.496 0.795 0.669 0.557 0.537 0.837 0.7001.261 0.690
+336 17.07%0.376 0.393 0.375 0.388 0.369 0.386 0.445 0.459 0.621 0.537 1.212 0.871 0.754 0.655 1.124 0.8321.283 0.707
+720 21.73%0.440 0.435 0.433 0.422 0.425 0.421 0.543 0.490 0.671 0.561 1.166 0.823 0.908 0.724 1.153 0.8201.319 0.729
+ETTm2
+96 17.73%0.168 0.262 0.167 0.255 0.167 0.260 0.203 0.287 0.255 0.339 0.365 0.453 0.435 0.507 0.768 0.6420.266 0.328
+192 17.84%0.232 0.308 0.221 0.293 0.224 0.303 0.269 0.328 0.281 0.340 0.533 0.563 0.730 0.673 0.989 0.7570.340 0.371
+336 15.69%0.320 0.373 0.274 0.327 0.281 0.342 0.325 0.366 0.339 0.372 1.363 0.887 1.201 0.845 1.334 0.8720.412 0.410
+720 12.58%0.413 0.435 0.368 0.384 0.397 0.421 0.421 0.415 0.433 0.432 3.379 1.338 3.625 1.451 3.048 1.3280.521 0.465
+- Methods* are implemented by us; Other results are from FEDformer [31].
+Table 2. Multivariate long-term forecasting errors in terms of MSE and MAE, the lower the better. Among them, ILI dataset is with
+forecasting horizon T ∈ {24, 36, 48, 60}. For the others, T ∈ {96, 192, 336, 720}. Repeat repeats the last value in the look-back window.
+The best results are highlighted in bold and the best results of Transformers are highlighted with a underline . Accordingly, IMP. is the
+best result of linear models compared to the results of Transformer-based solutions.
+the prediction results on three selected time series datasets
+with Transformer-based solutions and LTSF-Linear: Elec-
+tricity (Sequence 1951, Variate 36), Exchange-Rate (Se-
+quence 676, Variate 3), and ETTh2 ( Sequence 1241, Vari-
+ate 2), where these datasets have different temporal patterns.
+When the input length is 96 steps, and the output horizon
+is 336 steps, Transformers [28, 30, 31] fail to capture the
+scale and bias of the future data on Electricity and ETTh2.
+Moreover, they can hardly predict a proper trend on aperi-
+odic data such as Exchange-Rate. These phenomena further
+indicate the inadequacy of existing Transformer-based solu-
+tions for the LTSF task.
+5.3. More Analyses on LTSF-Transformers
+Can existing LTSF-Transformers extract temporal re-
+lations well from longer input sequences? The size of the
+look-back window greatly impacts forecasting accuracy as
+it determines how much we can learn from historical data.
+Generally speaking, a powerful TSF model with a strong
+temporal relation extraction capability should be able to
+achieve better results with larger look-back window sizes.
+To study the impact of input look-back win-
+dow sizes, we conduct experiments with L ∈
+{24, 48, 72, 96, 120, 144, 168, 192, 336, 504, 672, 720}
+for long-term forecasting (T=720). Figure 4 demonstrates
+the MSE results on two datasets. Similar to the observations
+from previous studies [27, 30], existing Transformer-based
+models’ performance deteriorates or stays stable when
+the look-back window size increases. In contrast, the
+performances of all LTSF-Linear are signiﬁcantly boosted
+with the increase of look-back window size. Thus, existing
+solutions tend to overﬁt temporal noises instead of extract-
+ing temporal information if given a longer sequence, and
+the input size 96 is exactly suitable for most Transformers.
+5

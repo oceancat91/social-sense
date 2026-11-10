@@ -1,0 +1,279 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Noto Sans CJK SC&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="29.41 33.12 879.71 64.32" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 29.41 33.12 L 909.11 33.12 L 909.11 97.44 L 29.41 97.44 Z" fill="#BE1F26" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="59.52 48 405.69 40.55" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 59.52 48 L 465.21 48 L 465.21 88.55 L 59.52 88.55 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="60.48" y="80.72409449" text-anchor="start" xml:space="preserve" font-size="32.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>4</tspan><tspan>. 从 3D 到 4D</tspan></text>
+</g>
+<g id="shape-4" data-pptx-object="picture" data-pptx-frame="929.28 34.56 258.24 49.44" data-pptx-source-ref="slide:4">
+<image data-pptx-object="picture" data-pptx-frame="929.28 34.56 258.24 49.44" href="../images/image3.png" x="929.28" y="34.56" width="258.24" height="49.44" preserveAspectRatio="none" />
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="42.24 107.52 689.28 31.68" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 42.24 107.52 L 731.52 107.52 L 731.52 139.2 L 42.24 139.2 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="42.24" y="127.52" text-anchor="start" xml:space="preserve" font-size="20.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">4D-fy：混合先验缓解外观、结构与运动的三方权衡</text>
+</g>
+<g id="shape-6" data-pptx-object="picture" data-pptx-frame="87.35 142.08 597.14 228.48" data-pptx-source-ref="slide:6">
+<image data-pptx-object="picture" data-pptx-frame="87.35 142.08 597.14 228.48" href="../images/image15.png" x="87.35" y="142.08" width="597.14" height="228.48" preserveAspectRatio="none" />
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="43.2 372.48 681.6 18.24" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 43.2 372.48 L 724.8 372.48 L 724.8 390.72 L 43.2 390.72 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="43.2" y="384.48" text-anchor="start" xml:space="preserve" font-size="12.67" fill="#686F75" data-pptx-text-baseline="metrics-v1">原图：4D-fy，Figure 1（CVPR 2024）；同一场景跨视角、跨时间的生成结果。</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="43.2 395.52 686.4 248.64" data-pptx-prst="roundRect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 43.2 436.96 A 41.44 41.44 0 0 1 84.64 395.52 L 688.16 395.52 A 41.44 41.44 0 0 1 729.6 436.96 L 729.6 602.72 A 41.44 41.44 0 0 1 688.16 644.16 L 84.64 644.16 A 41.44 41.44 0 0 1 43.2 602.72 Z" fill="#F6F7F8" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="58.56 405.12 657.6 21.12" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 58.56 405.12 L 716.16 405.12 L 716.16 426.24 L 58.56 426.24 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="58.56" y="422.45333333" text-anchor="start" xml:space="preserve" font-size="17.6" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1">论文 Table 1 的核心结论：不同先验各有所长</text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="58.56 433.92 142.08 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 58.56 433.92 L 200.64 433.92 L 200.64 462.72 L 58.56 462.72 Z" fill="#BE1F26" stroke-width="1.06667" stroke="#FFFFFF" data-pptx-part="geometry" />
+
+
+<text x="129.6" y="453.83459318" text-anchor="middle" xml:space="preserve" font-size="15.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">SDS 先验</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="200.64 433.92 137.28 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 200.64 433.92 L 337.92 433.92 L 337.92 462.72 L 200.64 462.72 Z" fill="#BE1F26" stroke-width="1.06667" stroke="#FFFFFF" data-pptx-part="geometry" />
+
+
+<text x="269.28" y="453.83459318" text-anchor="middle" xml:space="preserve" font-size="15.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">外观</text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="337.92 433.92 150.72 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 337.92 433.92 L 488.64 433.92 L 488.64 462.72 L 337.92 462.72 Z" fill="#BE1F26" stroke-width="1.06667" stroke="#FFFFFF" data-pptx-part="geometry" />
+
+
+<text x="413.28" y="453.83459318" text-anchor="middle" xml:space="preserve" font-size="15.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">3D 结构</text>
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="488.64 433.92 149.76 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 488.64 433.92 L 638.4 433.92 L 638.4 462.72 L 488.64 462.72 Z" fill="#BE1F26" stroke-width="1.06667" stroke="#FFFFFF" data-pptx-part="geometry" />
+
+
+<text x="563.52" y="453.83459318" text-anchor="middle" xml:space="preserve" font-size="15.33" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">运动</text>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="58.56 462.72 142.08 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 58.56 462.72 L 200.64 462.72 L 200.64 491.52 L 58.56 491.52 Z" fill="#FFFFFF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="129.6" y="482.87459318" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">T2I</text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="200.64 462.72 137.28 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 200.64 462.72 L 337.92 462.72 L 337.92 491.52 L 200.64 491.52 Z" fill="#FFFFFF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="269.28" y="482.87459318" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">高</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="337.92 462.72 150.72 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 337.92 462.72 L 488.64 462.72 L 488.64 491.52 L 337.92 491.52 Z" fill="#FFFFFF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="413.28" y="482.87459318" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">低</text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="488.64 462.72 149.76 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 488.64 462.72 L 638.4 462.72 L 638.4 491.52 L 488.64 491.52 Z" fill="#FFFFFF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="563.52" y="482.87459318" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">无</text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="58.56 491.52 142.08 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 58.56 491.52 L 200.64 491.52 L 200.64 520.32 L 58.56 520.32 Z" fill="#EFF2F4" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="129.6" y="511.67459318" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">3D-aware T2I</text>
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="200.64 491.52 137.28 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 200.64 491.52 L 337.92 491.52 L 337.92 520.32 L 200.64 520.32 Z" fill="#EFF2F4" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="269.28" y="511.67459318" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">中</text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="337.92 491.52 150.72 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 337.92 491.52 L 488.64 491.52 L 488.64 520.32 L 337.92 520.32 Z" fill="#EFF2F4" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="413.28" y="511.67459318" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">高</text>
+</g>
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="488.64 491.52 149.76 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 488.64 491.52 L 638.4 491.52 L 638.4 520.32 L 488.64 520.32 Z" fill="#EFF2F4" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="563.52" y="511.67459318" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">无</text>
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="58.56 520.32 142.08 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 58.56 520.32 L 200.64 520.32 L 200.64 549.12 L 58.56 549.12 Z" fill="#FFFFFF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="129.6" y="540.47469816" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">T2V</text>
+</g>
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="200.64 520.32 137.28 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 200.64 520.32 L 337.92 520.32 L 337.92 549.12 L 200.64 549.12 Z" fill="#FFFFFF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="269.28" y="540.47469816" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">低</text>
+</g>
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="337.92 520.32 150.72 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 337.92 520.32 L 488.64 520.32 L 488.64 549.12 L 337.92 549.12 Z" fill="#FFFFFF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="413.28" y="540.47469816" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">低</text>
+</g>
+<g id="shape-25" data-pptx-object="shape" data-pptx-frame="488.64 520.32 149.76 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:25" data-pptx-semantic-object="shape">
+<path d="M 488.64 520.32 L 638.4 520.32 L 638.4 549.12 L 488.64 549.12 Z" fill="#FFFFFF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="563.52" y="540.47469816" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">高</text>
+</g>
+<g id="shape-26" data-pptx-object="shape" data-pptx-frame="58.56 549.12 142.08 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:26" data-pptx-semantic-object="shape">
+<path d="M 58.56 549.12 L 200.64 549.12 L 200.64 577.92 L 58.56 577.92 Z" fill="#FBEFEF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="129.6" y="569.27469816" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">4D-fy 混合</text>
+</g>
+<g id="shape-27" data-pptx-object="shape" data-pptx-frame="200.64 549.12 137.28 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:27" data-pptx-semantic-object="shape">
+<path d="M 200.64 549.12 L 337.92 549.12 L 337.92 577.92 L 200.64 577.92 Z" fill="#FBEFEF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="269.28" y="569.27469816" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">中</text>
+</g>
+<g id="shape-28" data-pptx-object="shape" data-pptx-frame="337.92 549.12 150.72 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:28" data-pptx-semantic-object="shape">
+<path d="M 337.92 549.12 L 488.64 549.12 L 488.64 577.92 L 337.92 577.92 Z" fill="#FBEFEF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="413.28" y="569.27469816" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">高</text>
+</g>
+<g id="shape-29" data-pptx-object="shape" data-pptx-frame="488.64 549.12 149.76 28.8" data-pptx-prst="rect" data-pptx-source-ref="slide:29" data-pptx-semantic-object="shape">
+<path d="M 488.64 549.12 L 638.4 549.12 L 638.4 577.92 L 488.64 577.92 Z" fill="#FBEFEF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="563.52" y="569.27469816" text-anchor="middle" xml:space="preserve" font-size="14.93" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">中</text>
+</g>
+<g id="shape-30" data-pptx-object="shape" data-pptx-frame="59.52 583.68 662.4 20.16" data-pptx-prst="rect" data-pptx-source-ref="slide:30" data-pptx-semantic-object="shape">
+<path d="M 59.52 583.68 L 721.92 583.68 L 721.92 603.84 L 59.52 603.84 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="59.52" y="598.34666667" text-anchor="start" xml:space="preserve" font-size="15.33" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1">混合 SDS 的阶段示意（非论文原式）</text>
+</g>
+<g id="shape-31" data-pptx-object="shape" data-pptx-frame="65.28 609.6 165.12 27.84" data-pptx-prst="roundRect" data-pptx-source-ref="slide:31" data-pptx-semantic-object="shape">
+<path d="M 65.28 614.24 A 4.64 4.64 0 0 1 69.92 609.6 L 225.76 609.6 A 4.64 4.64 0 0 1 230.4 614.24 L 230.4 632.8 A 4.64 4.64 0 0 1 225.76 637.44 L 69.92 637.44 A 4.64 4.64 0 0 1 65.28 632.8 Z" fill="#ECF3F7" stroke-width="1.06667" stroke="#143E4A" data-pptx-part="geometry" />
+
+
+<text x="147.84" y="628.86136483" text-anchor="middle" xml:space="preserve" font-size="13.6" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">3D-aware：建结构</text>
+</g>
+<g id="shape-32" data-pptx-object="shape" data-pptx-frame="236.16 611.52 21.12 21.12" data-pptx-prst="rightArrow" data-pptx-source-ref="slide:32" data-pptx-semantic-object="shape">
+<path d="M 236.16 616.8 L 246.72 616.8 L 246.72 611.52 L 257.28 622.08 L 246.72 632.64 L 246.72 627.36 L 236.16 627.36 Z" fill="#BE1F26" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-33" data-pptx-object="shape" data-pptx-frame="262.08 609.6 142.08 27.84" data-pptx-prst="roundRect" data-pptx-source-ref="slide:33" data-pptx-semantic-object="shape">
+<path d="M 262.08 614.24 A 4.64 4.64 0 0 1 266.72 609.6 L 399.52 609.6 A 4.64 4.64 0 0 1 404.16 614.24 L 404.16 632.8 A 4.64 4.64 0 0 1 399.52 637.44 L 266.72 637.44 A 4.64 4.64 0 0 1 262.08 632.8 Z" fill="#FFFFFF" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+<text x="333.12" y="628.86136483" text-anchor="middle" xml:space="preserve" font-size="13.6" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">T2I：细化外观</text>
+</g>
+<g id="shape-34" data-pptx-object="shape" data-pptx-frame="408.96 611.52 21.12 21.12" data-pptx-prst="rightArrow" data-pptx-source-ref="slide:34" data-pptx-semantic-object="shape">
+<path d="M 408.96 616.8 L 419.52 616.8 L 419.52 611.52 L 430.08 622.08 L 419.52 632.64 L 419.52 627.36 L 408.96 627.36 Z" fill="#BE1F26" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-35" data-pptx-object="shape" data-pptx-frame="434.88 609.6 156.48 27.84" data-pptx-prst="roundRect" data-pptx-source-ref="slide:35" data-pptx-semantic-object="shape">
+<path d="M 434.88 614.24 A 4.64 4.64 0 0 1 439.52 609.6 L 586.72 609.6 A 4.64 4.64 0 0 1 591.36 614.24 L 591.36 632.8 A 4.64 4.64 0 0 1 586.72 637.44 L 439.52 637.44 A 4.64 4.64 0 0 1 434.88 632.8 Z" fill="#FBEFEF" stroke-width="1.06667" stroke="#BE1F26" data-pptx-part="geometry" />
+
+
+<text x="513.12" y="628.86136483" text-anchor="middle" xml:space="preserve" font-size="13.6" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">T2V：加入运动</text>
+</g>
+<g id="shape-36" data-pptx-object="shape" data-pptx-frame="758.4 108.48 468.48 38.4" data-pptx-prst="rect" data-pptx-source-ref="slide:36" data-pptx-semantic-object="shape">
+<path d="M 758.4 108.48 L 1226.88 108.48 L 1226.88 146.88 L 758.4 146.88 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="758.4" y="131.14656168" text-anchor="start" xml:space="preserve" font-size="23.73" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">不是一个先验包办所有目标</text>
+</g>
+<g id="shape-37" data-pptx-object="shape" data-pptx-frame="760.32 156.48 462.72 75.84" data-pptx-prst="rect" data-pptx-source-ref="slide:37" data-pptx-semantic-object="shape">
+<path d="M 760.32 156.48 L 1223.04 156.48 L 1223.04 232.32 L 760.32 232.32 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="761.28" y="174.29333333" text-anchor="start" xml:space="preserve" font-size="18.4" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.08"><tspan><tspan>①  </tspan><tspan fill="#1F2326">T2I 通常更擅长高保真外观，但缺少运动，且不保证多</tspan></tspan><tspan fill="#1F2326" data-paragraph-line-break="1">视角结构正确。</tspan></text>
+</g>
+<g id="shape-38" data-pptx-object="shape" data-pptx-frame="761.28 221.96 462.72 68.73" data-pptx-prst="rect" data-pptx-source-ref="slide:38" data-pptx-semantic-object="shape">
+<path d="M 761.28 221.96 L 1224 221.96 L 1224 290.68 L 761.28 290.68 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="762.24" y="239.76902887" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="18.67" fill="#B91F25" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.4"><tspan><tspan>② </tspan><tspan fill="#252525">3D-aware T2I </tspan><tspan fill="#252525">加强多视角结构；</tspan><tspan fill="#252525">T2V </tspan><tspan fill="#252525">提供运动，却</tspan></tspan><tspan fill="#252525" data-paragraph-line-break="1">可能损失外观细节。 不同先验的优化目标并不相同，直</tspan><tspan fill="#252525" data-paragraph-line-break="1">接混合可能出现监督冲突。</tspan></text>
+</g>
+<g id="shape-39" data-pptx-object="shape" data-pptx-frame="760.32 317.76 462.72 87.36" data-pptx-prst="rect" data-pptx-source-ref="slide:39" data-pptx-semantic-object="shape">
+<path d="M 760.32 317.76 L 1223.04 317.76 L 1223.04 405.12 L 760.32 405.12 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="761.28" y="335.57333333" text-anchor="start" xml:space="preserve" font-size="18.4" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.08"><tspan><tspan>③  </tspan><tspan fill="#1F2326">4D-fy </tspan><tspan fill="#1F2326">通过交替混合不同扩散模型的监督信号，逐步</tspan></tspan><tspan fill="#1F2326" data-paragraph-line-break="1">利用各自的优势，而不是让单个模型同时解决全部问题<tspan>。</tspan></tspan></text>
+</g>
+<g id="shape-40" data-pptx-object="shape" data-pptx-frame="761.28 412.8 458.88 32.64" data-pptx-prst="rect" data-pptx-source-ref="slide:40" data-pptx-semantic-object="shape">
+<path d="M 761.28 412.8 L 1220.16 412.8 L 1220.16 445.44 L 761.28 445.44 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="761.28" y="431.46666667" text-anchor="start" xml:space="preserve" font-size="20.13" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1">表格的含义：这是折中，不是全面最优</text>
+</g>
+<g id="shape-41" data-pptx-object="shape" data-pptx-frame="761.28 449.28 458.88 109.44" data-pptx-prst="roundRect" data-pptx-source-ref="slide:41" data-pptx-semantic-object="shape">
+<path d="M 761.28 467.52 A 18.24 18.24 0 0 1 779.52 449.28 L 1201.92 449.28 A 18.24 18.24 0 0 1 1220.16 467.52 L 1220.16 540.48 A 18.24 18.24 0 0 1 1201.92 558.72 L 779.52 558.72 A 18.24 18.24 0 0 1 761.28 540.48 Z" fill="#FBEFEF" stroke-width="1.06667" stroke="#BE1F26" data-pptx-part="geometry" />
+
+
+<text x="768" y="470.30929134" text-anchor="start" xml:space="preserve" font-size="18.4" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.08"><tspan><tspan>混合方法试图在外观、三维结构和运动之间重新分配监</tspan></tspan><tspan data-paragraph-line-break="1">督职责。它能缓解单一先验的偏差，但多个目标之间仍</tspan><tspan data-paragraph-line-break="1">可能冲突，且逐场景优化的耗时问题并未自动消失。</tspan></text>
+</g>
+<g id="shape-42" data-pptx-object="shape" data-pptx-frame="761.28 574.08 458.88 63.36" data-pptx-prst="rect" data-pptx-source-ref="slide:42" data-pptx-semantic-object="shape">
+<path d="M 761.28 574.08 L 1220.16 574.08 L 1220.16 637.44 L 761.28 637.44 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="762.24" y="591.94131234" text-anchor="start" xml:space="preserve" font-size="17.6" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="21.12"><tspan><tspan>技术演进重点：从“选择一个更好的生成模型”转向“组织不</tspan></tspan><tspan data-paragraph-line-break="1">同先验的协作方式”。</tspan></text>
+</g></svg>

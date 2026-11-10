@@ -1,0 +1,112 @@
+[
+  {
+    "id": "P01_echo_chambers",
+    "title": "The echo chamber effect on social media",
+    "source_url": "https://www.research.unipd.it/retrieve/d7dfc79c-468f-4a65-b9b1-f07f123602a9/cinelli-et-al-2021-the-echo-chamber-effect-on-social-media.pdf",
+    "retrieved_at": "2026-10-29T19:56:43.559183+08:00",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "P02_web_centipede",
+    "title": "The Web Centipede",
+    "source_url": "https://arxiv.org/pdf/1705.06947",
+    "retrieved_at": "2026-10-29T19:56:43.560184+08:00",
+    "status": "downloaded",
+    "pages": 14,
+    "sha256": "8c320855403d3572cf7f02622dd4db88eb619c0239ce7436cff65e40129a82da",
+    "path": "papers/P02_web_centipede.pdf"
+  },
+  {
+    "id": "P03_dlinear",
+    "title": "Are Transformers Effective for Time Series Forecasting?",
+    "source_url": "https://arxiv.org/pdf/2205.13504",
+    "retrieved_at": "2026-10-29T19:56:43.561204+08:00",
+    "status": "downloaded",
+    "pages": 15,
+    "sha256": "97abddd1821cc72942c8d7ddde7e99466bb91f1bddc37c2b54e0e97be7b5be1b",
+    "path": "papers/P03_dlinear.pdf"
+  },
+  {
+    "id": "P04_xpatch",
+    "title": "xPatch: Dual-Stream Time Series Forecasting with Exponential Seasonal-Trend Decomposition",
+    "source_url": "https://arxiv.org/pdf/2412.17323",
+    "retrieved_at": "2026-10-29T19:56:43.562202+08:00",
+    "status": "downloaded",
+    "pages": 25,
+    "sha256": "032d723a6df6df4d66df52ada8ce695594a21b49493374439f0890fc030c1765",
+    "path": "papers/P04_xpatch.pdf"
+  },
+  {
+    "id": "P05_mamba",
+    "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+    "source_url": "https://arxiv.org/pdf/2312.00752",
+    "retrieved_at": "2026-10-29T19:56:46.494949+08:00",
+    "status": "downloaded",
+    "pages": 36,
+    "sha256": "adf70ed1803c85b1899dec3e21f3af0b124411439e8654b840ea65f7b9f52b2e",
+    "path": "papers/P05_mamba.pdf"
+  },
+  {
+    "id": "P06_pelt",
+    "title": "Optimal detection of changepoints with a linear computational cost",
+    "source_url": "https://arxiv.org/pdf/1101.1438",
+    "retrieved_at": "2026-10-29T19:56:48.233064+08:00",
+    "status": "downloaded",
+    "pages": 25,
+    "sha256": "07b03d783fa275c7b345679099010d9a5ccd8eca0bae91953cc0399bacc3084e",
+    "path": "papers/P06_pelt.pdf"
+  },
+  {
+    "id": "P07_rag",
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "source_url": "https://arxiv.org/pdf/2005.11401",
+    "retrieved_at": "2026-10-29T19:56:48.961862+08:00",
+    "status": "downloaded",
+    "pages": 19,
+    "sha256": "23e3249e9a1e75418d82efecab0ea8c4d033b89c93742f63208d47ce01f21233",
+    "path": "papers/P07_rag.pdf"
+  },
+  {
+    "id": "P08_time_llm",
+    "title": "Time-LLM: Time Series Forecasting by Reprogramming Large Language Models",
+    "source_url": "https://arxiv.org/pdf/2310.01728",
+    "retrieved_at": "2026-10-29T19:56:49.994959+08:00",
+    "status": "downloaded",
+    "pages": 24,
+    "sha256": "d71c4a83ffb545502cee07e0e5ab41578a9c8e06fb61b65a5740afbe42cda142",
+    "path": "papers/P08_time_llm.pdf"
+  },
+  {
+    "id": "P09_llm_ablation",
+    "title": "Are Language Models Actually Useful for Time Series Forecasting?",
+    "source_url": "https://arxiv.org/pdf/2406.16964",
+    "retrieved_at": "2026-10-29T19:56:52.164803+08:00",
+    "status": "downloaded",
+    "pages": 28,
+    "sha256": "2af6a3dc791357b716058fbee47f790ba549853fcdfb65d39c9da3abed3a6c2b",
+    "path": "papers/P09_llm_ablation.pdf"
+  },
+  {
+    "id": "P10_react",
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "source_url": "https://arxiv.org/pdf/2210.03629",
+    "retrieved_at": "2026-10-29T19:56:52.958983+08:00",
+    "status": "downloaded",
+    "pages": 33,
+    "sha256": "f285b0971ae4a790e402fb93966bed3adde2cf0a04977d08b2b40d6ab0cace69",
+    "path": "papers/P10_react.pdf"
+  },
+  {
+    "id": "P01_echo_chambers_preprint",
+    "title": "Echo Chambers on Social Media: A comparative analysis",
+    "source_url": "https://arxiv.org/pdf/2004.09603v1",
+    "retrieved_at": "2026-10-29T20:01:27.264215+08:00",
+    "timestamp_basis": "local file modification time; the original live request receipt was not saved",
+    "status": "downloaded",
+    "version_note": "2020 preprint; not the inaccessible 2021 PNAS final version",
+    "pages": 15,
+    "sha256": "824771c5fc2fb7e05a09730fab8687b345159581a55c415ed33b8022d0668ff7",
+    "path": "papers/P01_echo_chambers_preprint.pdf"
+  }
+]

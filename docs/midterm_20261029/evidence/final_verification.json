@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-10-30T12:33:32.358022+08:00",
+  "source_checks": [
+    {
+      "file": "知旅-基于多源数据融合的动态旅游规划平台(1).pptx",
+      "original_and_copy_unchanged": true
+    },
+    {
+      "file": "2026年度中期汇报表.docx",
+      "original_and_copy_unchanged": true
+    },
+    {
+      "file": "大创中期介绍20261026(1).pdf",
+      "original_and_copy_unchanged": true
+    },
+    {
+      "file": "附件3 项目中期检查评分表【答辩专家】.docx",
+      "original_and_copy_unchanged": true
+    },
+    {
+      "file": "附件2 本科生创新训练培育项目（创新训练类）立项申报书.pdf",
+      "original_and_copy_unchanged": true
+    }
+  ],
+  "slide_count": 18,
+  "speaker_note_count": 18,
+  "native_charts": 1,
+  "native_tables": 2,
+  "master_layout_xml_byte_identical": true,
+  "obsolete_template_text_check": "passed",
+  "main_timing_seconds": 360,
+  "deck_pdf_pages": 18,
+  "report_pdf_pages": 7,
+  "automatic_advance_slides": 0,
+  "use_timings": false,
+  "status": "passed",
+  "qa_document": "QA_REPORT.md"
+}

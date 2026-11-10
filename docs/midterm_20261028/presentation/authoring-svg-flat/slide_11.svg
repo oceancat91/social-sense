@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Noto Sans CJK SC&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="24.16 33.6 880.76 64.32" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 24.16 33.6 L 904.92 33.6 L 904.92 97.92 L 24.16 97.92 Z" fill="#BE1F26" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="59.52 48.36 787.2 40.55" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 59.52 48.36 L 846.72 48.36 L 846.72 88.92 L 59.52 88.92 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="60.48" y="81.08776903" text-anchor="start" xml:space="preserve" font-size="32.67" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>4</tspan><tspan>. 从 3D 到 4D</tspan></text>
+</g>
+<g id="shape-4" data-pptx-object="picture" data-pptx-frame="929.28 34.56 258.24 49.44" data-pptx-source-ref="slide:4">
+<image data-pptx-object="picture" data-pptx-frame="929.28 34.56 258.24 49.44" href="../images/image3.png" x="929.28" y="34.56" width="258.24" height="49.44" preserveAspectRatio="none" />
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="42.24 107.52 689.28 31.68" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 42.24 107.52 L 731.52 107.52 L 731.52 139.2 L 42.24 139.2 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="42.24" y="128.85333333" text-anchor="start" xml:space="preserve" font-size="22.27" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">MAV3D：把时间引入三维场景表示</text>
+</g>
+<g id="shape-6" data-pptx-object="picture" data-pptx-frame="65.38 143.04 641.08 240" data-pptx-source-ref="slide:6">
+<image data-pptx-object="picture" data-pptx-frame="65.38 143.04 641.08 240" href="../images/image14.png" x="65.38" y="143.04" width="641.08" height="240" preserveAspectRatio="none" />
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="43.2 384.96 681.6 18.24" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 43.2 384.96 L 724.8 384.96 L 724.8 403.2 L 43.2 403.2 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="43.2" y="396.96" text-anchor="start" xml:space="preserve" font-size="12.67" fill="#686F75" data-pptx-text-baseline="metrics-v1">原图：MAV3D，Figure 1（2023）；行/列展示视角与时间变化。</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="43.2 408.96 686.4 233.28" data-pptx-prst="roundRect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 43.2 447.84 A 38.88 38.88 0 0 1 82.08 408.96 L 690.72 408.96 A 38.88 38.88 0 0 1 729.6 447.84 L 729.6 603.36 A 38.88 38.88 0 0 1 690.72 642.24 L 82.08 642.24 A 38.88 38.88 0 0 1 43.2 603.36 Z" fill="#F6F7F8" stroke-width="1.06667" stroke="#CCD3D7" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="59.52 420.48 654.72 22.08" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 59.52 420.48 L 714.24 420.48 L 714.24 442.56 L 59.52 442.56 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="59.52" y="437.81333333" text-anchor="start" xml:space="preserve" font-size="18.4" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1">从静态场景函数到动态场景函数</text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="62.4 456 648 35.52" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 62.4 456 L 710.4 456 L 710.4 491.52 L 62.4 491.52 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="386.4" y="476" text-anchor="middle" xml:space="preserve" font-family="&quot;Cambria Math&quot;, sans-serif" font-size="21.47" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>静态</tspan><tspan>： </tspan><tspan>fθ</tspan><tspan>(x, y, z)     →     </tspan><tspan>动态</tspan><tspan>： </tspan><tspan>fθ</tspan><tspan>(x, y, z, t)</tspan></text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="78.72 512.64 145.92 56.64" data-pptx-prst="roundRect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 78.72 522.08 A 9.44 9.44 0 0 1 88.16 512.64 L 215.2 512.64 A 9.44 9.44 0 0 1 224.64 522.08 L 224.64 559.84 A 9.44 9.44 0 0 1 215.2 569.28 L 88.16 569.28 A 9.44 9.44 0 0 1 78.72 559.84 Z" fill="#ECF3F7" stroke-width="1.06667" stroke="#143E4A" data-pptx-part="geometry" />
+
+
+<text x="151.68" y="537.39469816" text-anchor="middle" xml:space="preserve" font-size="15.33" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="18.4"><tspan><tspan>t₀</tspan></tspan><tspan data-paragraph-line-break="1">起始姿态</tspan></text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="232.32 529.92 24 21.12" data-pptx-prst="rightArrow" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 232.32 535.2 L 245.76 535.2 L 245.76 529.92 L 256.32 540.48 L 245.76 551.04 L 245.76 545.76 L 232.32 545.76 Z" fill="#BE1F26" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="278.4 512.64 145.92 56.64" data-pptx-prst="roundRect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 278.4 522.08 A 9.44 9.44 0 0 1 287.84 512.64 L 414.88 512.64 A 9.44 9.44 0 0 1 424.32 522.08 L 424.32 559.84 A 9.44 9.44 0 0 1 414.88 569.28 L 287.84 569.28 A 9.44 9.44 0 0 1 278.4 559.84 Z" fill="#ECF3F7" stroke-width="1.06667" stroke="#143E4A" data-pptx-part="geometry" />
+
+
+<text x="351.36" y="537.39469816" text-anchor="middle" xml:space="preserve" font-size="15.33" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="18.4"><tspan><tspan>t₁</tspan></tspan><tspan data-paragraph-line-break="1">运动中</tspan></text>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="432 529.92 24 21.12" data-pptx-prst="rightArrow" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 432 535.2 L 445.44 535.2 L 445.44 529.92 L 456 540.48 L 445.44 551.04 L 445.44 545.76 L 432 545.76 Z" fill="#BE1F26" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="478.08 512.64 145.92 56.64" data-pptx-prst="roundRect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 478.08 522.08 A 9.44 9.44 0 0 1 487.52 512.64 L 614.56 512.64 A 9.44 9.44 0 0 1 624 522.08 L 624 559.84 A 9.44 9.44 0 0 1 614.56 569.28 L 487.52 569.28 A 9.44 9.44 0 0 1 478.08 559.84 Z" fill="#ECF3F7" stroke-width="1.06667" stroke="#143E4A" data-pptx-part="geometry" />
+
+
+<text x="551.04" y="537.39469816" text-anchor="middle" xml:space="preserve" font-size="15.33" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="18.4"><tspan><tspan>t₂</tspan></tspan><tspan data-paragraph-line-break="1">后续姿态</tspan></text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="63.36 584.64 660.48 42.01" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 63.36 584.64 L 723.84 584.64 L 723.84 626.65 L 63.36 626.65 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="393.6" y="600.64" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="17.33" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1"><tspan>固定相机</tspan><tspan> </tspan><tspan>C、改变</tspan><tspan> </tspan><tspan>t：观察同一机位下的动作；固定</tspan><tspan> </tspan><tspan>t、改变</tspan><tspan> </tspan><tspan>C：观察同一姿态的不同角度</tspan><tspan>。</tspan></text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="743.34 116.68 468.48 38.4" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 743.34 116.68 L 1211.82 116.68 L 1211.82 155.08 L 743.34 155.08 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="743.34" y="139.34341207" text-anchor="start" xml:space="preserve" font-size="23.73" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1">从静态三维优化到动态场景生成</text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="743.34 156.48 497.31 68.73" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 743.34 156.48 L 1240.66 156.48 L 1240.66 225.21 L 743.34 225.21 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="744.3" y="174.29333333" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="18.67" fill="#B91F25" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.4"><tspan><tspan>① </tspan><tspan fill="#252525">DreamFusion</tspan><tspan fill="#252525"> 优化静态 </tspan><tspan fill="#252525">NeRF</tspan><tspan fill="#252525">；</tspan><tspan fill="#252525">MAV3D </tspan><tspan fill="#252525">将时间 </tspan><tspan fill="#252525">t </tspan><tspan fill="#252525">加入场</tspan></tspan><tspan fill="#252525" data-paragraph-line-break="1">景查询，描述同一对象在不同时间的状态。 因此，时间不是</tspan><tspan fill="#252525" data-paragraph-line-break="1">单纯的播放序号，而是参与空间查询的输入变量。</tspan></text>
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="743.34 235.2 491.02 68.73" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 743.34 235.2 L 1234.36 235.2 L 1234.36 303.93 L 743.34 303.93 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="744.3" y="253.01333333" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="18.67" fill="#B91F25" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.4"><tspan><tspan>② </tspan><tspan fill="#252525">系统渲染多帧与随机视角，视频扩散模型为运动、外观和</tspan></tspan><tspan fill="#252525" data-paragraph-line-break="1">文本一致性提供反馈。 这避免把每一帧当成独立图像，但</tspan><tspan fill="#252525" data-paragraph-line-break="1">仍依赖视频模型学到的统计先验。</tspan></text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="743.34 317.76 479.7 68.73" data-pptx-prst="rect" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 743.34 317.76 L 1223.04 317.76 L 1223.04 386.49 L 743.34 386.49 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="744.3" y="335.57333333" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="18.67" fill="#B91F25" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.4"><tspan><tspan>③ </tspan><tspan fill="#252525">视频生成器相当于一种“统计多相机监督”：不同帧和视</tspan></tspan><tspan fill="#252525" data-paragraph-line-break="1">角共同帮助优化动态场景。 这种监督并非真实多机位观测</tspan><tspan fill="#252525" data-paragraph-line-break="1">，背面与遮挡区域仍存在不确定性。</tspan></text>
+</g>
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="761.28 405.12 458.88 32.64" data-pptx-prst="rect" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 761.28 405.12 L 1220.16 405.12 L 1220.16 437.76 L 761.28 437.76 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="761.28" y="425.12" text-anchor="start" xml:space="preserve" font-size="20.4" fill="#BE1F26" font-weight="bold" data-pptx-text-baseline="metrics-v1">真正的 4D 不等于把图片排成视频</text>
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="761.28 441.6 458.88 127.68" data-pptx-prst="roundRect" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 761.28 462.88 A 21.28 21.28 0 0 1 782.56 441.6 L 1198.88 441.6 A 21.28 21.28 0 0 1 1220.16 462.88 L 1220.16 548 A 21.28 21.28 0 0 1 1198.88 569.28 L 782.56 569.28 A 21.28 21.28 0 0 1 761.28 548 Z" fill="#FBEFEF" stroke-width="1.06667" stroke="#BE1F26" data-pptx-part="geometry" />
+
+
+<text x="768" y="462.62929134" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="18.67" fill="#252525" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="22.4"><tspan><tspan>关键是同一个 </tspan><tspan>fθ</tspan><tspan>(</tspan><tspan>x,y,z,t</tspan><tspan>) </tspan><tspan>能解释各个时刻的空间</tspan></tspan><tspan data-paragraph-line-break="1">外观。遗留问题是 <tspan>T2V </tspan><tspan>先验可能带来细节</tspan><tspan>/</tspan><tspan>几何伪影</tspan></tspan><tspan data-paragraph-line-break="1">，逐场景优化也较慢；外观、结构和动作仍难同时稳</tspan><tspan data-paragraph-line-break="1">定。 评价时应同时固定相机检查运动连续性、固定时</tspan><tspan data-paragraph-line-break="1">刻检查跨视角一致性。</tspan></text>
+</g>
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="761.28 577.92 458.88 63.36" data-pptx-prst="rect" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 761.28 577.92 L 1220.16 577.92 L 1220.16 641.28 L 761.28 641.28 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="762.24" y="594.447979" text-anchor="start" xml:space="preserve" font-size="17.07" fill="#1F2326" font-weight="bold" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="lines" data-paragraph-line-height="20.48"><tspan><tspan>局限：视频扩散先验不直接提供真实的背面与遮挡标注；4D </tspan></tspan><tspan data-paragraph-line-break="1">参数量和迭代优化成本也会随时间维度显著增加<tspan>。</tspan></tspan></text>
+</g></svg>

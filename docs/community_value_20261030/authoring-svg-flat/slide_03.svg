@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;Microsoft YaHei&quot;, sans-serif"><image href="../images/image4.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-36" data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" data-pptx-source-ref="slide:36">
+<image data-pptx-object="picture" data-pptx-frame="937.44 24.04 258.3 49.46" href="../images/image5.png" x="937.44" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="value-header" data-pptx-bounds="95 16 815 83" data-pptx-role="header"><rect x="95" y="16" width="815" height="83" fill="none" /><text x="110" y="63" font-size="33" fill="#44546A" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">为什么需要溯源：从热梗流转到创作认可</text></g><g id="value-subtitle" data-pptx-bounds="75 108 1130 48"><rect x="75" y="108" width="1130" height="48" fill="none" /><text x="80" y="139" font-size="21" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">同一主题会被改写、拼接和跨平台转发；回应前需要可核查的出处与语境</text></g><g id="value-footer" data-pptx-bounds="70 680 1100 27" data-pptx-role="footer"><rect x="70" y="680" width="1100" height="27" fill="none" /><text x="76" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">SocialSense  ·  创新训练类中期答辩</text><text x="1155" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" font-weight="normal" text-anchor="end">03 / 18</text></g><g id="trace-stage-0" data-pptx-bounds="65 175 755 111"><rect x="65" y="175" width="755" height="111" fill="none" /><circle cx="85" cy="197" r="19" fill="#4472C4" /><text x="85" y="204" font-size="18" fill="#FFFFFF" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">01</text><text x="120" y="206" font-size="26" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">追溯来源：找到可核查的原始表达</text><text x="120" y="247" font-size="21.5" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">区分活动素材、玩家原创与后续搬运；保存作者、<tspan x="120" dy="31.82">发布时间和原链接，避免把最早采集误当真正首发。</tspan></text></g><g id="trace-stage-1" data-pptx-bounds="65 290 755 111"><rect x="65" y="290" width="755" height="111" fill="none" /><circle cx="85" cy="312" r="19" fill="#4472C4" /><text x="85" y="319" font-size="18" fill="#FFFFFF" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">02</text><text x="120" y="321" font-size="26" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">梳理传播：把内容变体放回关系链</text><text x="120" y="362" font-size="21.5" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">记录引用、改写与转发线索，比较平台扩散顺序；<tspan x="120" dy="31.82">同源识别与传播图是后续重点，时间相关不等于因果。</tspan></text></g><g id="trace-stage-2" data-pptx-bounds="65 405 755 111"><rect x="65" y="405" width="755" height="111" fill="none" /><circle cx="85" cy="427" r="19" fill="#4472C4" /><text x="85" y="434" font-size="18" fill="#FFFFFF" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">03</text><text x="120" y="436" font-size="26" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">辅助回应：看见创作者与玩家诉求</text><text x="120" y="477" font-size="21.5" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">将出处、上下文与立场差异整理为可审阅档案，<tspan x="120" dy="31.82">为素材支持、创作认可和社区答疑提供决策依据。</tspan></text></g><g id="trace-stage-3" data-pptx-bounds="65 520 755 111"><rect x="65" y="520" width="755" height="111" fill="none" /><circle cx="85" cy="542" r="19" fill="#4472C4" /><text x="85" y="549" font-size="18" fill="#FFFFFF" font-family="Microsoft YaHei" font-weight="bold" text-anchor="middle">04</text><text x="120" y="551" font-size="26" fill="#0D3745" font-family="Microsoft YaHei" font-weight="bold" text-anchor="start">评价反馈：观察互动与社区交流</text><text x="120" y="592" font-size="21.5" fill="#243446" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start">固定窗口比较二创参与、反馈质量和误读案例；<tspan x="120" dy="31.82">控制版本活动等因素，避免把热度上涨归因于回应。</tspan></text></g><g id="official-materials" data-pptx-bounds="849 174 355 496"><rect x="849" y="174" width="355" height="496" fill="none" /><image href="../images/official_summer_4.jpg" x="892" y="177" width="270" height="455.75" preserveAspectRatio="xMidYMid meet" /><text x="867" y="655" font-size="16" fill="#4472C4" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start"><a href="https://www.taptap.cn/moment/834126362733185189"><tspan text-decoration="underline">[W1] 官方公开素材图（完整比例）</tspan></a></text></g><g id="trace-evidence" data-pptx-bounds="70 643 755 29"><rect x="70" y="643" width="755" height="29" fill="none" /><text x="80" y="665" font-size="16" fill="#4472C4" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start"><a href="https://www.taptap.cn/moment/832223722998859956"><tspan text-decoration="underline">[W2] 征集要求原创首发</tspan></a></text><text x="297" y="665" font-size="16" fill="#4472C4" font-family="Microsoft YaHei" font-weight="normal" text-anchor="start"><a href="https://arxiv.org/abs/1805.12512"><tspan text-decoration="underline">[W5] 同源梗与跨社区传播研究</tspan></a></text></g></svg>

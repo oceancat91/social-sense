@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="&quot;等线&quot;, sans-serif"><defs><filter id="fx1" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="13.33333333" flood-color="#4472C4" flood-opacity="0.3" /></filter><clipPath id="clip1" clipPathUnits="userSpaceOnUse"><path d="M 0.11187 0.01154 C 0.11187 0.00517 0.11464 0 0.11805 0 L 0.88195 0 C 0.88536 0 0.88813 0.00517 0.88813 0.01154 L 0.88813 0.98846 C 0.88813 0.99483 0.88536 1 0.88195 1 L 0.11805 1 C 0.11641 1 0.11484 0.99878 0.11368 0.99662 C 0.11252 0.99445 0.11187 0.99152 0.11187 0.98846 Z" /></clipPath></defs><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-pptx-object="shape" data-pptx-frame="0 0 1280 720" data-pptx-prst="rect" data-pptx-source-ref="master:7" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280 0 L 1280 720 L 0 720 Z" fill="#F5F5F5" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-8" data-pptx-object="shape" data-pptx-frame="0 14.34 1280 69.05" data-pptx-prst="parallelogram" data-pptx-av-adj="val 0" data-pptx-source-ref="layout:8" data-pptx-semantic-object="shape">
+<path d="M 0 83.38 L 0 14.34 L 1280 14.34 L 1280 83.38 Z" fill="#F2F2F2" fill-opacity="0.5" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-3" data-pptx-object="group" data-pptx-frame="1191.77 70 50.13 27.54" data-pptx-source-ref="layout:3">
+<g id="layout-shape-11" data-pptx-object="shape" data-pptx-frame="1191.77 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:11" data-pptx-semantic-object="shape">
+<path d="M 1191.77 97.54 L 1205.02 70 L 1220.13 70 L 1206.89 97.54 Z" fill="#0D3745" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="layout-shape-12" data-pptx-object="shape" data-pptx-frame="1213.54 70 28.36 27.54" data-pptx-prst="parallelogram" data-pptx-av-adj="val 48077" data-pptx-source-ref="layout:12" data-pptx-semantic-object="shape">
+<path d="M 1213.54 97.54 L 1226.79 70 L 1241.9 70 L 1228.66 97.54 Z" fill="#BE2623" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+</g>
+<g id="layout-shape-4" data-pptx-object="group" data-pptx-frame="-1.02 0.32 95.85 97.78" data-pptx-source-ref="layout:4">
+<g id="layout-shape-30" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:30" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 94.83 0.32 L 73.56 44.57 L -1.02 44.57 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-31" data-pptx-object="shape" data-pptx-frame="-1.02 0.32 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:31" data-pptx-semantic-object="shape">
+<path d="M -1.02 0.32 L 76.65 0.32 L 29.64 98.11 L -1.02 98.11 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="layout-shape-32" data-pptx-object="group" data-pptx-frame="1183.98 622.22 95.85 97.78" transform="rotate(180 1231.9 671.11)" data-pptx-source-ref="layout:32">
+<g id="layout-shape-33" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 95.85 44.24" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:33" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1279.83 622.22 L 1258.56 666.46 L 1183.98 666.46 Z" data-pptx-part="geometry" fill="#0D3745" stroke="none" stroke-width="1" />
+
+</g>
+<g id="layout-shape-34" data-pptx-object="shape" data-pptx-frame="1183.98 622.22 77.67 97.78" data-pptx-geometry-kind="custom" data-pptx-source-ref="layout:34" data-pptx-semantic-object="shape">
+<path d="M 1183.98 622.22 L 1261.65 622.22 L 1214.64 720 L 1183.98 720 Z" data-pptx-part="geometry" fill="#BE2623" stroke="none" stroke-width="1" />
+
+</g>
+</g>
+<g id="shape-21" data-pptx-object="picture" data-pptx-frame="938.3 24.04 258.3 49.46" data-pptx-source-ref="slide:21">
+<image data-pptx-object="picture" data-pptx-frame="938.3 24.04 258.3 49.46" href="../images/image5.png" x="938.3" y="24.04" width="258.3" height="49.46" preserveAspectRatio="none" />
+</g>
+<g id="midterm-header" data-pptx-bounds="95 16 815 83" data-pptx-role="header"><rect x="95" y="16" width="815" height="83" fill="none" /><text x="112" y="63" font-size="34" fill="#44546A" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">备份｜文献启发与当前实现的边界</text></g><g id="page-subtitle" data-pptx-bounds="75 108 1130 50"><rect x="75" y="108" width="1130" height="50" fill="none" /><text x="80" y="140" font-size="22" fill="#64748B" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">文献支持研究设计，不自动构成本项目的性能证据</text></g><g id="midterm-footer" data-pptx-bounds="70 680 1100 25" data-pptx-role="footer"><rect x="70" y="680" width="1100" height="25" fill="none" /><text x="76" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">SocialSense  ·  创新训练类中期答辩</text><text x="1155" y="700" font-size="13" fill="#64748B" font-family="Microsoft YaHei" text-anchor="end" font-weight="normal">14 / 18  备份</text></g><g id="paper-map-0" data-pptx-bounds="70 180 715 98"><rect x="70" y="180" width="715" height="98" fill="none" /><rect x="70" y="180" width="715" height="98" fill="#EDF2F8" /><text x="90" y="214" font-size="25" fill="#4472C4" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">DLinear / xPatch [3,4]</text><text x="90" y="256" font-size="20" fill="#243446" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">分解、线性基线与 PatchCNN；项目扩展四分量路径。</text></g><g id="paper-map-1" data-pptx-bounds="70 292 715 98"><rect x="70" y="292" width="715" height="98" fill="none" /><rect x="70" y="292" width="715" height="98" fill="#EDF2F8" /><text x="90" y="326" font-size="25" fill="#4472C4" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">Mamba / PELT [5,6]</text><text x="90" y="368" font-size="20" fill="#243446" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">选择性状态与变点建模；项目采用轻量实现与事件信号。</text></g><g id="paper-map-2" data-pptx-bounds="70 404 715 98"><rect x="70" y="404" width="715" height="98" fill="none" /><rect x="70" y="404" width="715" height="98" fill="#EDF2F8" /><text x="90" y="438" font-size="25" fill="#4472C4" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">RAG / ReAct [7,10]</text><text x="90" y="480" font-size="20" fill="#243446" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">外部证据与行动反馈；项目以契约和规则约束生成。</text></g><g id="paper-map-3" data-pptx-bounds="70 516 715 98"><rect x="70" y="516" width="715" height="98" fill="none" /><rect x="70" y="516" width="715" height="98" fill="#EDF2F8" /><text x="90" y="550" font-size="25" fill="#4472C4" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">Time-LLM 与消融研究 [8,9]</text><text x="90" y="592" font-size="20" fill="#243446" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">文本或大模型的价值必须独立消融，不能先验假定。</text></g><g id="scope-distinction" data-pptx-bounds="825 180 385 206"><rect x="825" y="180" width="385" height="206" fill="none" /><rect x="825" y="180" width="385" height="206" fill="#FFFFFF" stroke="#4472C4" stroke-width="1.2" rx="8" ry="8" /><line x1="828" y1="183" x2="828" y2="383" stroke="#4472C4" stroke-width="5" /><text x="849" y="220" font-size="27" fill="#4472C4" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">已实现 ≠ 已证明</text><text x="849" y="265" font-size="22" fill="#243446" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">框架与代码可检查<tspan x="849" dy="34.1">相对性能仍需统一基线</tspan><tspan x="849" dy="34.1">回音室需互动网络证据 [1]</tspan></text></g><g id="missing-evaluation" data-pptx-bounds="825 415 385 206"><rect x="825" y="415" width="385" height="206" fill="none" /><rect x="825" y="415" width="385" height="206" fill="#FFFFFF" stroke="#0D3745" stroke-width="1.2" rx="8" ry="8" /><line x1="828" y1="418" x2="828" y2="618" stroke="#0D3745" stroke-width="5" /><text x="849" y="455" font-size="27" fill="#0D3745" font-family="Microsoft YaHei" text-anchor="start" font-weight="bold">待完成的验证</text><text x="849" y="500" font-size="22" fill="#243446" font-family="Microsoft YaHei" text-anchor="start" font-weight="normal">分量 / 文本 / 路由消融<tspan x="849" dy="34.1">跨话题与滚动时间评估</tspan><tspan x="849" dy="34.1">传播关系与标注样本 [2]</tspan></text></g></svg>
