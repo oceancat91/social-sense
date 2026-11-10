@@ -114,3 +114,6 @@ social_forecast/results/workflow/
 # 根目录下的 PDF（多为 md 的导出件或临时材料），不进版本库
 /*.pdf
 
+
+# Vite 依赖预打包缓存（构建产物，不入库）
+.vite/
