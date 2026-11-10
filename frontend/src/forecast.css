@@ -683,18 +683,3 @@
     font-size: 32px;
   }
 }
-
-/* 预测弹层内的 iframe：高度给足，让新页面的事件列表和图表都能完整显示 */
-.forecast-frame {
-  display: block;
-  width: 100%;
-  height: min(72vh, 760px);
-  border: 0;
-  border-radius: 10px;
-  background: #e8e5e1;
-  margin-top: 12px;
-}
-
-@media (max-width: 720px) {
-  .forecast-frame { height: min(66vh, 560px); }
-}

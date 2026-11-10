@@ -121,6 +121,7 @@ type EventItem = {
   tau_days?: number | null;
   half_life_days?: number | null;
   decay_to_10pct_days?: number | null;
+  synthetic?: boolean;
 };
 
 /**
@@ -144,6 +145,8 @@ function eventsToPayload(events: EventItem[]): ArchivesPayload {
     if (e.keywords?.length) findings.push(`关键词：${e.keywords.join("、")}`);
     return {
       id: `E-${String(index + 1).padStart(3, "0")}`,
+      event_id: e.event_id,
+      synthetic: Boolean((e as EventItem & { synthetic?: boolean }).synthetic),
       title: e.name,
       en: e.event_id.replace(/_/g, " ").toUpperCase(),
       department: "多平台观测",

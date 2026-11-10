@@ -540,7 +540,7 @@ function renderDetail() {
   <h2>${escapeHtml(r.en)}</h2><div class="detail-title-cn">${escapeHtml(r.title)}<span>${escapeHtml(r.category)}</span></div>
   <div class="detail-rule"></div>
   <dl class="metadata"><div><dt>DEPARTMENT / 平台</dt><dd>${escapeHtml(r.department)}</dd></div><div><dt>COLLECTION / 编目范围</dt><dd>${escapeHtml(r.date)}</dd></div><div><dt>RELATED / 主导立场</dt><dd>${escapeHtml(r.lead)}</dd></div><div><dt>STATUS / 状态</dt><dd><i></i>${r.clearance === "RESTRICTED" ? "目录访问" : "已归档 · 可读取"}</dd></div></dl>
-  <div class="detail-tabs" role="tablist"><button id="tab-overview" class="active" role="tab" aria-controls="tab-panel" aria-selected="true" data-tab="overview">01 <span>概述</span></button><button id="tab-notes" role="tab" aria-controls="tab-panel" aria-selected="false" data-tab="notes">02 <span>研究记录</span></button><button id="tab-history" role="tab" aria-controls="tab-panel" aria-selected="false" data-tab="history">03 <span>访问日志</span></button><i class="tab-indicator" aria-hidden="true"></i></div>
+  <div class="detail-tabs" role="tablist"><button id="tab-overview" class="active" role="tab" aria-controls="tab-panel" aria-selected="true" data-tab="overview">01 <span>概述</span></button><button id="tab-notes" role="tab" aria-controls="tab-panel" aria-selected="false" data-tab="notes">02 <span>研究记录</span></button><button id="tab-history" role="tab" aria-controls="tab-panel" aria-selected="false" data-tab="history">03 <span>访问日志</span></button><button id="tab-prediction" role="tab" aria-controls="tab-panel" aria-selected="false" data-tab="prediction">04 <span>热度预测</span></button><button id="tab-contour" role="tab" aria-controls="tab-panel" aria-selected="false" data-tab="contour">05 <span>热度等高线</span></button><i class="tab-indicator" aria-hidden="true"></i></div>
   <div id="tab-panel" class="tab-panel" role="tabpanel">${overview()}</div>
   <div class="detail-actions"><button class="solid-button" data-action="bookmark"><span class="bookmark-caption">${savedGlyph}<span class="bookmark-label">${saved.has(r.id) ? "REMOVE FROM SAVED" : "SAVE ARCHIVE"}</span></span><span class="bookmark-status">${saved.has(r.id) ? "已收藏" : "收藏档案"}</span></button><a class="export-button" href="${exportHref(r.id)}" download="SENSE-LAB-${r.id}.txt" aria-label="导出 ${r.id} 档案">EXPORT <span>${arrow("down")}</span></a></div>
   <div class="detail-footnote"><a href="${escapeHtml(r.source)}" target="_blank" rel="noopener">数据来源 ${arrow("up-right")}</a><span>${String(selected + 1).padStart(3, "0")} / ${String(records.length).padStart(3, "0")}</span></div>`;
@@ -572,6 +572,10 @@ function setTab(tab: string, sound = true) {
       ? overview()
       : tab === "notes"
         ? `<div class="panel-label">RESEARCH NOTES / 研究记录</div><ol class="research-notes">${r.findings.map((f, i) => `<li><span>${String(i + 1).padStart(2, "0")}</span>${escapeHtml(f)}</li>`).join("")}</ol>`
+        : tab === "contour"
+        ? contourPanel()
+        : tab === "prediction"
+          ? predictionPanel()
         : `<div class="panel-label">ACCESS LOG / 本次访问</div>${accessLog
             .filter((entry) => entry.id === r.id)
             .slice(0, 4)
@@ -589,6 +593,112 @@ function setTab(tab: string, sound = true) {
     audio.play("ui-tick");
   }
 }
+/* ---------- 热度预测标签页 ---------- */
+let predictionSeq = 0;
+
+/**
+ * 档案详情里的「热度预测」面板。
+ *
+ * 数据来自后端事件接口：/event/<id>（指数衰减 + 半衰期 + 回测）与
+ * /event/<id>/components（RepMoE 四分量）。先用占位符渲染，拉到数据后替换。
+ */
+function predictionPanel(): string {
+  const r = records[selected];
+  const eid = (r as { event_id?: string }).event_id;
+  if (!eid) {
+    return `<div class="panel-label">PREDICTION / 热度预测</div><p>该档案没有关联事件，无预测数据。</p>`;
+  }
+  const seq = ++predictionSeq;
+  void fillPrediction(eid, seq);
+  return `<div class="panel-label">PREDICTION / 热度预测</div>
+    <div id="prediction-body" data-event="${escapeHtml(eid)}">
+      <p class="prediction-loading">正在读取该事件的预测数据…</p>
+    </div>`;
+}
+
+async function fillPrediction(eid: string, seq: number): Promise<void> {
+  try {
+    const [base, comp] = await Promise.all([
+      fetch(`/api/v1/forecast/event/${encodeURIComponent(eid)}`).then((x) => x.json()),
+      fetch(`/api/v1/forecast/event/${encodeURIComponent(eid)}/components`).then((x) => x.json()).catch(() => null),
+    ]);
+    if (seq !== predictionSeq) return; // 用户已切到别的档案
+    const body = document.getElementById("prediction-body");
+    if (!body) return;
+    const d = base?.data;
+    if (!d) {
+      body.innerHTML = `<p>预测数据不可用。</p>`;
+      return;
+    }
+    const c = comp?.data;
+    body.innerHTML = predictionMarkup(d, c);
+  } catch {
+    if (seq !== predictionSeq) return;
+    const body = document.getElementById("prediction-body");
+    if (body) body.innerHTML = `<p>预测数据读取失败。</p>`;
+  }
+}
+
+function predictionMarkup(d: any, c: any): string {
+  const p = d.prediction || {};
+  const s = d.scores || {};
+  const back = s.backtest_self_tau || {};
+  const live = s.live_global_tau || {};
+  const comps = c?.components || {};
+  const compKeys = ["T", "S", "C", "R"];
+  const compLabels: Record<string, string> = { T: "趋势 T̂", S: "季节 Ŝ", C: "冲击 Ĉ", R: "残差 R̂" };
+  const compRows = compKeys
+    .map((k) => {
+      const arr: number[] = Array.isArray(comps[k]) ? comps[k] : [];
+      if (!arr.length) return "";
+      const peak = Math.max(...arr.map((v) => Math.abs(v))) || 1;
+      const bars = arr
+        .map((v) => {
+          const h2 = Math.max(2, (Math.abs(v) / peak) * 26);
+          const up = v >= 0;
+          return `<i style="height:${h2}px;background:${up ? "#a67d48" : "#ed821b"};opacity:.75" title="${v.toFixed(3)}"></i>`;
+        })
+        .join("");
+      return `<div class="comp-row"><span class="comp-name">${compLabels[k]}</span><span class="comp-bars">${bars}</span></div>`;
+    })
+    .join("");
+
+  return `
+    <dl class="prediction-metrics">
+      <div><dt>τ / 衰减常数</dt><dd>${p.tau_days ?? "—"} 天</dd></div>
+      <div><dt>半衰期</dt><dd>${d.half_life_days ?? "—"} 天</dd></div>
+      <div><dt>衰减到 1/10</dt><dd>${d.decay_to_10pct_days ?? "—"} 天</dd></div>
+      <div><dt>峰值声量</dt><dd>${Number(d.peak_volume ?? 0).toLocaleString()}</dd></div>
+      <div><dt>回测误差</dt><dd>${back.rel_error ?? "—"}</dd></div>
+      <div><dt>全局τ基线</dt><dd>${live.rel_error ?? "—"}</dd></div>
+    </dl>
+    ${compRows ? `<div class="panel-label" style="margin-top:18px">MODEL COMPONENTS / 模型四分量</div><div class="comp-grid">${compRows}</div>` : ""}
+    <p class="prediction-caveat">${escapeHtml(d.caveat || "")}</p>
+    <p class="prediction-link"><a href="/api/v1/forecast/ui" target="_blank" rel="noopener">在完整预测页查看全部 ${escapeHtml(String(d.event_id || ""))} 的曲线与传播时序 →</a></p>`;
+}
+
+/**
+ * 热度等高线面板。
+ *
+ * 说明（重要）：用户要求把原来的「立体结构拆解」（GLB 模型 360° 旋转）删掉，
+ * 换成 3D 等高面。3D 等高面还没做完，这里先给二维等高线 SVG 顶替 ——
+ * X 轴是时间，Y 轴是局部强度，曲线是同一水平声量的等值线。
+ * SVG 由 scripts 预生成放在 public/contours/<event_id>.svg。
+ */
+function contourPanel(): string {
+  const r = records[selected];
+  const eid = (r as { event_id?: string }).event_id;
+  if (!eid) {
+    return `<div class="panel-label">CONTOUR / 热度等高线</div><p>该档案没有关联事件，无等高线数据。</p>`;
+  }
+  return `<div class="panel-label">CONTOUR / 热度等高线（二维近似）</div>
+    <figure class="contour-figure">
+      <img src="/contours/${encodeURIComponent(eid)}.svg" alt="事件热度等高线" loading="lazy" />
+      <figcaption>横轴时间 · 纵轴局部强度 · 曲线为等声量线</figcaption>
+    </figure>
+    <p class="prediction-caveat">3D 等高面仍在制作中，当前为二维近似视图。</p>`;
+}
+
 function notify(message: string) {
   clearTimeout(toastTimer);
   $("#toast").textContent = message;
@@ -845,24 +955,12 @@ document.addEventListener("click", (e) => {
   if (action === "column-prev") stepColumn(-1);
   if (action === "column-next") stepColumn(1);
   if (action === "open") openFile();
-  if (action === "model-viewer" && mode === "detail" && scene) {
-    const activeScene = scene;
-    // Safari does not always focus a button when it is tapped. Capture the
-    // actual opener so closing the modal reliably restores the right control.
-    el.focus({ preventScroll: true });
-    viewer ??= new ModelViewer($("#stage"), () => { audio.setScene(mode); audio.play("page-close"); }, (sound) => audio.play(sound === "tick" ? "ui-tick" : sound));
-    audio.setScene("viewer");
-    viewer.setSuperPerformance(superPerformanceEnabled());
-    viewer.setQuality(effectiveRenderQuality());
-    viewer.setMotion(prefs.motion);
-    scene.finishDecryption();
-    viewer.open(
-      records[selected].id,
-      records[selected].title,
-      () => activeScene.createAssemblyModel(),
-      !motionActive("viewerNavigation"),
-    );
-    audio.play("page-open");
+  if (action === "model-viewer" && mode === "detail") {
+    // 原来的立体结构拆解（GLB 模型 / 360° 旋转）暂时下线：
+    // 真正的 3D 等高面还没做完，先给二维等高线视图，入口保持不变。
+    setTab("contour");
+    audio.play("ui-tick");
+    return;
   }
   if (action === "back") {
     setMode("archive");

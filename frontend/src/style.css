@@ -2319,3 +2319,96 @@ button {
   overflow: hidden;
   visibility: hidden;
 }
+
+/* ---------- 档案详情：热度预测 / 等高线 ---------- */
+
+.prediction-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  margin: 10px 0 0;
+}
+.prediction-metrics > div {
+  border-left: 1px solid rgba(8, 10, 8, 0.14);
+  padding-left: 12px;
+}
+.prediction-metrics dt {
+  font-size: 9.5px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(8, 10, 8, 0.4);
+  margin: 0 0 3px;
+}
+.prediction-metrics dd {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.comp-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+.comp-row {
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 12px;
+  align-items: end;
+}
+.comp-name {
+  font-size: 10.5px;
+  color: rgba(8, 10, 8, 0.6);
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  white-space: nowrap;
+}
+.comp-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 28px;
+}
+
+.prediction-caveat {
+  font-size: 10.5px;
+  line-height: 1.75;
+  color: rgba(8, 10, 8, 0.55);
+  margin: 16px 0 0;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(8, 10, 8, 0.14);
+}
+
+.prediction-link {
+  font-size: 11px;
+  margin: 12px 0 0;
+}
+.prediction-link a {
+  color: #a67d48;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(166, 125, 72, 0.35);
+}
+
+.prediction-loading {
+  font-size: 11.5px;
+  color: rgba(8, 10, 8, 0.5);
+  margin: 12px 0 0;
+}
+
+.contour-figure {
+  margin: 12px 0 0;
+}
+.contour-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(8, 10, 8, 0.14);
+  background: #efedea;
+}
+.contour-figure figcaption {
+  font-size: 10px;
+  color: rgba(8, 10, 8, 0.45);
+  margin-top: 8px;
+  letter-spacing: 0.02em;
+}
