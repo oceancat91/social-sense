@@ -540,7 +540,7 @@ function renderDetail() {
   <h2>${escapeHtml(r.en)}</h2><div class="detail-title-cn">${escapeHtml(r.title)}<span>${escapeHtml(r.category)}</span></div>
   <div class="detail-rule"></div>
   <dl class="metadata"><div><dt>DEPARTMENT / 平台</dt><dd>${escapeHtml(r.department)}</dd></div><div><dt>COLLECTION / 编目范围</dt><dd>${escapeHtml(r.date)}</dd></div><div><dt>RELATED / 主导立场</dt><dd>${escapeHtml(r.lead)}</dd></div><div><dt>STATUS / 状态</dt><dd><i></i>${r.clearance === "RESTRICTED" ? "目录访问" : "已归档 · 可读取"}</dd></div></dl>
-  <div class="detail-tabs" role="tablist"><button id="tab-overview" class="active" role="tab" aria-controls="tab-panel" aria-selected="true" data-tab="overview">01 <span>概述</span></button><button id="tab-notes" role="tab" aria-controls="tab-panel" aria-selected="false" data-tab="notes">02 <span>研究记录</span></button><button id="tab-history" role="tab" aria-controls="tab-panel" aria-selected="false" data-tab="history">03 <span>访问日志</span></button><button id="tab-prediction" role="tab" aria-controls="tab-panel" aria-selected="false" data-tab="prediction">04 <span>热度预测</span></button><button id="tab-contour" role="tab" aria-controls="tab-panel" aria-selected="false" data-tab="contour">05 <span>热度等高线</span></button><i class="tab-indicator" aria-hidden="true"></i></div>
+  <div class="detail-tabs" role="tablist"><button id="tab-overview" class="active" role="tab" aria-controls="tab-panel" aria-selected="true" data-tab="overview">01 <span>概述</span></button><button id="tab-notes" role="tab" aria-controls="tab-panel" aria-selected="false" data-tab="notes">02 <span>研究记录</span></button><button id="tab-history" role="tab" aria-controls="tab-panel" aria-selected="false" data-tab="history">03 <span>访问日志</span></button><button id="tab-prediction" role="tab" aria-controls="tab-panel" aria-selected="false" data-tab="prediction">04 <span>热度预测</span></button><i class="tab-indicator" aria-hidden="true"></i></div>
   <div id="tab-panel" class="tab-panel" role="tabpanel">${overview()}</div>
   <div class="detail-actions"><button class="solid-button" data-action="bookmark"><span class="bookmark-caption">${savedGlyph}<span class="bookmark-label">${saved.has(r.id) ? "REMOVE FROM SAVED" : "SAVE ARCHIVE"}</span></span><span class="bookmark-status">${saved.has(r.id) ? "已收藏" : "收藏档案"}</span></button><a class="export-button" href="${exportHref(r.id)}" download="SENSE-LAB-${r.id}.txt" aria-label="导出 ${r.id} 档案">EXPORT <span>${arrow("down")}</span></a></div>
   <div class="detail-footnote"><a href="${escapeHtml(r.source)}" target="_blank" rel="noopener">数据来源 ${arrow("up-right")}</a><span>${String(selected + 1).padStart(3, "0")} / ${String(records.length).padStart(3, "0")}</span></div>`;
@@ -572,10 +572,8 @@ function setTab(tab: string, sound = true) {
       ? overview()
       : tab === "notes"
         ? `<div class="panel-label">RESEARCH NOTES / 研究记录</div><ol class="research-notes">${r.findings.map((f, i) => `<li><span>${String(i + 1).padStart(2, "0")}</span>${escapeHtml(f)}</li>`).join("")}</ol>`
-        : tab === "contour"
-        ? contourPanel()
         : tab === "prediction"
-          ? predictionPanel()
+        ? predictionPanel()
         : `<div class="panel-label">ACCESS LOG / 本次访问</div>${accessLog
             .filter((entry) => entry.id === r.id)
             .slice(0, 4)
@@ -677,26 +675,54 @@ function predictionMarkup(d: any, c: any): string {
     <p class="prediction-link"><a href="/api/v1/forecast/ui" target="_blank" rel="noopener">在完整预测页查看全部 ${escapeHtml(String(d.event_id || ""))} 的曲线与传播时序 →</a></p>`;
 }
 
+
+/* ---------- 360° 查看层（暂以二维等高线顶替 3D） ---------- */
+
 /**
- * 热度等高线面板。
+ * 打开档案的「文档模型」查看层。
  *
- * 说明（重要）：用户要求把原来的「立体结构拆解」（GLB 模型 360° 旋转）删掉，
- * 换成 3D 等高面。3D 等高面还没做完，这里先给二维等高线 SVG 顶替 ——
- * X 轴是时间，Y 轴是局部强度，曲线是同一水平声量的等值线。
- * SVG 由 scripts 预生成放在 public/contours/<event_id>.svg。
+ * 原实现是 ModelViewer + GLB 模型做 360° 旋转拆解，按用户要求下线；
+ * 真正的 3D 等高面仍在制作中，这里先给二维等高线 SVG。
+ * 入口保持左下角「360° 查看文档模型」按钮不变，后续换 3D 时只改这里的内容。
  */
-function contourPanel(): string {
+function openContourViewer(): void {
   const r = records[selected];
   const eid = (r as { event_id?: string }).event_id;
-  if (!eid) {
-    return `<div class="panel-label">CONTOUR / 热度等高线</div><p>该档案没有关联事件，无等高线数据。</p>`;
-  }
-  return `<div class="panel-label">CONTOUR / 热度等高线（二维近似）</div>
-    <figure class="contour-figure">
-      <img src="/contours/${encodeURIComponent(eid)}.svg" alt="事件热度等高线" loading="lazy" />
-      <figcaption>横轴时间 · 纵轴局部强度 · 曲线为等声量线</figcaption>
-    </figure>
-    <p class="prediction-caveat">3D 等高面仍在制作中，当前为二维近似视图。</p>`;
+  const root = document.getElementById("modal-root");
+  if (!root) return;
+
+  const body = eid
+    ? `<figure class="contour-figure">
+         <img src="/contours/${encodeURIComponent(eid)}.svg" alt="事件热度等高线" />
+         <figcaption>横轴时间 · 纵轴局部强度 · 曲线为等声量线</figcaption>
+       </figure>
+       <p class="prediction-caveat">3D 等高面仍在制作中，当前为二维近似视图。</p>`
+    : `<p>该档案没有关联事件，无等高线数据。</p>`;
+
+  root.innerHTML = `
+    <div class="contour-viewer-backdrop" data-action="close-contour">
+      <section class="contour-viewer" role="dialog" aria-modal="true" aria-label="文档模型查看">
+        <header class="contour-viewer-head">
+          <div>
+            <span class="contour-viewer-eyebrow">DOCUMENT MODEL / 文档模型</span>
+            <h2>${escapeHtml(r.title)}</h2>
+            <p>${escapeHtml(r.id)} · ${escapeHtml(r.date)}</p>
+          </div>
+          <button class="contour-viewer-close" data-action="close-contour" aria-label="关闭">关闭</button>
+        </header>
+        <div class="contour-viewer-body">${body}</div>
+      </section>
+    </div>`;
+  root.hidden = false;
+  const close = root.querySelector<HTMLButtonElement>(".contour-viewer-close");
+  close?.focus({ preventScroll: true });
+}
+
+function closeContourViewer(): void {
+  const root = document.getElementById("modal-root");
+  if (!root) return;
+  root.innerHTML = "";
+  root.hidden = true;
 }
 
 function notify(message: string) {
@@ -956,10 +982,16 @@ document.addEventListener("click", (e) => {
   if (action === "column-next") stepColumn(1);
   if (action === "open") openFile();
   if (action === "model-viewer" && mode === "detail") {
-    // 原来的立体结构拆解（GLB 模型 / 360° 旋转）暂时下线：
-    // 真正的 3D 等高面还没做完，先给二维等高线视图，入口保持不变。
-    setTab("contour");
-    audio.play("ui-tick");
+    // 左下角「360° 查看文档模型」按钮 → 打开独立的查看层。
+    // 原来的立体结构拆解（GLB 模型 360° 旋转）已下线，3D 等高面还没做完，
+    // 先用二维等高线顶替；入口和交互位置保持不变，后面换成 3D 时只改内容。
+    openContourViewer();
+    audio.play("page-open");
+    return;
+  }
+  if (action === "close-contour") {
+    closeContourViewer();
+    audio.play("page-close");
     return;
   }
   if (action === "back") {
