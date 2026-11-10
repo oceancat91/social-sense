@@ -19,6 +19,7 @@ import { initPwa, pwaSettingsMarkup } from "./pwa";
 import { createRollingNumber, createRollingText } from "@kitlangton/rolling-number";
 import { ArchiveScene } from "./scene";
 import { ModelViewer } from "./model-viewer";
+import { createContour3D } from "./contour3d";
 import { ContentTransition, SurfaceTransition } from "./ui-transitions";
 import { BootSequence } from "./boot";
 import { wrap, type ArchiveNavigation } from "./archive-loop";
@@ -78,16 +79,16 @@ $("#stage").innerHTML = `
   <svg id="inspection-marks" viewBox="0 0 1920 1080" aria-hidden="true"><path id="inspection-lines"/><g id="inspection-corners"></g><circle id="inspection-point" r="1.8"/></svg>
   <div id="inspection-text" aria-hidden="true">CONFIDENTIALITY:<strong>GENERAL BUSINESS USE</strong></div>
   <section id="archive-ui" class="archive-ui" aria-label="档案选择">
-    <div class="archive-callout"><div class="eyebrow">INTERNAL DATABASE <span>／</span> <span id="archive-category">舆情概览</span></div><button class="file-title" data-action="open">FILE NUMBER: <span id="selected-id">X-<span id="selected-code">001</span></span><span class="file-open">${arrow("up-right")}</span></button><div class="callout-rule"><i></i></div><div class="file-summary"><span id="selected-title">教育科研与科普</span><span id="selected-clearance">REFERENCE AREA</span></div><button class="read-file" data-action="open">ACCESS FILE <span>${arrow("right")}</span></button></div>
+    <div class="archive-callout"><div class="eyebrow">INTERNAL DATABASE <span>／</span> <span id="archive-category">事件</span></div><button class="file-title" data-action="open">FILE NUMBER: <span id="selected-id">X-<span id="selected-code">001</span></span><span class="file-open">${arrow("up-right")}</span></button><div class="callout-rule"><i></i></div><div class="file-summary"><span id="selected-title">事件</span><span id="selected-clearance">REFERENCE AREA</span></div><button class="read-file" data-action="open">ACCESS FILE <span>${arrow("right")}</span></button></div>
     <div id="hover-label" class="hover-label" hidden>X-<span id="hover-code">001</span> / <span id="hover-title"></span></div>
     <div class="archive-counter"><span class="tiny-label">ARCHIVE / SELECT</span><div><span id="selected-number">01</span><i>/</i><span class="count-total">12</span></div></div>
     <div class="archive-navigation"><button data-action="prev" aria-label="上一个档案">${arrow("up")}</button><div id="file-ticks" class="file-ticks"></div><button data-action="next" aria-label="下一个档案">${arrow("down")}</button></div>
-    <div class="column-navigation"><button data-action="column-prev" aria-label="上一列">${arrow("left")}</button><div><span id="column-number">COLUMN <span id="column-index">03</span> / 05</span><strong id="column-name">舆情概览</strong></div><button data-action="column-next" aria-label="下一列">${arrow("right")}</button></div>
+    <div class="column-navigation"><button data-action="column-prev" aria-label="上一列">${arrow("left")}</button><div><span id="column-number">COLUMN <span id="column-index">03</span> / 05</span><strong id="column-name">事件</strong></div><button data-action="column-next" aria-label="下一列">${arrow("right")}</button></div>
     <div class="archive-hint"><kbd>←</kbd> <kbd>→</kbd> 切换列 <span>／</span> <kbd>↑</kbd> <kbd>↓</kbd> 前后档案 <span>／</span> <kbd>ENTER</kbd> 读取</div>
   </section>
   <section id="detail-ui" class="detail-ui" aria-label="档案内容" hidden>
     <button class="back-button" data-action="back">${arrow("left")} <span>ARCHIVE OVERVIEW</span><small>ESC</small></button>
-    <div class="object-caption"><span id="object-id">NO.001</span><div>INTERNAL DATABASE</div><small>DRAG TO INSPECT <span>${arrow("horizontal")}</span></small><button class="viewer-open" data-action="model-viewer">360° 查看文档模型 <span>${arrow("up-right")}</span></button></div>
+    <div class="object-caption"><span id="object-id">NO.001</span><div>INTERNAL DATABASE</div><small>DRAG TO INSPECT <span>${arrow("horizontal")}</span></small><button class="viewer-open" data-action="model-viewer">溯源&amp;预测 <span>${arrow("up-right")}</span></button></div>
     <article id="detail-content" class="detail-content"></article>
   </section>
   <div class="powered">POWERED BY <b>SENSE LAB</b><i></i></div>
@@ -683,7 +684,7 @@ function predictionMarkup(d: any, c: any): string {
  *
  * 原实现是 ModelViewer + GLB 模型做 360° 旋转拆解，按用户要求下线；
  * 真正的 3D 等高面仍在制作中，这里先给二维等高线 SVG。
- * 入口保持左下角「360° 查看文档模型」按钮不变，后续换 3D 时只改这里的内容。
+ * 入口保持左下角「溯源&amp;预测」按钮不变，后续换 3D 时只改这里的内容。
  */
 function openContourViewer(): void {
   const r = records[selected];
@@ -696,24 +697,36 @@ function openContourViewer(): void {
          <img src="/contours/${encodeURIComponent(eid)}.svg" alt="事件热度等高线" />
          <figcaption>横轴时间 · 纵轴局部强度 · 曲线为等声量线</figcaption>
        </figure>
-       <p class="prediction-caveat">3D 等高面仍在制作中，当前为二维近似视图。</p>`
+       <p class="prediction-caveat">3D 等高线为随机生成的示意曲面（同一事件每次一致，不同事件互不相同），不代表真实数据。</p>`
     : `<p>该档案没有关联事件，无等高线数据。</p>`;
 
   root.innerHTML = `
     <div class="contour-viewer-backdrop" data-action="close-contour">
-      <section class="contour-viewer" role="dialog" aria-modal="true" aria-label="文档模型查看">
+      <section class="contour-viewer" role="dialog" aria-modal="true" aria-label="溯源与预测查看">
         <header class="contour-viewer-head">
           <div>
-            <span class="contour-viewer-eyebrow">DOCUMENT MODEL / 文档模型</span>
+            <span class="contour-viewer-eyebrow">TRACE &amp; FORECAST / 溯源与预测</span>
             <h2>${escapeHtml(r.title)}</h2>
             <p>${escapeHtml(r.id)} · ${escapeHtml(r.date)}</p>
           </div>
           <button class="contour-viewer-close" data-action="close-contour" aria-label="关闭">关闭</button>
         </header>
-        <div class="contour-viewer-body">${body}</div>
+        <div class="contour-viewer-body">
+          <div class="contour3d-slot"></div>
+          ${body}
+        </div>
       </section>
     </div>`;
   root.hidden = false;
+
+  // 3D 数字化等高线：每个事件用 event_id 做种子，随机但确定性 ——
+  // 同一事件每次打开一致，换事件就换一张曲面。
+  const slot = root.querySelector<HTMLElement>(".contour3d-slot");
+  if (slot) {
+    const canvas = createContour3D(eid || "unknown-event", { width: 760, height: 430 });
+    slot.appendChild(canvas);
+  }
+
   const close = root.querySelector<HTMLButtonElement>(".contour-viewer-close");
   close?.focus({ preventScroll: true });
 }
@@ -982,7 +995,7 @@ document.addEventListener("click", (e) => {
   if (action === "column-next") stepColumn(1);
   if (action === "open") openFile();
   if (action === "model-viewer" && mode === "detail") {
-    // 左下角「360° 查看文档模型」按钮 → 打开独立的查看层。
+    // 左下角「溯源&amp;预测」按钮 → 打开独立的查看层。
     // 原来的立体结构拆解（GLB 模型 360° 旋转）已下线，3D 等高面还没做完，
     // 先用二维等高线顶替；入口和交互位置保持不变，后面换成 3D 时只改内容。
     openContourViewer();

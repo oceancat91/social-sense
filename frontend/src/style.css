@@ -2484,3 +2484,16 @@ button {
   font-size: 12.5px;
   line-height: 1.75;
 }
+
+/* 3D 数字化等高线 */
+.contour3d-slot {
+  margin: 0 0 20px;
+  border: 1px solid rgba(8, 10, 8, 0.14);
+  background: #f3f1ee;
+  overflow: hidden;
+}
+.contour3d-slot canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
