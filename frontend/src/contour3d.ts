@@ -1,11 +1,12 @@
-/* 3D 数字化等高线 —— 每个事件一张随机的三维曲面。
+/* 数字化等高线 —— 固定俯视视角（top-down）的地形图。
  *
- * 按用户要求：不参考真实数据，随机生成，但每个事件必须不同。
+ * 参考样式：深色底 + 金色等值线 + 峰谷标记 + 同心结构，视角固定不旋转。
+ * 按用户要求：不参考真实数据，随机生成，但每个事件必须不同；
  * 同一事件每次打开保持稳定（用 event_id 做种子），换事件就换一张。
  *
- * 实现方式：不引入 Three.js（那要额外 600KB），改用 Canvas 2D 画等距投影的
- * 线框曲面 —— 视觉上就是三维等高线图，但零依赖、加载快。
+ * 实现：Canvas 2D + 真正的 marching squares 等值线，零依赖。
  */
+
 export interface ContourOptions {
   width?: number;
   height?: number;
@@ -14,7 +15,7 @@ export interface ContourOptions {
   levels?: number;
 }
 
-/** 32 位字符串哈希，用作伪随机种子 */
+/** FNV-1a 字符串哈希，用作伪随机种子 */
 function hashSeed(s: string): number {
   let h = 2166136261 >>> 0;
   for (let i = 0; i < s.length; i++) {
@@ -24,7 +25,7 @@ function hashSeed(s: string): number {
   return h >>> 0;
 }
 
-/** mulberry32 —— 轻量可复现伪随机 */
+/** mulberry32：轻量可复现伪随机 */
 function makeRng(seed: number): () => number {
   let a = seed >>> 0;
   return () => {
@@ -36,32 +37,35 @@ function makeRng(seed: number): () => number {
   };
 }
 
-/** 生成一张随机但确定的高度场：若干高斯峰谷叠加 + 轻微噪声 */
+/** 生成随机高度场：若干高斯峰谷叠加 + 轻微纹理，并做圆形衰减形成地形岛 */
 function buildField(seed: string, cols: number, rows: number): Float32Array {
   const rng = makeRng(hashSeed(seed));
   const field = new Float32Array(cols * rows);
 
-  // 3~6 个峰 + 2~4 个谷，位置与高度都随机
-  const peaks = 3 + Math.floor(rng() * 4);
-  const valleys = 2 + Math.floor(rng() * 3);
   type Bump = { cx: number; cy: number; amp: number; sx: number; sy: number };
   const bumps: Bump[] = [];
-  for (let i = 0; i < peaks; i++) {
+
+  // 3~5 个主峰（有一个明显更高的主峰，模拟地形图上的最高点）
+  const peakCount = 3 + Math.floor(rng() * 3);
+  for (let i = 0; i < peakCount; i++) {
+    const main = i === 0;
     bumps.push({
-      cx: 0.1 + rng() * 0.8,
-      cy: 0.1 + rng() * 0.8,
-      amp: 0.55 + rng() * 0.75,
-      sx: 0.08 + rng() * 0.16,
-      sy: 0.08 + rng() * 0.16,
+      cx: 0.18 + rng() * 0.64,
+      cy: 0.18 + rng() * 0.64,
+      amp: main ? 1.15 + rng() * 0.45 : 0.4 + rng() * 0.55,
+      sx: main ? 0.12 + rng() * 0.06 : 0.07 + rng() * 0.10,
+      sy: main ? 0.12 + rng() * 0.06 : 0.07 + rng() * 0.10,
     });
   }
-  for (let i = 0; i < valleys; i++) {
+  // 2~4 个洼地
+  const valleyCount = 2 + Math.floor(rng() * 3);
+  for (let i = 0; i < valleyCount; i++) {
     bumps.push({
-      cx: 0.1 + rng() * 0.8,
-      cy: 0.1 + rng() * 0.8,
-      amp: -(0.3 + rng() * 0.45),
-      sx: 0.10 + rng() * 0.18,
-      sy: 0.10 + rng() * 0.18,
+      cx: 0.15 + rng() * 0.7,
+      cy: 0.15 + rng() * 0.7,
+      amp: -(0.25 + rng() * 0.4),
+      sx: 0.08 + rng() * 0.14,
+      sy: 0.08 + rng() * 0.14,
     });
   }
 
@@ -75,13 +79,18 @@ function buildField(seed: string, cols: number, rows: number): Float32Array {
         const dy = (v - b.cy) / b.sy;
         h += b.amp * Math.exp(-(dx * dx + dy * dy) * 0.5);
       }
-      // 一点高频纹理，让曲面不是纯高斯
-      h += (rng() - 0.5) * 0.06;
+      // 圆形衰减：边缘压平，形成"岛屿"轮廓而不是满幅噪声
+      const rx = (u - 0.5) * 2;
+      const ry = (v - 0.5) * 2;
+      const r = Math.sqrt(rx * rx + ry * ry);
+      const falloff = Math.max(0, 1 - Math.pow(r / 1.02, 3.2));
+      h *= falloff;
+      // 高频纹理：让等值线不是纯圆
+      h += (rng() - 0.5) * 0.045 * falloff;
       field[y * cols + x] = h;
     }
   }
 
-  // 归一到 0..1
   let lo = Infinity, hi = -Infinity;
   for (const v of field) { if (v < lo) lo = v; if (v > hi) hi = v; }
   const span = hi - lo || 1;
@@ -89,16 +98,23 @@ function buildField(seed: string, cols: number, rows: number): Float32Array {
   return field;
 }
 
+/** 线性插值出等值线与网格边的交点 */
+function lerpEdge(h1: number, h2: number, level: number): number {
+  const d = h2 - h1;
+  if (Math.abs(d) < 1e-9) return 0.5;
+  return (level - h1) / d;
+}
+
 /**
- * 画出等距投影的三维等高线。
- * 返回的元素可直接插入 DOM；eventId 相同则每次生成完全一致。
+ * 固定俯视的等高线地形图。
+ * eventId 相同则每次渲染完全一致；换事件就换一张地形。
  */
 export function createContour3D(eventId: string, opts: ContourOptions = {}): HTMLCanvasElement {
-  const width = opts.width ?? 720;
-  const height = opts.height ?? 420;
-  const cols = opts.cols ?? 46;
-  const rows = opts.rows ?? 30;
-  const levels = opts.levels ?? 14;
+  const width = opts.width ?? 760;
+  const height = opts.height ?? 460;
+  const cols = opts.cols ?? 96;
+  const rows = opts.rows ?? 96;
+  const levels = opts.levels ?? 16;
 
   const canvas = document.createElement("canvas");
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -108,109 +124,164 @@ export function createContour3D(eventId: string, opts: ContourOptions = {}): HTM
   canvas.style.height = "auto";
   canvas.style.display = "block";
   canvas.setAttribute("role", "img");
-  canvas.setAttribute("aria-label", "事件热度三维等高线（随机生成示意）");
+  canvas.setAttribute("aria-label", "事件热度等高线地形图（随机生成示意）");
 
   const ctx = canvas.getContext("2d");
   if (!ctx) return canvas;
   ctx.scale(dpr, dpr);
 
   const field = buildField(eventId, cols, rows);
+  const rng = makeRng(hashSeed(eventId) ^ 0x9e3779b9);
 
-  // 等距投影：把 (u,v,h) 映射到屏幕
-  const cx = width * 0.5;
-  const cy = height * 0.62;
-  const scaleX = width * 0.44;
-  const scaleY = height * 0.30;
-  const liftZ = height * 0.34;
-
-  const project = (u: number, v: number, h: number) => {
-    // 平面上的菱形
-    const px = (u - v) * scaleX;
-    const py = (u + v - 1) * scaleY;
-    return {
-      x: cx + px,
-      y: cy + py - h * liftZ,
-    };
-  };
-
-  // 背景
-  ctx.fillStyle = "#f3f1ee";
+  // ---------- 底色 ----------
+  ctx.fillStyle = "#0e1114";
   ctx.fillRect(0, 0, width, height);
 
-  // 底面网格（很淡）
-  ctx.strokeStyle = "rgba(8,10,8,0.07)";
+  // 网格底纹
+  ctx.strokeStyle = "rgba(255,255,255,0.035)";
   ctx.lineWidth = 1;
-  for (let i = 0; i <= 8; i++) {
-    const t = i / 8;
-    let a = project(t, 0, 0), b = project(t, 1, 0);
-    ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-    a = project(0, t, 0); b = project(1, t, 0);
-    ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+  const grid = 40;
+  for (let gx = 0; gx <= width; gx += grid) {
+    ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, height); ctx.stroke();
+  }
+  for (let gy = 0; gy <= height; gy += grid) {
+    ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(width, gy); ctx.stroke();
   }
 
-  // 按高度分层画等值线（从低到高，高的后画覆盖低的）
+  // 正俯视投影：等距映射到画布
+  const pad = 28;
+  const sx = (width - pad * 2) / (cols - 1);
+  const sy = (height - pad * 2) / (rows - 1);
+  const toX = (x: number) => pad + x * sx;
+  const toY = (y: number) => pad + y * sy;
+
+  // ---------- 高度分层填色（模拟地形图的色带）----------
+  const bands = 8;
+  for (let b = 0; b < bands; b++) {
+    const t = b / (bands - 1);
+    // 从深青到金色
+    const r = Math.round(12 + (214 - 12) * Math.pow(t, 1.5));
+    const g = Math.round(20 + (168 - 20) * Math.pow(t, 1.4));
+    const bl = Math.round(26 + (78 - 26) * Math.pow(t, 1.3));
+    ctx.fillStyle = `rgba(${r},${g},${bl},${0.10 + 0.30 * t})`;
+    const lo = b / bands;
+    const hi = (b + 1) / bands;
+    for (let y = 0; y < rows - 1; y++) {
+      for (let x = 0; x < cols - 1; x++) {
+        const h = field[y * cols + x];
+        if (h < lo || h >= hi) continue;
+        ctx.fillRect(toX(x) - sx * 0.5, toY(y) - sy * 0.5, sx + 1, sy + 1);
+      }
+    }
+  }
+
+  // ---------- 等值线（marching squares）----------
   for (let l = 0; l < levels; l++) {
     const level = (l + 0.5) / levels;
     const t = l / (levels - 1);
-    // 低处铜色、高处橙色
-    const r = Math.round(166 + (237 - 166) * t);
-    const g = Math.round(125 + (130 - 125) * t);
-    const bch = Math.round(72 + (27 - 72) * t);
-    ctx.strokeStyle = `rgba(${r},${g},${bch},${(0.22 + 0.55 * t).toFixed(3)})`;
-    ctx.lineWidth = 0.8 + 1.2 * t;
-
-    // marching squares 的简化版：逐格取边中点连成折线
+    const alpha = 0.20 + 0.62 * t;
+    // 低处偏青，高处金色
+    const r = Math.round(90 + (255 - 90) * t);
+    const g = Math.round(150 + (210 - 150) * t);
+    const bl = Math.round(120 + (90 - 120) * t);
+    ctx.strokeStyle = `rgba(${r},${g},${bl},${alpha.toFixed(3)})`;
+    ctx.lineWidth = 0.7 + 1.1 * t;
     ctx.beginPath();
-    let started = false;
+
     for (let y = 0; y < rows - 1; y++) {
       for (let x = 0; x < cols - 1; x++) {
         const h00 = field[y * cols + x];
         const h10 = field[y * cols + x + 1];
         const h01 = field[(y + 1) * cols + x];
         const h11 = field[(y + 1) * cols + x + 1];
-        const inside = (h00 > level ? 1 : 0) + (h10 > level ? 1 : 0) + (h01 > level ? 1 : 0) + (h11 > level ? 1 : 0);
-        if (inside === 0 || inside === 4) continue;
-        const u = x / (cols - 1);
-        const v = y / (rows - 1);
-        const du = 1 / (cols - 1);
-        const dv = 1 / (rows - 1);
-        const p = project(u + du * 0.5, v + dv * 0.5, level);
-        if (!started) { ctx.moveTo(p.x, p.y); started = true; }
-        else { ctx.lineTo(p.x, p.y); }
+
+        // 四个角是否高于等值线：组成 4 位掩码
+        const code =
+          (h00 > level ? 1 : 0) |
+          (h10 > level ? 2 : 0) |
+          (h11 > level ? 4 : 0) |
+          (h01 > level ? 8 : 0);
+        if (code === 0 || code === 15) continue;
+
+        // 四条边上的交点（边编号：0 上 1 右 2 下 3 左）
+        const top = { x: toX(x + lerpEdge(h00, h10, level)), y: toY(y) };
+        const right = { x: toX(x + 1), y: toY(y + lerpEdge(h10, h11, level)) };
+        const bottom = { x: toX(x + lerpEdge(h01, h11, level)), y: toY(y + 1) };
+        const left = { x: toX(x), y: toY(y + lerpEdge(h00, h01, level)) };
+
+        // 查表：每种掩码对应 1~2 段线
+        const seg = (a: { x: number; y: number }, b: { x: number; y: number }) => {
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+        };
+        switch (code) {
+          case 1: case 14: seg(left, top); break;
+          case 2: case 13: seg(top, right); break;
+          case 3: case 12: seg(left, right); break;
+          case 4: case 11: seg(right, bottom); break;
+          case 5: seg(left, top); seg(right, bottom); break;
+          case 6: case 9: seg(top, bottom); break;
+          case 7: case 8: seg(left, bottom); break;
+          case 10: seg(left, bottom); seg(top, right); break;
+          default: break;
+        }
       }
     }
     ctx.stroke();
   }
 
-  // 描一遍曲面主线框，强化"立体"感
-  ctx.strokeStyle = "rgba(8,10,8,0.22)";
-  ctx.lineWidth = 1;
-  for (let y = 0; y < rows; y += 3) {
-    ctx.beginPath();
-    for (let x = 0; x < cols; x++) {
-      const u = x / (cols - 1);
-      const v = y / (rows - 1);
-      const p = project(u, v, field[y * cols + x]);
-      if (x === 0) ctx.moveTo(p.x, p.y); else ctx.lineTo(p.x, p.y);
+  // ---------- 峰顶标记（等高线图上的高程点）----------
+  let peak = { i: 0, h: -1 };
+  for (let i = 0; i < field.length; i++) if (field[i] > peak.h) peak = { i, h: field[i] };
+  const px = toX(peak.i % cols);
+  const py = toY(Math.floor(peak.i / cols));
+
+  // 主峰十字准星 + 光晕
+  const glow = ctx.createRadialGradient(px, py, 0, px, py, 46);
+  glow.addColorStop(0, "rgba(255,210,90,0.55)");
+  glow.addColorStop(1, "rgba(255,210,90,0)");
+  ctx.fillStyle = glow;
+  ctx.beginPath(); ctx.arc(px, py, 46, 0, Math.PI * 2); ctx.fill();
+
+  ctx.strokeStyle = "#ffd25a";
+  ctx.lineWidth = 1.6;
+  ctx.beginPath(); ctx.arc(px, py, 7, 0, Math.PI * 2); ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(px - 16, py); ctx.lineTo(px - 9, py);
+  ctx.moveTo(px + 9, py); ctx.lineTo(px + 16, py);
+  ctx.moveTo(px, py - 16); ctx.lineTo(px, py - 9);
+  ctx.moveTo(px, py + 9); ctx.lineTo(px, py + 16);
+  ctx.stroke();
+
+  // 3~5 个随机次要兴趣点
+  const dots = 3 + Math.floor(rng() * 3);
+  for (let d = 0; d < dots; d++) {
+    const di = Math.floor(rng() * field.length);
+    const dx = toX(di % cols);
+    const dy = toY(Math.floor(di / cols));
+    const dh = field[di];
+    if (dh < 0.35) continue;
+    const isHigh = dh > 0.72;
+    ctx.fillStyle = isHigh ? "rgba(255,210,90,0.95)" : "rgba(255,140,60,0.85)";
+    ctx.beginPath(); ctx.arc(dx, dy, isHigh ? 3.6 : 2.6, 0, Math.PI * 2); ctx.fill();
+    if (isHigh) {
+      ctx.strokeStyle = "rgba(255,210,90,0.45)";
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.arc(dx, dy, 9, 0, Math.PI * 2); ctx.stroke();
     }
-    ctx.stroke();
-  }
-  for (let x = 0; x < cols; x += 4) {
-    ctx.beginPath();
-    for (let y = 0; y < rows; y++) {
-      const u = x / (cols - 1);
-      const v = y / (rows - 1);
-      const p = project(u, v, field[y * cols + x]);
-      if (y === 0) ctx.moveTo(p.x, p.y); else ctx.lineTo(p.x, p.y);
-    }
-    ctx.stroke();
   }
 
-  // 角标
-  ctx.fillStyle = "rgba(8,10,8,0.45)";
-  ctx.font = '10px ui-monospace, Consolas, monospace';
-  ctx.fillText("3D CONTOUR · RANDOMIZED", 14, height - 14);
-  ctx.fillText(eventId, width - 14 - ctx.measureText(eventId).width, height - 14);
+  // ---------- 外框与角标 ----------
+  ctx.strokeStyle = "rgba(255,210,90,0.20)";
+  ctx.lineWidth = 1;
+  ctx.strokeRect(pad * 0.5, pad * 0.5, width - pad, height - pad);
+
+  ctx.fillStyle = "rgba(255,210,90,0.72)";
+  ctx.font = '10px ui-monospace, "SFMono-Regular", Consolas, monospace';
+  ctx.fillText("TOP-DOWN CONTOUR · RANDOMIZED", 16, 20);
+  ctx.fillText("ELEV " + (0.6 + rng() * 0.4).toFixed(2), 16, height - 14);
+  const tag = eventId.length > 26 ? eventId.slice(0, 26) + "…" : eventId;
+  ctx.fillText(tag, width - 16 - ctx.measureText(tag).width, height - 14);
 
   return canvas;
 }
